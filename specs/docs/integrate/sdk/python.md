@@ -1,0 +1,120 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://polar.sh/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Python SDK
+
+> Fully typed Python client for the Polar API
+
+The official Python SDK provides fully typed synchronous and asynchronous clients for the Polar API.
+
+<Info>
+  The new SDK is currently in public preview. Install the pre-release explicitly
+  to try it before the stable release.
+</Info>
+
+## Installation
+
+The SDK requires Python 3.11 or later.
+
+<Tabs>
+  <Tab title="uv">
+    ```bash Terminal theme={null}
+    uv add polar-sdk --prerelease allow
+    ```
+  </Tab>
+
+  <Tab title="pip">
+    ```bash Terminal theme={null}
+    pip install --pre polar-sdk
+    ```
+  </Tab>
+</Tabs>
+
+## Quickstart
+
+Create an [organization access token](/docs/integrate/oat), store it in `POLAR_ACCESS_TOKEN`, and make your first request:
+
+```python main.py theme={null}
+import os
+
+from polar.v2026_04 import Polar
+
+polar = Polar(os.environ["POLAR_ACCESS_TOKEN"])
+
+customer_state = polar.customers.get_state_external("customer_external_id")
+print(customer_state)
+```
+
+### Async client
+
+Use `PolarAsync` in asynchronous applications:
+
+```python async_main.py theme={null}
+import asyncio
+import os
+
+from polar.v2026_04 import PolarAsync
+
+
+async def main() -> None:
+    polar = PolarAsync(os.environ["POLAR_ACCESS_TOKEN"])
+    customer_state = await polar.customers.get_state_external(
+        "customer_external_id"
+    )
+    print(customer_state)
+
+
+asyncio.run(main())
+```
+
+The import path pins your client to the `2026-04` API version.
+
+## Context managers
+
+Both clients support context managers to close their HTTP connections automatically when the block exits.
+
+For synchronous applications, use `Polar` with `with`:
+
+```python theme={null}
+import os
+
+from polar.v2026_04 import Polar
+
+with Polar(os.environ["POLAR_ACCESS_TOKEN"]) as polar:
+    customer_state = polar.customers.get_state_external("customer_external_id")
+    print(customer_state)
+```
+
+For asynchronous applications, use `PolarAsync` with `async with`:
+
+```python theme={null}
+import asyncio
+import os
+
+from polar.v2026_04 import PolarAsync
+
+
+async def main() -> None:
+    async with PolarAsync(os.environ["POLAR_ACCESS_TOKEN"]) as polar:
+        customer_state = await polar.customers.get_state_external(
+            "customer_external_id"
+        )
+        print(customer_state)
+
+
+asyncio.run(main())
+```
+
+## Sandbox environment
+
+The client uses production by default. Pass `environment="sandbox"` to use the isolated [sandbox environment](/docs/integrate/sandbox):
+
+```python theme={null}
+polar = Polar(
+    os.environ["POLAR_ACCESS_TOKEN"],
+    environment="sandbox",
+)
+```
+
+[View the source code on GitHub](https://github.com/polarsource/polar/tree/main/sdk/python).

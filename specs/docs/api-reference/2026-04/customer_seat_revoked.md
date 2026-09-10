@@ -1,0 +1,43 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://polar.sh/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# customer_seat.revoked
+
+> Sent when a customer seat is revoked.
+
+This event is triggered when access to a seat is revoked, either manually by the organization or automatically when a subscription is canceled.
+
+
+
+## OpenAPI
+
+````yaml /openapi/2026-04.openapi.json webhook customer_seat.revoked
+openapi: 3.1.0
+info:
+  title: Polar API
+  summary: Polar HTTP and Webhooks API
+  description: Read the docs at https://polar.sh/docs/api-reference
+  version: 2026-04
+servers:
+  - url: https://api.polar.sh
+    description: Production environment
+    x-speakeasy-server-id: production
+    x-polar-environment: production
+  - url: https://sandbox-api.polar.sh
+    description: Sandbox environment
+    x-speakeasy-server-id: sandbox
+    x-polar-environment: sandbox
+security: []
+tags:
+  - name: public
+    description: >-
+      Endpoints shown and documented in the Polar API documentation and
+      available in our SDKs.
+  - name: private
+    description: >-
+      Endpoints that should appear in the schema only in development to generate
+      our internal JS SDK.
+paths: {}
+
+````
