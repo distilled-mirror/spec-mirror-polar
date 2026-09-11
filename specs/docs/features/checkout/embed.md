@@ -91,7 +91,7 @@ export default PurchaseLink
 
 ## Embed Hosts
 
-List the hosts allowed to embed your checkout under **Settings → Preferences → Embedding**. An embedded checkout only opens on a host you've listed.
+List the hosts allowed to embed your checkout under **Settings → Preferences → Embedding**. An embedded checkout only opens on a host you've listed, and the browser refuses to frame it anywhere else.
 
 After a payment, the checkout sends your page a message carrying a session token for your customer. The allowlist is how we know that page is yours.
 
