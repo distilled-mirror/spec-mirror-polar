@@ -139,6 +139,15 @@ components:
           description: >-
             An optional name for the webhook endpoint to help organize and
             identify it.
+        api_version:
+          anyOf:
+            - type: string
+              enum:
+                - 2026-04
+                - 2026-10
+            - type: 'null'
+          title: Api Version
+          description: The API version that'll be used in event payloads.
         format:
           anyOf:
             - $ref: '#/components/schemas/WebhookFormat'
@@ -168,10 +177,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -194,6 +207,10 @@ components:
           description: >-
             An optional name for the webhook endpoint to help organize and
             identify it.
+        api_version:
+          type: string
+          title: Api Version
+          description: The API version that'll be used in event payloads.
         format:
           $ref: '#/components/schemas/WebhookFormat'
           description: The format of the webhook payload.
@@ -218,17 +235,27 @@ components:
           type: boolean
           title: Enabled
           description: Whether the webhook endpoint is enabled and will receive events.
+        uses_standard_webhook_signature:
+          type: boolean
+          title: Uses Standard Webhook Signature
+          description: >-
+            Whether Polar signs deliveries to this endpoint with Standard
+            Webhooks. False means Polar's original HMAC over the UTF-8 bytes of
+            the full secret.
+          readOnly: true
       type: object
       required:
         - created_at
         - modified_at
         - id
         - url
+        - api_version
         - format
         - secret
         - organization_id
         - events
         - enabled
+        - uses_standard_webhook_signature
       title: WebhookEndpoint
       description: A webhook endpoint.
     ResourceNotFound:

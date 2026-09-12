@@ -97,11 +97,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResourceNotFound'
         '409':
-          description: Subscription is pending an update.
+          description: >-
+            Subscription is pending an update, or is not scheduled to be
+            canceled.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SubscriptionLocked'
+                anyOf:
+                  - $ref: '#/components/schemas/SubscriptionLocked'
+                  - $ref: '#/components/schemas/SubscriptionNotScheduledToCancel'
+                title: Response 409 Subscriptions:Update
         '422':
           description: Validation Error
           content:
@@ -162,10 +167,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -208,15 +217,21 @@ components:
           format: date-time
           title: Current Period Start
           description: The start timestamp of the current billing period.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         current_period_end:
           type: string
           format: date-time
           title: Current Period End
           description: The end timestamp of the current billing period.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         current_meter_period_start:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Current Meter Period Start
           description: >-
@@ -227,6 +242,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Current Meter Period End
           description: >-
@@ -236,6 +253,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Trial Start
           description: The start timestamp of the trial period, if any.
@@ -243,6 +262,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Trial End
           description: The end timestamp of the trial period, if any.
@@ -256,6 +277,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Canceled At
           description: >-
@@ -265,6 +288,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Started At
           description: The timestamp when the subscription started.
@@ -272,6 +297,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Ends At
           description: The timestamp when the subscription will end.
@@ -279,6 +306,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Ended At
           description: The timestamp when the subscription ended.
@@ -286,6 +315,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Past Due At
           description: The timestamp when the subscription entered `past_due` status.
@@ -299,6 +330,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Paused At
           description: The timestamp when the subscription was paused.
@@ -306,6 +339,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Resumes At
           description: >-
@@ -369,6 +404,8 @@ components:
               - type: boolean
               - type: string
                 format: date-time
+                examples:
+                  - '2026-01-01T00:00:00.000000Z'
               - type: 'null'
           type: object
           title: Custom Field Data
@@ -528,6 +565,22 @@ components:
         - error
         - detail
       title: SubscriptionLocked
+    SubscriptionNotScheduledToCancel:
+      properties:
+        error:
+          type: string
+          const: SubscriptionNotScheduledToCancel
+          title: Error
+          examples:
+            - SubscriptionNotScheduledToCancel
+        detail:
+          type: string
+          title: Detail
+      type: object
+      required:
+        - error
+        - detail
+      title: SubscriptionNotScheduledToCancel
     HTTPValidationError:
       properties:
         detail:
@@ -596,6 +649,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: string
               const: now
             - type: 'null'
@@ -658,8 +713,14 @@ components:
             later than the current period end, as long as it's in the future.
 
 
+            If the subscription is set to cancel at the end of the period, it'll
+            end on this new date instead.
+
+
             It is not possible to update the current billing period on a
-            canceled subscription.
+            subscription that's already revoked or not active.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
       additionalProperties: false
       type: object
       required:
@@ -827,6 +888,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Resumes At
           description: >-
@@ -923,10 +986,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -1030,6 +1097,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Deleted At
           description: Timestamp for when the customer was soft deleted.
@@ -1037,6 +1106,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: First User Event At
           description: >-
@@ -1078,10 +1149,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -1237,10 +1312,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -1267,6 +1346,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Starts At
           description: Timestamp after which the discount is redeemable.
@@ -1274,6 +1355,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Ends At
           description: Timestamp after which the discount is no longer redeemable.
@@ -1357,10 +1440,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -1387,6 +1474,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Starts At
           description: Timestamp after which the discount is redeemable.
@@ -1394,6 +1483,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Ends At
           description: Timestamp after which the discount is no longer redeemable.
@@ -1462,10 +1553,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -1492,6 +1587,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Starts At
           description: Timestamp after which the discount is redeemable.
@@ -1499,6 +1596,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Ends At
           description: Timestamp after which the discount is no longer redeemable.
@@ -1567,10 +1666,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -1597,6 +1700,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Starts At
           description: Timestamp after which the discount is redeemable.
@@ -1604,6 +1709,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Ends At
           description: Timestamp after which the discount is no longer redeemable.
@@ -1692,10 +1799,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -1751,10 +1862,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -1768,6 +1883,8 @@ components:
           format: date-time
           title: Applies At
           description: The date and time when the subscription update will be applied.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         product_id:
           anyOf:
             - type: string
@@ -2475,6 +2592,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Last Modified At
         version:
@@ -2493,6 +2612,8 @@ components:
           type: string
           format: date-time
           title: Created At
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         size_readable:
           type: string
           title: Size Readable
@@ -2568,10 +2689,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -2655,10 +2780,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -2758,10 +2887,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -2824,10 +2957,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -2906,10 +3043,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -2971,10 +3112,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -3073,10 +3218,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -3159,10 +3308,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -3245,10 +3398,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -3316,6 +3473,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Archived At
           description: Whether the meter is archived and the time it was archived.
@@ -3343,10 +3502,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -3418,10 +3581,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -3493,10 +3660,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -3570,10 +3741,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -3641,10 +3816,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -3712,10 +3891,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -3787,10 +3970,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -3863,10 +4050,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -4324,10 +4515,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -4381,10 +4576,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -4438,10 +4637,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -4495,10 +4698,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -4552,10 +4759,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.

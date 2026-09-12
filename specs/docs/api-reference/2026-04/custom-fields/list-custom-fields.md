@@ -303,10 +303,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -360,10 +364,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -417,10 +425,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -474,10 +486,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -531,10 +547,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.

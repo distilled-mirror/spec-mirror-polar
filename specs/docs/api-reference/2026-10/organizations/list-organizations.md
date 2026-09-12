@@ -202,10 +202,14 @@ components:
           format: date-time
           title: Created At
           description: Creation timestamp of the object.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         modified_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Modified At
           description: Last modification timestamp of the object.
@@ -266,6 +270,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Details Submitted At
           description: When the business details were submitted for review.
@@ -273,6 +279,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Onboarding Resubmission Requested At
           description: >-
@@ -965,11 +973,6 @@ components:
           title: Issue Funding Enabled
           description: If this organization has issue funding enabled
           default: false
-        seat_based_pricing_enabled:
-          type: boolean
-          title: Seat Based Pricing Enabled
-          description: If this organization has seat-based pricing enabled
-          default: false
         wallets_enabled:
           type: boolean
           title: Wallets Enabled
@@ -1052,6 +1055,13 @@ components:
           description: >-
             If this organization can migrate its billing from another provider
             (e.g. Stripe) to Polar.
+          default: false
+        frame_ancestors_enforced:
+          type: boolean
+          title: Frame Ancestors Enforced
+          description: >-
+            If this organization's checkout tells the browser to refuse framing
+            from any host outside its embed hosts.
           default: false
       type: object
       title: OrganizationFeatureSettings

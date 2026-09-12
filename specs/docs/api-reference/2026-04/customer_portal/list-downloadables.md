@@ -264,6 +264,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Last Modified At
         download:
@@ -316,6 +318,8 @@ components:
           type: string
           format: date-time
           title: Expires At
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
       type: object
       required:
         - url

@@ -84,7 +84,8 @@ paths:
             polar = Polar("polar_oat_xxx")
 
             response = polar.events.ingest(
-                events=[{'name': 'string',
+                events=[{'timestamp': '2026-01-01T00:00:00.000000Z',
+                  'name': 'string',
                   'customer_id': '00000000-0000-4000-8000-000000000000'}],
             )
             print(response)
@@ -100,6 +101,7 @@ paths:
               {
                 "events": [
                   {
+                    "timestamp": "2026-01-01T00:00:00.000000Z",
                     "name": "string",
                     "customer_id": "00000000-0000-4000-8000-000000000000"
                   }
@@ -154,6 +156,8 @@ components:
           format: date-time
           title: Timestamp
           description: The timestamp of the event.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         name:
           type: string
           maxLength: 128
@@ -238,6 +242,8 @@ components:
           format: date-time
           title: Timestamp
           description: The timestamp of the event.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         name:
           type: string
           maxLength: 128

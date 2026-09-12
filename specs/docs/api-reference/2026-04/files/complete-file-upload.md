@@ -282,6 +282,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Last Modified At
         version:
@@ -300,10 +302,14 @@ components:
           type: string
           format: date-time
           title: Created At
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         flagged_malicious_at:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Flagged Malicious At
         size_readable:
@@ -378,6 +384,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Last Modified At
         version:
@@ -396,6 +404,8 @@ components:
           type: string
           format: date-time
           title: Created At
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         size_readable:
           type: string
           title: Size Readable
@@ -472,6 +482,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Last Modified At
         version:
@@ -490,6 +502,8 @@ components:
           type: string
           format: date-time
           title: Created At
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         size_readable:
           type: string
           title: Size Readable
@@ -566,6 +580,8 @@ components:
           anyOf:
             - type: string
               format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
             - type: 'null'
           title: Last Modified At
         version:
@@ -584,6 +600,8 @@ components:
           type: string
           format: date-time
           title: Created At
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         size_readable:
           type: string
           title: Size Readable

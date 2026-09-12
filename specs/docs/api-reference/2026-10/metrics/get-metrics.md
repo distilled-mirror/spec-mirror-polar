@@ -886,6 +886,8 @@ components:
           format: date-time
           title: Timestamp
           description: Timestamp of this period data.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         active_subscriptions:
           anyOf:
             - type: integer
