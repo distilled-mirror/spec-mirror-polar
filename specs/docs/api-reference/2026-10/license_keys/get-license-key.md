@@ -38,12 +38,18 @@ tags:
     description: >-
       Endpoints that should appear in the schema only in development to generate
       our internal JS SDK.
+  - name: mcp
+    description: Endpoints supported by Polar's MCP server.
+  - name: cli
+    description: Endpoints exposed as commands by Polar's CLI.
 paths:
   /v1/license-keys/{id}:
     get:
       tags:
         - license_keys
         - public
+        - mcp
+        - cli
       summary: Get License Key
       description: |-
         Get a license key.
@@ -151,6 +157,21 @@ components:
           title: Customer Id
         customer:
           $ref: '#/components/schemas/LicenseKeyCustomer'
+        member_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Member Id
+          description: The ID of the seat member holding this key, if any.
+        member:
+          anyOf:
+            - $ref: '#/components/schemas/LicenseKeyMember'
+            - type: 'null'
+          description: >-
+            The seat member holding this key. Set for keys granted through a
+            seat-based product; `null` for keys granted to the customer
+            directly.
         benefit_id:
           type: string
           format: uuid4
@@ -427,6 +448,29 @@ components:
         - first_user_event_at
         - avatar_url
       title: LicenseKeyCustomer
+    LicenseKeyMember:
+      properties:
+        id:
+          type: string
+          format: uuid4
+          title: Id
+          description: The ID of the object.
+        email:
+          type: string
+          title: Email
+          description: The email address of the seat member.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: The external ID of the seat member, if set.
+      type: object
+      required:
+        - id
+        - email
+        - external_id
+      title: LicenseKeyMember
     LicenseKeyStatus:
       type: string
       enum:

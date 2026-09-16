@@ -36,12 +36,18 @@ tags:
     description: >-
       Endpoints that should appear in the schema only in development to generate
       our internal JS SDK.
+  - name: mcp
+    description: Endpoints supported by Polar's MCP server.
+  - name: cli
+    description: Endpoints exposed as commands by Polar's CLI.
 paths:
   /v1/customer-seats:
     post:
       tags:
         - customer-seats
         - public
+        - mcp
+        - cli
       summary: Assign Seat
       description: '**Scopes**: `customer_seats:write`'
       operationId: customer-seats:assign_seat

@@ -38,12 +38,18 @@ tags:
     description: >-
       Endpoints that should appear in the schema only in development to generate
       our internal JS SDK.
+  - name: mcp
+    description: Endpoints supported by Polar's MCP server.
+  - name: cli
+    description: Endpoints exposed as commands by Polar's CLI.
 paths:
   /v1/products/{id}/benefits:
     post:
       tags:
         - products
         - public
+        - mcp
+        - cli
       summary: Update Product Benefits
       description: |-
         Update benefits granted by a product.

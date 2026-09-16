@@ -34,12 +34,18 @@ tags:
     description: >-
       Endpoints that should appear in the schema only in development to generate
       our internal JS SDK.
+  - name: mcp
+    description: Endpoints supported by Polar's MCP server.
+  - name: cli
+    description: Endpoints exposed as commands by Polar's CLI.
 paths:
   /v1/customer-seats/claim/{invitation_token}:
     get:
       tags:
         - customer-seats
         - public
+        - mcp
+        - cli
       summary: Get Claim Info
       operationId: customer-seats:get_claim_info
       parameters:

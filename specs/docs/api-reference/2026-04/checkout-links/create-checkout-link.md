@@ -45,12 +45,20 @@ tags:
     description: >-
       Endpoints that should appear in the schema only in development to generate
       our internal JS SDK.
+  - name: mcp
+    description: Endpoints supported by Polar's MCP server.
+  - name: cli
+    description: Endpoints exposed as commands by Polar's CLI.
 paths:
   /v1/checkout-links/:
     post:
       tags:
         - checkout-links
         - public
+        - mcp
+        - cli
+        - mcp
+        - cli
       summary: Create Checkout Link
       description: |-
         Create a checkout link.

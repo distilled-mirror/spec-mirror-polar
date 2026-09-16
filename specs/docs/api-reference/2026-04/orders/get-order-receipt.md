@@ -38,12 +38,18 @@ tags:
     description: >-
       Endpoints that should appear in the schema only in development to generate
       our internal JS SDK.
+  - name: mcp
+    description: Endpoints supported by Polar's MCP server.
+  - name: cli
+    description: Endpoints exposed as commands by Polar's CLI.
 paths:
   /v1/orders/{id}/receipt:
     get:
       tags:
         - orders
         - public
+        - mcp
+        - cli
       summary: Get Order Receipt
       description: |-
         Get a presigned URL to download an order's receipt PDF.
