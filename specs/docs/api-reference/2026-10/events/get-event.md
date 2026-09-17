@@ -174,6 +174,7 @@ components:
         - $ref: '#/components/schemas/SubscriptionReinstatedEvent'
         - $ref: '#/components/schemas/SubscriptionPausedEvent'
         - $ref: '#/components/schemas/SubscriptionResumedEvent'
+        - $ref: '#/components/schemas/SubscriptionMigratedEvent'
         - $ref: '#/components/schemas/SubscriptionUncanceledEvent'
         - $ref: '#/components/schemas/SubscriptionProductUpdatedEvent'
         - $ref: '#/components/schemas/SubscriptionSeatsUpdatedEvent'
@@ -245,6 +246,8 @@ components:
             $ref: '#/components/schemas/SubscriptionCreatedEvent'
           subscription.cycled:
             $ref: '#/components/schemas/SubscriptionCycledEvent'
+          subscription.migrated:
+            $ref: '#/components/schemas/SubscriptionMigratedEvent'
           subscription.past_due:
             $ref: '#/components/schemas/SubscriptionPastDueEvent'
           subscription.paused:
@@ -2030,6 +2033,108 @@ components:
         - metadata
       title: SubscriptionResumedEvent
       description: An event created by Polar when a paused subscription is resumed.
+    SubscriptionMigratedEvent:
+      properties:
+        id:
+          type: string
+          format: uuid4
+          title: Id
+          description: The ID of the object.
+        timestamp:
+          type: string
+          format: date-time
+          title: Timestamp
+          description: The timestamp of the event.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
+        organization_id:
+          type: string
+          format: uuid4
+          title: Organization Id
+          description: The ID of the organization owning the event.
+          examples:
+            - 1dbfc517-0bbf-4301-9ba8-555ca42b9737
+        customer_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Customer Id
+          description: >-
+            ID of the customer in your Polar organization associated with the
+            event.
+        customer:
+          anyOf:
+            - $ref: '#/components/schemas/Customer'
+            - type: 'null'
+          description: The customer associated with the event.
+        external_customer_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Customer Id
+          description: ID of the customer in your system associated with the event.
+        member_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Member Id
+          description: >-
+            ID of the member within the customer's organization who performed
+            the action inside B2B.
+        external_member_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Member Id
+          description: >-
+            ID of the member in your system within the customer's organization
+            who performed the action inside B2B.
+        child_count:
+          type: integer
+          title: Child Count
+          description: Number of direct child events linked to this event.
+          default: 0
+        parent_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Parent Id
+          description: The ID of the parent event.
+        label:
+          type: string
+          title: Label
+          description: Human readable label of the event type.
+        source:
+          type: string
+          const: system
+          title: Source
+          description: >-
+            The source of the event. `system` events are created by Polar.
+            `user` events are the one you create through our ingestion API.
+        name:
+          type: string
+          const: subscription.migrated
+          title: Name
+          description: The name of the event.
+        metadata:
+          $ref: '#/components/schemas/SubscriptionMigratedMetadata'
+      type: object
+      required:
+        - id
+        - timestamp
+        - organization_id
+        - customer_id
+        - customer
+        - external_customer_id
+        - label
+        - source
+        - name
+        - metadata
+      title: SubscriptionMigratedEvent
+      description: An event created by Polar when a subscription is migrated to Polar.
     SubscriptionUncanceledEvent:
       properties:
         id:
@@ -4431,6 +4536,27 @@ components:
       required:
         - subscription_id
       title: SubscriptionResumedMetadata
+    SubscriptionMigratedMetadata:
+      properties:
+        subscription_id:
+          type: string
+          title: Subscription Id
+        provider:
+          type: string
+          title: Provider
+        provider_subscription_id:
+          type: string
+          title: Provider Subscription Id
+        product_id:
+          type: string
+          title: Product Id
+      type: object
+      required:
+        - subscription_id
+        - provider
+        - provider_subscription_id
+        - product_id
+      title: SubscriptionMigratedMetadata
     SubscriptionUncanceledMetadata:
       properties:
         subscription_id:

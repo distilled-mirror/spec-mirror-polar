@@ -326,6 +326,7 @@ components:
         - subscription.past_due
         - subscription.paused
         - subscription.resumed
+        - subscription.migrated
         - refund.created
         - refund.updated
         - product.created

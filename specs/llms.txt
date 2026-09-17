@@ -237,6 +237,7 @@
 - [subscription.past_due](https://polar.sh/docs/api-reference/2026-04/subscription_past_due.md): Sent when a subscription payment fails and the subscription enters `past_due` status.
 - [subscription.paused](https://polar.sh/docs/api-reference/2026-04/subscription_paused.md): Sent when a subscription is paused and the customer temporarily loses access.
 - [subscription.resumed](https://polar.sh/docs/api-reference/2026-04/subscription_resumed.md): Sent when a paused subscription resumes, restoring the customer's access.
+- [subscription.migrated](https://polar.sh/docs/api-reference/2026-04/subscription_migrated.md): Sent when Polar takes over billing of a subscription migrated from another provider.
 - [order.created](https://polar.sh/docs/api-reference/2026-04/order_created.md): Sent when a new order is created.
 - [order.paid](https://polar.sh/docs/api-reference/2026-04/order_paid.md): Sent when an order is paid.
 - [order.updated](https://polar.sh/docs/api-reference/2026-04/order_updated.md): Sent when an order is updated.
@@ -408,6 +409,7 @@
 - [subscription.past_due](https://polar.sh/docs/api-reference/2026-10/subscription_past_due.md): Sent when a subscription payment fails and the subscription enters `past_due` status.
 - [subscription.paused](https://polar.sh/docs/api-reference/2026-10/subscription_paused.md): Sent when a subscription is paused and the customer temporarily loses access.
 - [subscription.resumed](https://polar.sh/docs/api-reference/2026-10/subscription_resumed.md): Sent when a paused subscription resumes, restoring the customer's access.
+- [subscription.migrated](https://polar.sh/docs/api-reference/2026-10/subscription_migrated.md): Sent when Polar takes over billing of a subscription migrated from another provider.
 - [order.created](https://polar.sh/docs/api-reference/2026-10/order_created.md): Sent when a new order is created.
 - [order.paid](https://polar.sh/docs/api-reference/2026-10/order_paid.md): Sent when an order is paid.
 - [order.updated](https://polar.sh/docs/api-reference/2026-10/order_updated.md): Sent when an order is updated.
