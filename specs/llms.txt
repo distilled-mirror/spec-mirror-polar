@@ -3,7 +3,7 @@
 > Payments & Billing with 6 lines of code. Open Source & Global Merchant of Record.
 
 - [Polar: Turn Your Software into a Business](https://polar.sh/docs/introduction.md): The next generation unicorns will be built by smaller teams. Polar makes that dream possible.
-- [Migrate to Polar](https://polar.sh/docs/migrate.md): Get set up on Polar in minutes from an existing store
+- [Migrate from Stripe](https://polar.sh/docs/migrate.md): Move customers, products, subscriptions, and payment data from Stripe to Polar.
 - [Products](https://polar.sh/docs/features/products.md): Start selling digital products on Polar in minutes.
 - [Introduction](https://polar.sh/docs/features/usage-based-billing/introduction.md): Usage based billing using ingested events
 - [Event Ingestion](https://polar.sh/docs/features/usage-based-billing/event-ingestion.md): Ingest events from your application
