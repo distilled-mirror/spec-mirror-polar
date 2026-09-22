@@ -85,7 +85,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/Unauthorized'
         '404':
-          description: License key not found.
+          description: >-
+            License key or activation not found, or activation does not belong
+            to the license key.
           content:
             application/json:
               schema:

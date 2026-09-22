@@ -80,8 +80,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ValidatedLicenseKey'
+        '400':
+          description: >-
+            The requested usage increment exceeds the license key's remaining
+            usage allowance.
+          content:
+            application/json:
+              schema:
+                $ref: 3896e47d-d0d3-429a-aee6-e6bb931ef8a5
         '404':
-          description: License key not found.
+          description: >-
+            License key not found, revoked, disabled, or expired, or the
+            supplied activation, conditions, benefit, or customer do not match.
           content:
             application/json:
               schema:
@@ -255,7 +265,9 @@ components:
           type: string
           title: Display Key
         status:
-          $ref: '#/components/schemas/LicenseKeyStatus'
+          type: string
+          const: granted
+          title: Status
         limit_activations:
           anyOf:
             - type: integer
@@ -524,13 +536,6 @@ components:
         - email
         - external_id
       title: LicenseKeyMember
-    LicenseKeyStatus:
-      type: string
-      enum:
-        - granted
-        - revoked
-        - disabled
-      title: LicenseKeyStatus
     LicenseKeyActivationBase:
       properties:
         id:

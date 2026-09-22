@@ -66,11 +66,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/LicenseKeyActivationRead'
+                $ref: '#/components/schemas/LicenseKeyActivationCreated'
         '403':
           description: >-
-            License key activation not supported or limit reached. Use /validate
-            endpoint for licenses without activations.
+            License key is revoked, disabled, or expired, does not support
+            activations, or has reached its activation limit. Use /validate for
+            licenses without activations.
           content:
             application/json:
               schema:
@@ -213,7 +214,7 @@ components:
         - organization_id
         - label
       title: LicenseKeyActivate
-    LicenseKeyActivationRead:
+    LicenseKeyActivationCreated:
       properties:
         id:
           type: string
@@ -250,7 +251,7 @@ components:
             - type: 'null'
           title: Modified At
         license_key:
-          $ref: '#/components/schemas/LicenseKeyRead'
+          $ref: '#/components/schemas/GrantedLicenseKey'
       type: object
       required:
         - id
@@ -260,7 +261,7 @@ components:
         - created_at
         - modified_at
         - license_key
-      title: LicenseKeyActivationRead
+      title: LicenseKeyActivationCreated
     NotPermitted:
       properties:
         error:
@@ -302,7 +303,7 @@ components:
           title: Detail
       type: object
       title: HTTPValidationError
-    LicenseKeyRead:
+    GrantedLicenseKey:
       properties:
         id:
           type: string
@@ -347,7 +348,9 @@ components:
           type: string
           title: Display Key
         status:
-          $ref: '#/components/schemas/LicenseKeyStatus'
+          type: string
+          const: granted
+          title: Status
         limit_activations:
           anyOf:
             - type: integer
@@ -398,7 +401,7 @@ components:
         - validations
         - last_validated_at
         - expires_at
-      title: LicenseKeyRead
+      title: GrantedLicenseKey
     ValidationError:
       properties:
         loc:
@@ -590,13 +593,6 @@ components:
         - first_user_event_at
         - avatar_url
       title: LicenseKeyCustomer
-    LicenseKeyStatus:
-      type: string
-      enum:
-        - granted
-        - revoked
-        - disabled
-      title: LicenseKeyStatus
     MetadataOutputType:
       additionalProperties:
         anyOf:

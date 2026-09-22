@@ -64,7 +64,9 @@ paths:
         '204':
           description: License key activation deactivated.
         '404':
-          description: License key not found.
+          description: >-
+            License key or activation not found, or activation does not belong
+            to the license key.
           content:
             application/json:
               schema:
