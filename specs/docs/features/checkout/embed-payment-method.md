@@ -66,14 +66,14 @@ embed.addEventListener("success", (event) => {
 
 `create()` options:
 
-| Option         | Type                           | Default     | Description                                                                                                                  |
-| -------------- | ------------------------------ | ----------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `sessionToken` | `string`                       | —           | **Required.** Customer session token.                                                                                        |
-| `theme`        | `'light' \| 'dark'`            | `light`     | Colour scheme.                                                                                                               |
-| `setAsDefault` | `boolean`                      | `true`      | Whether the new card should become the customer's default payment method.                                                    |
-| `returnUrl`    | `string`                       | current URL | Where to return the customer after a redirect-based payment method (Amazon Pay, Klarna). Defaults to `window.location.href`. |
-| `locale`       | `string`                       | `'en'`      | BCP47 locale for the embed UI and Stripe Elements (e.g. `'en'`, `'fr-FR'`). Unsupported locales fall back to English.        |
-| `onLoaded`     | `(event: CustomEvent) => void` | —           | Convenience callback for the `loaded` event. Equivalent to `embed.addEventListener('loaded', …)`.                            |
+| Option         | Type                           | Default     | Description                                                                                                           |
+| -------------- | ------------------------------ | ----------- | --------------------------------------------------------------------------------------------------------------------- |
+| `sessionToken` | `string`                       | —           | **Required.** Customer session token.                                                                                 |
+| `theme`        | `'light' \| 'dark'`            | `light`     | Colour scheme.                                                                                                        |
+| `setAsDefault` | `boolean`                      | `true`      | Whether the new card should become the customer's default payment method.                                             |
+| `returnUrl`    | `string`                       | current URL | Where to return the customer after a redirect-based payment method (Amazon Pay). Defaults to `window.location.href`.  |
+| `locale`       | `string`                       | `'en'`      | BCP47 locale for the embed UI and Stripe Elements (e.g. `'en'`, `'fr-FR'`). Unsupported locales fall back to English. |
+| `onLoaded`     | `(event: CustomEvent) => void` | —           | Convenience callback for the `loaded` event. Equivalent to `embed.addEventListener('loaded', …)`.                     |
 
 ### Modal in React
 

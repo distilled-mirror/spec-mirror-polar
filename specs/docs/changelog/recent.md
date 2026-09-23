@@ -82,6 +82,8 @@
   * 🇵🇱 Przelewy24 (EUR, one-time purchases)
   * 🇪🇸 Bizum (EUR, one-time purchases)
   * 🇮🇳 UPI (INR, one-time purchases and recurring subscriptions)
+
+  [See all supported payment methods](/docs/features/checkout/payment-methods)
 </Update>
 
 <Update label="2026-04-22">

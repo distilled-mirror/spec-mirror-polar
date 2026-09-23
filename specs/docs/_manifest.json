@@ -362,6 +362,7 @@
     "features/checkout/embed-payment-method",
     "features/checkout/links",
     "features/checkout/localization",
+    "features/checkout/payment-methods",
     "features/checkout/session",
     "features/cost-insights/cost-events",
     "features/cost-insights/cost-traces",

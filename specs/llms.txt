@@ -27,11 +27,12 @@
 - [Automate Private GitHub Repo(s) Access](https://polar.sh/docs/features/benefits/github-access.md): Sell premium GitHub repository access with ease
 - [Automate Customer License Key Management](https://polar.sh/docs/features/benefits/license-keys.md): Sell license key access to your service, software or APIs with ease
 - [Shared Slack Channel](https://polar.sh/docs/features/benefits/slack-shared-channel.md): Give customers a shared Slack channel via Slack Connect
-- [Embedded Checkout](https://polar.sh/docs/features/checkout/embed.md): Embed our checkout directly on your site
-- [Embedded Payment Method](https://polar.sh/docs/features/checkout/embed-payment-method.md): Embed our payment method flow on your site
 - [Checkout Links](https://polar.sh/docs/features/checkout/links.md): Persistent URLs that create a Checkout Session on visit
 - [Checkout API](https://polar.sh/docs/features/checkout/session.md): Create checkout sessions programmatically for complete control
+- [Payment Methods](https://polar.sh/docs/features/checkout/payment-methods.md): Payment methods supported by Polar Checkout
 - [Checkout Localization](https://polar.sh/docs/features/checkout/localization.md): Serve checkout in your customer's preferred language
+- [Embedded Checkout](https://polar.sh/docs/features/checkout/embed.md): Embed our checkout directly on your site
+- [Embedded Payment Method](https://polar.sh/docs/features/checkout/embed-payment-method.md): Embed our payment method flow on your site
 - [Seat-Based Pricing](https://polar.sh/docs/features/seat-based-pricing.md): Sell team products with assignable seats and tiered pricing
 - [Unit-Based Pricing](https://polar.sh/docs/features/unit-based-pricing.md): Sell a quantity of anything, paid up front, with tiered rates
 - [Custom Fields](https://polar.sh/docs/features/custom-fields.md): Learn how to add custom input fields to your checkout with Polar
