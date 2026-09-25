@@ -151,6 +151,7 @@
 - [List Products](https://polar.sh/docs/api-reference/2026-04/products/list-products.md): List products.
 - [Create Product](https://polar.sh/docs/api-reference/2026-04/products/create-product.md): Create a product.
 - [Update Product](https://polar.sh/docs/api-reference/2026-04/products/update-product.md): Update a product.
+- [Delete Product](https://polar.sh/docs/api-reference/2026-04/products/delete-product.md): Delete a product.
 - [Update Product Benefits](https://polar.sh/docs/api-reference/2026-04/products/update-product-benefits.md): Update benefits granted by a product.
 - [Ingest Events](https://polar.sh/docs/api-reference/2026-04/events/ingest-events.md): Ingest batch of events.
 - [Get Event](https://polar.sh/docs/api-reference/2026-04/events/get-event.md): Get an event by ID.
@@ -323,6 +324,7 @@
 - [List Products](https://polar.sh/docs/api-reference/2026-10/products/list-products.md): List products.
 - [Create Product](https://polar.sh/docs/api-reference/2026-10/products/create-product.md): Create a product.
 - [Update Product](https://polar.sh/docs/api-reference/2026-10/products/update-product.md): Update a product.
+- [Delete Product](https://polar.sh/docs/api-reference/2026-10/products/delete-product.md): Delete a product.
 - [Update Product Benefits](https://polar.sh/docs/api-reference/2026-10/products/update-product-benefits.md): Update benefits granted by a product.
 - [Ingest Events](https://polar.sh/docs/api-reference/2026-10/events/ingest-events.md): Ingest batch of events.
 - [Get Event](https://polar.sh/docs/api-reference/2026-10/events/get-event.md): Get an event by ID.

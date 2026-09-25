@@ -80,21 +80,28 @@ paths:
               schema:
                 $ref: '#/components/schemas/Subscription'
         '402':
-          description: Payment required to apply the subscription update.
+          description: >-
+            The charge failed, or requires customer authentication that can't be
+            completed off-session.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PaymentFailed'
+                anyOf:
+                  - $ref: '#/components/schemas/PaymentFailed'
+                  - $ref: '#/components/schemas/PaymentActionRequired'
+                title: Response 402 Subscriptions:Update
         '403':
           description: >-
             Subscription is already canceled or will be at the end of the
-            period, or is not active.
+            period, is not active, or the organization is not ready to renew
+            subscriptions.
           content:
             application/json:
               schema:
                 anyOf:
                   - $ref: '#/components/schemas/AlreadyCanceledSubscription'
                   - $ref: '#/components/schemas/InactiveSubscription'
+                  - $ref: '#/components/schemas/PaymentNotReady'
                 title: Response 403 Subscriptions:Update
         '404':
           description: Subscription not found.
@@ -507,6 +514,22 @@ components:
         - error
         - detail
       title: PaymentFailed
+    PaymentActionRequired:
+      properties:
+        error:
+          type: string
+          const: PaymentActionRequired
+          title: Error
+          examples:
+            - PaymentActionRequired
+        detail:
+          type: string
+          title: Detail
+      type: object
+      required:
+        - error
+        - detail
+      title: PaymentActionRequired
     AlreadyCanceledSubscription:
       properties:
         error:
@@ -539,6 +562,22 @@ components:
         - error
         - detail
       title: InactiveSubscription
+    PaymentNotReady:
+      properties:
+        error:
+          type: string
+          const: PaymentNotReady
+          title: Error
+          examples:
+            - PaymentNotReady
+        detail:
+          type: string
+          title: Detail
+      type: object
+      required:
+        - error
+        - detail
+      title: PaymentNotReady
     ResourceNotFound:
       properties:
         error:
@@ -663,7 +702,9 @@ components:
           title: Trial End
           description: >-
             Set or extend the trial period of the subscription. If set to `now`,
-            the trial will end immediately.
+            the trial will end immediately and the first billing cycle will be
+            charged synchronously. The subscription remains trialing if the
+            payment fails.
       additionalProperties: false
       type: object
       title: SubscriptionUpdateBase
@@ -1235,6 +1276,12 @@ components:
           description: The ID of the organization owning the product.
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
+        is_deletable:
+          type: boolean
+          title: Is Deletable
+          description: >-
+            Whether the product can be permanently deleted. Products referenced
+            by an order, subscription, trial or discount cannot be deleted.
         prices:
           items:
             oneOf:
@@ -1280,6 +1327,7 @@ components:
         - is_archived
         - organization_id
         - metadata
+        - is_deletable
         - prices
         - benefits
         - medias
@@ -4351,16 +4399,11 @@ components:
           type: boolean
           title: Kick Member
           description: Whether to kick the member from the Discord server on revocation.
-        guild_token:
-          type: string
-          title: Guild Token
-          readOnly: true
       type: object
       required:
         - guild_id
         - role_id
         - kick_member
-        - guild_token
       title: BenefitDiscordProperties
       description: Properties for a benefit of type `discord`.
     BenefitGitHubRepositoryProperties:

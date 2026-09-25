@@ -644,9 +644,10 @@ components:
       description: Properties for a benefit of type `custom`.
     BenefitDiscordCreateProperties:
       properties:
-        guild_token:
+        guild_id:
           type: string
-          title: Guild Token
+          title: Guild Id
+          description: The ID of the Discord server.
         role_id:
           type: string
           title: Role Id
@@ -657,7 +658,7 @@ components:
           description: Whether to kick the member from the Discord server on revocation.
       type: object
       required:
-        - guild_token
+        - guild_id
         - role_id
         - kick_member
       title: BenefitDiscordCreateProperties
@@ -1510,16 +1511,11 @@ components:
           type: boolean
           title: Kick Member
           description: Whether to kick the member from the Discord server on revocation.
-        guild_token:
-          type: string
-          title: Guild Token
-          readOnly: true
       type: object
       required:
         - guild_id
         - role_id
         - kick_member
-        - guild_token
       title: BenefitDiscordProperties
       description: Properties for a benefit of type `discord`.
     BenefitGitHubRepositoryProperties:

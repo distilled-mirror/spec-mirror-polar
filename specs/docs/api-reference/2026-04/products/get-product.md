@@ -211,6 +211,12 @@ components:
           description: The ID of the organization owning the product.
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
+        is_deletable:
+          type: boolean
+          title: Is Deletable
+          description: >-
+            Whether the product can be permanently deleted. Products referenced
+            by an order, subscription, trial or discount cannot be deleted.
         prices:
           items:
             oneOf:
@@ -256,6 +262,7 @@ components:
         - is_archived
         - organization_id
         - metadata
+        - is_deletable
         - prices
         - benefits
         - medias
@@ -2029,16 +2036,11 @@ components:
           type: boolean
           title: Kick Member
           description: Whether to kick the member from the Discord server on revocation.
-        guild_token:
-          type: string
-          title: Guild Token
-          readOnly: true
       type: object
       required:
         - guild_id
         - role_id
         - kick_member
-        - guild_token
       title: BenefitDiscordProperties
       description: Properties for a benefit of type `discord`.
     BenefitGitHubRepositoryProperties:

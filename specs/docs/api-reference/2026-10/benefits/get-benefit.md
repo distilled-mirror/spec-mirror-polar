@@ -869,16 +869,11 @@ components:
           type: boolean
           title: Kick Member
           description: Whether to kick the member from the Discord server on revocation.
-        guild_token:
-          type: string
-          title: Guild Token
-          readOnly: true
       type: object
       required:
         - guild_id
         - role_id
         - kick_member
-        - guild_token
       title: BenefitDiscordProperties
       description: Properties for a benefit of type `discord`.
     BenefitGitHubRepositoryProperties:

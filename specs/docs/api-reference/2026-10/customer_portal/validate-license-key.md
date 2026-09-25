@@ -87,11 +87,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 3896e47d-d0d3-429a-aee6-e6bb931ef8a5
+                $ref: '#/components/schemas/BadRequest'
         '404':
           description: >-
             License key not found, revoked, disabled, or expired, or the
-            supplied activation, conditions, benefit, or customer do not match.
+            supplied activation is missing or does not match, or the conditions,
+            benefit, or customer do not match.
           content:
             application/json:
               schema:
@@ -323,6 +324,22 @@ components:
         - last_validated_at
         - expires_at
       title: ValidatedLicenseKey
+    BadRequest:
+      properties:
+        error:
+          type: string
+          const: BadRequest
+          title: Error
+          examples:
+            - BadRequest
+        detail:
+          type: string
+          title: Detail
+      type: object
+      required:
+        - error
+        - detail
+      title: BadRequest
     ResourceNotFound:
       properties:
         error:
