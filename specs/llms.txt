@@ -96,6 +96,7 @@
 - [Merchant of Record](https://polar.sh/docs/merchant-of-record/introduction.md): An open source and transparent Merchant of Record
 - [Fees](https://polar.sh/docs/merchant-of-record/fees.md): Transparent, public pricing — pick the plan that fits
 - [Supported countries](https://polar.sh/docs/merchant-of-record/supported-countries.md)
+- [Acceptable Use](https://polar.sh/docs/merchant-of-record/acceptable-use/introduction.md): What you can sell with Polar, and why we have a policy for it
 - [Account reviews](https://polar.sh/docs/merchant-of-record/account-reviews.md)
 - [Migrate Away from Polar](https://polar.sh/docs/migrate-away.md): Move your customers and saved payment methods to another payment provider whenever you choose.
 - [API Overview](https://polar.sh/docs/api-reference/2026-04/introduction.md): Official SDK quickstarts, base URLs, authentication, pagination, rate limits, and API concepts

@@ -440,6 +440,7 @@
     "integrate/webhooks/events",
     "integrate/webhooks/locally",
     "introduction",
+    "merchant-of-record/acceptable-use/introduction",
     "merchant-of-record/account-reviews",
     "merchant-of-record/fees",
     "merchant-of-record/introduction",

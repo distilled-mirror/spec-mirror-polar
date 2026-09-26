@@ -96,6 +96,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResourceNotFound'
+        '409':
+          description: The checkout session is being processed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CheckoutLocked'
         '410':
           description: The checkout session is expired.
           content:
@@ -761,6 +767,7 @@ components:
       anyOf:
         - $ref: '#/components/schemas/AlreadyActiveSubscriptionError'
         - $ref: '#/components/schemas/NotOpenCheckout'
+        - $ref: '#/components/schemas/NotPermitted'
         - $ref: '#/components/schemas/PaymentNotReady'
         - $ref: '#/components/schemas/TrialAlreadyRedeemed'
         - $ref: '#/components/schemas/DiscountRedemptionLimitReached'
@@ -780,6 +787,22 @@ components:
         - error
         - detail
       title: ResourceNotFound
+    CheckoutLocked:
+      properties:
+        error:
+          type: string
+          const: CheckoutLocked
+          title: Error
+          examples:
+            - CheckoutLocked
+        detail:
+          type: string
+          title: Detail
+      type: object
+      required:
+        - error
+        - detail
+      title: CheckoutLocked
     ExpiredCheckoutError:
       properties:
         error:
@@ -2389,6 +2412,22 @@ components:
         - error
         - detail
       title: NotOpenCheckout
+    NotPermitted:
+      properties:
+        error:
+          type: string
+          const: NotPermitted
+          title: Error
+          examples:
+            - NotPermitted
+        detail:
+          type: string
+          title: Detail
+      type: object
+      required:
+        - error
+        - detail
+      title: NotPermitted
     PaymentNotReady:
       properties:
         error:

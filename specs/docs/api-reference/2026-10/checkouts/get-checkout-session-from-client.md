@@ -65,6 +65,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CheckoutPublic'
+        '403':
+          description: The organization is not allowed to accept payments.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotPermitted'
         '404':
           description: Checkout session not found.
           content:
@@ -562,6 +568,22 @@ components:
         - attached_custom_fields
       title: CheckoutPublic
       description: Checkout session data retrieved using the client secret.
+    NotPermitted:
+      properties:
+        error:
+          type: string
+          const: NotPermitted
+          title: Error
+          examples:
+            - NotPermitted
+        detail:
+          type: string
+          title: Detail
+      type: object
+      required:
+        - error
+        - detail
+      title: NotPermitted
     ResourceNotFound:
       properties:
         error:

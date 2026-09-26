@@ -917,6 +917,7 @@ components:
       anyOf:
         - $ref: '#/components/schemas/AlreadyActiveSubscriptionError'
         - $ref: '#/components/schemas/NotOpenCheckout'
+        - $ref: '#/components/schemas/NotPermitted'
         - $ref: '#/components/schemas/PaymentNotReady'
         - $ref: '#/components/schemas/TrialAlreadyRedeemed'
         - $ref: '#/components/schemas/DiscountRedemptionLimitReached'
@@ -2615,6 +2616,22 @@ components:
         - error
         - detail
       title: NotOpenCheckout
+    NotPermitted:
+      properties:
+        error:
+          type: string
+          const: NotPermitted
+          title: Error
+          examples:
+            - NotPermitted
+        detail:
+          type: string
+          title: Detail
+      type: object
+      required:
+        - error
+        - detail
+      title: NotPermitted
     PaymentNotReady:
       properties:
         error:
