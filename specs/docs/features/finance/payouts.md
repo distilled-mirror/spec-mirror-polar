@@ -18,48 +18,48 @@ We may also extend this delay or hold specific transactions when it makes sense 
 
 The minimum balance required to issue a payout varies based on the payout currency. Certain currencies have a higher limit due to Stripe requirements, and these limits can change.
 
-| Currency         | Minimum Balance (USD) |
-| ---------------- | --------------------- |
-| USD              | \$10.00               |
-| EUR              | \$13.00               |
-| GBP              | \$15.00               |
-| CHF              | \$15.00               |
-| AOA              | \$30.00               |
-| ALL              | \$40.00               |
-| AMD              | \$40.00               |
-| AZN              | \$40.00               |
-| BAM              | \$40.00               |
-| BOB              | \$40.00               |
-| BTN              | \$40.00               |
-| CLP              | \$40.00               |
-| GHS              | \$40.00               |
-| GMD              | \$40.00               |
-| GYD              | \$40.00               |
-| KHR              | \$40.00               |
-| KRW              | \$40.00               |
-| LAK              | \$40.00               |
-| MDL              | \$40.00               |
-| MGA              | \$40.00               |
-| MKD              | \$40.00               |
-| MNT              | \$40.00               |
-| MYR              | \$40.00               |
-| MZN              | \$40.00               |
-| NAD              | \$40.00               |
-| PYG              | \$40.00               |
-| RSD              | \$40.00               |
-| THB              | \$40.00               |
-| TWD              | \$40.00               |
-| UZS              | \$40.00               |
-| COP              | \$50.00               |
-| Other currencies | \$10.00 (default)     |
+| Currency | Minimum Balance (USD) |
+| - | - |
+| USD | \$10.00 |
+| EUR | \$13.00 |
+| GBP | \$15.00 |
+| CHF | \$15.00 |
+| AOA | \$30.00 |
+| ALL | \$40.00 |
+| AMD | \$40.00 |
+| AZN | \$40.00 |
+| BAM | \$40.00 |
+| BOB | \$40.00 |
+| BTN | \$40.00 |
+| CLP | \$40.00 |
+| GHS | \$40.00 |
+| GMD | \$40.00 |
+| GYD | \$40.00 |
+| KHR | \$40.00 |
+| KRW | \$40.00 |
+| LAK | \$40.00 |
+| MDL | \$40.00 |
+| MGA | \$40.00 |
+| MKD | \$40.00 |
+| MNT | \$40.00 |
+| MYR | \$40.00 |
+| MZN | \$40.00 |
+| NAD | \$40.00 |
+| PYG | \$40.00 |
+| RSD | \$40.00 |
+| THB | \$40.00 |
+| TWD | \$40.00 |
+| UZS | \$40.00 |
+| COP | \$50.00 |
+| Other currencies | \$10.00 (default) |
 
 A handful of countries also enforce a higher minimum:
 
-| Country     | Minimum Balance (USD) |
-| ----------- | --------------------- |
-| Bahamas     | \$30.00               |
-| El Salvador | \$30.00               |
-| Panama      | \$50.00               |
+| Country | Minimum Balance (USD) |
+| - | - |
+| Bahamas | \$30.00 |
+| El Salvador | \$30.00 |
+| Panama | \$50.00 |
 
 ## Stripe Payout Fees
 

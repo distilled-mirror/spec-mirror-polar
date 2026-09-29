@@ -12,11 +12,11 @@ When displaying a price to a customer, there are two common conventions: either 
 
 There are three options available:
 
-| Option             | Description                                                                                        |
-| ------------------ | -------------------------------------------------------------------------------------------------- |
+| Option | Description |
+| - | - |
 | **Location-based** | Polar automatically picks the right behavior based on the customer's country. This is the default. |
-| **Inclusive**      | The price shown to the customer already includes tax. Tax is extracted from the total at checkout. |
-| **Exclusive**      | The price shown to the customer is before tax. Tax is calculated and added on top at checkout.     |
+| **Inclusive** | The price shown to the customer already includes tax. Tax is extracted from the total at checkout. |
+| **Exclusive** | The price shown to the customer is before tax. Tax is calculated and added on top at checkout. |
 
 <Info>
   **Location-based** is the recommended option for most businesses. It follows
@@ -51,10 +51,10 @@ To change it:
 
 When the tax behavior is set to **Location-based**, Polar resolves the actual inclusive/exclusive behavior at checkout time based on the customer's billing address:
 
-| Countries                    | Behavior                                                    |
-| ---------------------------- | ----------------------------------------------------------- |
-| United States, Canada, India | **Exclusive** — tax is added on top of the listed price     |
-| All other countries          | **Inclusive** — tax is already included in the listed price |
+| Countries | Behavior |
+| - | - |
+| United States, Canada, India | **Exclusive** — tax is added on top of the listed price |
+| All other countries | **Inclusive** — tax is already included in the listed price |
 
 This follows prevailing regional conventions: North American and Indian consumers generally expect prices before tax, while European and most other international customers expect VAT-inclusive pricing.
 

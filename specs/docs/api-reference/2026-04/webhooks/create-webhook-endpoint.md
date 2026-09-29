@@ -140,7 +140,6 @@ components:
           type: string
           enum:
             - 2026-04
-            - 2026-10
           title: Api Version
           description: The API version that'll be used in event payloads.
           default: 2026-04

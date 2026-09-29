@@ -66,14 +66,14 @@ embed.addEventListener("success", (event) => {
 
 `create()` options:
 
-| Option         | Type                           | Default     | Description                                                                                                           |
-| -------------- | ------------------------------ | ----------- | --------------------------------------------------------------------------------------------------------------------- |
-| `sessionToken` | `string`                       | —           | **Required.** Customer session token.                                                                                 |
-| `theme`        | `'light' \| 'dark'`            | `light`     | Colour scheme.                                                                                                        |
-| `setAsDefault` | `boolean`                      | `true`      | Whether the new card should become the customer's default payment method.                                             |
-| `returnUrl`    | `string`                       | current URL | Where to return the customer after a redirect-based payment method (Amazon Pay). Defaults to `window.location.href`.  |
-| `locale`       | `string`                       | `'en'`      | BCP47 locale for the embed UI and Stripe Elements (e.g. `'en'`, `'fr-FR'`). Unsupported locales fall back to English. |
-| `onLoaded`     | `(event: CustomEvent) => void` | —           | Convenience callback for the `loaded` event. Equivalent to `embed.addEventListener('loaded', …)`.                     |
+| Option | Type | Default | Description |
+| - | - | - | - |
+| `sessionToken` | `string` | — | **Required.** Customer session token. |
+| `theme` | `'light' \| 'dark'` | `light` | Colour scheme. |
+| `setAsDefault` | `boolean` | `true` | Whether the new card should become the customer's default payment method. |
+| `returnUrl` | `string` | current URL | Where to return the customer after a redirect-based payment method (Amazon Pay). Defaults to `window.location.href`. |
+| `locale` | `string` | `'en'` | BCP47 locale for the embed UI and Stripe Elements (e.g. `'en'`, `'fr-FR'`). Unsupported locales fall back to English. |
+| `onLoaded` | `(event: CustomEvent) => void` | — | Convenience callback for the `loaded` event. Equivalent to `embed.addEventListener('loaded', …)`. |
 
 ### Modal in React
 
@@ -149,13 +149,13 @@ The simplest integration: add the script and a trigger element with `data-polar-
 
 The same script also powers embedded checkout triggers — one tag covers every Polar embed.
 
-| Attribute                                  | Value           | Description                                                                                       |
-| ------------------------------------------ | --------------- | ------------------------------------------------------------------------------------------------- |
-| `data-polar-payment-method`                | `string`        | **Required.** The session token. Clicking the element opens the modal.                            |
-| `data-polar-payment-method-theme`          | `light \| dark` | Optional theme override.                                                                          |
+| Attribute | Value | Description |
+| - | - | - |
+| `data-polar-payment-method` | `string` | **Required.** The session token. Clicking the element opens the modal. |
+| `data-polar-payment-method-theme` | `light \| dark` | Optional theme override. |
 | `data-polar-payment-method-set-as-default` | `true \| false` | Optional. Default `true`. Pass `"false"` to add the card without overriding the existing default. |
-| `data-polar-payment-method-return-url`     | `string`        | Optional. Return URL for redirect-based payment methods. Defaults to the current page.            |
-| `data-polar-payment-method-locale`         | `string`        | Optional. BCP47 locale (e.g. `'en'`, `'fr-FR'`). Unsupported locales fall back to English.        |
+| `data-polar-payment-method-return-url` | `string` | Optional. Return URL for redirect-based payment methods. Defaults to the current page. |
+| `data-polar-payment-method-locale` | `string` | Optional. BCP47 locale (e.g. `'en'`, `'fr-FR'`). Unsupported locales fall back to English. |
 
 ## Localization
 
@@ -174,13 +174,13 @@ When omitted, the embed defaults to English. Unsupported locales also fall back 
 
 All events are dispatched as cancelable `CustomEvent`s on the `embed` instance. Call `event.preventDefault()` to opt out of the SDK's default action.
 
-| Event       | Detail                                                                              | Default action                                                      |
-| ----------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `loaded`    | —                                                                                   | Removes the loader spinner once the iframe is ready.                |
-| `close`     | —                                                                                   | Tears down the iframe (unless locked by a pending `confirmed`).     |
-| `confirmed` | —                                                                                   | Marks the modal as non-closable while Stripe is processing.         |
-| `success`   | `{ paymentMethodId: string }`                                                       | **Auto-closes the modal.** Call `preventDefault()` to keep it open. |
-| `error`     | `{ code: 'invalid_request' \| 'unauthorized' \| 'processing_failed' \| 'unknown' }` | Re-enables closing the modal after a failure.                       |
+| Event | Detail | Default action |
+| - | - | - |
+| `loaded` | — | Removes the loader spinner once the iframe is ready. |
+| `close` | — | Tears down the iframe (unless locked by a pending `confirmed`). |
+| `confirmed` | — | Marks the modal as non-closable while Stripe is processing. |
+| `success` | `{ paymentMethodId: string }` | **Auto-closes the modal.** Call `preventDefault()` to keep it open. |
+| `error` | `{ code: 'invalid_request' \| 'unauthorized' \| 'processing_failed' \| 'unknown' }` | Re-enables closing the modal after a failure. |
 
 ## Redirect-based payment methods
 

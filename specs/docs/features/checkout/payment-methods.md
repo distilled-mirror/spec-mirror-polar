@@ -12,15 +12,15 @@ You don't need to enable individual payment methods.
 
 ## Cards and wallets
 
-| Payment method         | Availability                                                                                                   |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------- |
-| Credit and debit cards | Worldwide, in every supported currency. One-time purchases and recurring subscriptions                         |
-| Apple Pay              | Shown in Safari on an Apple device signed in to an Apple account with Apple Pay configured                     |
-| Google Pay             | Shown in Google Chrome when signed in to a Google account with Google Pay configured                           |
-| Link                   | Shown to customers who saved their details with Stripe Link, which autofills their payment and address details |
-| Amazon Pay             | Customers in the United States and Germany, for checkouts priced in USD                                        |
-| Cash App Pay           | Customers in the United States, for checkouts priced in USD                                                    |
-| WeChat Pay             | Customers in mainland China, Hong Kong, and Macao, for checkouts priced in USD or CNY. One-time purchases only |
+| Payment method | Availability |
+| - | - |
+| Credit and debit cards | Worldwide, in every supported currency. One-time purchases and recurring subscriptions |
+| Apple Pay | Shown in Safari on an Apple device signed in to an Apple account with Apple Pay configured |
+| Google Pay | Shown in Google Chrome when signed in to a Google account with Google Pay configured |
+| Link | Shown to customers who saved their details with Stripe Link, which autofills their payment and address details |
+| Amazon Pay | Customers in the United States and Germany, for checkouts priced in USD |
+| Cash App Pay | Customers in the United States, for checkouts priced in USD |
+| WeChat Pay | Customers in mainland China, Hong Kong, and Macao, for checkouts priced in USD or CNY. One-time purchases only |
 
 <Note>
   **On Polar's hosted checkout, wallets need no setup.** They're enabled by default and appear automatically whenever the customer's device and browser support them.
@@ -30,15 +30,15 @@ You don't need to enable individual payment methods.
 
 ## Local payment methods
 
-| Payment method | Customer location | Currency | Purchase type                                  |
-| -------------- | ----------------- | -------- | ---------------------------------------------- |
-| Bancontact     | Belgium           | EUR      | One-time purchases                             |
-| EPS            | Austria           | EUR      | One-time purchases                             |
-| iDEAL / Wero   | Netherlands       | EUR      | One-time purchases                             |
-| UPI            | India             | INR      | One-time purchases and recurring subscriptions |
-| Kakao Pay      | South Korea       | KRW      | One-time purchases and recurring subscriptions |
-| Naver Pay      | South Korea       | KRW      | One-time purchases and recurring subscriptions |
-| Samsung Pay    | South Korea       | KRW      | One-time purchases                             |
+| Payment method | Customer location | Currency | Purchase type |
+| - | - | - | - |
+| Bancontact | Belgium | EUR | One-time purchases |
+| EPS | Austria | EUR | One-time purchases |
+| iDEAL / Wero | Netherlands | EUR | One-time purchases |
+| UPI | India | INR | One-time purchases and recurring subscriptions |
+| Kakao Pay | South Korea | KRW | One-time purchases and recurring subscriptions |
+| Naver Pay | South Korea | KRW | One-time purchases and recurring subscriptions |
+| Samsung Pay | South Korea | KRW | One-time purchases |
 
 ## Other payment methods
 

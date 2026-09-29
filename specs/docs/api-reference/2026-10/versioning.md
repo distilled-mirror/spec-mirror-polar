@@ -19,11 +19,11 @@ as `2026-10`, and apply to API requests, responses, webhook payloads, and SDK ty
 
 Polar maintains three API versions at a time:
 
-| Version        | Stability                                                     | When to use it                                       |
-| -------------- | ------------------------------------------------------------- | ---------------------------------------------------- |
-| **Current**    | Stable and the default                                        | New production integrations                          |
-| **Deprecated** | Stable until the next quarterly release, when it is removed   | Existing integrations while you migrate to Current   |
-| **Next**       | In development and may introduce breaking changes at any time | Testing upcoming features before they become Current |
+| Version | Stability | When to use it |
+| - | - | - |
+| **Current** | Stable and the default | New production integrations |
+| **Deprecated** | Stable until the next quarterly release, when it is removed | Existing integrations while you migrate to Current |
+| **Next** | In development and may introduce breaking changes at any time | Testing upcoming features before they become Current |
 
 Don't start a new integration on Deprecated. Use Next only if you need an upcoming
 feature and can adapt to changes during the development cycle.

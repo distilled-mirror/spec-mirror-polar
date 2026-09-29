@@ -453,5 +453,6 @@
 
 - [2026-04.openapi](/docs/openapi/2026-04.openapi.json)
 - [2026-10.openapi](/docs/openapi/2026-10.openapi.json)
+- [2027-01.openapi](/docs/openapi/2027-01.openapi.json)
 - [package](/docs/package.json)
 - [pnpm-lock](/docs/pnpm-lock.yaml)

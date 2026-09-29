@@ -124,10 +124,10 @@ Integrate the [Polar API](/docs/api-reference) and
 create their orders and subscriptions in Polar. Existing Stripe subscriptions
 continue renewing in Stripe.
 
-| Customer type              | Checkout  | Next renewal |
-| -------------------------- | --------- | ------------ |
-| New signup                 | Polar     | Polar        |
-| Existing Stripe subscriber | Unchanged | Stripe       |
+| Customer type | Checkout | Next renewal |
+| - | - | - |
+| New signup | Polar | Polar |
+| Existing Stripe subscriber | Unchanged | Stripe |
 
 Set `external_customer_id` to your stable application customer ID when creating
 a checkout. Polar stores it as the customer's `external_id`, making it easy to
@@ -157,12 +157,12 @@ in Polar.
 Polar assesses your recurring products, prices, customers, and subscriptions.
 You review what is ready and what needs attention, then import your selection.
 
-| After import                     | In Polar          | Still renews in |
-| -------------------------------- | ----------------- | --------------- |
-| Products and prices              | Created           | —               |
-| Customers                        | Created or reused | —               |
-| Subscriptions you plan to switch | Not created yet   | Stripe          |
-| Unsupported subscriptions        | Left alone        | Stripe          |
+| After import | In Polar | Still renews in |
+| - | - | - |
+| Products and prices | Created | — |
+| Customers | Created or reused | — |
+| Subscriptions you plan to switch | Not created yet | Stripe |
+| Unsupported subscriptions | Left alone | Stripe |
 
 Polar does not create Polar subscriptions or change Stripe billing at this
 stage. Leave unsupported subscriptions on Stripe until you resolve them or

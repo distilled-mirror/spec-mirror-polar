@@ -99,23 +99,23 @@ On success, the order transitions to `paid`, an invoice number is assigned, any 
 
 If the charge fails, the API returns an error and the order is reverted to `draft` so you can fix the problem and finalize the same order again — no invoice number is consumed by a failed attempt:
 
-| Status | When                                                                                                                                      |
-| ------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `402`  | The card was declined, the customer has no payment method, or the charge needs a 3DS / SCA challenge that can't be completed off-session. |
-| `403`  | Off-session charges aren't enabled for the organization, or its account can't currently accept payments.                                  |
-| `412`  | The order is no longer in `draft` status (for example, it was already finalized).                                                         |
+| Status | When |
+| - | - |
+| `402` | The card was declined, the customer has no payment method, or the charge needs a 3DS / SCA challenge that can't be completed off-session. |
+| `403` | Off-session charges aren't enabled for the organization, or its account can't currently accept payments. |
+| `412` | The order is no longer in `draft` status (for example, it was already finalized). |
 
 ## Order status
 
 An order moves through a small set of statuses over its lifetime:
 
-| Status               | Meaning                                                                                  |
-| -------------------- | ---------------------------------------------------------------------------------------- |
-| `pending`            | The order has been created and Polar is attempting to collect payment.                   |
-| `paid`               | The payment succeeded.                                                                   |
-| `refunded`           | The order has been fully refunded.                                                       |
-| `partially_refunded` | Part of the order has been refunded. See [Refunds](/docs/features/refunds).                   |
-| `void`               | The order will not be collected (for example, it's been voided after repeated failures). |
+| Status | Meaning |
+| - | - |
+| `pending` | The order has been created and Polar is attempting to collect payment. |
+| `paid` | The payment succeeded. |
+| `refunded` | The order has been fully refunded. |
+| `partially_refunded` | Part of the order has been refunded. See [Refunds](/docs/features/refunds). |
+| `void` | The order will not be collected (for example, it's been voided after repeated failures). |
 
 Free orders — those with a total of zero, typically from a \$0 subscription or a 100% discount — are marked `paid` immediately with no payment step.
 

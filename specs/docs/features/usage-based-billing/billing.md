@@ -22,10 +22,10 @@ Unit pricing is a simple pricing model where you charge a fixed amount for each 
 
 For example:
 
-| Product Meter       | Price per unit |
-| ------------------- | -------------- |
-| `prompt-tokens`     | \$0.10         |
-| `completion-tokens` | \$0.18         |
+| Product Meter | Price per unit |
+| - | - |
+| `prompt-tokens` | \$0.10 |
+| `completion-tokens` | \$0.18 |
 
 This means that every unit of `prompt-tokens` consumed by a customer will be charged at \$0.10 and every unit of `completion-tokens` will be charged at \$0.18.
 

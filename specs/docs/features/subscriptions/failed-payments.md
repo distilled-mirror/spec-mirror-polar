@@ -20,12 +20,12 @@ As soon as the first renewal charge fails:
 
 Polar then retries the charge on a fixed schedule, starting from the time of the first failure:
 
-| Attempt   | Delay from previous | Cumulative time from first failure |
-| --------- | ------------------- | ---------------------------------- |
-| 1st retry | 2 days              | 2 days                             |
-| 2nd retry | 5 days              | 7 days                             |
-| 3rd retry | 7 days              | 14 days                            |
-| 4th retry | 7 days              | 21 days                            |
+| Attempt | Delay from previous | Cumulative time from first failure |
+| - | - | - |
+| 1st retry | 2 days | 2 days |
+| 2nd retry | 5 days | 7 days |
+| 3rd retry | 7 days | 14 days |
+| 4th retry | 7 days | 21 days |
 
 If a retry succeeds, the failed order is paid. The subscription returns to `active` once all of its pending orders have been paid (past-due subscriptions keep cycling, so there can be more than one). If all four retries fail — or the payment's decline code indicates the method will never succeed (for example, `lost_card`) — Polar stops retrying and **revokes the subscription**. Its status moves to `canceled` and benefits are revoked (subject to the grace period below).
 

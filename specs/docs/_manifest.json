@@ -1,6 +1,6 @@
 {
   "source": "https://polar.sh/docs/llms.txt",
-  "openapi": "https://polar.sh/docs/openapi/2026-10.openapi.json",
+  "openapi": "https://polar.sh/docs/openapi/2027-01.openapi.json",
   "pages": [
     "api-reference/2026-04/benefit_created",
     "api-reference/2026-04/benefit_grant_created",

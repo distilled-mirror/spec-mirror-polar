@@ -10,12 +10,12 @@
 
 Polar offers a free Starter plan plus three optional paid plans — Pro, Growth, and Scale — that lower your variable rate and prioritize your support inquiries. You can switch between plans anytime, and your rate adjusts immediately.
 
-| Plan        | Monthly fee | Per transaction | Support                     | Included                        |
-| ----------- | ----------- | --------------- | --------------------------- | ------------------------------- |
-| **Starter** | Free        | 5% + 50¢        | Standard Support            |                                 |
-| **Pro**     | \$20 /mo    | 3.8% + 40¢      | Prioritized Support         |                                 |
-| **Growth**  | \$100 /mo   | 3.6% + 35¢      | Prioritized Support         |                                 |
-| **Scale**   | \$400 /mo   | 3.4% + 30¢      | Slack + Prioritized Support | [Single Sign-On](/docs/features/sso) |
+| Plan | Monthly fee | Per transaction | Support | Included |
+| - | - | - | - | - |
+| **Starter** | Free | 5% + 50¢ | Standard Support | |
+| **Pro** | \$20 /mo | 3.8% + 40¢ | Prioritized Support | |
+| **Growth** | \$100 /mo | 3.6% + 35¢ | Prioritized Support | |
+| **Scale** | \$400 /mo | 3.4% + 30¢ | Slack + Prioritized Support | [Single Sign-On](/docs/features/sso) |
 
 The paid plans replace the per-transaction Merchant of Record premium with a fixed monthly fee and a lower variable rate.
 
@@ -23,11 +23,11 @@ The paid plans replace the per-transaction Merchant of Record premium with a fix
 
 Each paid plan crosses over to save you money at a predictable monthly sales threshold.
 
-| Plan       | Breakeven vs. Starter   |
-| ---------- | ----------------------- |
-| **Pro**    | \~\$1,379 /mo in sales  |
-| **Growth** | \~\$5,634 /mo in sales  |
-| **Scale**  | \~\$19,048 /mo in sales |
+| Plan | Breakeven vs. Starter |
+| - | - |
+| **Pro** | \~\$1,379 /mo in sales |
+| **Growth** | \~\$5,634 /mo in sales |
+| **Scale** | \~\$19,048 /mo in sales |
 
 Below your plan's threshold, a lower tier is the better deal. Above it, the paid plan saves money — and you get faster support on top.
 
@@ -44,8 +44,8 @@ Paid plans also unlock early access to features that are still in preview. While
 Organizations created before **May 27, 2026** stay on the Early Member rate indefinitely. This was the rate we offered while Polar was catching up on feature parity with other Merchant of Record providers, and we've committed to honoring it for everyone who signed up under it.
 
 | Monthly fee | Per transaction | Subscription fee |
-| ----------- | --------------- | ---------------- |
-| Free        | 4% + 40¢        | +0.5%            |
+| - | - | - |
+| Free | 4% + 40¢ | +0.5% |
 
 **One trade-off worth understanding:** Early Member is yours forever as long as you stay on it. The moment you upgrade to a paid plan, Early Member is retired for that organization. You can still switch freely between the paid plans afterwards, but downgrading to Starter lands you on the new 5% + 50¢ rate, not your original Early Member rate.
 
@@ -63,20 +63,20 @@ These apply on top of your plan's per-transaction fee.
 
 Below is a \$30 purchase from Sweden (25% VAT) paid with an international card.
 
-| Item                        | Amount     |
-| --------------------------- | ---------- |
-| Product Price               | \$30       |
-| VAT (25%)                   | \$7.5      |
+| Item | Amount |
+| - | - |
+| Product Price | \$30 |
+| VAT (25%) | \$7.5 |
 | **Total Transaction Value** | **\$37.5** |
 
 Here's how the fees on that \$37.5 transaction compare across plans.
 
-| Plan                    | Transaction Fee | International (+1.5%) | Total Fees |
-| ----------------------- | --------------- | --------------------- | ---------- |
-| **Starter** (5% + 50¢)  | \$2.38          | \$0.56                | **\$2.94** |
-| **Pro** (3.8% + 40¢)    | \$1.83          | \$0.56                | **\$2.39** |
-| **Growth** (3.6% + 35¢) | \$1.70          | \$0.56                | **\$2.26** |
-| **Scale** (3.4% + 30¢)  | \$1.58          | \$0.56                | **\$2.14** |
+| Plan | Transaction Fee | International (+1.5%) | Total Fees |
+| - | - | - | - |
+| **Starter** (5% + 50¢) | \$2.38 | \$0.56 | **\$2.94** |
+| **Pro** (3.8% + 40¢) | \$1.83 | \$0.56 | **\$2.39** |
+| **Growth** (3.6% + 35¢) | \$1.70 | \$0.56 | **\$2.26** |
+| **Scale** (3.4% + 30¢) | \$1.58 | \$0.56 | **\$2.14** |
 
 ## Refunds
 

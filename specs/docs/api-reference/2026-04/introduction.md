@@ -82,10 +82,10 @@ Both clients use production by default. Pass `environment="sandbox"` in Python o
 
 ## Base URLs
 
-| Environment | Base URL                          | Purpose                         |
-| ----------- | --------------------------------- | ------------------------------- |
-| Production  | `https://api.polar.sh/v1`         | Real customers & live payments  |
-| Sandbox     | `https://sandbox-api.polar.sh/v1` | Safe testing & integration work |
+| Environment | Base URL | Purpose |
+| - | - | - |
+| Production | `https://api.polar.sh/v1` | Real customers & live payments |
+| Sandbox | `https://sandbox-api.polar.sh/v1` | Safe testing & integration work |
 
 <Info>
   The sandbox environment is fully isolated—data, users, tokens, and
@@ -121,14 +121,14 @@ Do **not** use OATs in the browser. For customer-facing flows, [generate a **Cus
 
 ## Core API vs Customer Portal API
 
-| Aspect               | Core API                                                                 | Customer Portal API                            |
-| -------------------- | ------------------------------------------------------------------------ | ---------------------------------------------- |
-| Audience             | Your server / backend                                                    | One of your customer                           |
-| Auth Type            | Organization Access Token (OAT)                                          | Customer Access Token                          |
-| Scope                | Full org resources (products, orders, subscriptions, benefits, checkout) | Only the authenticated customer’s data         |
-| Typical Use          | Admin dashboards, internal tools, automation, provisioning               | Building a custom customer portal or gated app |
-| Token Creation       | Via dashboard (manual)                                                   | Via `/v1/customer-sessions/` (server-side)     |
-| Sensitive Operations | Yes (create/update products, issue refunds, etc.)                        | No (read/update only what the customer owns)   |
+| Aspect | Core API | Customer Portal API |
+| - | - | - |
+| Audience | Your server / backend | One of your customer |
+| Auth Type | Organization Access Token (OAT) | Customer Access Token |
+| Scope | Full org resources (products, orders, subscriptions, benefits, checkout) | Only the authenticated customer’s data |
+| Typical Use | Admin dashboards, internal tools, automation, provisioning | Building a custom customer portal or gated app |
+| Token Creation | Via dashboard (manual) | Via `/v1/customer-sessions/` (server-side) |
+| Sensitive Operations | Yes (create/update products, issue refunds, etc.) | No (read/update only what the customer owns) |
 
 <Note>
   The Customer Portal API is a *restricted* surface designed for safe exposure
@@ -164,10 +164,10 @@ List endpoints in the Polar API support pagination to help you efficiently retri
 
 ### Query Parameters
 
-| Parameter | Type    | Default | Max   | Description                                      |
-| --------- | ------- | ------- | ----- | ------------------------------------------------ |
-| `page`    | integer | `1`     | -     | Page number, starting from 1                     |
-| `limit`   | integer | `10`    | `100` | Number of items to return per page (window size) |
+| Parameter | Type | Default | Max | Description |
+| - | - | - | - | - |
+| `page` | integer | `1` | - | Page number, starting from 1 |
+| `limit` | integer | `10` | `100` | Number of items to return per page (window size) |
 
 <Info>
   The `page` parameter works as a window offset. For example, `page=2&limit=10`
@@ -178,10 +178,10 @@ List endpoints in the Polar API support pagination to help you efficiently retri
 
 All paginated responses include a `pagination` object with metadata about the current page and total results:
 
-| Field         | Type    | Description                                                      |
-| ------------- | ------- | ---------------------------------------------------------------- |
-| `total_count` | integer | Total number of items matching your query across all pages       |
-| `max_page`    | integer | Total number of pages available, given the current `limit` value |
+| Field | Type | Description |
+| - | - | - |
+| `total_count` | integer | Total number of items matching your query across all pages |
+| `max_page` | integer | Total number of pages available, given the current `limit` value |
 
 ### Example
 

@@ -99,12 +99,12 @@ After a payment, the checkout sends your page a message carrying a session token
 
 Write the host on its own, without a scheme:
 
-| Entry              | Matches                                     |
-| ------------------ | ------------------------------------------- |
-| `example.com`      | `example.com`, and nothing else             |
-| `*.example.com`    | any subdomain, but not `example.com` itself |
-| `example.com:8443` | that host on that port                      |
-| `localhost:3000`   | your local development server               |
+| Entry | Matches |
+| - | - |
+| `example.com` | `example.com`, and nothing else |
+| `*.example.com` | any subdomain, but not `example.com` itself |
+| `example.com:8443` | that host on that port |
+| `localhost:3000` | your local development server |
 
 HTTPS is always allowed. HTTP is allowed as well when the host is local: `localhost`, any name ending in `.localhost` or `.local`, and loopback or private addresses such as `192.168.1.10` or `10.0.0.5`.
 

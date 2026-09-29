@@ -18,12 +18,12 @@ Because Polar is a [Merchant of Record](/docs/merchant-of-record/introduction), 
 
 ## What can be moved
 
-| Data                                  | Moves to your new provider | Notes                                                                                                                                                                |
-| ------------------------------------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Customers                             | Yes                        | Name, email, and billing details.                                                                                                                                    |
-| Saved payment methods                 | Yes                        | Easiest Stripe-to-Stripe. We can also move them to any PCI-compliant provider via Stripe's secure PAN export.                                                        |
-| Products, prices, discounts, benefits | No, recreate them          | These live in your Polar configuration and need to be set up again on your new provider.                                                                             |
-| Active subscriptions                  | No, recreate them          | Recreate them on your new provider following your existing billing cycle, then cancel on Polar. See [Recreating your subscriptions](#recreating-your-subscriptions). |
+| Data | Moves to your new provider | Notes |
+| - | - | - |
+| Customers | Yes | Name, email, and billing details. |
+| Saved payment methods | Yes | Easiest Stripe-to-Stripe. We can also move them to any PCI-compliant provider via Stripe's secure PAN export. |
+| Products, prices, discounts, benefits | No, recreate them | These live in your Polar configuration and need to be set up again on your new provider. |
+| Active subscriptions | No, recreate them | Recreate them on your new provider following your existing billing cycle, then cancel on Polar. See [Recreating your subscriptions](#recreating-your-subscriptions). |
 
 <Note>
   **Stripe to Stripe is the simplest path**

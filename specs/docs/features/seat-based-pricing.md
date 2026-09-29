@@ -40,12 +40,12 @@ Team members receive an invitation email with a claim link. Once they claim thei
 
 ### Subscriptions vs One-Time Purchases
 
-| Feature           | Subscriptions              | One-Time Purchases       |
-| ----------------- | -------------------------- | ------------------------ |
-| **Payment**       | Recurring (monthly/yearly) | Single payment           |
-| **Seat Duration** | Active while subscribed    | Perpetual (never expire) |
-| **Adding Seats**  | Modify subscription        | Purchase new order       |
-| **Benefits**      | While subscription active  | Forever after claim      |
+| Feature | Subscriptions | One-Time Purchases |
+| - | - | - |
+| **Payment** | Recurring (monthly/yearly) | Single payment |
+| **Seat Duration** | Active while subscribed | Perpetual (never expire) |
+| **Adding Seats** | Modify subscription | Purchase new order |
+| **Benefits** | While subscription active | Forever after claim |
 
 <Tip>
   Use **subscriptions** for ongoing team access. Use **one-time purchases** for perpetual team licenses.
@@ -73,11 +73,11 @@ Team members receive an invitation email with a claim link. Once they claim thei
   <Step title="Choose a tiering model">
     Under **Tiering model**, select how seats are priced:
 
-    | Model                    | Description                                                                                                                                                 |
-    | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | **Fixed price per seat** | Every seat costs the same flat rate. Simple and predictable.                                                                                                |
-    | **Graduated**            | Seats are priced per tier range independently — seats in tier 1 cost one rate, seats in tier 2 cost another. Total price is the sum across all tiers.       |
-    | **Volume discounts**     | The per-seat price is determined by the total seats purchased, and that rate applies to all seats. Crossing a tier threshold lowers the price for everyone. |
+    | Model | Description |
+    | - | - |
+    | **Fixed price per seat** | Every seat costs the same flat rate. Simple and predictable. |
+    | **Graduated** | Seats are priced per tier range independently — seats in tier 1 cost one rate, seats in tier 2 cost another. Total price is the sum across all tiers. |
+    | **Volume discounts** | The per-seat price is determined by the total seats purchased, and that rate applies to all seats. Crossing a tier threshold lowers the price for everyone. |
 
     **Fixed price per seat** is the default and the simplest option — just enter a single price per seat.
 

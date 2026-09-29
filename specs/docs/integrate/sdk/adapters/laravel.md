@@ -212,8 +212,8 @@ Or if you're using Laravel v11 and up, you should exclude `polar/*` in your appl
 
 This package includes a list of commands that you can use to retrieve information about your Polar account.
 
-| Command                      | Description                                |
-| ---------------------------- | ------------------------------------------ |
+| Command | Description |
+| - | - |
 | `php artisan polar:products` | List all available products with their ids |
 
 ### Checkouts

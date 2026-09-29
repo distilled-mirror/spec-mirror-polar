@@ -21,11 +21,11 @@ Unit-based pricing lets a customer buy a quantity of something and pay for it up
 
 Three pricing models charge by quantity. They differ in what the quantity counts and when the customer pays.
 
-| Model          | The quantity counts          | Customer pays    | Benefits go to                |
-| -------------- | ---------------------------- | ---------------- | ----------------------------- |
-| **Unit-based** | Anything that isn't a person | Up front         | The customer, once            |
-| **Seat-based** | People                       | Up front         | Each member who claims a seat |
-| **Metered**    | Consumption you record       | After the period | The customer, once            |
+| Model | The quantity counts | Customer pays | Benefits go to |
+| - | - | - | - |
+| **Unit-based** | Anything that isn't a person | Up front | The customer, once |
+| **Seat-based** | People | Up front | Each member who claims a seat |
+| **Metered** | Consumption you record | After the period | The customer, once |
 
 Pick seat-based when each unit maps to a person who needs their own access. Polar then handles invitations, seat claims, and per-member benefits.
 
@@ -65,11 +65,11 @@ On a subscription, the quantity carries across billing periods. You can change i
   <Step title="Choose a tiering model">
     Under **Tiering model**, select how the quantity is priced:
 
-    | Model                    | Description                                                                                                                           |
-    | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-    | **Fixed price per unit** | Every unit costs the same rate.                                                                                                       |
-    | **Volume**               | The rate is set by the total quantity, and that rate applies to every unit. Crossing a threshold lowers the price on the whole order. |
-    | **Graduated**            | Each tier range is priced at its own rate. The total is the sum across ranges.                                                        |
+    | Model | Description |
+    | - | - |
+    | **Fixed price per unit** | Every unit costs the same rate. |
+    | **Volume** | The rate is set by the total quantity, and that rate applies to every unit. Crossing a threshold lowers the price on the whole order. |
+    | **Graduated** | Each tier range is priced at its own rate. The total is the sum across ranges. |
 
     Define a tier by an upper bound and a rate. The bound is inclusive, and each tier starts where the previous one ended. Leave the last tier's bound empty for an open-ended top range.
 

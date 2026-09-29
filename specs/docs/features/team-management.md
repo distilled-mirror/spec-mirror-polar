@@ -19,27 +19,27 @@ Team management lives under [**Settings → Members**](https://polar.sh/to/dashb
 
 Every member of an organization has one of three roles:
 
-| Role       | Description                                                                                                                                         |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Owner**  | There is always exactly one owner per organization. Has the same permissions as an admin.                                                           |
-| **Admin**  | Full access to the organization — including managing members, finances, and organization settings.                                                  |
+| Role | Description |
+| - | - |
+| **Owner** | There is always exactly one owner per organization. Has the same permissions as an admin. |
+| **Admin** | Full access to the organization — including managing members, finances, and organization settings. |
 | **Member** | Operational access to day-to-day work (products, customers, orders, analytics) but cannot manage other members, finances, or organization settings. |
 
 ### Permissions
 
 The exact permissions granted by each role:
 
-| Permission                                                   | Member | Admin | Owner |
-| ------------------------------------------------------------ | :----: | :---: | :---: |
-| View & manage products                                       |    ✓   |   ✓   |   ✓   |
-| View & manage customers                                      |    ✓   |   ✓   |   ✓   |
-| View & manage custom fields                                  |    ✓   |   ✓   |   ✓   |
-| View & manage sales (orders, subscriptions, refunds)         |    ✓   |   ✓   |   ✓   |
-| View & manage analytics                                      |    ✓   |   ✓   |   ✓   |
-| View other members                                           |    ✓   |   ✓   |   ✓   |
-| Invite, remove & change member roles                         |        |   ✓   |   ✓   |
-| View & manage finances (balance, payouts)                    |        |   ✓   |   ✓   |
-| Manage organization settings (including webhooks & API keys) |        |   ✓   |   ✓   |
+| Permission | Member | Admin | Owner |
+| - | :-: | :-: | :-: |
+| View & manage products | ✓ | ✓ | ✓ |
+| View & manage customers | ✓ | ✓ | ✓ |
+| View & manage custom fields | ✓ | ✓ | ✓ |
+| View & manage sales (orders, subscriptions, refunds) | ✓ | ✓ | ✓ |
+| View & manage analytics | ✓ | ✓ | ✓ |
+| View other members | ✓ | ✓ | ✓ |
+| Invite, remove & change member roles | | ✓ | ✓ |
+| View & manage finances (balance, payouts) | | ✓ | ✓ |
+| Manage organization settings (including webhooks & API keys) | | ✓ | ✓ |
 
 `owner` and `admin` carry the same permissions — the owner is distinguished by the fact that every organization always has exactly one, not by additional capabilities.
 

@@ -135,11 +135,11 @@ If you want to use a metadata property in the aggregation, you can use the metad
 
 The unit controls how prices for this meter are **formatted and displayed** to customers — on invoices, in the customer portal, and in your checkout. It does not affect billing calculation; it is purely presentational.
 
-| Unit   | Display format           | Best for                                  |
-| ------ | ------------------------ | ----------------------------------------- |
-| Scalar | \$0.05 / unit            | Generic counts (API calls, events, seats) |
-| Token  | \$20.00 / 1M tokens      | LLM token consumption                     |
-| Custom | Configurable (see below) | Any unit not covered above                |
+| Unit | Display format | Best for |
+| - | - | - |
+| Scalar | \$0.05 / unit | Generic counts (API calls, events, seats) |
+| Token | \$20.00 / 1M tokens | LLM token consumption |
+| Custom | Configurable (see below) | Any unit not covered above |
 
 ### Custom unit
 

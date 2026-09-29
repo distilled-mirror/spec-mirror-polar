@@ -99,8 +99,8 @@ components:
           type: string
           title: Client Secret
         code:
-          type: string
           title: Code
+          type: string
         redirect_uri:
           format: uri
           maxLength: 2083

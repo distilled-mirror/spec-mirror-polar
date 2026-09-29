@@ -49,134 +49,134 @@ Polar picks the currency based on the customer's geolocation at checkout. If the
 <Accordion title="Supported currencies">
   Polar supports 130+ currencies for product pricing:
 
-  | Code  | Currency                            |
-  | ----- | ----------------------------------- |
-  | `AED` | United Arab Emirates Dirham         |
-  | `ALL` | Albanian Lek                        |
-  | `AMD` | Armenian Dram                       |
-  | `AOA` | Angolan Kwanza                      |
-  | `ARS` | Argentine Peso                      |
-  | `AUD` | Australian Dollar                   |
-  | `AWG` | Aruban Florin                       |
-  | `AZN` | Azerbaijani Manat                   |
+  | Code | Currency |
+  | - | - |
+  | `AED` | United Arab Emirates Dirham |
+  | `ALL` | Albanian Lek |
+  | `AMD` | Armenian Dram |
+  | `AOA` | Angolan Kwanza |
+  | `ARS` | Argentine Peso |
+  | `AUD` | Australian Dollar |
+  | `AWG` | Aruban Florin |
+  | `AZN` | Azerbaijani Manat |
   | `BAM` | Bosnia-Herzegovina Convertible Mark |
-  | `BBD` | Barbadian Dollar                    |
-  | `BDT` | Bangladeshi Taka                    |
-  | `BIF` | Burundian Franc                     |
-  | `BMD` | Bermudan Dollar                     |
-  | `BND` | Brunei Dollar                       |
-  | `BOB` | Bolivian Boliviano                  |
-  | `BRL` | Brazilian Real                      |
-  | `BSD` | Bahamian Dollar                     |
-  | `BWP` | Botswanan Pula                      |
-  | `BZD` | Belize Dollar                       |
-  | `CAD` | Canadian Dollar                     |
-  | `CDF` | Congolese Franc                     |
-  | `CHF` | Swiss Franc                         |
-  | `CLP` | Chilean Peso                        |
-  | `CNY` | Chinese Yuan                        |
-  | `COP` | Colombian Peso                      |
-  | `CRC` | Costa Rican Colón                   |
-  | `CVE` | Cape Verdean Escudo                 |
-  | `CZK` | Czech Koruna                        |
-  | `DJF` | Djiboutian Franc                    |
-  | `DKK` | Danish Krone                        |
-  | `DOP` | Dominican Peso                      |
-  | `DZD` | Algerian Dinar                      |
-  | `EGP` | Egyptian Pound                      |
-  | `ETB` | Ethiopian Birr                      |
-  | `EUR` | Euro                                |
-  | `FJD` | Fijian Dollar                       |
-  | `FKP` | Falkland Islands Pound              |
-  | `GBP` | British Pound                       |
-  | `GEL` | Georgian Lari                       |
-  | `GIP` | Gibraltar Pound                     |
-  | `GMD` | Gambian Dalasi                      |
-  | `GNF` | Guinean Franc                       |
-  | `GTQ` | Guatemalan Quetzal                  |
-  | `GYD` | Guyanaese Dollar                    |
-  | `HKD` | Hong Kong Dollar                    |
-  | `HNL` | Honduran Lempira                    |
-  | `HTG` | Haitian Gourde                      |
-  | `HUF` | Hungarian Forint                    |
-  | `IDR` | Indonesian Rupiah                   |
-  | `ILS` | Israeli New Shekel                  |
-  | `INR` | Indian Rupee                        |
-  | `ISK` | Icelandic Króna                     |
-  | `JMD` | Jamaican Dollar                     |
-  | `JPY` | Japanese Yen                        |
-  | `KES` | Kenyan Shilling                     |
-  | `KGS` | Kyrgystani Som                      |
-  | `KHR` | Cambodian Riel                      |
-  | `KMF` | Comorian Franc                      |
-  | `KRW` | South Korean Won                    |
-  | `KYD` | Cayman Islands Dollar               |
-  | `KZT` | Kazakhstani Tenge                   |
-  | `LAK` | Laotian Kip                         |
-  | `LKR` | Sri Lankan Rupee                    |
-  | `LRD` | Liberian Dollar                     |
-  | `LSL` | Lesotho Loti                        |
-  | `MAD` | Moroccan Dirham                     |
-  | `MDL` | Moldovan Leu                        |
-  | `MGA` | Malagasy Ariary                     |
-  | `MKD` | Macedonian Denar                    |
-  | `MNT` | Mongolian Tugrik                    |
-  | `MOP` | Macanese Pataca                     |
-  | `MUR` | Mauritian Rupee                     |
-  | `MVR` | Maldivian Rufiyaa                   |
-  | `MWK` | Malawian Kwacha                     |
-  | `MXN` | Mexican Peso                        |
-  | `MYR` | Malaysian Ringgit                   |
-  | `MZN` | Mozambican Metical                  |
-  | `NAD` | Namibian Dollar                     |
-  | `NGN` | Nigerian Naira                      |
-  | `NIO` | Nicaraguan Córdoba                  |
-  | `NOK` | Norwegian Krone                     |
-  | `NPR` | Nepalese Rupee                      |
-  | `NZD` | New Zealand Dollar                  |
-  | `PAB` | Panamanian Balboa                   |
-  | `PEN` | Peruvian Sol                        |
-  | `PGK` | Papua New Guinean Kina              |
-  | `PHP` | Philippine Peso                     |
-  | `PKR` | Pakistani Rupee                     |
-  | `PLN` | Polish Zloty                        |
-  | `PYG` | Paraguayan Guarani                  |
-  | `QAR` | Qatari Riyal                        |
-  | `RON` | Romanian Leu                        |
-  | `RSD` | Serbian Dinar                       |
-  | `RWF` | Rwandan Franc                       |
-  | `SAR` | Saudi Riyal                         |
-  | `SBD` | Solomon Islands Dollar              |
-  | `SCR` | Seychellois Rupee                   |
-  | `SEK` | Swedish Krona                       |
-  | `SGD` | Singapore Dollar                    |
-  | `SHP` | St. Helena Pound                    |
-  | `SOS` | Somali Shilling                     |
-  | `SRD` | Surinamese Dollar                   |
-  | `SZL` | Swazi Lilangeni                     |
-  | `THB` | Thai Baht                           |
-  | `TJS` | Tajikistani Somoni                  |
-  | `TOP` | Tongan Paʻanga                      |
-  | `TRY` | Turkish Lira                        |
-  | `TTD` | Trinidad & Tobago Dollar            |
-  | `TWD` | New Taiwan Dollar                   |
-  | `TZS` | Tanzanian Shilling                  |
-  | `UAH` | Ukrainian Hryvnia                   |
-  | `UGX` | Ugandan Shilling                    |
-  | `USD` | US Dollar                           |
-  | `UYU` | Uruguayan Peso                      |
-  | `UZS` | Uzbekistani Som                     |
-  | `VND` | Vietnamese Dong                     |
-  | `VUV` | Vanuatu Vatu                        |
-  | `WST` | Samoan Tala                         |
-  | `XAF` | Central African CFA Franc           |
-  | `XCD` | East Caribbean Dollar               |
-  | `XCG` | Caribbean Guilder                   |
-  | `XOF` | West African CFA Franc              |
-  | `XPF` | CFP Franc                           |
-  | `YER` | Yemeni Rial                         |
-  | `ZAR` | South African Rand                  |
-  | `ZMW` | Zambian Kwacha                      |
+  | `BBD` | Barbadian Dollar |
+  | `BDT` | Bangladeshi Taka |
+  | `BIF` | Burundian Franc |
+  | `BMD` | Bermudan Dollar |
+  | `BND` | Brunei Dollar |
+  | `BOB` | Bolivian Boliviano |
+  | `BRL` | Brazilian Real |
+  | `BSD` | Bahamian Dollar |
+  | `BWP` | Botswanan Pula |
+  | `BZD` | Belize Dollar |
+  | `CAD` | Canadian Dollar |
+  | `CDF` | Congolese Franc |
+  | `CHF` | Swiss Franc |
+  | `CLP` | Chilean Peso |
+  | `CNY` | Chinese Yuan |
+  | `COP` | Colombian Peso |
+  | `CRC` | Costa Rican Colón |
+  | `CVE` | Cape Verdean Escudo |
+  | `CZK` | Czech Koruna |
+  | `DJF` | Djiboutian Franc |
+  | `DKK` | Danish Krone |
+  | `DOP` | Dominican Peso |
+  | `DZD` | Algerian Dinar |
+  | `EGP` | Egyptian Pound |
+  | `ETB` | Ethiopian Birr |
+  | `EUR` | Euro |
+  | `FJD` | Fijian Dollar |
+  | `FKP` | Falkland Islands Pound |
+  | `GBP` | British Pound |
+  | `GEL` | Georgian Lari |
+  | `GIP` | Gibraltar Pound |
+  | `GMD` | Gambian Dalasi |
+  | `GNF` | Guinean Franc |
+  | `GTQ` | Guatemalan Quetzal |
+  | `GYD` | Guyanaese Dollar |
+  | `HKD` | Hong Kong Dollar |
+  | `HNL` | Honduran Lempira |
+  | `HTG` | Haitian Gourde |
+  | `HUF` | Hungarian Forint |
+  | `IDR` | Indonesian Rupiah |
+  | `ILS` | Israeli New Shekel |
+  | `INR` | Indian Rupee |
+  | `ISK` | Icelandic Króna |
+  | `JMD` | Jamaican Dollar |
+  | `JPY` | Japanese Yen |
+  | `KES` | Kenyan Shilling |
+  | `KGS` | Kyrgystani Som |
+  | `KHR` | Cambodian Riel |
+  | `KMF` | Comorian Franc |
+  | `KRW` | South Korean Won |
+  | `KYD` | Cayman Islands Dollar |
+  | `KZT` | Kazakhstani Tenge |
+  | `LAK` | Laotian Kip |
+  | `LKR` | Sri Lankan Rupee |
+  | `LRD` | Liberian Dollar |
+  | `LSL` | Lesotho Loti |
+  | `MAD` | Moroccan Dirham |
+  | `MDL` | Moldovan Leu |
+  | `MGA` | Malagasy Ariary |
+  | `MKD` | Macedonian Denar |
+  | `MNT` | Mongolian Tugrik |
+  | `MOP` | Macanese Pataca |
+  | `MUR` | Mauritian Rupee |
+  | `MVR` | Maldivian Rufiyaa |
+  | `MWK` | Malawian Kwacha |
+  | `MXN` | Mexican Peso |
+  | `MYR` | Malaysian Ringgit |
+  | `MZN` | Mozambican Metical |
+  | `NAD` | Namibian Dollar |
+  | `NGN` | Nigerian Naira |
+  | `NIO` | Nicaraguan Córdoba |
+  | `NOK` | Norwegian Krone |
+  | `NPR` | Nepalese Rupee |
+  | `NZD` | New Zealand Dollar |
+  | `PAB` | Panamanian Balboa |
+  | `PEN` | Peruvian Sol |
+  | `PGK` | Papua New Guinean Kina |
+  | `PHP` | Philippine Peso |
+  | `PKR` | Pakistani Rupee |
+  | `PLN` | Polish Zloty |
+  | `PYG` | Paraguayan Guarani |
+  | `QAR` | Qatari Riyal |
+  | `RON` | Romanian Leu |
+  | `RSD` | Serbian Dinar |
+  | `RWF` | Rwandan Franc |
+  | `SAR` | Saudi Riyal |
+  | `SBD` | Solomon Islands Dollar |
+  | `SCR` | Seychellois Rupee |
+  | `SEK` | Swedish Krona |
+  | `SGD` | Singapore Dollar |
+  | `SHP` | St. Helena Pound |
+  | `SOS` | Somali Shilling |
+  | `SRD` | Surinamese Dollar |
+  | `SZL` | Swazi Lilangeni |
+  | `THB` | Thai Baht |
+  | `TJS` | Tajikistani Somoni |
+  | `TOP` | Tongan Paʻanga |
+  | `TRY` | Turkish Lira |
+  | `TTD` | Trinidad & Tobago Dollar |
+  | `TWD` | New Taiwan Dollar |
+  | `TZS` | Tanzanian Shilling |
+  | `UAH` | Ukrainian Hryvnia |
+  | `UGX` | Ugandan Shilling |
+  | `USD` | US Dollar |
+  | `UYU` | Uruguayan Peso |
+  | `UZS` | Uzbekistani Som |
+  | `VND` | Vietnamese Dong |
+  | `VUV` | Vanuatu Vatu |
+  | `WST` | Samoan Tala |
+  | `XAF` | Central African CFA Franc |
+  | `XCD` | East Caribbean Dollar |
+  | `XCG` | Caribbean Guilder |
+  | `XOF` | West African CFA Franc |
+  | `XPF` | CFP Franc |
+  | `YER` | Yemeni Rial |
+  | `ZAR` | South African Rand |
+  | `ZMW` | Zambian Kwacha |
 </Accordion>
 
 ## Trial period
