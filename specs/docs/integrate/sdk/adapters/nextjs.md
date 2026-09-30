@@ -19,28 +19,30 @@ Install the required Polar packages using the following command:
 <Tabs>
   <Tab title="npm">
     ```bash Terminal theme={null}
-    npm install zod @polar-sh/nextjs
+    npm install @polar-sh/nextjs
     ```
   </Tab>
 
   <Tab title="yarn">
     ```bash Terminal theme={null}
-    yarn add zod @polar-sh/nextjs
+    yarn add @polar-sh/nextjs
     ```
   </Tab>
 
   <Tab title="pnpm">
     ```bash Terminal theme={null}
-    pnpm add zod @polar-sh/nextjs
+    pnpm add @polar-sh/nextjs
     ```
   </Tab>
 
   <Tab title="bun">
     ```bash Terminal theme={null}
-    bun add zod @polar-sh/nextjs
+    bun add @polar-sh/nextjs
     ```
   </Tab>
 </Tabs>
+
+The adapter works with App Router route handlers on Next.js 15 and 16.
 
 ## Checkout
 
@@ -50,24 +52,36 @@ Create a Checkout handler which takes care of redirections.
 import { Checkout } from "@polar-sh/nextjs";
 
 export const GET = Checkout({
-  accessToken: process.env.POLAR_ACCESS_TOKEN,
+  accessToken: process.env.POLAR_ACCESS_TOKEN!,
   successUrl: process.env.SUCCESS_URL,
   returnUrl: "https://myapp.com", // An optional URL which renders a back-button in the Checkout
-  server: "sandbox", // Use sandbox if you're testing Polar - omit the parameter or pass 'production' otherwise
+  environment: "sandbox", // Use sandbox if you're testing Polar - omit the parameter or pass 'production' otherwise
   theme: "dark", // Enforces the theme - System-preferred theme will be set if left omitted
 });
 ```
+
+`successUrl` and `returnUrl` must be absolute URLs. The handler appends `checkout_id={CHECKOUT_ID}` to `successUrl`; pass `includeCheckoutId: false` to turn this off.
 
 ### Query Params
 
 Pass query params to this route.
 
-* products `?products=123`
-* customerId (optional) `?products=123&customerId=xxx`
-* customerExternalId (optional) `?products=123&customerExternalId=xxx`
-* customerEmail (optional) `?products=123&customerEmail=janedoe@gmail.com`
-* customerName (optional) `?products=123&customerName=Jane`
+* products `?products=123` - Repeat the parameter for multiple products: `?products=123&products=456`
+* customer\_id (optional) `?products=123&customer_id=xxx`
+* external\_customer\_id (optional) `?products=123&external_customer_id=xxx`
+* customer\_email (optional) `?products=123&customer_email=janedoe@gmail.com`
+* customer\_name (optional) `?products=123&customer_name=Jane`
+* customer\_billing\_address (optional) `URL-Encoded JSON string`
+* customer\_tax\_id (optional) `?products=123&customer_tax_id=xxx`
+* customer\_ip\_address (optional) `?products=123&customer_ip_address=xxx`
+* customer\_metadata (optional) `URL-Encoded JSON string`
+* allow\_discount\_codes (optional) `?products=123&allow_discount_codes=false`
+* discount\_id (optional) `?products=123&discount_id=xxx`
+* discount\_code (optional) `?products=123&discount_code=SAVE20` - Applied before redirecting. `discount_id` takes precedence when both are supplied.
+* seats (optional) `?products=123&seats=5` - Number of seats for seat-based products
 * metadata (optional) `URL-Encoded JSON string`
+
+The handler returns `400` when `products` is missing.
 
 ## Customer Portal
 
@@ -75,18 +89,21 @@ Create a customer portal where your customer can view orders and subscriptions.
 
 ```typescript icon="square-js" portal/route.ts theme={null}
 import { CustomerPortal } from "@polar-sh/nextjs";
+import type { NextRequest } from "next/server";
 
 export const GET = CustomerPortal({
-  accessToken: process.env.POLAR_ACCESS_TOKEN,
-  getCustomerId: (req: NextRequest) => "", // Function to resolve a Polar Customer ID
+  accessToken: process.env.POLAR_ACCESS_TOKEN!,
+  getCustomerId: async (req: NextRequest) => "", // Function to resolve a Polar Customer ID
   returnUrl: "https://myapp.com", // An optional URL which renders a back-button in the Customer Portal
-  server: "sandbox", // Use sandbox if you're testing Polar - omit the parameter or pass 'production' otherwise
+  environment: "sandbox", // Use sandbox if you're testing Polar - omit the parameter or pass 'production' otherwise
 });
 ```
 
+If you identify customers by your own user ID, pass `getExternalCustomerId` instead of `getCustomerId`. The handler returns `400` when the function resolves to an empty value.
+
 ## Webhooks
 
-A simple utility which resolves incoming webhook payloads by signing the webhook secret properly.
+A simple utility which verifies the signature of incoming webhook payloads with your webhook secret.
 
 ```typescript icon="square-js" api/webhook/polar/route.ts theme={null}
 import { Webhooks } from "@polar-sh/nextjs";
@@ -104,10 +121,14 @@ export const POST = Webhooks({
 
 The Webhook handler also supports granular handlers for easy integration.
 
-* `onPayload` - Catch-all handler for any incoming Webhook event
+Every handler is an `async` function that receives the full webhook payload (`{ type, timestamp, data }`). Fields use the SDK's snake\_case names, for example `payload.data.customer_id`.
+
+* `onPayload` - Called for every incoming webhook event, in addition to the matching handler below
 * `onCheckoutCreated` - Triggered when a checkout is created
+* `onCheckoutExpired` - Triggered when a checkout expires
 * `onCheckoutUpdated` - Triggered when a checkout is updated
 * `onOrderCreated` - Triggered when an order is created
+* `onOrderUpdated` - Triggered when an order is updated
 * `onOrderPaid` - Triggered when an order is paid
 * `onOrderRefunded` - Triggered when an order is refunded
 * `onRefundCreated` - Triggered when a refund is created
@@ -116,6 +137,10 @@ The Webhook handler also supports granular handlers for easy integration.
 * `onSubscriptionUpdated` - Triggered when a subscription is updated
 * `onSubscriptionActive` - Triggered when a subscription becomes active
 * `onSubscriptionCanceled` - Triggered when a subscription is canceled
+* `onSubscriptionCycled` - Triggered when a subscription enters a new billing period
+* `onSubscriptionPastDue` - Triggered when a subscription payment fails and it becomes past due
+* `onSubscriptionPaused` - Triggered when a subscription is paused
+* `onSubscriptionResumed` - Triggered when a paused subscription is resumed
 * `onSubscriptionRevoked` - Triggered when a subscription is revoked
 * `onSubscriptionUncanceled` - Triggered when a subscription cancellation is reversed
 * `onProductCreated` - Triggered when a product is created
@@ -124,9 +149,26 @@ The Webhook handler also supports granular handlers for easy integration.
 * `onBenefitCreated` - Triggered when a benefit is created
 * `onBenefitUpdated` - Triggered when a benefit is updated
 * `onBenefitGrantCreated` - Triggered when a benefit grant is created
+* `onBenefitGrantCycled` - Triggered when a benefit grant renews with its subscription
 * `onBenefitGrantUpdated` - Triggered when a benefit grant is updated
 * `onBenefitGrantRevoked` - Triggered when a benefit grant is revoked
 * `onCustomerCreated` - Triggered when a customer is created
 * `onCustomerUpdated` - Triggered when a customer is updated
 * `onCustomerDeleted` - Triggered when a customer is deleted
 * `onCustomerStateChanged` - Triggered when a customer state changes
+* `onCustomerSeatAssigned` - Triggered when a seat is assigned to a customer
+* `onCustomerSeatClaimed` - Triggered when a customer claims an assigned seat
+* `onCustomerSeatRevoked` - Triggered when a seat is revoked from a customer
+* `onDiscountCreated` - Triggered when a discount is created
+* `onDiscountUpdated` - Triggered when a discount is updated
+* `onDiscountDeleted` - Triggered when a discount is deleted
+* `onMemberCreated` - Triggered when a member is added to a team customer
+* `onMemberUpdated` - Triggered when a member of a team customer is updated
+* `onMemberDeleted` - Triggered when a member is removed from a team customer
+
+The handler verifies the `webhook-id`, `webhook-timestamp` and `webhook-signature` headers against your webhook secret before calling any handler:
+
+* A missing or invalid signature returns `403`.
+* A malformed payload returns `400`.
+* A signed event type that the installed SDK doesn't know yet returns `200` and is ignored, so new event types don't cause retries.
+* If a handler throws, the error propagates and the request fails, so Polar retries the delivery.

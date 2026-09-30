@@ -29,17 +29,12 @@
 
 Use our new, fully typed SDKs to integrate with the Polar API from TypeScript or Python.
 
-<Info>
-  The SDKs are currently in public preview. Install the pre-release explicitly
-  to try them before the stable release.
-</Info>
-
 Create an [organization access token](/docs/integrate/oat), then install the SDK and make your first request:
 
 <Tabs>
   <Tab title="TypeScript">
     ```bash npm theme={null}
-    npm install @polar-sh/sdk@next
+    npm install @polar-sh/sdk
     ```
 
     ```typescript app.ts theme={null}
@@ -57,11 +52,11 @@ Create an [organization access token](/docs/integrate/oat), then install the SDK
   <Tab title="Python">
     <CodeGroup>
       ```bash uv theme={null}
-      uv add polar-sdk --prerelease allow
+      uv add polar-sdk
       ```
 
       ```bash pip theme={null}
-      pip install --pre polar-sdk
+      pip install polar-sdk
       ```
     </CodeGroup>
 

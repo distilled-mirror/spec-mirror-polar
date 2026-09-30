@@ -8,11 +8,6 @@
 
 The official Python SDK provides fully typed synchronous and asynchronous clients for the Polar API.
 
-<Info>
-  The new SDK is currently in public preview. Install the pre-release explicitly
-  to try it before the stable release.
-</Info>
-
 ## Installation
 
 The SDK requires Python 3.11 or later.
@@ -20,13 +15,13 @@ The SDK requires Python 3.11 or later.
 <Tabs>
   <Tab title="uv">
     ```bash Terminal theme={null}
-    uv add polar-sdk --prerelease allow
+    uv add polar-sdk
     ```
   </Tab>
 
   <Tab title="pip">
     ```bash Terminal theme={null}
-    pip install --pre polar-sdk
+    pip install polar-sdk
     ```
   </Tab>
 </Tabs>
