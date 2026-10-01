@@ -301,6 +301,8 @@ components:
         - organization_id
         - customer_id
         - customer
+        - member_id
+        - member
         - benefit_id
         - key
         - display_key
