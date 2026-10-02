@@ -9,3 +9,6 @@
 Cost Traces is a feature that allows you to define session boundaries and calculate costs for each session.
 
 Coming soon.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

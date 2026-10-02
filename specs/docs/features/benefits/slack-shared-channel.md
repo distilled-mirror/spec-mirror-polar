@@ -47,3 +47,6 @@ For example, `support-{customer_email_local}` produces a channel like `support-j
 ## Customer Experience
 
 When a customer is granted the benefit, they're asked for the email address of an admin in their own Slack workspace. Polar creates the channel, invites your team members, posts your welcome message, and sends a Slack Connect invitation to that admin. Once they accept, the shared channel appears in their workspace and you can start talking right away.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

@@ -113,3 +113,6 @@ polar = Polar(
 ```
 
 [View the source code on GitHub](https://github.com/polarsource/polar/tree/main/sdk/python).
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

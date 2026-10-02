@@ -75,3 +75,6 @@ You can pass a `discount_code` query parameter to any Checkout Link URL to prefi
 ### Apply via API
 
 When creating a Checkout Session via the API, you can specify a discount to apply programmatically. See the [Checkout API documentation](/docs/features/checkout/session) for details.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

@@ -137,3 +137,6 @@ There are two ways a subscription can come into existence:
       you can configure on your organization.
   </Accordion>
 </AccordionGroup>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

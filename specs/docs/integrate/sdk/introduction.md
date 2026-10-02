@@ -17,3 +17,6 @@ Call the Polar API with full type safety using one of our official SDKs.
     For Django, Flask, and FastAPI applications.
   </Card>
 </Columns>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

@@ -1216,3 +1216,6 @@
   * The `product_id` and `product_price_id` fields are deprecated in the [Checkout Session API](/docs/api-reference/checkouts/create-checkout-session). You should now use the `products` field to specify the products you want to include in the checkout.
   * The `type` and `recurring_interval` fields on `ProductPrice` are deprecated. `recurring_interval` is now set directly on `Product`.
 </Update>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

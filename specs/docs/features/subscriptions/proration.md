@@ -132,3 +132,6 @@ With `invoice`, a credit invoice for \$14.50 is issued immediately. With `prorat
   uses the real length of the current billing period (so 28-, 29-, 30-, and 31-day months are all
   handled exactly).
 </Note>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

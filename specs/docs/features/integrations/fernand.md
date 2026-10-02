@@ -95,3 +95,6 @@ If you ever want to disconnect Polar from your Fernand workspace:
 </Steps>
 
 Deleting your organization on Fernand will also remove the Polar integration automatically.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

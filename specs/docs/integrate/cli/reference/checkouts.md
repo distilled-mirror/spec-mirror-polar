@@ -1,0 +1,54 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://polar.sh/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# polar checkouts
+
+```bash theme={null}
+polar checkouts <subcommand> [flags]
+```
+
+**Subcommands**
+
+* [`polar checkouts get`](#polar-checkouts-get) Get a checkout session by ID.
+* [`polar checkouts list`](#polar-checkouts-list) List checkout sessions.
+
+## polar checkouts get
+
+Get a checkout session by ID.
+
+```bash theme={null}
+polar checkouts get [flags] <id>
+```
+
+**Arguments**
+
+| Argument | Type | Description |
+| - | - | - |
+| `id` | `string` | |
+
+## polar checkouts list
+
+List checkout sessions.
+
+```bash theme={null}
+polar checkouts list [flags]
+```
+
+**Flags**
+
+| Flag | Type | Description |
+| - | - | - |
+| `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
+| `--organization-id`, `--org` | `string` | Filter by organization ID. Defaults to the active organization. |
+| `--product-id` | `string` | Filter by product ID. |
+| `--customer-id` | `string` | Filter by customer ID. |
+| `--external-customer-id` | `string` | Filter by customer external ID. |
+| `--status` | `choice` | Filter by checkout session status. (choices: open, expired, confirmed, succeeded, failed) |
+| `--query` | `string` | Filter by customer email. |
+| `--page` | `integer` | Page number, defaults to 1. |
+| `--limit` | `integer` | Size of a page, defaults to 10. Maximum is 100. |
+| `--sorting` | `choice` | Sorting criterion. Several criteria can be used simultaneously and will be applied in order. Add a minus sign `-` before the criteria name to sort by descending order. (choices: created\_at, -created\_at, expires\_at, -expires\_at, status, -status) |
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

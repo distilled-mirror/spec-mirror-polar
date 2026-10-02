@@ -118,3 +118,6 @@ The Customer Portal isn't just a convenience feature — it's a critical piece o
     renewals — keep it in mind when you're thinking about churn.
   </Accordion>
 </AccordionGroup>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

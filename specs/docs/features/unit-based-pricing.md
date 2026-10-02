@@ -122,3 +122,6 @@ The full amount applies from the next billing period onward.
 * A product carries at most one unit-based price.
 * Unit-based cannot be combined with seat-based or pay-what-you-want pricing.
 * One-time purchases cannot change quantity after the sale. The customer buys again instead.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

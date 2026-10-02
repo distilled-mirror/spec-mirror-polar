@@ -77,3 +77,6 @@ You don't have to build anything to get customers to the portal — Polar alread
 * **Failed payment** notifications, so customers can update their card
 
 This means that even if you never link to the portal from your own app, your customers already have a way to get back to it from their inbox.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

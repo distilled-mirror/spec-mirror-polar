@@ -129,3 +129,6 @@ You can't leave an organization if you are:
     Please [contact support](/docs/support) to request an ownership transfer.
   </Accordion>
 </AccordionGroup>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

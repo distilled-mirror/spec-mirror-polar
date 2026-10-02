@@ -37,3 +37,6 @@ as `2026-10`, and apply to API requests, responses, webhook payloads, and SDK ty
   See [webhook signature validation](/docs/integrate/webhooks/delivery#custom-validation)
   for details on both signing approaches.
 </Update>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

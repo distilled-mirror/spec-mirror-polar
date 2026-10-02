@@ -76,3 +76,6 @@ can help you integrate or migrate:
 ```bash theme={null}
 npx skills add https://github.com/polarsource/skills --skill polar-integration
 ```
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

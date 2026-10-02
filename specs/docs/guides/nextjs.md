@@ -135,3 +135,6 @@ export const POST = Webhooks({
 ### Notifying the client about the event
 
 If you're building a real-time application, you might want to notify the client about the event. On the confirmation-page, you can listen for the `checkout.updated` event and update the UI accordingly when it reaches the succeeded status.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

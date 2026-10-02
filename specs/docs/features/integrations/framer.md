@@ -13,3 +13,6 @@ Introducing the official Polar plugin for Framer. Allowing you to sell products 
 ## Getting Started
 
 [Get your hands on the Polar plugin in the Framer Marketplace](https://www.framer.com/marketplace/plugins/polar/)
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

@@ -6,9 +6,11 @@
 
 > Learn how Polar API versions are selected, released, deprecated, and upgraded.
 
+export const version_0 = "2026-04"
+
 Polar uses date-based API versions to evolve the API without unexpectedly changing
 the contract your integration depends on. Versions use the `YYYY-MM` format, such
-as `2026-10`, and apply to API requests, responses, webhook payloads, and SDK types.
+as {version_0}, and apply to API requests, responses, webhook payloads, and SDK types.
 
 <Warning>
   Pin a version in every production integration. If you don't, your requests use
@@ -66,14 +68,14 @@ paths remain the same:
 ```bash theme={null}
 curl -i https://api.polar.sh/v1/products/ \
   -H "Authorization: Bearer $POLAR_ACCESS_TOKEN" \
-  -H "Polar-Version: 2026-10" \
+  -H "Polar-Version: 2026-04" \
   -H "Accept: application/json"
 ```
 
 Responses include the version used to process the request:
 
 ```http theme={null}
-Polar-Version: 2026-10
+Polar-Version: 2026-04
 ```
 
 If the header is omitted, Polar uses Current. A malformed, unknown, or removed
@@ -89,7 +91,7 @@ remain stable across release cycles. Set `api_version` when you create an endpoi
   "url": "https://example.com/webhooks",
   "format": "raw",
   "events": ["order.created"],
-  "api_version": "2026-10"
+  "api_version": "2026-04"
 }
 ```
 
@@ -118,13 +120,13 @@ matching `Polar-Version` header:
 <Tabs>
   <Tab title="Python">
     ```py theme={null}
-    from polar.v2026_10 import Polar
+    from polar.v2026_04 import Polar
     ```
   </Tab>
 
   <Tab title="JavaScript">
     ```ts theme={null}
-    import { createPolar } from "@polar-sh/sdk/2026-10";
+    import { createPolar } from "@polar-sh/sdk/2026-04";
     ```
   </Tab>
 </Tabs>
@@ -144,3 +146,6 @@ Upgrade before your pinned version is removed:
    webhook payloads.
 4. Upgrade webhook endpoints that should use the new contract.
 5. Deploy the API client change and confirm the `Polar-Version` response header.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

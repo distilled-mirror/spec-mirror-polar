@@ -111,3 +111,6 @@ We aim to work with you on the best path forward, but for compliance and risk re
     If you need assistance with changing organization ownership or have special circumstances, please contact [support@polar.sh](mailto:support@polar.sh).
   </Accordion>
 </AccordionGroup>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

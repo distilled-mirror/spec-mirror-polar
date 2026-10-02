@@ -27,3 +27,6 @@ View all active subscriptions across your organizations.
 ### View Customers
 
 Keep track of all your customers.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

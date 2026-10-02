@@ -110,3 +110,6 @@ The Webhook handler also supports granular handlers for easy integration.
 * `onCustomerUpdated` - Triggered when a customer is updated
 * `onCustomerDeleted` - Triggered when a customer is deleted
 * `onCustomerStateChanged` - Triggered when a customer state changes
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

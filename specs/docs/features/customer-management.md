@@ -37,3 +37,6 @@ You may set additional metadata on Customers. This can be very useful to store a
 <img className="hidden dark:block" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/customer-management/edit.dark.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=1981f637bea304c95d62ed7b7d85d14f" width="1512" height="964" data-path="assets/features/customer-management/edit.dark.png" />
 
 It can be set through the dashboard or through the [API](/docs/api-reference/customers/update-customer#body-metadata). It can also be pre-set when creating a Checkout Session by using the [`customer_metadata`](/docs/api-reference/checkouts/create-checkout-session#body-customer-metadata) field. This way, after a successful checkout, the metadata will automatically be set on the newly created Customer.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

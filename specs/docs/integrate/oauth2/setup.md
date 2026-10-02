@@ -24,3 +24,6 @@ Optionally, you can also add a **terms of service** and **privacy policy** URL. 
 Once your client is created, you'll get a **Client ID** and a **Client Secret**. You'll need those values to make authentication requests.
 
 Those values are super sensitive and should be kept secret. They allow making authentication requests on Polar!
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

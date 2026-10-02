@@ -65,3 +65,6 @@ Our official SDKs support the sandbox environment through a dedicated parameter.
 The limitations listed below only apply to sandbox and doesn't reflect the behavior in production.
 
 * Customer-facing emails (order confirmations, subscription renewal reminders, etc.) are only delivered to recipients who are members of your organization. Manage these in [**Settings → Members**](https://polar.sh/to/dashboard/settings/members). Sub-addressing aliases like `you+test@example.com` are accepted.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

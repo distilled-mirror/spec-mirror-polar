@@ -43,3 +43,6 @@ These adapters are deprecated. For these frameworks, we recommend a direct integ
 
   <Card title="SvelteKit" href="/docs/integrate/sdk/adapters/sveltekit" horizontal />
 </Columns>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

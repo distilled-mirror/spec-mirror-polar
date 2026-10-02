@@ -113,3 +113,6 @@ In addition, Polar offers manual withdrawals for developers. Keeping you in cont
 ## Volume pricing
 
 Large or fast-growing business? The published Scale plan is our cheapest public rate. If you need something custom on top of that, [reach out to us](/docs/support).
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

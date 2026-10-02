@@ -45,3 +45,6 @@ You don't need to enable individual payment methods.
 The list above is everything we support today. There's no setting or plan that unlocks more, and payment methods can't be enabled per organization.
 
 PayPal is by far the most common thing people ask about. We don't have a timeline to share.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

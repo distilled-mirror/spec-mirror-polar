@@ -43,3 +43,6 @@ Lets customers pause their own subscription from the portal and resume it later,
 A paused subscription stops billing at the end of the current period and revokes benefits until it resumes; resuming starts a new billing period and charges immediately. See [Pause and resume](/docs/features/subscriptions/manage#pause-and-resume) for the full behavior.
 
 This toggle only gates the portal. Pausing and resuming through the [Update Subscription](/docs/api-reference/subscriptions/update-subscription) endpoint is always available to you, so you can drive it from your own backend whether or not customers can self-serve.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

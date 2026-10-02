@@ -59,3 +59,6 @@ Customers who purchased before the file was disabled will still have access to l
 **Enabling or adding files grants access retroactively**
 
 In case you add more files or re-enable existing ones, all current customers and subscribers with the benefit will be granted access.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

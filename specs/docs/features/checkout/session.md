@@ -198,3 +198,6 @@ Using our SDK, creating a checkout session is quite straightforward.
       print(checkout.url)
   ```
 </CodeGroup>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

@@ -69,3 +69,6 @@ Finally, we're all setup over at ParityDeals. Just copy the script to their bann
 ## Questions & Help
 
 Checkout the [ParityDeals documentation](https://www.paritydeals.com/docs/) for more guides and information.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

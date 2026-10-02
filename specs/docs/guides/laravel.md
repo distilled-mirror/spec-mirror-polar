@@ -482,3 +482,6 @@ If you're building a real-time application, you might want to notify the client 
 We've created a simple example Laravel application that you can use as a reference
 
 [View Code on GitHub](https://github.com/polarsource/polar-laravel)
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

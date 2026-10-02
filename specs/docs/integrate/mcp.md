@@ -242,3 +242,6 @@ The runtime tools above provide access to the following Polar operations.
   | Reset webhook endpoint secret | Regenerate a webhook endpoint secret. |
   | Update webhook endpoint | Update a webhook endpoint. |
 </Accordion>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

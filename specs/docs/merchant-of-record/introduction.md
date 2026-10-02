@@ -117,3 +117,6 @@ We consider MoR a key value-add to Polar, but not the sole reason for Polar to e
     software vendor to request OSS number support.
   </Accordion>
 </AccordionGroup>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

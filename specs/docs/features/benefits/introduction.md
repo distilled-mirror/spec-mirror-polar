@@ -39,3 +39,6 @@ You can manage benefits in two ways:
 
 1. Directly within a product create/edit form
 2. Or via `Benefits` in your dashboard
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

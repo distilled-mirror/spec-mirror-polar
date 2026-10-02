@@ -15,3 +15,6 @@ Polar implements the [OpenID Connect specification](https://openid.net/developer
 In particular, it comes with a **discovery endpoint** allowing compatible clients to automatically work with the OpenID Connect server. Here is Polar's one:
 
 [OpenID Configuration](https://api.polar.sh/.well-known/openid-configuration)
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

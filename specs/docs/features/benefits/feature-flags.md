@@ -42,3 +42,6 @@ The customer state object includes all granted benefits. Simply check if the cus
 
 * **Subscriptions**: The feature flag is granted at the start of each subscription cycle and automatically revoked when the subscription is cancelled.
 * **One-time purchases**: The feature flag is granted at the time of purchase with lifetime access.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

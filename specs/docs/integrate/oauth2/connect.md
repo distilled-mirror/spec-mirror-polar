@@ -86,3 +86,6 @@ Once you have an access token, either from a Personal Access Token or from the O
 curl -X GET https://api.polar.sh/v1/oauth2/userinfo \
   -H 'Authorization: Bearer polar_at_XXX'
 ```
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

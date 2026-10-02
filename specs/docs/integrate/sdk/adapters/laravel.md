@@ -712,3 +712,6 @@ Please see [CHANGELOG](https://github.com/danestves/laravel-polar/blob/main/CHAN
 ## License
 
 The MIT License (MIT). Please see [License File](https://github.com/danestves/laravel-polar/blob/main/LICENSE.md) for more information.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

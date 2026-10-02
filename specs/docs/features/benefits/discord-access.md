@@ -49,3 +49,6 @@ Which Discord role do you want to grant as part of this benefit?
 ## Adding Benefit to Product
 
 Head over to the product you want to associate this new Discord benefit with. You should be able to toggle the benefit in the bottom of the Edit Product form.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

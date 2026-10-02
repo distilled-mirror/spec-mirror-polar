@@ -173,3 +173,6 @@ A few things to keep in mind when creating and managing meters:
 ### Updating a Meter
 
 You may update a meter's filters or aggregation function as long as the meter doesn't have any processed events or does not have any customer purchase associated with it.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

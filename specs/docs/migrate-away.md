@@ -124,3 +124,6 @@ After the 120-day holding period ends, your remaining balance is released and yo
     Email [support@polar.sh](mailto:support@polar.sh) with your destination account and we'll take it from there.
   </Accordion>
 </AccordionGroup>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

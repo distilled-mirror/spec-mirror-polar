@@ -210,3 +210,6 @@ The handler verifies the `webhook-id`, `webhook-timestamp` and `webhook-signatur
 * A malformed payload returns `400`.
 * A signed event type that the installed SDK doesn't know yet returns `200` and is ignored, so new event types don't cause retries.
 * If a handler throws, the error propagates and the request fails, so Polar retries the delivery.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

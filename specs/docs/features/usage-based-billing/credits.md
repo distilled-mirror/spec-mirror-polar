@@ -47,3 +47,6 @@ You can also specifically query the meters balance using the [Customer Meters AP
   responsible for implementing the logic you need to prevent usage if they
   exceed it.
 </Warning>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

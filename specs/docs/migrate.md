@@ -663,3 +663,6 @@ editing code or changing billing state.
 ```
 
 Need help planning the migration? [Contact Polar support](/docs/support).
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

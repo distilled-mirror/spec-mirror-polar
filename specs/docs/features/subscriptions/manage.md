@@ -218,3 +218,6 @@ The [Customer Portal](/docs/features/customer-portal/introduction) exposes a sub
 * **Pause and resume** is available when **Enable subscription pause** is on.
 
 Everything else on this page is merchant-only: revoking a subscription, applying or changing a discount, extending or ending a trial, and rescheduling the renewal date are not exposed to customers.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

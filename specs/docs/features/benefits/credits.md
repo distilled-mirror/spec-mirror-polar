@@ -32,3 +32,6 @@ You can choose to rollover unused credits to the next billing cycle. This means 
   If you change the rollover setting for a benefit, it will only apply to new
   credits issued after the change. Existing credits will not be affected.
 </Note>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

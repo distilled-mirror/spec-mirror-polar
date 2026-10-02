@@ -60,3 +60,6 @@ If you have any additional questions, you can open a ticket with Zapier Support 
 ## Popular use cases
 
 <ZapierEmbed />
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

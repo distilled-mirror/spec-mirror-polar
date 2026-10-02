@@ -109,3 +109,6 @@ You can stop enforcing at any time from the same screen.
     SSO turns off, and enforcement is lifted with it, so your members sign in with the standard methods again. Your connections are kept — upgrading to Scale again restores them as they were. Everyone who joined through SSO stays a member.
   </Accordion>
 </AccordionGroup>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

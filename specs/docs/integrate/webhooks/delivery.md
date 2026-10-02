@@ -222,3 +222,6 @@ Rolling your own validation? Older secrets are Polar HMAC: base64-encode the
 entire `whsec_…` string. Secrets generated on or after 8 September 2026, 00:00
 UTC are Standard Webhooks: pass the secret as-is. Polar SDKs 1.0.0-alpha.19 and
 later try both.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

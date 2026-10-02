@@ -168,3 +168,6 @@ Polar uses Stripe Connect Express to issue payouts to residents or businesses in
     * Click on the toggle for `Business Type` which will allow you know if individual, business, company or LLC/LLP is supported by Stripe Connect Express in that region.
   </Accordion>
 </AccordionGroup>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

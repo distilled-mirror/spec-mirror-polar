@@ -18,3 +18,6 @@ Want to report events regarding Large Language Model usage, S3 file uploads or s
 ### Help us improve
 
 We're always looking for ways to improve our ingestion strategies. Feel free to contribute — [Polar Ingestion SDK](https://github.com/polarsource/polar-ingestion).
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

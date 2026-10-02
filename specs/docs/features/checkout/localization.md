@@ -69,3 +69,6 @@ We'd love to hear your feedback on checkout localization:
 
 * Open an issue on [GitHub](https://github.com/polarsource/polar)
 * Email us at [translations@polar.sh](mailto:translations@polar.sh)
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

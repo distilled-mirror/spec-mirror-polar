@@ -31,3 +31,6 @@ Set the **Description** to the title customers will see (e.g. *"Your onboarding 
   [Feature Flag](/docs/features/benefits/feature-flags) benefit for this purpose, as
   it's purpose-built for feature gating and supports key-value metadata.
 </Note>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

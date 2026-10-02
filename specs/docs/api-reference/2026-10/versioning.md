@@ -6,9 +6,11 @@
 
 > Learn how Polar API versions are selected, released, deprecated, and upgraded.
 
+export const version_0 = "2026-10"
+
 Polar uses date-based API versions to evolve the API without unexpectedly changing
 the contract your integration depends on. Versions use the `YYYY-MM` format, such
-as `2026-10`, and apply to API requests, responses, webhook payloads, and SDK types.
+as {version_0}, and apply to API requests, responses, webhook payloads, and SDK types.
 
 <Warning>
   Pin a version in every production integration. If you don't, your requests use
@@ -144,3 +146,6 @@ Upgrade before your pinned version is removed:
    webhook payloads.
 4. Upgrade webhook endpoints that should use the new contract.
 5. Deploy the API client change and confirm the `Polar-Version` response header.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

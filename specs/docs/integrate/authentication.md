@@ -26,3 +26,6 @@ In particular, we're part of the [GitHub Secret Scanning Program](https://docs.g
 If you received an email about one of your token being leaked, it means that we were notified of such situation. The email contains the details about the nature of the token and the source of the leak.
 
 In the future, it's crucial that you remain extra cautious about not leaking your tokens publicly online. You can read more about the good practices to manage secrets in the [OWASP Secrets Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html).
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

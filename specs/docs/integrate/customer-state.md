@@ -42,3 +42,6 @@ By subscribing to this webhook event, you keep your system up-to-date and update
 <Card title="customer.state_changed" icon="ring" iconType="duotone" href="/docs/api-reference/current/customer_state_changed" horizontal>
   One webhook to rule them all.
 </Card>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

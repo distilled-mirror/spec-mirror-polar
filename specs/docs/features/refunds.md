@@ -49,3 +49,6 @@ Select the reason for the refund — helpful for future reference.
 **One-time purchases.** You can revoke the customer's access to product benefits — e.g. file downloads, license keys, or Discord/GitHub invites. This is selected by default, since we default to a full refund, but it can be disabled.
 
 **Subscriptions.** You can't revoke access by refunding an order tied to a subscription — refunding the order returns the money but does not end the relationship. To end access, [cancel the subscription](/docs/features/subscriptions/manage) instead. Polar revokes the associated benefits automatically once the subscription itself is revoked.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

@@ -61,3 +61,6 @@ Cost Insights works in three simple steps:
     Query and analyze costs, profits, and customer lifetime value
   </Card>
 </CardGroup>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

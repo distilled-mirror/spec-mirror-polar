@@ -329,3 +329,6 @@ To enable wallet payment methods, [email us](mailto:support@polar.sh) with:
 
 * Your organization slug
 * The domain you wish to allow for wallet payments
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

@@ -201,3 +201,6 @@ curl -X POST https://api.polar.sh/v1/customer-portal/license-keys/validate
 Validate `benefit_id` in case of multiple license keys
 
 We require `organization_id` to be provided to avoid cases of Polar license keys being used across Polar organizations erroneously. Otherwise, a valid license key for one organization could be used on another.However, you are required to validate and scope license keys more narrowly within your organization if necessary. Offering more than one type of license key? Be sure to validate their unique benefit\_id in the responses.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

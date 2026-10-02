@@ -25,3 +25,6 @@ Every organization is reviewed against the AUP before its first payout and monit
 <Card title="Read the full Acceptable Use Policy" icon="scale-balanced" href="https://polar.sh/legal/acceptable-use-policy" horizontal>
   The complete and binding list of acceptable, prohibited, and restricted products.
 </Card>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

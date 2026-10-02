@@ -98,3 +98,6 @@ When a customer who has already used a trial attempts to check out again:
 3. The customer can still complete their purchase and subscribe at the regular price
 
 This approach ensures a smooth experience while protecting your business from trial abuse.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

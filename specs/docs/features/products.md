@@ -268,3 +268,6 @@ A product without an order, subscription, trial or discount can be permanently d
     Yes. From the product list or the product menu, pick **Duplicate Product** to clone all the settings into a new draft you can tweak before saving.
   </Accordion>
 </AccordionGroup>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

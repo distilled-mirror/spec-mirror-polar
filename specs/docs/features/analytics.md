@@ -74,3 +74,6 @@ The Costs dashboard is powered by [Cost Insights](/docs/features/cost-insights/i
 * **Gross Margin** — Cumulative revenue minus cumulative costs over the selected range.
 * **Gross Margin %** — Gross margin expressed as a percentage of cumulative revenue. Returns 0 when cumulative revenue is 0.
 * **Cashflow** — Revenue minus costs for the interval itself (not cumulative). Useful for spotting periods where costs outpaced revenue.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

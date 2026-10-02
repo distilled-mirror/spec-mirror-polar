@@ -143,3 +143,6 @@ If you need assistance with your Affonso integration, contact Affonso's support 
 
 * Email: [hello@affonso.io](mailto:hello@affonso.io)
 * Live chat: Available directly in the Affonso dashboard
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

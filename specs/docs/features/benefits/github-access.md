@@ -75,3 +75,6 @@ Read access (read-only) is what 99.9% of cases should use and the others are hig
 
   GitHub treats collaborators as a seat and they will incurr charges accordingly to your billing unless you're using a free GitHub organization plan. So make sure to confirm you're on a free plan OR charge sufficiently to offset the costs you'll need to pay to GitHub.
 </Info>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

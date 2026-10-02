@@ -30,3 +30,6 @@ The conversion process uses current exchange rates at the time of the transactio
 ## Payouts in ISK, HUF, TWD, or UGX
 
 For accounts using Icelandic króna (ISK), Hungarian forint (HUF), New Taiwan dollar (TWD), or Ugandan shilling (UGX), Stripe requires payout amounts to be in whole currency units. This means any fractional amount (less than 1 ISK/HUF/TWD/UGX) will remain in your balance and be included in your next payout.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

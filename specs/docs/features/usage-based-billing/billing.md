@@ -92,3 +92,6 @@ Customers can view their estimated charges for each meter in the Customer Portal
 <img className="block dark:hidden" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/portal.light.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=85bdb395f87e972ed50a7381ba3aad43" width="2358" height="1218" data-path="assets/features/usage/portal.light.png" />
 
 <img className="hidden dark:block" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/portal.dark.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=44f1b0e0f67aaa22b293a7dafaf3ab99" width="2364" height="1214" data-path="assets/features/usage/portal.dark.png" />
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

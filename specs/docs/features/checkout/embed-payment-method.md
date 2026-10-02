@@ -211,3 +211,6 @@ usePaymentMethodRedirectResult({
 ```
 
 Either way, the status query param is stripped from the URL so a refresh won't surface a stale result. Card payments (3DS) complete inside the modal and never trigger this path.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

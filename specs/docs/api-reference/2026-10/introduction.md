@@ -6,6 +6,8 @@
 
 > Official SDK quickstarts, base URLs, authentication, pagination, rate limits, and API concepts
 
+export const version_0 = "2026-10"
+
 <CardGroup cols={2}>
   <Card title="Production Base URL" icon="globe">
     `https://api.polar.sh/v1`
@@ -20,9 +22,13 @@
     header
   </Card>
 
-  <Card title="Auth (Customer Portal)" icon="user-lock" href="/docs/api-reference/2026-10/customer-sessions/create-customer-session">
-    Use a **Customer Access Token** created via `/v1/customer-sessions/`
-  </Card>
+  {<Card
+      title="Auth (Customer Portal)"
+      icon="user-lock"
+      href={`/api-reference/${version_0}/customer-sessions/create-customer-session`}
+    >
+      Use a <strong>Customer Access Token</strong> created via <code>/v1/customer-sessions/</code>
+    </Card>}
 </CardGroup>
 
 ## Official SDKs
@@ -112,7 +118,7 @@ Authorization: Bearer polar_oat_xxxxxxxxxxxxxxxxx
 
 ### Customer Access Tokens
 
-Do **not** use OATs in the browser. For customer-facing flows, [generate a **Customer Session**](/docs/api-reference/2026-10/customer-sessions/create-customer-session) server-side, then use the returned **customer access token** with the **Customer Portal API** to let a signed-in customer view their own orders, subscriptions, and benefits.
+Do **not** use OATs in the browser. For customer-facing flows, {<a href={`/api-reference/${version_0}/customer-sessions/create-customer-session`}>generate a **Customer Session**</a>} server-side, then use the returned **customer access token** with the **Customer Portal API** to let a signed-in customer view their own orders, subscriptions, and benefits.
 
 ## Core API vs Customer Portal API
 
@@ -231,7 +237,7 @@ Polar API has rate limits to ensure fair usage and maintain performance. Limits 
 
 * **100 requests per minute** per organization/customer or OAuth2 Client.
 
-Unauthenticated [validation](/docs/api-reference/2026-10/customer_portal/validate-license-key), [activation](/docs/api-reference/2026-10/customer_portal/activate-license-key), and [deactivation](/docs/api-reference/2026-10/customer_portal/deactivate-license-key) endpoints are limited to **3 requests per second** in both environments.
+Unauthenticated {<a href={`/api-reference/${version_0}/customer_portal/validate-license-key`}>validation</a>}, {<a href={`/api-reference/${version_0}/customer_portal/activate-license-key`}>activation</a>}, and {<a href={`/api-reference/${version_0}/customer_portal/deactivate-license-key`}>deactivation</a>} endpoints are limited to **3 requests per second** in both environments.
 
 If you exceed the rate limit, you will receive a `429 Too Many Requests` response. The response will include a `Retry-After` header indicating how long you should wait before making another request.
 
@@ -239,3 +245,6 @@ If you exceed the rate limit, you will receive a `429 Too Many Requests` respons
   Organizations requiring higher rate limits for production workloads may
   contact our support team to discuss elevated limits.
 </Note>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

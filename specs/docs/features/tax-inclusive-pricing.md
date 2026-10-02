@@ -74,3 +74,6 @@ Regardless of the tax behavior chosen, Polar always:
   rate or your tax obligations. It only changes whether the stated price is
   presented as tax-included or tax-excluded to the customer.
 </Info>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

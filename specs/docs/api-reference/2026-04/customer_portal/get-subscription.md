@@ -2516,3 +2516,5 @@ components:
       scheme: bearer
 
 ````
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

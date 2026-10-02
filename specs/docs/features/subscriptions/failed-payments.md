@@ -62,3 +62,6 @@ Things you can do from your side:
 * [Issue a refund](/docs/features/refunds) on the original failed order if you want to credit the customer for the lost time while keeping the subscription.
 * [Reschedule the renewal](/docs/features/subscriptions/manage#reschedule-the-next-renewal) to give the customer extra time before the next attempt.
 * [Revoke the subscription](/docs/features/subscriptions/manage#revoke-immediately) manually if you've decided not to pursue recovery.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

@@ -707,3 +707,6 @@ const { data: subscriptions } = await authClient.customer.subscriptions.list({
 ```
 
 To list the subscriptions of an organization, pass `reference_id` or `organizationId`. See [Organization billing](#organization-billing). You can't combine the two.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

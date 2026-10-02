@@ -250,3 +250,6 @@ When Polar takes over billing of a subscription imported from another provider, 
 <Columns cols={2}>
   <Card title="organization.updated" icon="link" href="/docs/api-reference/current/organization_updated" horizontal />
 </Columns>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

@@ -147,3 +147,6 @@ These parameters are automatically attached to the generated Checkout Session [`
 <ParamField path="utm_term" type="string">
   UTM term of the Checkout Session.
 </ParamField>
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

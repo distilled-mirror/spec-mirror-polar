@@ -148,3 +148,6 @@ When the seat count on a subscription changes mid-billing cycle, charges are pro
 ## Next steps
 
 For implementation details including API integration, webhook handling, and code examples, see the [Implementing Seat-Based Pricing](/docs/guides/seat-based-pricing) guide.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

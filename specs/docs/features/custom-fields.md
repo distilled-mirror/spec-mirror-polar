@@ -105,3 +105,6 @@ This data is also available from the [Orders](/docs/api-reference/orders/get-ord
   }
 }
 ```
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

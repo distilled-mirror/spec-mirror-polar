@@ -1,0 +1,37 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://polar.sh/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# polar benefit_grants
+
+```bash theme={null}
+polar benefit_grants <subcommand> [flags]
+```
+
+**Subcommands**
+
+* [`polar benefit_grants list`](#polar-benefit_grants-list) List benefit grants across all benefits accessible to the authenticated subject.
+
+## polar benefit\_grants list
+
+List benefit grants across all benefits accessible to the authenticated subject.
+
+```bash theme={null}
+polar benefit_grants list [flags]
+```
+
+**Flags**
+
+| Flag | Type | Description |
+| - | - | - |
+| `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
+| `--organization-id`, `--org` | `string` | Filter by organization ID. Defaults to the active organization. |
+| `--customer-id` | `string` | Filter by customer ID. |
+| `--external-customer-id` | `string` | Filter by customer external ID. |
+| `--is-granted` | `boolean` | Filter by granted status. If `true`, only granted benefits will be returned. If `false`, only revoked benefits will be returned. |
+| `--page` | `integer` | Page number, defaults to 1. |
+| `--limit` | `integer` | Size of a page, defaults to 10. Maximum is 100. |
+| `--sorting` | `choice` | Sorting criterion. Several criteria can be used simultaneously and will be applied in order. Add a minus sign `-` before the criteria name to sort by descending order. (choices: created\_at, -created\_at, granted\_at, -granted\_at, revoked\_at, -revoked\_at) |
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

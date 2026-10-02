@@ -88,3 +88,6 @@ The supplied `timestamp` is still used to:
 
 * Place events on the time series shown in the dashboard and the Customer Portal.
 * Set the date range displayed on the metered line item of the next invoice.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.
