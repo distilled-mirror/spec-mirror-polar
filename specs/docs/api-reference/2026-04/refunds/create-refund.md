@@ -192,6 +192,8 @@ components:
 
             subscription itself is revoked, i.e fully canceled.
           default: false
+          x-polar-cli-confirm:
+            equals: true
       type: object
       required:
         - order_id

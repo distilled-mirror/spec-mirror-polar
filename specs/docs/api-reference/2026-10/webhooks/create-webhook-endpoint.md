@@ -91,7 +91,7 @@ paths:
 
             response = polar.webhooks.create_webhook_endpoint(
                 url='https://webhook.site/cb791d80-f26e-4f8c-be88-6e56054192b0',
-                api_version='2026-04',
+                api_version='2026-10',
                 format='raw',
                 events=['checkout.created'],
             )
@@ -107,7 +107,7 @@ paths:
             const response = await polar.webhooks.createWebhookEndpoint(
               {
                 "url": "https://webhook.site/cb791d80-f26e-4f8c-be88-6e56054192b0",
-                "api_version": "2026-04",
+                "api_version": "2026-10",
                 "format": "raw",
                 "events": [
                   "checkout.created"
@@ -143,7 +143,7 @@ components:
             - 2026-10
           title: Api Version
           description: The API version that'll be used in event payloads.
-          default: 2026-04
+          default: 2026-10
         format:
           $ref: '#/components/schemas/WebhookFormat'
           description: The format of the webhook payload.

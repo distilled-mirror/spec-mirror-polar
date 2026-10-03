@@ -33,7 +33,7 @@ Create an [organization access token](/docs/integrate/oat), store it in `POLAR_A
 ```python main.py theme={null}
 import os
 
-from polar.v2026_04 import Polar
+from polar.v2026_10 import Polar
 
 polar = Polar(os.environ["POLAR_ACCESS_TOKEN"])
 
@@ -49,7 +49,7 @@ Use `PolarAsync` in asynchronous applications:
 import asyncio
 import os
 
-from polar.v2026_04 import PolarAsync
+from polar.v2026_10 import PolarAsync
 
 
 async def main() -> None:
@@ -63,7 +63,7 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
-The import path pins your client to the `2026-04` API version.
+The import path pins your client to the `2026-10` API version.
 
 ## Context managers
 
@@ -74,7 +74,7 @@ For synchronous applications, use `Polar` with `with`:
 ```python theme={null}
 import os
 
-from polar.v2026_04 import Polar
+from polar.v2026_10 import Polar
 
 with Polar(os.environ["POLAR_ACCESS_TOKEN"]) as polar:
     customer_state = polar.customers.get_state_external("customer_external_id")
@@ -87,7 +87,7 @@ For asynchronous applications, use `PolarAsync` with `async with`:
 import asyncio
 import os
 
-from polar.v2026_04 import PolarAsync
+from polar.v2026_10 import PolarAsync
 
 
 async def main() -> None:

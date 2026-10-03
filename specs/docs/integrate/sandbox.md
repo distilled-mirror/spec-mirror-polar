@@ -40,7 +40,7 @@ Our official SDKs support the sandbox environment through a dedicated parameter.
 
 <CodeGroup>
   ```ts TypeScript theme={null}
-  import { createPolar } from "@polar-sh/sdk/2026-04";
+  import { createPolar } from "@polar-sh/sdk/2026-10";
 
   const polar = createPolar({
     accessToken: process.env.POLAR_ACCESS_TOKEN!,
@@ -51,7 +51,7 @@ Our official SDKs support the sandbox environment through a dedicated parameter.
   ```py Python theme={null}
   import os
 
-  from polar.v2026_04 import Polar
+  from polar.v2026_10 import Polar
 
   polar = Polar(
       os.environ["POLAR_ACCESS_TOKEN"],

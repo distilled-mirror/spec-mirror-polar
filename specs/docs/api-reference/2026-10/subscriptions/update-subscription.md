@@ -844,6 +844,8 @@ components:
 
             Or uncancel a subscription currently set to be revoked at period
             end.
+          x-polar-cli-confirm:
+            equals: true
       additionalProperties: false
       type: object
       required:
@@ -916,6 +918,8 @@ components:
           const: true
           title: Revoke
           description: Cancel and revoke an active subscription immediately
+          x-polar-cli-confirm:
+            equals: true
       additionalProperties: false
       type: object
       required:
@@ -931,6 +935,8 @@ components:
 
             Or cancel a scheduled pause on a subscription set to be paused at
             period end.
+          x-polar-cli-confirm:
+            equals: true
         resumes_at:
           anyOf:
             - type: string

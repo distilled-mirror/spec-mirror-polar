@@ -35,7 +35,7 @@ The official TypeScript SDK provides a fully typed client for the Polar API.
 Create an [organization access token](/docs/integrate/oat) for server-side use, keep it out of browser bundles, store it in `POLAR_ACCESS_TOKEN`, and make your first request:
 
 ```typescript icon="square-js" index.js theme={null}
-import { createPolar } from "@polar-sh/sdk/2026-04";
+import { createPolar } from "@polar-sh/sdk/2026-10";
 
 const polar = createPolar({
   accessToken: process.env.POLAR_ACCESS_TOKEN!,
@@ -45,7 +45,7 @@ const customerState = await polar.customers.getStateExternal("customer_external_
 console.log(customerState);
 ```
 
-The import path pins your client to the `2026-04` API version.
+The import path pins your client to the `2026-10` API version.
 
 ## Sandbox environment
 

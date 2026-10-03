@@ -214,6 +214,8 @@ components:
             Whether the product is archived. If `true`, the product won't be
             available for purchase anymore. Existing customers will still have
             access to their benefits, and subscriptions will continue normally.
+          x-polar-cli-confirm:
+            equals: true
         visibility:
           anyOf:
             - $ref: '#/components/schemas/ProductVisibility'

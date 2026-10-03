@@ -137,6 +137,10 @@ components:
           anyOf:
             - $ref: '#/components/schemas/LicenseKeyStatus'
             - type: 'null'
+          x-polar-cli-confirm:
+            one_of:
+              - revoked
+              - disabled
         usage:
           type: integer
           maximum: 2147483647
