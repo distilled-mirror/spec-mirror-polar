@@ -183,18 +183,12 @@ components:
           discriminator:
             propertyName: func
             mapping:
-              avg:
-                $ref: '#/components/schemas/PropertyAggregation'
-              count:
-                $ref: '#/components/schemas/CountAggregation'
-              max:
-                $ref: '#/components/schemas/PropertyAggregation'
-              min:
-                $ref: '#/components/schemas/PropertyAggregation'
-              sum:
-                $ref: '#/components/schemas/PropertyAggregation'
-              unique:
-                $ref: '#/components/schemas/UniqueAggregation'
+              avg: '#/components/schemas/PropertyAggregation'
+              count: '#/components/schemas/CountAggregation'
+              max: '#/components/schemas/PropertyAggregation'
+              min: '#/components/schemas/PropertyAggregation'
+              sum: '#/components/schemas/PropertyAggregation'
+              unique: '#/components/schemas/UniqueAggregation'
         organization_id:
           type: string
           format: uuid4

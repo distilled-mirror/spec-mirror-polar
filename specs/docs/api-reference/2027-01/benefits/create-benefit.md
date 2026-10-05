@@ -127,22 +127,14 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          custom:
-            $ref: '#/components/schemas/BenefitCustomCreate'
-          discord:
-            $ref: '#/components/schemas/BenefitDiscordCreate'
-          downloadables:
-            $ref: '#/components/schemas/BenefitDownloadablesCreate'
-          feature_flag:
-            $ref: '#/components/schemas/BenefitFeatureFlagCreate'
-          github_repository:
-            $ref: '#/components/schemas/BenefitGitHubRepositoryCreate'
-          license_keys:
-            $ref: '#/components/schemas/BenefitLicenseKeysCreate'
-          meter_credit:
-            $ref: '#/components/schemas/BenefitMeterCreditCreate'
-          slack_shared_channel:
-            $ref: '#/components/schemas/BenefitSlackSharedChannelCreate'
+          custom: '#/components/schemas/BenefitCustomCreate'
+          discord: '#/components/schemas/BenefitDiscordCreate'
+          downloadables: '#/components/schemas/BenefitDownloadablesCreate'
+          feature_flag: '#/components/schemas/BenefitFeatureFlagCreate'
+          github_repository: '#/components/schemas/BenefitGitHubRepositoryCreate'
+          license_keys: '#/components/schemas/BenefitLicenseKeysCreate'
+          meter_credit: '#/components/schemas/BenefitMeterCreditCreate'
+          slack_shared_channel: '#/components/schemas/BenefitSlackSharedChannelCreate'
     Benefit:
       oneOf:
         - $ref: '#/components/schemas/BenefitCustom'
@@ -156,22 +148,14 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          custom:
-            $ref: '#/components/schemas/BenefitCustom'
-          discord:
-            $ref: '#/components/schemas/BenefitDiscord'
-          downloadables:
-            $ref: '#/components/schemas/BenefitDownloadables'
-          feature_flag:
-            $ref: '#/components/schemas/BenefitFeatureFlag'
-          github_repository:
-            $ref: '#/components/schemas/BenefitGitHubRepository'
-          license_keys:
-            $ref: '#/components/schemas/BenefitLicenseKeys'
-          meter_credit:
-            $ref: '#/components/schemas/BenefitMeterCredit'
-          slack_shared_channel:
-            $ref: '#/components/schemas/BenefitSlackSharedChannel'
+          custom: '#/components/schemas/BenefitCustom'
+          discord: '#/components/schemas/BenefitDiscord'
+          downloadables: '#/components/schemas/BenefitDownloadables'
+          feature_flag: '#/components/schemas/BenefitFeatureFlag'
+          github_repository: '#/components/schemas/BenefitGitHubRepository'
+          license_keys: '#/components/schemas/BenefitLicenseKeys'
+          meter_credit: '#/components/schemas/BenefitMeterCredit'
+          slack_shared_channel: '#/components/schemas/BenefitSlackSharedChannel'
     HTTPValidationError:
       properties:
         detail:

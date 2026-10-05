@@ -236,18 +236,12 @@ components:
                     discriminator:
                       propertyName: amount_type
                       mapping:
-                        custom:
-                          $ref: '#/components/schemas/ProductPriceCustomCreate'
-                        fixed:
-                          $ref: '#/components/schemas/ProductPriceFixedCreate'
-                        metered_tiers:
-                          $ref: '#/components/schemas/ProductPriceMeteredTiersCreate'
-                        metered_unit:
-                          $ref: '#/components/schemas/ProductPriceMeteredUnitCreate'
-                        seat_based:
-                          $ref: '#/components/schemas/ProductPriceSeatBasedCreate'
-                        unit_based:
-                          $ref: '#/components/schemas/ProductPriceUnitBasedCreate'
+                        custom: '#/components/schemas/ProductPriceCustomCreate'
+                        fixed: '#/components/schemas/ProductPriceFixedCreate'
+                        metered_tiers: '#/components/schemas/ProductPriceMeteredTiersCreate'
+                        metered_unit: '#/components/schemas/ProductPriceMeteredUnitCreate'
+                        seat_based: '#/components/schemas/ProductPriceSeatBasedCreate'
+                        unit_based: '#/components/schemas/ProductPriceUnitBasedCreate'
               type: array
             - type: 'null'
           title: Prices
@@ -1702,10 +1696,8 @@ components:
       discriminator:
         propertyName: amount_type
         mapping:
-          custom:
-            $ref: '#/components/schemas/LegacyRecurringProductPriceCustom'
-          fixed:
-            $ref: '#/components/schemas/LegacyRecurringProductPriceFixed'
+          custom: '#/components/schemas/LegacyRecurringProductPriceCustom'
+          fixed: '#/components/schemas/LegacyRecurringProductPriceFixed'
     ProductPrice:
       oneOf:
         - $ref: '#/components/schemas/ProductPriceFixed'
@@ -1717,18 +1709,12 @@ components:
       discriminator:
         propertyName: amount_type
         mapping:
-          custom:
-            $ref: '#/components/schemas/ProductPriceCustom'
-          fixed:
-            $ref: '#/components/schemas/ProductPriceFixed'
-          metered_tiers:
-            $ref: '#/components/schemas/ProductPriceMeteredTiers'
-          metered_unit:
-            $ref: '#/components/schemas/ProductPriceMeteredUnit'
-          seat_based:
-            $ref: '#/components/schemas/ProductPriceSeatBased'
-          unit_based:
-            $ref: '#/components/schemas/ProductPriceUnitBased'
+          custom: '#/components/schemas/ProductPriceCustom'
+          fixed: '#/components/schemas/ProductPriceFixed'
+          metered_tiers: '#/components/schemas/ProductPriceMeteredTiers'
+          metered_unit: '#/components/schemas/ProductPriceMeteredUnit'
+          seat_based: '#/components/schemas/ProductPriceSeatBased'
+          unit_based: '#/components/schemas/ProductPriceUnitBased'
     Benefit:
       oneOf:
         - $ref: '#/components/schemas/BenefitCustom'
@@ -1742,22 +1728,14 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          custom:
-            $ref: '#/components/schemas/BenefitCustom'
-          discord:
-            $ref: '#/components/schemas/BenefitDiscord'
-          downloadables:
-            $ref: '#/components/schemas/BenefitDownloadables'
-          feature_flag:
-            $ref: '#/components/schemas/BenefitFeatureFlag'
-          github_repository:
-            $ref: '#/components/schemas/BenefitGitHubRepository'
-          license_keys:
-            $ref: '#/components/schemas/BenefitLicenseKeys'
-          meter_credit:
-            $ref: '#/components/schemas/BenefitMeterCredit'
-          slack_shared_channel:
-            $ref: '#/components/schemas/BenefitSlackSharedChannel'
+          custom: '#/components/schemas/BenefitCustom'
+          discord: '#/components/schemas/BenefitDiscord'
+          downloadables: '#/components/schemas/BenefitDownloadables'
+          feature_flag: '#/components/schemas/BenefitFeatureFlag'
+          github_repository: '#/components/schemas/BenefitGitHubRepository'
+          license_keys: '#/components/schemas/BenefitLicenseKeys'
+          meter_credit: '#/components/schemas/BenefitMeterCredit'
+          slack_shared_channel: '#/components/schemas/BenefitSlackSharedChannel'
     ProductMediaFileRead:
       properties:
         id:
@@ -3428,16 +3406,11 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          checkbox:
-            $ref: '#/components/schemas/CustomFieldCheckbox'
-          date:
-            $ref: '#/components/schemas/CustomFieldDate'
-          number:
-            $ref: '#/components/schemas/CustomFieldNumber'
-          select:
-            $ref: '#/components/schemas/CustomFieldSelect'
-          text:
-            $ref: '#/components/schemas/CustomFieldText'
+          checkbox: '#/components/schemas/CustomFieldCheckbox'
+          date: '#/components/schemas/CustomFieldDate'
+          number: '#/components/schemas/CustomFieldNumber'
+          select: '#/components/schemas/CustomFieldSelect'
+          text: '#/components/schemas/CustomFieldText'
     SeatTierType:
       type: string
       enum:

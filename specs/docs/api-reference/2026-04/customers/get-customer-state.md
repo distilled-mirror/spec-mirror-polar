@@ -139,10 +139,8 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          individual:
-            $ref: '#/components/schemas/CustomerStateIndividual'
-          team:
-            $ref: '#/components/schemas/CustomerStateTeam'
+          individual: '#/components/schemas/CustomerStateIndividual'
+          team: '#/components/schemas/CustomerStateTeam'
     ResourceNotFound:
       properties:
         error:

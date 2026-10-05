@@ -140,11 +140,8 @@ components:
               discriminator:
                 propertyName: type
                 mapping:
-                  company:
-                    $ref: '#/components/schemas/OrganizationCompanyLegalEntitySchema'
-                  individual:
-                    $ref: >-
-                      #/components/schemas/OrganizationIndividualLegalEntitySchema
+                  company: '#/components/schemas/OrganizationCompanyLegalEntitySchema'
+                  individual: '#/components/schemas/OrganizationIndividualLegalEntitySchema'
             - type: 'null'
           title: Legal Entity
         email:

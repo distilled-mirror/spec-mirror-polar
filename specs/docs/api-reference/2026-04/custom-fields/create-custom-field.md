@@ -126,16 +126,11 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          checkbox:
-            $ref: '#/components/schemas/CustomFieldCreateCheckbox'
-          date:
-            $ref: '#/components/schemas/CustomFieldCreateDate'
-          number:
-            $ref: '#/components/schemas/CustomFieldCreateNumber'
-          select:
-            $ref: '#/components/schemas/CustomFieldCreateSelect'
-          text:
-            $ref: '#/components/schemas/CustomFieldCreateText'
+          checkbox: '#/components/schemas/CustomFieldCreateCheckbox'
+          date: '#/components/schemas/CustomFieldCreateDate'
+          number: '#/components/schemas/CustomFieldCreateNumber'
+          select: '#/components/schemas/CustomFieldCreateSelect'
+          text: '#/components/schemas/CustomFieldCreateText'
     CustomField:
       oneOf:
         - $ref: '#/components/schemas/CustomFieldText'
@@ -146,16 +141,11 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          checkbox:
-            $ref: '#/components/schemas/CustomFieldCheckbox'
-          date:
-            $ref: '#/components/schemas/CustomFieldDate'
-          number:
-            $ref: '#/components/schemas/CustomFieldNumber'
-          select:
-            $ref: '#/components/schemas/CustomFieldSelect'
-          text:
-            $ref: '#/components/schemas/CustomFieldText'
+          checkbox: '#/components/schemas/CustomFieldCheckbox'
+          date: '#/components/schemas/CustomFieldDate'
+          number: '#/components/schemas/CustomFieldNumber'
+          select: '#/components/schemas/CustomFieldSelect'
+          text: '#/components/schemas/CustomFieldText'
     HTTPValidationError:
       properties:
         detail:

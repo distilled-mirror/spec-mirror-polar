@@ -127,10 +127,8 @@ components:
       discriminator:
         propertyName: source
         mapping:
-          system:
-            $ref: '#/components/schemas/SystemEvent'
-          user:
-            $ref: '#/components/schemas/UserEvent'
+          system: '#/components/schemas/SystemEvent'
+          user: '#/components/schemas/UserEvent'
     ResourceNotFound:
       properties:
         error:
@@ -198,80 +196,43 @@ components:
       discriminator:
         propertyName: name
         mapping:
-          balance.credit_order:
-            $ref: '#/components/schemas/BalanceCreditOrderEvent'
-          balance.dispute:
-            $ref: '#/components/schemas/BalanceDisputeEvent'
-          balance.dispute_reversal:
-            $ref: '#/components/schemas/BalanceDisputeReversalEvent'
-          balance.order:
-            $ref: '#/components/schemas/BalanceOrderEvent'
-          balance.refund:
-            $ref: '#/components/schemas/BalanceRefundEvent'
-          balance.refund_reversal:
-            $ref: '#/components/schemas/BalanceRefundReversalEvent'
-          benefit.cycled:
-            $ref: '#/components/schemas/BenefitCycledEvent'
-          benefit.granted:
-            $ref: '#/components/schemas/BenefitGrantedEvent'
-          benefit.revoked:
-            $ref: '#/components/schemas/BenefitRevokedEvent'
-          benefit.updated:
-            $ref: '#/components/schemas/BenefitUpdatedEvent'
-          checkout.created:
-            $ref: '#/components/schemas/CheckoutCreatedEvent'
-          customer.created:
-            $ref: '#/components/schemas/CustomerCreatedEvent'
-          customer.deleted:
-            $ref: '#/components/schemas/CustomerDeletedEvent'
-          customer.updated:
-            $ref: '#/components/schemas/CustomerUpdatedEvent'
-          meter.credited:
-            $ref: '#/components/schemas/MeterCreditEvent'
-          meter.reset:
-            $ref: '#/components/schemas/MeterResetEvent'
-          order.paid:
-            $ref: '#/components/schemas/OrderPaidEvent'
-          order.refunded:
-            $ref: '#/components/schemas/OrderRefundedEvent'
-          order.unvoided:
-            $ref: '#/components/schemas/OrderUnvoidedEvent'
-          order.voided:
-            $ref: '#/components/schemas/OrderVoidedEvent'
-          subscription.billing_period_updated:
-            $ref: '#/components/schemas/SubscriptionBillingPeriodUpdatedEvent'
-          subscription.canceled:
-            $ref: '#/components/schemas/SubscriptionCanceledEvent'
-          subscription.created:
-            $ref: '#/components/schemas/SubscriptionCreatedEvent'
-          subscription.cycled:
-            $ref: '#/components/schemas/SubscriptionCycledEvent'
-          subscription.migrated:
-            $ref: '#/components/schemas/SubscriptionMigratedEvent'
-          subscription.past_due:
-            $ref: '#/components/schemas/SubscriptionPastDueEvent'
-          subscription.paused:
-            $ref: '#/components/schemas/SubscriptionPausedEvent'
-          subscription.product_updated:
-            $ref: '#/components/schemas/SubscriptionProductUpdatedEvent'
-          subscription.reactivated:
-            $ref: '#/components/schemas/SubscriptionReactivatedEvent'
-          subscription.reinstated:
-            $ref: '#/components/schemas/SubscriptionReinstatedEvent'
-          subscription.resumed:
-            $ref: '#/components/schemas/SubscriptionResumedEvent'
-          subscription.revoked:
-            $ref: '#/components/schemas/SubscriptionRevokedEvent'
-          subscription.seats_updated:
-            $ref: '#/components/schemas/SubscriptionSeatsUpdatedEvent'
-          subscription.uncanceled:
-            $ref: '#/components/schemas/SubscriptionUncanceledEvent'
-          subscription.units_updated:
-            $ref: '#/components/schemas/SubscriptionUnitsUpdatedEvent'
-          subscription.update_cleared:
-            $ref: '#/components/schemas/SubscriptionUpdateClearedEvent'
-          subscription.updated:
-            $ref: '#/components/schemas/SubscriptionUpdatedEvent'
+          balance.credit_order: '#/components/schemas/BalanceCreditOrderEvent'
+          balance.dispute: '#/components/schemas/BalanceDisputeEvent'
+          balance.dispute_reversal: '#/components/schemas/BalanceDisputeReversalEvent'
+          balance.order: '#/components/schemas/BalanceOrderEvent'
+          balance.refund: '#/components/schemas/BalanceRefundEvent'
+          balance.refund_reversal: '#/components/schemas/BalanceRefundReversalEvent'
+          benefit.cycled: '#/components/schemas/BenefitCycledEvent'
+          benefit.granted: '#/components/schemas/BenefitGrantedEvent'
+          benefit.revoked: '#/components/schemas/BenefitRevokedEvent'
+          benefit.updated: '#/components/schemas/BenefitUpdatedEvent'
+          checkout.created: '#/components/schemas/CheckoutCreatedEvent'
+          customer.created: '#/components/schemas/CustomerCreatedEvent'
+          customer.deleted: '#/components/schemas/CustomerDeletedEvent'
+          customer.updated: '#/components/schemas/CustomerUpdatedEvent'
+          meter.credited: '#/components/schemas/MeterCreditEvent'
+          meter.reset: '#/components/schemas/MeterResetEvent'
+          order.paid: '#/components/schemas/OrderPaidEvent'
+          order.refunded: '#/components/schemas/OrderRefundedEvent'
+          order.unvoided: '#/components/schemas/OrderUnvoidedEvent'
+          order.voided: '#/components/schemas/OrderVoidedEvent'
+          subscription.billing_period_updated: '#/components/schemas/SubscriptionBillingPeriodUpdatedEvent'
+          subscription.canceled: '#/components/schemas/SubscriptionCanceledEvent'
+          subscription.created: '#/components/schemas/SubscriptionCreatedEvent'
+          subscription.cycled: '#/components/schemas/SubscriptionCycledEvent'
+          subscription.migrated: '#/components/schemas/SubscriptionMigratedEvent'
+          subscription.past_due: '#/components/schemas/SubscriptionPastDueEvent'
+          subscription.paused: '#/components/schemas/SubscriptionPausedEvent'
+          subscription.product_updated: '#/components/schemas/SubscriptionProductUpdatedEvent'
+          subscription.reactivated: '#/components/schemas/SubscriptionReactivatedEvent'
+          subscription.reinstated: '#/components/schemas/SubscriptionReinstatedEvent'
+          subscription.resumed: '#/components/schemas/SubscriptionResumedEvent'
+          subscription.revoked: '#/components/schemas/SubscriptionRevokedEvent'
+          subscription.seats_updated: '#/components/schemas/SubscriptionSeatsUpdatedEvent'
+          subscription.uncanceled: '#/components/schemas/SubscriptionUncanceledEvent'
+          subscription.units_updated: '#/components/schemas/SubscriptionUnitsUpdatedEvent'
+          subscription.update_cleared: '#/components/schemas/SubscriptionUpdateClearedEvent'
+          subscription.updated: '#/components/schemas/SubscriptionUpdatedEvent'
     UserEvent:
       properties:
         id:
@@ -4186,10 +4147,8 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          individual:
-            $ref: '#/components/schemas/CustomerIndividual'
-          team:
-            $ref: '#/components/schemas/CustomerTeam'
+          individual: '#/components/schemas/CustomerIndividual'
+          team: '#/components/schemas/CustomerTeam'
     EventMetadataOutput:
       properties:
         _cost:

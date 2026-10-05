@@ -132,14 +132,10 @@ components:
       discriminator:
         propertyName: service
         mapping:
-          downloadable:
-            $ref: '#/components/schemas/DownloadableFileCreate'
-          organization_avatar:
-            $ref: '#/components/schemas/OrganizationAvatarFileCreate'
-          product_media:
-            $ref: '#/components/schemas/ProductMediaFileCreate'
-          support_case_attachment:
-            $ref: '#/components/schemas/SupportCaseAttachmentFileCreate'
+          downloadable: '#/components/schemas/DownloadableFileCreate'
+          organization_avatar: '#/components/schemas/OrganizationAvatarFileCreate'
+          product_media: '#/components/schemas/ProductMediaFileCreate'
+          support_case_attachment: '#/components/schemas/SupportCaseAttachmentFileCreate'
     FileUpload:
       properties:
         id:

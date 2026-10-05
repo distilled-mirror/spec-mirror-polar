@@ -253,16 +253,11 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          checkbox:
-            $ref: '#/components/schemas/CustomFieldCheckbox'
-          date:
-            $ref: '#/components/schemas/CustomFieldDate'
-          number:
-            $ref: '#/components/schemas/CustomFieldNumber'
-          select:
-            $ref: '#/components/schemas/CustomFieldSelect'
-          text:
-            $ref: '#/components/schemas/CustomFieldText'
+          checkbox: '#/components/schemas/CustomFieldCheckbox'
+          date: '#/components/schemas/CustomFieldDate'
+          number: '#/components/schemas/CustomFieldNumber'
+          select: '#/components/schemas/CustomFieldSelect'
+          text: '#/components/schemas/CustomFieldText'
     Pagination:
       properties:
         total_count:

@@ -138,16 +138,11 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          checkbox:
-            $ref: '#/components/schemas/CustomFieldUpdateCheckbox'
-          date:
-            $ref: '#/components/schemas/CustomFieldUpdateDate'
-          number:
-            $ref: '#/components/schemas/CustomFieldUpdateNumber'
-          select:
-            $ref: '#/components/schemas/CustomFieldUpdateSelect'
-          text:
-            $ref: '#/components/schemas/CustomFieldUpdateText'
+          checkbox: '#/components/schemas/CustomFieldUpdateCheckbox'
+          date: '#/components/schemas/CustomFieldUpdateDate'
+          number: '#/components/schemas/CustomFieldUpdateNumber'
+          select: '#/components/schemas/CustomFieldUpdateSelect'
+          text: '#/components/schemas/CustomFieldUpdateText'
     CustomField:
       oneOf:
         - $ref: '#/components/schemas/CustomFieldText'
@@ -158,16 +153,11 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          checkbox:
-            $ref: '#/components/schemas/CustomFieldCheckbox'
-          date:
-            $ref: '#/components/schemas/CustomFieldDate'
-          number:
-            $ref: '#/components/schemas/CustomFieldNumber'
-          select:
-            $ref: '#/components/schemas/CustomFieldSelect'
-          text:
-            $ref: '#/components/schemas/CustomFieldText'
+          checkbox: '#/components/schemas/CustomFieldCheckbox'
+          date: '#/components/schemas/CustomFieldDate'
+          number: '#/components/schemas/CustomFieldNumber'
+          select: '#/components/schemas/CustomFieldSelect'
+          text: '#/components/schemas/CustomFieldText'
     ResourceNotFound:
       properties:
         error:

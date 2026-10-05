@@ -171,14 +171,10 @@ components:
       discriminator:
         propertyName: service
         mapping:
-          downloadable:
-            $ref: '#/components/schemas/DownloadableFileRead'
-          organization_avatar:
-            $ref: '#/components/schemas/OrganizationAvatarFileRead'
-          product_media:
-            $ref: '#/components/schemas/ProductMediaFileRead'
-          support_case_attachment:
-            $ref: '#/components/schemas/SupportCaseAttachmentFileRead'
+          downloadable: '#/components/schemas/DownloadableFileRead'
+          organization_avatar: '#/components/schemas/OrganizationAvatarFileRead'
+          product_media: '#/components/schemas/ProductMediaFileRead'
+          support_case_attachment: '#/components/schemas/SupportCaseAttachmentFileRead'
     NotPermitted:
       properties:
         error:

@@ -59,10 +59,8 @@ paths:
                 discriminator:
                   propertyName: sub_type
                   mapping:
-                    user:
-                      $ref: '#/components/schemas/AuthorizeResponseUser'
-                    organization:
-                      $ref: '#/components/schemas/AuthorizeResponseOrganization'
+                    user: '#/components/schemas/AuthorizeResponseUser'
+                    organization: '#/components/schemas/AuthorizeResponseOrganization'
       security:
         - oidc: []
         - pat: []

@@ -1549,10 +1549,8 @@ components:
       discriminator:
         propertyName: amount_type
         mapping:
-          custom:
-            $ref: '#/components/schemas/LegacyRecurringProductPriceCustom'
-          fixed:
-            $ref: '#/components/schemas/LegacyRecurringProductPriceFixed'
+          custom: '#/components/schemas/LegacyRecurringProductPriceCustom'
+          fixed: '#/components/schemas/LegacyRecurringProductPriceFixed'
     ProductPrice:
       oneOf:
         - $ref: '#/components/schemas/ProductPriceFixed'
@@ -1564,18 +1562,12 @@ components:
       discriminator:
         propertyName: amount_type
         mapping:
-          custom:
-            $ref: '#/components/schemas/ProductPriceCustom'
-          fixed:
-            $ref: '#/components/schemas/ProductPriceFixed'
-          metered_tiers:
-            $ref: '#/components/schemas/ProductPriceMeteredTiers'
-          metered_unit:
-            $ref: '#/components/schemas/ProductPriceMeteredUnit'
-          seat_based:
-            $ref: '#/components/schemas/ProductPriceSeatBased'
-          unit_based:
-            $ref: '#/components/schemas/ProductPriceUnitBased'
+          custom: '#/components/schemas/ProductPriceCustom'
+          fixed: '#/components/schemas/ProductPriceFixed'
+          metered_tiers: '#/components/schemas/ProductPriceMeteredTiers'
+          metered_unit: '#/components/schemas/ProductPriceMeteredUnit'
+          seat_based: '#/components/schemas/ProductPriceSeatBased'
+          unit_based: '#/components/schemas/ProductPriceUnitBased'
     CheckoutDiscountFixedOnceForeverDuration:
       properties:
         duration:
@@ -1827,22 +1819,14 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          custom:
-            $ref: '#/components/schemas/BenefitCustomPublic'
-          discord:
-            $ref: '#/components/schemas/BenefitDiscordPublic'
-          downloadables:
-            $ref: '#/components/schemas/BenefitDownloadablesPublic'
-          feature_flag:
-            $ref: '#/components/schemas/BenefitFeatureFlagPublic'
-          github_repository:
-            $ref: '#/components/schemas/BenefitGitHubRepositoryPublic'
-          license_keys:
-            $ref: '#/components/schemas/BenefitLicenseKeysPublic'
-          meter_credit:
-            $ref: '#/components/schemas/BenefitMeterCreditPublic'
-          slack_shared_channel:
-            $ref: '#/components/schemas/BenefitSlackSharedChannelPublic'
+          custom: '#/components/schemas/BenefitCustomPublic'
+          discord: '#/components/schemas/BenefitDiscordPublic'
+          downloadables: '#/components/schemas/BenefitDownloadablesPublic'
+          feature_flag: '#/components/schemas/BenefitFeatureFlagPublic'
+          github_repository: '#/components/schemas/BenefitGitHubRepositoryPublic'
+          license_keys: '#/components/schemas/BenefitLicenseKeysPublic'
+          meter_credit: '#/components/schemas/BenefitMeterCreditPublic'
+          slack_shared_channel: '#/components/schemas/BenefitSlackSharedChannelPublic'
     ProductMediaFileRead:
       properties:
         id:
@@ -2688,16 +2672,11 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          checkbox:
-            $ref: '#/components/schemas/CustomFieldCheckbox'
-          date:
-            $ref: '#/components/schemas/CustomFieldDate'
-          number:
-            $ref: '#/components/schemas/CustomFieldNumber'
-          select:
-            $ref: '#/components/schemas/CustomFieldSelect'
-          text:
-            $ref: '#/components/schemas/CustomFieldText'
+          checkbox: '#/components/schemas/CustomFieldCheckbox'
+          date: '#/components/schemas/CustomFieldDate'
+          number: '#/components/schemas/CustomFieldNumber'
+          select: '#/components/schemas/CustomFieldSelect'
+          text: '#/components/schemas/CustomFieldText'
     BenefitCustomPublic:
       properties:
         id:

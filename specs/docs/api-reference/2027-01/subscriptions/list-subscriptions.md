@@ -1610,10 +1610,8 @@ components:
       discriminator:
         propertyName: amount_type
         mapping:
-          custom:
-            $ref: '#/components/schemas/LegacyRecurringProductPriceCustom'
-          fixed:
-            $ref: '#/components/schemas/LegacyRecurringProductPriceFixed'
+          custom: '#/components/schemas/LegacyRecurringProductPriceCustom'
+          fixed: '#/components/schemas/LegacyRecurringProductPriceFixed'
     ProductPrice:
       oneOf:
         - $ref: '#/components/schemas/ProductPriceFixed'
@@ -1625,18 +1623,12 @@ components:
       discriminator:
         propertyName: amount_type
         mapping:
-          custom:
-            $ref: '#/components/schemas/ProductPriceCustom'
-          fixed:
-            $ref: '#/components/schemas/ProductPriceFixed'
-          metered_tiers:
-            $ref: '#/components/schemas/ProductPriceMeteredTiers'
-          metered_unit:
-            $ref: '#/components/schemas/ProductPriceMeteredUnit'
-          seat_based:
-            $ref: '#/components/schemas/ProductPriceSeatBased'
-          unit_based:
-            $ref: '#/components/schemas/ProductPriceUnitBased'
+          custom: '#/components/schemas/ProductPriceCustom'
+          fixed: '#/components/schemas/ProductPriceFixed'
+          metered_tiers: '#/components/schemas/ProductPriceMeteredTiers'
+          metered_unit: '#/components/schemas/ProductPriceMeteredUnit'
+          seat_based: '#/components/schemas/ProductPriceSeatBased'
+          unit_based: '#/components/schemas/ProductPriceUnitBased'
     SubscriptionMeter:
       properties:
         created_at:
@@ -2340,22 +2332,14 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          custom:
-            $ref: '#/components/schemas/BenefitCustom'
-          discord:
-            $ref: '#/components/schemas/BenefitDiscord'
-          downloadables:
-            $ref: '#/components/schemas/BenefitDownloadables'
-          feature_flag:
-            $ref: '#/components/schemas/BenefitFeatureFlag'
-          github_repository:
-            $ref: '#/components/schemas/BenefitGitHubRepository'
-          license_keys:
-            $ref: '#/components/schemas/BenefitLicenseKeys'
-          meter_credit:
-            $ref: '#/components/schemas/BenefitMeterCredit'
-          slack_shared_channel:
-            $ref: '#/components/schemas/BenefitSlackSharedChannel'
+          custom: '#/components/schemas/BenefitCustom'
+          discord: '#/components/schemas/BenefitDiscord'
+          downloadables: '#/components/schemas/BenefitDownloadables'
+          feature_flag: '#/components/schemas/BenefitFeatureFlag'
+          github_repository: '#/components/schemas/BenefitGitHubRepository'
+          license_keys: '#/components/schemas/BenefitLicenseKeys'
+          meter_credit: '#/components/schemas/BenefitMeterCredit'
+          slack_shared_channel: '#/components/schemas/BenefitSlackSharedChannel'
     ProductMediaFileRead:
       properties:
         id:
@@ -3280,18 +3264,12 @@ components:
           discriminator:
             propertyName: func
             mapping:
-              avg:
-                $ref: '#/components/schemas/PropertyAggregation'
-              count:
-                $ref: '#/components/schemas/CountAggregation'
-              max:
-                $ref: '#/components/schemas/PropertyAggregation'
-              min:
-                $ref: '#/components/schemas/PropertyAggregation'
-              sum:
-                $ref: '#/components/schemas/PropertyAggregation'
-              unique:
-                $ref: '#/components/schemas/UniqueAggregation'
+              avg: '#/components/schemas/PropertyAggregation'
+              count: '#/components/schemas/CountAggregation'
+              max: '#/components/schemas/PropertyAggregation'
+              min: '#/components/schemas/PropertyAggregation'
+              sum: '#/components/schemas/PropertyAggregation'
+              unique: '#/components/schemas/UniqueAggregation'
         organization_id:
           type: string
           format: uuid4
@@ -3951,16 +3929,11 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          checkbox:
-            $ref: '#/components/schemas/CustomFieldCheckbox'
-          date:
-            $ref: '#/components/schemas/CustomFieldDate'
-          number:
-            $ref: '#/components/schemas/CustomFieldNumber'
-          select:
-            $ref: '#/components/schemas/CustomFieldSelect'
-          text:
-            $ref: '#/components/schemas/CustomFieldText'
+          checkbox: '#/components/schemas/CustomFieldCheckbox'
+          date: '#/components/schemas/CustomFieldDate'
+          number: '#/components/schemas/CustomFieldNumber'
+          select: '#/components/schemas/CustomFieldSelect'
+          text: '#/components/schemas/CustomFieldText'
     ProductPriceSource:
       type: string
       enum:

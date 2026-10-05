@@ -123,10 +123,8 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          fixed:
-            $ref: '#/components/schemas/DiscountFixedCreate'
-          percentage:
-            $ref: '#/components/schemas/DiscountPercentageCreate'
+          fixed: '#/components/schemas/DiscountFixedCreate'
+          percentage: '#/components/schemas/DiscountPercentageCreate'
     Discount:
       oneOf:
         - $ref: '#/components/schemas/DiscountFixedOnceForeverDuration'

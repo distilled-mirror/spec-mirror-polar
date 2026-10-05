@@ -423,10 +423,8 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          individual:
-            $ref: '#/components/schemas/CustomerIndividual'
-          team:
-            $ref: '#/components/schemas/CustomerTeam'
+          individual: '#/components/schemas/CustomerIndividual'
+          team: '#/components/schemas/CustomerTeam'
     Member:
       properties:
         id:
@@ -509,22 +507,14 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          custom:
-            $ref: '#/components/schemas/BenefitCustom'
-          discord:
-            $ref: '#/components/schemas/BenefitDiscord'
-          downloadables:
-            $ref: '#/components/schemas/BenefitDownloadables'
-          feature_flag:
-            $ref: '#/components/schemas/BenefitFeatureFlag'
-          github_repository:
-            $ref: '#/components/schemas/BenefitGitHubRepository'
-          license_keys:
-            $ref: '#/components/schemas/BenefitLicenseKeys'
-          meter_credit:
-            $ref: '#/components/schemas/BenefitMeterCredit'
-          slack_shared_channel:
-            $ref: '#/components/schemas/BenefitSlackSharedChannel'
+          custom: '#/components/schemas/BenefitCustom'
+          discord: '#/components/schemas/BenefitDiscord'
+          downloadables: '#/components/schemas/BenefitDownloadables'
+          feature_flag: '#/components/schemas/BenefitFeatureFlag'
+          github_repository: '#/components/schemas/BenefitGitHubRepository'
+          license_keys: '#/components/schemas/BenefitLicenseKeys'
+          meter_credit: '#/components/schemas/BenefitMeterCredit'
+          slack_shared_channel: '#/components/schemas/BenefitSlackSharedChannel'
     BenefitGrantDiscordProperties:
       properties:
         account_id:
