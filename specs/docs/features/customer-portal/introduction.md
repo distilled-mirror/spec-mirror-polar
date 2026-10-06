@@ -44,7 +44,7 @@ The Customer Portal isn't just a convenience feature — it's a critical piece o
     Configure what your customers can do from the portal under Settings → Customer portal.
   </Card>
 
-  <Card title="Customer Portal API" icon="code" href="/docs/api-reference/customer_portal/get-customer">
+  <Card title="Customer Portal API" icon="code" href="/docs/api-reference/current/customer_portal/get-customer">
     Build your own portal experience on top of the Customer Portal API.
   </Card>
 </CardGroup>
@@ -77,7 +77,7 @@ The Customer Portal isn't just a convenience feature — it's a critical piece o
     intentionally consistent across all Polar organizations.
 
     If you need a branded experience, you can build your own portal on top of
-    the [Customer Portal API](/docs/api-reference/customer_portal/get-customer),
+    the [Customer Portal API](/docs/api-reference/current/customer_portal/get-customer),
     which covers the day-to-day actions: viewing subscriptions and orders,
     downloading invoices and receipts, managing benefits and seats, and reading
     meter usage.
