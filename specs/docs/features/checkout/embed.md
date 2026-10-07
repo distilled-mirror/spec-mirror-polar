@@ -86,7 +86,7 @@ export default PurchaseLink
 <Tip>
   Instead of a Checkout Link, you can also use a [Checkout Session](/docs/features/checkout/session) URL created dynamically from the API.
 
-  For this to work, make sure to set the [`embed_origin`](/docs/api-reference/checkouts/create-checkout-session#body-embed-origin) parameter correctly when creating the Checkout Session. For example, if your checkout page is served on the URL `https://example.com/checkout`, you should set `embed_origin` to `https://example.com`.
+  For this to work, make sure to set the [`embed_origin`](/docs/api-reference/current/checkouts/create-checkout-session#body-embed-origin) parameter correctly when creating the Checkout Session. For example, if your checkout page is served on the URL `https://example.com/checkout`, you should set `embed_origin` to `https://example.com`.
 </Tip>
 
 ## Embed Hosts

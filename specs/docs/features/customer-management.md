@@ -18,15 +18,15 @@ Everyone who has ever purchased something from you will be recorded as a Custome
 
 ## External ID
 
-Quite often, you'll have our own users management system in your application, where your customer already have an ID. To ease reconciliation between Polar and your system, we have a dedicated [`external_id`](/docs/api-reference/customers/get-customer-by-external-id#response-external-id) field on Customers. It's unique across your organization and can't be changed once set.
+Quite often, you'll have our own users management system in your application, where your customer already have an ID. To ease reconciliation between Polar and your system, we have a dedicated [`external_id`](/docs/api-reference/current/customers/get-customer-by-external-id#response-external-id) field on Customers. It's unique across your organization and can't be changed once set.
 
 We have dedicated API endpoints that work with the `external_id` field, so you don't even have to store the internal Polar ID in your system.
 
-<Card title="Get Customer by External ID" icon="link" href="/docs/api-reference/customers/get-customer-by-external-id" horizontal />
+<Card title="Get Customer by External ID" icon="link" href="/docs/api-reference/current/customers/get-customer-by-external-id" horizontal />
 
-<Card title="Update Customer by External ID" icon="link" href="/docs/api-reference/customers/update-customer-by-external-id" horizontal />
+<Card title="Update Customer by External ID" icon="link" href="/docs/api-reference/current/customers/update-customer-by-external-id" horizontal />
 
-<Card title="Delete Customer by External ID" icon="link" href="/docs/api-reference/customers/delete-customer-by-external-id" horizontal />
+<Card title="Delete Customer by External ID" icon="link" href="/docs/api-reference/current/customers/delete-customer-by-external-id" horizontal />
 
 ## Metadata
 
@@ -36,7 +36,7 @@ You may set additional metadata on Customers. This can be very useful to store a
 
 <img className="hidden dark:block" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/customer-management/edit.dark.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=1981f637bea304c95d62ed7b7d85d14f" width="1512" height="964" data-path="assets/features/customer-management/edit.dark.png" />
 
-It can be set through the dashboard or through the [API](/docs/api-reference/customers/update-customer#body-metadata). It can also be pre-set when creating a Checkout Session by using the [`customer_metadata`](/docs/api-reference/checkouts/create-checkout-session#body-customer-metadata) field. This way, after a successful checkout, the metadata will automatically be set on the newly created Customer.
+It can be set through the dashboard or through the [API](/docs/api-reference/current/customers/update-customer#body-metadata). It can also be pre-set when creating a Checkout Session by using the [`customer_metadata`](/docs/api-reference/current/checkouts/create-checkout-session#body-customer-metadata) field. This way, after a successful checkout, the metadata will automatically be set on the newly created Customer.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

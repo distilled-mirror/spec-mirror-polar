@@ -19,7 +19,7 @@ With Polar, you can easily add such fields to your checkout using **Custom Field
 
 Custom Fields are managed at an organization's level. To create them, go to [**Settings → Custom Fields**](https://polar.sh/to/dashboard/settings/custom-fields). You'll see the list of all the available fields on your organization.
 
-Click on **New Custom Field** to create a new one. You can also manage them programmatically using the [Custom Fields API](/docs/api-reference/custom-fields/create-custom-field).
+Click on **New Custom Field** to create a new one. You can also manage them programmatically using the [Custom Fields API](/docs/api-reference/current/custom-fields/create-custom-field).
 
 ### Type
 
@@ -88,13 +88,13 @@ Note that you can make each field `Required` for that product.
 
 The fields are now added as part of the Checkout form for this product.
 
-When [creating a Checkout Session](/docs/api-reference/checkouts/create-checkout-session) from the API, you can also prefill the fields by setting the `custom_field_data` property, keyed by the **slug** of each field.
+When [creating a Checkout Session](/docs/api-reference/current/checkouts/create-checkout-session) from the API, you can also prefill the fields by setting the `custom_field_data` property, keyed by the **slug** of each field.
 
 ## Read data
 
 The values input by the customer are stored on the Order or Subscription resulting from the checkout. From your dashboard, open an order or subscription from the **Sales** section: the values are displayed under the **Custom Fields** section of the detail view.
 
-This data is also available from the [Orders](/docs/api-reference/orders/get-order) and [Subscriptions](/docs/api-reference/subscriptions/get-subscription) API, under the `custom_field_data` property. Each value is referenced by the **slug** of the field.
+This data is also available from the [Orders](/docs/api-reference/current/orders/get-order) and [Subscriptions](/docs/api-reference/current/subscriptions/get-subscription) API, under the `custom_field_data` property. Each value is referenced by the **slug** of the field.
 
 ```json theme={null}
 {

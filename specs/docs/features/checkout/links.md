@@ -122,7 +122,7 @@ When a link is configured with several products, point the customer directly to 
 
 ### Attribution and reference metadata
 
-These parameters are automatically attached to the generated Checkout Session [`metadata`](/docs/api-reference/checkouts/get-checkout-session#response-metadata).
+These parameters are automatically attached to the generated Checkout Session [`metadata`](/docs/api-reference/current/checkouts/get-checkout-session#response-metadata).
 
 <ParamField path="reference_id" type="string">
   Your own reference ID for the Checkout Session.

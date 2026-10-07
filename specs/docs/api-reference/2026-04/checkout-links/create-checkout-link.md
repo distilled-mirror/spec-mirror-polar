@@ -8,13 +8,6 @@
 
 **Scopes**: `checkout_links:write`
 
-<Warning>
-  Looking to create a single use checkout session? Checkout Links are probably **not** what you're looking for.
-
-  Checkout Links are shareable links that generate checkout sessions when opened. They are very handy to start a purchase from your website or social media.
-
-  However, if you want to start a checkout for one of your user **inside** your product, you should use the [Checkout Sessions API](/docs/api-reference/checkouts/create-checkout-session).
-</Warning>
 
 
 ## OpenAPI

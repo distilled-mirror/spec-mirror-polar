@@ -8,7 +8,7 @@
 
 Once a subscription exists, you'll want to adjust it over time — change plans, extend trials, tweak seats, or end it. This page covers everything a merchant can do to a subscription, both from the dashboard and through the API.
 
-All of these actions are available under **Sales → Subscriptions** in the dashboard, and via the [Update Subscription](/docs/api-reference/subscriptions/update-subscription) endpoint. Customers can also perform a subset of them from the [Customer Portal](/docs/features/customer-portal/introduction) — which ones is controlled by your [portal settings](/docs/features/customer-portal/settings).
+All of these actions are available under **Sales → Subscriptions** in the dashboard, and via the [Update Subscription](/docs/api-reference/current/subscriptions/update-subscription) endpoint. Customers can also perform a subset of them from the [Customer Portal](/docs/features/customer-portal/introduction) — which ones is controlled by your [portal settings](/docs/features/customer-portal/settings).
 
 ## Change the plan
 

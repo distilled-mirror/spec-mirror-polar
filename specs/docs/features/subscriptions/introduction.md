@@ -53,7 +53,7 @@ See [Managing subscriptions](/docs/features/subscriptions/manage) for how to per
 There are two ways a subscription can come into existence:
 
 * **Through checkout.** The default. Works for any paid recurring product. See [Checkout](/docs/features/checkout/session).
-* **Through the API, for free recurring products only.** You can call [Create Subscription](/docs/api-reference/subscriptions/create-subscription) to subscribe an existing customer to a free product — no order, no email, no charge. This is useful for freemium onboarding flows where you want every signup to have a subscription tied to it from day one. Paid products always go through checkout so that Polar can collect and validate the payment method.
+* **Through the API, for free recurring products only.** You can call [Create Subscription](/docs/api-reference/current/subscriptions/create-subscription) to subscribe an existing customer to a free product — no order, no email, no charge. This is useful for freemium onboarding flows where you want every signup to have a subscription tied to it from day one. Paid products always go through checkout so that Polar can collect and validate the payment method.
 
 ## Next steps
 
@@ -72,7 +72,7 @@ There are two ways a subscription can come into existence:
     How Polar retries failed renewals and when benefits are revoked.
   </Card>
 
-  <Card title="Subscriptions API" icon="code" href="/docs/api-reference/subscriptions/list-subscriptions">
+  <Card title="Subscriptions API" icon="code" href="/docs/api-reference/current/subscriptions/list-subscriptions">
     List, create, update, and revoke subscriptions programmatically.
   </Card>
 </CardGroup>
