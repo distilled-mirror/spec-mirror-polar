@@ -6,6 +6,9 @@
 
 > Get saved payment methods of the authenticated customer.
 
+<Note>
+  To change the default payment method, call the [`PATCH /v1/customer-portal/customers/me`](/docs/api-reference/customer_portal/update-customer) endpoint with the desired `default_payment_method_id`.
+</Note>
 
 
 ## OpenAPI

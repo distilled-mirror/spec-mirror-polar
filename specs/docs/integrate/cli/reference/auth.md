@@ -62,12 +62,6 @@ Show the active organization
 polar auth whoami [flags]
 ```
 
-**Flags**
-
-| Flag | Type | Description |
-| - | - | - |
-| `--json` | `boolean` | Print the result as JSON |
-
 ## polar auth list
 
 List the organizations you have access to
@@ -75,12 +69,6 @@ List the organizations you have access to
 ```bash theme={null}
 polar auth list [flags]
 ```
-
-**Flags**
-
-| Flag | Type | Description |
-| - | - | - |
-| `--json` | `boolean` | Print the result as JSON |
 
 ## polar auth org
 

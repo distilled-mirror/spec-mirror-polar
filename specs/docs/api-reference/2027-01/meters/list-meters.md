@@ -256,6 +256,16 @@ components:
       title: HTTPValidationError
     Meter:
       properties:
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         created_at:
@@ -339,6 +349,7 @@ components:
           description: Whether the meter is archived and the time it was archived.
       type: object
       required:
+        - external_id
         - metadata
         - created_at
         - modified_at

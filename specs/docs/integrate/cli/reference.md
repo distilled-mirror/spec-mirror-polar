@@ -54,6 +54,7 @@ These flags work with every command.
 | `--version`, `-v` | `boolean` | Show version information |
 | `--completions` | `<bash\|zsh\|fish\|sh>` | Print shell completion script (choices: bash, zsh, fish, sh) |
 | `--log-level` | `<all\|trace\|debug\|info\|warn\|warning\|error\|fatal\|none>` | Sets the minimum log level (choices: all, trace, debug, info, warn, warning, error, fatal, none) |
+| `--json` | `boolean` | Print the result as JSON |
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

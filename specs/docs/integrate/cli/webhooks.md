@@ -102,7 +102,7 @@ polar trigger subscription.active --seed 42
 Print the payload instead of delivering it:
 
 ```bash Terminal theme={null}
-polar trigger checkout.created --json
+polar trigger checkout.created --dry-run
 ```
 
 ## Next steps

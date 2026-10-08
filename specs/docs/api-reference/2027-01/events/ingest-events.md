@@ -63,10 +63,23 @@ paths:
       responses:
         '200':
           description: Successful Response
+          headers:
+            Polar-Ingest-Sequence:
+              description: >-
+                Sequence number covering every event of the request, including
+                duplicates stored by an earlier request.
+              schema:
+                type: integer
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/EventsIngestResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotPermitted'
         '422':
           description: Validation Error
           content:
@@ -144,6 +157,22 @@ components:
       required:
         - inserted
       title: EventsIngestResponse
+    NotPermitted:
+      properties:
+        error:
+          type: string
+          const: NotPermitted
+          title: Error
+          examples:
+            - NotPermitted
+        detail:
+          type: string
+          title: Detail
+      type: object
+      required:
+        - error
+        - detail
+      title: NotPermitted
     HTTPValidationError:
       properties:
         detail:
