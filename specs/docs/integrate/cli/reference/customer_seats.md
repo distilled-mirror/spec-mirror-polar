@@ -29,6 +29,7 @@ polar customer_seats assign_seat [flags]
 
 | Flag | Type | Description |
 | - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--subscription-id` | `string` | Subscription ID. Required if neither order\_id nor checkout\_id is provided. |
 | `--order-id` | `string` | Order ID for one-time purchases. Required if subscription\_id is not provided. |
@@ -53,6 +54,7 @@ polar customer_seats claim_seat [flags]
 | Flag | Type | Description |
 | - | - | - |
 | `--environment` | `choice` | Environment for this unauthenticated request (choices: production, sandbox) |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--invitation-token` | `string` | Required. Invitation token to claim the seat |
 
@@ -75,6 +77,7 @@ polar customer_seats get_claim_info [flags] <invitation_token>
 | Flag | Type | Description |
 | - | - | - |
 | `--environment` | `choice` | Environment for this unauthenticated request (choices: production, sandbox) |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 
 ## polar customer\_seats list\_seats
 
@@ -88,6 +91,7 @@ polar customer_seats list_seats [flags]
 
 | Flag | Type | Description |
 | - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--subscription-id` | `string` | subscription\_id |
 | `--order-id` | `string` | order\_id |
@@ -105,6 +109,12 @@ polar customer_seats resend_invitation [flags] <seat_id>
 | Argument | Type | Description |
 | - | - | - |
 | `seat_id` | `string` | |
+
+**Flags**
+
+| Flag | Type | Description |
+| - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 
 ## polar customer\_seats revoke\_seat
 
@@ -125,6 +135,7 @@ polar customer_seats revoke_seat [flags] <seat_id>
 | Flag | Type | Description |
 | - | - | - |
 | `--confirm`, `-c` | `boolean` | Skip the confirmation prompt for destructive requests |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

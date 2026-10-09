@@ -25,6 +25,7 @@ polar metrics get [flags]
 
 | Flag | Type | Description |
 | - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--start-date` | `string` | Required. Start date. |
 | `--end-date` | `string` | Required. End date. |
@@ -43,6 +44,12 @@ Get the interval limits for the metrics endpoint.
 ```bash theme={null}
 polar metrics limits [flags]
 ```
+
+**Flags**
+
+| Flag | Type | Description |
+| - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

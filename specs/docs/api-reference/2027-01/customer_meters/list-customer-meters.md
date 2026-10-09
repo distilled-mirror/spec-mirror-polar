@@ -125,6 +125,19 @@ paths:
             title: MeterID Filter
             description: Filter by meter ID.
           description: Filter by meter ID.
+        - name: external_meter_id
+          in: query
+          required: false
+          schema:
+            anyOf:
+              - type: string
+              - items:
+                  type: string
+                type: array
+              - type: 'null'
+            title: ExternalMeterID Filter
+            description: Filter by meter external ID.
+          description: Filter by meter external ID.
         - name: page
           in: query
           required: false

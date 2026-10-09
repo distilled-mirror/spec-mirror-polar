@@ -967,6 +967,8 @@ components:
           description: >-
             Resume a paused subscription immediately, starting a new billing
             period and charging the customer.
+          x-polar-cli-confirm:
+            equals: true
       additionalProperties: false
       type: object
       required:

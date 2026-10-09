@@ -27,6 +27,12 @@ polar checkouts get [flags] <id>
 | - | - | - |
 | `id` | `string` | |
 
+**Flags**
+
+| Flag | Type | Description |
+| - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+
 ## polar checkouts list
 
 List checkout sessions.
@@ -39,6 +45,7 @@ polar checkouts list [flags]
 
 | Flag | Type | Description |
 | - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--organization-id`, `--org` | `string` | Filter by organization ID. Defaults to the active organization. |
 | `--product-id` | `string` | Filter by product ID. |

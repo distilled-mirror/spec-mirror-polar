@@ -1062,13 +1062,6 @@ components:
             If this organization can migrate its billing from another provider
             (e.g. Stripe) to Polar.
           default: false
-        frame_ancestors_enforced:
-          type: boolean
-          title: Frame Ancestors Enforced
-          description: >-
-            If this organization's checkout tells the browser to refuse framing
-            from any host outside its embed hosts.
-          default: false
       type: object
       title: OrganizationFeatureSettings
     OrganizationSubscriptionSettings:

@@ -91,6 +91,7 @@ paths:
             polar = Polar("polar_oat_xxx")
 
             response = polar.benefits.create(
+                external_id='ext_1337',
                 type='custom',
                 description='string',
                 properties={},
@@ -106,6 +107,7 @@ paths:
 
             const response = await polar.benefits.create(
               {
+                "external_id": "ext_1337",
                 "type": "custom",
                 "description": "string",
                 "properties": {}
@@ -167,6 +169,16 @@ components:
       title: HTTPValidationError
     BenefitCustomCreate:
       properties:
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           additionalProperties:
             anyOf:
@@ -234,6 +246,16 @@ components:
       description: Schema to create a benefit of type `custom`.
     BenefitDiscordCreate:
       properties:
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           additionalProperties:
             anyOf:
@@ -300,6 +322,16 @@ components:
       title: BenefitDiscordCreate
     BenefitGitHubRepositoryCreate:
       properties:
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           additionalProperties:
             anyOf:
@@ -366,6 +398,16 @@ components:
       title: BenefitGitHubRepositoryCreate
     BenefitDownloadablesCreate:
       properties:
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           additionalProperties:
             anyOf:
@@ -432,6 +474,16 @@ components:
       title: BenefitDownloadablesCreate
     BenefitLicenseKeysCreate:
       properties:
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           additionalProperties:
             anyOf:
@@ -498,6 +550,16 @@ components:
       title: BenefitLicenseKeysCreate
     BenefitMeterCreditCreate:
       properties:
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           additionalProperties:
             anyOf:
@@ -565,6 +627,16 @@ components:
       description: Schema to create a benefit of type `meter_unit`.
     BenefitFeatureFlagCreate:
       properties:
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           additionalProperties:
             anyOf:
@@ -632,6 +704,16 @@ components:
       description: Schema to create a benefit of type `feature_flag`.
     BenefitSlackSharedChannelCreate:
       properties:
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           additionalProperties:
             anyOf:
@@ -744,6 +826,16 @@ components:
           format: uuid4
           title: Organization Id
           description: The ID of the organization owning the benefit.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         visibility:
@@ -766,6 +858,7 @@ components:
         - deletable
         - is_deleted
         - organization_id
+        - external_id
         - metadata
         - visibility
         - properties
@@ -823,6 +916,16 @@ components:
           format: uuid4
           title: Organization Id
           description: The ID of the organization owning the benefit.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         visibility:
@@ -845,6 +948,7 @@ components:
         - deletable
         - is_deleted
         - organization_id
+        - external_id
         - metadata
         - visibility
         - properties
@@ -902,6 +1006,16 @@ components:
           format: uuid4
           title: Organization Id
           description: The ID of the organization owning the benefit.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         visibility:
@@ -924,6 +1038,7 @@ components:
         - deletable
         - is_deleted
         - organization_id
+        - external_id
         - metadata
         - visibility
         - properties
@@ -983,6 +1098,16 @@ components:
           format: uuid4
           title: Organization Id
           description: The ID of the organization owning the benefit.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         visibility:
@@ -1005,6 +1130,7 @@ components:
         - deletable
         - is_deleted
         - organization_id
+        - external_id
         - metadata
         - visibility
         - properties
@@ -1058,6 +1184,16 @@ components:
           format: uuid4
           title: Organization Id
           description: The ID of the organization owning the benefit.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         visibility:
@@ -1080,6 +1216,7 @@ components:
         - deletable
         - is_deleted
         - organization_id
+        - external_id
         - metadata
         - visibility
         - properties
@@ -1133,6 +1270,16 @@ components:
           format: uuid4
           title: Organization Id
           description: The ID of the organization owning the benefit.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         visibility:
@@ -1155,6 +1302,7 @@ components:
         - deletable
         - is_deleted
         - organization_id
+        - external_id
         - metadata
         - visibility
         - properties
@@ -1212,6 +1360,16 @@ components:
           format: uuid4
           title: Organization Id
           description: The ID of the organization owning the benefit.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         visibility:
@@ -1234,6 +1392,7 @@ components:
         - deletable
         - is_deleted
         - organization_id
+        - external_id
         - metadata
         - visibility
         - properties
@@ -1292,6 +1451,16 @@ components:
           format: uuid4
           title: Organization Id
           description: The ID of the organization owning the benefit.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         visibility:
@@ -1314,6 +1483,7 @@ components:
         - deletable
         - is_deleted
         - organization_id
+        - external_id
         - metadata
         - visibility
         - properties

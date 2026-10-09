@@ -30,6 +30,7 @@ polar benefits create [flags]
 
 | Flag | Type | Description |
 | - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--metadata` | `string` | Key-value object allowing you to store additional information. JSON: \{"\<key>": string \| integer \| number \| boolean} |
 | `--type` | `choice` | Required. type (choices: custom, discord, github\_repository, downloadables, license\_keys, meter\_credit, feature\_flag, slack\_shared\_channel) |
@@ -76,6 +77,7 @@ polar benefits files [flags] <id>
 
 | Flag | Type | Description |
 | - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--page` | `integer` | Page number, defaults to 1. |
 | `--limit` | `integer` | Size of a page, defaults to 10. Maximum is 100. |
@@ -93,6 +95,12 @@ polar benefits get [flags] <id>
 | Argument | Type | Description |
 | - | - | - |
 | `id` | `string` | |
+
+**Flags**
+
+| Flag | Type | Description |
+| - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 
 ## polar benefits grants
 
@@ -112,6 +120,7 @@ polar benefits grants [flags] <id>
 
 | Flag | Type | Description |
 | - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--is-granted` | `boolean` | Filter by granted status. If `true`, only granted benefits will be returned. If `false`, only revoked benefits will be returned. |
 | `--customer-id` | `string` | Filter by customer. |
@@ -131,6 +140,7 @@ polar benefits list [flags]
 
 | Flag | Type | Description |
 | - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--organization-id`, `--org` | `string` | Filter by organization ID. Defaults to the active organization. |
 | `--type` | `choice` | Filter by benefit type. (choices: custom, discord, github\_repository, downloadables, license\_keys, meter\_credit, feature\_flag, slack\_shared\_channel) |
@@ -160,6 +170,7 @@ polar benefits update [flags] <id>
 
 | Flag | Type | Description |
 | - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--metadata` | `string` | Key-value object allowing you to store additional information. JSON: \{"\<key>": string \| integer \| number \| boolean} |
 | `--description` | `string` | The description of the benefit. Will be displayed on products having this benefit. |

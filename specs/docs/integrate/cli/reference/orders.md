@@ -31,6 +31,12 @@ polar orders generate_invoice [flags] <id>
 | - | - | - |
 | `id` | `string` | |
 
+**Flags**
+
+| Flag | Type | Description |
+| - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+
 ## polar orders get
 
 Get an order by ID.
@@ -44,6 +50,12 @@ polar orders get [flags] <id>
 | Argument | Type | Description |
 | - | - | - |
 | `id` | `string` | |
+
+**Flags**
+
+| Flag | Type | Description |
+| - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 
 ## polar orders invoice
 
@@ -59,6 +71,12 @@ polar orders invoice [flags] <id>
 | - | - | - |
 | `id` | `string` | |
 
+**Flags**
+
+| Flag | Type | Description |
+| - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+
 ## polar orders list
 
 List orders.
@@ -71,6 +89,7 @@ polar orders list [flags]
 
 | Flag | Type | Description |
 | - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--organization-id`, `--org` | `string` | Filter by organization ID. Defaults to the active organization. |
 | `--product-id` | `string` | Filter by product ID. |
@@ -120,6 +139,7 @@ polar orders update [flags] <id>
 
 | Flag | Type | Description |
 | - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--billing-name` | `string` | The name of the customer that should appear on the invoice. |
 | `--billing-address` | `string` | The address of the customer that should appear on the invoice. Country and state fields cannot be updated. JSON: \{"country": "AD" \| "AE" \| "AF" \| "AG" \| "AI" \| ..., ...} |

@@ -27,6 +27,12 @@ polar payments get [flags] <id>
 | - | - | - |
 | `id` | `string` | |
 
+**Flags**
+
+| Flag | Type | Description |
+| - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+
 ## polar payments list
 
 List payments.
@@ -39,6 +45,7 @@ polar payments list [flags]
 
 | Flag | Type | Description |
 | - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--organization-id`, `--org` | `string` | Filter by organization ID. Defaults to the active organization. |
 | `--checkout-id` | `string` | Filter by checkout ID. |

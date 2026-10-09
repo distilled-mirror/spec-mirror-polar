@@ -6,7 +6,7 @@
 
 > The next generation unicorns will be built by smaller teams. Polar makes that dream possible.
 
-<img height="200" src="https://mintcdn.com/polar/tln9ARb2-irqBjrI/assets/welcome.png?fit=max&auto=format&n=tln9ARb2-irqBjrI&q=85&s=77f478097b919ac411345198842e767f" data-path="assets/welcome.png" />
+<img height="200" src="https://mintcdn.com/polar/4USyJwN59kbPHT7o/assets/welcome.png?fit=max&auto=format&n=4USyJwN59kbPHT7o&q=85&s=09976c4c1a9f4f17f30532ad8b0a711b" data-path="assets/welcome.png" />
 
 ## What is Polar?
 

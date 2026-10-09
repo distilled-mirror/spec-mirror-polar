@@ -998,6 +998,16 @@ components:
           format: uuid4
           title: Organization Id
           description: The ID of the organization owning the benefit.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         visibility:
@@ -1020,6 +1030,7 @@ components:
         - deletable
         - is_deleted
         - organization_id
+        - external_id
         - metadata
         - visibility
         - properties
@@ -1077,6 +1088,16 @@ components:
           format: uuid4
           title: Organization Id
           description: The ID of the organization owning the benefit.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         visibility:
@@ -1099,6 +1120,7 @@ components:
         - deletable
         - is_deleted
         - organization_id
+        - external_id
         - metadata
         - visibility
         - properties
@@ -1156,6 +1178,16 @@ components:
           format: uuid4
           title: Organization Id
           description: The ID of the organization owning the benefit.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         visibility:
@@ -1178,6 +1210,7 @@ components:
         - deletable
         - is_deleted
         - organization_id
+        - external_id
         - metadata
         - visibility
         - properties
@@ -1237,6 +1270,16 @@ components:
           format: uuid4
           title: Organization Id
           description: The ID of the organization owning the benefit.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         visibility:
@@ -1259,6 +1302,7 @@ components:
         - deletable
         - is_deleted
         - organization_id
+        - external_id
         - metadata
         - visibility
         - properties
@@ -1312,6 +1356,16 @@ components:
           format: uuid4
           title: Organization Id
           description: The ID of the organization owning the benefit.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         visibility:
@@ -1334,6 +1388,7 @@ components:
         - deletable
         - is_deleted
         - organization_id
+        - external_id
         - metadata
         - visibility
         - properties
@@ -1387,6 +1442,16 @@ components:
           format: uuid4
           title: Organization Id
           description: The ID of the organization owning the benefit.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         visibility:
@@ -1409,6 +1474,7 @@ components:
         - deletable
         - is_deleted
         - organization_id
+        - external_id
         - metadata
         - visibility
         - properties
@@ -1466,6 +1532,16 @@ components:
           format: uuid4
           title: Organization Id
           description: The ID of the organization owning the benefit.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         visibility:
@@ -1488,6 +1564,7 @@ components:
         - deletable
         - is_deleted
         - organization_id
+        - external_id
         - metadata
         - visibility
         - properties
@@ -1546,6 +1623,16 @@ components:
           format: uuid4
           title: Organization Id
           description: The ID of the organization owning the benefit.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         visibility:
@@ -1568,6 +1655,7 @@ components:
         - deletable
         - is_deleted
         - organization_id
+        - external_id
         - metadata
         - visibility
         - properties

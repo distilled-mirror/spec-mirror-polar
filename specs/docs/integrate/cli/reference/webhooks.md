@@ -31,6 +31,7 @@ polar webhooks create_webhook_endpoint [flags]
 
 | Flag | Type | Description |
 | - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--url` | `string` | Required. The URL where the webhook events will be sent. |
 | `--name` | `string` | An optional name for the webhook endpoint to help organize and identify it. |
@@ -73,6 +74,12 @@ polar webhooks get_webhook_endpoint [flags] <id>
 | - | - | - |
 | `id` | `string` | |
 
+**Flags**
+
+| Flag | Type | Description |
+| - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+
 ## polar webhooks list\_webhook\_deliveries
 
 List webhook deliveries.
@@ -85,6 +92,7 @@ polar webhooks list_webhook_deliveries [flags]
 
 | Flag | Type | Description |
 | - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--endpoint-id` | `string` | Filter by webhook endpoint ID. |
 | `--start-timestamp` | `string` | Filter deliveries after this timestamp. |
@@ -108,6 +116,7 @@ polar webhooks list_webhook_endpoints [flags]
 
 | Flag | Type | Description |
 | - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--organization-id`, `--org` | `string` | Filter by organization ID. Defaults to the active organization. |
 | `--page` | `integer` | Page number, defaults to 1. |
@@ -127,6 +136,12 @@ polar webhooks redeliver_webhook_event [flags] <id>
 | - | - | - |
 | `id` | `string` | |
 
+**Flags**
+
+| Flag | Type | Description |
+| - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+
 ## polar webhooks reset\_webhook\_endpoint\_secret
 
 Regenerate a webhook endpoint secret.
@@ -140,6 +155,12 @@ polar webhooks reset_webhook_endpoint_secret [flags] <id>
 | Argument | Type | Description |
 | - | - | - |
 | `id` | `string` | |
+
+**Flags**
+
+| Flag | Type | Description |
+| - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 
 ## polar webhooks update\_webhook\_endpoint
 
@@ -160,6 +181,7 @@ polar webhooks update_webhook_endpoint [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--confirm`, `-c` | `boolean` | Skip the confirmation prompt for destructive requests |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--url` | `string` | url |
 | `--name` | `string` | An optional name for the webhook endpoint to help organize and identify it. |

@@ -25,6 +25,7 @@ polar event_types list [flags]
 
 | Flag | Type | Description |
 | - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--organization-id`, `--org` | `string` | Filter by organization ID. Defaults to the active organization. |
 | `--customer-id` | `string` | Filter by customer ID. |
@@ -55,6 +56,7 @@ polar event_types update [flags] <id>
 
 | Flag | Type | Description |
 | - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--label` | `string` | Required. The label for the event type. |
 | `--label-property-selector` | `string` | Property path to extract dynamic label from event metadata (e.g., 'subject' or 'metadata.subject'). |

@@ -890,11 +890,6 @@ components:
           title: Wallets Enabled
           description: If this organization has Wallets enabled
           default: false
-        member_model_enabled:
-          type: boolean
-          title: Member Model Enabled
-          description: If this organization has the Member model enabled
-          default: false
         checkout_localization_enabled:
           type: boolean
           title: Checkout Localization Enabled
@@ -968,12 +963,12 @@ components:
             If this organization can migrate its billing from another provider
             (e.g. Stripe) to Polar.
           default: false
-        frame_ancestors_enforced:
+        config_as_code_enabled:
           type: boolean
-          title: Frame Ancestors Enforced
+          title: Config As Code Enabled
           description: >-
-            If this organization's checkout tells the browser to refuse framing
-            from any host outside its embed hosts.
+            If this organization can manage its configuration from a declarative
+            config document.
           default: false
       type: object
       title: OrganizationFeatureSettings

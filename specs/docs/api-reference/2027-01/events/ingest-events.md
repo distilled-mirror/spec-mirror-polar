@@ -63,13 +63,6 @@ paths:
       responses:
         '200':
           description: Successful Response
-          headers:
-            Polar-Ingest-Sequence:
-              description: >-
-                Sequence number covering every event of the request, including
-                duplicates stored by an earlier request.
-              schema:
-                type: integer
           content:
             application/json:
               schema:

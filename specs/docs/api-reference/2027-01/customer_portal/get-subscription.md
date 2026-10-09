@@ -2269,11 +2269,6 @@ components:
       title: OrganizationCustomerPortalSettings
     CustomerOrganizationFeatureSettings:
       properties:
-        member_model_enabled:
-          type: boolean
-          title: Member Model Enabled
-          description: Whether the member model is enabled for this organization.
-          default: false
         checkout_localization_enabled:
           type: boolean
           title: Checkout Localization Enabled
