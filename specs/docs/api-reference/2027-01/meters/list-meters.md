@@ -78,6 +78,19 @@ paths:
             title: OrganizationID Filter
             description: Filter by organization ID.
           description: Filter by organization ID.
+        - name: external_id
+          in: query
+          required: false
+          schema:
+            anyOf:
+              - type: string
+              - items:
+                  type: string
+                type: array
+              - type: 'null'
+            title: ExternalID Filter
+            description: Filter by meter external ID.
+          description: Filter by meter external ID.
         - name: query
           in: query
           required: false

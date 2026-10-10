@@ -108,6 +108,19 @@ paths:
             title: Filter IDs
             description: Filter by benefit IDs.
           description: Filter by benefit IDs.
+        - name: external_id
+          in: query
+          required: false
+          schema:
+            anyOf:
+              - type: string
+              - items:
+                  type: string
+                type: array
+              - type: 'null'
+            title: ExternalID Filter
+            description: Filter by benefit external ID.
+          description: Filter by benefit external ID.
         - name: exclude_id
           in: query
           required: false
