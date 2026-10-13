@@ -649,6 +649,7 @@
 - [Product Updates](https://polar.sh/docs/changelog/recent.md): Stay up to date with the latest changes and improvements to Polar.
 - [API Changelog](https://polar.sh/docs/changelog/api.md): Stay up to date with the latest changes introduced in our API
 - [Support](https://polar.sh/docs/support.md)
+- [Security and Vulnerability Reporting](https://polar.sh/docs/security.md)
 
 ## OpenAPI Specs
 

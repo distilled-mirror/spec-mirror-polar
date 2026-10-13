@@ -78,6 +78,19 @@ paths:
             title: OrganizationID Filter
             description: Filter by organization ID.
           description: Filter by organization ID.
+        - name: external_id
+          in: query
+          required: false
+          schema:
+            anyOf:
+              - type: string
+              - items:
+                  type: string
+                type: array
+              - type: 'null'
+            title: ExternalID Filter
+            description: Filter by discount external ID.
+          description: Filter by discount external ID.
         - name: query
           in: query
           required: false
@@ -316,6 +329,16 @@ components:
           format: uuid4
           title: Id
           description: The ID of the object.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         name:
@@ -388,6 +411,7 @@ components:
         - created_at
         - modified_at
         - id
+        - external_id
         - metadata
         - name
         - code
@@ -451,6 +475,16 @@ components:
           format: uuid4
           title: Id
           description: The ID of the object.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         name:
@@ -524,6 +558,7 @@ components:
         - created_at
         - modified_at
         - id
+        - external_id
         - metadata
         - name
         - code
@@ -573,6 +608,16 @@ components:
           format: uuid4
           title: Id
           description: The ID of the object.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         name:
@@ -643,6 +688,7 @@ components:
         - created_at
         - modified_at
         - id
+        - external_id
         - metadata
         - name
         - code
@@ -693,6 +739,16 @@ components:
           format: uuid4
           title: Id
           description: The ID of the object.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         name:
@@ -764,6 +820,7 @@ components:
         - created_at
         - modified_at
         - id
+        - external_id
         - metadata
         - name
         - code

@@ -648,6 +648,7 @@
     "merchant-of-record/introduction",
     "merchant-of-record/supported-countries",
     "migrate",
+    "security",
     "support"
   ],
   "failed": []

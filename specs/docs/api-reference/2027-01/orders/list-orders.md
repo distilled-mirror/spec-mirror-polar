@@ -1630,6 +1630,16 @@ components:
           format: uuid4
           title: Id
           description: The ID of the object.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         name:
@@ -1697,6 +1707,7 @@ components:
         - created_at
         - modified_at
         - id
+        - external_id
         - metadata
         - name
         - code
@@ -1758,6 +1769,16 @@ components:
           format: uuid4
           title: Id
           description: The ID of the object.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         name:
@@ -1826,6 +1847,7 @@ components:
         - created_at
         - modified_at
         - id
+        - external_id
         - metadata
         - name
         - code
@@ -1871,6 +1893,16 @@ components:
           format: uuid4
           title: Id
           description: The ID of the object.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         name:
@@ -1936,6 +1968,7 @@ components:
         - created_at
         - modified_at
         - id
+        - external_id
         - metadata
         - name
         - code
@@ -1984,6 +2017,16 @@ components:
           format: uuid4
           title: Id
           description: The ID of the object.
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         metadata:
           $ref: '#/components/schemas/MetadataOutputType'
         name:
@@ -2050,6 +2093,7 @@ components:
         - created_at
         - modified_at
         - id
+        - external_id
         - metadata
         - name
         - code
