@@ -81,10 +81,10 @@ formatting. Making it a breeze to setup in-chat notifications for your team.
   ```bash Terminal theme={null}
   curl -fsSL https://polar.sh/install.sh | bash
   polar auth login --production
-  polar listen http://localhost:3000/api/webhooks
+  polar webhook listen http://localhost:3000/api/webhooks
   ```
 
-  It also sends sample events on demand with `polar trigger`.
+  It also sends sample events on demand with `polar webhook trigger`.
 </Tip>
 
 [Now, it's time to integrate our endpoint to receive events

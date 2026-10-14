@@ -73,8 +73,7 @@
 - [Webhooks on your machine](https://polar.sh/docs/integrate/cli/webhooks.md): Receive real webhook events locally and trigger sample events on demand
 - [Command reference](https://polar.sh/docs/integrate/cli/reference.md): Every command, argument and flag of the Polar CLI
 - [polar auth](https://polar.sh/docs/integrate/cli/reference/auth.md): Manage your Polar sessions and active organization
-- [polar listen](https://polar.sh/docs/integrate/cli/reference/listen.md): Forward webhook events for an organization to a local URL
-- [polar trigger](https://polar.sh/docs/integrate/cli/reference/trigger.md): Send a sample webhook event to your local server
+- [polar webhook](https://polar.sh/docs/integrate/cli/reference/webhook.md): Test webhooks against your local server
 - [polar update](https://polar.sh/docs/integrate/cli/reference/update.md): Update the CLI to the latest release
 - [polar benefit_grants](https://polar.sh/docs/integrate/cli/reference/benefit_grants.md)
 - [polar benefits](https://polar.sh/docs/integrate/cli/reference/benefits.md)

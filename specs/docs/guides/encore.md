@@ -118,7 +118,7 @@ Configuring a webhook is simple. Head over to your organization's settings page 
 Encore runs your app locally with full infrastructure support. To receive webhooks during local development, you can use the [Polar CLI](/docs/integrate/cli/webhooks) to tunnel webhook events to your local environment.
 
 ```bash Terminal theme={null}
-polar listen http://localhost:4000/webhooks/polar
+polar webhook listen http://localhost:4000/webhooks/polar
 ```
 
 Make sure to copy the webhook secret and set it using:

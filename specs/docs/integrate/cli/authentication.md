@@ -38,7 +38,7 @@ environments you are signed in to and asks which one to make active.
 
 ## The active organization
 
-Commands that act on an organization, such as `polar listen`, use the active
+Commands that act on an organization, such as `polar webhook listen`, use the active
 organization. Its environment comes with it: choosing a sandbox organization
 means the CLI talks to sandbox, choosing a production organization means it
 talks to production. There is no separate environment switch.
@@ -66,7 +66,7 @@ To use a different organization for a single command without changing the
 active one, pass its ID:
 
 ```bash Terminal theme={null}
-polar listen http://localhost:3000/webhooks --org <organization-id>
+polar webhook listen http://localhost:3000/webhooks --org <organization-id>
 ```
 
 ## Signing out
@@ -90,7 +90,7 @@ On machines without a browser or keychain, authenticate with an
 ```bash Terminal theme={null}
 export POLAR_ACCESS_TOKEN=polar_oat_...
 export POLAR_ENVIRONMENT=sandbox
-polar listen http://localhost:3000/webhooks
+polar webhook listen http://localhost:3000/webhooks
 ```
 
 `POLAR_ENVIRONMENT` selects the environment the token belongs to and defaults

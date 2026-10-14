@@ -7,8 +7,8 @@
 > Receive real webhook events locally and trigger sample events on demand
 
 Polar delivers webhooks to public URLs, which your local server does not have.
-The CLI bridges that gap: `polar listen` streams your organization's webhook
-events to a local URL, and `polar trigger` sends realistic sample events
+The CLI bridges that gap: `polar webhook listen` streams your organization's webhook
+events to a local URL, and `polar webhook trigger` sends realistic sample events
 whenever you need one, without waiting for a real checkout or subscription.
 
 ## Receive webhooks locally
@@ -27,7 +27,7 @@ whenever you need one, without waiting for a real checkout or subscription.
     Point the CLI at the URL your webhook handler listens on:
 
     ```bash Terminal theme={null}
-    polar listen http://localhost:3000/api/webhooks
+    polar webhook listen http://localhost:3000/api/webhooks
     ```
 
     ```text theme={null}
@@ -63,10 +63,10 @@ if it drops. Press `Ctrl+C` to stop.
 
 ## Trigger sample events
 
-With `polar listen` running in one terminal, send a sample event from another:
+With `polar webhook listen` running in one terminal, send a sample event from another:
 
 ```bash Terminal theme={null}
-polar trigger order.created
+polar webhook trigger order.created
 ```
 
 The CLI generates a realistic payload for the event, delivers it through your
@@ -75,7 +75,7 @@ organization. Run it without an event name to pick one from a list, or print
 the catalog:
 
 ```bash Terminal theme={null}
-polar trigger --list
+polar webhook trigger --list
 ```
 
 ### Shape the payload
@@ -84,7 +84,7 @@ Override any field with `path=value`, repeating the flag as needed. Values are
 sent as text unless you pass `null`, a JSON object, an array or a quoted string:
 
 ```bash Terminal theme={null}
-polar trigger order.created \
+polar webhook trigger order.created \
   --override data.customer.email=jane@example.com \
   --override data.net_amount=4900
 ```
@@ -94,7 +94,7 @@ Generated IDs and values are random on every run. Pass any integer as
 payload, which is handy for scripted tests:
 
 ```bash Terminal theme={null}
-polar trigger subscription.active --seed 42
+polar webhook trigger subscription.active --seed 42
 ```
 
 ### Inspect without sending
@@ -102,7 +102,7 @@ polar trigger subscription.active --seed 42
 Print the payload instead of delivering it:
 
 ```bash Terminal theme={null}
-polar trigger checkout.created --dry-run
+polar webhook trigger checkout.created --dry-run
 ```
 
 ## Next steps
