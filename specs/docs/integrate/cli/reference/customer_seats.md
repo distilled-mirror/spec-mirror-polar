@@ -10,16 +10,16 @@ polar customer_seats <subcommand> [flags]
 
 **Subcommands**
 
-* [`polar customer_seats assign_seat`](#polar-customer_seats-assign_seat) **Scopes**: `customer_seats:write`
-* [`polar customer_seats claim_seat`](#polar-customer_seats-claim_seat) claim\_seat
-* [`polar customer_seats get_claim_info`](#polar-customer_seats-get_claim_info) get\_claim\_info
-* [`polar customer_seats list_seats`](#polar-customer_seats-list_seats) **Scopes**: `customer_seats:read`
-* [`polar customer_seats resend_invitation`](#polar-customer_seats-resend_invitation) **Scopes**: `customer_seats:write`
-* [`polar customer_seats revoke_seat`](#polar-customer_seats-revoke_seat) **Scopes**: `customer_seats:write`
+* [`polar customer_seats assign_seat`](#polar-customer_seats-assign_seat) Assign a seat for a subscription or order.
+* [`polar customer_seats claim_seat`](#polar-customer_seats-claim_seat) Claim a customer seat with an invitation token.
+* [`polar customer_seats get_claim_info`](#polar-customer_seats-get_claim_info) Get claim information for a customer seat invitation.
+* [`polar customer_seats list_seats`](#polar-customer_seats-list_seats) List seats for a subscription or order.
+* [`polar customer_seats resend_invitation`](#polar-customer_seats-resend_invitation) Resend an invitation for a pending customer seat.
+* [`polar customer_seats revoke_seat`](#polar-customer_seats-revoke_seat) Revoke a customer seat.
 
 ## polar customer\_seats assign\_seat
 
-**Scopes**: `customer_seats:write`
+Assign a seat for a subscription or order.
 
 ```bash theme={null}
 polar customer_seats assign_seat [flags]
@@ -43,7 +43,7 @@ polar customer_seats assign_seat [flags]
 
 ## polar customer\_seats claim\_seat
 
-claim\_seat
+Claim a customer seat with an invitation token.
 
 ```bash theme={null}
 polar customer_seats claim_seat [flags]
@@ -60,7 +60,7 @@ polar customer_seats claim_seat [flags]
 
 ## polar customer\_seats get\_claim\_info
 
-get\_claim\_info
+Get claim information for a customer seat invitation.
 
 ```bash theme={null}
 polar customer_seats get_claim_info [flags] <invitation_token>
@@ -81,7 +81,7 @@ polar customer_seats get_claim_info [flags] <invitation_token>
 
 ## polar customer\_seats list\_seats
 
-**Scopes**: `customer_seats:read`
+List seats for a subscription or order.
 
 ```bash theme={null}
 polar customer_seats list_seats [flags]
@@ -98,7 +98,7 @@ polar customer_seats list_seats [flags]
 
 ## polar customer\_seats resend\_invitation
 
-**Scopes**: `customer_seats:write`
+Resend an invitation for a pending customer seat.
 
 ```bash theme={null}
 polar customer_seats resend_invitation [flags] <seat_id>
@@ -118,7 +118,7 @@ polar customer_seats resend_invitation [flags] <seat_id>
 
 ## polar customer\_seats revoke\_seat
 
-**Scopes**: `customer_seats:write`
+Revoke a customer seat.
 
 ```bash theme={null}
 polar customer_seats revoke_seat [flags] <seat_id>

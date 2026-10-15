@@ -220,7 +220,7 @@ components:
           description: >-
             Whether the meter is archived. Archived meters are no longer used
             for billing.
-          x-polar-cli-confirm:
+          x-tool-destructive-when:
             equals: true
       type: object
       title: MeterUpdate

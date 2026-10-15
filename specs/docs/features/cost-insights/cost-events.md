@@ -15,17 +15,17 @@ Cost Insights works by allowing you to add a special `_cost` property to any eve
 To track costs, add a `_cost` property to your event's metadata when ingesting events.
 
 ```typescript icon="square-js" TypeScript (SDK) theme={null}
-import { Polar } from "@polar-sh/sdk";
+import { createPolar } from "@polar-sh/sdk/2026-10";
 
-const polar = new Polar({
-  accessToken: process.env.POLAR_ACCESS_TOKEN,
+const polar = createPolar({
+  accessToken: process.env.POLAR_ACCESS_TOKEN!,
 });
 
 await polar.events.ingest({
   events: [
     {
       name: "llm.inference",
-      externalCustomerId: "user_123",
+      external_customer_id: "user_123",
       metadata: {
         _cost: {
           amount: 0.025,
@@ -84,11 +84,11 @@ The `_cost` property has the following structure:
 Track the cost of LLM API calls per customer:
 
 ```typescript icon="square-js" TypeScript theme={null}
-import { Polar } from "@polar-sh/sdk";
+import { createPolar } from "@polar-sh/sdk/2026-10";
 import OpenAI from "openai";
 
-const polar = new Polar({
-  accessToken: process.env.POLAR_ACCESS_TOKEN,
+const polar = createPolar({
+  accessToken: process.env.POLAR_ACCESS_TOKEN!,
 });
 
 const openai = new OpenAI({
@@ -101,9 +101,13 @@ const completion = await openai.chat.completions.create({
   messages: [{ role: "user", content: "Hello!" }],
 });
 
+if (!completion.usage) {
+  throw new Error("OpenAI did not return token usage");
+}
+
 // Calculate cost (example: $0.03 per 1K input tokens, $0.06 per 1K output tokens)
-const inputCost = ((completion.usage.prompt * tokens) / 1000) * 3; // in cents
-const outputCost = ((completion.usage.completion * tokens) / 1000) * 6; // in cents
+const inputCost = (completion.usage.prompt_tokens / 1000) * 3; // in cents
+const outputCost = (completion.usage.completion_tokens / 1000) * 6; // in cents
 const totalCost = inputCost + outputCost;
 
 // Track the cost in Polar
@@ -111,7 +115,7 @@ await polar.events.ingest({
   events: [
     {
       name: "gpt4.completion",
-      customerId: "cus_abc123",
+      customer_id: "cus_abc123",
       metadata: {
         _cost: {
           amount: totalCost,
@@ -183,10 +187,10 @@ Track costs from external services:
 Ingest cost events as they occur to maintain accurate, up-to-date metrics:
 
 ```typescript icon="square-js" TypeScript theme={null}
-import { Polar } from "@polar-sh/sdk";
+import { createPolar } from "@polar-sh/sdk/2026-10";
 
-const polar = new Polar({
-  accessToken: process.env.POLAR_ACCESS_TOKEN,
+const polar = createPolar({
+  accessToken: process.env.POLAR_ACCESS_TOKEN!,
 });
 
 // When making an LLM API call
@@ -201,7 +205,7 @@ await polar.events.ingest({
   events: [
     {
       name: "llm.completion",
-      externalCustomerId: "user_123",
+      external_customer_id: "user_123",
       metadata: {
         _cost: {
           amount: cost,

@@ -4,6 +4,8 @@
 
 # Get Claim Info
 
+> Get claim information for a customer seat invitation.
+
 
 
 ## OpenAPI
@@ -47,6 +49,7 @@ paths:
         - mcp
         - cli
       summary: Get Claim Info
+      description: Get claim information for a customer seat invitation.
       operationId: customer-seats:get_claim_info
       parameters:
         - name: invitation_token

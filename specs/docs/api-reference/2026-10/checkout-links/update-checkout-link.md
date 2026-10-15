@@ -50,8 +50,6 @@ paths:
         - public
         - mcp
         - cli
-        - mcp
-        - cli
       summary: Update Checkout Link
       description: |-
         Update a checkout link.

@@ -137,7 +137,7 @@ components:
           anyOf:
             - $ref: '#/components/schemas/LicenseKeyStatus'
             - type: 'null'
-          x-polar-cli-confirm:
+          x-tool-destructive-when:
             one_of:
               - revoked
               - disabled

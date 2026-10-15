@@ -4,7 +4,7 @@
 
 # Create Benefit
 
-> Create a benefit.
+> Create a benefit, for example license keys, file downloads or Discord access.
 
 **Scopes**: `benefits:write`
 
@@ -51,8 +51,10 @@ paths:
         - mcp
         - cli
       summary: Create Benefit
-      description: |-
-        Create a benefit.
+      description: >-
+        Create a benefit, for example license keys, file downloads or Discord
+        access.
+
 
         **Scopes**: `benefits:write`
       operationId: benefits:create

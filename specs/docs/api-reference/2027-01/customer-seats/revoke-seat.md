@@ -4,7 +4,9 @@
 
 # Revoke Seat
 
-> **Scopes**: `customer_seats:write`
+> Revoke a customer seat.
+
+**Scopes**: `customer_seats:write`
 
 
 
@@ -49,7 +51,10 @@ paths:
         - mcp
         - cli
       summary: Revoke Seat
-      description: '**Scopes**: `customer_seats:write`'
+      description: |-
+        Revoke a customer seat.
+
+        **Scopes**: `customer_seats:write`
       operationId: customer-seats:revoke_seat
       parameters:
         - name: seat_id

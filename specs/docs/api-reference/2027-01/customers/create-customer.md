@@ -6,6 +6,8 @@
 
 > Create a customer.
 
+Set `external_id` to the customer's ID in your system to look it up by that ID.
+
 **Scopes**: `customers:write`
 
 
@@ -51,8 +53,13 @@ paths:
         - mcp
         - cli
       summary: Create Customer
-      description: |-
+      description: >-
         Create a customer.
+
+
+        Set `external_id` to the customer's ID in your system to look it up by
+        that ID.
+
 
         **Scopes**: `customers:write`
       operationId: customers:create

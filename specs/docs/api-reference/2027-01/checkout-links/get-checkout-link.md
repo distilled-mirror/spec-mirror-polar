@@ -50,8 +50,6 @@ paths:
         - public
         - mcp
         - cli
-        - mcp
-        - cli
       summary: Get Checkout Link
       description: |-
         Get a checkout link by ID.

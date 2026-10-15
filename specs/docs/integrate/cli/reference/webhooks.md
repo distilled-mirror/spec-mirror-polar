@@ -160,6 +160,7 @@ polar webhooks reset_webhook_endpoint_secret [flags] <id>
 
 | Flag | Type | Description |
 | - | - | - |
+| `--confirm`, `-c` | `boolean` | Skip the confirmation prompt for destructive requests |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 
 ## polar webhooks update\_webhook\_endpoint

@@ -189,7 +189,7 @@
 - [List Meters](https://polar.sh/docs/api-reference/2026-04/meters/list-meters.md): List meters.
 - [Update Meter](https://polar.sh/docs/api-reference/2026-04/meters/update-meter.md): Update a meter.
 - [Get Meter Quantities](https://polar.sh/docs/api-reference/2026-04/meters/get-meter-quantities.md): Get quantities of a meter over a time period.
-- [Create Benefit](https://polar.sh/docs/api-reference/2026-04/benefits/create-benefit.md): Create a benefit.
+- [Create Benefit](https://polar.sh/docs/api-reference/2026-04/benefits/create-benefit.md): Create a benefit, for example license keys, file downloads or Discord access.
 - [Get Benefit](https://polar.sh/docs/api-reference/2026-04/benefits/get-benefit.md): Get a benefit by ID.
 - [List Benefits](https://polar.sh/docs/api-reference/2026-04/benefits/list-benefits.md): List benefits.
 - [List Benefit Grants](https://polar.sh/docs/api-reference/2026-04/benefits/list-benefit-grants.md): List the individual grants for a benefit.
@@ -206,12 +206,12 @@
 - [Deactivate License Key](https://polar.sh/docs/api-reference/2026-04/license_keys/deactivate-license-key.md): Deactivate a license key instance.
 - [List Members](https://polar.sh/docs/api-reference/2026-04/customers/list-members.md): List the members of a customer.
 - [List Members by Customer External ID](https://polar.sh/docs/api-reference/2026-04/customers/list-members-by-customer-external-id.md): List the members of a customer identified by its external ID.
-- [Assign Seat](https://polar.sh/docs/api-reference/2026-04/customer-seats/assign-seat.md): **Scopes**: `customer_seats:write`
-- [List Seats](https://polar.sh/docs/api-reference/2026-04/customer-seats/list-seats.md): **Scopes**: `customer_seats:read`
-- [Revoke Seat](https://polar.sh/docs/api-reference/2026-04/customer-seats/revoke-seat.md): **Scopes**: `customer_seats:write`
-- [Resend Invitation](https://polar.sh/docs/api-reference/2026-04/customer-seats/resend-invitation.md): **Scopes**: `customer_seats:write`
-- [Get Claim Info](https://polar.sh/docs/api-reference/2026-04/customer-seats/get-claim-info.md)
-- [Claim Seat](https://polar.sh/docs/api-reference/2026-04/customer-seats/claim-seat.md)
+- [Assign Seat](https://polar.sh/docs/api-reference/2026-04/customer-seats/assign-seat.md): Assign a seat for a subscription or order.
+- [List Seats](https://polar.sh/docs/api-reference/2026-04/customer-seats/list-seats.md): List seats for a subscription or order.
+- [Revoke Seat](https://polar.sh/docs/api-reference/2026-04/customer-seats/revoke-seat.md): Revoke a customer seat.
+- [Resend Invitation](https://polar.sh/docs/api-reference/2026-04/customer-seats/resend-invitation.md): Resend an invitation for a pending customer seat.
+- [Get Claim Info](https://polar.sh/docs/api-reference/2026-04/customer-seats/get-claim-info.md): Get claim information for a customer seat invitation.
+- [Claim Seat](https://polar.sh/docs/api-reference/2026-04/customer-seats/claim-seat.md): Claim a customer seat with an invitation token.
 - [Create File](https://polar.sh/docs/api-reference/2026-04/files/create-file.md): Create a file.
 - [List Files](https://polar.sh/docs/api-reference/2026-04/files/list-files.md): List files.
 - [Update File](https://polar.sh/docs/api-reference/2026-04/files/update-file.md): Update a file.
@@ -362,7 +362,7 @@
 - [List Meters](https://polar.sh/docs/api-reference/2026-10/meters/list-meters.md): List meters.
 - [Update Meter](https://polar.sh/docs/api-reference/2026-10/meters/update-meter.md): Update a meter.
 - [Get Meter Quantities](https://polar.sh/docs/api-reference/2026-10/meters/get-meter-quantities.md): Get quantities of a meter over a time period.
-- [Create Benefit](https://polar.sh/docs/api-reference/2026-10/benefits/create-benefit.md): Create a benefit.
+- [Create Benefit](https://polar.sh/docs/api-reference/2026-10/benefits/create-benefit.md): Create a benefit, for example license keys, file downloads or Discord access.
 - [Get Benefit](https://polar.sh/docs/api-reference/2026-10/benefits/get-benefit.md): Get a benefit by ID.
 - [List Benefits](https://polar.sh/docs/api-reference/2026-10/benefits/list-benefits.md): List benefits.
 - [List Benefit Grants](https://polar.sh/docs/api-reference/2026-10/benefits/list-benefit-grants.md): List the individual grants for a benefit.
@@ -379,12 +379,12 @@
 - [Deactivate License Key](https://polar.sh/docs/api-reference/2026-10/license_keys/deactivate-license-key.md): Deactivate a license key instance.
 - [List Members](https://polar.sh/docs/api-reference/2026-10/customers/list-members.md): List the members of a customer.
 - [List Members by Customer External ID](https://polar.sh/docs/api-reference/2026-10/customers/list-members-by-customer-external-id.md): List the members of a customer identified by its external ID.
-- [Assign Seat](https://polar.sh/docs/api-reference/2026-10/customer-seats/assign-seat.md): **Scopes**: `customer_seats:write`
-- [List Seats](https://polar.sh/docs/api-reference/2026-10/customer-seats/list-seats.md): **Scopes**: `customer_seats:read`
-- [Revoke Seat](https://polar.sh/docs/api-reference/2026-10/customer-seats/revoke-seat.md): **Scopes**: `customer_seats:write`
-- [Resend Invitation](https://polar.sh/docs/api-reference/2026-10/customer-seats/resend-invitation.md): **Scopes**: `customer_seats:write`
-- [Get Claim Info](https://polar.sh/docs/api-reference/2026-10/customer-seats/get-claim-info.md)
-- [Claim Seat](https://polar.sh/docs/api-reference/2026-10/customer-seats/claim-seat.md)
+- [Assign Seat](https://polar.sh/docs/api-reference/2026-10/customer-seats/assign-seat.md): Assign a seat for a subscription or order.
+- [List Seats](https://polar.sh/docs/api-reference/2026-10/customer-seats/list-seats.md): List seats for a subscription or order.
+- [Revoke Seat](https://polar.sh/docs/api-reference/2026-10/customer-seats/revoke-seat.md): Revoke a customer seat.
+- [Resend Invitation](https://polar.sh/docs/api-reference/2026-10/customer-seats/resend-invitation.md): Resend an invitation for a pending customer seat.
+- [Get Claim Info](https://polar.sh/docs/api-reference/2026-10/customer-seats/get-claim-info.md): Get claim information for a customer seat invitation.
+- [Claim Seat](https://polar.sh/docs/api-reference/2026-10/customer-seats/claim-seat.md): Claim a customer seat with an invitation token.
 - [Create File](https://polar.sh/docs/api-reference/2026-10/files/create-file.md): Create a file.
 - [List Files](https://polar.sh/docs/api-reference/2026-10/files/list-files.md): List files.
 - [Update File](https://polar.sh/docs/api-reference/2026-10/files/update-file.md): Update a file.
@@ -535,7 +535,7 @@
 - [List Meters](https://polar.sh/docs/api-reference/2027-01/meters/list-meters.md): List meters.
 - [Update Meter](https://polar.sh/docs/api-reference/2027-01/meters/update-meter.md): Update a meter.
 - [Get Meter Quantities](https://polar.sh/docs/api-reference/2027-01/meters/get-meter-quantities.md): Get quantities of a meter over a time period.
-- [Create Benefit](https://polar.sh/docs/api-reference/2027-01/benefits/create-benefit.md): Create a benefit.
+- [Create Benefit](https://polar.sh/docs/api-reference/2027-01/benefits/create-benefit.md): Create a benefit, for example license keys, file downloads or Discord access.
 - [Get Benefit](https://polar.sh/docs/api-reference/2027-01/benefits/get-benefit.md): Get a benefit by ID.
 - [List Benefits](https://polar.sh/docs/api-reference/2027-01/benefits/list-benefits.md): List benefits.
 - [List Benefit Grants](https://polar.sh/docs/api-reference/2027-01/benefits/list-benefit-grants.md): List the individual grants for a benefit.
@@ -552,12 +552,12 @@
 - [Deactivate License Key](https://polar.sh/docs/api-reference/2027-01/license_keys/deactivate-license-key.md): Deactivate a license key instance.
 - [List Members](https://polar.sh/docs/api-reference/2027-01/customers/list-members.md): List the members of a customer.
 - [List Members by Customer External ID](https://polar.sh/docs/api-reference/2027-01/customers/list-members-by-customer-external-id.md): List the members of a customer identified by its external ID.
-- [Assign Seat](https://polar.sh/docs/api-reference/2027-01/customer-seats/assign-seat.md): **Scopes**: `customer_seats:write`
-- [List Seats](https://polar.sh/docs/api-reference/2027-01/customer-seats/list-seats.md): **Scopes**: `customer_seats:read`
-- [Revoke Seat](https://polar.sh/docs/api-reference/2027-01/customer-seats/revoke-seat.md): **Scopes**: `customer_seats:write`
-- [Resend Invitation](https://polar.sh/docs/api-reference/2027-01/customer-seats/resend-invitation.md): **Scopes**: `customer_seats:write`
-- [Get Claim Info](https://polar.sh/docs/api-reference/2027-01/customer-seats/get-claim-info.md)
-- [Claim Seat](https://polar.sh/docs/api-reference/2027-01/customer-seats/claim-seat.md)
+- [Assign Seat](https://polar.sh/docs/api-reference/2027-01/customer-seats/assign-seat.md): Assign a seat for a subscription or order.
+- [List Seats](https://polar.sh/docs/api-reference/2027-01/customer-seats/list-seats.md): List seats for a subscription or order.
+- [Revoke Seat](https://polar.sh/docs/api-reference/2027-01/customer-seats/revoke-seat.md): Revoke a customer seat.
+- [Resend Invitation](https://polar.sh/docs/api-reference/2027-01/customer-seats/resend-invitation.md): Resend an invitation for a pending customer seat.
+- [Get Claim Info](https://polar.sh/docs/api-reference/2027-01/customer-seats/get-claim-info.md): Get claim information for a customer seat invitation.
+- [Claim Seat](https://polar.sh/docs/api-reference/2027-01/customer-seats/claim-seat.md): Claim a customer seat with an invitation token.
 - [Create File](https://polar.sh/docs/api-reference/2027-01/files/create-file.md): Create a file.
 - [List Files](https://polar.sh/docs/api-reference/2027-01/files/list-files.md): List files.
 - [Update File](https://polar.sh/docs/api-reference/2027-01/files/update-file.md): Update a file.

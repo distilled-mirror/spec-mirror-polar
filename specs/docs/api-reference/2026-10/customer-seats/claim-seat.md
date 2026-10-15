@@ -4,6 +4,8 @@
 
 # Claim Seat
 
+> Claim a customer seat with an invitation token.
+
 
 
 ## OpenAPI
@@ -47,6 +49,7 @@ paths:
         - mcp
         - cli
       summary: Claim Seat
+      description: Claim a customer seat with an invitation token.
       operationId: customer-seats:claim_seat
       requestBody:
         content:

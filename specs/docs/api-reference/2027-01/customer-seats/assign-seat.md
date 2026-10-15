@@ -4,7 +4,9 @@
 
 # Assign Seat
 
-> **Scopes**: `customer_seats:write`
+> Assign a seat for a subscription or order.
+
+**Scopes**: `customer_seats:write`
 
 
 
@@ -49,7 +51,10 @@ paths:
         - mcp
         - cli
       summary: Assign Seat
-      description: '**Scopes**: `customer_seats:write`'
+      description: |-
+        Assign a seat for a subscription or order.
+
+        **Scopes**: `customer_seats:write`
       operationId: customer-seats:assign_seat
       requestBody:
         required: true

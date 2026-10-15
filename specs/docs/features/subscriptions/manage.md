@@ -35,11 +35,9 @@ Switch a subscription to a different recurring product — the standard upgrade 
 
   ```py Python theme={null}
   polar.subscriptions.update(
-      id="<subscription_id>",
-      subscription_update={
-          "product_id": "<new_product_id>",
-          "proration_behavior": "prorate",
-      },
+      "<subscription_id>",
+      product_id="<new_product_id>",
+      proration_behavior="prorate",
   )
   ```
 </CodeGroup>

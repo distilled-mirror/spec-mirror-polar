@@ -57,8 +57,6 @@ paths:
         - public
         - mcp
         - cli
-        - mcp
-        - cli
       summary: Create Checkout Link
       description: |-
         Create a checkout link.

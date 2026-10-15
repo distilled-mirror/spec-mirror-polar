@@ -32,19 +32,23 @@ validate and parse the webhook event - see full examples below.
 
 <CodeGroup>
   ```typescript icon="square-js" JS (Express) theme={null}
-  import express, { Request, Response } from 'express'
-  import { validateEvent, WebhookVerificationError } from '@polar-sh/sdk/webhooks'
+  import express, { NextFunction, Request, Response } from 'express'
+  import { webhooks } from '@polar-sh/sdk/2026-10'
 
   const app = express()
 
   app.post(
     '/webhook',
     express.raw({ type: 'application/json' }),
-    (req: Request, res: Response) => {
+    async (req: Request, res: Response, next: NextFunction) => {
       try {
-        const event = validateEvent(
+        const event = await webhooks.validateEvent(
           req.body,
-          req.headers,
+          {
+            'webhook-id': req.header('webhook-id') ?? '',
+            'webhook-timestamp': req.header('webhook-timestamp') ?? '',
+            'webhook-signature': req.header('webhook-signature') ?? '',
+          },
           process.env['POLAR_WEBHOOK_SECRET'] ?? '',
         )
 
@@ -52,10 +56,16 @@ validate and parse the webhook event - see full examples below.
 
         res.status(202).send('')
       } catch (error) {
-        if (error instanceof WebhookVerificationError) {
+        if (error instanceof webhooks.PolarWebhookVerificationError) {
           res.status(403).send('')
+          return
         }
-        throw error
+        if (error instanceof webhooks.PolarWebhookUnknownTypeError) {
+          // Event type added after this SDK version: acknowledge it so Polar doesn't retry
+          res.status(202).send('')
+          return
+        }
+        next(error)
       }
     },
   )
@@ -64,7 +74,11 @@ validate and parse the webhook event - see full examples below.
   ```python Python (Flask) theme={null}
   import os
   from flask import Flask, request
-  from polar_sdk.webhooks import validate_event, WebhookVerificationError
+  from polar.v2026_10.webhooks import (
+      PolarWebhookUnknownTypeError,
+      PolarWebhookVerificationError,
+      validate_event,
+  )
 
   app = Flask(__name__)
 
@@ -72,16 +86,19 @@ validate and parse the webhook event - see full examples below.
   def webhook():
       try:
           event = validate_event(
-              body=request.data,
-              headers=request.headers,
-              secret=os.getenv('POLAR_WEBHOOK_SECRET', ''),
+              request.get_data(),
+              dict(request.headers),
+              os.getenv('POLAR_WEBHOOK_SECRET', ''),
           )
 
           # Process the event
 
           return "", 202
-      except WebhookVerificationError as e:
+      except PolarWebhookVerificationError:
           return "", 403
+      except PolarWebhookUnknownTypeError:
+          # Event type added after this SDK version: acknowledge it so Polar doesn't retry
+          return "", 202
   ```
 </CodeGroup>
 

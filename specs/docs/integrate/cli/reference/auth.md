@@ -16,6 +16,7 @@ polar auth <subcommand> [flags]
 * [`polar auth whoami`](#polar-auth-whoami) Show the active organization
 * [`polar auth list`](#polar-auth-list) List the organizations you have access to
 * [`polar auth org`](#polar-auth-org) Choose the active organization
+* [`polar auth token`](#polar-auth-token) Create an organization access token for your app and print it
 * [`polar auth logout`](#polar-auth-logout) Sign out and remove saved sessions
 
 ## polar auth login
@@ -76,6 +77,34 @@ Choose the active organization
 
 ```bash theme={null}
 polar auth org [flags]
+```
+
+## polar auth token
+
+Create an organization access token for your app and print it
+
+```bash theme={null}
+polar auth token [flags]
+```
+
+**Flags**
+
+| Flag | Type | Description |
+| - | - | - |
+| `--scope` | `string` | Scope to preselect on the token page, e.g. products:read. Repeatable. |
+
+**Examples**
+
+Add a token for the active organization to .env.local
+
+```bash theme={null}
+echo "POLAR_ACCESS_TOKEN=$(polar auth token)" >> .env.local
+```
+
+Preselect scopes and store the token as a GitHub Actions secret without writing it to disk
+
+```bash theme={null}
+polar auth token --scope products:read --scope checkouts:write | gh secret set POLAR_ACCESS_TOKEN
 ```
 
 ## polar auth logout

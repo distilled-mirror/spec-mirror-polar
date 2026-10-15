@@ -50,8 +50,6 @@ paths:
         - public
         - mcp
         - cli
-        - mcp
-        - cli
       summary: List Checkout Links
       description: |-
         List checkout links.

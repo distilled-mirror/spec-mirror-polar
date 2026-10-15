@@ -173,7 +173,7 @@ components:
             - type: 'null'
           title: Enabled
           description: Whether the webhook endpoint is enabled.
-          x-polar-cli-confirm:
+          x-tool-destructive-when:
             equals: false
       type: object
       title: WebhookEndpointUpdate

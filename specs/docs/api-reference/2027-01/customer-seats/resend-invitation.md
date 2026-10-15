@@ -4,7 +4,9 @@
 
 # Resend Invitation
 
-> **Scopes**: `customer_seats:write`
+> Resend an invitation for a pending customer seat.
+
+**Scopes**: `customer_seats:write`
 
 
 
@@ -49,7 +51,10 @@ paths:
         - mcp
         - cli
       summary: Resend Invitation
-      description: '**Scopes**: `customer_seats:write`'
+      description: |-
+        Resend an invitation for a pending customer seat.
+
+        **Scopes**: `customer_seats:write`
       operationId: customer-seats:resend_invitation
       parameters:
         - name: seat_id

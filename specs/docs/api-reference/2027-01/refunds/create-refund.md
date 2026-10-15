@@ -192,7 +192,7 @@ components:
 
             subscription itself is revoked, i.e fully canceled.
           default: false
-          x-polar-cli-confirm:
+          x-tool-destructive-when:
             equals: true
       type: object
       required:

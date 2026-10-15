@@ -50,8 +50,6 @@ paths:
         - public
         - mcp
         - cli
-        - mcp
-        - cli
       summary: Delete Checkout Link
       description: |-
         Delete a checkout link.

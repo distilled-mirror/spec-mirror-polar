@@ -4,7 +4,9 @@
 
 # List Seats
 
-> **Scopes**: `customer_seats:read`
+> List seats for a subscription or order.
+
+**Scopes**: `customer_seats:read`
 
 
 
@@ -49,7 +51,10 @@ paths:
         - mcp
         - cli
       summary: List Seats
-      description: '**Scopes**: `customer_seats:read`'
+      description: |-
+        List seats for a subscription or order.
+
+        **Scopes**: `customer_seats:read`
       operationId: customer-seats:list_seats
       parameters:
         - name: subscription_id

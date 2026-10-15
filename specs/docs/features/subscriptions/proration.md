@@ -81,15 +81,13 @@ Every subscription update that changes the price — a product change or a seat 
   ```
 
   ```py Python theme={null}
-  from polar_sdk import Polar
+  from polar.v2026_10 import Polar
 
-  with Polar(access_token="<YOUR_BEARER_TOKEN_HERE>") as polar:
+  with Polar("<YOUR_BEARER_TOKEN_HERE>") as polar:
       res = polar.subscriptions.update(
-          id="<subscription_id>",
-          subscription_update={
-              "product_id": "<product_id>",
-              "proration_behavior": "invoice",  # or "prorate" or "next_period"
-          },
+          "<subscription_id>",
+          product_id="<product_id>",
+          proration_behavior="invoice",  # or "prorate" or "next_period"
       )
   ```
 </CodeGroup>
