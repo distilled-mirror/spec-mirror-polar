@@ -176,6 +176,16 @@ components:
       title: HTTPValidationError
     WebhookEndpoint:
       properties:
+        external_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: External Id
+          description: >-
+            An ID from your own system to reference this resource. It must be
+            unique within the organization for this type of resource.
+          examples:
+            - ext_1337
         created_at:
           type: string
           format: date-time
@@ -249,6 +259,7 @@ components:
           readOnly: true
       type: object
       required:
+        - external_id
         - created_at
         - modified_at
         - id

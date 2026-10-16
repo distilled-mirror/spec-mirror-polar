@@ -91,7 +91,7 @@ polar auth token [flags]
 
 | Flag | Type | Description |
 | - | - | - |
-| `--scope` | `string` | Scope to preselect on the token page, e.g. products:read. Repeatable. |
+| `--scope` | `string` | Scope to preselect on the token page, e.g. products:read. Repeatable |
 
 **Examples**
 
