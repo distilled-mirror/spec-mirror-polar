@@ -4174,6 +4174,13 @@ components:
         rollover:
           type: boolean
           title: Rollover
+        reason:
+          type: string
+          enum:
+            - benefit
+            - manual
+          title: Reason
+          default: benefit
       type: object
       required:
         - meter_id

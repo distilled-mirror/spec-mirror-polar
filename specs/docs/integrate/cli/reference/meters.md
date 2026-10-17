@@ -12,6 +12,7 @@ polar meters <subcommand> [flags]
 
 * [`polar meters create`](#polar-meters-create) Create a meter.
 * [`polar meters get`](#polar-meters-get) Get a meter by ID.
+* [`polar meters get_external`](#polar-meters-get_external) Get a meter by external ID. (preview, API 2027-01)
 * [`polar meters list`](#polar-meters-list) List meters.
 * [`polar meters quantities`](#polar-meters-quantities) Get quantities of a meter over a time period.
 * [`polar meters update`](#polar-meters-update) Update a meter.
@@ -52,6 +53,26 @@ polar meters get [flags] <id>
 | Argument | Type | Description |
 | - | - | - |
 | `id` | `string` | |
+
+**Flags**
+
+| Flag | Type | Description |
+| - | - | - |
+| `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+
+## polar meters get\_external
+
+Get a meter by external ID. (preview, API 2027-01)
+
+```bash theme={null}
+polar meters get_external [flags] <external_id>
+```
+
+**Arguments**
+
+| Argument | Type | Description |
+| - | - | - |
+| `external_id` | `string` | |
 
 **Flags**
 
