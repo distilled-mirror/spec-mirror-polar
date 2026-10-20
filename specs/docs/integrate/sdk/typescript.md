@@ -70,11 +70,11 @@ Implement Checkout & Webhook handlers in few lines of code.
 * [TanStack Start](/docs/integrate/sdk/adapters/tanstack-start)
 
 Adapters for other frameworks are deprecated, use the SDK directly instead.
-The [`polar-integration` skill](https://github.com/polarsource/skills/tree/main/skills/polar-integration)
+The [`polar-integration` skill](https://github.com/polarsource/agent-toolkit/tree/main/skills/polar-integration)
 can help you integrate or migrate:
 
 ```bash theme={null}
-npx skills add https://github.com/polarsource/skills --skill polar-integration
+npx skills add https://github.com/polarsource/agent-toolkit --skill polar-integration
 ```
 
 

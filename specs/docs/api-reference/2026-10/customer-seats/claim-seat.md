@@ -46,7 +46,6 @@ paths:
       tags:
         - customer-seats
         - public
-        - mcp
         - cli
       summary: Claim Seat
       description: Claim a customer seat with an invitation token.

@@ -46,7 +46,6 @@ paths:
       tags:
         - customer-seats
         - public
-        - mcp
         - cli
       summary: Get Claim Info
       description: Get claim information for a customer seat invitation.

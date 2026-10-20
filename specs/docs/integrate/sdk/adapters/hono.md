@@ -9,11 +9,11 @@
 <Warning>
   **`@polar-sh/hono` is deprecated** and no longer maintained. Integrate with
   the [TypeScript SDK](/docs/integrate/sdk/typescript) directly instead — the
-  [`polar-integration` skill](https://github.com/polarsource/skills/tree/main/skills/polar-integration)
+  [`polar-integration` skill](https://github.com/polarsource/agent-toolkit/tree/main/skills/polar-integration)
   can help you migrate:
 
   ```bash theme={null}
-  npx skills add https://github.com/polarsource/skills --skill polar-integration
+  npx skills add https://github.com/polarsource/agent-toolkit --skill polar-integration
   ```
 </Warning>
 

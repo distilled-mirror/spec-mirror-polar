@@ -68,7 +68,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CheckoutConfirmStripe'
+              $ref: '#/components/schemas/CheckoutConfirm'
       responses:
         '200':
           description: Checkout session confirmed.
@@ -77,11 +77,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/CheckoutPublicConfirmed'
         '400':
-          description: The payment failed.
+          description: The payment failed or the shared payment token was rejected.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PaymentError'
+                $ref: '#/components/schemas/CheckoutPaymentError'
         '403':
           description: >-
             The checkout is expired, the customer already has an active
@@ -143,151 +143,10 @@ paths:
             console.log(response);
 components:
   schemas:
-    CheckoutConfirmStripe:
-      properties:
-        custom_field_data:
-          additionalProperties:
-            anyOf:
-              - type: string
-              - type: integer
-              - type: boolean
-              - type: string
-                format: date-time
-                examples:
-                  - '2026-01-01T00:00:00.000000Z'
-              - type: 'null'
-          type: object
-          title: Custom Field Data
-          description: Key-value object storing custom field values.
-        product_id:
-          anyOf:
-            - type: string
-              format: uuid4
-            - type: 'null'
-          title: Product Id
-          description: >-
-            ID of the product to checkout. Must be present in the checkout's
-            product list.
-        product_price_id:
-          anyOf:
-            - type: string
-              format: uuid4
-            - type: 'null'
-          title: Product Price Id
-          description: >-
-            ID of the product price to checkout. Must correspond to a price
-            present in the checkout's product list.
-          deprecated: true
-        amount:
-          anyOf:
-            - type: integer
-              minimum: 0
-              description: >-
-                Amount in cents, before discounts and taxes. Only useful for
-                custom prices, it'll be ignored for fixed and free prices. 
-            - type: 'null'
-          title: Amount
-        seats:
-          anyOf:
-            - type: integer
-              maximum: 10000
-              minimum: 1
-            - type: 'null'
-          title: Seats
-          description: Number of seats for seat-based pricing.
-        units:
-          anyOf:
-            - type: integer
-              maximum: 2147483647
-              minimum: 1
-            - type: 'null'
-          title: Units
-          description: Number of units for unit-based pricing.
-        is_business_customer:
-          anyOf:
-            - type: boolean
-            - type: 'null'
-          title: Is Business Customer
-        customer_name:
-          anyOf:
-            - type: string
-              maxLength: 256
-              description: The name of the customer.
-              examples:
-                - John Doe
-            - type: 'null'
-          title: Customer Name
-        customer_email:
-          anyOf:
-            - type: string
-              format: email
-              description: Email address of the customer.
-            - type: 'null'
-          title: Customer Email
-        customer_billing_name:
-          anyOf:
-            - type: string
-            - type: 'null'
-          title: Customer Billing Name
-        customer_billing_address:
-          anyOf:
-            - $ref: '#/components/schemas/AddressInput'
-              description: Billing address of the customer.
-            - type: 'null'
-        customer_tax_id:
-          anyOf:
-            - type: string
-            - type: 'null'
-          title: Customer Tax Id
-        locale:
-          anyOf:
-            - type: string
-              description: >-
-                Locale of the customer, given as an IETF BCP 47 language tag,
-                e.g. `en`, `en-US` or `en-GB-oxendict`. If `null` or
-                unsupported, the locale will default to `en`.
-              examples:
-                - en
-                - en-US
-                - fr
-                - fr-CA
-            - type: 'null'
-          title: Locale
-        payment_method_type:
-          anyOf:
-            - type: string
-            - type: 'null'
-          title: Payment Method Type
-          description: >-
-            Payment method type selected by the customer in the checkout form,
-            e.g. `card`, `apple_pay` or `upi`.
-        discount_code:
-          anyOf:
-            - type: string
-            - type: 'null'
-          title: Discount Code
-          description: Discount code to apply to the checkout.
-        allow_trial:
-          anyOf:
-            - type: boolean
-              const: false
-            - type: 'null'
-          title: Allow Trial
-          description: >-
-            Disable the trial period for the checkout session. It's mainly
-            useful when the trial is blocked because the customer already
-            redeemed one.
-        confirmation_token_id:
-          anyOf:
-            - type: string
-            - type: 'null'
-          title: Confirmation Token Id
-          description: >-
-            ID of the Stripe confirmation token. Required for fixed prices and
-            custom prices.
-      type: object
-      title: CheckoutConfirmStripe
-      description: Confirm a checkout session using a Stripe confirmation token.
+    CheckoutConfirm:
+      oneOf:
+        - $ref: '#/components/schemas/CheckoutConfirmStripe'
+        - $ref: '#/components/schemas/CheckoutConfirmSharedPaymentToken'
     CheckoutPublicConfirmed:
       properties:
         id:
@@ -747,22 +606,10 @@ components:
         It contains a customer session token to retrieve order information
 
         right after the checkout.
-    PaymentError:
-      properties:
-        error:
-          type: string
-          const: PaymentError
-          title: Error
-          examples:
-            - PaymentError
-        detail:
-          type: string
-          title: Detail
-      type: object
-      required:
-        - error
-        - detail
-      title: PaymentError
+    CheckoutPaymentError:
+      anyOf:
+        - $ref: '#/components/schemas/PaymentError'
+        - $ref: '#/components/schemas/SharedPaymentTokenError'
     CheckoutForbiddenError:
       anyOf:
         - $ref: '#/components/schemas/AlreadyActiveSubscriptionError'
@@ -828,534 +675,300 @@ components:
           title: Detail
       type: object
       title: HTTPValidationError
-    AddressInput:
+    CheckoutConfirmStripe:
       properties:
-        line1:
+        custom_field_data:
+          additionalProperties:
+            anyOf:
+              - type: string
+              - type: integer
+              - type: boolean
+              - type: string
+                format: date-time
+                examples:
+                  - '2026-01-01T00:00:00.000000Z'
+              - type: 'null'
+          type: object
+          title: Custom Field Data
+          description: Key-value object storing custom field values.
+        product_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Product Id
+          description: >-
+            ID of the product to checkout. Must be present in the checkout's
+            product list.
+        product_price_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Product Price Id
+          description: >-
+            ID of the product price to checkout. Must correspond to a price
+            present in the checkout's product list.
+          deprecated: true
+        amount:
+          anyOf:
+            - type: integer
+              minimum: 0
+              description: >-
+                Amount in cents, before discounts and taxes. Only useful for
+                custom prices, it'll be ignored for fixed and free prices. 
+            - type: 'null'
+          title: Amount
+        seats:
+          anyOf:
+            - type: integer
+              maximum: 10000
+              minimum: 1
+            - type: 'null'
+          title: Seats
+          description: Number of seats for seat-based pricing.
+        units:
+          anyOf:
+            - type: integer
+              maximum: 2147483647
+              minimum: 1
+            - type: 'null'
+          title: Units
+          description: Number of units for unit-based pricing.
+        is_business_customer:
+          anyOf:
+            - type: boolean
+            - type: 'null'
+          title: Is Business Customer
+        customer_name:
+          anyOf:
+            - type: string
+              maxLength: 256
+              description: The name of the customer.
+              examples:
+                - John Doe
+            - type: 'null'
+          title: Customer Name
+        customer_email:
+          anyOf:
+            - type: string
+              format: email
+              description: Email address of the customer.
+            - type: 'null'
+          title: Customer Email
+        customer_billing_name:
           anyOf:
             - type: string
             - type: 'null'
-          title: Line1
-        line2:
+          title: Customer Billing Name
+        customer_billing_address:
+          anyOf:
+            - $ref: '#/components/schemas/AddressInput'
+              description: Billing address of the customer.
+            - type: 'null'
+        customer_tax_id:
           anyOf:
             - type: string
             - type: 'null'
-          title: Line2
-        postal_code:
+          title: Customer Tax Id
+        locale:
+          anyOf:
+            - type: string
+              description: >-
+                Locale of the customer, given as an IETF BCP 47 language tag,
+                e.g. `en`, `en-US` or `en-GB-oxendict`. If `null` or
+                unsupported, the locale will default to `en`.
+              examples:
+                - en
+                - en-US
+                - fr
+                - fr-CA
+            - type: 'null'
+          title: Locale
+        payment_method_type:
           anyOf:
             - type: string
             - type: 'null'
-          title: Postal Code
-        city:
+          title: Payment Method Type
+          description: >-
+            Payment method type selected by the customer in the checkout form,
+            e.g. `card`, `apple_pay` or `upi`.
+        discount_code:
           anyOf:
             - type: string
             - type: 'null'
-          title: City
-        state:
+          title: Discount Code
+          description: Discount code to apply to the checkout.
+        allow_trial:
+          anyOf:
+            - type: boolean
+              const: false
+            - type: 'null'
+          title: Allow Trial
+          description: >-
+            Disable the trial period for the checkout session. It's mainly
+            useful when the trial is blocked because the customer already
+            redeemed one.
+        confirmation_token_id:
           anyOf:
             - type: string
             - type: 'null'
-          title: State
-        country:
+          title: Confirmation Token Id
+          description: >-
+            ID of the Stripe confirmation token. Required for fixed prices and
+            custom prices.
+      type: object
+      title: CheckoutConfirmStripe
+      description: Confirm a checkout session using a Stripe confirmation token.
+    CheckoutConfirmSharedPaymentToken:
+      properties:
+        custom_field_data:
+          additionalProperties:
+            anyOf:
+              - type: string
+              - type: integer
+              - type: boolean
+              - type: string
+                format: date-time
+                examples:
+                  - '2026-01-01T00:00:00.000000Z'
+              - type: 'null'
+          type: object
+          title: Custom Field Data
+          description: Key-value object storing custom field values.
+        product_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Product Id
+          description: >-
+            ID of the product to checkout. Must be present in the checkout's
+            product list.
+        product_price_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Product Price Id
+          description: >-
+            ID of the product price to checkout. Must correspond to a price
+            present in the checkout's product list.
+          deprecated: true
+        amount:
+          anyOf:
+            - type: integer
+              minimum: 0
+              description: >-
+                Amount in cents, before discounts and taxes. Only useful for
+                custom prices, it'll be ignored for fixed and free prices. 
+            - type: 'null'
+          title: Amount
+        seats:
+          anyOf:
+            - type: integer
+              maximum: 10000
+              minimum: 1
+            - type: 'null'
+          title: Seats
+          description: Number of seats for seat-based pricing.
+        units:
+          anyOf:
+            - type: integer
+              maximum: 2147483647
+              minimum: 1
+            - type: 'null'
+          title: Units
+          description: Number of units for unit-based pricing.
+        is_business_customer:
+          anyOf:
+            - type: boolean
+            - type: 'null'
+          title: Is Business Customer
+        customer_name:
+          anyOf:
+            - type: string
+              maxLength: 256
+              description: The name of the customer.
+              examples:
+                - John Doe
+            - type: 'null'
+          title: Customer Name
+        customer_email:
+          anyOf:
+            - type: string
+              format: email
+              description: Email address of the customer.
+            - type: 'null'
+          title: Customer Email
+        customer_billing_name:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Customer Billing Name
+        customer_billing_address:
+          anyOf:
+            - $ref: '#/components/schemas/AddressInput'
+              description: Billing address of the customer.
+            - type: 'null'
+        customer_tax_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Customer Tax Id
+        locale:
+          anyOf:
+            - type: string
+              description: >-
+                Locale of the customer, given as an IETF BCP 47 language tag,
+                e.g. `en`, `en-US` or `en-GB-oxendict`. If `null` or
+                unsupported, the locale will default to `en`.
+              examples:
+                - en
+                - en-US
+                - fr
+                - fr-CA
+            - type: 'null'
+          title: Locale
+        payment_method_type:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Payment Method Type
+          description: >-
+            Payment method type selected by the customer in the checkout form,
+            e.g. `card`, `apple_pay` or `upi`.
+        discount_code:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Discount Code
+          description: Discount code to apply to the checkout.
+        allow_trial:
+          anyOf:
+            - type: boolean
+              const: false
+            - type: 'null'
+          title: Allow Trial
+          description: >-
+            Disable the trial period for the checkout session. It's mainly
+            useful when the trial is blocked because the customer already
+            redeemed one.
+        shared_payment_token_id:
           type: string
-          enum:
-            - AD
-            - AE
-            - AF
-            - AG
-            - AI
-            - AL
-            - AM
-            - AO
-            - AQ
-            - AR
-            - AS
-            - AT
-            - AU
-            - AW
-            - AX
-            - AZ
-            - BA
-            - BB
-            - BD
-            - BE
-            - BF
-            - BG
-            - BH
-            - BI
-            - BJ
-            - BL
-            - BM
-            - BN
-            - BO
-            - BQ
-            - BR
-            - BS
-            - BT
-            - BV
-            - BW
-            - BY
-            - BZ
-            - CA
-            - CC
-            - CD
-            - CF
-            - CG
-            - CH
-            - CI
-            - CK
-            - CL
-            - CM
-            - CN
-            - CO
-            - CR
-            - CV
-            - CW
-            - CX
-            - CY
-            - CZ
-            - DE
-            - DJ
-            - DK
-            - DM
-            - DO
-            - DZ
-            - EC
-            - EE
-            - EG
-            - EH
-            - ER
-            - ES
-            - ET
-            - FI
-            - FJ
-            - FK
-            - FM
-            - FO
-            - FR
-            - GA
-            - GB
-            - GD
-            - GE
-            - GF
-            - GG
-            - GH
-            - GI
-            - GL
-            - GM
-            - GN
-            - GP
-            - GQ
-            - GR
-            - GS
-            - GT
-            - GU
-            - GW
-            - GY
-            - HK
-            - HM
-            - HN
-            - HR
-            - HT
-            - HU
-            - ID
-            - IE
-            - IL
-            - IM
-            - IN
-            - IO
-            - IQ
-            - IS
-            - IT
-            - JE
-            - JM
-            - JO
-            - JP
-            - KE
-            - KG
-            - KH
-            - KI
-            - KM
-            - KN
-            - KR
-            - KW
-            - KY
-            - KZ
-            - LA
-            - LB
-            - LC
-            - LI
-            - LK
-            - LR
-            - LS
-            - LT
-            - LU
-            - LV
-            - LY
-            - MA
-            - MC
-            - MD
-            - ME
-            - MF
-            - MG
-            - MH
-            - MK
-            - ML
-            - MM
-            - MN
-            - MO
-            - MP
-            - MQ
-            - MR
-            - MS
-            - MT
-            - MU
-            - MV
-            - MW
-            - MX
-            - MY
-            - MZ
-            - NA
-            - NC
-            - NE
-            - NF
-            - NG
-            - NI
-            - NL
-            - 'NO'
-            - NP
-            - NR
-            - NU
-            - NZ
-            - OM
-            - PA
-            - PE
-            - PF
-            - PG
-            - PH
-            - PK
-            - PL
-            - PM
-            - PN
-            - PR
-            - PS
-            - PT
-            - PW
-            - PY
-            - QA
-            - RE
-            - RO
-            - RS
-            - RW
-            - SA
-            - SB
-            - SC
-            - SD
-            - SE
-            - SG
-            - SH
-            - SI
-            - SJ
-            - SK
-            - SL
-            - SM
-            - SN
-            - SO
-            - SR
-            - SS
-            - ST
-            - SV
-            - SX
-            - SZ
-            - TC
-            - TD
-            - TF
-            - TG
-            - TH
-            - TJ
-            - TK
-            - TL
-            - TM
-            - TN
-            - TO
-            - TR
-            - TT
-            - TV
-            - TW
-            - TZ
-            - UA
-            - UG
-            - UM
-            - US
-            - UY
-            - UZ
-            - VA
-            - VC
-            - VE
-            - VG
-            - VI
-            - VN
-            - VU
-            - WF
-            - WS
-            - YE
-            - YT
-            - ZA
-            - ZM
-            - ZW
-          title: CountryAlpha2Input
-          examples:
-            - US
-            - SE
-            - FR
-          x-speakeasy-enums:
-            - AD
-            - AE
-            - AF
-            - AG
-            - AI
-            - AL
-            - AM
-            - AO
-            - AQ
-            - AR
-            - AS
-            - AT
-            - AU
-            - AW
-            - AX
-            - AZ
-            - BA
-            - BB
-            - BD
-            - BE
-            - BF
-            - BG
-            - BH
-            - BI
-            - BJ
-            - BL
-            - BM
-            - BN
-            - BO
-            - BQ
-            - BR
-            - BS
-            - BT
-            - BV
-            - BW
-            - BY
-            - BZ
-            - CA
-            - CC
-            - CD
-            - CF
-            - CG
-            - CH
-            - CI
-            - CK
-            - CL
-            - CM
-            - CN
-            - CO
-            - CR
-            - CV
-            - CW
-            - CX
-            - CY
-            - CZ
-            - DE
-            - DJ
-            - DK
-            - DM
-            - DO
-            - DZ
-            - EC
-            - EE
-            - EG
-            - EH
-            - ER
-            - ES
-            - ET
-            - FI
-            - FJ
-            - FK
-            - FM
-            - FO
-            - FR
-            - GA
-            - GB
-            - GD
-            - GE
-            - GF
-            - GG
-            - GH
-            - GI
-            - GL
-            - GM
-            - GN
-            - GP
-            - GQ
-            - GR
-            - GS
-            - GT
-            - GU
-            - GW
-            - GY
-            - HK
-            - HM
-            - HN
-            - HR
-            - HT
-            - HU
-            - ID
-            - IE
-            - IL
-            - IM
-            - IN
-            - IO
-            - IQ
-            - IS
-            - IT
-            - JE
-            - JM
-            - JO
-            - JP
-            - KE
-            - KG
-            - KH
-            - KI
-            - KM
-            - KN
-            - KR
-            - KW
-            - KY
-            - KZ
-            - LA
-            - LB
-            - LC
-            - LI
-            - LK
-            - LR
-            - LS
-            - LT
-            - LU
-            - LV
-            - LY
-            - MA
-            - MC
-            - MD
-            - ME
-            - MF
-            - MG
-            - MH
-            - MK
-            - ML
-            - MM
-            - MN
-            - MO
-            - MP
-            - MQ
-            - MR
-            - MS
-            - MT
-            - MU
-            - MV
-            - MW
-            - MX
-            - MY
-            - MZ
-            - NA
-            - NC
-            - NE
-            - NF
-            - NG
-            - NI
-            - NL
-            - 'NO'
-            - NP
-            - NR
-            - NU
-            - NZ
-            - OM
-            - PA
-            - PE
-            - PF
-            - PG
-            - PH
-            - PK
-            - PL
-            - PM
-            - PN
-            - PR
-            - PS
-            - PT
-            - PW
-            - PY
-            - QA
-            - RE
-            - RO
-            - RS
-            - RW
-            - SA
-            - SB
-            - SC
-            - SD
-            - SE
-            - SG
-            - SH
-            - SI
-            - SJ
-            - SK
-            - SL
-            - SM
-            - SN
-            - SO
-            - SR
-            - SS
-            - ST
-            - SV
-            - SX
-            - SZ
-            - TC
-            - TD
-            - TF
-            - TG
-            - TH
-            - TJ
-            - TK
-            - TL
-            - TM
-            - TN
-            - TO
-            - TR
-            - TT
-            - TV
-            - TW
-            - TZ
-            - UA
-            - UG
-            - UM
-            - US
-            - UY
-            - UZ
-            - VA
-            - VC
-            - VE
-            - VG
-            - VI
-            - VN
-            - VU
-            - WF
-            - WS
-            - YE
-            - YT
-            - ZA
-            - ZM
-            - ZW
+          pattern: ^spt_[A-Za-z0-9_]+$
+          title: Shared Payment Token Id
+          description: ID of the Stripe shared payment token (`spt_...`).
       type: object
       required:
-        - country
-      title: AddressInput
+        - shared_payment_token_id
+      title: CheckoutConfirmSharedPaymentToken
+      description: >-
+        Confirm a checkout session using a Stripe shared payment token granted
+        by an agent.
+
+
+        Only supported for one-time payments.
     PaymentProcessor:
       type: string
       enum:
@@ -2372,6 +1985,38 @@ components:
         - required
       title: AttachedCustomField
       description: Schema of a custom field attached to a resource.
+    PaymentError:
+      properties:
+        error:
+          type: string
+          const: PaymentError
+          title: Error
+          examples:
+            - PaymentError
+        detail:
+          type: string
+          title: Detail
+      type: object
+      required:
+        - error
+        - detail
+      title: PaymentError
+    SharedPaymentTokenError:
+      properties:
+        error:
+          type: string
+          const: SharedPaymentTokenError
+          title: Error
+          examples:
+            - SharedPaymentTokenError
+        detail:
+          type: string
+          title: Detail
+      type: object
+      required:
+        - error
+        - detail
+      title: SharedPaymentTokenError
     AlreadyActiveSubscriptionError:
       properties:
         error:
@@ -2494,6 +2139,534 @@ components:
         - msg
         - type
       title: ValidationError
+    AddressInput:
+      properties:
+        line1:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Line1
+        line2:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Line2
+        postal_code:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Postal Code
+        city:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: City
+        state:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: State
+        country:
+          type: string
+          enum:
+            - AD
+            - AE
+            - AF
+            - AG
+            - AI
+            - AL
+            - AM
+            - AO
+            - AQ
+            - AR
+            - AS
+            - AT
+            - AU
+            - AW
+            - AX
+            - AZ
+            - BA
+            - BB
+            - BD
+            - BE
+            - BF
+            - BG
+            - BH
+            - BI
+            - BJ
+            - BL
+            - BM
+            - BN
+            - BO
+            - BQ
+            - BR
+            - BS
+            - BT
+            - BV
+            - BW
+            - BY
+            - BZ
+            - CA
+            - CC
+            - CD
+            - CF
+            - CG
+            - CH
+            - CI
+            - CK
+            - CL
+            - CM
+            - CN
+            - CO
+            - CR
+            - CV
+            - CW
+            - CX
+            - CY
+            - CZ
+            - DE
+            - DJ
+            - DK
+            - DM
+            - DO
+            - DZ
+            - EC
+            - EE
+            - EG
+            - EH
+            - ER
+            - ES
+            - ET
+            - FI
+            - FJ
+            - FK
+            - FM
+            - FO
+            - FR
+            - GA
+            - GB
+            - GD
+            - GE
+            - GF
+            - GG
+            - GH
+            - GI
+            - GL
+            - GM
+            - GN
+            - GP
+            - GQ
+            - GR
+            - GS
+            - GT
+            - GU
+            - GW
+            - GY
+            - HK
+            - HM
+            - HN
+            - HR
+            - HT
+            - HU
+            - ID
+            - IE
+            - IL
+            - IM
+            - IN
+            - IO
+            - IQ
+            - IS
+            - IT
+            - JE
+            - JM
+            - JO
+            - JP
+            - KE
+            - KG
+            - KH
+            - KI
+            - KM
+            - KN
+            - KR
+            - KW
+            - KY
+            - KZ
+            - LA
+            - LB
+            - LC
+            - LI
+            - LK
+            - LR
+            - LS
+            - LT
+            - LU
+            - LV
+            - LY
+            - MA
+            - MC
+            - MD
+            - ME
+            - MF
+            - MG
+            - MH
+            - MK
+            - ML
+            - MM
+            - MN
+            - MO
+            - MP
+            - MQ
+            - MR
+            - MS
+            - MT
+            - MU
+            - MV
+            - MW
+            - MX
+            - MY
+            - MZ
+            - NA
+            - NC
+            - NE
+            - NF
+            - NG
+            - NI
+            - NL
+            - 'NO'
+            - NP
+            - NR
+            - NU
+            - NZ
+            - OM
+            - PA
+            - PE
+            - PF
+            - PG
+            - PH
+            - PK
+            - PL
+            - PM
+            - PN
+            - PR
+            - PS
+            - PT
+            - PW
+            - PY
+            - QA
+            - RE
+            - RO
+            - RS
+            - RW
+            - SA
+            - SB
+            - SC
+            - SD
+            - SE
+            - SG
+            - SH
+            - SI
+            - SJ
+            - SK
+            - SL
+            - SM
+            - SN
+            - SO
+            - SR
+            - SS
+            - ST
+            - SV
+            - SX
+            - SZ
+            - TC
+            - TD
+            - TF
+            - TG
+            - TH
+            - TJ
+            - TK
+            - TL
+            - TM
+            - TN
+            - TO
+            - TR
+            - TT
+            - TV
+            - TW
+            - TZ
+            - UA
+            - UG
+            - UM
+            - US
+            - UY
+            - UZ
+            - VA
+            - VC
+            - VE
+            - VG
+            - VI
+            - VN
+            - VU
+            - WF
+            - WS
+            - YE
+            - YT
+            - ZA
+            - ZM
+            - ZW
+          title: CountryAlpha2Input
+          examples:
+            - US
+            - SE
+            - FR
+          x-speakeasy-enums:
+            - AD
+            - AE
+            - AF
+            - AG
+            - AI
+            - AL
+            - AM
+            - AO
+            - AQ
+            - AR
+            - AS
+            - AT
+            - AU
+            - AW
+            - AX
+            - AZ
+            - BA
+            - BB
+            - BD
+            - BE
+            - BF
+            - BG
+            - BH
+            - BI
+            - BJ
+            - BL
+            - BM
+            - BN
+            - BO
+            - BQ
+            - BR
+            - BS
+            - BT
+            - BV
+            - BW
+            - BY
+            - BZ
+            - CA
+            - CC
+            - CD
+            - CF
+            - CG
+            - CH
+            - CI
+            - CK
+            - CL
+            - CM
+            - CN
+            - CO
+            - CR
+            - CV
+            - CW
+            - CX
+            - CY
+            - CZ
+            - DE
+            - DJ
+            - DK
+            - DM
+            - DO
+            - DZ
+            - EC
+            - EE
+            - EG
+            - EH
+            - ER
+            - ES
+            - ET
+            - FI
+            - FJ
+            - FK
+            - FM
+            - FO
+            - FR
+            - GA
+            - GB
+            - GD
+            - GE
+            - GF
+            - GG
+            - GH
+            - GI
+            - GL
+            - GM
+            - GN
+            - GP
+            - GQ
+            - GR
+            - GS
+            - GT
+            - GU
+            - GW
+            - GY
+            - HK
+            - HM
+            - HN
+            - HR
+            - HT
+            - HU
+            - ID
+            - IE
+            - IL
+            - IM
+            - IN
+            - IO
+            - IQ
+            - IS
+            - IT
+            - JE
+            - JM
+            - JO
+            - JP
+            - KE
+            - KG
+            - KH
+            - KI
+            - KM
+            - KN
+            - KR
+            - KW
+            - KY
+            - KZ
+            - LA
+            - LB
+            - LC
+            - LI
+            - LK
+            - LR
+            - LS
+            - LT
+            - LU
+            - LV
+            - LY
+            - MA
+            - MC
+            - MD
+            - ME
+            - MF
+            - MG
+            - MH
+            - MK
+            - ML
+            - MM
+            - MN
+            - MO
+            - MP
+            - MQ
+            - MR
+            - MS
+            - MT
+            - MU
+            - MV
+            - MW
+            - MX
+            - MY
+            - MZ
+            - NA
+            - NC
+            - NE
+            - NF
+            - NG
+            - NI
+            - NL
+            - 'NO'
+            - NP
+            - NR
+            - NU
+            - NZ
+            - OM
+            - PA
+            - PE
+            - PF
+            - PG
+            - PH
+            - PK
+            - PL
+            - PM
+            - PN
+            - PR
+            - PS
+            - PT
+            - PW
+            - PY
+            - QA
+            - RE
+            - RO
+            - RS
+            - RW
+            - SA
+            - SB
+            - SC
+            - SD
+            - SE
+            - SG
+            - SH
+            - SI
+            - SJ
+            - SK
+            - SL
+            - SM
+            - SN
+            - SO
+            - SR
+            - SS
+            - ST
+            - SV
+            - SX
+            - SZ
+            - TC
+            - TD
+            - TF
+            - TG
+            - TH
+            - TJ
+            - TK
+            - TL
+            - TM
+            - TN
+            - TO
+            - TR
+            - TT
+            - TV
+            - TW
+            - TZ
+            - UA
+            - UG
+            - UM
+            - US
+            - UY
+            - UZ
+            - VA
+            - VC
+            - VE
+            - VG
+            - VI
+            - VN
+            - VU
+            - WF
+            - WS
+            - YE
+            - YT
+            - ZA
+            - ZM
+            - ZW
+      type: object
+      required:
+        - country
+      title: AddressInput
     BillingAddressFieldMode:
       type: string
       enum:
