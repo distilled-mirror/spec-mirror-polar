@@ -6,114 +6,102 @@
 
 > The next generation unicorns will be built by smaller teams. Polar makes that dream possible.
 
-<img height="200" src="https://mintcdn.com/polar/4USyJwN59kbPHT7o/assets/welcome.png?fit=max&auto=format&n=4USyJwN59kbPHT7o&q=85&s=09976c4c1a9f4f17f30532ad8b0a711b" data-path="assets/welcome.png" />
+![](https://mintcdn.com/polar/4USyJwN59kbPHT7o/assets/welcome.png?fit=max\&auto=format\&n=4USyJwN59kbPHT7o\&q=85\&s=09976c4c1a9f4f17f30532ad8b0a711b)
 
 ## What is Polar?
 
 Turn your software into a business with Polar. Sell digital products, subscriptions, and more without the hassle of traditional payment systems.
 
-<CardGroup cols={2}>
-  <Card title="Beyond Payment Processing" icon="credit-card">
-    Unlike Stripe that only handles transactions, we provide complete billing
-    infrastructure with tax compliance, product management, and automated access
-    & delivery.
-  </Card>
+> **Beyond Payment Processing**
+>
+> Unlike Stripe that only handles transactions, we provide complete billing
+> infrastructure with tax compliance, product management, and automated access
+> & delivery.
 
-  <Card title="Merchant of Record" icon="globe">
-    We handle all international tax compliance, so you can sell globally without
-    worrying about VAT, GST, or sales tax regulations.
-  </Card>
-</CardGroup>
+> **Merchant of Record**
+>
+> We handle all international tax compliance, so you can sell globally without
+> worrying about VAT, GST, or sales tax regulations.
 
 ## Problems We Solve
 
-<AccordionGroup>
-  <Accordion title="Tax Compliance Nightmare" icon="building-columns">
-    **The Problem**: Selling digital products globally means dealing with VAT, GST, and sales tax in dozens of jurisdictions, each with different rates, rules, and filing requirements. Most developers either ignore this (risky) or avoid international sales entirely.
+> **Tax Compliance Nightmare**
+>
+> **The Problem**: Selling digital products globally means dealing with VAT, GST, and sales tax in dozens of jurisdictions, each with different rates, rules, and filing requirements. Most developers either ignore this (risky) or avoid international sales entirely.
+>
+> **Polar's Solution**: As your Merchant of Record, we handle all international tax compliance. We calculate, collect, and remit taxes worldwide. You focus on building; we handle the paperwork.
 
-    **Polar's Solution**: As your Merchant of Record, we handle all international tax compliance. We calculate, collect, and remit taxes worldwide. You focus on building; we handle the paperwork.
-  </Accordion>
+> **Complex Billing Infrastructure**
+>
+> **The Problem**: Building subscription billing, product catalogs, customer portals, and payment flows from scratch takes months of development time and ongoing maintenance.
+>
+> **Polar's Solution**: Complete billing infrastructure out-of-the-box with APIs that let you integrate in minutes. No need to build customer portals, handle subscription lifecycle, or manage failed payments.
 
-  <Accordion title="Complex Billing Infrastructure" icon="gears">
-    **The Problem**: Building subscription billing, product catalogs, customer portals, and payment flows from scratch takes months of development time and ongoing maintenance.
+> **Manual Access & Delivery Overhead**
+>
+> **The Problem**: Manually sending license keys, granting repository access, or managing Discord invites for every purchase doesn't scale and creates delays for customers.
+>
+> **Polar's Solution**: Automated benefit delivery for common developer needs - license keys, file downloads, GitHub repo access, Discord roles, and more. Customers get instant access.
 
-    **Polar's Solution**: Complete billing infrastructure out-of-the-box with APIs that let you integrate in minutes. No need to build customer portals, handle subscription lifecycle, or manage failed payments.
-  </Accordion>
-
-  <Accordion title="Manual Access & Delivery Overhead" icon="box">
-    **The Problem**: Manually sending license keys, granting repository access, or managing Discord invites for every purchase doesn't scale and creates delays for customers.
-
-    **Polar's Solution**: Automated benefit delivery for common developer needs - license keys, file downloads, GitHub repo access, Discord roles, and more. Customers get instant access.
-  </Accordion>
-
-  <Accordion title="High Processing Costs" icon="money-bill">
-    **The Problem**: Traditional MoR solutions charge 5-8% per transaction plus monthly fees, eating into your profits before you even start.
-
-    **Polar's Solution**: Transparent fee structure starting at 5% + 50¢ per transaction on the free Starter plan, with optional paid plans that lower your rate. We earn when you earn.
-  </Accordion>
-</AccordionGroup>
+> **High Processing Costs**
+>
+> **The Problem**: Traditional MoR solutions charge 5-8% per transaction plus monthly fees, eating into your profits before you even start.
+>
+> **Polar's Solution**: Transparent fee structure starting at 5% + 50¢ per transaction on the free Starter plan, with optional paid plans that lower your rate. We earn when you earn.
 
 ## Core Features
 
 ### Flexible Product Management
 
-<CardGroup cols={3}>
-  <Card title="One-time Purchases" icon="cart-shopping">
-    Sell digital products, courses, templates, or software licenses with instant
-    delivery
-  </Card>
+> **One-time Purchases**
+>
+> Sell digital products, courses, templates, or software licenses with instant
+> delivery
 
-  <Card title="Subscriptions" icon="arrows-rotate">
-    Recurring billing with automatic renewals and dunning management
-  </Card>
+> **Subscriptions**
+>
+> Recurring billing with automatic renewals and dunning management
 
-  <Card title="Flexible Pricing" icon="hand-holding-dollar">
-    Fixed price, pay-what-you-want, or free products with optional minimums
-  </Card>
-</CardGroup>
+> **Flexible Pricing**
+>
+> Fixed price, pay-what-you-want, or free products with optional minimums
 
 ### Powerful Checkout Experience
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/introduction/checkout.light.png?fit=max&auto=format&n=0Af3hN6-oIM4IHT3&q=85&s=46584e16a18277dd02826c4cb7bd022e" width="5114" height="2634" data-path="assets/introduction/checkout.light.png" />
+![](https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/introduction/checkout.light.png?fit=max\&auto=format\&n=0Af3hN6-oIM4IHT3\&q=85\&s=46584e16a18277dd02826c4cb7bd022e)
 
-<img className="hidden dark:block" src="https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/introduction/checkout.dark.png?fit=max&auto=format&n=0Af3hN6-oIM4IHT3&q=85&s=0b0e33d58f00d805d8a69b6b0427d66a" width="5108" height="2632" data-path="assets/introduction/checkout.dark.png" />
+> **[Checkout Links](/docs/features/checkout/links)**
+>
+> No-code solution for quick product sales. Create and share instantly.
 
-<CardGroup cols={3}>
-  <Card title="Checkout Links" icon="link" href="/docs/features/checkout/links">
-    No-code solution for quick product sales. Create and share instantly.
-  </Card>
+> **[Embedded Checkout](/docs/features/checkout/embed)**
+>
+> Integrate seamlessly into your website with customizable branding.
 
-  <Card title="Embedded Checkout" icon="browser" href="/docs/features/checkout/embed">
-    Integrate seamlessly into your website with customizable branding.
-  </Card>
-
-  <Card title="Checkout API" icon="code" href="/docs/api-reference">
-    Programmatically create dynamic checkout sessions for custom flows.
-  </Card>
-</CardGroup>
+> **[Checkout API](/docs/api-reference)**
+>
+> Programmatically create dynamic checkout sessions for custom flows.
 
 ### Automated Benefits (Entitlements)
 
 **Set it and forget it**: Configure once, and customers get instant access to
 their benefits automatically. No manual work required.
 
-<CardGroup cols={2}>
-  <Card title="License Keys" icon="key" href="/docs/features/benefits/license-keys">
-    Generate and deliver software licenses automatically with custom formats
-  </Card>
+> **[License Keys](/docs/features/benefits/license-keys)**
+>
+> Generate and deliver software licenses automatically with custom formats
 
-  <Card title="File Downloads" icon="download" href="/docs/features/benefits/file-downloads">
-    Secure delivery of digital assets up to 10GB with download tracking
-  </Card>
+> **[File Downloads](/docs/features/benefits/file-downloads)**
+>
+> Secure delivery of digital assets up to 10GB with download tracking
 
-  <Card title="GitHub Access" icon="github" href="/docs/features/benefits/github-access">
-    Auto-invite customers to private repositories and manage permissions
-  </Card>
+> **[GitHub Access](/docs/features/benefits/github-access)**
+>
+> Auto-invite customers to private repositories and manage permissions
 
-  <Card title="Discord Access" icon="discord" href="/docs/features/benefits/discord-access">
-    Automatic role assignment and server invites for community access
-  </Card>
-</CardGroup>
+> **[Discord Access](/docs/features/benefits/discord-access)**
+>
+> Automatic role assignment and server invites for community access
 
 ### Global Merchant of Record
 
@@ -123,214 +111,192 @@ their benefits automatically. No manual work required.
 
 ## Quick Start Guide
 
-<Steps>
-  <Step title="Create Your Account">
-    [Sign up for Polar](https://polar.sh/signup) using GitHub, Google, or email. Create an organization to manage your products and customers.
+**1. Create Your Account**
 
-    <img className="block dark:hidden" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/create-org.light.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=b416d158706b4ba00056ba9fbe29657c" width="2044" height="1664" data-path="assets/create-org.light.png" />
+[Sign up for Polar](https://polar.sh/signup) using GitHub, Google, or email. Create an organization to manage your products and customers.
 
-    <img className="hidden dark:block" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/create-org.dark.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=59301a615164f57999574c07c7b55f0d" width="1986" height="1678" data-path="assets/create-org.dark.png" />
-  </Step>
+![](https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/create-org.light.png?fit=max\&auto=format\&n=Ut0vPUvE1pIdMcH2\&q=85\&s=b416d158706b4ba00056ba9fbe29657c)
 
-  <Step title="Create Your First Product">
-    Set up a digital product in minutes:
+**2. Create Your First Product**
 
-    * Choose between one-time purchase or subscription
-    * Set your pricing (fixed, pay-what-you-want, or free)
-    * Configure automated benefits for instant delivery
+Set up a digital product in minutes:
 
-    Learn more about [Products →](/docs/features/products)
-  </Step>
+* Choose between one-time purchase or subscription
+* Set your pricing (fixed, pay-what-you-want, or free)
+* Configure automated benefits for instant delivery
 
-  <Step title="Choose Your Integration">
-    Pick the approach that fits your needs:
+Learn more about [Products →](/docs/features/products)
 
-    <Tabs>
-      <Tab title="No-Code (Fastest)">
-        Perfect for getting started quickly:
+**3. Choose Your Integration**
 
-        * Create [Checkout Links](/docs/features/checkout/links) from your dashboard
-        * Share via email, social media, or embed in websites
-        * Start accepting payments immediately
-      </Tab>
+Pick the approach that fits your needs:
 
-      <Tab title="Embedded">
-        Integrate into your existing website:
+**No-Code (Fastest)**
 
-        * Add our [Embedded Checkout](/docs/features/checkout/embed) component
-        * Maintain your site's look and feel
-        * Customers never leave your domain
-      </Tab>
+Perfect for getting started quickly:
 
-      <Tab title="Full API (Maximum Control)">
-        Maximum flexibility for custom workflows:
+* Create [Checkout Links](/docs/features/checkout/links) from your dashboard
+* Share via email, social media, or embed in websites
+* Start accepting payments immediately
 
-        * Use our [SDKs](/docs/integrate/sdk/typescript) for any language
-        * Build custom checkout flows and experiences
-        * Integrate with your existing tech stack
-      </Tab>
-    </Tabs>
-  </Step>
+**Embedded**
 
-  <Step title="Set Up Webhooks">
-    Stay synchronized with customer events:
+Integrate into your existing website:
 
-    * Configure webhook endpoints in your dashboard
-    * React to purchases, subscription changes, and customer events
-    * Keep your database in sync automatically
+* Add our [Embedded Checkout](/docs/features/checkout/embed) component
+* Maintain your site's look and feel
+* Customers never leave your domain
 
-    Read the [Webhooks guide →](/docs/integrate/webhooks/endpoints)
-  </Step>
-</Steps>
+**Full API (Maximum Control)**
+
+Maximum flexibility for custom workflows:
+
+* Use our [SDKs](/docs/integrate/sdk/typescript) for any language
+* Build custom checkout flows and experiences
+* Integrate with your existing tech stack
+
+**4. Set Up Webhooks**
+
+Stay synchronized with customer events:
+
+* Configure webhook endpoints in your dashboard
+* React to purchases, subscription changes, and customer events
+* Keep your database in sync automatically
+
+Read the [Webhooks guide →](/docs/integrate/webhooks/endpoints)
 
 ## Integration Options
 
 ### Framework Adapters (Recommended)
 
-<Card title="Browse framework adapters" icon="code" href="/docs/integrate/sdk/adapters/introduction">
-  Drop-in adapters that wire Polar checkouts and webhooks into your stack, including Next.js, Nuxt, TanStack Start, Laravel, and BetterAuth.
-</Card>
+> **[Browse framework adapters](/docs/integrate/sdk/adapters/introduction)**
+>
+> Drop-in adapters that wire Polar checkouts and webhooks into your stack, including Next.js, Nuxt, TanStack Start, Laravel, and BetterAuth.
 
 ### Native SDKs
 
-<CardGroup cols={2}>
-  <Card title="JS/TS" icon="js" href="/docs/integrate/sdk/typescript">
-    For web and Node.js applications
-  </Card>
+> **[JS/TS](/docs/integrate/sdk/typescript)**
+>
+> For web and Node.js applications
 
-  <Card title="Python" icon="python" href="/docs/integrate/sdk/python">
-    For Django, Flask, FastAPI frameworks
-  </Card>
-</CardGroup>
+> **[Python](/docs/integrate/sdk/python)**
+>
+> For Django, Flask, FastAPI frameworks
 
 ## Why Choose Polar?
 
-<Tabs>
-  <Tab title="Individual Developers">
-    <CardGroup cols={2}>
-      <Card title="Ship Faster" icon="rocket">
-        Focus on your product, not billing infrastructure. Get to market weeks faster.
-      </Card>
+**Individual Developers**
 
-      <Card title="Global Reach" icon="globe">
-        Sell worldwide without worrying about tax compliance or regional restrictions.
-      </Card>
+> **Ship Faster**
+>
+> Focus on your product, not billing infrastructure. Get to market weeks faster.
 
-      <Card title="Automated Delivery" icon="box">
-        License keys and downloads handled automatically. No manual work required.
-      </Card>
+> **Global Reach**
+>
+> Sell worldwide without worrying about tax compliance or regional restrictions.
 
-      <Card title="Transparent Pricing" icon="piggy-bank">
-        Transparent, pay-as-you-earn pricing with no hidden fees.
-      </Card>
-    </CardGroup>
-  </Tab>
+> **Automated Delivery**
+>
+> License keys and downloads handled automatically. No manual work required.
 
-  <Tab title="Small Teams">
-    <CardGroup cols={2}>
-      <Card title="No Engineering Overhead" icon="wrench">
-        Complete billing solution without months of custom development work.
-      </Card>
+> **Transparent Pricing**
+>
+> Transparent, pay-as-you-earn pricing with no hidden fees.
 
-      <Card title="Scalable Pricing" icon="chart-line">
-        Pay only when you earn, no monthly minimums or setup fees.
-      </Card>
+**Small Teams**
 
-      <Card title="Team Collaboration" icon="users">
-        Multiple team members can manage products, customers, and analytics.
-      </Card>
+> **No Engineering Overhead**
+>
+> Complete billing solution without months of custom development work.
 
-      <Card title="Professional Checkout" icon="credit-card">
-        Branded experience that builds customer trust and increases conversions.
-      </Card>
-    </CardGroup>
-  </Tab>
+> **Scalable Pricing**
+>
+> Pay only when you earn, no monthly minimums or setup fees.
 
-  <Tab title="Growing Businesses">
-    <CardGroup cols={2}>
-      <Card title="Enterprise Features" icon="building">
-        Advanced analytics, custom fields, bulk operations, and priority support.
-      </Card>
+> **Team Collaboration**
+>
+> Multiple team members can manage products, customers, and analytics.
 
-      <Card title="API Flexibility" icon="code">
-        Full programmatic control over products, customers, orders, and subscriptions.
-      </Card>
+> **Professional Checkout**
+>
+> Branded experience that builds customer trust and increases conversions.
 
-      <Card title="Webhook Reliability" icon="link">
-        Reliable real-time synchronization with your systems and database.
-      </Card>
-    </CardGroup>
-  </Tab>
-</Tabs>
+**Growing Businesses**
+
+> **Enterprise Features**
+>
+> Advanced analytics, custom fields, bulk operations, and priority support.
+
+> **API Flexibility**
+>
+> Full programmatic control over products, customers, orders, and subscriptions.
+
+> **Webhook Reliability**
+>
+> Reliable real-time synchronization with your systems and database.
 
 ## Transparent Pricing
 
-<CardGroup cols={1}>
-  <Card title="5% + 50¢ or lower" icon="percent">
-    **Per successful transaction**
+> **5% + 50¢ or lower**
+>
+> **Per successful transaction**
+>
+> Optional paid plans to get even lower transaction fees
 
-    Optional paid plans to get even lower transaction fees
-  </Card>
-</CardGroup>
-
-<Info>
-  **Additional fees may apply**: Some transactions may incur additional fees
-  (e.g. international cards). Payout fees are charged by payment providers. See
-  our [detailed fees page](/docs/merchant-of-record/fees) for complete information.
-</Info>
+> [!NOTE]
+>
+> **Additional fees may apply**: Some transactions may incur additional fees
+> (e.g. international cards). Payout fees are charged by payment providers. See
+> our [detailed fees page](/docs/merchant-of-record/fees) for complete information.
 
 ## Open Source & Community
 
 Polar is built in the open with full transparency and a growing community of
 contributors.
 
-<CardGroup cols={2}>
-  <Card title="Open Source Codebase" icon="github" href="https://github.com/polarsource/polar">
-    Apache 2.0 license with 36+ contributors and growing
-  </Card>
+> **[Open Source Codebase](https://github.com/polarsource/polar)**
+>
+> Apache 2.0 license with 36+ contributors and growing
 
-  <Card title="Public Development" icon="users" href="https://github.com/polarsource/polar/issues">
-    Feature requests, roadmap, and issues - all developed in public
-  </Card>
+> **[Public Development](https://github.com/polarsource/polar/issues)**
+>
+> Feature requests, roadmap, and issues - all developed in public
 
-  <Card title="Transparent Pricing" icon="eye">
-    No hidden fees or surprise charges. What you see is what you pay.
-  </Card>
-</CardGroup>
+> **Transparent Pricing**
+>
+> No hidden fees or surprise charges. What you see is what you pay.
 
-<Warning>
-  While self-hosting is technically possible, we recommend using our hosted
-  service to get the full Merchant of Record benefits including global tax
-  compliance.
-</Warning>
+> [!WARNING]
+>
+> While self-hosting is technically possible, we recommend using our hosted
+> service to get the full Merchant of Record benefits including global tax
+> compliance.
 
 ## Ready to Start?
 
-<CardGroup cols={2}>
-  <Card title="Create Account" icon="user-plus" href="https://polar.sh/signup">
-    **Free signup, no credit card required**
+> **[Create Account](https://polar.sh/signup)**
+>
+> **Free signup, no credit card required**
+>
+> Get started in under 2 minutes
 
-    Get started in under 2 minutes
-  </Card>
+> **[Read the Guides](/docs/guides/nextjs)**
+>
+> **Framework-specific tutorials**
+>
+> Step-by-step integration guides
 
-  <Card title="Read the Guides" icon="book" href="/docs/guides/nextjs">
-    **Framework-specific tutorials**
+> **[Explore the API](/docs/api-reference)**
+>
+> **Complete API documentation**
+>
+> Interactive examples and SDKs
 
-    Step-by-step integration guides
-  </Card>
-
-  <Card title="Explore the API" icon="code" href="/docs/api-reference">
-    **Complete API documentation**
-
-    Interactive examples and SDKs
-  </Card>
-
-  <Card title="Join Our Community" icon="discord" href="https://discord.gg/Pnhfz3UThd">
-    **Get help from our team**
-
-    Active community and support
-  </Card>
-</CardGroup>
+> **[Join Our Community](https://discord.gg/Pnhfz3UThd)**
+>
+> **Get help from our team**
+>
+> Active community and support
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

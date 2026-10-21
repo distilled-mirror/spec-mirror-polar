@@ -6,16 +6,16 @@
 
 > Payments and Checkouts made dead simple with Supabase
 
-<Warning>
-  **`@polar-sh/supabase` is deprecated** and no longer maintained. Integrate with
-  the [TypeScript SDK](/docs/integrate/sdk/typescript) directly instead. The
-  [`polar-integration` skill](https://github.com/polarsource/agent-toolkit/tree/main/skills/polar-integration)
-  can help you migrate:
-
-  ```bash theme={null}
-  npx skills add https://github.com/polarsource/agent-toolkit --skill polar-integration
-  ```
-</Warning>
+> [!WARNING]
+>
+> **`@polar-sh/supabase` is deprecated** and no longer maintained. Integrate with
+> the [TypeScript SDK](/docs/integrate/sdk/typescript) directly instead. The
+> [`polar-integration` skill](https://github.com/polarsource/agent-toolkit/tree/main/skills/polar-integration)
+> can help you migrate:
+>
+> ```bash theme={null}
+> npx skills add https://github.com/polarsource/agent-toolkit --skill polar-integration
+> ```
 
 ## Examples
 
@@ -25,31 +25,29 @@
 
 Install the required Polar packages using the following command:
 
-<Tabs>
-  <Tab title="npm">
-    ```bash Terminal theme={null}
-    npm install zod @polar-sh/supabase
-    ```
-  </Tab>
+**npm**
 
-  <Tab title="yarn">
-    ```bash Terminal theme={null}
-    yarn add zod @polar-sh/supabase
-    ```
-  </Tab>
+```bash Terminal theme={null}
+npm install zod @polar-sh/supabase
+```
 
-  <Tab title="pnpm">
-    ```bash Terminal theme={null}
-    pnpm add zod @polar-sh/supabase
-    ```
-  </Tab>
+**yarn**
 
-  <Tab title="bun">
-    ```bash Terminal theme={null}
-    bun add zod @polar-sh/supabase
-    ```
-  </Tab>
-</Tabs>
+```bash Terminal theme={null}
+yarn add zod @polar-sh/supabase
+```
+
+**pnpm**
+
+```bash Terminal theme={null}
+pnpm add zod @polar-sh/supabase
+```
+
+**bun**
+
+```bash Terminal theme={null}
+bun add zod @polar-sh/supabase
+```
 
 ## Checkout
 

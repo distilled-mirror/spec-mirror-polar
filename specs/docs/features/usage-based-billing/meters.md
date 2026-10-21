@@ -18,17 +18,13 @@ You can create and manage your meters from the dashboard. Polar is then able to 
 
 To create a meter, [open the Meters page](https://polar.sh/to/dashboard/products/meters) and click the "Create Meter" button.
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/create-meter.light.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=0145ac51bc8100b038482d31612f3ea6" width="3598" height="2070" data-path="assets/features/usage/create-meter.light.png" />
-
-<img className="hidden dark:block" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/create-meter.dark.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=2293c25c2e2c014abcf6c8a761568f95" width="3590" height="2066" data-path="assets/features/usage/create-meter.dark.png" />
+![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/create-meter.light.png?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=0145ac51bc8100b038482d31612f3ea6)
 
 ## Filters
 
 A filter is a set of clauses that are combined using conjunctions. They're used to filter events that you've ingested into Polar.
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/filter.light.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=77aca67ac7630a38fefa9a6d567a58f3" width="1274" height="922" data-path="assets/features/usage/filter.light.png" />
-
-<img className="hidden dark:block" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/filter.dark.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=6c855b483334dba4b7f26e54c2878080" width="1276" height="914" data-path="assets/features/usage/filter.dark.png" />
+![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/filter.light.png?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=77aca67ac7630a38fefa9a6d567a58f3)
 
 ### Clauses
 
@@ -81,53 +77,51 @@ For example, if you want to count the number of events that match the filter, yo
 * **Maximum** — Computes the maximum value of a property.
 * **Unique** — Counts the number of unique values of a property.
 
-<AccordionGroup>
-  <Accordion title="Example">
-    Consider the following events:
-
-    ```json theme={null}
-    [
-      {
-        "name": "ai_usage",
-        "external_customer_id": "cus_123",
-        "metadata": {
-          "total_tokens": 10
-        }
-      },
-      {
-        "name": "ai_usage",
-        "external_customer_id": "cus_123",
-        "metadata": {
-          "total_tokens": 20
-        }
-      },
-      {
-        "name": "ai_usage",
-        "external_customer_id": "cus_123",
-        "metadata": {
-          "total_tokens": 30
-        }
-      },
-      {
-        "name": "ai_usage",
-        "external_customer_id": "cus_123",
-        "metadata": {
-          "total_tokens": 30
-        }
-      }
-    ]
-    ```
-
-    Here is the result of each aggregation function, over the `total_tokens` metadata property:
-
-    * **Count**: 4 units
-    * **Sum**: 90 units
-    * **Average**: 22.5 units
-    * **Minimum**: 10 units
-    * **Maximum**: 30 units
-    * **Unique**: 3 units
-  </Accordion>
-</AccordionGroup>
+> **Example**
+>
+> Consider the following events:
+>
+> ```json theme={null}
+> [
+>   {
+>     "name": "ai_usage",
+>     "external_customer_id": "cus_123",
+>     "metadata": {
+>       "total_tokens": 10
+>     }
+>   },
+>   {
+>     "name": "ai_usage",
+>     "external_customer_id": "cus_123",
+>     "metadata": {
+>       "total_tokens": 20
+>     }
+>   },
+>   {
+>     "name": "ai_usage",
+>     "external_customer_id": "cus_123",
+>     "metadata": {
+>       "total_tokens": 30
+>     }
+>   },
+>   {
+>     "name": "ai_usage",
+>     "external_customer_id": "cus_123",
+>     "metadata": {
+>       "total_tokens": 30
+>     }
+>   }
+> ]
+> ```
+>
+> Here is the result of each aggregation function, over the `total_tokens` metadata property:
+>
+> * **Count**: 4 units
+> * **Sum**: 90 units
+> * **Average**: 22.5 units
+> * **Minimum**: 10 units
+> * **Maximum**: 30 units
+> * **Unique**: 3 units
 
 If you want to use a metadata property in the aggregation, you can use the metadata property directly. No need to include a `metadata.` prefix.
 
@@ -148,23 +142,21 @@ Select **Custom** to define your own display format. Two additional fields appea
 * **Unit label** — The singular name shown after the price, e.g. `gigabyte` displays as `$0.023 / gigabyte`.
 * **Unit multiplier** — Scales the displayed price so you can show a more readable denomination. For example, a multiplier of `1000` shows the price per 1 000 units rather than per single unit.
 
-<Tip>
-  The unit multiplier only affects how the price is shown. The raw `unit_amount`
-  you set is still the price per single event unit — the multiplier scales the
-  display amount for readability.
-</Tip>
+> [!TIP]
+>
+> The unit multiplier only affects how the price is shown. The raw `unit_amount`
+> you set is still the price per single event unit — the multiplier scales the
+> display amount for readability.
 
 ## Example
 
 The following Meter Filter & Aggregation will match events that have the name `openai-usage` and sum units over metadata property `completionTokens`.
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/meter.light.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=2c4ba244ceee17f9bda8665f6a22a6b6" width="1108" height="936" data-path="assets/features/usage/meter.light.png" />
+![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/meter.light.png?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=2c4ba244ceee17f9bda8665f6a22a6b6)
 
-<img className="hidden dark:block" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/meter.dark.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=ef46a2a0420e3e01d7a181d3e7ddf118" width="1116" height="928" data-path="assets/features/usage/meter.dark.png" />
-
-<Tip>
-  You can **Preview** the events matched by the meter while creating it.
-</Tip>
+> [!TIP]
+>
+> You can **Preview** the events matched by the meter while creating it.
 
 ## Good to know
 

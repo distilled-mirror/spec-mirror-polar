@@ -71,11 +71,11 @@ The `_cost` property has the following structure:
 * **`currency`** (required): The currency code
   * Currently only `"usd"` is supported
 
-<Info>
-  **Amount must be in cents**: The `amount` field represents the cost in cents,
-  not dollars. For example, `100 = \$1.00`, `0.5 = \$0.005` (half a cent), and
-  `0.001 = \$0.00001` (one hundredth of a cent).
-</Info>
+> [!NOTE]
+>
+> **Amount must be in cents**: The `amount` field represents the cost in cents,
+> not dollars. For example, `100 = \$1.00`, `0.5 = \$0.005` (half a cent), and
+> `0.001 = \$0.00001` (one hundredth of a cent).
 
 ## Use Cases
 

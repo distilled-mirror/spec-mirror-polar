@@ -6,16 +6,16 @@
 
 > Payments and Checkouts made dead simple with Sveltekit
 
-<Warning>
-  **`@polar-sh/sveltekit` is deprecated** and no longer maintained. Integrate with
-  the [TypeScript SDK](/docs/integrate/sdk/typescript) directly instead. The
-  [`polar-integration` skill](https://github.com/polarsource/agent-toolkit/tree/main/skills/polar-integration)
-  can help you migrate:
-
-  ```bash theme={null}
-  npx skills add https://github.com/polarsource/agent-toolkit --skill polar-integration
-  ```
-</Warning>
+> [!WARNING]
+>
+> **`@polar-sh/sveltekit` is deprecated** and no longer maintained. Integrate with
+> the [TypeScript SDK](/docs/integrate/sdk/typescript) directly instead. The
+> [`polar-integration` skill](https://github.com/polarsource/agent-toolkit/tree/main/skills/polar-integration)
+> can help you migrate:
+>
+> ```bash theme={null}
+> npx skills add https://github.com/polarsource/agent-toolkit --skill polar-integration
+> ```
 
 ## Examples
 
@@ -25,31 +25,29 @@
 
 Install the required Polar packages using the following command:
 
-<Tabs>
-  <Tab title="npm">
-    ```bash Terminal theme={null}
-    npm install zod @polar-sh/sveltekit
-    ```
-  </Tab>
+**npm**
 
-  <Tab title="yarn">
-    ```bash Terminal theme={null}
-    yarn add zod @polar-sh/sveltekit
-    ```
-  </Tab>
+```bash Terminal theme={null}
+npm install zod @polar-sh/sveltekit
+```
 
-  <Tab title="pnpm">
-    ```bash Terminal theme={null}
-    pnpm add zod @polar-sh/sveltekit
-    ```
-  </Tab>
+**yarn**
 
-  <Tab title="bun">
-    ```bash Terminal theme={null}
-    bun add zod @polar-sh/sveltekit
-    ```
-  </Tab>
-</Tabs>
+```bash Terminal theme={null}
+yarn add zod @polar-sh/sveltekit
+```
+
+**pnpm**
+
+```bash Terminal theme={null}
+pnpm add zod @polar-sh/sveltekit
+```
+
+**bun**
+
+```bash Terminal theme={null}
+bun add zod @polar-sh/sveltekit
+```
 
 ## Checkout
 

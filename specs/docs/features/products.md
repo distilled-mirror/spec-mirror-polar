@@ -6,11 +6,11 @@
 
 > Start selling digital products on Polar in minutes.
 
-<Info>
-  **Everything is a product**
-
-  Subscriptions and one-time purchases are both products in Polar — same API, same data model, just different pricing and billing logic. They live together in the Products dashboard, filterable by pricing model.
-</Info>
+> [!NOTE]
+>
+> **Everything is a product**
+>
+> Subscriptions and one-time purchases are both products in Polar — same API, same data model, just different pricing and billing logic. They live together in the Products dashboard, filterable by pricing model.
 
 ## Billing cycle
 
@@ -40,144 +40,144 @@ Products can be priced in several currencies at once so customers pay in their l
 
 Polar picks the currency based on the customer's geolocation at checkout. If their currency isn't enabled on the product, it falls back to your organization's default.
 
-<Warning>
-  **Creating checkout sessions from a backend or proxy?** Polar reads the customer's geolocation from the IP address of the request that creates the session. If you create sessions server-side (an API, a Cloudflare Worker, etc.), Polar sees *your server's* IP and may pick the wrong currency.
+> [!WARNING]
+>
+> **Creating checkout sessions from a backend or proxy?** Polar reads the customer's geolocation from the IP address of the request that creates the session. If you create sessions server-side (an API, a Cloudflare Worker, etc.), Polar sees *your server's* IP and may pick the wrong currency.
+>
+> Forward the customer's IP as [`customer_ip_address`](/docs/features/checkout/session#customer-ip-address) when creating the session.
 
-  Forward the customer's IP as [`customer_ip_address`](/docs/features/checkout/session#customer-ip-address) when creating the session.
-</Warning>
-
-<Accordion title="Supported currencies">
-  Polar supports 130+ currencies for product pricing:
-
-  | Code | Currency |
-  | - | - |
-  | `AED` | United Arab Emirates Dirham |
-  | `ALL` | Albanian Lek |
-  | `AMD` | Armenian Dram |
-  | `AOA` | Angolan Kwanza |
-  | `ARS` | Argentine Peso |
-  | `AUD` | Australian Dollar |
-  | `AWG` | Aruban Florin |
-  | `AZN` | Azerbaijani Manat |
-  | `BAM` | Bosnia-Herzegovina Convertible Mark |
-  | `BBD` | Barbadian Dollar |
-  | `BDT` | Bangladeshi Taka |
-  | `BIF` | Burundian Franc |
-  | `BMD` | Bermudan Dollar |
-  | `BND` | Brunei Dollar |
-  | `BOB` | Bolivian Boliviano |
-  | `BRL` | Brazilian Real |
-  | `BSD` | Bahamian Dollar |
-  | `BWP` | Botswanan Pula |
-  | `BZD` | Belize Dollar |
-  | `CAD` | Canadian Dollar |
-  | `CDF` | Congolese Franc |
-  | `CHF` | Swiss Franc |
-  | `CLP` | Chilean Peso |
-  | `CNY` | Chinese Yuan |
-  | `COP` | Colombian Peso |
-  | `CRC` | Costa Rican Colón |
-  | `CVE` | Cape Verdean Escudo |
-  | `CZK` | Czech Koruna |
-  | `DJF` | Djiboutian Franc |
-  | `DKK` | Danish Krone |
-  | `DOP` | Dominican Peso |
-  | `DZD` | Algerian Dinar |
-  | `EGP` | Egyptian Pound |
-  | `ETB` | Ethiopian Birr |
-  | `EUR` | Euro |
-  | `FJD` | Fijian Dollar |
-  | `FKP` | Falkland Islands Pound |
-  | `GBP` | British Pound |
-  | `GEL` | Georgian Lari |
-  | `GIP` | Gibraltar Pound |
-  | `GMD` | Gambian Dalasi |
-  | `GNF` | Guinean Franc |
-  | `GTQ` | Guatemalan Quetzal |
-  | `GYD` | Guyanaese Dollar |
-  | `HKD` | Hong Kong Dollar |
-  | `HNL` | Honduran Lempira |
-  | `HTG` | Haitian Gourde |
-  | `HUF` | Hungarian Forint |
-  | `IDR` | Indonesian Rupiah |
-  | `ILS` | Israeli New Shekel |
-  | `INR` | Indian Rupee |
-  | `ISK` | Icelandic Króna |
-  | `JMD` | Jamaican Dollar |
-  | `JPY` | Japanese Yen |
-  | `KES` | Kenyan Shilling |
-  | `KGS` | Kyrgystani Som |
-  | `KHR` | Cambodian Riel |
-  | `KMF` | Comorian Franc |
-  | `KRW` | South Korean Won |
-  | `KYD` | Cayman Islands Dollar |
-  | `KZT` | Kazakhstani Tenge |
-  | `LAK` | Laotian Kip |
-  | `LKR` | Sri Lankan Rupee |
-  | `LRD` | Liberian Dollar |
-  | `LSL` | Lesotho Loti |
-  | `MAD` | Moroccan Dirham |
-  | `MDL` | Moldovan Leu |
-  | `MGA` | Malagasy Ariary |
-  | `MKD` | Macedonian Denar |
-  | `MNT` | Mongolian Tugrik |
-  | `MOP` | Macanese Pataca |
-  | `MUR` | Mauritian Rupee |
-  | `MVR` | Maldivian Rufiyaa |
-  | `MWK` | Malawian Kwacha |
-  | `MXN` | Mexican Peso |
-  | `MYR` | Malaysian Ringgit |
-  | `MZN` | Mozambican Metical |
-  | `NAD` | Namibian Dollar |
-  | `NGN` | Nigerian Naira |
-  | `NIO` | Nicaraguan Córdoba |
-  | `NOK` | Norwegian Krone |
-  | `NPR` | Nepalese Rupee |
-  | `NZD` | New Zealand Dollar |
-  | `PAB` | Panamanian Balboa |
-  | `PEN` | Peruvian Sol |
-  | `PGK` | Papua New Guinean Kina |
-  | `PHP` | Philippine Peso |
-  | `PKR` | Pakistani Rupee |
-  | `PLN` | Polish Zloty |
-  | `PYG` | Paraguayan Guarani |
-  | `QAR` | Qatari Riyal |
-  | `RON` | Romanian Leu |
-  | `RSD` | Serbian Dinar |
-  | `RWF` | Rwandan Franc |
-  | `SAR` | Saudi Riyal |
-  | `SBD` | Solomon Islands Dollar |
-  | `SCR` | Seychellois Rupee |
-  | `SEK` | Swedish Krona |
-  | `SGD` | Singapore Dollar |
-  | `SHP` | St. Helena Pound |
-  | `SOS` | Somali Shilling |
-  | `SRD` | Surinamese Dollar |
-  | `SZL` | Swazi Lilangeni |
-  | `THB` | Thai Baht |
-  | `TJS` | Tajikistani Somoni |
-  | `TOP` | Tongan Paʻanga |
-  | `TRY` | Turkish Lira |
-  | `TTD` | Trinidad & Tobago Dollar |
-  | `TWD` | New Taiwan Dollar |
-  | `TZS` | Tanzanian Shilling |
-  | `UAH` | Ukrainian Hryvnia |
-  | `UGX` | Ugandan Shilling |
-  | `USD` | US Dollar |
-  | `UYU` | Uruguayan Peso |
-  | `UZS` | Uzbekistani Som |
-  | `VND` | Vietnamese Dong |
-  | `VUV` | Vanuatu Vatu |
-  | `WST` | Samoan Tala |
-  | `XAF` | Central African CFA Franc |
-  | `XCD` | East Caribbean Dollar |
-  | `XCG` | Caribbean Guilder |
-  | `XOF` | West African CFA Franc |
-  | `XPF` | CFP Franc |
-  | `YER` | Yemeni Rial |
-  | `ZAR` | South African Rand |
-  | `ZMW` | Zambian Kwacha |
-</Accordion>
+> **Supported currencies**
+>
+> Polar supports 130+ currencies for product pricing:
+>
+> | Code | Currency |
+> | - | - |
+> | `AED` | United Arab Emirates Dirham |
+> | `ALL` | Albanian Lek |
+> | `AMD` | Armenian Dram |
+> | `AOA` | Angolan Kwanza |
+> | `ARS` | Argentine Peso |
+> | `AUD` | Australian Dollar |
+> | `AWG` | Aruban Florin |
+> | `AZN` | Azerbaijani Manat |
+> | `BAM` | Bosnia-Herzegovina Convertible Mark |
+> | `BBD` | Barbadian Dollar |
+> | `BDT` | Bangladeshi Taka |
+> | `BIF` | Burundian Franc |
+> | `BMD` | Bermudan Dollar |
+> | `BND` | Brunei Dollar |
+> | `BOB` | Bolivian Boliviano |
+> | `BRL` | Brazilian Real |
+> | `BSD` | Bahamian Dollar |
+> | `BWP` | Botswanan Pula |
+> | `BZD` | Belize Dollar |
+> | `CAD` | Canadian Dollar |
+> | `CDF` | Congolese Franc |
+> | `CHF` | Swiss Franc |
+> | `CLP` | Chilean Peso |
+> | `CNY` | Chinese Yuan |
+> | `COP` | Colombian Peso |
+> | `CRC` | Costa Rican Colón |
+> | `CVE` | Cape Verdean Escudo |
+> | `CZK` | Czech Koruna |
+> | `DJF` | Djiboutian Franc |
+> | `DKK` | Danish Krone |
+> | `DOP` | Dominican Peso |
+> | `DZD` | Algerian Dinar |
+> | `EGP` | Egyptian Pound |
+> | `ETB` | Ethiopian Birr |
+> | `EUR` | Euro |
+> | `FJD` | Fijian Dollar |
+> | `FKP` | Falkland Islands Pound |
+> | `GBP` | British Pound |
+> | `GEL` | Georgian Lari |
+> | `GIP` | Gibraltar Pound |
+> | `GMD` | Gambian Dalasi |
+> | `GNF` | Guinean Franc |
+> | `GTQ` | Guatemalan Quetzal |
+> | `GYD` | Guyanaese Dollar |
+> | `HKD` | Hong Kong Dollar |
+> | `HNL` | Honduran Lempira |
+> | `HTG` | Haitian Gourde |
+> | `HUF` | Hungarian Forint |
+> | `IDR` | Indonesian Rupiah |
+> | `ILS` | Israeli New Shekel |
+> | `INR` | Indian Rupee |
+> | `ISK` | Icelandic Króna |
+> | `JMD` | Jamaican Dollar |
+> | `JPY` | Japanese Yen |
+> | `KES` | Kenyan Shilling |
+> | `KGS` | Kyrgystani Som |
+> | `KHR` | Cambodian Riel |
+> | `KMF` | Comorian Franc |
+> | `KRW` | South Korean Won |
+> | `KYD` | Cayman Islands Dollar |
+> | `KZT` | Kazakhstani Tenge |
+> | `LAK` | Laotian Kip |
+> | `LKR` | Sri Lankan Rupee |
+> | `LRD` | Liberian Dollar |
+> | `LSL` | Lesotho Loti |
+> | `MAD` | Moroccan Dirham |
+> | `MDL` | Moldovan Leu |
+> | `MGA` | Malagasy Ariary |
+> | `MKD` | Macedonian Denar |
+> | `MNT` | Mongolian Tugrik |
+> | `MOP` | Macanese Pataca |
+> | `MUR` | Mauritian Rupee |
+> | `MVR` | Maldivian Rufiyaa |
+> | `MWK` | Malawian Kwacha |
+> | `MXN` | Mexican Peso |
+> | `MYR` | Malaysian Ringgit |
+> | `MZN` | Mozambican Metical |
+> | `NAD` | Namibian Dollar |
+> | `NGN` | Nigerian Naira |
+> | `NIO` | Nicaraguan Córdoba |
+> | `NOK` | Norwegian Krone |
+> | `NPR` | Nepalese Rupee |
+> | `NZD` | New Zealand Dollar |
+> | `PAB` | Panamanian Balboa |
+> | `PEN` | Peruvian Sol |
+> | `PGK` | Papua New Guinean Kina |
+> | `PHP` | Philippine Peso |
+> | `PKR` | Pakistani Rupee |
+> | `PLN` | Polish Zloty |
+> | `PYG` | Paraguayan Guarani |
+> | `QAR` | Qatari Riyal |
+> | `RON` | Romanian Leu |
+> | `RSD` | Serbian Dinar |
+> | `RWF` | Rwandan Franc |
+> | `SAR` | Saudi Riyal |
+> | `SBD` | Solomon Islands Dollar |
+> | `SCR` | Seychellois Rupee |
+> | `SEK` | Swedish Krona |
+> | `SGD` | Singapore Dollar |
+> | `SHP` | St. Helena Pound |
+> | `SOS` | Somali Shilling |
+> | `SRD` | Surinamese Dollar |
+> | `SZL` | Swazi Lilangeni |
+> | `THB` | Thai Baht |
+> | `TJS` | Tajikistani Somoni |
+> | `TOP` | Tongan Paʻanga |
+> | `TRY` | Turkish Lira |
+> | `TTD` | Trinidad & Tobago Dollar |
+> | `TWD` | New Taiwan Dollar |
+> | `TZS` | Tanzanian Shilling |
+> | `UAH` | Ukrainian Hryvnia |
+> | `UGX` | Ugandan Shilling |
+> | `USD` | US Dollar |
+> | `UYU` | Uruguayan Peso |
+> | `UZS` | Uzbekistani Som |
+> | `VND` | Vietnamese Dong |
+> | `VUV` | Vanuatu Vatu |
+> | `WST` | Samoan Tala |
+> | `XAF` | Central African CFA Franc |
+> | `XCD` | East Caribbean Dollar |
+> | `XCG` | Caribbean Guilder |
+> | `XOF` | West African CFA Franc |
+> | `XPF` | CFP Franc |
+> | `YER` | Yemeni Rial |
+> | `ZAR` | South African Rand |
+> | `ZMW` | Zambian Kwacha |
 
 ## Trial period
 
@@ -213,9 +213,9 @@ Collect extra information from customers at checkout — phone numbers, terms-of
 
 Fields are defined once at the organization level and then enabled per product, where you also choose whether each one is required. Supported field types: text, number, date, checkbox, and select.
 
-<Info>
-  A required checkbox blocks confirmation until the customer ticks it. Handy for legal terms.
-</Info>
+> [!NOTE]
+>
+> A required checkbox blocks confirmation until the customer ticks it. Handy for legal terms.
 
 The collected values show up on the resulting order or subscription.
 
@@ -241,33 +241,31 @@ A product without an order, subscription, trial or discount can be permanently d
 
 ## FAQ
 
-<AccordionGroup>
-  <Accordion title="What about variants? Can I sell a monthly and a yearly version of the same product?">
-    Polar takes a different approach to what the industry typically calls **variants**. Each product has a single pricing model, and instead of bolting variants onto one product, you create one product per pricing model and showcase them together at checkout.
+> **What about variants? Can I sell a monthly and a yearly version of the same product?**
+>
+> Polar takes a different approach to what the industry typically calls **variants**. Each product has a single pricing model, and instead of bolting variants onto one product, you create one product per pricing model and showcase them together at checkout.
+>
+> So a "monthly" and "yearly" plan are two products, each with their own pricing and benefits, presented side-by-side via [Checkout Links](/docs/features/checkout/links) or the [Checkout Session API](/docs/features/checkout/session). It keeps the API and the data model clean, and gives you full freedom over what each option includes.
 
-    So a "monthly" and "yearly" plan are two products, each with their own pricing and benefits, presented side-by-side via [Checkout Links](/docs/features/checkout/links) or the [Checkout Session API](/docs/features/checkout/session). It keeps the API and the data model clean, and gives you full freedom over what each option includes.
-  </Accordion>
+> **Can I change the price of a product after publishing it?**
+>
+> Yes, for fixed-price products. Existing subscribers are grandfathered onto their original price and only new purchases see the updated amount — but you can move individual subscribers onto the new price [per subscription](/docs/features/subscriptions/manage) if you want. Billing cycle and pricing type can't change.
 
-  <Accordion title="Can I change the price of a product after publishing it?">
-    Yes, for fixed-price products. Existing subscribers are grandfathered onto their original price and only new purchases see the updated amount — but you can move individual subscribers onto the new price [per subscription](/docs/features/subscriptions/manage) if you want. Billing cycle and pricing type can't change.
-  </Accordion>
+> **Can I sell usage-based or metered products?**
+>
+> Yes. Set the price type to **Metered** and link it to a meter that tracks the events you care about. Full walkthrough in the [usage-based billing guide](/docs/features/usage-based-billing/introduction).
 
-  <Accordion title="Can I sell usage-based or metered products?">
-    Yes. Set the price type to **Metered** and link it to a meter that tracks the events you care about. Full walkthrough in the [usage-based billing guide](/docs/features/usage-based-billing/introduction).
-  </Accordion>
+> **Can I sell team or per-seat plans?**
+>
+> Yes, via [seat-based pricing](/docs/features/seat-based-pricing). The buyer purchases a number of seats and assigns them to teammates, who each get the product's benefits.
 
-  <Accordion title="Can I sell team or per-seat plans?">
-    Yes, via [seat-based pricing](/docs/features/seat-based-pricing). The buyer purchases a number of seats and assigns them to teammates, who each get the product's benefits.
-  </Accordion>
+> **Will customers see prices in their local currency?**
+>
+> If you've enabled additional payment currencies on the product, yes — Polar matches the customer's geolocation to one of the enabled currencies. If there's no match, it falls back to your organization's default. See [Multiple payment currencies](#multiple-payment-currencies) above.
 
-  <Accordion title="Will customers see prices in their local currency?">
-    If you've enabled additional payment currencies on the product, yes — Polar matches the customer's geolocation to one of the enabled currencies. If there's no match, it falls back to your organization's default. See [Multiple payment currencies](#multiple-payment-currencies) above.
-  </Accordion>
-
-  <Accordion title="Can I duplicate a product?">
-    Yes. From the product list or the product menu, pick **Duplicate Product** to clone all the settings into a new draft you can tweak before saving.
-  </Accordion>
-</AccordionGroup>
+> **Can I duplicate a product?**
+>
+> Yes. From the product list or the product menu, pick **Duplicate Product** to clone all the settings into a new draft you can tweak before saving.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

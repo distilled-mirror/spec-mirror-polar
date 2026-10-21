@@ -18,9 +18,7 @@ https://polar.sh/<your-org-slug>/portal
 
 Customers authenticate by entering the email address they used to purchase or subscribe. Polar then emails them a one-time code to complete sign-in.
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/customer-portal/signin.light.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=1320caeb29255a378aa93359741683dc" width="2560" height="1600" data-path="assets/features/customer-portal/signin.light.png" />
-
-<img className="hidden dark:block" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/customer-portal/signin.dark.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=ccae95a5124e942c32465d86d3a3c2be" width="2560" height="1600" data-path="assets/features/customer-portal/signin.dark.png" />
+![](https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/customer-portal/signin.light.png?fit=max\&auto=format\&n=Ut0vPUvE1pIdMcH2\&q=85\&s=1320caeb29255a378aa93359741683dc)
 
 This URL is a good choice to link from your marketing site, your app's help menu, or a support article — anywhere you need a stable, shareable link.
 
@@ -63,10 +61,10 @@ export const GET = CustomerPortal({
 
 Point a link in your app at `/portal` and your customer is one click away from managing their billing.
 
-<Note>
-  Customer Session tokens are short-lived. Always generate a fresh link at the
-  moment the customer clicks, rather than storing the URL.
-</Note>
+> [!NOTE]
+>
+> Customer Session tokens are short-lived. Always generate a fresh link at the
+> moment the customer clicks, rather than storing the URL.
 
 ## 3. Emails Polar sends to your customers
 

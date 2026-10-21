@@ -8,25 +8,25 @@
 
 No matter what refund policy you offer to customers, Polar makes it easy to issue both full and partial refunds, so you can deliver the customer experience and refund policy you want.
 
-<Note>
-  **Polar can issue refunds on your behalf**
-
-  Polar reserves the right to issue refunds within 60 days of purchase, at its own discretion, in order to prevent chargebacks. We integrate with credit card networks to receive early chargeback signals before a dispute is officially filed, and for lower-value transactions we'll automatically refund the order on your behalf to head off the chargeback — cancelling any related subscription and revoking the customer's benefits at the same time.
-
-  This applies even if you have a "no refunds" policy: keeping chargebacks low protects your account, so Polar may still refund proactively. See [Chargeback Management](/docs/merchant-of-record/account-reviews#chargeback-management) for the wider context.
-</Note>
+> [!NOTE]
+>
+> **Polar can issue refunds on your behalf**
+>
+> Polar reserves the right to issue refunds within 60 days of purchase, at its own discretion, in order to prevent chargebacks. We integrate with credit card networks to receive early chargeback signals before a dispute is officially filed, and for lower-value transactions we'll automatically refund the order on your behalf to head off the chargeback — cancelling any related subscription and revoking the customer's benefits at the same time.
+>
+> This applies even if you have a "no refunds" policy: keeping chargebacks low protects your account, so Polar may still refund proactively. See [Chargeback Management](/docs/merchant-of-record/account-reviews#chargeback-management) for the wider context.
 
 ## What's refundable
 
 The maximum refundable amount on an order is the **net amount** (excluding tax) minus anything that's already been refunded, with any customer balance applied to the order taken into account. The corresponding **tax** is refunded automatically alongside it — fully on a full refund, prorated on a partial one.
 
-<Warning>
-  **Payment fees are not refunded**
-
-  Credit card networks and payment processors charge us for the underlying transaction regardless of whether it's later refunded (industry standard). We therefore can't return our fees, since the cost remains.
-
-  Example: an order of \$30 costs \~\$1.60 in fees to Polar. You can still refund the customer \$30, but the \~\$1.60 fee stays deducted from your balance.
-</Warning>
+> [!WARNING]
+>
+> **Payment fees are not refunded**
+>
+> Credit card networks and payment processors charge us for the underlying transaction regardless of whether it's later refunded (industry standard). We therefore can't return our fees, since the cost remains.
+>
+> Example: an order of \$30 costs \~\$1.60 in fees to Polar. You can still refund the customer \$30, but the \~\$1.60 fee stays deducted from your balance.
 
 ## Issuing a refund
 

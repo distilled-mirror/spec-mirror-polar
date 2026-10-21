@@ -15,19 +15,17 @@ sandbox and production at the same time.
 Every login targets one environment. Pass the environment as a flag, or run the
 command without one in a terminal and the CLI will ask:
 
-<Tabs>
-  <Tab title="Sandbox">
-    ```bash Terminal theme={null}
-    polar auth login --sandbox
-    ```
-  </Tab>
+**Sandbox**
 
-  <Tab title="Production">
-    ```bash Terminal theme={null}
-    polar auth login --production
-    ```
-  </Tab>
-</Tabs>
+```bash Terminal theme={null}
+polar auth login --sandbox
+```
+
+**Production**
+
+```bash Terminal theme={null}
+polar auth login --production
+```
 
 Your browser opens on Polar's authorization page. Approve the request and
 return to the terminal. If a session already exists for that environment, the
@@ -97,11 +95,11 @@ polar webhook listen http://localhost:3000/webhooks
 to `production`. When a token can access several organizations, pass
 `--org <organization-id>` to the command.
 
-<Note>
-  While `POLAR_ACCESS_TOKEN` is set, saved sessions are ignored and `polar auth
-      login` and `polar auth org` refuse to run. Unset it to go back to your
-  browser session.
-</Note>
+> [!NOTE]
+>
+> While `POLAR_ACCESS_TOKEN` is set, saved sessions are ignored and `polar auth
+>     login` and `polar auth org` refuse to run. Unset it to go back to your
+> browser session.
 
 ## Where things are stored
 

@@ -24,12 +24,12 @@ Subscriptions are driven entirely by the way you price the underlying product. R
 * **Pricing type.** Fixed, pay-what-you-want, or free. Free recurring products are still modeled as subscriptions — they just never generate a payment.
 * **Currency.** A product can have prices in multiple currencies; the subscription locks in the currency used at checkout.
 
-<Note>
-  The billing interval and pricing type are fixed once a product is created. If
-  you need a different interval (for example, a yearly plan next to a monthly
-  one), create a separate product and show both at checkout. See
-  [Products → Variants](/docs/features/products#variants).
-</Note>
+> [!NOTE]
+>
+> The billing interval and pricing type are fixed once a product is created. If
+> you need a different interval (for example, a yearly plan next to a monthly
+> one), create a separate product and show both at checkout. See
+> [Products → Variants](/docs/features/products#variants).
 
 ## Renewal reminders
 
@@ -57,86 +57,82 @@ There are two ways a subscription can come into existence:
 
 ## Next steps
 
-<CardGroup cols={2}>
-  <Card title="Managing subscriptions" icon="sliders" href="/docs/features/subscriptions/manage">
-    Change plans, seats, trials, billing dates, cancel or revoke — from the
-    dashboard or the API.
-  </Card>
+> **[Managing subscriptions](/docs/features/subscriptions/manage)**
+>
+> Change plans, seats, trials, billing dates, cancel or revoke — from the
+> dashboard or the API.
 
-  <Card title="Proration" icon="scale-balanced" href="/docs/features/subscriptions/proration">
-    Control how the price difference is handled when a subscription is upgraded
-    or downgraded.
-  </Card>
+> **[Proration](/docs/features/subscriptions/proration)**
+>
+> Control how the price difference is handled when a subscription is upgraded
+> or downgraded.
 
-  <Card title="Recovering failed payments" icon="credit-card" href="/docs/features/subscriptions/failed-payments">
-    How Polar retries failed renewals and when benefits are revoked.
-  </Card>
+> **[Recovering failed payments](/docs/features/subscriptions/failed-payments)**
+>
+> How Polar retries failed renewals and when benefits are revoked.
 
-  <Card title="Subscriptions API" icon="code" href="/docs/api-reference/current/subscriptions/list-subscriptions">
-    List, create, update, and revoke subscriptions programmatically.
-  </Card>
-</CardGroup>
+> **[Subscriptions API](/docs/api-reference/current/subscriptions/list-subscriptions)**
+>
+> List, create, update, and revoke subscriptions programmatically.
 
 ## FAQ
 
-<AccordionGroup>
-  <Accordion title="What's the difference between a subscription and a product?">
-    A product is the thing you're selling — name, description, benefits,
-    pricing. A subscription is one specific customer's ongoing relationship
-    with that product.
+> **What's the difference between a subscription and a product?**
+>
+> A product is the thing you're selling — name, description, benefits,
+> pricing. A subscription is one specific customer's ongoing relationship
+> with that product.
+>
+> Polar treats one-time purchases and recurring subscriptions as the same
+> kind of object (both are "products"); the only difference is whether the
+> price is recurring. See [Products](/docs/features/products) for the full model.
 
-    Polar treats one-time purchases and recurring subscriptions as the same
-    kind of object (both are "products"); the only difference is whether the
-    price is recurring. See [Products](/docs/features/products) for the full model.
-  </Accordion>
+> **Can a customer have more than one active subscription?**
+>
+> By default, no — a customer can only have one active subscription per
+> organization at a time. This keeps the common case simple.
+>
+> If your product genuinely needs multiple parallel subscriptions per
+> customer, you can opt in under **Organization Settings → Subscriptions**
+> by toggling on **Allow multiple subscriptions**.
 
-  <Accordion title="Can a customer have more than one active subscription?">
-    By default, no — a customer can only have one active subscription per
-    organization at a time. This keeps the common case simple.
+> **When is a customer actually charged?**
+>
+> At the end of each billing cycle. When a subscription renews, Polar
+> advances the cycle, creates a new order with tax and any applicable
+> discount, and charges the customer's default payment method. If the
+> charge fails the subscription moves to `past_due` and Polar starts the
+> [payment recovery flow](/docs/features/subscriptions/failed-payments).
+>
+> The first charge happens at checkout (or when the [trial](/docs/features/subscriptions/trials)
+> ends, if one is configured).
 
-    If your product genuinely needs multiple parallel subscriptions per
-    customer, you can opt in under **Organization Settings → Subscriptions**
-    by toggling on **Allow multiple subscriptions**.
-  </Accordion>
+> **Can I change the price of an existing subscription?**
+>
+> Not the amount on an existing subscription directly — subscriptions lock
+> in the price they were created with so existing subscribers aren't
+> surprised by changes.
+>
+> If you update the price on a product, the change applies only to **new**
+> subscriptions. To move an existing subscriber to different pricing,
+> either create a new product and run an [update to switch them to
+> it](/docs/features/subscriptions/manage#change-the-plan), or ask them to
+> change plans themselves from the Customer Portal.
 
-  <Accordion title="When is a customer actually charged?">
-    At the end of each billing cycle. When a subscription renews, Polar
-    advances the cycle, creates a new order with tax and any applicable
-    discount, and charges the customer's default payment method. If the
-    charge fails the subscription moves to `past_due` and Polar starts the
-    [payment recovery flow](/docs/features/subscriptions/failed-payments).
-
-    The first charge happens at checkout (or when the [trial](/docs/features/subscriptions/trials)
-    ends, if one is configured).
-  </Accordion>
-
-  <Accordion title="Can I change the price of an existing subscription?">
-    Not the amount on an existing subscription directly — subscriptions lock
-    in the price they were created with so existing subscribers aren't
-    surprised by changes.
-
-    If you update the price on a product, the change applies only to **new**
-    subscriptions. To move an existing subscriber to different pricing,
-    either create a new product and run an [update to switch them to
-    it](/docs/features/subscriptions/manage#change-the-plan), or ask them to
-    change plans themselves from the Customer Portal.
-  </Accordion>
-
-  <Accordion title="What happens to benefits when a subscription is canceled?">
-    Benefits are tied to the subscription's status, not to the cancellation
-    action itself:
-
-    * If you **cancel at period end**, the customer keeps their benefits
-      until `current_period_end` — they paid for that period.
-    * If you **revoke immediately**, the subscription becomes `canceled`
-      right away and all benefits are revoked.
-    * If a renewal payment can't be recovered after Polar's retries, the
-      subscription moves to `unpaid` and benefits are revoked the same way
-      as a revoke — subject to the optional
-      [grace period](/docs/features/subscriptions/failed-payments#benefit-revocation-grace-period)
-      you can configure on your organization.
-  </Accordion>
-</AccordionGroup>
+> **What happens to benefits when a subscription is canceled?**
+>
+> Benefits are tied to the subscription's status, not to the cancellation
+> action itself:
+>
+> * If you **cancel at period end**, the customer keeps their benefits
+>   until `current_period_end` — they paid for that period.
+> * If you **revoke immediately**, the subscription becomes `canceled`
+>   right away and all benefits are revoked.
+> * If a renewal payment can't be recovered after Polar's retries, the
+>   subscription moves to `unpaid` and benefits are revoked the same way
+>   as a revoke — subject to the optional
+>   [grace period](/docs/features/subscriptions/failed-payments#benefit-revocation-grace-period)
+>   you can configure on your organization.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

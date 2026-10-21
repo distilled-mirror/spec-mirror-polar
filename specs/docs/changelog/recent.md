@@ -6,1216 +6,1208 @@
 
 > Stay up to date with the latest changes and improvements to Polar.
 
-<Update label="2026-09-01">
-  ## New webhook IP addresses
+**2026-09-01**
 
-  Two IP addresses have been added to the [webhook IP allowlist](https://polar.sh/docs/integrate/webhooks/delivery#ip-allowlist): `18.117.215.101` for sandbox, which is already sending webhooks, and `3.134.178.243` for production, which will start sending them soon.
+## New webhook IP addresses
 
-  If you allowlist our IPs on a firewall or reverse proxy, add both now so deliveries aren't blocked.
-</Update>
+Two IP addresses have been added to the [webhook IP allowlist](https://polar.sh/docs/integrate/webhooks/delivery#ip-allowlist): `18.117.215.101` for sandbox, which is already sending webhooks, and `3.134.178.243` for production, which will start sending them soon.
 
-<Update label="2026-08-17">
-  ## Embed hosts are now enforced
+If you allowlist our IPs on a firewall or reverse proxy, add both now so deliveries aren't blocked.
 
-  Embed host enforcement is now live for every organization. An embedded checkout only opens on a host you've listed under Settings → Preferences → Embedding, so make sure every site you embed from is on your list.
+**2026-08-17**
 
-  [Read more](/docs/features/checkout/embed#embed-hosts)
-</Update>
+## Embed hosts are now enforced
 
-<Update label="2026-07-29">
-  ## Embed hosts
+Embed host enforcement is now live for every organization. An embedded checkout only opens on a host you've listed under Settings → Preferences → Embedding, so make sure every site you embed from is on your list.
 
-  Choose which hosts are allowed to embed your checkout, in Settings → Preferences → Embedding. As soon as you list a host, only the hosts on your list can embed.
+[Read more](/docs/features/checkout/embed#embed-hosts)
 
-  Organizations created from 4 August 2026 need a list before they can embed. Existing organizations carry on as before until they add their first host, and we will email you well ahead of the date this applies to everyone.
+**2026-07-29**
 
-  [Read more](/docs/features/checkout/embed#embed-hosts)
-</Update>
+## Embed hosts
 
-<Update label="2026-07-28">
-  ## Per-customer discount limits
+Choose which hosts are allowed to embed your checkout, in Settings → Preferences → Embedding. As soon as you list a host, only the hosts on your list can embed.
 
-  Discount codes now take a per-customer redemption limit. Set it to one and you can share a code publicly (post it, put it in a newsletter, hand it to an affiliate) knowing each buyer only gets a single use.
+Organizations created from 4 August 2026 need a list before they can embed. Existing organizations carry on as before until they add their first host, and we will email you well ahead of the date this applies to everyone.
 
-  Polar identifies a customer by customer ID, email address (ignoring plus-aliases) or payment card, and a match on any one is enough — so a fresh address on the same card doesn't buy a second run.
+[Read more](/docs/features/checkout/embed#embed-hosts)
 
-  Set it under Products → Discounts, or send `max_redemptions_per_customer` when you create or update a discount through the API.
+**2026-07-28**
 
-  [Read more](/docs/features/discounts#per-customer-limits)
-</Update>
+## Per-customer discount limits
 
-<Update label="2026-07-23">
-  ## Pause and resume subscriptions
+Discount codes now take a per-customer redemption limit. Set it to one and you can share a code publicly (post it, put it in a newsletter, hand it to an affiliate) knowing each buyer only gets a single use.
 
-  You can now pause a subscription instead of canceling it. Pausing schedules the subscription to stop at the end of its current period: billing halts and benefits are revoked, but the subscription and its payment method stay on file. Resume whenever you're ready: a fresh billing period starts and the customer is charged immediately, with no new checkout.
+Polar identifies a customer by customer ID, email address (ignoring plus-aliases) or payment card, and a match on any one is enough — so a fresh address on the same card doesn't buy a second run.
 
-  Set an optional resume date when you pause and the subscription comes back on its own. This fits seasonal plans and account "freezes", where a customer steps away and returns later.
+Set it under Products → Discounts, or send `max_redemptions_per_customer` when you create or update a discount through the API.
 
-  Drive it from the API through the [Update Subscription](/docs/api-reference/current/subscriptions/update-subscription) endpoint, or let customers pause themselves from the Customer Portal by turning on **Enable subscription pause** under Settings → Customer portal. Two new webhook events, `subscription.paused` and `subscription.resumed`, tell you when the state changes.
+[Read more](/docs/features/discounts#per-customer-limits)
 
-  [Read more](/docs/features/subscriptions/manage#pause-and-resume)
-</Update>
+**2026-07-23**
 
-<Update label="2026-07-22">
-  ## Single Sign-On
+## Pause and resume subscriptions
 
-  Connect your organization to your own identity provider over OpenID Connect, including Google Workspace, Okta, Microsoft Entra ID, and Keycloak. Your team signs in with the credentials they already use, and anyone who authenticates becomes a member of your organization, so there are no invitations to send. Enforce SSO to make your identity provider the only way in: revoke someone's access there and they lose access to Polar.
+You can now pause a subscription instead of canceling it. Pausing schedules the subscription to stop at the end of its current period: billing halts and benefits are revoked, but the subscription and its payment method stay on file. Resume whenever you're ready: a fresh billing period starts and the customer is charged immediately, with no new checkout.
 
-  Single Sign-On is included in the Scale plan. Set it up under Settings → SSO.
+Set an optional resume date when you pause and the subscription comes back on its own. This fits seasonal plans and account "freezes", where a customer steps away and returns later.
 
-  [Read more](/docs/features/sso)
-</Update>
+Drive it from the API through the [Update Subscription](/docs/api-reference/current/subscriptions/update-subscription) endpoint, or let customers pause themselves from the Customer Portal by turning on **Enable subscription pause** under Settings → Customer portal. Two new webhook events, `subscription.paused` and `subscription.resumed`, tell you when the state changes.
 
-<Update label="2026-07-10">
-  ## Added support for new local payment methods
+[Read more](/docs/features/subscriptions/manage#pause-and-resume)
 
-  We've enabled several additional local payment methods.
+**2026-07-22**
 
-  These payment methods are automatically displayed at checkout when they're available for a customer's location and purchase. No action is required from merchants.
+## Single Sign-On
 
-  Newly supported:
+Connect your organization to your own identity provider over OpenID Connect, including Google Workspace, Okta, Microsoft Entra ID, and Keycloak. Your team signs in with the credentials they already use, and anyone who authenticates becomes a member of your organization, so there are no invitations to send. Enforce SSO to make your identity provider the only way in: revoke someone's access there and they lose access to Polar.
 
-  * 🇧🇪 Bancontact (EUR, one-time purchases)
-  * 🇵🇱 BLIK (EUR, one-time purchases)
-  * 🇦🇹 EPS (EUR, one-time purchases)
-  * 🇳🇱 iDEAL / Wero (EUR, one-time purchases)
-  * 🇵🇱 Przelewy24 (EUR, one-time purchases)
-  * 🇪🇸 Bizum (EUR, one-time purchases)
-  * 🇮🇳 UPI (INR, one-time purchases and recurring subscriptions)
+Single Sign-On is included in the Scale plan. Set it up under Settings → SSO.
 
-  [See all supported payment methods](/docs/features/checkout/payment-methods)
-</Update>
+[Read more](/docs/features/sso)
 
-<Update label="2026-04-22">
-  ## Pending Subscription Updates Now Surface in the UI
+**2026-07-10**
 
-  Scheduled subscription changes (product swaps, price updates, seat-count changes) now appear in both the merchant dashboard and the customer portal. A clear "Scheduled Update" section shows what will change and when it applies, so there are no surprises at the next billing cycle.
+## Added support for new local payment methods
 
-  <img class="border rounded" src="https://mintcdn.com/polar/tELcn60QeU54jL3T/assets/changelog/2026-04-22/pending-subscription-update.png?fit=max&auto=format&n=tELcn60QeU54jL3T&q=85&s=e304882acef9f103c73fee286f50dbc0" width="1440" height="900" data-path="assets/changelog/2026-04-22/pending-subscription-update.png" />
+We've enabled several additional local payment methods.
 
-  ## Filter License Keys and Benefit Grants by Status
+These payment methods are automatically displayed at checkout when they're available for a customer's location and purchase. No action is required from merchants.
 
-  Merchants can now filter license keys and benefit grants by status (granted, revoked, disabled, pending) directly from the benefit detail page. The license key status filter is also exposed via the API. Finding revoked or pending entitlements across large customer bases is now a single dropdown click instead of scrolling pages of results.
+Newly supported:
 
-  <img class="border rounded" src="https://mintcdn.com/polar/tELcn60QeU54jL3T/assets/changelog/2026-04-22/license-keys-filter.png?fit=max&auto=format&n=tELcn60QeU54jL3T&q=85&s=a2f7a6bc6f04f8403b78ba39797f6029" width="1440" height="900" data-path="assets/changelog/2026-04-22/license-keys-filter.png" />
+* 🇧🇪 Bancontact (EUR, one-time purchases)
+* 🇵🇱 BLIK (EUR, one-time purchases)
+* 🇦🇹 EPS (EUR, one-time purchases)
+* 🇳🇱 iDEAL / Wero (EUR, one-time purchases)
+* 🇵🇱 Przelewy24 (EUR, one-time purchases)
+* 🇪🇸 Bizum (EUR, one-time purchases)
+* 🇮🇳 UPI (INR, one-time purchases and recurring subscriptions)
 
-  ## Invoice Support for Arabic, Hebrew, and CJK
+[See all supported payment methods](/docs/features/checkout/payment-methods)
 
-  Invoice PDFs now render Arabic, Hebrew, and CJK (Chinese, Japanese, Korean) glyphs correctly, with proper right-to-left shaping for Arabic and Hebrew. Merchants invoicing customers in these languages get professional, readable documents out of the box.
+**2026-04-22**
 
-  ## Expanded Currency Support
+## Pending Subscription Updates Now Surface in the UI
 
-  Presentment currency coverage expanded by 80+ currencies, including EGP, KES, NGN, PKR, VND, UAH, and KZT. Merchants can now price products and display checkout in a much wider range of local currencies.
+Scheduled subscription changes (product swaps, price updates, seat-count changes) now appear in both the merchant dashboard and the customer portal. A clear "Scheduled Update" section shows what will change and when it applies, so there are no surprises at the next billing cycle.
 
-  ## Smarter Regional Currency Formatting
+![](https://mintcdn.com/polar/tELcn60QeU54jL3T/assets/changelog/2026-04-22/pending-subscription-update.png?fit=max\&auto=format\&n=tELcn60QeU54jL3T\&q=85\&s=e304882acef9f103c73fee286f50dbc0)
 
-  Localized checkout now respects regional IETF subtags (e.g. `en-CA`, `en-AU`) while keeping the merchant's chosen language. Currency symbols render as `CA$` or `A$` instead of a generic `$`, so buyers see the right currency framing for their region.
-</Update>
+## Filter License Keys and Benefit Grants by Status
 
-<Update label="2026-04-14">
-  ## Meter Units
+Merchants can now filter license keys and benefit grants by status (granted, revoked, disabled, pending) directly from the benefit detail page. The license key status filter is also exposed via the API. Finding revoked or pending entitlements across large customer bases is now a single dropdown click instead of scrolling pages of results.
 
-  Meters now support custom units with a value multiplier, so you can ingest raw counts (tokens, requests, bytes) and price in whatever unit makes sense for your customers (millions of tokens, GB, etc.). Configure the unit name and multiplier on each meter in the dashboard, and unit labels flow through to checkout, the customer portal, and invoices.
+![](https://mintcdn.com/polar/tELcn60QeU54jL3T/assets/changelog/2026-04-22/license-keys-filter.png?fit=max\&auto=format\&n=tELcn60QeU54jL3T\&q=85\&s=a2f7a6bc6f04f8403b78ba39797f6029)
 
-  <img class="border rounded" src="https://mintcdn.com/polar/tELcn60QeU54jL3T/assets/changelog/2026-04-14/meter-units.png?fit=max&auto=format&n=tELcn60QeU54jL3T&q=85&s=46fb388823350a13fa7ad4696213644f" width="1440" height="900" data-path="assets/changelog/2026-04-14/meter-units.png" />
+## Invoice Support for Arabic, Hebrew, and CJK
 
-  ## Self-Service Payout Account Management
+Invoice PDFs now render Arabic, Hebrew, and CJK (Chinese, Japanese, Korean) glyphs correctly, with proper right-to-left shaping for Arabic and Hebrew. Merchants invoicing customers in these languages get professional, readable documents out of the box.
 
-  Merchants can now create, switch between, and delete payout accounts directly from the Finance page. A new Manage modal lists every account on the user, lets you set the active one for the organization, and blocks deletion when an account still holds a balance or is linked to an organization. Useful for moving payouts to a new bank entity without contacting support.
+## Expanded Currency Support
 
-  ## Customers Can Update Their Email Address
+Presentment currency coverage expanded by 80+ currencies, including EGP, KES, NGN, PKR, VND, UAH, and KZT. Merchants can now price products and display checkout in a much wider range of local currencies.
 
-  Customers can now change the email address on their account directly from the customer portal, with a verification step on the new address. No more support tickets to fix a typo or move billing to a new mailbox.
+## Smarter Regional Currency Formatting
 
-  ## Cost Insights: Customer Ranking and Variance Detection
+Localized checkout now respects regional IETF subtags (e.g. `en-CA`, `en-AU`) while keeping the merchant's chosen language. Currency symbols render as `CA$` or `A$` instead of a generic `$`, so buyers see the right currency framing for their region.
 
-  Cost Insights now ranks customers by total cost so you can see which accounts are driving the bill, and a new variance API surfaces cost anomalies (sudden spikes or drops) on individual events. Cost values also render correctly on the leaf event detail page. An enhancement to the Cost Insights feature shipped last October.
-</Update>
+**2026-04-14**
 
-<Update label="2026-03-31">
-  ## Customizable Dashboard Home Charts
+## Meter Units
 
-  The dashboard home page now lets merchants choose which metrics they see on the overview chart and persist their selection. Tailor the first thing you see when you log in to whatever moves the business for you.
+Meters now support custom units with a value multiplier, so you can ingest raw counts (tokens, requests, bytes) and price in whatever unit makes sense for your customers (millions of tokens, GB, etc.). Configure the unit name and multiplier on each meter in the dashboard, and unit labels flow through to checkout, the customer portal, and invoices.
 
-  <img class="border rounded" src="https://mintcdn.com/polar/tELcn60QeU54jL3T/assets/changelog/2026-03-31/customizable-dashboard-charts.png?fit=max&auto=format&n=tELcn60QeU54jL3T&q=85&s=62fdc2edb52fe7fa7a5892566bb7a1ec" width="1440" height="900" data-path="assets/changelog/2026-03-31/customizable-dashboard-charts.png" />
+![](https://mintcdn.com/polar/tELcn60QeU54jL3T/assets/changelog/2026-04-14/meter-units.png?fit=max\&auto=format\&n=tELcn60QeU54jL3T\&q=85\&s=46fb388823350a13fa7ad4696213644f)
 
-  ## Schedule Subscription Updates for Next Cycle
+## Self-Service Payout Account Management
 
-  Subscription changes (product swaps, price updates, seat changes) can now be scheduled to apply at the next billing cycle instead of taking effect immediately. The API exposes a new `next_period` proration behavior, and pending updates are returned on subscription objects and webhooks so external systems stay in sync.
+Merchants can now create, switch between, and delete payout accounts directly from the Finance page. A new Manage modal lists every account on the user, lets you set the active one for the organization, and blocks deletion when an account still holds a balance or is linked to an organization. Useful for moving payouts to a new bank entity without contacting support.
 
-  ## Tax-Inclusive Pricing
+## Customers Can Update Their Email Address
 
-  Merchants can now set a default tax behavior on their organization and price products with tax included in the displayed amount. Useful for regions and product categories where buyers expect to see the all-in price up front.
+Customers can now change the email address on their account directly from the customer portal, with a verification step on the new address. No more support tickets to fix a typo or move billing to a new mailbox.
 
-  ## Renewal and Trial Conversion Reminders
+## Cost Insights: Customer Ranking and Variance Detection
 
-  Customers on yearly or longer billing cycles now get an automatic reminder seven days before renewal. Trial subscribers get a heads-up three days before their trial ends (or one day for very short trials). Both reminders are toggleable per organization, helping reduce involuntary churn and surprise charges.
+Cost Insights now ranks customers by total cost so you can see which accounts are driving the bill, and a new variance API surfaces cost anomalies (sudden spikes or drops) on individual events. Cost values also render correctly on the leaf event detail page. An enhancement to the Cost Insights feature shipped last October.
 
-  ## GDPR Customer Data Export
+**2026-03-31**
 
-  A new Privacy section in the customer portal lets buyers download a complete JSON export of their personal data, subscriptions, orders, and benefit grants in one click. Helps merchants satisfy data portability obligations without manual exports.
+## Customizable Dashboard Home Charts
 
-  ## Cancellation Reason Drill-Down
+The dashboard home page now lets merchants choose which metrics they see on the overview chart and persist their selection. Tailor the first thing you see when you log in to whatever moves the business for you.
 
-  Cancellation charts in the metrics dashboard are now interactive. Clicking on any reason or time bucket opens a detail modal showing the underlying subscriptions, customer comments, and dates. Merchants can finally connect a spike on the chart to the actual customers behind it.
+![](https://mintcdn.com/polar/tELcn60QeU54jL3T/assets/changelog/2026-03-31/customizable-dashboard-charts.png?fit=max\&auto=format\&n=tELcn60QeU54jL3T\&q=85\&s=62fdc2edb52fe7fa7a5892566bb7a1ec)
 
-  ## Korean Checkout
+## Schedule Subscription Updates for Next Cycle
 
-  Checkout is now translated into Korean. Merchants selling to Korean buyers get a native buying experience, with product details, payment fields, and order summary all rendering in Korean.
+Subscription changes (product swaps, price updates, seat changes) can now be scheduled to apply at the next billing cycle instead of taking effect immediately. The API exposes a new `next_period` proration behavior, and pending updates are returned on subscription objects and webhooks so external systems stay in sync.
 
-  ## Multi-Currency Fixed Discounts
+## Tax-Inclusive Pricing
 
-  Fixed-amount discounts can now hold separate amounts per currency, matching the multi-currency pricing model that shipped in February. Run a \$10 / 10 EUR / 10 GBP coupon as a single discount instead of juggling three.
-</Update>
+Merchants can now set a default tax behavior on their organization and price products with tax included in the displayed amount. Useful for regions and product categories where buyers expect to see the all-in price up front.
 
-<Update label="2026-02-28">
-  ## Multi-Currency Product Pricing
+## Renewal and Trial Conversion Reminders
 
-  Merchants can now create products with prices in multiple currencies side by side. Set a USD price, an EUR price, a GBP price, and more on the same product, and customers see the right currency at checkout based on their region. A new default presentment currency setting at the organization level keeps things consistent across the dashboard.
+Customers on yearly or longer billing cycles now get an automatic reminder seven days before renewal. Trial subscribers get a heads-up three days before their trial ends (or one day for very short trials). Both reminders are toggleable per organization, helping reduce involuntary churn and surprise charges.
 
-  ## Italian and Portuguese Checkout
+## GDPR Customer Data Export
 
-  Checkout, customer portal, and emails are now fully translated into Italian and Portuguese. Customers in Italy, Portugal, and Brazil get a native experience end to end, with currency formatting that matches their region.
+A new Privacy section in the customer portal lets buyers download a complete JSON export of their personal data, subscriptions, orders, and benefit grants in one click. Helps merchants satisfy data portability obligations without manual exports.
 
-  ## Feature Flag Benefit
+## Cancellation Reason Drill-Down
 
-  A new Feature Flag benefit type is available for SaaS merchants. Grant it to customers when they should unlock something in your product, then check entitlements through the Polar API or webhooks. JSON metadata stays invisible to the customer, keeping the experience clean for pure software subscriptions.
+Cancellation charts in the metrics dashboard are now interactive. Clicking on any reason or time bucket opens a detail modal showing the underlying subscriptions, customer comments, and dates. Merchants can finally connect a spike on the chart to the actual customers behind it.
 
-  ## Faster Wallet and Card Checkout
+## Korean Checkout
 
-  When mobile wallets are available, they now appear at the top of the payment list instead of buried under the card form. The cardholder name field is hidden when paying with a wallet, since the name is pulled from the wallet token automatically. Fewer clicks, fewer fields, faster checkout.
+Checkout is now translated into Korean. Merchants selling to Korean buyers get a native buying experience, with product details, payment fields, and order summary all rendering in Korean.
 
-  ## Team Ownership Transfer
+## Multi-Currency Fixed Discounts
 
-  Team owners can now hand the owner role to another member directly from the customer portal, and admins can transfer ownership through the API. The previous owner is automatically demoted to billing manager so there is always exactly one owner.
+Fixed-amount discounts can now hold separate amounts per currency, matching the multi-currency pricing model that shipped in February. Run a \$10 / 10 EUR / 10 GBP coupon as a single discount instead of juggling three.
 
-  ## Seat Limits at Checkout
+**2026-02-28**
 
-  Seat-based products now support `min_seats` and `max_seats` on the checkout. Lock customers to a minimum team size for plans that require it, or cap the upper bound for tiered packages, all enforced at the buying step.
+## Multi-Currency Product Pricing
 
-  ## Name Your Webhook Endpoints
+Merchants can now create products with prices in multiple currencies side by side. Set a USD price, an EUR price, a GBP price, and more on the same product, and customers see the right currency at checkout based on their region. A new default presentment currency setting at the organization level keeps things consistent across the dashboard.
 
-  Webhook endpoints can now have a friendly name like "Production Events" or "Analytics Pipeline". Names show up as the primary label in the dashboard, with the URL as secondary text, so managing more than a couple of endpoints stops feeling like reading a list of URLs.
+## Italian and Portuguese Checkout
 
-  ## Return URL on Static Checkout Links
+Checkout, customer portal, and emails are now fully translated into Italian and Portuguese. Customers in Italy, Portugal, and Brazil get a native experience end to end, with currency formatting that matches their region.
 
-  Static checkout links created from the dashboard now support a custom return URL, matching what was already possible through the API. Send buyers back to a thank-you page, an upsell, or a specific app screen after they complete a purchase, no API call required.
-</Update>
+## Feature Flag Benefit
 
-<Update label="2026-01-31">
-  ## Team Member Management (B2B)
+A new Feature Flag benefit type is available for SaaS merchants. Grant it to customers when they should unlock something in your product, then check entitlements through the Polar API or webhooks. JSON metadata stays invisible to the customer, keeping the experience clean for pure software subscriptions.
 
-  Complete team member management system for B2B customers:
+## Faster Wallet and Card Checkout
 
-  * Owner and billing managers can add/remove team members
-  * Role-based access control (owner, billing\_manager, member)
-  * Member-specific benefit grants and portal access
-  * Team portal page with member list and management
-  * Member sessions (`polar_mst_`) preserve identity and permissions
-  * Members tab on customer detail pages
+When mobile wallets are available, they now appear at the top of the payment list instead of buried under the card form. The cardholder name field is hidden when paying with a wallet, since the name is pulled from the wallet token automatically. Fewer clicks, fewer fields, faster checkout.
 
-  Perfect for B2B customers managing team access and permissions.
+## Team Ownership Transfer
 
-  ### Explicit Currency Display
+Team owners can now hand the owner role to another member directly from the customer portal, and admins can transfer ownership through the API. The previous owner is automatically demoted to billing manager so there is always exactly one owner.
 
-  Currency symbols now show explicitly (e.g., `USD 123.45`) instead of just `$123.45` to prevent confusion for non-US dollar users.
+## Seat Limits at Checkout
 
-  ## Event & Metering Enhancements
+Seat-based products now support `min_seats` and `max_seats` on the checkout. Lock customers to a minimum team size for plans that require it, or cap the upper bound for tiered packages, all enforced at the buying step.
 
-  ### Member-Level Event Attribution
+## Name Your Webhook Endpoints
 
-  Events now support member tracking:
+Webhook endpoints can now have a friendly name like "Production Events" or "Analytics Pipeline". Names show up as the primary label in the dashboard, with the URL as secondary text, so managing more than a couple of endpoints stops feeling like reading a list of URLs.
 
-  * `member_id` and `external_member_id` fields
-  * Member validation during event ingestion
-  * B2B usage tracking at member level
+## Return URL on Static Checkout Links
 
-  ### Timezone Handling
+Static checkout links created from the dashboard now support a custom return URL, matching what was already possible through the API. Send buyers back to a thank-you page, an upsell, or a specific app screen after they complete a purchase, no API call required.
 
-  Fixed timezone issues in meter quantities endpoint:
+**2026-01-31**
 
-  * Added `timezone` parameter
-  * Set database session timezone properly
-  * Correct date grouping for non-UTC users
+## Team Member Management (B2B)
 
-  ## Customer Portal Enhancements
+Complete team member management system for B2B customers:
 
-  ### Benefit Grants UI
+* Owner and billing managers can add/remove team members
+* Role-based access control (owner, billing\_manager, member)
+* Member-specific benefit grants and portal access
+* Team portal page with member list and management
+* Member sessions (`polar_mst_`) preserve identity and permissions
+* Members tab on customer detail pages
 
-  * Complex benefit grants list with search and pagination
-  * Better display for benefit details
-  * Improved OAuth benefit grant buttons
+Perfect for B2B customers managing team access and permissions.
 
-  ### Payment Retry Fixes
+### Explicit Currency Display
 
-  * 3DS modal display (popup instead of redirect)
-  * Retry persistence after 3DS cancellation
-  * Proper dunning management on manual retries
+Currency symbols now show explicitly (e.g., `USD 123.45`) instead of just `$123.45` to prevent confusion for non-US dollar users.
 
-  ## Discount Management
+## Event & Metering Enhancements
 
-  ### Redemption Count Optimization
+### Member-Level Event Attribution
 
-  * Added `redemptions_count` column to discounts table
-</Update>
+Events now support member tracking:
 
-<Update label="2025-12-31">
-  ## System Events for Subscriptions
+* `member_id` and `external_member_id` fields
+* Member validation during event ingestion
+* B2B usage tracking at member level
 
-  Expanded system events to provide detailed subscription lifecycle tracking:
+### Timezone Handling
 
-  * **Subscription cycled** - when billing periods roll over
-  * **Subscription canceled** - when subscriptions are canceled
-  * **Subscription past due** - when payment fails (separate from permanent revocation)
-  * All events include product IDs and relevant metadata
-  * Perfect for analytics and building custom workflows
+Fixed timezone issues in meter quantities endpoint:
 
-  ## iOS Widget
+* Added `timezone` parameter
+* Set database session timezone properly
+* Correct date grouping for non-UTC users
 
-  New iOS home screen and lock screen widget:
+## Customer Portal Enhancements
 
-  * Real-time revenue display
-  * Support for dark and light mode
-  * Multiple widget sizes
-  * Quick glance at your sales without opening the app
+### Benefit Grants UI
 
-  Built with `@bacons/apple-targets` for native iOS integration.
+* Complex benefit grants list with search and pagination
+* Better display for benefit details
+* Improved OAuth benefit grant buttons
 
-  ## Product Management Improvements
+### Payment Retry Fixes
 
-  Major UX improvements for managing products:
+* 3DS modal display (popup instead of redirect)
+* Retry persistence after 3DS cancellation
+* Proper dunning management on manual retries
 
-  ### Sorting & Filtering
+## Discount Management
 
-  * Sort products by name, creation date, update date, and end date
-  * Custom pagination size (20, 50, 100 items per page)
-  * Product rows are clickable links for cmd+click support
+### Redemption Count Optimization
 
-  ### Editing Experience
+* Added `redemptions_count` column to discounts table
 
-  * Unsaved changes alert prevents accidental data loss
-  * Update button at top right for easier access
-  * Auto-save for most settings
-  * Fixed empty state flashing when sorting/filtering
+**2025-12-31**
 
-  ### File Management
+## System Events for Subscriptions
 
-  * Client-side pagination for downloadable benefit files (10 per page)
-  * Better file upload error messages
-  * Fixed React state issues in benefit forms
+Expanded system events to provide detailed subscription lifecycle tracking:
 
-  ### Product Duplication
+* **Subscription cycled** - when billing periods roll over
+* **Subscription canceled** - when subscriptions are canceled
+* **Subscription past due** - when payment fails (separate from permanent revocation)
+* All events include product IDs and relevant metadata
+* Perfect for analytics and building custom workflows
 
-  * Re-uploads images when duplicating to prevent shared references
-  * Deleting an image from a duplicate no longer affects the original
+## iOS Widget
 
-  ## Search Improvements
+New iOS home screen and lock screen widget:
 
-  Significant search infrastructure updates:
+* Real-time revenue display
+* Support for dark and light mode
+* Multiple widget sizes
+* Quick glance at your sales without opening the app
 
-  * Search vectors for full-text search
-  * Union queries for better performance
-  * PostgreSQL text search capabilities
+Built with `@bacons/apple-targets` for native iOS integration.
 
-  ## Member Management
+## Product Management Improvements
 
-  Enhanced member endpoint functionality:
+Major UX improvements for managing products:
 
-  * Added `member_id` to relevant API endpoints
-  * Improved B2B customer management
+### Sorting & Filtering
 
-  ## Mobile App Improvements
+* Sort products by name, creation date, update date, and end date
+* Custom pagination size (20, 50, 100 items per page)
+* Product rows are clickable links for cmd+click support
 
-  ### iOS Updates
+### Editing Experience
 
-  * iOS widget for home and lock screen
-  * App rating prompts at appropriate times
-  * Login screen animations (fade in, Ken Burns effect)
-  * Fixed multi-account crash on settings
-  * Fixed scroll issues with many organizations
-  * Version bumped to 1.1.0
+* Unsaved changes alert prevents accidental data loss
+* Update button at top right for easier access
+* Auto-save for most settings
+* Fixed empty state flashing when sorting/filtering
 
-  ### Android Support
+### File Management
 
-  * Full Android build support
-  * App store ready for both platforms
-  * Consistent design system across iOS and Android
+* Client-side pagination for downloadable benefit files (10 per page)
+* Better file upload error messages
+* Fixed React state issues in benefit forms
 
-  ## Customer Meter Enhancements
+### Product Duplication
 
-  Significant improvements to customer meter calculation:
+* Re-uploads images when duplicating to prevent shared references
+* Deleting an image from a duplicate no longer affects the original
 
-  * Speed improvements with optimized queries (avoided cartesian joins)
-  * Better activation logic for meters with events
-  * Fixed organization ID tracking
-  * Increased lock time to 30s for slow queries
-  * Debug information in window event spans
-  * Proper external customer ID handling
+## Search Improvements
 
-  ## Webhook Management
+Significant search infrastructure updates:
 
-  Better webhook health tracking:
+* Search vectors for full-text search
+* Union queries for better performance
+* PostgreSQL text search capabilities
 
-  * Discord rate limit logging
-  * Missing event types added to schema
-  * Improved error handling
-  * Repository-based webhook service
+## Member Management
 
-  ## Checkout Links
+Enhanced member endpoint functionality:
 
-  * Added checkout links to mobile app
-  * Better link management
-  * Share and track checkout performance on mobile
+* Added `member_id` to relevant API endpoints
+* Improved B2B customer management
 
-  ## OAuth2 Improvements
+## Mobile App Improvements
 
-  * First-party clients auto-save grants
-  * No authorization prompt for trusted apps
-  * Better user experience for internal tools
+### iOS Updates
 
-  ## Bug Fixes
+* iOS widget for home and lock screen
+* App rating prompts at appropriate times
+* Login screen animations (fade in, Ken Burns effect)
+* Fixed multi-account crash on settings
+* Fixed scroll issues with many organizations
+* Version bumped to 1.1.0
 
-  * Fixed undefined organization in dashboard sidebar
-  * Fixed customer meter updates for soft-deleted customers
-  * Fixed seat and trial end updates for seat-based products
-  * Fixed tax calculation error handling
-  * Fixed product empty state flashing
-  * Fixed notifications on iOS simulator
-  * Fixed Switch rendering on Android
-  * Fixed Polar logo not linking to home
-  * Fixed image duplication on product creation
-  * Handle null Stripe refund reasons
-  * Fixed subscription fields in system events
-</Update>
+### Android Support
 
-<Update label="2025-12-07">
-  ## Dispute & Chargeback Management
+* Full Android build support
+* App store ready for both platforms
+* Consistent design system across iOS and Android
 
-  Complete dispute tracking and prevention system:
+## Customer Meter Enhancements
 
-  * Dispute model to track chargebacks from Stripe
-  * Chargeback Stop integration for rapid dispute resolution (RDR)
-  * Auto-refund on RDR disputes to prevent chargebacks
-  * Link refunds to disputes for better tracking
-  * Improved dispute event handling from Stripe webhooks
+Significant improvements to customer meter calculation:
 
-  Helps reduce chargeback fees and protect your account standing.
+* Speed improvements with optimized queries (avoided cartesian joins)
+* Better activation logic for meters with events
+* Fixed organization ID tracking
+* Increased lock time to 30s for slow queries
+* Debug information in window event spans
+* Proper external customer ID handling
 
-  ## Metrics API
+## Webhook Management
 
-  New metrics filtering system:
+Better webhook health tracking:
 
-  * `metrics` query parameter to filter specific metrics
-  * Removed deprecated `focus_metrics` parameter
-  * Better performance by only calculating requested metrics
+* Discord rate limit logging
+* Missing event types added to schema
+* Improved error handling
+* Repository-based webhook service
 
-  ## iOS App Updates
+## Checkout Links
 
-  * App rating prompts at appropriate times
-  * iOS upsell banner on homepage
-  * Animations on login screen (fade in, Ken Burns effect, staggered elements)
-  * Fixed multi-account crash on settings screen
-  * Fixed onboarding redirect after org creation
-  * Fixed scroll issue with many orgs
-  * Version bumped to 1.1.0
+* Added checkout links to mobile app
+* Better link management
+* Share and track checkout performance on mobile
 
-  ## Mobile App (Android)
+## OAuth2 Improvements
 
-  Added Android support:
+* First-party clients auto-save grants
+* No authorization prompt for trusted apps
+* Better user experience for internal tools
 
-  * Android targets in build scripts
-  * App store ready for both iOS and Android
+## Bug Fixes
 
-  ## Email Improvements
+* Fixed undefined organization in dashboard sidebar
+* Fixed customer meter updates for soft-deleted customers
+* Fixed seat and trial end updates for seat-based products
+* Fixed tax calculation error handling
+* Fixed product empty state flashing
+* Fixed notifications on iOS simulator
+* Fixed Switch rendering on Android
+* Fixed Polar logo not linking to home
+* Fixed image duplication on product creation
+* Handle null Stripe refund reasons
+* Fixed subscription fields in system events
 
-  * Updated Polar logo in all emails
-  * Better email DNS validation
-  * Fixed invalid email domain issues
+**2025-12-07**
 
-  ## Worker Queue Management
+## Dispute & Chargeback Management
 
-  Better task prioritization:
+Complete dispute tracking and prevention system:
 
-  * Low, medium, and high priority queues
-  * Separate workers for different priorities
-  * Schedule tasks moved to high priority worker
-</Update>
+* Dispute model to track chargebacks from Stripe
+* Chargeback Stop integration for rapid dispute resolution (RDR)
+* Auto-refund on RDR disputes to prevent chargebacks
+* Link refunds to disputes for better tracking
+* Improved dispute event handling from Stripe webhooks
 
-<Update label="2025-11-28">
-  ## Downloads Page
+Helps reduce chargeback fees and protect your account standing.
 
-  New dedicated downloads page at polar.sh/downloads for easy access to desktop and mobile apps.
+## Metrics API
 
-  ## Customer Balance Refunds
+New metrics filtering system:
 
-  * Handle refunds on orders with customer balance applied
-  * Proper balance credit restoration
-  * Block refunds on specific orders via API flag
+* `metrics` query parameter to filter specific metrics
+* Removed deprecated `focus_metrics` parameter
+* Better performance by only calculating requested metrics
 
-  ## Worker Priority Queues
+## iOS App Updates
 
-  Introduced task prioritization system:
+* App rating prompts at appropriate times
+* iOS upsell banner on homepage
+* Animations on login screen (fade in, Ken Burns effect, staggered elements)
+* Fixed multi-account crash on settings screen
+* Fixed onboarding redirect after org creation
+* Fixed scroll issue with many orgs
+* Version bumped to 1.1.0
 
-  * Low priority queue for background tasks
-  * Medium priority queue for standard tasks
-  * High priority queue for time-sensitive operations
-  * Separate workers consuming from each queue
+## Mobile App (Android)
 
-  Ensures critical tasks get processed first.
+Added Android support:
 
-  ## Rate Limiting
+* Android targets in build scripts
+* App store ready for both iOS and Android
 
-  * New restricted rate limit group for abusive patterns
-  * Better rate limit handling across endpoints
+## Email Improvements
 
-  ## Email Validation
+* Updated Polar logo in all emails
+* Better email DNS validation
+* Fixed invalid email domain issues
 
-  Added DNS validation for email addresses across checkout, customer creation, and user management to prevent typos and invalid domains.
+## Worker Queue Management
 
-  ## Event Query Optimization
+Better task prioritization:
 
-  Massive performance improvements:
+* Low, medium, and high priority queues
+* Separate workers for different priorities
+* Schedule tasks moved to high priority worker
 
-  * Removed unnecessary ordering from event queries (3x faster)
-  * Better customer latest event queries
-  * New indexes on events table
-  * Optimized IN queries for customer meters
+**2025-11-28**
 
-  ## Mobile App Improvements
+## Downloads Page
 
-  * Account deletion functionality
-  * Proper logout and login flow fixes
-  * Better error handling
-  * Login screen animations with Ken Burns effect
+New dedicated downloads page at polar.sh/downloads for easy access to desktop and mobile apps.
 
-  ## Bug Fixes
+## Customer Balance Refunds
 
-  * Fixed settings scroll with many organizations
-  * Fixed app onboarding redirect
-  * Fixed organization service name in Logfire
-  * Fixed customer meter organization ID tracking
-  * Fixed bitwise SQL operator parentheses
-</Update>
+* Handle refunds on orders with customer balance applied
+* Proper balance credit restoration
+* Block refunds on specific orders via API flag
 
-<Update label="2025-11-21">
-  ## Customer Balance
+## Worker Priority Queues
 
-  Customer balance system built on top of wallet infrastructure:
+Introduced task prioritization system:
 
-  * Track customer credit balances
-  * Apply balances automatically to invoices
-  * API support for balance management
-  * Foundation for store credit and refund credits
+* Low priority queue for background tasks
+* Medium priority queue for standard tasks
+* High priority queue for time-sensitive operations
+* Separate workers consuming from each queue
 
-  ## Members API
+Ensures critical tasks get processed first.
 
-  New members management system for B2B customers:
+## Rate Limiting
 
-  * GET `/v1/members` endpoint with pagination
-  * Filter members by customer ID
-  * Auto-create owner member when customer is created
-  * Override owner member details via API
-  * Members included in customer endpoints
-  * Proper organization scoping and access control
+* New restricted rate limit group for abusive patterns
+* Better rate limit handling across endpoints
 
-  Perfect for managing team members across B2B customer accounts.
+## Email Validation
 
-  ## Sign in with Apple
+Added DNS validation for email addresses across checkout, customer creation, and user management to prevent typos and invalid domains.
 
-  Added Apple OAuth for authentication:
+## Event Query Optimization
 
-  * Apple OAuth integration
+Massive performance improvements:
 
-  ## Ad-hoc Checkout Pricing
+* Removed unnecessary ordering from event queries (3x faster)
+* Better customer latest event queries
+* New indexes on events table
+* Optimized IN queries for customer meters
 
-  Create checkouts with dynamic pricing that override catalog prices:
+## Mobile App Improvements
 
-  * Useful for custom deals, usage-based pricing, or testing
-  * Supports all price types (fixed, free, custom)
-  * Full API and SDK support
+* Account deletion functionality
+* Proper logout and login flow fixes
+* Better error handling
+* Login screen animations with Ken Burns effect
 
-  [Read more](/docs/features/checkout/session#ad-hoc-prices)
+## Bug Fixes
 
-  ## Churn Rate
+* Fixed settings scroll with many organizations
+* Fixed app onboarding redirect
+* Fixed organization service name in Logfire
+* Fixed customer meter organization ID tracking
+* Fixed bitwise SQL operator parentheses
 
-  New churn rate metric on analytics dashboard:
+**2025-11-21**
 
-  * Track subscription cancellations over time
-  * Understand retention patterns
-  * Available on homepage and customers page
+## Customer Balance
 
-  ## Event Labels
+Customer balance system built on top of wallet infrastructure:
 
-  Events now have customizable labels:
+* Track customer credit balances
+* Apply balances automatically to invoices
+* API support for balance management
+* Foundation for store credit and refund credits
 
-  * System events get readable labels automatically
-  * User events can have custom labels
-  * Labels shown throughout events UI
-  * Edit labels via event type settings
+## Members API
 
-  Makes events more readable and meaningful for your team.
+New members management system for B2B customers:
 
-  ## Spans View
+* GET `/v1/members` endpoint with pagination
+* Filter members by customer ID
+* Auto-create owner member when customer is created
+* Override owner member details via API
+* Members included in customer endpoints
+* Proper organization scoping and access control
 
-  New spans interface for hierarchical event tracking (hidden for now):
+Perfect for managing team members across B2B customer accounts.
 
-  * List and detail views for event spans
-  * Charts and sparklines for visualization
-  * Time-series data with proper timezone handling
-  * Cost aggregation across event hierarchies
+## Sign in with Apple
 
-  ## Metrics Performance
+Added Apple OAuth for authentication:
 
-  Significant performance improvements for analytics:
+* Apple OAuth integration
 
-  * Optimized metrics queries with window functions
-  * Better date range bounds handling
-  * Indexes on subscription date columns
-  * Cumulative revenue includes full history
-  * Fixed timezone and interval issues
+## Ad-hoc Checkout Pricing
 
-  ## Invoice Numbering
+Create checkouts with dynamic pricing that override catalog prices:
 
-  Changed default invoice numbering to per-customer (was organization-wide):
+* Useful for custom deals, usage-based pricing, or testing
+* Supports all price types (fixed, free, custom)
+* Full API and SDK support
 
-  * Each customer starts invoice numbering at 1
-  * Hides sales volume from individual customers
-  * Can still switch to organization-wide in settings
+[Read more](/docs/features/checkout/session#ad-hoc-prices)
 
-  ## Tax & Billing
+## Churn Rate
 
-  * Show taxable amount after discount in checkout
-  * Fixed tax ID formatting (was showing raw strings)
-  * Fixed Stripe coupon name length validation
-  * Fixed conflicting invoice numbering issues
+New churn rate metric on analytics dashboard:
 
-  ## Checkout Improvements
+* Track subscription cancellations over time
+* Understand retention patterns
+* Available on homepage and customers page
 
-  * Persist business name across checkouts
-  * Hide cookie consent banner when logging in via app
-  * Fixed expired checkout intent handling
+## Event Labels
 
-  ## Bug Fixes
+Events now have customizable labels:
 
-  * Fixed 404 after deleting customers, benefits, or checkout links
-  * Fixed product price configurator validation
-  * Fixed custom field number constraint validation
-  * Fixed benefit capitalization in customer portal
-  * Fixed organization cache after profile picture update
-  * Fixed social link parsing
+* System events get readable labels automatically
+* User events can have custom labels
+* Labels shown throughout events UI
+* Edit labels via event type settings
 
-  ## Mobile App
+Makes events more readable and meaningful for your team.
 
-  * Continue with Apple support
-  * Disabled tablet support (phone-only for now)
-  * Fixed EAS build configuration
-  * Removed demo mode
-  * Better workspace integration
-</Update>
+## Spans View
 
-<Update label="2025-11-14">
-  ## Trial Abuse Prevention
+New spans interface for hierarchical event tracking (hidden for now):
 
-  Prevent customers from redeeming multiple trials with email aliases or different payment methods:
+* List and detail views for event spans
+* Charts and sparklines for visualization
+* Time-series data with proper timezone handling
+* Cost aggregation across event hierarchies
 
-  * Email normalization strips `+aliases` to detect duplicates
-  * Payment method fingerprinting tracks card usage
-  * Enable via Settings → Subscription → "Prevent trial abuse"
-  * Blocked customers see error and can still subscribe without trial
-  * Checkout parameter `allow_trial` to force disable trials
+## Metrics Performance
 
-  Perfect for controlling trial costs while still allowing new customers to subscribe.
+Significant performance improvements for analytics:
 
-  ## Event Types & Aggregation
+* Optimized metrics queries with window functions
+* Better date range bounds handling
+* Indexes on subscription date columns
+* Cumulative revenue includes full history
+* Fixed timezone and interval issues
 
-  New event types system for better organization and analytics:
+## Invoice Numbering
 
-  * Event types automatically created for events with the same name
-  * Custom display names for better readability
-  * Statistics endpoint for event aggregation
-  * Event closure tables for efficient hierarchy queries
+Changed default invoice numbering to per-customer (was organization-wide):
 
-  ## Mobile App (Beta)
+* Each customer starts invoice numbering at 1
+* Hides sales volume from individual customers
+* Can still switch to organization-wide in settings
 
-  Polar mobile app added to the monorepo:
+## Tax & Billing
 
-  * React Native implementation with Expo
-  * Expo workflow for development and builds
-  * Shared workspace with web dashboard
-  * Foundation for mobile-first experiences
+* Show taxable amount after discount in checkout
+* Fixed tax ID formatting (was showing raw strings)
+* Fixed Stripe coupon name length validation
+* Fixed conflicting invoice numbering issues
 
-  ## Webhook Events
+## Checkout Improvements
 
-  Skipped events now properly tracked:
+* Persist business name across checkouts
+* Hide cookie consent banner when logging in via app
+* Fixed expired checkout intent handling
 
-  * Events skipped when endpoint disabled no longer count as failures
-  * Prevents false positives in health checks
-  * Better webhook reliability metrics
+## Bug Fixes
 
-  ## File Uploads
+* Fixed 404 after deleting customers, benefits, or checkout links
+* Fixed product price configurator validation
+* Fixed custom field number constraint validation
+* Fixed benefit capitalization in customer portal
+* Fixed organization cache after profile picture update
+* Fixed social link parsing
 
-  Large file upload support:
+## Mobile App
 
-  * Handles files larger than memory limits
-  * Multipart upload handling
-  * SHA256 validation per part
-  * Better progress tracking
+* Continue with Apple support
+* Disabled tablet support (phone-only for now)
+* Fixed EAS build configuration
+* Removed demo mode
+* Better workspace integration
 
-  ## Subscription Management
+**2025-11-14**
 
-  ### Billing Period Control
+## Trial Abuse Prevention
 
-  New API to change current billing period end date:
+Prevent customers from redeeming multiple trials with email aliases or different payment methods:
 
-  * Useful for custom billing arrangements
-  * Prorations calculated automatically
-  * Prevented on already-cancelled subscriptions
+* Email normalization strips `+aliases` to detect duplicates
+* Payment method fingerprinting tracks card usage
+* Enable via Settings → Subscription → "Prevent trial abuse"
+* Blocked customers see error and can still subscribe without trial
+* Checkout parameter `allow_trial` to force disable trials
 
-  ### Payout Improvements
+Perfect for controlling trial costs while still allowing new customers to subscribe.
 
-  * Increased minimum payout amounts for certain currencies
-  * Better error logging for Stripe payout failures
+## Event Types & Aggregation
 
-  ## UI & UX
+New event types system for better organization and analytics:
 
-  ### Analytics Improvements
+* Event types automatically created for events with the same name
+* Custom display names for better readability
+* Statistics endpoint for event aggregation
+* Event closure tables for efficient hierarchy queries
 
-  * Fixed timezone issues with date range selection
-  * Better interval formatting in legends
-  * Improved preset intervals ("this year", "last year")
-  * Consistent date handling across dashboard
+## Mobile App (Beta)
 
-  ### Customer Portal
+Polar mobile app added to the monorepo:
 
-  * Fixed overflowing invoice action buttons
-  * Improved mobile experience
+* React Native implementation with Expo
+* Expo workflow for development and builds
+* Shared workspace with web dashboard
+* Foundation for mobile-first experiences
 
-  ### Settings
+## Webhook Events
 
-  * Auto-prefix social media URLs
-  * Removed seat-based billing toggle (now standard)
+Skipped events now properly tracked:
 
-  ## Bug Fixes
+* Events skipped when endpoint disabled no longer count as failures
+* Prevents false positives in health checks
+* Better webhook reliability metrics
 
-  * Fixed `allow_trial` parameter handling
-  * Fixed dark mode colors across dashboard
-  * Fixed tax rate limiting in sandbox environment
-  * Fixed Stripe trial redemption error handling
-  * Fixed member invitation dialog Enter key submission
-  * Fixed large file upload memory issues
-  * Fixed metrics organization filtering
-</Update>
+## File Uploads
 
-<Update label="2025-11-07">
-  ## Hierarchical Events & Spans
+Large file upload support:
 
-  Events can now be organized hierarchically with parent-child relationships, perfect for tracking complex workflows:
+* Handles files larger than memory limits
+* Multipart upload handling
+* SHA256 validation per part
+* Better progress tracking
 
-  * Create event spans with `parent_id` reference
-  * Use `external_id` as idempotency key to prevent duplicate events
-  * View nested events in the dashboard
-  * Navigate event hierarchies with dedicated event detail pages
-  * Query transitive closure for efficient sub-hierarchy analysis
+## Subscription Management
 
-  This enables use cases like tracking LLM requests with multiple steps, or multi-phase order fulfillment workflows.
+### Billing Period Control
 
-  ## Master-Detail Layout
+New API to change current billing period end date:
 
-  New master-detail layout pattern across the dashboard:
+* Useful for custom billing arrangements
+* Prorations calculated automatically
+* Prevented on already-cancelled subscriptions
 
-  * List view on the left, detail view on the right
-  * Proper nested routing for direct linking
-  * Better navigation and state management
-  * Improved querystring handling
+### Payout Improvements
 
-  Applied to customers, subscriptions, events, and more.
+* Increased minimum payout amounts for certain currencies
+* Better error logging for Stripe payout failures
 
-  ## Improved Date Range Picker
+## UI & UX
 
-  Better date range selection throughout analytics:
+### Analytics Improvements
 
-  * Fixed "this year" and "last year" presets
-  * Smart interval selection based on date range
-  * Consistent behavior across all views
-  * Better timezone handling
+* Fixed timezone issues with date range selection
+* Better interval formatting in legends
+* Improved preset intervals ("this year", "last year")
+* Consistent date handling across dashboard
 
-  ## Settings Auto-Save
+### Customer Portal
 
-  Settings now auto-save as you type instead of requiring manual save button clicks. Includes proper debouncing and error handling for a smoother experience.
+* Fixed overflowing invoice action buttons
+* Improved mobile experience
 
-  ## Customer Management Enhancements
+### Settings
 
-  ### Product Subscription View
+* Auto-prefix social media URLs
+* Removed seat-based billing toggle (now standard)
 
-  Product overview now shows active subscriptions table, making it easier to see who's using each product.
+## Bug Fixes
 
-  ### Customer Filtering
+* Fixed `allow_trial` parameter handling
+* Fixed dark mode colors across dashboard
+* Fixed tax rate limiting in sandbox environment
+* Fixed Stripe trial redemption error handling
+* Fixed member invitation dialog Enter key submission
+* Fixed large file upload memory issues
+* Fixed metrics organization filtering
 
-  Filter subscriptions by cancellation status - find subscriptions that will cancel at period end.
+**2025-11-07**
 
-  ### Benefit Grants
+## Hierarchical Events & Spans
 
-  Added direct links to customers and subscriptions from benefit grants overview for easier navigation.
+Events can now be organized hierarchically with parent-child relationships, perfect for tracking complex workflows:
 
-  ## Account Management
+* Create event spans with `parent_id` reference
+* Use `external_id` as idempotency key to prevent duplicate events
+* View nested events in the dashboard
+* Navigate event hierarchies with dedicated event detail pages
+* Query transitive closure for efficient sub-hierarchy analysis
 
-  * Email notifications when unlinking accounts from organizations
-  * Fixed OAuth account disconnection for users with multiple accounts on the same platform
+This enables use cases like tracking LLM requests with multiple steps, or multi-phase order fulfillment workflows.
 
-  ## Bug Fixes
+## Master-Detail Layout
 
-  * Fixed customer update trying to set email to None when explicitly provided
-  * Fixed payment method handling when soft-deleted methods are updated from Stripe
-  * Added maximum length validation to customer names
-  * Fixed customer portal theming
-  * Fixed subscription double cycling with proper locking mechanisms
-  * Fixed Mintlify docs CSP configuration
-</Update>
+New master-detail layout pattern across the dashboard:
 
-<Update label="2025-10-31">
-  ## Cost Insights
+* List view on the left, detail view on the right
+* Proper nested routing for direct linking
+* Better navigation and state management
+* Improved querystring handling
 
-  We've launched Cost Insights - a powerful way to track and analyze costs associated with usage. Now you can:
+Applied to customers, subscriptions, events, and more.
 
-  * Track costs per event with sub-cent precision
-  * View cost analytics across your dashboard
-  * See cost breakdowns by customer and product
-  * Monitor cost trends with dedicated charts
+## Improved Date Range Picker
 
-  Perfect for understanding unit economics and profitability of your usage-based offerings.
+Better date range selection throughout analytics:
 
-  [Read more](/docs/features/cost-insights/introduction)
+* Fixed "this year" and "last year" presets
+* Smart interval selection based on date range
+* Consistent behavior across all views
+* Better timezone handling
 
-  ## Webhook Management
+## Settings Auto-Save
 
-  ### Auto-Disable Failing Webhooks
+Settings now auto-save as you type instead of requiring manual save button clicks. Includes proper debouncing and error handling for a smoother experience.
 
-  Webhooks that continuously fail (10+ consecutive failures by default) are now automatically disabled to save resources. You can manually re-enable them from the dashboard once the issue is fixed.
+## Customer Management Enhancements
 
-  ### Email Notifications for Webhook Failures
+### Product Subscription View
 
-  When webhooks are automatically disabled due to continuous failures, all organization members receive an email notification with details and steps to re-enable.
+Product overview now shows active subscriptions table, making it easier to see who's using each product.
 
-  ## Benefit Revocation Grace Period
+### Customer Filtering
 
-  Configure a grace period for benefit revocation when subscription payments fail. Instead of immediately revoking benefits, you can now give customers time to resolve payment issues:
+Filter subscriptions by cancellation status - find subscriptions that will cancel at period end.
 
-  * Immediate revocation (default)
-  * Grace period matching payment retry window
+### Benefit Grants
 
-  This applies to both regular benefits and customer seat benefits.
+Added direct links to customers and subscriptions from benefit grants overview for easier navigation.
 
-  ## Customer Portal Enhancements
+## Account Management
 
-  ### Upcoming Charge Display
+* Email notifications when unlinking accounts from organizations
+* Fixed OAuth account disconnection for users with multiple accounts on the same platform
 
-  Subscription detail pages now show the upcoming charge amount and date, including:
+## Bug Fixes
 
-  * Trial end dates with first charge amount
-  * Next billing cycle charges for active subscriptions
-  * Automatic updates when subscriptions change
+* Fixed customer update trying to set email to None when explicitly provided
+* Fixed payment method handling when soft-deleted methods are updated from Stripe
+* Added maximum length validation to customer names
+* Fixed customer portal theming
+* Fixed subscription double cycling with proper locking mechanisms
+* Fixed Mintlify docs CSP configuration
 
-  ### Usage & Metering View
+**2025-10-31**
 
-  Improved the customer usage view:
+## Cost Insights
 
-  * Respect archived meters - they no longer appear in usage tracking
-  * Better empty states for customers with granted credits
-  * Create customer meters automatically when meter credits are granted
+We've launched Cost Insights - a powerful way to track and analyze costs associated with usage. Now you can:
 
-  ### Navigation & UX Improvements
+* Track costs per event with sub-cent precision
+* View cost analytics across your dashboard
+* See cost breakdowns by customer and product
+* Monitor cost trends with dedicated charts
 
-  * Fixed navigation highlighting on mobile
-  * Better handling of expired login codes
-  * Removed unnecessary scrolling
-  * Can't switch plans during trial period (not supported yet)
+Perfect for understanding unit economics and profitability of your usage-based offerings.
 
-  ## Seat Management Updates
+[Read more](/docs/features/cost-insights/introduction)
 
-  * API support for assigning seats programmatically
-  * \$0/seat pricing now allowed for seat-based tiers
-  * Fixed eager loading issues with customer seats
-  * Better webhooks for customer seat events
+## Webhook Management
 
-  ## Invoice Numbering
+### Auto-Disable Failing Webhooks
 
-  Two invoice numbering modes:
+Webhooks that continuously fail (10+ consecutive failures by default) are now automatically disabled to save resources. You can manually re-enable them from the dashboard once the issue is fixed.
 
-  * **Organization-wide** (default) - Sequential across all customers
-  * **Per-customer** - Each customer has independent invoice numbering starting at 1
+### Email Notifications for Webhook Failures
 
-  Useful when you want to hide sales volume from customers.
+When webhooks are automatically disabled due to continuous failures, all organization members receive an email notification with details and steps to re-enable.
 
-  ## System Events
+## Benefit Revocation Grace Period
 
-  New system events automatically created for:
+Configure a grace period for benefit revocation when subscription payments fail. Instead of immediately revoking benefits, you can now give customers time to resolve payment issues:
 
-  * Orders paid
-  * Orders refunded
-  * Customer creation
-  * Customer updates
+* Immediate revocation (default)
+* Grace period matching payment retry window
 
-  These events are available in the events explorer with cost tracking where applicable.
+This applies to both regular benefits and customer seat benefits.
 
-  ## Discount Management
+## Customer Portal Enhancements
 
-  Improved discount code selection with a searchable combobox instead of a dropdown, making it easier to find specific codes.
+### Upcoming Charge Display
 
-  ## Bug Fixes
+Subscription detail pages now show the upcoming charge amount and date, including:
 
-  * Fixed customer meter matching to include external customer IDs
-  * Fixed Indian GST tax validation
-  * Fixed subscription dunning process when payment is deleted
-  * Fixed order confirmation emails for orders without products
-</Update>
+* Trial end dates with first charge amount
+* Next billing cycle charges for active subscriptions
+* Automatic updates when subscriptions change
 
-<Update label="2025-10-24">
-  ## Seat-Based Pricing for One-Time Products
+### Usage & Metering View
 
-  You can now offer seat-based pricing for one-time purchases, not just subscriptions. Customers can select the number of seats during checkout, and you can manage seats for one-time orders through both the dashboard and API.
+Improved the customer usage view:
 
-  This extends our seat management capabilities to all product types, giving you more flexibility in how you price and package your offerings.
+* Respect archived meters - they no longer appear in usage tracking
+* Better empty states for customers with granted credits
+* Create customer meters automatically when meter credits are granted
 
-  ## Ability to Change Subscription Seats
+### Navigation & UX Improvements
 
-  Customers can now change the number of seats on their active subscriptions directly from the Customer Portal. The changes are prorated automatically, making it easy for teams to scale up or down as needed.
+* Fixed navigation highlighting on mobile
+* Better handling of expired login codes
+* Removed unnecessary scrolling
+* Can't switch plans during trial period (not supported yet)
 
-  ## Flexible Subscription Intervals
+## Seat Management Updates
 
-  We've added support for flexible subscription intervals beyond monthly and yearly. You can now create subscriptions with custom billing periods:
+* API support for assigning seats programmatically
+* \$0/seat pricing now allowed for seat-based tiers
+* Fixed eager loading issues with customer seats
+* Better webhooks for customer seat events
 
-  * Daily subscriptions
-  * Weekly subscriptions
-  * Custom intervals (e.g., every 2 weeks, every 3 months)
+## Invoice Numbering
 
-  Configure the interval count when creating or updating subscription products through both the dashboard and API.
+Two invoice numbering modes:
 
-  ## Subscription Creation API
+* **Organization-wide** (default) - Sequential across all customers
+* **Per-customer** - Each customer has independent invoice numbering starting at 1
 
-  We've launched a new API endpoint to create subscriptions programmatically. This enables you to set up subscriptions directly without requiring customers to go through the checkout flow.
+Useful when you want to hide sales volume from customers.
 
-  [Read more](/docs/api-reference/current/subscriptions/create-subscription)
+## System Events
 
-  ## Enhanced Email Confirmations
+New system events automatically created for:
 
-  Order confirmation emails now include:
+* Orders paid
+* Orders refunded
+* Customer creation
+* Customer updates
 
-  * **Invoice PDFs attached** - Invoices are automatically generated and attached to confirmation emails for one-time purchases
-  * **Order details** - Complete breakdown of what was purchased
-  * **Benefits list** - Clear view of all benefits the customer will receive
+These events are available in the events explorer with cost tracking where applicable.
 
-  ## Customer Portal Improvements
+## Discount Management
 
-  ### Seat Management
+Improved discount code selection with a searchable combobox instead of a dropdown, making it easier to find specific codes.
 
-  Customers with seat-based subscriptions can now:
+## Bug Fixes
 
-  * View all active seats
-  * Add or remove seats (with automatic proration)
-  * Manage team members directly from the portal
+* Fixed customer meter matching to include external customer IDs
+* Fixed Indian GST tax validation
+* Fixed subscription dunning process when payment is deleted
+* Fixed order confirmation emails for orders without products
 
-  ### URL Encoding Fix
+**2025-10-24**
 
-  Fixed an issue where email addresses with special characters (like `+` signs in email aliases) weren't properly encoded in customer portal links, causing the wrong email to be pre-filled.
+## Seat-Based Pricing for One-Time Products
 
-  ## Events & Metering
+You can now offer seat-based pricing for one-time purchases, not just subscriptions. Customers can select the number of seats during checkout, and you can manage seats for one-time orders through both the dashboard and API.
 
-  ### Cost Tracking
+This extends our seat management capabilities to all product types, giving you more flexibility in how you price and package your offerings.
 
-  Events can now include cost metadata, enabling you to track costs associated with usage. Costs are displayed throughout the events explorer and analytics.
+## Ability to Change Subscription Seats
 
-  ### Event Explorer Enhancements
+Customers can now change the number of seats on their active subscriptions directly from the Customer Portal. The changes are prorated automatically, making it easy for teams to scale up or down as needed.
 
-  * Metadata filtering - Search and filter events by metadata fields
-  * Customer filtering - Filter events by specific customers
-  * Query search - Full-text search across event data
-  * Improved event cards with better timestamps and cost visualization
+## Flexible Subscription Intervals
 
-  ## Order Export
+We've added support for flexible subscription intervals beyond monthly and yearly. You can now create subscriptions with custom billing periods:
 
-  You can now export orders to CSV directly from the dashboard. Filter by product and the export will respect your current filters, making it easy to analyze sales data.
+* Daily subscriptions
+* Weekly subscriptions
+* Custom intervals (e.g., every 2 weeks, every 3 months)
 
-  ## OAuth2 Flow Improvements
+Configure the interval count when creating or updating subscription products through both the dashboard and API.
 
-  * If no scope is passed in the authorize request, the client's default scope is now used automatically
-  * Improved organization selector UI in the OAuth2 authorization flow
+## Subscription Creation API
 
-  ## Checkout Improvements
+We've launched a new API endpoint to create subscriptions programmatically. This enables you to set up subscriptions directly without requiring customers to go through the checkout flow.
 
-  * Fixed seat selector visibility on mobile devices
-  * Server-side prefilling of checkout link query parameters
-  * Improved discount code validation flow
+[Read more](/docs/api-reference/current/subscriptions/create-subscription)
 
-  ## Statement Descriptor Enhancement
+## Enhanced Email Confirmations
 
-  First payments after a trial period now include "TRIAL OVER" in the statement descriptor, making it clearer to customers why they're being charged.
+Order confirmation emails now include:
 
-  ## Bug Fixes
+* **Invoice PDFs attached** - Invoices are automatically generated and attached to confirmation emails for one-time purchases
+* **Order details** - Complete breakdown of what was purchased
+* **Benefits list** - Clear view of all benefits the customer will receive
 
-  * Fixed customer state API for trialing subscriptions
-  * Fixed broken customer links in events explorer
-  * Fixed discount duration calculation for very long durations (capped at 999 months)
-</Update>
+## Customer Portal Improvements
 
-<Update label="2025-10-17">
-  ## Ability to update subscription to an updated price of the product
+### Seat Management
 
-  Merchants can now [update existing subscriptions](https://polar.sh/docs/api-reference/current/subscriptions/update-subscription#subscriptionupdateproduct) from archived pricing schemes to current ones within the same product.
+Customers with seat-based subscriptions can now:
 
-  * Enables migration from grandfathered pricing to current pricing schemes
-  * Prorations calculated using active subscription prices
-  * In the dashboard, a small badge **Upgrade pricing** will indicate that you can update to the same product, but with the new pricing scheme.
+* View all active seats
+* Add or remove seats (with automatic proration)
+* Manage team members directly from the portal
 
-  <img class="rounded" src="https://mintcdn.com/polar/P14Bx1Nt4rA16sHk/assets/changelog/2025-10-17/update-subscription.png?fit=max&auto=format&n=P14Bx1Nt4rA16sHk&q=85&s=84b0f80f4c5d6c6ede3fb478d93febb9" width="1026" height="1044" data-path="assets/changelog/2025-10-17/update-subscription.png" />
+### URL Encoding Fix
 
-  ## New IP ranges
+Fixed an issue where email addresses with special characters (like `+` signs in email aliases) weren't properly encoded in customer portal links, causing the wrong email to be pre-filled.
 
-  From **October 27th, 2025**, [new IP ranges](https://polar.sh/docs/integrate/webhooks/delivery#ip-allowlist) will be added.
+## Events & Metering
 
-  ## Improved Subscription Cancellation Flow
+### Cost Tracking
 
-  [Benefits](https://polar.sh/docs/features/benefits/introduction) attached to the subscription [are now automatically revoked](https://github.com/polarsource/polar/pull/7271) when the subscription is canceled.
+Events can now include cost metadata, enabling you to track costs associated with usage. Costs are displayed throughout the events explorer and analytics.
 
-  ## Ability to specify External ID
+### Event Explorer Enhancements
 
-  [External ID can now be specified](https://github.com/polarsource/polar/pull/7275) during creation of a customer via the dashboard.
+* Metadata filtering - Search and filter events by metadata fields
+* Customer filtering - Filter events by specific customers
+* Query search - Full-text search across event data
+* Improved event cards with better timestamps and cost visualization
 
-  <img class="border rounded" src="https://mintcdn.com/polar/P14Bx1Nt4rA16sHk/assets/changelog/2025-10-17/create-customer.png?fit=max&auto=format&n=P14Bx1Nt4rA16sHk&q=85&s=4f96d098affca55b7140c26196e16852" width="1034" height="1030" data-path="assets/changelog/2025-10-17/create-customer.png" />
+## Order Export
 
-  ## Ability to set Return URL for Checkouts and Customer Portal
+You can now export orders to CSV directly from the dashboard. Filter by product and the export will respect your current filters, making it easy to analyze sales data.
 
-  A Return URL can now be set while generating a [checkout session](https://polar.sh/docs/api-reference/current/checkouts/create-checkout-session#body-return-url-one-of-0) or a [customer portal session](https://polar.sh/docs/api-reference/current/customer-sessions/create-customer-session#body-one-of-0-return-url-one-of-0). This allows you to preserve the context for the end users who visit either if they wish to go back to the application.
+## OAuth2 Flow Improvements
 
-  ## Ability to search Customers via their External ID
+* If no scope is passed in the authorize request, the client's default scope is now used automatically
+* Improved organization selector UI in the OAuth2 authorization flow
 
-  The [List Customers API](https://polar.sh/docs/api-reference/current/customers/list-customers) now accepts Customer's External ID [in the **query** parameter](https://polar.sh/docs/api-reference/current/customers/list-customers#parameter-one-of-0).
+## Checkout Improvements
 
-  ## Ability to disable automatic customer emails
+* Fixed seat selector visibility on mobile devices
+* Server-side prefilling of checkout link query parameters
+* Improved discount code validation flow
 
-  Via the organization settings, you can now disable the emails we automatically send to customers on certain events. This gives you the ability to own the communications with the customers.
+## Statement Descriptor Enhancement
 
-  <img class="border rounded" src="https://mintcdn.com/polar/P14Bx1Nt4rA16sHk/assets/changelog/2025-10-17/email-settings.png?fit=max&auto=format&n=P14Bx1Nt4rA16sHk&q=85&s=d64d9fd9fa62439c370ca5a39a62a47a" width="1660" height="1522" data-path="assets/changelog/2025-10-17/email-settings.png" />
-</Update>
+First payments after a trial period now include "TRIAL OVER" in the statement descriptor, making it clearer to customers why they're being charged.
 
-<Update label="2025-10-10">
-  ## Launched In-Product Chat Support for Merchants
+## Bug Fixes
 
-  <img src="https://mintcdn.com/polar/BSq8s4sf_HNjO0FK/assets/changelog/2025-10-10/launched-merchant-support.jpg?fit=max&auto=format&n=BSq8s4sf_HNjO0FK&q=85&s=8d424a428d041a57cd35ea2e3128071f" width="4291" height="2632" data-path="assets/changelog/2025-10-10/launched-merchant-support.jpg" />
+* Fixed customer state API for trialing subscriptions
+* Fixed broken customer links in events explorer
+* Fixed discount duration calculation for very long durations (capped at 999 months)
 
-  We're excited to introduce a chat widget to the Polar dashboard, making it easier than ever for merchants to get help directly within the product.
+**2025-10-17**
 
-  ## Improved Checkout Flow for Invalid Discount Code
+## Ability to update subscription to an updated price of the product
 
-  Previously, if you entered an invalid discount code during checkout, you couldn't continue even after removing the code. Now, clearing the discount input lets you proceed smoothly with the checkout process.
+Merchants can now [update existing subscriptions](https://polar.sh/docs/api-reference/current/subscriptions/update-subscription#subscriptionupdateproduct) from archived pricing schemes to current ones within the same product.
 
-  ## Improved Customer Portal Rate Limits
+* Enables migration from grandfathered pricing to current pricing schemes
+* Prorations calculated using active subscription prices
+* In the dashboard, a small badge **Upgrade pricing** will indicate that you can update to the same product, but with the new pricing scheme.
 
-  We've made several improvements to the Customer Portal to handle authentication rate limits more gracefully:
+![](https://mintcdn.com/polar/P14Bx1Nt4rA16sHk/assets/changelog/2025-10-17/update-subscription.png?fit=max\&auto=format\&n=P14Bx1Nt4rA16sHk\&q=85\&s=84b0f80f4c5d6c6ede3fb478d93febb9)
 
-  * The portal now clearly shows 401 and 429 errors on the OTP (one-time password) page.
-  * If you hit a 429 (too many requests), you'll be redirected to a clear `/too-many-requests` page.
-</Update>
+## New IP ranges
 
-<Update label="2025-10-01">
-  ## Launched Subscription Trials
+From **October 27th, 2025**, [new IP ranges](https://polar.sh/docs/integrate/webhooks/delivery#ip-allowlist) will be added.
 
-  You can now offer [trial periods](/docs/docs/features/trials) for new subscriptions! This highly requested feature allows you to let customers experience your product before their first payment is due. Trials can be configured in both the dashboard and API when creating or updating subscription products.
+## Improved Subscription Cancellation Flow
 
-  ## Always display taxes line item in the checkout
+[Benefits](https://polar.sh/docs/features/benefits/introduction) attached to the subscription [are now automatically revoked](https://github.com/polarsource/polar/pull/7271) when the subscription is canceled.
 
-  We've improved our checkout experience to always display taxes (vs lazy loading them on country selection), making charges more transparent for your customers regardless of whether taxes apply to their purchase.
+## Ability to specify External ID
 
-  ## Do not calculate taxes on free or zero-amount orders
+[External ID can now be specified](https://github.com/polarsource/polar/pull/7275) during creation of a customer via the dashboard.
 
-  Orders with a zero amount (such as promotional products) will no longer have taxes calculated, resulting in a clearer and more accurate order summary for your customers.
+![](https://mintcdn.com/polar/P14Bx1Nt4rA16sHk/assets/changelog/2025-10-17/create-customer.png?fit=max\&auto=format\&n=P14Bx1Nt4rA16sHk\&q=85\&s=4f96d098affca55b7140c26196e16852)
 
-  ## Add confirmation modal for deleting discounts
+## Ability to set Return URL for Checkouts and Customer Portal
 
-  When deleting a discount, you'll now see a confirmation modal to help prevent accidental deletions and provide extra clarity on the impact of your actions.
+A Return URL can now be set while generating a [checkout session](https://polar.sh/docs/api-reference/current/checkouts/create-checkout-session#body-return-url-one-of-0) or a [customer portal session](https://polar.sh/docs/api-reference/current/customer-sessions/create-customer-session#body-one-of-0-return-url-one-of-0). This allows you to preserve the context for the end users who visit either if they wish to go back to the application.
 
-  ## Fix infinite rendering loop with date picker
+## Ability to search Customers via their External ID
 
-  Resolved a bug where selecting dates in the date picker could cause an infinite rendering loop, improving reliability for date-related forms.
+The [List Customers API](https://polar.sh/docs/api-reference/current/customers/list-customers) now accepts Customer's External ID [in the **query** parameter](https://polar.sh/docs/api-reference/current/customers/list-customers#parameter-one-of-0).
 
-  ## Require opt-in if you will be charged immediately
+## Ability to disable automatic customer emails
 
-  Users must now explicitly confirm immediate charges or credits when switching subscription intervals, with the UI providing clearer, contextual explanations of invoicing outcomes.
+Via the organization settings, you can now disable the emails we automatically send to customers on certain events. This gives you the ability to own the communications with the customers.
 
-  ## Check for `expires_at` when activating license keys
+![](https://mintcdn.com/polar/P14Bx1Nt4rA16sHk/assets/changelog/2025-10-17/email-settings.png?fit=max\&auto=format\&n=P14Bx1Nt4rA16sHk\&q=85\&s=d64d9fd9fa62439c370ca5a39a62a47a)
 
-  License key activation now correctly checks the `expires_at` date, ensuring that only valid, non-expired license keys can be activated.
+**2025-10-10**
 
-  ## Fix customer state for trialing subscriptions
+## Launched In-Product Chat Support for Merchants
 
-  The [Customer State API](/docs/api-reference/current/customers/get-customer-state) now properly handles customers with `trialing` subscriptions, so your integrations and dashboards always show an accurate subscription status.
-</Update>
+![](https://mintcdn.com/polar/BSq8s4sf_HNjO0FK/assets/changelog/2025-10-10/launched-merchant-support.jpg?fit=max\&auto=format\&n=BSq8s4sf_HNjO0FK\&q=85\&s=8d424a428d041a57cd35ea2e3128071f)
 
-<Update label="2025-09-22">
-  ## Improved preview of next invoice in Customer Portal
+We're excited to introduce a chat widget to the Polar dashboard, making it easier than ever for merchants to get help directly within the product.
 
-  We've enhanced the Customer Portal to provide a clearer and more accurate preview of your next invoice. The overview now updates automatically after subscription changes, and you can preview upcoming charges with all relevant taxes and discounts included.
+## Improved Checkout Flow for Invalid Discount Code
 
-  ## Cancellation metrics
+Previously, if you entered an invalid discount code during checkout, you couldn't continue even after removing the code. Now, clearing the discount input lets you proceed smoothly with the checkout process.
 
-  <img src="https://mintcdn.com/polar/KPDvrxuIefIR_xN_/assets/changelog/2025-09-22/cancellation-metrics-example.png?fit=max&auto=format&n=KPDvrxuIefIR_xN_&q=85&s=03281906e75a2f354a6636e54d226296" width="2490" height="1186" data-path="assets/changelog/2025-09-22/cancellation-metrics-example.png" />
+## Improved Customer Portal Rate Limits
 
-  We've added detailed cancellation metrics, giving you clearer insights into subscription cancellations and their impact on your business performance.
-</Update>
+We've made several improvements to the Customer Portal to handle authentication rate limits more gracefully:
 
-<Update label="2025-09-12">
-  ## Webhooks payload now includes timestamp
+* The portal now clearly shows 401 and 429 errors on the OTP (one-time password) page.
+* If you hit a 429 (too many requests), you'll be redirected to a clear `/too-many-requests` page.
 
-  We've updated our webhooks server implementation to [include a timestamp in each payload](https://github.com/polarsource/polar/pull/6770), in line with the Standard Webhooks specification.
+**2025-10-01**
 
-  This change ensures that every webhook payload contains precise event timing, making it easier to trace and debug webhook deliveries, and to meet integration requirements for external platforms.
-</Update>
+## Launched Subscription Trials
 
-<Update label="2025-09-05">
-  ## Meter management improvements
+You can now offer [trial periods](/docs/docs/features/trials) for new subscriptions! This highly requested feature allows you to let customers experience your product before their first payment is due. Trials can be configured in both the dashboard and API when creating or updating subscription products.
 
-  We've made it easier to manage your meters with new UI functionality for archiving and unarchiving meters directly from the dashboard.
+## Always display taxes line item in the checkout
 
-  You can now archive meters that are no longer needed, which helps keep your meter list organized. Archived meters can be unarchived if you need to use them again. Note that meters cannot be archived if they are still attached to active products or referenced by active benefits.
+We've improved our checkout experience to always display taxes (vs lazy loading them on country selection), making charges more transparent for your customers regardless of whether taxes apply to their purchase.
 
-  ## Metrics accuracy improvements
+## Do not calculate taxes on free or zero-amount orders
 
-  We've improved the accuracy of our metrics by excluding unpaid orders from all calculations. Previously, orders in pending status were included in metrics, which could lead to inflated numbers.
+Orders with a zero amount (such as promotional products) will no longer have taxes calculated, resulting in a clearer and more accurate order summary for your customers.
 
-  Now, only successfully paid and refunded orders are included in metrics calculations, giving you a more accurate view of your actual business performance.
+## Add confirmation modal for deleting discounts
 
-  ## Enhanced customer email branding
+When deleting a discount, you'll now see a confirmation modal to help prevent accidental deletions and provide extra clarity on the impact of your actions.
 
-  We've improved the branding of emails sent to your customers by using organization-specific 'From' and 'Reply-to' addresses.
+## Fix infinite rendering loop with date picker
 
-  Customer emails now appear to come from your organization (e.g., "YourOrg (via Polar)") with replies directed to your organization's email address, providing a more professional and branded experience for your customers.
-</Update>
+Resolved a bug where selecting dates in the date picker could cause an infinite rendering loop, improving reliability for date-related forms.
 
-<Update label="2025-06-12">
-  ## Update subscription discount
+## Require opt-in if you will be charged immediately
 
-  We've added the ability to update the discount on a subscription. This allows you to add, remove, or change the discount applied to a subscription at any time.
+Users must now explicitly confirm immediate charges or credits when switching subscription intervals, with the UI providing clearer, contextual explanations of invoicing outcomes.
 
-  This feature is both available through the [API](/docs/api-reference/current/subscriptions/update-subscription) and the dashboard.
-</Update>
+## Check for `expires_at` when activating license keys
 
-<Update label="2025-06-05">
-  ## Payout Reverse Invoices
+License key activation now correctly checks the `expires_at` date, ensuring that only valid, non-expired license keys can be activated.
 
-  We've added the ability to generate reverse invoices for payouts directly from the Payouts page. This feature allows you to easily create an invoice that details the sales made on your behalf, minus our fees.
+## Fix customer state for trialing subscriptions
 
-  [Read more](/docs/features/finance/payouts#reverse-invoices)
-</Update>
+The [Customer State API](/docs/api-reference/current/customers/get-customer-state) now properly handles customers with `trialing` subscriptions, so your integrations and dashboards always show an accurate subscription status.
 
-<Update label="2025-05-22">
-  ## Business Purchase Option on Checkout
+**2025-09-22**
 
-  We've added a new "I'm purchasing as a business" checkbox to the Checkout flow. When selected, customers are required to provide their business billing name and complete billing address.
-</Update>
+## Improved preview of next invoice in Customer Portal
 
-<Update label="2025-05-19">
-  ## Enhanced Attribution for Checkout Links
+We've enhanced the Customer Portal to provide a clearer and more accurate preview of your next invoice. The overview now updates automatically after subscription changes, and you can preview upcoming charges with all relevant taxes and discounts included.
 
-  We've added support for `reference_id` and UTM parameters (`utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`) as query parameters for Checkout Links. These parameters are automatically stored in the Checkout metadata, allowing you to track the source of your traffic and conversions more effectively.
+## Cancellation metrics
 
-  [Read more](/docs/features/checkout/links#store-attribution-and-reference-metadata)
-</Update>
+![](https://mintcdn.com/polar/KPDvrxuIefIR_xN_/assets/changelog/2025-09-22/cancellation-metrics-example.png?fit=max\&auto=format\&n=KPDvrxuIefIR_xN_\&q=85\&s=03281906e75a2f354a6636e54d226296)
 
-<Update label="2025-05-15">
-  ## Checkouts and payments insights
+We've added detailed cancellation metrics, giving you clearer insights into subscription cancellations and their impact on your business performance.
 
-  We've added a new **Checkouts** tab under the **Sales**, where you can review all the checkout sessions, successful or not. You can filter them by customer email, status, and product. You can also see the payment attempts for each checkout session, including the reason for any failed or declined payments.
+**2025-09-12**
 
-  <img className="block dark:hidden" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/orders/checkout.light.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=4672cafc0b218d34a55c5cc006fdb153" width="3840" height="2403" data-path="assets/features/orders/checkout.light.png" />
+## Webhooks payload now includes timestamp
 
-  <img className="hidden dark:block" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/orders/checkout.dark.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=d8ebc400902b1179700e7348745793e8" width="3840" height="2403" data-path="assets/features/orders/checkout.dark.png" />
+We've updated our webhooks server implementation to [include a timestamp in each payload](https://github.com/polarsource/polar/pull/6770), in line with the Standard Webhooks specification.
 
-  The payment attempts information is also available on each order.
+This change ensures that every webhook payload contains precise event timing, making it easier to trace and debug webhook deliveries, and to meet integration requirements for external platforms.
 
-  Besides, we've also added new analytics around checkouts: total number of checkouts, successful checkouts, and conversion rate.
-</Update>
+**2025-09-05**
 
-<Update label="2025-03-11">
-  ## Zapier integration officially launched
+## Meter management improvements
 
-  We're excited to announce the official launch of our [Zapier integration](https://zapier.com/apps/polar/integrations)! Get started now and connect Polar to 2,000+ other web services.
+We've made it easier to manage your meters with new UI functionality for archiving and unarchiving meters directly from the dashboard.
 
-  <Note>
-    We've focused on **triggers** (webhooks) for now, so you can react to events in Polar and trigger actions in other apps.
+You can now archive meters that are no longer needed, which helps keep your meter list organized. Archived meters can be unarchived if you need to use them again. Note that meters cannot be archived if they are still attached to active products or referenced by active benefits.
 
-    Need to perform actions in Polar? Tell us about your use case [here](https://github.com/orgs/polarsource/discussions/new?category=integrations\&labels=integrations%2Fzapier) and we'll consider adding more actions in the future.
-  </Note>
-</Update>
+## Metrics accuracy improvements
 
-<Update label="2025-03-05">
-  ## Customer State
+We've improved the accuracy of our metrics by excluding unpaid orders from all calculations. Previously, orders in pending status were included in metrics, which could lead to inflated numbers.
 
-  Maybe one of our neatest features to date! Customer State is a concept allowing you to query for the current state of a customer, including their **active subscriptions** and **granted [benefits](/docs/features/benefits/introduction)**, in a single [API call](/docs/api-reference/current/customers/get-customer-state-by-external-id) or single [webhook event](/docs/api-reference/current/customer_state_changed).
+Now, only successfully paid and refunded orders are included in metrics calculations, giving you a more accurate view of your actual business performance.
 
-  Combined with the [External ID](/docs/features/customer-management#external-id) feature, you can get up-and-running in minutes.
+## Enhanced customer email branding
 
-  [Read more](/docs/integrate/customer-state)
-</Update>
+We've improved the branding of emails sent to your customers by using organization-specific 'From' and 'Reply-to' addresses.
 
-<Update label="2025-03-04">
-  ## Better Auth Plugin
+Customer emails now appear to come from your organization (e.g., "YourOrg (via Polar)") with replies directed to your organization's email address, providing a more professional and branded experience for your customers.
 
-  Integrating authentication and billing for your users has never been easier.
+**2025-06-12**
 
-  <img src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/changelog/2025-03-04/better_auth.jpeg?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=41206888e5c593cac95721d75ef3292c" width="3680" height="3668" data-path="assets/changelog/2025-03-04/better_auth.jpeg" />
+## Update subscription discount
 
-  [Better Auth](https://www.better-auth.com/) is an open source authentication framework for
-  TypeScript that is quickly becoming a favorite amongst developers. Today, we're
-  thrilled to have shipped a Polar plugin for Better Auth - in collaboration with them.
+We've added the ability to update the discount on a subscription. This allows you to add, remove, or change the discount applied to a subscription at any time.
 
-  Checkout our [integration guide](/docs/integrate/sdk/adapters/better-auth).
-</Update>
+This feature is both available through the [API](/docs/api-reference/current/subscriptions/update-subscription) and the dashboard.
 
-<Update label="2025-02-27">
-  ## Customer External ID
+**2025-06-05**
 
-  We've added support for an `external_id` field on Customers. We believe this will greatly simplify the reconciliation process between your system and Polar.
+## Payout Reverse Invoices
 
-  Previously, the recommended way to reconcile with your users was to use `metadata`. However, this was not always the most convenient method, especially if you needed to fetch a Customer from our API.
+We've added the ability to generate reverse invoices for payouts directly from the Payouts page. This feature allows you to easily create an invoice that details the sales made on your behalf, minus our fees.
 
-  With `external_id`, you can now fetch a Customer directly by their external ID through dedicated `GET`, `PATCH`, and `DELETE` endpoints. You don't even need to store Polar's internal ID in your system anymore! [Read more](/docs/features/customer-management#external-id)
+[Read more](/docs/features/finance/payouts#reverse-invoices)
 
-  Of course, you can also directly preset `external_customer_id` when creating a Checkout Session, and it will automatically be set on the newly created Customer after a successful checkout. [Read more](/docs/features/checkout/session#external-customer-id)
-</Update>
+**2025-05-22**
 
-<Update label="2025-02-19">
-  ## Polar's take on Product variants
+## Business Purchase Option on Checkout
 
-  We've released big changes to how we handle products and pricing, allowing us to support a unique approach to what the industry typically calls **variants** 🔥
+We've added a new "I'm purchasing as a business" checkbox to the Checkout flow. When selected, customers are required to provide their business billing name and complete billing address.
 
-  We believe having a single product with multiple pricing models and benefits adds unneccessary complexity to the user and to the API. Instead, we chose to treat everything as a product, giving you maximum flexibility about the pricing and benefits you want to offer.
+**2025-05-19**
 
-  Thus, we introduce support for **multiple products** at checkout, allowing customers to switch between them before purchasing. Typically, you can offer a monthly and a yearly product, with specific pricing and benefits for each.
+## Enhanced Attribution for Checkout Links
 
-  {" "}
+We've added support for `reference_id` and UTM parameters (`utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`) as query parameters for Checkout Links. These parameters are automatically stored in the Checkout metadata, allowing you to track the source of your traffic and conversions more effectively.
 
-  <img className="block dark:hidden" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/checkout/session/checkout_multiple_products.light.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=36f88ae4e5e70735484c068f3605b713" width="3840" height="2500" data-path="assets/features/checkout/session/checkout_multiple_products.light.png" />
+[Read more](/docs/features/checkout/links#store-attribution-and-reference-metadata)
 
-  <img className="hidden dark:block" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/checkout/session/checkout_multiple_products.dark.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=82f61a0c8e8108b64d214c223d9a0f67" width="3840" height="2500" data-path="assets/features/checkout/session/checkout_multiple_products.dark.png" />
+**2025-05-15**
 
-  This is available right now using the [Checkout Session API](/docs/features/checkout/session) and [Checkout Links](/docs/features/checkout/links).
+## Checkouts and payments insights
 
-  ### Depreciations
+We've added a new **Checkouts** tab under the **Sales**, where you can review all the checkout sessions, successful or not. You can filter them by customer email, status, and product. You can also see the payment attempts for each checkout session, including the reason for any failed or declined payments.
 
-  * Products can no longer have both a monthly and yearly pricing. Existing products still work, but you'll see a warning like this when trying to edit their pricing:
+![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/orders/checkout.light.png?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=4672cafc0b218d34a55c5cc006fdb153)
 
-  {" "}
+The payment attempts information is also available on each order.
 
-  <Frame>
-    <img className="block dark:hidden h-[200px]" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/changelog/2025-02-19/deprecated_pricing.light.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=49934d3505bcdc38dbeafe43f9a72b58" width="636" height="840" data-path="assets/changelog/2025-02-19/deprecated_pricing.light.png" />
+Besides, we've also added new analytics around checkouts: total number of checkouts, successful checkouts, and conversion rate.
 
-    <img className="hidden dark:block h-[200px]" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/changelog/2025-02-19/deprecated_pricing.dark.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=26006e80ef284cc79eb4bf7a434e166f" width="636" height="840" data-path="assets/changelog/2025-02-19/deprecated_pricing.dark.png" />
-  </Frame>
+**2025-03-11**
 
-  ### API changes
+## Zapier integration officially launched
 
-  * The `product_id` and `product_price_id` fields are deprecated in the [Checkout Session API](/docs/api-reference/current/checkouts/create-checkout-session). You should now use the `products` field to specify the products you want to include in the checkout.
-  * The `type` and `recurring_interval` fields on `ProductPrice` are deprecated. `recurring_interval` is now set directly on `Product`.
-</Update>
+We're excited to announce the official launch of our [Zapier integration](https://zapier.com/apps/polar/integrations)! Get started now and connect Polar to 2,000+ other web services.
+
+> [!NOTE]
+>
+> We've focused on **triggers** (webhooks) for now, so you can react to events in Polar and trigger actions in other apps.
+>
+> Need to perform actions in Polar? Tell us about your use case [here](https://github.com/orgs/polarsource/discussions/new?category=integrations\&labels=integrations%2Fzapier) and we'll consider adding more actions in the future.
+
+**2025-03-05**
+
+## Customer State
+
+Maybe one of our neatest features to date! Customer State is a concept allowing you to query for the current state of a customer, including their **active subscriptions** and **granted [benefits](/docs/features/benefits/introduction)**, in a single [API call](/docs/api-reference/current/customers/get-customer-state-by-external-id) or single [webhook event](/docs/api-reference/current/customer_state_changed).
+
+Combined with the [External ID](/docs/features/customer-management#external-id) feature, you can get up-and-running in minutes.
+
+[Read more](/docs/integrate/customer-state)
+
+**2025-03-04**
+
+## Better Auth Plugin
+
+Integrating authentication and billing for your users has never been easier.
+
+![](https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/changelog/2025-03-04/better_auth.jpeg?fit=max\&auto=format\&n=Ut0vPUvE1pIdMcH2\&q=85\&s=41206888e5c593cac95721d75ef3292c)
+
+[Better Auth](https://www.better-auth.com/) is an open source authentication framework for
+TypeScript that is quickly becoming a favorite amongst developers. Today, we're
+thrilled to have shipped a Polar plugin for Better Auth - in collaboration with them.
+
+Checkout our [integration guide](/docs/integrate/sdk/adapters/better-auth).
+
+**2025-02-27**
+
+## Customer External ID
+
+We've added support for an `external_id` field on Customers. We believe this will greatly simplify the reconciliation process between your system and Polar.
+
+Previously, the recommended way to reconcile with your users was to use `metadata`. However, this was not always the most convenient method, especially if you needed to fetch a Customer from our API.
+
+With `external_id`, you can now fetch a Customer directly by their external ID through dedicated `GET`, `PATCH`, and `DELETE` endpoints. You don't even need to store Polar's internal ID in your system anymore! [Read more](/docs/features/customer-management#external-id)
+
+Of course, you can also directly preset `external_customer_id` when creating a Checkout Session, and it will automatically be set on the newly created Customer after a successful checkout. [Read more](/docs/features/checkout/session#external-customer-id)
+
+**2025-02-19**
+
+## Polar's take on Product variants
+
+We've released big changes to how we handle products and pricing, allowing us to support a unique approach to what the industry typically calls **variants** 🔥
+
+We believe having a single product with multiple pricing models and benefits adds unneccessary complexity to the user and to the API. Instead, we chose to treat everything as a product, giving you maximum flexibility about the pricing and benefits you want to offer.
+
+Thus, we introduce support for **multiple products** at checkout, allowing customers to switch between them before purchasing. Typically, you can offer a monthly and a yearly product, with specific pricing and benefits for each.
+
+&#x20;
+
+![](https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/checkout/session/checkout_multiple_products.light.png?fit=max\&auto=format\&n=Ut0vPUvE1pIdMcH2\&q=85\&s=36f88ae4e5e70735484c068f3605b713)
+
+This is available right now using the [Checkout Session API](/docs/features/checkout/session) and [Checkout Links](/docs/features/checkout/links).
+
+### Depreciations
+
+* Products can no longer have both a monthly and yearly pricing. Existing products still work, but you'll see a warning like this when trying to edit their pricing:
+
+&#x20;
+
+![](https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/changelog/2025-02-19/deprecated_pricing.light.png?fit=max\&auto=format\&n=Ut0vPUvE1pIdMcH2\&q=85\&s=49934d3505bcdc38dbeafe43f9a72b58)
+
+### API changes
+
+* The `product_id` and `product_price_id` fields are deprecated in the [Checkout Session API](/docs/api-reference/current/checkouts/create-checkout-session). You should now use the `products` field to specify the products you want to include in the checkout.
+* The `type` and `recurring_interval` fields on `ProductPrice` are deprecated. `recurring_interval` is now set directly on `Product`.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

@@ -21,13 +21,13 @@ The customer state object contains:
 
 Thus, with that single object, you have all the required information to check if you should provision access to your service or not.
 
-<Card title="Get Customer State by External ID" icon="ring" iconType="duotone" href="/docs/api-reference/current/customers/get-customer-state-by-external-id" horizontal>
-  One endpoint to rule them all, using your own customer ID.
-</Card>
+> **[Get Customer State by External ID](/docs/api-reference/current/customers/get-customer-state-by-external-id)**
+>
+> One endpoint to rule them all, using your own customer ID.
 
-<Card title="Get Customer State " icon="ring" iconType="duotone" href="/docs/api-reference/current/customers/get-customer-state" horizontal>
-  The same one, but with internal Polar customer ID.
-</Card>
+> **[Get Customer State](/docs/api-reference/current/customers/get-customer-state)**
+>
+> The same one, but with internal Polar customer ID.
 
 ## The `customer.state_changed` webhook
 
@@ -39,9 +39,9 @@ To be notified of the customer state changes, you can listen to the `customer.st
 
 By subscribing to this webhook event, you keep your system up-to-date and update your customer's access accordingly.
 
-<Card title="customer.state_changed" icon="ring" iconType="duotone" href="/docs/api-reference/current/customer_state_changed" horizontal>
-  One webhook to rule them all.
-</Card>
+> **[customer.state\_changed](/docs/api-reference/current/customer_state_changed)**
+>
+> One webhook to rule them all.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

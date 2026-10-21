@@ -6,9 +6,7 @@
 
 > Track costs, profits, and customer lifetime value with event-based cost tracking
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/lA614ZvRwurqvmze/assets/features/cost/ingestion.light.png?fit=max&auto=format&n=lA614ZvRwurqvmze&q=85&s=92ccae14e7ee0573454e268f316764f2" width="1306" height="372" data-path="assets/features/cost/ingestion.light.png" />
-
-<img className="hidden dark:block" src="https://mintcdn.com/polar/lA614ZvRwurqvmze/assets/features/cost/ingestion.dark.png?fit=max&auto=format&n=lA614ZvRwurqvmze&q=85&s=76714c2c92a4ddc8959ab178e3e352e3" width="1306" height="368" data-path="assets/features/cost/ingestion.dark.png" />
+![](https://mintcdn.com/polar/lA614ZvRwurqvmze/assets/features/cost/ingestion.light.png?fit=max\&auto=format\&n=lA614ZvRwurqvmze\&q=85\&s=92ccae14e7ee0573454e268f316764f2)
 
 Cost Insights is a powerful feature that enables you to calculate business-centric metrics like Costs, Profits, and Customer Lifetime Value (LTV) by annotating your events with cost data.
 
@@ -52,15 +50,13 @@ Cost Insights works in three simple steps:
 
 ## Documentation
 
-<CardGroup cols={2}>
-  <Card title="Cost Events" icon="chart-line" href="/docs/features/cost-insights/cost-events">
-    Learn how to track costs by adding the `_cost` property to your events metadata
-  </Card>
+> **[Cost Events](/docs/features/cost-insights/cost-events)**
+>
+> Learn how to track costs by adding the `_cost` property to your events metadata
 
-  <Card title="Cost Metrics" icon="chart-bar" href="/docs/features/analytics">
-    Query and analyze costs, profits, and customer lifetime value
-  </Card>
-</CardGroup>
+> **[Cost Metrics](/docs/features/analytics)**
+>
+> Query and analyze costs, profits, and customer lifetime value
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

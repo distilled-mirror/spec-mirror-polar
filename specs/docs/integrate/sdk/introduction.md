@@ -8,15 +8,13 @@
 
 Call the Polar API with full type safety using one of our official SDKs.
 
-<Columns cols={2}>
-  <Card title="TypeScript" icon="js" href="/docs/integrate/sdk/typescript" horizontal>
-    For JavaScript runtimes — Node.js and the browser.
-  </Card>
+> **[TypeScript](/docs/integrate/sdk/typescript)**
+>
+> For JavaScript runtimes — Node.js and the browser.
 
-  <Card title="Python" icon="python" href="/docs/integrate/sdk/python" horizontal>
-    For Django, Flask, and FastAPI applications.
-  </Card>
-</Columns>
+> **[Python](/docs/integrate/sdk/python)**
+>
+> For Django, Flask, and FastAPI applications.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

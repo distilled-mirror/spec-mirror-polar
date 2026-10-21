@@ -109,14 +109,12 @@ We consider MoR a key value-add to Polar, but not the sole reason for Polar to e
 
 ## Frequently Asked Questions
 
-<AccordionGroup>
-  <Accordion title="Why doesn't my accounting software recognize Polar's EU OSS VAT number (EU372061545)?">
-    OSS VAT numbers use the `EU` prefix instead of country-specific prefixes (like `IE` for
-    Ireland). Some accounting software predates the OSS program or lacks support for this format.
-    You can manually enter the number if your software allows overriding validation, or contact your
-    software vendor to request OSS number support.
-  </Accordion>
-</AccordionGroup>
+> **Why doesn't my accounting software recognize Polar's EU OSS VAT number (EU372061545)?**
+>
+> OSS VAT numbers use the `EU` prefix instead of country-specific prefixes (like `IE` for
+> Ireland). Some accounting software predates the OSS program or lacks support for this format.
+> You can manually enter the number if your software allows overriding validation, or contact your
+> software vendor to request OSS number support.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

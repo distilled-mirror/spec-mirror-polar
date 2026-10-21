@@ -14,31 +14,29 @@
 
 Install the required Polar packages using the following command:
 
-<Tabs>
-  <Tab title="npm">
-    ```bash Terminal theme={null}
-    npm install zod @polar-sh/nuxt
-    ```
-  </Tab>
+**npm**
 
-  <Tab title="yarn">
-    ```bash Terminal theme={null}
-    yarn add zod @polar-sh/nuxt
-    ```
-  </Tab>
+```bash Terminal theme={null}
+npm install zod @polar-sh/nuxt
+```
 
-  <Tab title="pnpm">
-    ```bash Terminal theme={null}
-    pnpm add zod @polar-sh/nuxt
-    ```
-  </Tab>
+**yarn**
 
-  <Tab title="bun">
-    ```bash Terminal theme={null}
-    bun add zod @polar-sh/nuxt
-    ```
-  </Tab>
-</Tabs>
+```bash Terminal theme={null}
+yarn add zod @polar-sh/nuxt
+```
+
+**pnpm**
+
+```bash Terminal theme={null}
+pnpm add zod @polar-sh/nuxt
+```
+
+**bun**
+
+```bash Terminal theme={null}
+bun add zod @polar-sh/nuxt
+```
 
 The module requires Nuxt 4 and Node.js 22 or later.
 

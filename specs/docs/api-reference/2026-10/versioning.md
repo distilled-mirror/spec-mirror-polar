@@ -6,16 +6,14 @@
 
 > Learn how Polar API versions are selected, released, deprecated, and upgraded.
 
-export const version_0 = "2026-10"
-
 Polar uses date-based API versions to evolve the API without unexpectedly changing
 the contract your integration depends on. Versions use the `YYYY-MM` format, such
-as {version_0}, and apply to API requests, responses, webhook payloads, and SDK types.
+as 2026-10, and apply to API requests, responses, webhook payloads, and SDK types.
 
-<Warning>
-  Pin a version in every production integration. If you don't, your requests use
-  the Current version, which changes at each quarterly release.
-</Warning>
+> [!WARNING]
+>
+> Pin a version in every production integration. If you don't, your requests use
+> the Current version, which changes at each quarterly release.
 
 ## Choosing a version
 
@@ -117,19 +115,17 @@ The [Python SDK](/docs/integrate/sdk/python) and
 each supported API version. Importing a versioned client automatically sets the
 matching `Polar-Version` header:
 
-<Tabs>
-  <Tab title="Python">
-    ```py theme={null}
-    from polar.v2026_10 import Polar
-    ```
-  </Tab>
+**Python**
 
-  <Tab title="JavaScript">
-    ```ts theme={null}
-    import { createPolar } from "@polar-sh/sdk/2026-10";
-    ```
-  </Tab>
-</Tabs>
+```py theme={null}
+from polar.v2026_10 import Polar
+```
+
+**JavaScript**
+
+```ts theme={null}
+import { createPolar } from "@polar-sh/sdk/2026-10";
+```
 
 The SDK package version and API version are separate. Updating the package can
 deliver fixes without changing your API contract; changing the version in the

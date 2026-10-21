@@ -6,16 +6,16 @@
 
 > Payments and Checkouts made dead simple with Deno
 
-<Warning>
-  **`@polar-sh/deno` is deprecated** and no longer maintained. Integrate with
-  the [TypeScript SDK](/docs/integrate/sdk/typescript) directly instead. The
-  [`polar-integration` skill](https://github.com/polarsource/agent-toolkit/tree/main/skills/polar-integration)
-  can help you migrate:
-
-  ```bash theme={null}
-  npx skills add https://github.com/polarsource/agent-toolkit --skill polar-integration
-  ```
-</Warning>
+> [!WARNING]
+>
+> **`@polar-sh/deno` is deprecated** and no longer maintained. Integrate with
+> the [TypeScript SDK](/docs/integrate/sdk/typescript) directly instead. The
+> [`polar-integration` skill](https://github.com/polarsource/agent-toolkit/tree/main/skills/polar-integration)
+> can help you migrate:
+>
+> ```bash theme={null}
+> npx skills add https://github.com/polarsource/agent-toolkit --skill polar-integration
+> ```
 
 ## Examples
 

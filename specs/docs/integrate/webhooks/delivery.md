@@ -6,9 +6,7 @@
 
 > How to parse, validate and handle webhooks and monitor their deliveries on Polar
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/integrate/webhooks/delivery.light.png?fit=max&auto=format&n=0Af3hN6-oIM4IHT3&q=85&s=1c5f560bcca11607c67cc7f8b467dca4" width="2740" height="1522" data-path="assets/integrate/webhooks/delivery.light.png" />
-
-<img className="hidden dark:block" src="https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/integrate/webhooks/delivery.dark.png?fit=max&auto=format&n=0Af3hN6-oIM4IHT3&q=85&s=4ce4ac52095eb88c9073c4a18099a0bf" width="2672" height="1526" data-path="assets/integrate/webhooks/delivery.dark.png" />
+![](https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/integrate/webhooks/delivery.light.png?fit=max\&auto=format\&n=0Af3hN6-oIM4IHT3\&q=85\&s=1c5f560bcca11607c67cc7f8b467dca4)
 
 Once a webhook endpoint is setup you will have access to the delivery overview
 page. Here you can:
@@ -30,77 +28,75 @@ needs.
 Our TypeScript & Python SDKs come with a built-in helper function to easily
 validate and parse the webhook event - see full examples below.
 
-<CodeGroup>
-  ```typescript icon="square-js" JS (Express) theme={null}
-  import express, { NextFunction, Request, Response } from 'express'
-  import { webhooks } from '@polar-sh/sdk/2026-10'
+```typescript icon="square-js" JS (Express) theme={null}
+import express, { NextFunction, Request, Response } from 'express'
+import { webhooks } from '@polar-sh/sdk/2026-10'
 
-  const app = express()
+const app = express()
 
-  app.post(
-    '/webhook',
-    express.raw({ type: 'application/json' }),
-    async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        const event = await webhooks.validateEvent(
-          req.body,
-          {
-            'webhook-id': req.header('webhook-id') ?? '',
-            'webhook-timestamp': req.header('webhook-timestamp') ?? '',
-            'webhook-signature': req.header('webhook-signature') ?? '',
-          },
-          process.env['POLAR_WEBHOOK_SECRET'] ?? '',
+app.post(
+  '/webhook',
+  express.raw({ type: 'application/json' }),
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const event = await webhooks.validateEvent(
+        req.body,
+        {
+          'webhook-id': req.header('webhook-id') ?? '',
+          'webhook-timestamp': req.header('webhook-timestamp') ?? '',
+          'webhook-signature': req.header('webhook-signature') ?? '',
+        },
+        process.env['POLAR_WEBHOOK_SECRET'] ?? '',
+      )
+
+      // Process the event
+
+      res.status(202).send('')
+    } catch (error) {
+      if (error instanceof webhooks.PolarWebhookVerificationError) {
+        res.status(403).send('')
+        return
+      }
+      if (error instanceof webhooks.PolarWebhookUnknownTypeError) {
+        // Event type added after this SDK version: acknowledge it so Polar doesn't retry
+        res.status(202).send('')
+        return
+      }
+      next(error)
+    }
+  },
+)
+```
+
+```python Python (Flask) theme={null}
+import os
+from flask import Flask, request
+from polar.v2026_10.webhooks import (
+    PolarWebhookUnknownTypeError,
+    PolarWebhookVerificationError,
+    validate_event,
+)
+
+app = Flask(__name__)
+
+@app.route('/webhook', methods=['POST'])
+def webhook():
+    try:
+        event = validate_event(
+            request.get_data(),
+            dict(request.headers),
+            os.getenv('POLAR_WEBHOOK_SECRET', ''),
         )
 
-        // Process the event
+        # Process the event
 
-        res.status(202).send('')
-      } catch (error) {
-        if (error instanceof webhooks.PolarWebhookVerificationError) {
-          res.status(403).send('')
-          return
-        }
-        if (error instanceof webhooks.PolarWebhookUnknownTypeError) {
-          // Event type added after this SDK version: acknowledge it so Polar doesn't retry
-          res.status(202).send('')
-          return
-        }
-        next(error)
-      }
-    },
-  )
-  ```
-
-  ```python Python (Flask) theme={null}
-  import os
-  from flask import Flask, request
-  from polar.v2026_10.webhooks import (
-      PolarWebhookUnknownTypeError,
-      PolarWebhookVerificationError,
-      validate_event,
-  )
-
-  app = Flask(__name__)
-
-  @app.route('/webhook', methods=['POST'])
-  def webhook():
-      try:
-          event = validate_event(
-              request.get_data(),
-              dict(request.headers),
-              os.getenv('POLAR_WEBHOOK_SECRET', ''),
-          )
-
-          # Process the event
-
-          return "", 202
-      except PolarWebhookVerificationError:
-          return "", 403
-      except PolarWebhookUnknownTypeError:
-          # Event type added after this SDK version: acknowledge it so Polar doesn't retry
-          return "", 202
-  ```
-</CodeGroup>
+        return "", 202
+    except PolarWebhookVerificationError:
+        return "", 403
+    except PolarWebhookUnknownTypeError:
+        # Event type added after this SDK version: acknowledge it so Polar doesn't retry
+        return "", 202
+```
 
 Both examples above expect an environment variable named `POLAR_WEBHOOK_SECRET`
 to be set to the secret you configured during the endpoint setup.
@@ -114,58 +110,56 @@ or follow the
 Secrets generated on or after 8 September 2026, 00:00 UTC are Standard Webhooks.
 Older secrets are Polar HMAC.
 
-<Info>
-  **Signing schemes**
-
-  Polar sends one `webhook-signature`. The HMAC key is which secret you have.
-
-  **Before 8 September 2026, 00:00 UTC:** Polar HMAC. Key is the UTF-8 bytes of
-  the full `whsec_…` string. Base64-encode that string before you hand it to a
-  Standard Webhooks library.
-
-  **On or after that instant:** [Standard Webhooks](https://github.com/standard-webhooks/standard-webhooks/blob/main/spec/standard-webhooks.md).
-  Pass the `whsec_…` secret to the library as-is.
-
-  Polar SDKs 1.0.0-alpha.19 and later try both keys. Pass the `whsec_…` secret
-  from the dashboard.
-</Info>
+> [!NOTE]
+>
+> **Signing schemes**
+>
+> Polar sends one `webhook-signature`. The HMAC key is which secret you have.
+>
+> **Before 8 September 2026, 00:00 UTC:** Polar HMAC. Key is the UTF-8 bytes of
+> the full `whsec_…` string. Base64-encode that string before you hand it to a
+> Standard Webhooks library.
+>
+> **On or after that instant:** [Standard Webhooks](https://github.com/standard-webhooks/standard-webhooks/blob/main/spec/standard-webhooks.md).
+> Pass the `whsec_…` secret to the library as-is.
+>
+> Polar SDKs 1.0.0-alpha.19 and later try both keys. Pass the `whsec_…` secret
+> from the dashboard.
 
 ## IP Allowlist
 
 If you are using a firewall or a reverse proxy that requires IP allowlisting, here are the IPs range you need to allow:
 
-<Danger>
-  **New IP address**
+> [!CAUTION]
+>
+> **New IP address**
+>
+> A new IP address will soon start sending production webhooks. Allow it now so
+> deliveries aren't blocked when we start using it:
+>
+> ```
+> 3.134.178.243
+> ```
 
-  A new IP address will soon start sending production webhooks. Allow it now so
-  deliveries aren't blocked when we start using it:
+```txt Production theme={null}
+3.134.238.10
+3.129.111.220
+52.15.118.168
+3.134.178.243
 
-  ```
-  3.134.178.243
-  ```
-</Danger>
+74.220.50.0/24
+74.220.58.0/24
+```
 
-<CodeGroup>
-  ```txt Production theme={null}
-  3.134.238.10
-  3.129.111.220
-  52.15.118.168
-  3.134.178.243
+```txt Sandbox theme={null}
+3.134.238.10
+3.129.111.220
+52.15.118.168
+18.117.215.101
 
-  74.220.50.0/24
-  74.220.58.0/24
-  ```
-
-  ```txt Sandbox theme={null}
-  3.134.238.10
-  3.129.111.220
-  52.15.118.168
-  18.117.215.101
-
-  74.220.50.0/24
-  74.220.58.0/24
-  ```
-</CodeGroup>
+74.220.50.0/24
+74.220.58.0/24
+```
 
 ## Failure Handling
 

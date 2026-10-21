@@ -23,9 +23,7 @@ The trial period consists of two parameters:
 * **A unit**: day, week, month, or year.
 * **A duration**: a number representing how many units the trial will last.
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/6okRukiIx_KDNAFT/assets/features/trials/setup.light.png?fit=max&auto=format&n=6okRukiIx_KDNAFT&q=85&s=808ba964c320447e8bb71612e27687d0" width="738" height="260" data-path="assets/features/trials/setup.light.png" />
-
-<img className="hidden dark:block" src="https://mintcdn.com/polar/6okRukiIx_KDNAFT/assets/features/trials/setup.dark.png?fit=max&auto=format&n=6okRukiIx_KDNAFT&q=85&s=45e513c1055d34cff0569e72750ca83c" width="738" height="260" data-path="assets/features/trials/setup.dark.png" />
+![](https://mintcdn.com/polar/6okRukiIx_KDNAFT/assets/features/trials/setup.light.png?fit=max\&auto=format\&n=6okRukiIx_KDNAFT\&q=85\&s=808ba964c320447e8bb71612e27687d0)
 
 ## Starting a trial
 
@@ -35,9 +33,7 @@ We'll still collect their payment information at checkout, but they won't be cha
 
 Once the trial period ends, the customer will be automatically charged for the subscription, and their billing cycle will begin.
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/6okRukiIx_KDNAFT/assets/features/trials/checkout.light.png?fit=max&auto=format&n=6okRukiIx_KDNAFT&q=85&s=a022daf013c20b48e1fdfd6610214b21" width="1162" height="612" data-path="assets/features/trials/checkout.light.png" />
-
-<img className="hidden dark:block" src="https://mintcdn.com/polar/6okRukiIx_KDNAFT/assets/features/trials/checkout.dark.png?fit=max&auto=format&n=6okRukiIx_KDNAFT&q=85&s=5b41262d9dd3f8513060027341ab72ff" width="1160" height="612" data-path="assets/features/trials/checkout.dark.png" />
+![](https://mintcdn.com/polar/6okRukiIx_KDNAFT/assets/features/trials/checkout.light.png?fit=max\&auto=format\&n=6okRukiIx_KDNAFT\&q=85\&s=a022daf013c20b48e1fdfd6610214b21)
 
 ## Adding, extending or canceling a trial
 
@@ -47,9 +43,7 @@ To add or extend a trial, set a new trial end date in the future. If the subscri
 
 To cancel a trial, click on the **End trial** button. Polar will charge the customer immediately and change the subscription to **active** if payment succeeds.
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/6okRukiIx_KDNAFT/assets/features/trials/update.light.png?fit=max&auto=format&n=6okRukiIx_KDNAFT&q=85&s=e8068c41e9a3eef52df62342a8b24cdb" width="1080" height="800" data-path="assets/features/trials/update.light.png" />
-
-<img className="hidden dark:block" src="https://mintcdn.com/polar/6okRukiIx_KDNAFT/assets/features/trials/update.dark.png?fit=max&auto=format&n=6okRukiIx_KDNAFT&q=85&s=18f6391c5e807fae964668ca29702895" width="1080" height="800" data-path="assets/features/trials/update.dark.png" />
+![](https://mintcdn.com/polar/6okRukiIx_KDNAFT/assets/features/trials/update.light.png?fit=max\&auto=format\&n=6okRukiIx_KDNAFT\&q=85\&s=e8068c41e9a3eef52df62342a8b24cdb)
 
 ## Trial conversion reminders
 

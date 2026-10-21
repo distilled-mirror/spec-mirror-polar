@@ -10,19 +10,17 @@ The Polar CLI brings your Polar organization to your terminal. Use it to receive
 webhooks on your local machine while you build, send realistic sample events to
 your handler, and switch between your sandbox and production organizations.
 
-<CardGroup cols={3}>
-  <Card title="Authentication" icon="key" href="/docs/integrate/cli/authentication">
-    Sign in to sandbox and production, and choose the organization you work on.
-  </Card>
+> **[Authentication](/docs/integrate/cli/authentication)**
+>
+> Sign in to sandbox and production, and choose the organization you work on.
 
-  <Card title="Webhooks" icon="webhook" href="/docs/integrate/cli/webhooks">
-    Receive real webhooks locally and trigger sample events on demand.
-  </Card>
+> **[Webhooks](/docs/integrate/cli/webhooks)**
+>
+> Receive real webhooks locally and trigger sample events on demand.
 
-  <Card title="Command reference" icon="terminal" href="/docs/integrate/cli/reference">
-    Every command, argument and flag.
-  </Card>
-</CardGroup>
+> **[Command reference](/docs/integrate/cli/reference)**
+>
+> Every command, argument and flag.
 
 ## Installation
 

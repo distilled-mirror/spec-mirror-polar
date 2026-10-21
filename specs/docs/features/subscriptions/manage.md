@@ -21,26 +21,24 @@ Switch a subscription to a different recurring product — the standard upgrade 
 * Plan changes on a **trialing** subscription are allowed. The trial carries over with its end recomputed from the new product's trial length (anchored to the original `trial_start`). If the new product has no trial — or its trial would already have elapsed — the trial ends immediately and a fresh billing cycle starts on the new product.
 * Custom-priced products (pay-what-you-want) aren't valid destinations for a plan change.
 
-<CodeGroup>
-  ```bash cURL theme={null}
-  curl --request PATCH \
-    --url https://api.polar.sh/v1/subscriptions/{subscription_id} \
-    --header 'Authorization: Bearer <TOKEN>' \
-    --header 'Content-Type: application/json' \
-    --data '{
-      "product_id": "<new_product_id>",
-      "proration_behavior": "prorate"
-    }'
-  ```
+```bash cURL theme={null}
+curl --request PATCH \
+  --url https://api.polar.sh/v1/subscriptions/{subscription_id} \
+  --header 'Authorization: Bearer <TOKEN>' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "product_id": "<new_product_id>",
+    "proration_behavior": "prorate"
+  }'
+```
 
-  ```py Python theme={null}
-  polar.subscriptions.update(
-      "<subscription_id>",
-      product_id="<new_product_id>",
-      proration_behavior="prorate",
-  )
-  ```
-</CodeGroup>
+```py Python theme={null}
+polar.subscriptions.update(
+    "<subscription_id>",
+    product_id="<new_product_id>",
+    proration_behavior="prorate",
+)
+```
 
 Read more in [Proration](/docs/features/subscriptions/proration).
 
@@ -167,12 +165,12 @@ curl --request PATCH \
 
 You can optionally record a **cancellation reason** and **comment** — useful for tracking churn. The supported reasons are `too_expensive`, `missing_features`, `switched_service`, `unused`, `customer_service`, `low_quality`, `too_complex`, and `other`.
 
-<Note>
-  Only set the cancellation reason and comment when they actually come from
-  the customer (for example, from a cancellation survey or a support
-  conversation). Customers can see their `customer_cancellation_comment` in
-  their purchase history, so don't put internal notes there.
-</Note>
+> [!NOTE]
+>
+> Only set the cancellation reason and comment when they actually come from
+> the customer (for example, from a cancellation survey or a support
+> conversation). Customers can see their `customer_cancellation_comment` in
+> their purchase history, so don't put internal notes there.
 
 ### Revoke immediately
 
@@ -186,10 +184,10 @@ curl --request DELETE \
   --header 'Authorization: Bearer <TOKEN>'
 ```
 
-<Warning>
-  Revoking is irreversible. If you want the option to reverse the decision,
-  cancel at period end instead.
-</Warning>
+> [!WARNING]
+>
+> Revoking is irreversible. If you want the option to reverse the decision,
+> cancel at period end instead.
 
 ### Uncancel
 

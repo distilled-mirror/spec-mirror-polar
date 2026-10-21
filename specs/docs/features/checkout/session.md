@@ -14,17 +14,15 @@ You can retrieve your Product ID from Products in your dashboard, click on "cont
 
 The API will return you an object containing all the information about the session, including **an URL where you should redirect your customer** so they can complete their order.
 
-<Tip>
-  You can force the checkout page theme by appending `?theme=dark` or `?theme=light` to the session URL. Without it, the theme follows the customer's system preference.
-</Tip>
+> [!TIP]
+>
+> You can force the checkout page theme by appending `?theme=dark` or `?theme=light` to the session URL. Without it, the theme follows the customer's system preference.
 
 ## Multiple products
 
 You can create a checkout session with multiple products. This is useful if you want to allow your customers to choose between different products before they checkout. Products are shown in the order you pass them in the `products` array.
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/checkout/session/checkout_multiple_products.light.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=36f88ae4e5e70735484c068f3605b713" width="3840" height="2500" data-path="assets/features/checkout/session/checkout_multiple_products.light.png" />
-
-<img className="hidden dark:block" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/checkout/session/checkout_multiple_products.dark.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=82f61a0c8e8108b64d214c223d9a0f67" width="3840" height="2500" data-path="assets/features/checkout/session/checkout_multiple_products.dark.png" />
+![](https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/checkout/session/checkout_multiple_products.light.png?fit=max\&auto=format\&n=Ut0vPUvE1pIdMcH2\&q=85\&s=36f88ae4e5e70735484c068f3605b713)
 
 ## Ad-hoc prices
 
@@ -39,60 +37,58 @@ This is useful when you need to:
 
 When creating a checkout session, you can pass a `prices` parameter that maps product IDs to an array of price definitions. These prices will be created on-the-fly and associated with the checkout session.
 
-<Note>
-  Ad-hoc prices are marked with `source: "ad_hoc"` in the API response, while catalog prices have `source: "catalog"`. Ad-hoc prices are temporary and specific to the checkout session.
-</Note>
+> [!NOTE]
+>
+> Ad-hoc prices are marked with `source: "ad_hoc"` in the API response, while catalog prices have `source: "catalog"`. Ad-hoc prices are temporary and specific to the checkout session.
 
 ### Example
 
-<CodeGroup>
-  ```ts TypeScript theme={null}
-  import { createPolar } from "@polar-sh/sdk/2026-10";
+```ts TypeScript theme={null}
+import { createPolar } from "@polar-sh/sdk/2026-10";
 
-  const polar = createPolar({
-    accessToken: process.env.POLAR_ACCESS_TOKEN!,
+const polar = createPolar({
+  accessToken: process.env.POLAR_ACCESS_TOKEN!,
+});
+
+async function run() {
+  const checkout = await polar.checkouts.create({
+    products: ["productId"],
+    prices: {
+      "productId": [
+        {
+          amount_type: "fixed",
+          price_amount: 10000, // $100.00
+          price_currency: "usd",
+        }
+      ]
+    }
   });
 
-  async function run() {
-    const checkout = await polar.checkouts.create({
-      products: ["productId"],
-      prices: {
-        "productId": [
-          {
-            amount_type: "fixed",
-            price_amount: 10000, // $100.00
-            price_currency: "usd",
-          }
-        ]
-      }
-    });
+  console.log(checkout.url);
+}
 
-    console.log(checkout.url);
-  }
+run();
+```
 
-  run();
-  ```
+```py Python theme={null}
+from polar.v2026_10 import Polar
 
-  ```py Python theme={null}
-  from polar.v2026_10 import Polar
+with Polar("<YOUR_BEARER_TOKEN_HERE>") as polar:
+    checkout = polar.checkouts.create(
+        products=["<product_id>"],
+        prices={
+            "<product_id>": [
+                {
+                    "amount_type": "fixed",
+                    "price_amount": 10000,  # $100.00
+                    "price_currency": "usd",
+                }
+            ]
+        },
+    )
 
-  with Polar("<YOUR_BEARER_TOKEN_HERE>") as polar:
-      checkout = polar.checkouts.create(
-          products=["<product_id>"],
-          prices={
-              "<product_id>": [
-                  {
-                      "amount_type": "fixed",
-                      "price_amount": 10000,  # $100.00
-                      "price_currency": "usd",
-                  }
-              ]
-          },
-      )
-
-      print(checkout.url)
-  ```
-</CodeGroup>
+    print(checkout.url)
+```
 
 ### Price types
 
@@ -112,9 +108,9 @@ Quite often, you'll have your own users management system in your application, w
 
 After a successful checkout, we'll create a Customer on Polar with the external ID you provided. It'll be provided through the `customer.external_id` property in webhooks you may have configured.
 
-<Note>
-  When `customer_id` or `external_customer_id` is set, the customer's email is pre-filled and the email field is **disabled** on the checkout page. This ensures the order is always linked to the authenticated customer in your system.
-</Note>
+> [!NOTE]
+>
+> When `customer_id` or `external_customer_id` is set, the customer's email is pre-filled and the email field is **disabled** on the checkout page. This ensures the order is always linked to the authenticated customer in your system.
 
 ## Customer IP address
 
@@ -127,72 +123,68 @@ If you use [checkout links](/docs/features/checkout/links), this works automatic
 
 In that case, forward the customer's IP address as `customer_ip_address` in the request body:
 
-<CodeGroup>
-  ```ts TypeScript theme={null}
-  import { createPolar } from "@polar-sh/sdk/2026-10";
+```ts TypeScript theme={null}
+import { createPolar } from "@polar-sh/sdk/2026-10";
 
-  const polar = createPolar({
-    accessToken: process.env.POLAR_ACCESS_TOKEN!,
-  });
+const polar = createPolar({
+  accessToken: process.env.POLAR_ACCESS_TOKEN!,
+});
 
-  const checkout = await polar.checkouts.create({
-    products: ["productId"],
-    customer_ip_address: request.headers.get("CF-Connecting-IP") ?? undefined,
-  });
-  ```
+const checkout = await polar.checkouts.create({
+  products: ["productId"],
+  customer_ip_address: request.headers.get("CF-Connecting-IP") ?? undefined,
+});
+```
 
-  ```py Python theme={null}
-  from polar.v2026_10 import Polar
+```py Python theme={null}
+from polar.v2026_10 import Polar
 
-  with Polar("<YOUR_BEARER_TOKEN_HERE>") as polar:
-      checkout = polar.checkouts.create(
-          products=["<product_id>"],
-          customer_ip_address=request.headers.get("True-Client-IP") or request.client.host,
-      )
-  ```
-</CodeGroup>
+with Polar("<YOUR_BEARER_TOKEN_HERE>") as polar:
+    checkout = polar.checkouts.create(
+        products=["<product_id>"],
+        customer_ip_address=request.headers.get("True-Client-IP") or request.client.host,
+    )
+```
 
 The exact way to read the connecting IP depends on your runtime — for example, `CF-Connecting-IP` on Cloudflare Workers, `x-forwarded-for` behind most proxies, or `True-Client-IP`/`request.client.host` in FastAPI.
 
-<Note>
-  When `customer_ip_address` is provided, you don't need to set `customer_billing_address.country` yourself — Polar will derive both the country and the currency from the IP.
-</Note>
+> [!NOTE]
+>
+> When `customer_ip_address` is provided, you don't need to set `customer_billing_address.country` yourself — Polar will derive both the country and the currency from the IP.
 
 ## SDK examples
 
 Using our SDK, creating a checkout session is quite straightforward.
 
-<CodeGroup>
-  ```ts TypeScript theme={null}
-  import { createPolar } from "@polar-sh/sdk/2026-10";
+```ts TypeScript theme={null}
+import { createPolar } from "@polar-sh/sdk/2026-10";
 
-  const polar = createPolar({
-    accessToken: process.env.POLAR_ACCESS_TOKEN!,
+const polar = createPolar({
+  accessToken: process.env.POLAR_ACCESS_TOKEN!,
+});
+
+async function run() {
+  const checkout = await polar.checkouts.create({
+    products: ["productId"]
   });
 
-  async function run() {
-    const checkout = await polar.checkouts.create({
-      products: ["productId"]
-    });
+  console.log(checkout.url)
+}
 
-    console.log(checkout.url)
-  }
+run();
+```
 
-  run();
-  ```
+```py Python theme={null}
+from polar.v2026_10 import Polar
 
-  ```py Python theme={null}
-  from polar.v2026_10 import Polar
+with Polar("<YOUR_BEARER_TOKEN_HERE>") as polar:
+    checkout = polar.checkouts.create(
+        allow_discount_codes=True,
+        products=["<product_id>"],
+    )
 
-  with Polar("<YOUR_BEARER_TOKEN_HERE>") as polar:
-      checkout = polar.checkouts.create(
-          allow_discount_codes=True,
-          products=["<product_id>"],
-      )
-
-      print(checkout.url)
-  ```
-</CodeGroup>
+    print(checkout.url)
+```
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

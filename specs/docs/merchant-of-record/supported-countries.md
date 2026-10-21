@@ -14,13 +14,13 @@ As your Merchant of Record (MoR) we take on the [liability for international sal
 
 Polar uses Stripe Connect Express to issue payouts to residents or businesses in any of the countries below. See [Payout Accounts](/docs/features/finance/accounts) for how to connect one.
 
-<Note>
-  **FAQ: Stripe isn't available in my country. Can I still use Polar?**
-
-  As the Merchant of Record, Polar takes care of charging customers, so Stripe Payments doesn't need to be available in your country. All you need is to be in a country supported by Stripe Connect Express to receive payouts.
-
-  Stripe Connect Express country coverage is much broader, and includes everywhere listed below.
-</Note>
+> [!NOTE]
+>
+> **FAQ: Stripe isn't available in my country. Can I still use Polar?**
+>
+> As the Merchant of Record, Polar takes care of charging customers, so Stripe Payments doesn't need to be available in your country. All you need is to be in a country supported by Stripe Connect Express to receive payouts.
+>
+> Stripe Connect Express country coverage is much broader, and includes everywhere listed below.
 
 * 🇦🇱 Albania
 * 🇩🇿 Algeria
@@ -144,30 +144,28 @@ Polar uses Stripe Connect Express to issue payouts to residents or businesses in
 
 ## Frequently Asked Questions
 
-<AccordionGroup>
-  <Accordion title="Can I use Polar in countries (e.g. India) where Stripe is invite-only?">
-    <Note>Stripe Connect Express is a different product than the regular Stripe payments.</Note>
-    Yes, any individual or company operating in our [supported countries](/docs/merchant-of-record/supported-countries) can receive payouts from Polar even if Stripe standalone is invite-only there.
+> **Can I use Polar in countries (e.g. India) where Stripe is invite-only?**
+>
+> \[!NOTE] Stripe Connect Express is a different product than the regular Stripe payments.
+> Yes, any individual or company operating in our [supported countries](/docs/merchant-of-record/supported-countries) can receive payouts from Polar even if Stripe standalone is invite-only there.
+>
+> This is possible as Polar is the Merchant of Record, all payments from customers are made to Polar (US). [Stripe Connect Express](https://docs.stripe.com/connect/express-accounts) is then used to issue payouts, and is supported in more countries via cross-border transfer than Stripe Payments standalone.
+>
+> You might still see a warning in Stripe Connect Express that payments are invite-only, but don't worry. No direct sales are made directly to the Stripe Connect Express account. They're all made to Polar (US) as a platform and the merchant of record. We only use the transfer and payout feature of Stripe Connect Express which is available in all of our [supported countries](/docs/merchant-of-record/supported-countries).
 
-    This is possible as Polar is the Merchant of Record, all payments from customers are made to Polar (US). [Stripe Connect Express](https://docs.stripe.com/connect/express-accounts) is then used to issue payouts, and is supported in more countries via cross-border transfer than Stripe Payments standalone.
-
-    You might still see a warning in Stripe Connect Express that payments are invite-only, but don't worry. No direct sales are made directly to the Stripe Connect Express account. They're all made to Polar (US) as a platform and the merchant of record. We only use the transfer and payout feature of Stripe Connect Express which is available in all of our [supported countries](/docs/merchant-of-record/supported-countries).
-  </Accordion>
-
-  <Accordion title="Can I use Polar as an individual to make sales globally?">
-    Yes, given that Stripe Connect Express supports individual as a business type in your region.
-
-    To know which business type is supported in your country, follow steps as below:
-
-    * Open required [verification information](https://docs.stripe.com/connect/required-verification-information#US+RS+express+recipient+individual+transfers) by Stripe to set up a business or personal account in your country.
-    * Ensure `Platform Country` is set to `United States (US)`.
-    * Ensure `Dashboard Type` is set to `express`.
-    * Ensure `Service Agreement` is set to `recipient`.
-    * Ensure `Capability` is set to `transfers`.
-    * Select the correct `Account Country` relevant to you.
-    * Click on the toggle for `Business Type` which will allow you know if individual, business, company or LLC/LLP is supported by Stripe Connect Express in that region.
-  </Accordion>
-</AccordionGroup>
+> **Can I use Polar as an individual to make sales globally?**
+>
+> Yes, given that Stripe Connect Express supports individual as a business type in your region.
+>
+> To know which business type is supported in your country, follow steps as below:
+>
+> * Open required [verification information](https://docs.stripe.com/connect/required-verification-information#US+RS+express+recipient+individual+transfers) by Stripe to set up a business or personal account in your country.
+> * Ensure `Platform Country` is set to `United States (US)`.
+> * Ensure `Dashboard Type` is set to `express`.
+> * Ensure `Service Agreement` is set to `recipient`.
+> * Ensure `Capability` is set to `transfers`.
+> * Select the correct `Account Country` relevant to you.
+> * Click on the toggle for `Business Type` which will allow you know if individual, business, company or LLC/LLP is supported by Stripe Connect Express in that region.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

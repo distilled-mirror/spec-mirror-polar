@@ -18,12 +18,12 @@ There are three options available:
 | **Inclusive** | The price shown to the customer already includes tax. Tax is extracted from the total at checkout. |
 | **Exclusive** | The price shown to the customer is before tax. Tax is calculated and added on top at checkout. |
 
-<Info>
-  **Location-based** is the recommended option for most businesses. It follows
-  common regional conventions — customers in the United States, Canada, and
-  India see exclusive pricing, while customers in the rest of the world (e.g.
-  EU, UK) see inclusive pricing.
-</Info>
+> [!NOTE]
+>
+> **Location-based** is the recommended option for most businesses. It follows
+> common regional conventions — customers in the United States, Canada, and
+> India see exclusive pricing, while customers in the rest of the world (e.g.
+> EU, UK) see inclusive pricing.
 
 ### How it affects checkout
 
@@ -43,9 +43,7 @@ To change it:
 3. Choose **Location-based**, **Inclusive**, or **Exclusive**.
 4. The setting is saved automatically.
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/iBNAahIQ3TXjbcn9/assets/features/tax-inclusive-pricing/settings.light.png?fit=max&auto=format&n=iBNAahIQ3TXjbcn9&q=85&s=d453dd296f4ab0aff85a2ba48403fcab" width="1080" height="478" data-path="assets/features/tax-inclusive-pricing/settings.light.png" />
-
-<img className="hidden dark:block" src="https://mintcdn.com/polar/iBNAahIQ3TXjbcn9/assets/features/tax-inclusive-pricing/settings.dark.png?fit=max&auto=format&n=iBNAahIQ3TXjbcn9&q=85&s=93ef4ec0d7e07a210a63d2df35472bf2" width="1080" height="478" data-path="assets/features/tax-inclusive-pricing/settings.dark.png" />
+![](https://mintcdn.com/polar/iBNAahIQ3TXjbcn9/assets/features/tax-inclusive-pricing/settings.light.png?fit=max\&auto=format\&n=iBNAahIQ3TXjbcn9\&q=85\&s=d453dd296f4ab0aff85a2ba48403fcab)
 
 ## Location-based Behavior in Detail
 
@@ -69,11 +67,11 @@ Regardless of the tax behavior chosen, Polar always:
 * Issues a compliant receipt that itemizes the tax amount.
 * Remits the collected tax to the appropriate tax authorities.
 
-<Info>
-  Changing the tax behavior on a price does **not** change the effective tax
-  rate or your tax obligations. It only changes whether the stated price is
-  presented as tax-included or tax-excluded to the customer.
-</Info>
+> [!NOTE]
+>
+> Changing the tax behavior on a price does **not** change the effective tax
+> rate or your tax obligations. It only changes whether the stated price is
+> presented as tax-included or tax-excluded to the customer.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

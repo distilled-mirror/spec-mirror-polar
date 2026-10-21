@@ -10,89 +10,84 @@
 
 ### Checkout
 
-<Columns cols={2}>
-  <Card title="checkout.created" icon="link" href="/docs/api-reference/current/checkout_created" horizontal />
+> **[checkout.created](/docs/api-reference/current/checkout_created)**
 
-  <Card title="checkout.updated" icon="link" href="/docs/api-reference/current/checkout_updated" horizontal />
+> **[checkout.updated](/docs/api-reference/current/checkout_updated)**
 
-  <Card title="checkout.expired" icon="link" href="/docs/api-reference/current/checkout_expired" horizontal>
-    Fired when a checkout link has expired without being completed.
-  </Card>
-</Columns>
+> **[checkout.expired](/docs/api-reference/current/checkout_expired)**
+>
+> Fired when a checkout link has expired without being completed.
 
 ### Customers
 
-<Columns cols={2}>
-  <Card title="customer.created" icon="link" href="/docs/api-reference/current/customer_created" horizontal>
-    Fired when a new customer has been created.
-  </Card>
+> **[customer.created](/docs/api-reference/current/customer_created)**
+>
+> Fired when a new customer has been created.
 
-  <Card title="customer.updated" icon="link" href="/docs/api-reference/current/customer_updated" horizontal>
-    Fired when a customer has been updated.
-  </Card>
+> **[customer.updated](/docs/api-reference/current/customer_updated)**
+>
+> Fired when a customer has been updated.
 
-  <Card title="customer.deleted" icon="link" href="/docs/api-reference/current/customer_deleted" horizontal>
-    Fired when a customer has been deleted.
-  </Card>
+> **[customer.deleted](/docs/api-reference/current/customer_deleted)**
+>
+> Fired when a customer has been deleted.
 
-  <Card title="customer.state_changed" icon="link" href="/docs/api-reference/current/customer_state_changed" horizontal>
-    Fired when a customer's state has changed. Includes active subscriptions and
-    granted benefits.
-  </Card>
-</Columns>
+> **[customer.state\_changed](/docs/api-reference/current/customer_state_changed)**
+>
+> Fired when a customer's state has changed. Includes active subscriptions and
+> granted benefits.
 
 ### Subscriptions
 
 In order to properly implement logic for handling subscriptions, you should look into the following events.
 
-<Columns cols={2}>
-  <Card title="subscription.created" icon="link" href="/docs/api-reference/current/subscription_created" horizontal>
-    Fired when a new subscription has been created.
-  </Card>
+> **[subscription.created](/docs/api-reference/current/subscription_created)**
+>
+> Fired when a new subscription has been created.
 
-  <Card title="subscription.active" icon="link" href="/docs/api-reference/current/subscription_active" horizontal />
+> **[subscription.active](/docs/api-reference/current/subscription_active)**
 
-  <Card title="subscription.uncanceled" icon="link" href="/docs/api-reference/current/subscription_uncanceled" horizontal />
+> **[subscription.uncanceled](/docs/api-reference/current/subscription_uncanceled)**
 
-  <Card title="subscription.cycled" icon="link" href="/docs/api-reference/current/subscription_cycled" horizontal>
-    Fired when a subscription enters a new billing period, before the renewal order exists and whether or not the payment succeeds.
-  </Card>
+> **[subscription.cycled](/docs/api-reference/current/subscription_cycled)**
+>
+> Fired when a subscription enters a new billing period, before the renewal order exists and whether or not the payment succeeds.
 
-  <Card title="subscription.canceled" icon="link" href="/docs/api-reference/current/subscription_canceled" horizontal />
+> **[subscription.canceled](/docs/api-reference/current/subscription_canceled)**
 
-  <Card title="subscription.past_due" icon="link" href="/docs/api-reference/current/subscription_past_due" horizontal>
-    Fired when a subscription payment has failed. The customer can recover by updating their payment method.
-  </Card>
+> **[subscription.past\_due](/docs/api-reference/current/subscription_past_due)**
+>
+> Fired when a subscription payment has failed. The customer can recover by updating their payment method.
 
-  <Card title="subscription.updated" icon="link" href="/docs/api-reference/current/subscription_updated" horizontal>
-    Use this event if you want to handle cancellations, un-cancellations, etc. The
-    updated event is a catch-all event for `subscription.active`,
-    `subscription.canceled`, `subscription.uncanceled`, `subscription.cycled`,
-    `subscription.past_due`, `subscription.revoked`, `subscription.paused`,
-    `subscription.resumed` and `subscription.migrated`.
-  </Card>
+> **[subscription.updated](/docs/api-reference/current/subscription_updated)**
+>
+> Use this event if you want to handle cancellations, un-cancellations, etc. The
+> updated event is a catch-all event for `subscription.active`,
+> `subscription.canceled`, `subscription.uncanceled`, `subscription.cycled`,
+> `subscription.past_due`, `subscription.revoked`, `subscription.paused`,
+> `subscription.resumed` and `subscription.migrated`.
 
-  <Card title="order.created" icon="link" href="/docs/api-reference/current/order_created" horizontal>
-    Carries a `billing_reason` field, which can be `purchase`,
-    `subscription_create`, `subscription_cycle` and `subscription_update`. To act
-    on a renewal, listen to `subscription.cycled` instead: it fires whether or not
-    the renewal payment succeeds.
-  </Card>
+> **[order.created](/docs/api-reference/current/order_created)**
+>
+> Carries a `billing_reason` field, which can be `purchase`,
+> `subscription_create`, `subscription_cycle`, `subscription_update` and
+> `subscription_meter_cycle`. To act
+> on a renewal, listen to `subscription.cycled` instead: it fires whether or not
+> the renewal payment succeeds.
 
-  <Card title="subscription.revoked" icon="link" href="/docs/api-reference/current/subscription_revoked" horizontal />
+> **[subscription.revoked](/docs/api-reference/current/subscription_revoked)**
 
-  <Card title="subscription.paused" icon="link" href="/docs/api-reference/current/subscription_paused" horizontal>
-    Fired when a scheduled pause takes effect at the end of the period. Billing stops and benefits are revoked until the subscription resumes.
-  </Card>
+> **[subscription.paused](/docs/api-reference/current/subscription_paused)**
+>
+> Fired when a scheduled pause takes effect at the end of the period. Billing stops and benefits are revoked until the subscription resumes.
 
-  <Card title="subscription.resumed" icon="link" href="/docs/api-reference/current/subscription_resumed" horizontal>
-    Fired when a paused subscription resumes. A new billing period starts and the customer is charged immediately.
-  </Card>
+> **[subscription.resumed](/docs/api-reference/current/subscription_resumed)**
+>
+> Fired when a paused subscription resumes. A new billing period starts and the customer is charged immediately.
 
-  <Card title="subscription.migrated" icon="link" href="/docs/api-reference/current/subscription_migrated" horizontal>
-    Fired when Polar takes over billing of a subscription migrated from another provider. Includes `provider` and `provider_subscription_id` so you can correlate the two. Does not send `subscription.created` or `subscription.active`.
-  </Card>
-</Columns>
+> **[subscription.migrated](/docs/api-reference/current/subscription_migrated)**
+>
+> Fired when Polar takes over billing of a subscription migrated from another provider. Includes `provider` and `provider_subscription_id` so you can correlate the two. Does not send `subscription.created` or `subscription.active`.
 
 #### Cancellation Sequences
 
@@ -194,67 +189,53 @@ Polar enqueues `subscription.updated` before `subscription.migrated`, but delive
 
 ### Orders
 
-<Columns cols={2}>
-  <Card title="order.created" icon="link" href="/docs/api-reference/current/order_created" horizontal />
+> **[order.created](/docs/api-reference/current/order_created)**
 
-  <Card title="order.paid" icon="link" href="/docs/api-reference/current/order_paid" horizontal />
+> **[order.paid](/docs/api-reference/current/order_paid)**
 
-  <Card title="order.updated" icon="link" href="/docs/api-reference/current/order_updated" horizontal />
+> **[order.updated](/docs/api-reference/current/order_updated)**
 
-  <Card title="order.refunded" icon="link" href="/docs/api-reference/current/order_refunded" horizontal />
-</Columns>
+> **[order.refunded](/docs/api-reference/current/order_refunded)**
 
 ### Refunds
 
-<Columns cols={2}>
-  <Card title="refund.created" icon="link" href="/docs/api-reference/current/refund_created" horizontal />
+> **[refund.created](/docs/api-reference/current/refund_created)**
 
-  <Card title="refund.updated" icon="link" href="/docs/api-reference/current/refund_updated" horizontal />
-</Columns>
+> **[refund.updated](/docs/api-reference/current/refund_updated)**
 
 ### Benefit Grants
 
-<Columns cols={2}>
-  <Card title="benefit_grant.created" icon="link" href="/docs/api-reference/current/benefit_grant_created" horizontal />
+> **[benefit\_grant.created](/docs/api-reference/current/benefit_grant_created)**
 
-  <Card title="benefit_grant.updated" icon="link" href="/docs/api-reference/current/benefit_grant_updated" horizontal />
+> **[benefit\_grant.updated](/docs/api-reference/current/benefit_grant_updated)**
 
-  <Card title="benefit_grant.revoked" icon="link" href="/docs/api-reference/current/benefit_grant_revoked" horizontal />
-</Columns>
+> **[benefit\_grant.revoked](/docs/api-reference/current/benefit_grant_revoked)**
 
 ## Organization Events
 
 ### Benefits
 
-<Columns cols={2}>
-  <Card title="benefit.created" icon="link" href="/docs/api-reference/current/benefit_created" horizontal />
+> **[benefit.created](/docs/api-reference/current/benefit_created)**
 
-  <Card title="benefit.updated" icon="link" href="/docs/api-reference/current/benefit_updated" horizontal />
-</Columns>
+> **[benefit.updated](/docs/api-reference/current/benefit_updated)**
 
 ### Products
 
-<Columns cols={2}>
-  <Card title="product.created" icon="link" href="/docs/api-reference/current/product_created" horizontal />
+> **[product.created](/docs/api-reference/current/product_created)**
 
-  <Card title="product.updated" icon="link" href="/docs/api-reference/current/product_updated" horizontal />
-</Columns>
+> **[product.updated](/docs/api-reference/current/product_updated)**
 
 ### Discounts
 
-<Columns cols={2}>
-  <Card title="discount.created" icon="link" href="/docs/api-reference/current/discount_created" horizontal />
+> **[discount.created](/docs/api-reference/current/discount_created)**
 
-  <Card title="discount.updated" icon="link" href="/docs/api-reference/current/discount_updated" horizontal />
+> **[discount.updated](/docs/api-reference/current/discount_updated)**
 
-  <Card title="discount.deleted" icon="link" href="/docs/api-reference/current/discount_deleted" horizontal />
-</Columns>
+> **[discount.deleted](/docs/api-reference/current/discount_deleted)**
 
 ### Organization
 
-<Columns cols={2}>
-  <Card title="organization.updated" icon="link" href="/docs/api-reference/current/organization_updated" horizontal />
-</Columns>
+> **[organization.updated](/docs/api-reference/current/organization_updated)**
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

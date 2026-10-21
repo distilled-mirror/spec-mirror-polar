@@ -6,30 +6,22 @@
 
 > Official SDK quickstarts, base URLs, authentication, pagination, rate limits, and API concepts
 
-export const version_0 = "2026-04"
+> **Production Base URL**
+>
+> `https://api.polar.sh/v1`
 
-<CardGroup cols={2}>
-  <Card title="Production Base URL" icon="globe">
-    `https://api.polar.sh/v1`
-  </Card>
+> **Sandbox Base URL**
+>
+> `https://sandbox-api.polar.sh/v1`
 
-  <Card title="Sandbox Base URL" icon="flask">
-    `https://sandbox-api.polar.sh/v1`
-  </Card>
+> **[Auth (Organization)](/docs/integrate/oat)**
+>
+> Use an **Organization Access Token (OAT)** in the `Authorization: Bearer`
+> header
 
-  <Card title="Auth (Organization)" icon="key" href="/docs/integrate/oat">
-    Use an **Organization Access Token (OAT)** in the `Authorization: Bearer`
-    header
-  </Card>
-
-  {<Card
-      title="Auth (Customer Portal)"
-      icon="user-lock"
-      href={`/api-reference/${version_0}/customer-sessions/create-customer-session`}
-    >
-      Use a <strong>Customer Access Token</strong> created via <code>/v1/customer-sessions/</code>
-    </Card>}
-</CardGroup>
+> **[Auth (Customer Portal)](/docs/api-reference/2026-04/customer-sessions/create-customer-session)**
+>
+> Use a **Customer Access Token** created via `/v1/customer-sessions/`
 
 ## Official SDKs
 
@@ -37,47 +29,43 @@ Use our new, fully typed SDKs to integrate with the Polar API from TypeScript or
 
 Create an [organization access token](/docs/integrate/oat), then install the SDK and make your first request:
 
-<Tabs>
-  <Tab title="TypeScript">
-    ```bash npm theme={null}
-    npm install @polar-sh/sdk
-    ```
+**TypeScript**
 
-    ```typescript app.ts theme={null}
-    import { createPolar } from "@polar-sh/sdk/2026-04";
+```bash npm theme={null}
+npm install @polar-sh/sdk
+```
 
-    const polar = createPolar({
-      accessToken: process.env.POLAR_ACCESS_TOKEN!,
-    });
+```typescript app.ts theme={null}
+import { createPolar } from "@polar-sh/sdk/2026-04";
 
-    const customerState = await polar.customers.getStateExternal("customer_external_id");
-    console.log(customerState);
-    ```
-  </Tab>
+const polar = createPolar({
+  accessToken: process.env.POLAR_ACCESS_TOKEN!,
+});
 
-  <Tab title="Python">
-    <CodeGroup>
-      ```bash uv theme={null}
-      uv add polar-sdk
-      ```
+const customerState = await polar.customers.getStateExternal("customer_external_id");
+console.log(customerState);
+```
 
-      ```bash pip theme={null}
-      pip install polar-sdk
-      ```
-    </CodeGroup>
+**Python**
 
-    ```python main.py theme={null}
-    import os
+```bash uv theme={null}
+uv add polar-sdk
+```
 
-    from polar.v2026_04 import Polar
+```bash pip theme={null}
+pip install polar-sdk
+```
 
-    polar = Polar(os.environ["POLAR_ACCESS_TOKEN"])
+```python main.py theme={null}
+import os
 
-    customer_state = polar.customers.get_state_external("customer_external_id")
-    print(customer_state)
-    ```
-  </Tab>
-</Tabs>
+from polar.v2026_04 import Polar
+
+polar = Polar(os.environ["POLAR_ACCESS_TOKEN"])
+
+customer_state = polar.customers.get_state_external("customer_external_id")
+print(customer_state)
+```
 
 Both clients use production by default. Pass `environment="sandbox"` in Python or `environment: "sandbox"` in TypeScript to use the [sandbox environment](/docs/integrate/sandbox).
 
@@ -88,11 +76,11 @@ Both clients use production by default. Pass `environment="sandbox"` in Python o
 | Production | `https://api.polar.sh/v1` | Real customers & live payments |
 | Sandbox | `https://sandbox-api.polar.sh/v1` | Safe testing & integration work |
 
-<Info>
-  The sandbox environment is fully isolated—data, users, tokens, and
-  organizations created there do not affect production. Create separate tokens
-  in each environment.
-</Info>
+> [!NOTE]
+>
+> The sandbox environment is fully isolated—data, users, tokens, and
+> organizations created there do not affect production. Create separate tokens
+> in each environment.
 
 Read more: [Sandbox Environment](/docs/integrate/sandbox)
 
@@ -106,19 +94,19 @@ Use an **OAT** to act on behalf of your organization (manage products, prices, c
 Authorization: Bearer polar_oat_xxxxxxxxxxxxxxxxx
 ```
 
-<Tip>
-  Create OATs in your organization settings. See: [Organization Access
-  Tokens](/docs/integrate/oat)
-</Tip>
+> [!TIP]
+>
+> Create OATs in your organization settings. See: [Organization Access
+> Tokens](/docs/integrate/oat)
 
-<Warning>
-  Never expose an OAT in client-side code, public repos, or logs. If leaked, it
-  will be revoked automatically by our secret scanning integrations.
-</Warning>
+> [!WARNING]
+>
+> Never expose an OAT in client-side code, public repos, or logs. If leaked, it
+> will be revoked automatically by our secret scanning integrations.
 
 ### Customer Access Tokens
 
-Do **not** use OATs in the browser. For customer-facing flows, {<a href={`/api-reference/${version_0}/customer-sessions/create-customer-session`}>generate a **Customer Session**</a>} server-side, then use the returned **customer access token** with the **Customer Portal API** to let a signed-in customer view their own orders, subscriptions, and benefits.
+Do **not** use OATs in the browser. For customer-facing flows, [generate a **Customer Session**](/docs/api-reference/2026-04/customer-sessions/create-customer-session) server-side, then use the returned **customer access token** with the **Customer Portal API** to let a signed-in customer view their own orders, subscriptions, and benefits.
 
 ## Core API vs Customer Portal API
 
@@ -131,33 +119,31 @@ Do **not** use OATs in the browser. For customer-facing flows, {<a href={`/api-r
 | Token Creation | Via dashboard (manual) | Via `/v1/customer-sessions/` (server-side) |
 | Sensitive Operations | Yes (create/update products, issue refunds, etc.) | No (read/update only what the customer owns) |
 
-<Note>
-  The Customer Portal API is a *restricted* surface designed for safe exposure
-  in user-facing contexts (after exchanging a session). It cannot perform
-  privileged org-level mutations like creating products or issuing refunds.
-</Note>
+> [!NOTE]
+>
+> The Customer Portal API is a *restricted* surface designed for safe exposure
+> in user-facing contexts (after exchanging a session). It cannot perform
+> privileged org-level mutations like creating products or issuing refunds.
 
 ## Quick Examples
 
-<CodeGroup>
-  ```bash curl (Production - Core API) theme={null}
-  curl https://api.polar.sh/v1/products/ \
-    -H "Authorization: Bearer $POLAR_OAT" \
-    -H "Accept: application/json"
-  ```
+```bash curl (Production - Core API) theme={null}
+curl https://api.polar.sh/v1/products/ \
+  -H "Authorization: Bearer $POLAR_OAT" \
+  -H "Accept: application/json"
+```
 
-  ```bash curl (Sandbox - Core API) theme={null}
-  curl https://sandbox-api.polar.sh/v1/products/ \
-    -H "Authorization: Bearer $POLAR_OAT_SANDBOX" \
-    -H "Accept: application/json"
-  ```
+```bash curl (Sandbox - Core API) theme={null}
+curl https://sandbox-api.polar.sh/v1/products/ \
+  -H "Authorization: Bearer $POLAR_OAT_SANDBOX" \
+  -H "Accept: application/json"
+```
 
-  ```bash curl (Customer Portal API) theme={null}
-  curl https://api.polar.sh/v1/customer-portal/orders/ \
-    -H "Authorization: Bearer $POLAR_CUSTOMER_TOKEN" \
-    -H "Accept: application/json"
-  ```
-</CodeGroup>
+```bash curl (Customer Portal API) theme={null}
+curl https://api.polar.sh/v1/customer-portal/orders/ \
+  -H "Authorization: Bearer $POLAR_CUSTOMER_TOKEN" \
+  -H "Accept: application/json"
+```
 
 ## Pagination
 
@@ -170,10 +156,10 @@ List endpoints in the Polar API support pagination to help you efficiently retri
 | `page` | integer | `1` | - | Page number, starting from 1 |
 | `limit` | integer | `10` | `100` | Number of items to return per page (window size) |
 
-<Info>
-  The `page` parameter works as a window offset. For example, `page=2&limit=10`
-  means the API will skip the first 10 elements and return the next 10.
-</Info>
+> [!NOTE]
+>
+> The `page` parameter works as a window offset. For example, `page=2&limit=10`
+> means the API will skip the first 10 elements and return the next 10.
 
 ### Response Format
 
@@ -188,30 +174,28 @@ All paginated responses include a `pagination` object with metadata about the cu
 
 Let's say you want to fetch products with a limit of 100 items per page:
 
-<CodeGroup>
-  ```bash Request theme={null}
-  curl https://api.polar.sh/v1/products/?page=1&limit=100 \
-    -H "Authorization: Bearer $POLAR_OAT" \
-    -H "Accept: application/json"
-  ```
+```bash Request theme={null}
+curl https://api.polar.sh/v1/products/?page=1&limit=100 \
+  -H "Authorization: Bearer $POLAR_OAT" \
+  -H "Accept: application/json"
+```
 
-  ```json Response theme={null}
-  {
-    "items": [
-      {
-        "id": "...",
-        "name": "Product 1",
-        ...
-      },
+```json Response theme={null}
+{
+  "items": [
+    {
+      "id": "...",
+      "name": "Product 1",
       ...
-    ],
-    "pagination": {
-      "total_count": 250,
-      "max_page": 3
-    }
+    },
+    ...
+  ],
+  "pagination": {
+    "total_count": 250,
+    "max_page": 3
   }
-  ```
-</CodeGroup>
+}
+```
 
 In this example:
 
@@ -219,11 +203,11 @@ In this example:
 * `limit=100` means each page contains up to 100 products
 * `max_page=3` means you need to make 3 requests to retrieve all products (pages 1, 2, and 3)
 
-<Tip>
-  To retrieve all pages, increment the `page` parameter from `1` to `max_page`.
-  Our SDKs provide built-in pagination helpers to automatically iterate through
-  all pages.
-</Tip>
+> [!TIP]
+>
+> To retrieve all pages, increment the `page` parameter from `1` to `max_page`.
+> Our SDKs provide built-in pagination helpers to automatically iterate through
+> all pages.
 
 ## Rate Limits
 
@@ -237,14 +221,14 @@ Polar API has rate limits to ensure fair usage and maintain performance. Limits 
 
 * **100 requests per minute** per organization/customer or OAuth2 Client.
 
-Unauthenticated {<a href={`/api-reference/${version_0}/customer_portal/validate-license-key`}>validation</a>}, {<a href={`/api-reference/${version_0}/customer_portal/activate-license-key`}>activation</a>}, and {<a href={`/api-reference/${version_0}/customer_portal/deactivate-license-key`}>deactivation</a>} endpoints are limited to **3 requests per second** in both environments.
+Unauthenticated [validation](/docs/api-reference/2026-04/customer_portal/validate-license-key), [activation](/docs/api-reference/2026-04/customer_portal/activate-license-key), and [deactivation](/docs/api-reference/2026-04/customer_portal/deactivate-license-key) endpoints are limited to **3 requests per second** in both environments.
 
 If you exceed the rate limit, you will receive a `429 Too Many Requests` response. The response will include a `Retry-After` header indicating how long you should wait before making another request.
 
-<Note>
-  Organizations requiring higher rate limits for production workloads may
-  contact our support team to discuss elevated limits.
-</Note>
+> [!NOTE]
+>
+> Organizations requiring higher rate limits for production workloads may
+> contact our support team to discuss elevated limits.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

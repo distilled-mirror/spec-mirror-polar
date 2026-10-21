@@ -26,16 +26,16 @@ The subscription is updated **immediately**, but the prorated difference is carr
 
 This is typically the smoothest experience for the customer: their plan changes instantly, and they see the adjustment on their regular renewal invoice.
 
-<Note>
-  If the billing interval changes (for example, monthly to yearly), `prorate` is promoted to
-  `invoice` automatically — there's no "next invoice" on the old cycle to defer the difference to.
-</Note>
+> [!NOTE]
+>
+> If the billing interval changes (for example, monthly to yearly), `prorate` is promoted to
+> `invoice` automatically — there's no "next invoice" on the old cycle to defer the difference to.
 
-<Warning>
-  For `invoice` and `prorate`, the subscription update is applied only if the immediate payment (if
-  any) succeeds. If the payment fails, the API returns an error and the subscription stays
-  unchanged.
-</Warning>
+> [!WARNING]
+>
+> For `invoice` and `prorate`, the subscription update is applied only if the immediate payment (if
+> any) succeeds. If the payment fails, the API returns an error and the subscription stays
+> unchanged.
 
 ### Schedule for next cycle (`next_period`)
 
@@ -53,10 +53,10 @@ Because the cycle restarts, the new period's anchor day becomes the day the chan
 
 Use this when a plan change should behave like a brand-new subscription — for example, when an upgrade should restart the commitment period rather than carry over the current one.
 
-<Note>
-  The `reset` proration behavior is currently in preview. You'll only be able to use the `reset`
-  proration behavior if you are on a paid plan.
-</Note>
+> [!NOTE]
+>
+> The `reset` proration behavior is currently in preview. You'll only be able to use the `reset`
+> proration behavior if you are on a paid plan.
 
 ## Setting the default behavior
 
@@ -68,29 +68,27 @@ You can change it from **Settings → Subscriptions** in the dashboard, or via t
 
 Every subscription update that changes the price — a product change or a seat change — accepts an optional `proration_behavior` that overrides the organization default for that single call:
 
-<CodeGroup>
-  ```bash cURL theme={null}
-  curl --request PATCH \
-    --url https://api.polar.sh/v1/subscriptions/{subscription_id} \
-    --header 'Authorization: Bearer <YOUR_BEARER_TOKEN_HERE>' \
-    --header 'Content-Type: application/json' \
-    --data '{
-      "product_id": "<product_id>",
-      "proration_behavior": "invoice"
-    }'
-  ```
+```bash cURL theme={null}
+curl --request PATCH \
+  --url https://api.polar.sh/v1/subscriptions/{subscription_id} \
+  --header 'Authorization: Bearer <YOUR_BEARER_TOKEN_HERE>' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "product_id": "<product_id>",
+    "proration_behavior": "invoice"
+  }'
+```
 
-  ```py Python theme={null}
-  from polar.v2026_10 import Polar
+```py Python theme={null}
+from polar.v2026_10 import Polar
 
-  with Polar("<YOUR_BEARER_TOKEN_HERE>") as polar:
-      res = polar.subscriptions.update(
-          "<subscription_id>",
-          product_id="<product_id>",
-          proration_behavior="invoice",  # or "prorate" or "next_period"
-      )
-  ```
-</CodeGroup>
+with Polar("<YOUR_BEARER_TOKEN_HERE>") as polar:
+    res = polar.subscriptions.update(
+        "<subscription_id>",
+        product_id="<product_id>",
+        proration_behavior="invoice",  # or "prorate" or "next_period"
+    )
+```
 
 Valid values are `invoice`, `prorate`, and `next_period`. If your organization has access to the preview `reset` behavior, you can pass `reset` here as well.
 
@@ -124,12 +122,12 @@ A customer subscribed to a \$20/month plan on a 30-day month (2,592,000 seconds 
 
 With `invoice`, a credit invoice for \$14.50 is issued immediately. With `prorate`, the credit is applied on the next invoice.
 
-<Note>
-  Because proration is computed from the exact number of seconds remaining, the change time-of-day
-  matters: upgrading at noon credits a different amount than upgrading at midnight. Polar always
-  uses the real length of the current billing period (so 28-, 29-, 30-, and 31-day months are all
-  handled exactly).
-</Note>
+> [!NOTE]
+>
+> Because proration is computed from the exact number of seconds remaining, the change time-of-day
+> matters: upgrading at noon credits a different amount than upgrading at midnight. Polar always
+> uses the real length of the current billing period (so 28-, 29-, 30-, and 31-day months are all
+> handled exactly).
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

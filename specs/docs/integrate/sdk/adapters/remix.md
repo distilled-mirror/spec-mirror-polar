@@ -6,16 +6,16 @@
 
 > Payments and Checkouts made dead simple with Remix
 
-<Warning>
-  **`@polar-sh/remix` is deprecated** and no longer maintained. Integrate with
-  the [TypeScript SDK](/docs/integrate/sdk/typescript) directly instead. The
-  [`polar-integration` skill](https://github.com/polarsource/agent-toolkit/tree/main/skills/polar-integration)
-  can help you migrate:
-
-  ```bash theme={null}
-  npx skills add https://github.com/polarsource/agent-toolkit --skill polar-integration
-  ```
-</Warning>
+> [!WARNING]
+>
+> **`@polar-sh/remix` is deprecated** and no longer maintained. Integrate with
+> the [TypeScript SDK](/docs/integrate/sdk/typescript) directly instead. The
+> [`polar-integration` skill](https://github.com/polarsource/agent-toolkit/tree/main/skills/polar-integration)
+> can help you migrate:
+>
+> ```bash theme={null}
+> npx skills add https://github.com/polarsource/agent-toolkit --skill polar-integration
+> ```
 
 ## Examples
 
@@ -25,31 +25,29 @@
 
 Install the required Polar packages using the following command:
 
-<Tabs>
-  <Tab title="npm">
-    ```bash Terminal theme={null}
-    npm install zod @polar-sh/remix
-    ```
-  </Tab>
+**npm**
 
-  <Tab title="yarn">
-    ```bash Terminal theme={null}
-    yarn add zod @polar-sh/remix
-    ```
-  </Tab>
+```bash Terminal theme={null}
+npm install zod @polar-sh/remix
+```
 
-  <Tab title="pnpm">
-    ```bash Terminal theme={null}
-    pnpm add zod @polar-sh/remix
-    ```
-  </Tab>
+**yarn**
 
-  <Tab title="bun">
-    ```bash Terminal theme={null}
-    bun add zod @polar-sh/remix
-    ```
-  </Tab>
-</Tabs>
+```bash Terminal theme={null}
+yarn add zod @polar-sh/remix
+```
+
+**pnpm**
+
+```bash Terminal theme={null}
+pnpm add zod @polar-sh/remix
+```
+
+**bun**
+
+```bash Terminal theme={null}
+bun add zod @polar-sh/remix
+```
 
 ## Checkout
 

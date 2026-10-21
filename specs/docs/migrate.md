@@ -6,83 +6,13 @@
 
 > Move customers, products, subscriptions, and payment data from Stripe to Polar.
 
-export const MigrationSwitch = () => {
-  const changes = [["Renews on Stripe", "Renews on Polar"], ["Paid period already paid", "Same period kept"], ["Cards verified on Polar", "Those cards used on next renewal"]];
-  return <section className="migration-switch" aria-label="What changes when a subscription switches">
-      <div className="migration-switch__header" aria-hidden="true">
-        <span>Stripe</span>
-        <span>Switch</span>
-        <span>Polar</span>
-      </div>
-      <div className="migration-switch__rows">
-        {changes.map(([before, after]) => <div className="migration-switch__row" key={before}>
-            <span className="migration-switch__state">{before}</span>
-            <span className="migration-switch__arrow" aria-hidden="true">
-              →
-            </span>
-            <span className="migration-switch__state migration-switch__state--polar">{after}</span>
-          </div>)}
-      </div>
-    </section>;
-};
-
-export const MigrationCoexistence = () => {
-  const toStripe = "M50 0 V3 H24 A3 3 0 0 0 21 6 V12";
-  const toPolar = "M50 0 V3 H76 A3 3 0 0 1 79 6 V12";
-  const cycle = "3.6s";
-  const fade = {
-    values: "0;1;1;0",
-    keyTimes: "0;0.12;0.82;1"
-  };
-  return <section className="migration-coexistence" aria-label="Merchant app sits above Stripe and Polar during migration">
-      <div className="migration-coexistence__tree">
-        <div className="migration-coexistence__node migration-coexistence__node--app">
-          <span className="migration-coexistence__name">Merchant app</span>
-          <span className="migration-coexistence__note">Routes each customer</span>
-        </div>
-
-        <svg className="migration-coexistence__branch" viewBox="0 0 100 12" fill="none" role="presentation" aria-hidden="true">
-          <path className="migration-coexistence__rail" d={toStripe} vectorEffect="non-scaling-stroke" />
-          <path className="migration-coexistence__rail" d={toPolar} vectorEffect="non-scaling-stroke" />
-
-          <circle className="migration-coexistence__dot" cx="0" cy="0" r="0.75" opacity="0">
-            <animateMotion dur={cycle} repeatCount="indefinite" path={toStripe} />
-            <animate attributeName="opacity" dur={cycle} repeatCount="indefinite" values={fade.values} keyTimes={fade.keyTimes} />
-          </circle>
-
-          <circle className="migration-coexistence__dot" cx="0" cy="0" r="0.75" opacity="0">
-            <animateMotion dur={cycle} begin="1.8s" repeatCount="indefinite" path={toPolar} />
-            <animate attributeName="opacity" dur={cycle} begin="1.8s" repeatCount="indefinite" values={fade.values} keyTimes={fade.keyTimes} />
-          </circle>
-        </svg>
-
-        <div className="migration-coexistence__children">
-          <div className="migration-coexistence__node migration-coexistence__node--stripe">
-            <span className="migration-coexistence__name">Stripe</span>
-            <span className="migration-coexistence__note">Existing renewals</span>
-          </div>
-          <div className="migration-coexistence__spacer" aria-hidden="true" />
-          <div className="migration-coexistence__node migration-coexistence__node--polar">
-            <span className="migration-coexistence__name">Polar</span>
-            <span className="migration-coexistence__note">New sales</span>
-          </div>
-        </div>
-      </div>
-
-      <p className="migration-coexistence__caption">
-        Each subscription has one system responsible for its next renewal. New checkouts go to
-        Polar; Stripe keeps renewing what it already owns until you switch them.
-      </p>
-    </section>;
-};
-
 Polar currently supports migrations from Stripe. Polar helps you safely migrate
 customers, products, subscriptions, and payment data.
 
-<Info>
-  Stripe migrations are rolling out gradually. If **Migrations** is not available in your
-  organization settings, [contact Polar support](/docs/support).
-</Info>
+> [!NOTE]
+>
+> Stripe migrations are rolling out gradually. If **Migrations** is not available in your
+> organization settings, [contact Polar support](/docs/support).
 
 ## Before you begin
 
@@ -99,7 +29,17 @@ During the migration, your merchant app talks to both billing systems. New
 customers check out on Polar. Existing subscriptions keep renewing on Stripe
 until you switch them through Polar.
 
-<MigrationCoexistence />
+Merchant app
+Routes each customer
+
+Stripe
+Existing renewals
+
+Polar
+New sales
+
+Each subscription has one system responsible for its next renewal. New checkouts go to
+Polar; Stripe keeps renewing what it already owns until you switch them.
 
 ## Migration overview
 
@@ -198,7 +138,7 @@ for time they already paid for.
 Polar handles both sides of the switch. Do not manually activate a matching
 Polar subscription, as this can cause double billing.
 
-<MigrationSwitch />
+What changes when a subscription switches
 
 If a subscription renews within 24 hours, Polar leaves it on Stripe to avoid a
 billing conflict and give you time to react if something goes wrong. A
@@ -242,7 +182,9 @@ automations after the switch if subscriptions remain on Stripe.
 **Continue when:** Every selected subscription shows as moved, skipped, or
 failed, and every subscription left on Stripe has a clear next action.
 
-<Warning>Switching is not reversible. Review your selection before confirming it.</Warning>
+> [!WARNING]
+>
+> Switching is not reversible. Review your selection before confirming it.
 
 ## 6. Reconcile and clean up
 
@@ -288,61 +230,59 @@ for payments it processes.
 
 ## Migration details
 
-<AccordionGroup>
-  <Accordion title="Subscriptions that need attention">
-    Polar shows why a record cannot move automatically. Common examples include:
+> **Subscriptions that need attention**
+>
+> Polar shows why a record cannot move automatically. Common examples include:
+>
+> * Multiple subscription items or a quantity greater than one
+> * Products without a supported recurring price in your organization's
+>   default currency, or with ambiguous prices
+> * Past-due, unpaid, or paused subscriptions
+> * Subscriptions sold through Stripe Managed Payments. These are not moved
+>   yet and keep renewing on Stripe.
+>
+> A subscription that is not ready stays on Stripe. Resolve the issue and retry
+> it later, or keep it renewing on Stripe.
+>
+> Unsupported pricing should not block your migration. Polar can adapt to new
+> pricing models, so if some of your prices cannot be migrated,
+> [contact Polar support](/docs/support).
+>
+> Polar also rechecks subscriptions during the switch. Subscriptions due to
+> renew within 24 hours, or set to end on a date other than their period end,
+> remain on Stripe at that point. A subscription set to cancel at the end of
+> its period does not renew, so it moves even if that end is within 24 hours.
+>
+> Only cards are used. A subscription paying with another method, such as
+> Link, SEPA Direct Debit, or a US bank account (ACH), still moves, but Polar
+> does not charge that method. It renews with another copied card for the same customer if there is
+> one. Otherwise its first Polar renewal fails and the customer is asked to add
+> a card.
 
-    * Multiple subscription items or a quantity greater than one
-    * Products without a supported recurring price in your organization's
-      default currency, or with ambiguous prices
-    * Past-due, unpaid, or paused subscriptions
-    * Subscriptions sold through Stripe Managed Payments. These are not moved
-      yet and keep renewing on Stripe.
+> **Saved card transfer**
+>
+> Only the owner of your Stripe account can start the account-to-account copy.
+> In Polar, download the customer mapping file and copy the provided destination
+> account ID into Stripe. After starting the copy, paste the Stripe migration
+> ID (`migreq_…`) into Polar.
+>
+> Polar usually accepts the request within one business day. Stripe then moves
+> the card data, usually within a few hours and sometimes up to 72 hours.
 
-    A subscription that is not ready stays on Stripe. Resolve the issue and retry
-    it later, or keep it renewing on Stripe.
-
-    Unsupported pricing should not block your migration. Polar can adapt to new
-    pricing models, so if some of your prices cannot be migrated,
-    [contact Polar support](/docs/support).
-
-    Polar also rechecks subscriptions during the switch. Subscriptions due to
-    renew within 24 hours, or set to end on a date other than their period end,
-    remain on Stripe at that point. A subscription set to cancel at the end of
-    its period does not renew, so it moves even if that end is within 24 hours.
-
-    Only cards are used. A subscription paying with another method, such as
-    Link, SEPA Direct Debit, or a US bank account (ACH), still moves, but Polar
-    does not charge that method. It renews with another copied card for the same customer if there is
-    one. Otherwise its first Polar renewal fails and the customer is asked to add
-    a card.
-  </Accordion>
-
-  <Accordion title="Saved card transfer">
-    Only the owner of your Stripe account can start the account-to-account copy.
-    In Polar, download the customer mapping file and copy the provided destination
-    account ID into Stripe. After starting the copy, paste the Stripe migration
-    ID (`migreq_…`) into Polar.
-
-    Polar usually accepts the request within one business day. Stripe then moves
-    the card data, usually within a few hours and sometimes up to 72 hours.
-  </Accordion>
-
-  <Accordion title="Checklist for your application">
-    Every integration is different. Before removing your Stripe code, confirm:
-
-    * Which internal user or account maps to each Polar customer
-    * Which webhook grants, changes, and revokes access
-    * Where support looks up purchases made before and after the migration
-    * Which system handles refunds and disputes for each transaction
-    * Whether any job still creates Stripe Checkout Sessions, invoices, or
-      subscriptions
-    * How you monitor subscriptions intentionally left on Stripe
-
-    Your application remains responsible for mapping customers and translating
-    billing events into access to your product.
-  </Accordion>
-</AccordionGroup>
+> **Checklist for your application**
+>
+> Every integration is different. Before removing your Stripe code, confirm:
+>
+> * Which internal user or account maps to each Polar customer
+> * Which webhook grants, changes, and revokes access
+> * Where support looks up purchases made before and after the migration
+> * Which system handles refunds and disputes for each transaction
+> * Whether any job still creates Stripe Checkout Sessions, invoices, or
+>   subscriptions
+> * How you monitor subscriptions intentionally left on Stripe
+>
+> Your application remains responsible for mapping customers and translating
+> billing events into access to your product.
 
 ## Coding assistant prompt
 

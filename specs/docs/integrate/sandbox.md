@@ -10,11 +10,11 @@ To test Polar or work on your integration without worrying about actual money pr
 
 It's a dedicated server, completely isolated from the production instance where you can do all the experiments you want.
 
-<Note>
-  **Why a dedicated environment instead of a test mode?**
-
-  Since we're dealing with money and need to keep track of all movements to assure our Merchant of Record service, we found it safer to isolate live data from test data so it never interferes. Besides, it allows you to create an unlimited number of account and organization to test lot of different scenarios. Consider it as your own development server!
-</Note>
+> [!NOTE]
+>
+> **Why a dedicated environment instead of a test mode?**
+>
+> Since we're dealing with money and need to keep track of all movements to assure our Merchant of Record service, we found it safer to isolate live data from test data so it never interferes. Besides, it allows you to create an unlimited number of account and organization to test lot of different scenarios. Consider it as your own development server!
 
 ## Get started
 
@@ -38,27 +38,25 @@ To make requests to our [API](/docs/api-reference), all you need to do is to swi
 
 Our official SDKs support the sandbox environment through a dedicated parameter.
 
-<CodeGroup>
-  ```ts TypeScript theme={null}
-  import { createPolar } from "@polar-sh/sdk/2026-10";
+```ts TypeScript theme={null}
+import { createPolar } from "@polar-sh/sdk/2026-10";
 
-  const polar = createPolar({
-    accessToken: process.env.POLAR_ACCESS_TOKEN!,
-    environment: "sandbox",
-  });
-  ```
+const polar = createPolar({
+  accessToken: process.env.POLAR_ACCESS_TOKEN!,
+  environment: "sandbox",
+});
+```
 
-  ```py Python theme={null}
-  import os
+```py Python theme={null}
+import os
 
-  from polar.v2026_10 import Polar
+from polar.v2026_10 import Polar
 
-  polar = Polar(
-      os.environ["POLAR_ACCESS_TOKEN"],
-      environment="sandbox",
-  )
-  ```
-</CodeGroup>
+polar = Polar(
+    os.environ["POLAR_ACCESS_TOKEN"],
+    environment="sandbox",
+)
+```
 
 ## Limitations
 

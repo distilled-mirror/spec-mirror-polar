@@ -6,9 +6,7 @@
 
 > Get insights on your customers and sales
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/customer-management/details.light.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=dc8cb8a0793331ec889f89f3b84d33ac" width="3586" height="2058" data-path="assets/features/customer-management/details.light.png" />
-
-<img className="hidden dark:block" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/customer-management/details.dark.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=53377b04b7d065e66102c0a2141118fb" width="5110" height="2642" data-path="assets/features/customer-management/details.dark.png" />
+![](https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/customer-management/details.light.png?fit=max\&auto=format\&n=Ut0vPUvE1pIdMcH2\&q=85\&s=dc8cb8a0793331ec889f89f3b84d33ac)
 
 ## Managing Customers
 
@@ -22,19 +20,17 @@ Quite often, you'll have our own users management system in your application, wh
 
 We have dedicated API endpoints that work with the `external_id` field, so you don't even have to store the internal Polar ID in your system.
 
-<Card title="Get Customer by External ID" icon="link" href="/docs/api-reference/current/customers/get-customer-by-external-id" horizontal />
+> **[Get Customer by External ID](/docs/api-reference/current/customers/get-customer-by-external-id)**
 
-<Card title="Update Customer by External ID" icon="link" href="/docs/api-reference/current/customers/update-customer-by-external-id" horizontal />
+> **[Update Customer by External ID](/docs/api-reference/current/customers/update-customer-by-external-id)**
 
-<Card title="Delete Customer by External ID" icon="link" href="/docs/api-reference/current/customers/delete-customer-by-external-id" horizontal />
+> **[Delete Customer by External ID](/docs/api-reference/current/customers/delete-customer-by-external-id)**
 
 ## Metadata
 
 You may set additional metadata on Customers. This can be very useful to store additional data about your customer you want to be available through our API and webhooks.
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/customer-management/edit.light.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=00c8cdfc037e19bfe63045c1d9d9459e" width="1498" height="960" data-path="assets/features/customer-management/edit.light.png" />
-
-<img className="hidden dark:block" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/customer-management/edit.dark.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=1981f637bea304c95d62ed7b7d85d14f" width="1512" height="964" data-path="assets/features/customer-management/edit.dark.png" />
+![](https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/customer-management/edit.light.png?fit=max\&auto=format\&n=Ut0vPUvE1pIdMcH2\&q=85\&s=00c8cdfc037e19bfe63045c1d9d9459e)
 
 It can be set through the dashboard or through the [API](/docs/api-reference/current/customers/update-customer#body-metadata). It can also be pre-set when creating a Checkout Session by using the [`customer_metadata`](/docs/api-reference/current/checkouts/create-checkout-session#body-customer-metadata) field. This way, after a successful checkout, the metadata will automatically be set on the newly created Customer.
 

@@ -6,7 +6,7 @@
 
 > Learn how to sync customer and payment data from Polar to Fernand.
 
-<img src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/integrations/fernand/overview.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=b88538e65544e963bc3d58002ae490a9" width="2160" height="1236" data-path="assets/features/integrations/fernand/overview.png" />
+![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/integrations/fernand/overview.png?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=b88538e65544e963bc3d58002ae490a9)
 
 ## What is Fernand?
 
@@ -26,7 +26,7 @@ This enables you to:
 
 ## How to connect Fernand with Polar
 
-<img src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/integrations/fernand/enable.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=fd7b3bb222aaf0f953bb3380b6191ae3" width="2160" height="1199" data-path="assets/features/integrations/fernand/enable.png" />
+![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/integrations/fernand/enable.png?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=fd7b3bb222aaf0f953bb3380b6191ae3)
 
 1. Open [Integrations](https://app.getfernand.com/settings/organization/integrations) in your Fernand organization settings.
 2. Click on **Connect Polar**.
@@ -43,56 +43,52 @@ Once Polar is connected, you can create automation rules in Fernand based on Pol
 
 Let’s walk through a basic example: auto-replying to all customers on your `Pro` plan.
 
-<img src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/integrations/fernand/inbox.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=d4e253667c841e2223bd94db3b34f409" width="1280" height="659" data-path="assets/features/integrations/fernand/inbox.png" />
+![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/integrations/fernand/inbox.png?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=d4e253667c841e2223bd94db3b34f409)
 
 ### Create a new rule
 
-<Steps>
-  <Step title="Create a new rule">
-    1. Go to [Rules](https://app.getfernand.com/settings/organization/rules) in Fernand.
-    2. Click `Add rule` and give it a descriptive name.
+**1. Create a new rule**
 
-    <img src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/integrations/fernand/create-rule.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=25780e683d3c9796dde3245b65915c04" width="2320" height="1597" data-path="assets/features/integrations/fernand/create-rule.png" />
-  </Step>
+1. Go to [Rules](https://app.getfernand.com/settings/organization/rules) in Fernand.
+2. Click `Add rule` and give it a descriptive name.
 
-  <Step title="Select a trigger">
-    This ensures the rule runs on each new customer message.
+![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/integrations/fernand/create-rule.png?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=25780e683d3c9796dde3245b65915c04)
 
-    <img src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/integrations/fernand/rule-trigger.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=aeff3403e656453aa466b014e60b576b" width="2320" height="1597" data-path="assets/features/integrations/fernand/rule-trigger.png" />
-  </Step>
+**2. Select a trigger**
 
-  <Step title="Select a condition">
-    Now add a condition based on Polar data. For example:
+This ensures the rule runs on each new customer message.
 
-    * `Contact is a customer...`
-    * `Contact has paid plan...`
+![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/integrations/fernand/rule-trigger.png?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=aeff3403e656453aa466b014e60b576b)
 
-    You can target specific plans (e.g. `Pro`, `Business`) or specific products to personalize support or automate prioritization.
+**3. Select a condition**
 
-    <img src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/integrations/fernand/rule-conditions.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=7ed92fcbca3e73c386624f3fadd59e0f" width="2320" height="1597" data-path="assets/features/integrations/fernand/rule-conditions.png" />
-  </Step>
+Now add a condition based on Polar data. For example:
 
-  <Step title="Select an action">
-    Now define what happens when the rule matches. For example:
+* `Contact is a customer...`
+* `Contact has paid plan...`
 
-    * Send an auto reply (with variables)
-    * Assign the conversation to a specific agent
-    * Tag the conversation with `priority` or `paid`
-    * Trigger a webhook for external automation
+You can target specific plans (e.g. `Pro`, `Business`) or specific products to personalize support or automate prioritization.
 
-    <img src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/integrations/fernand/action.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=5991fcfc0687d4cc116fc5e67da3b579" width="2320" height="2352" data-path="assets/features/integrations/fernand/action.png" />
-  </Step>
-</Steps>
+![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/integrations/fernand/rule-conditions.png?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=7ed92fcbca3e73c386624f3fadd59e0f)
+
+**4. Select an action**
+
+Now define what happens when the rule matches. For example:
+
+* Send an auto reply (with variables)
+* Assign the conversation to a specific agent
+* Tag the conversation with `priority` or `paid`
+* Trigger a webhook for external automation
+
+![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/integrations/fernand/action.png?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=5991fcfc0687d4cc116fc5e67da3b579)
 
 ### Disconnecting the integration
 
 If you ever want to disconnect Polar from your Fernand workspace:
 
-<Steps>
-  <Step title="Go to the Integrations page." />
+**1. Go to the Integrations page.**
 
-  <Step title="Click Disconnect next to Polar." />
-</Steps>
+**2. Click Disconnect next to Polar.**
 
 Deleting your organization on Fernand will also remove the Polar integration automatically.
 

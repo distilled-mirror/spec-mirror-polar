@@ -8,14 +8,14 @@
 
 Unit-based pricing lets a customer buy a quantity of something and pay for it up front. Devices, licenses, gigabytes, servers. You name the unit, set the rate, and the buyer picks how many they want at checkout.
 
-<Info>
-  **Unit-based pricing is ideal for:**
-
-  * Per-device or per-installation licensing
-  * Prepaid capacity, such as storage or bandwidth
-  * Any quantity that isn't a person and isn't measured after the fact
-  * Products where volume discounts should apply to the declared quantity
-</Info>
+> [!NOTE]
+>
+> **Unit-based pricing is ideal for:**
+>
+> * Per-device or per-installation licensing
+> * Prepaid capacity, such as storage or bandwidth
+> * Any quantity that isn't a person and isn't measured after the fact
+> * Products where volume discounts should apply to the declared quantity
 
 ## Choosing between unit-based, seat-based, and metered
 
@@ -41,54 +41,52 @@ On a subscription, the quantity carries across billing periods. You can change i
 
 ## Creating a unit-based product
 
-<Steps>
-  <Step title="Create a new product">
-    From your dashboard, [create a new product](https://polar.sh/to/dashboard/products/new).
-  </Step>
+**1. Create a new product**
 
-  <Step title="Configure basic settings">
-    Set your product name, description, and media as usual.
-  </Step>
+From your dashboard, [create a new product](https://polar.sh/to/dashboard/products/new).
 
-  <Step title="Select unit-based pricing">
-    Under **Pricing**, select:
+**2. Configure basic settings**
 
-    * **Product type**: Subscription or One-time
-    * **Billing cycle** (subscriptions only): Monthly or Yearly
-    * **Pricing type**: Unit-based
-  </Step>
+Set your product name, description, and media as usual.
 
-  <Step title="Name the unit">
-    Set the singular and plural nouns for what you're selling, such as `device` and `devices`. They appear at checkout, in the Customer Portal, and on invoices. Leave them empty and Polar falls back to "unit" and "units".
-  </Step>
+**3. Select unit-based pricing**
 
-  <Step title="Choose a tiering model">
-    Under **Tiering model**, select how the quantity is priced:
+Under **Pricing**, select:
 
-    | Model | Description |
-    | - | - |
-    | **Fixed price per unit** | Every unit costs the same rate. |
-    | **Volume** | The rate is set by the total quantity, and that rate applies to every unit. Crossing a threshold lowers the price on the whole order. |
-    | **Graduated** | Each tier range is priced at its own rate. The total is the sum across ranges. |
+* **Product type**: Subscription or One-time
+* **Billing cycle** (subscriptions only): Monthly or Yearly
+* **Pricing type**: Unit-based
 
-    Define a tier by an upper bound and a rate. The bound is inclusive, and each tier starts where the previous one ended. Leave the last tier's bound empty for an open-ended top range.
+**4. Name the unit**
 
-    **Example** with tiers at up to 10: \$10 per unit, and beyond: \$8 per unit:
+Set the singular and plural nouns for what you're selling, such as `device` and `devices`. They appear at checkout, in the Customer Portal, and on invoices. Leave them empty and Polar falls back to "unit" and "units".
 
-    * Volume: 14 units = 14 × \$8 = \$112. Every unit gets the lower rate.
-    * Graduated: 14 units = 10 × \$10 + 4 × \$8 = \$132. Each range keeps its own rate.
-  </Step>
+**5. Choose a tiering model**
 
-  <Step title="Set a minimum and maximum">
-    **Minimum units** is the smallest quantity a customer can buy. It defaults to 1.
+Under **Tiering model**, select how the quantity is priced:
 
-    **Maximum units** caps the quantity a customer can buy. Leave it empty for unlimited, and customers can buy any quantity above the minimum.
-  </Step>
+| Model | Description |
+| - | - |
+| **Fixed price per unit** | Every unit costs the same rate. |
+| **Volume** | The rate is set by the total quantity, and that rate applies to every unit. Crossing a threshold lowers the price on the whole order. |
+| **Graduated** | Each tier range is priced at its own rate. The total is the sum across ranges. |
 
-  <Step title="Add benefits">
-    Configure the benefits the customer receives on purchase.
-  </Step>
-</Steps>
+Define a tier by an upper bound and a rate. The bound is inclusive, and each tier starts where the previous one ended. Leave the last tier's bound empty for an open-ended top range.
+
+**Example** with tiers at up to 10: \$10 per unit, and beyond: \$8 per unit:
+
+* Volume: 14 units = 14 × \$8 = \$112. Every unit gets the lower rate.
+* Graduated: 14 units = 10 × \$10 + 4 × \$8 = \$132. Each range keeps its own rate.
+
+**6. Set a minimum and maximum**
+
+**Minimum units** is the smallest quantity a customer can buy. It defaults to 1.
+
+**Maximum units** caps the quantity a customer can buy. Leave it empty for unlimited, and customers can buy any quantity above the minimum.
+
+**7. Add benefits**
+
+Configure the benefits the customer receives on purchase.
 
 ### Combining with other prices
 

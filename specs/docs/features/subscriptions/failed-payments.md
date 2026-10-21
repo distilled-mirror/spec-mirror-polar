@@ -43,14 +43,14 @@ Polar has an organization-level **grace period** that holds off benefit revocati
 
 The grace period is measured from `past_due_at`. While it's in effect the subscription is still `past_due` (so you can differentiate it in your own app), but the customer retains access to their benefits. Once the grace period expires — or the subscription is revoked for good — benefits are revoked on the next check.
 
-<Note>
-  The grace period only delays **benefit revocation**. It does not change the
-  retry schedule, and it does not keep the subscription `active`. If you want
-  to treat past-due subscribers specially (for example, with a banner or
-  a reduced feature set), listen for the
-  [`subscription.updated`](/docs/api-reference/current/subscription_updated) webhook
-  and branch on `status === "past_due"`.
-</Note>
+> [!NOTE]
+>
+> The grace period only delays **benefit revocation**. It does not change the
+> retry schedule, and it does not keep the subscription `active`. If you want
+> to treat past-due subscribers specially (for example, with a banner or
+> a reduced feature set), listen for the
+> [`subscription.updated`](/docs/api-reference/current/subscription_updated) webhook
+> and branch on `status === "past_due"`.
 
 ## Helping customers recover
 

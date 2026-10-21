@@ -76,15 +76,13 @@ export async function POST(req: Request) {
 
 The Python SDK has no ingestion helper or strategies. Send usage events with `polar.events.ingest` from the [Python SDK](/docs/integrate/sdk/python) instead.
 
-<CodeGroup>
-  ```bash pip theme={null}
-  pip install polar-sdk
-  ```
+```bash pip theme={null}
+pip install polar-sdk
+```
 
-  ```bash uv theme={null}
-  uv add polar-sdk
-  ```
-</CodeGroup>
+```bash uv theme={null}
+uv add polar-sdk
+```
 
 ### Ingesting events
 

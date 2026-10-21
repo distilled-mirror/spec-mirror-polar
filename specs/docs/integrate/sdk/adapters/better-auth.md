@@ -28,159 +28,155 @@ A [Better Auth](https://github.com/better-auth/better-auth) plugin for integrati
 
 Install the required Better Auth and Polar packages using the following command:
 
-<Tabs>
-  <Tab title="npm">
-    ```bash Terminal theme={null}
-    npm install better-auth zod @polar-sh/better-auth @polar-sh/sdk@1.0.0
-    ```
-  </Tab>
+**npm**
 
-  <Tab title="yarn">
-    ```bash Terminal theme={null}
-    yarn add better-auth zod @polar-sh/better-auth @polar-sh/sdk@1.0.0
-    ```
-  </Tab>
+```bash Terminal theme={null}
+npm install better-auth zod @polar-sh/better-auth @polar-sh/sdk@1.0.0
+```
 
-  <Tab title="pnpm">
-    ```bash Terminal theme={null}
-    pnpm add better-auth zod @polar-sh/better-auth @polar-sh/sdk@1.0.0
-    ```
-  </Tab>
+**yarn**
 
-  <Tab title="bun">
-    ```bash Terminal theme={null}
-    bun add better-auth zod @polar-sh/better-auth @polar-sh/sdk@1.0.0
-    ```
-  </Tab>
-</Tabs>
+```bash Terminal theme={null}
+yarn add better-auth zod @polar-sh/better-auth @polar-sh/sdk@1.0.0
+```
+
+**pnpm**
+
+```bash Terminal theme={null}
+pnpm add better-auth zod @polar-sh/better-auth @polar-sh/sdk@1.0.0
+```
+
+**bun**
+
+```bash Terminal theme={null}
+bun add better-auth zod @polar-sh/better-auth @polar-sh/sdk@1.0.0
+```
 
 The plugin requires Better Auth 1.7 or later and Node.js 22 or later.
 
 ## Integrate Polar with BetterAuth
 
-<Steps>
-  <Step title="Configure Polar Access Token">
-    Go to your Polar Organization Settings, create an Organization Access Token, and add it to the environment variables of your application.
+**1. Configure Polar Access Token**
 
-    ```bash .env theme={null}
-    POLAR_ACCESS_TOKEN=...
-    ```
-  </Step>
+Go to your Polar Organization Settings, create an Organization Access Token, and add it to the environment variables of your application.
 
-  <Step title="Configure BetterAuth Server">
-    The Polar plugin comes with it's own set of plugins to add functionality to your stack:
+```bash .env theme={null}
+POLAR_ACCESS_TOKEN=...
+```
 
-    * **checkout** - Enable seamless checkout integration
-    * **portal** - Make it possible for your customers to manage their orders, subscriptions & benefits
-    * **usage** - List customer meters & ingest events for Usage Based Billing
-    * **webhooks** - Listen for relevant Polar webhooks
+**2. Configure BetterAuth Server**
 
-    ```typescript icon="square-js" auth.ts theme={null}
-    import { betterAuth } from "better-auth";
-    import { polar, checkout, portal, usage, webhooks } from "@polar-sh/better-auth"; // [!code ++]
-    import { createPolarCore } from "@polar-sh/sdk/2026-10"; // [!code ++]
+The Polar plugin comes with it's own set of plugins to add functionality to your stack:
 
-    const polarClient = createPolarCore({ // [!code ++]
-        accessToken: process.env.POLAR_ACCESS_TOKEN!, // [!code ++]
-        // Use 'sandbox' if you're using the Polar Sandbox environment
-        // Remember that access tokens, products, etc. are completely separated between environments.
-        // Access tokens obtained in Production are for instance not usable in the Sandbox environment.
-        environment: 'sandbox' // [!code ++]
-    }); // [!code ++]
+* **checkout** - Enable seamless checkout integration
+* **portal** - Make it possible for your customers to manage their orders, subscriptions & benefits
+* **usage** - List customer meters & ingest events for Usage Based Billing
+* **webhooks** - Listen for relevant Polar webhooks
 
-    const auth = betterAuth({
-        // ... Better Auth config
-        plugins: [
-            polar({ // [!code ++]
-                client: polarClient, // [!code ++]
-                createCustomerOnSignUp: true, // [!code ++]
-                use: [ // [!code ++]
-                    checkout({ // [!code ++]
-                        products: [ // [!code ++]
-                            { // [!code ++]
-                                productId: "123-456-789", // ID of Product from Polar Dashboard // [!code ++]
-                                slug: "pro" // Custom slug for easy reference in Checkout URL, e.g. /checkout/pro // [!code ++]
-                            } // [!code ++]
-                        ], // [!code ++]
-                        successUrl: "/success?checkout_id={CHECKOUT_ID}", // [!code ++]
-                        authenticatedUsersOnly: true // [!code ++]
-                    }), // [!code ++]
-                    portal(), // [!code ++]
-                    usage(), // [!code ++]
-                    webhooks({ // [!code ++]
-                        secret: process.env.POLAR_WEBHOOK_SECRET!, // [!code ++]
-                        // Triggered when anything regarding a customer changes
-                        onCustomerStateChanged: async (payload) => {}, // [!code ++]
-                        // Triggered when an order was paid (purchase, subscription renewal, etc.)
-                        onOrderPaid: async (payload) => {}, // [!code ++]
-                        // ... Over 40 granular webhook handlers
-                        // Called for every event
-                        onPayload: async (payload) => {}, // [!code ++]
-                    }) // [!code ++]
-                ], // [!code ++]
-            }) // [!code ++]
-        ]
-    });
-    ```
+```typescript icon="square-js" auth.ts theme={null}
+import { betterAuth } from "better-auth";
+import { polar, checkout, portal, usage, webhooks } from "@polar-sh/better-auth"; // [!code ++]
+import { createPolarCore } from "@polar-sh/sdk/2026-10"; // [!code ++]
 
-    #### Polar Plugin Configuration Options
+const polarClient = createPolarCore({ // [!code ++]
+    accessToken: process.env.POLAR_ACCESS_TOKEN!, // [!code ++]
+    // Use 'sandbox' if you're using the Polar Sandbox environment
+    // Remember that access tokens, products, etc. are completely separated between environments.
+    // Access tokens obtained in Production are for instance not usable in the Sandbox environment.
+    environment: 'sandbox' // [!code ++]
+}); // [!code ++]
 
-    ```typescript theme={null}
-    // ...
+const auth = betterAuth({
+    // ... Better Auth config
+    plugins: [
+        polar({ // [!code ++]
+            client: polarClient, // [!code ++]
+            createCustomerOnSignUp: true, // [!code ++]
+            use: [ // [!code ++]
+                checkout({ // [!code ++]
+                    products: [ // [!code ++]
+                        { // [!code ++]
+                            productId: "123-456-789", // ID of Product from Polar Dashboard // [!code ++]
+                            slug: "pro" // Custom slug for easy reference in Checkout URL, e.g. /checkout/pro // [!code ++]
+                        } // [!code ++]
+                    ], // [!code ++]
+                    successUrl: "/success?checkout_id={CHECKOUT_ID}", // [!code ++]
+                    authenticatedUsersOnly: true // [!code ++]
+                }), // [!code ++]
+                portal(), // [!code ++]
+                usage(), // [!code ++]
+                webhooks({ // [!code ++]
+                    secret: process.env.POLAR_WEBHOOK_SECRET!, // [!code ++]
+                    // Triggered when anything regarding a customer changes
+                    onCustomerStateChanged: async (payload) => {}, // [!code ++]
+                    // Triggered when an order was paid (purchase, subscription renewal, etc.)
+                    onOrderPaid: async (payload) => {}, // [!code ++]
+                    // ... Over 40 granular webhook handlers
+                    // Called for every event
+                    onPayload: async (payload) => {}, // [!code ++]
+                }) // [!code ++]
+            ], // [!code ++]
+        }) // [!code ++]
+    ]
+});
+```
 
-    const auth = betterAuth({
-      // ... Better Auth config
-      plugins: [
-        polar({
-          client: polarClient, // [!code ++]
-          createCustomerOnSignUp: true, // [!code ++]
-          getCustomerCreateParams: async ({ user }) => ({ // [!code ++]
-            metadata: { // [!code ++]
-              myCustomProperty: 123, // [!code ++]
-            }, // [!code ++]
-          }), // [!code ++]
-          use: [ // [!code ++]
-            // This is where you add Polar plugins // [!code ++]
-          ], // [!code ++]
-        }),
-      ],
-    });
-    ```
+#### Polar Plugin Configuration Options
 
-    * `client` (required): Polar core client, created with `createPolarCore` from `@polar-sh/sdk/2026-10`
-    * `use` (required): Array of Polar plugins to enable specific functionality (checkout, portal, usage, and webhooks). Pass at least one plugin.
-    * `createCustomerOnSignUp` (optional): Automatically create a Polar customer when a user signs up
-    * `getCustomerCreateParams` (optional): Async function that returns additional metadata for new customers
-    * `experimental_organizationSync` (optional): Mirror Better Auth organizations to Polar team customers. See [Organization billing](#organization-billing).
+```typescript theme={null}
+// ...
 
-    The core client has no service properties such as `customers` or `events`. To call the Polar API yourself, import the operation you need and pass the client to it:
+const auth = betterAuth({
+  // ... Better Auth config
+  plugins: [
+    polar({
+      client: polarClient, // [!code ++]
+      createCustomerOnSignUp: true, // [!code ++]
+      getCustomerCreateParams: async ({ user }) => ({ // [!code ++]
+        metadata: { // [!code ++]
+          myCustomProperty: 123, // [!code ++]
+        }, // [!code ++]
+      }), // [!code ++]
+      use: [ // [!code ++]
+        // This is where you add Polar plugins // [!code ++]
+      ], // [!code ++]
+    }),
+  ],
+});
+```
 
-    ```typescript theme={null}
-    import { getStateExternalCustomers } from "@polar-sh/sdk/2026-10/services/customers";
+* `client` (required): Polar core client, created with `createPolarCore` from `@polar-sh/sdk/2026-10`
+* `use` (required): Array of Polar plugins to enable specific functionality (checkout, portal, usage, and webhooks). Pass at least one plugin.
+* `createCustomerOnSignUp` (optional): Automatically create a Polar customer when a user signs up
+* `getCustomerCreateParams` (optional): Async function that returns additional metadata for new customers
+* `experimental_organizationSync` (optional): Mirror Better Auth organizations to Polar team customers. See [Organization billing](#organization-billing).
 
-    const customerState = await getStateExternalCustomers(polarClient)(userId);
-    ```
+The core client has no service properties such as `customers` or `events`. To call the Polar API yourself, import the operation you need and pass the client to it:
 
-    Responses and webhook payloads use the SDK's snake\_case field names.
-  </Step>
+```typescript theme={null}
+import { getStateExternalCustomers } from "@polar-sh/sdk/2026-10/services/customers";
 
-  <Step title="Configure BetterAuth Client">
-    You will be using the BetterAuth Client to interact with the Polar functionalities.
+const customerState = await getStateExternalCustomers(polarClient)(userId);
+```
 
-    ```typescript icon="square-js" auth-client.ts theme={null}
-    import { createAuthClient } from "better-auth/react";
-    import { polarClient } from "@polar-sh/better-auth/client"; // [!code ++]
-    import { organizationClient } from "better-auth/client/plugins"; // [!code ++]
+Responses and webhook payloads use the SDK's snake\_case field names.
 
-    // All Polar plugins, etc. should be attached to BetterAuth server
-    export const authClient = createAuthClient({ // [!code ++]
-      plugins: [organizationClient(), polarClient()], // [!code ++]
-    }); // [!code ++]
-    ```
+**3. Configure BetterAuth Client**
 
-    `organizationClient()` is only needed if you use Better Auth's organization plugin.
-  </Step>
-</Steps>
+You will be using the BetterAuth Client to interact with the Polar functionalities.
+
+```typescript icon="square-js" auth-client.ts theme={null}
+import { createAuthClient } from "better-auth/react";
+import { polarClient } from "@polar-sh/better-auth/client"; // [!code ++]
+import { organizationClient } from "better-auth/client/plugins"; // [!code ++]
+
+// All Polar plugins, etc. should be attached to BetterAuth server
+export const authClient = createAuthClient({ // [!code ++]
+  plugins: [organizationClient(), polarClient()], // [!code ++]
+}); // [!code ++]
+```
+
+`organizationClient()` is only needed if you use Better Auth's organization plugin.
 
 ## Automatic Customer creation on signup
 
@@ -228,21 +224,21 @@ const userShouldHaveAccess = subscriptions?.items.some(
 );
 ```
 
-<Warning>
-  The plugin doesn't check that the user belongs to the organization passed as
-  `reference_id`, and the list includes every subscription in your Polar
-  organization with that `metadata.referenceId`. Verify membership in your
-  application before using the result to grant access.
-</Warning>
+> [!WARNING]
+>
+> The plugin doesn't check that the user belongs to the organization passed as
+> `reference_id`, and the list includes every subscription in your Polar
+> organization with that `metadata.referenceId`. Verify membership in your
+> application before using the result to grant access.
 
 ### Team customers with `experimental_organizationSync`
 
-<Warning>
-  This integration is experimental. If your application already bills
-  organizations another way, for example with `reference_id`, don't enable it:
-  existing subscriptions, orders, benefits and seats aren't migrated, so Better
-  Auth and Polar can end up inconsistent.
-</Warning>
+> [!WARNING]
+>
+> This integration is experimental. If your application already bills
+> organizations another way, for example with `reference_id`, don't enable it:
+> existing subscriptions, orders, benefits and seats aren't migrated, so Better
+> Auth and Polar can end up inconsistent.
 
 With Better Auth's `organization()` plugin and `experimental_organizationSync: { enabled: true }`, each Better Auth organization is mirrored to a Polar team customer. The organization ID becomes the team customer's external ID, and members are mirrored as Polar members with their user ID as external ID.
 
@@ -294,80 +290,78 @@ The checkout plugin accepts the following configuration options:
 * **`theme`** (optional): A string that can be used to enforce the theme of the checkout page. Can be either `light` or `dark`.
 * **`customerIpAddress`** (optional): A function `(headers) => ip` to resolve the customer IP address yourself, or `false` to not send it. By default the IP is resolved with Better Auth's `getIP` (see `advanced.ipAddress`) and sent to Polar to show the customer's local currency.
 
-<Steps>
-  <Step title="Use Checkout Plugin">
-    Update the `use` property of the Polar plugin on your BetterAuth server to include the `checkout` plugin.
+**1. Use Checkout Plugin**
 
-    ```typescript icon="square-js" Checkout Plugin Example theme={null}
-    import {
-      polar,
-      checkout // [!code ++]
-    } from "@polar-sh/better-auth";
+Update the `use` property of the Polar plugin on your BetterAuth server to include the `checkout` plugin.
 
-    const auth = betterAuth({
-        // ... Better Auth config
-        plugins: [
-            polar({
-                ...
-                use: [
-                    checkout({ // [!code ++]
-                        // Optional field - will make it possible to pass a slug to checkout instead of Product ID
-                        products: [ { productId: "123-456-789", slug: "pro" } ], // [!code ++]
-                        // Relative path or absolute URL to redirect to when checkout is successfully completed
-                        successUrl: "/success?checkout_id={CHECKOUT_ID}", // [!code ++]
-                        // Whether you want to allow unauthenticated checkout sessions or not
-                        authenticatedUsersOnly: true, // [!code ++]
-                        // An optional URL which renders a back-button in the Checkout
-                        returnUrl: "https://myapp.com" // [!code ++]
-                    }) // [!code ++]
-                ],
-            })
-        ]
-    });
-    ```
-  </Step>
+```typescript icon="square-js" Checkout Plugin Example theme={null}
+import {
+  polar,
+  checkout // [!code ++]
+} from "@polar-sh/better-auth";
 
-  <Step title="Create checkouts using BetterAuth client">
-    When the `checkout` plugin is passed, you are then able to initialize Checkout Sessions using the `checkout` method on the BetterAuth client. This will redirect the user to the product's checkout link.
+const auth = betterAuth({
+    // ... Better Auth config
+    plugins: [
+        polar({
+            ...
+            use: [
+                checkout({ // [!code ++]
+                    // Optional field - will make it possible to pass a slug to checkout instead of Product ID
+                    products: [ { productId: "123-456-789", slug: "pro" } ], // [!code ++]
+                    // Relative path or absolute URL to redirect to when checkout is successfully completed
+                    successUrl: "/success?checkout_id={CHECKOUT_ID}", // [!code ++]
+                    // Whether you want to allow unauthenticated checkout sessions or not
+                    authenticatedUsersOnly: true, // [!code ++]
+                    // An optional URL which renders a back-button in the Checkout
+                    returnUrl: "https://myapp.com" // [!code ++]
+                }) // [!code ++]
+            ],
+        })
+    ]
+});
+```
 
-    ```typescript icon="square-js" BetterAuth Checkout with Polar Example theme={null}
-    await authClient.checkout({
-      // Polar Product IDs
-      products: ["e651f46d-ac20-4f26-b769-ad088b123df2"], // [!code ++]
-      // OR
-      // if "products" in passed in the checkout plugin's config, you may pass the slug
-      // slug: "pro", // [!code ++]
-    });
-    ```
+**2. Create checkouts using BetterAuth client**
 
-    The `checkout` method accepts the following snake\_case properties:
+When the `checkout` plugin is passed, you are then able to initialize Checkout Sessions using the `checkout` method on the BetterAuth client. This will redirect the user to the product's checkout link.
 
-    * **`products`** (optional): A Polar Product ID or an array of them
-    * **`slug`** (optional): A string that can be used as a reference to the `products` defined in the Checkout config
-    * **`reference_id`** (optional): An identifier saved as `referenceId` in the metadata of the checkout, order & subscription object. See [Organization billing](#organization-billing).
-    * **`organization_id`** (optional): Bill a synchronized team customer. See [Organization billing](#organization-billing).
-    * **`metadata`**, **`custom_field_data`** (optional): Metadata and custom field values for the checkout
-    * **`allow_discount_codes`** (optional, defaults to `true`), **`discount_id`**, **`discount_code`** (optional): Discount settings. `discount_id` takes precedence when both are supplied.
-    * **`seats`**, **`min_seats`**, **`max_seats`** (optional): Seat-based pricing settings
-    * **`allow_trial`**, **`trial_interval`**, **`trial_interval_count`** (optional): Trial settings
-    * **`success_url`**, **`return_url`** (optional): Override the plugin's `successUrl` and `returnUrl`
-    * **`redirect`** (optional, defaults to `true`): Set to `false` to get the checkout `url` back without redirecting
-  </Step>
+```typescript icon="square-js" BetterAuth Checkout with Polar Example theme={null}
+await authClient.checkout({
+  // Polar Product IDs
+  products: ["e651f46d-ac20-4f26-b769-ad088b123df2"], // [!code ++]
+  // OR
+  // if "products" in passed in the checkout plugin's config, you may pass the slug
+  // slug: "pro", // [!code ++]
+});
+```
 
-  <Step title="Embed the checkout (optional)">
-    Use `checkoutEmbed` to open the checkout as an embed on your site instead of redirecting. It accepts the same properties as `checkout`.
+The `checkout` method accepts the following snake\_case properties:
 
-    ```typescript icon="square-js" BetterAuth Checkout Embed Example theme={null}
-    const embed = await authClient.checkoutEmbed({
-      products: ["e651f46d-ac20-4f26-b769-ad088b123df2"],
-    });
+* **`products`** (optional): A Polar Product ID or an array of them
+* **`slug`** (optional): A string that can be used as a reference to the `products` defined in the Checkout config
+* **`reference_id`** (optional): An identifier saved as `referenceId` in the metadata of the checkout, order & subscription object. See [Organization billing](#organization-billing).
+* **`organization_id`** (optional): Bill a synchronized team customer. See [Organization billing](#organization-billing).
+* **`metadata`**, **`custom_field_data`** (optional): Metadata and custom field values for the checkout
+* **`allow_discount_codes`** (optional, defaults to `true`), **`discount_id`**, **`discount_code`** (optional): Discount settings. `discount_id` takes precedence when both are supplied.
+* **`seats`**, **`min_seats`**, **`max_seats`** (optional): Seat-based pricing settings
+* **`allow_trial`**, **`trial_interval`**, **`trial_interval_count`** (optional): Trial settings
+* **`success_url`**, **`return_url`** (optional): Override the plugin's `successUrl` and `returnUrl`
+* **`redirect`** (optional, defaults to `true`): Set to `false` to get the checkout `url` back without redirecting
 
-    embed.addEventListener("success", (event) => {
-      console.log("Purchase successful!", event.detail);
-    });
-    ```
-  </Step>
-</Steps>
+**3. Embed the checkout (optional)**
+
+Use `checkoutEmbed` to open the checkout as an embed on your site instead of redirecting. It accepts the same properties as `checkout`.
+
+```typescript icon="square-js" BetterAuth Checkout Embed Example theme={null}
+const embed = await authClient.checkoutEmbed({
+  products: ["e651f46d-ac20-4f26-b769-ad088b123df2"],
+});
+
+embed.addEventListener("success", (event) => {
+  console.log("Purchase successful!", event.detail);
+});
+```
 
 ## Usage Plugin
 
@@ -402,9 +396,9 @@ const auth = betterAuth({
 
 Polar's Usage Based Billing builds entirely on event ingestion. Ingest events from your application, create Meters to represent that usage, and add metered prices to Products to charge for it.
 
-<Warning>
-  **Ingest events from your server, not from the browser.** Events drive billing, so the client must never be trusted to decide what is consumed. Always ingest from the same server-side handler that performs the metered action (e.g. the route that generated the AI video, processed the upload, etc.) so that the recorded usage cannot be forged or bypassed.
-</Warning>
+> [!WARNING]
+>
+> **Ingest events from your server, not from the browser.** Events drive billing, so the client must never be trusted to decide what is consumed. Always ingest from the same server-side handler that performs the metered action (e.g. the route that generated the AI video, processed the upload, etc.) so that the recorded usage cannot be forged or bypassed.
 
 Because `createCustomerOnSignUp: true` sets the Polar customer's external ID to the BetterAuth user ID, you can pass `external_customer_id: session.user.id` when ingesting — no extra lookup is needed.
 
@@ -462,9 +456,9 @@ const { data: ingested } = await authClient.usage.ingest({
 });
 ```
 
-<Warning>
-  This endpoint trusts whatever the client sends it, so a user can call it from their browser and claim any usage they want. Only use it for events that genuinely originate on the client and that you are comfortable not being authoritative (e.g. analytics-like signals). For billable usage, stick to server-side ingestion as shown above.
-</Warning>
+> [!WARNING]
+>
+> This endpoint trusts whatever the client sends it, so a user can call it from their browser and claim any usage they want. Only use it for events that genuinely originate on the client and that you are comfortable not being authoritative (e.g. analytics-like signals). For billable usage, stick to server-side ingestion as shown above.
 
 ### 2. Customer Meters
 
@@ -502,51 +496,49 @@ The `webhooks` plugin can be used to capture incoming events from your Polar org
 
 To set up the Polar `webhooks` plugin on your BetterAuth server, follow the steps below:
 
-<Steps>
-  <Step title="Configure Webhook Endpoints in Polar">
-    Configure a Webhook endpoint in your Polar Organization Settings page by following [this guide](/docs/integrate/webhooks/endpoints). The endpoint is served at `/polar/webhooks` under your Better Auth base path, which is `/api/auth/polar/webhooks` by default.
-  </Step>
+**1. Configure Webhook Endpoints in Polar**
 
-  <Step title="Add the Webhook Secret">
-    Add the obtained webhook secret to your application environment as an environment variable (to be used as `process.env.POLAR_WEBHOOK_SECRET`):
+Configure a Webhook endpoint in your Polar Organization Settings page by following [this guide](/docs/integrate/webhooks/endpoints). The endpoint is served at `/polar/webhooks` under your Better Auth base path, which is `/api/auth/polar/webhooks` by default.
 
-    ```bash .env theme={null}
-    POLAR_WEBHOOK_SECRET="..."
-    ```
-  </Step>
+**2. Add the Webhook Secret**
 
-  <Step title="Use Webhooks Plugin in BetterAuth server">
-    Pass the `webhooks` plugin in the `use` property.
+Add the obtained webhook secret to your application environment as an environment variable (to be used as `process.env.POLAR_WEBHOOK_SECRET`):
 
-    ```typescript icon="square-js" Webhooks Plugin Example theme={null}
-    import {
-      polar,
-      webhooks // [!code ++]
-    } from "@polar-sh/better-auth";
+```bash .env theme={null}
+POLAR_WEBHOOK_SECRET="..."
+```
 
-    const auth = betterAuth({
-        // ... Better Auth config
-        plugins: [
-            polar({
-                ...
-                use: [
-                    webhooks({ // [!code ++]
-                        secret: process.env.POLAR_WEBHOOK_SECRET!, // [!code ++]
-                        // Triggered when anything regarding a customer changes
-                        onCustomerStateChanged: async (payload) => {}, // [!code ++]
-                        // Triggered when an order was paid (purchase, subscription renewal, etc.)
-                        onOrderPaid: async (payload) => {}, // [!code ++]
-                        // ... Over 40 granular webhook handlers
-                        // Called for every event
-                        onPayload: async (payload) => {}, // [!code ++]
-                    }) // [!code ++]
-                ],
-            })
-        ]
-    });
-    ```
-  </Step>
-</Steps>
+**3. Use Webhooks Plugin in BetterAuth server**
+
+Pass the `webhooks` plugin in the `use` property.
+
+```typescript icon="square-js" Webhooks Plugin Example theme={null}
+import {
+  polar,
+  webhooks // [!code ++]
+} from "@polar-sh/better-auth";
+
+const auth = betterAuth({
+    // ... Better Auth config
+    plugins: [
+        polar({
+            ...
+            use: [
+                webhooks({ // [!code ++]
+                    secret: process.env.POLAR_WEBHOOK_SECRET!, // [!code ++]
+                    // Triggered when anything regarding a customer changes
+                    onCustomerStateChanged: async (payload) => {}, // [!code ++]
+                    // Triggered when an order was paid (purchase, subscription renewal, etc.)
+                    onOrderPaid: async (payload) => {}, // [!code ++]
+                    // ... Over 40 granular webhook handlers
+                    // Called for every event
+                    onPayload: async (payload) => {}, // [!code ++]
+                }) // [!code ++]
+            ],
+        })
+    ]
+});
+```
 
 The `webhooks` plugin allows you to invoke handlers for all Polar webhook events:
 

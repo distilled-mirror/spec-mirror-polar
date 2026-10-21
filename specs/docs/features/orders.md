@@ -18,17 +18,18 @@ Polar creates an order in all of these cases:
 * **Subscription created** — the initial order generated when a customer subscribes.
 * **Subscription renewal** — every billing cycle of an active subscription.
 * **Subscription change** — when a plan or seat update is prorated with `invoice` behavior and charges the difference immediately. See [Proration](/docs/features/subscriptions/proration).
+* **Usage charge** — at the end of each meter period, for products with a [meter cycle](/docs/features/usage-based-billing/billing#meter-cycle) shorter than the billing interval.
 
-Each order carries a `billing_reason` that tells you which of these it is: `purchase`, `subscription_create`, `subscription_cycle`, or `subscription_update`.
+Each order carries a `billing_reason` that tells you which of these it is: `purchase`, `subscription_create`, `subscription_cycle`, `subscription_update`, or `subscription_meter_cycle`.
 
 ## Arbitrary charges
 
 Sometimes you need to charge a customer an amount that doesn't originate from a checkout or a subscription renewal — a usage overage, a one-off professional-services fee, or a manual top-up. Polar lets you run these **off-session charges** against a customer's saved payment method, without the customer being present.
 
-<Note>
-  Off-session charges are currently in preview. You'll only be able to run off-session charges if
-  you are on a paid plan.
-</Note>
+> [!NOTE]
+>
+> Off-session charges are currently in preview. You'll only be able to run off-session charges if
+> you are on a paid plan.
 
 An off-session charge is a two-step flow: you create a **draft order**, then **finalize** it to attempt the charge. Both endpoints require the `orders:write` scope and the sales-management permission on the organization.
 
@@ -36,35 +37,35 @@ An off-session charge is a two-step flow: you create a **draft order**, then **f
 
 `POST /v1/orders/` creates an order in `draft` status with no invoice number — nothing is charged yet. You reference an existing customer and a one-time product, and optionally override the amount and description:
 
-<ParamField body="customer_id" type="string" required>
-  The customer to charge. Must belong to the organization.
-</ParamField>
+**customer\_id** `string` *required*
 
-<ParamField body="product_id" type="string" required>
-  A one-time product to charge for. Only fixed-price, free and unit-based products are supported.
-</ParamField>
+The customer to charge. Must belong to the organization.
 
-<ParamField body="units" type="integer">
-  The number of units to charge for. Required for unit-based products, rejected for any other pricing.
+**product\_id** `string` *required*
 
-  The quantity shows on the invoice line, e.g. `Acme Credits (500 credits)`, unless `description` replaces the text.
-</ParamField>
+A one-time product to charge for. Only fixed-price, free and unit-based products are supported.
 
-<ParamField body="amount" type="integer">
-  A custom amount in the smallest currency unit (e.g. `2500` for \$25.00). Overrides the product's price; defaults to it. Can't be combined with `units`.
-</ParamField>
+**units** `integer`
 
-<ParamField body="currency" type="string">
-  ISO 4217, lowercase (e.g. `usd`). Defaults to the organization's currency.
-</ParamField>
+The number of units to charge for. Required for unit-based products, rejected for any other pricing.
 
-<ParamField body="description" type="string">
-  The line-item text shown on the invoice and receipt. Defaults to the product name.
-</ParamField>
+The quantity shows on the invoice line, e.g. `Acme Credits (500 credits)`, unless `description` replaces the text.
 
-<ParamField body="organization_id" type="string">
-  Required unless you authenticate with an organization token.
-</ParamField>
+**amount** `integer`
+
+A custom amount in the smallest currency unit (e.g. `2500` for \$25.00). Overrides the product's price; defaults to it. Can't be combined with `units`.
+
+**currency** `string`
+
+ISO 4217, lowercase (e.g. `usd`). Defaults to the organization's currency.
+
+**description** `string`
+
+The line-item text shown on the invoice and receipt. Defaults to the product name.
+
+**organization\_id** `string`
+
+Required unless you authenticate with an organization token.
 
 The customer must have a complete billing address (so Polar can calculate tax) and at least one saved payment method.
 
@@ -139,11 +140,11 @@ Polar generates a PDF invoice for every paid order. You can:
 
 Customers can download and edit their own invoices — adding a company name, VAT number, or billing address — from the [Customer Portal](/docs/features/customer-portal/introduction), without pulling you into a support thread.
 
-<Note>
-  Once an invoice has been generated, its billing details are frozen. If you need to correct a name
-  or address after the fact, the customer should edit their invoice from the Customer Portal, which
-  regenerates it.
-</Note>
+> [!NOTE]
+>
+> Once an invoice has been generated, its billing details are frozen. If you need to correct a name
+> or address after the fact, the customer should edit their invoice from the Customer Portal, which
+> regenerates it.
 
 ## Receipts
 
@@ -175,23 +176,21 @@ If you're integrating orders into your own system, Polar emits an event on every
 
 ## Next steps
 
-<CardGroup cols={2}>
-  <Card title="Subscriptions" icon="rotate" href="/docs/features/subscriptions/introduction">
-    The recurring relationship that generates most orders.
-  </Card>
+> **[Subscriptions](/docs/features/subscriptions/introduction)**
+>
+> The recurring relationship that generates most orders.
 
-  <Card title="Refunds" icon="arrow-rotate-left" href="/docs/features/refunds">
-    How to refund an order, fully or partially.
-  </Card>
+> **[Refunds](/docs/features/refunds)**
+>
+> How to refund an order, fully or partially.
 
-  <Card title="Orders API" icon="code" href="/docs/api-reference/current/orders/list-orders">
-    List and fetch orders, update billing details, and generate invoices.
-  </Card>
+> **[Orders API](/docs/api-reference/current/orders/list-orders)**
+>
+> List and fetch orders, update billing details, and generate invoices.
 
-  <Card title="Customer Portal" icon="user" href="/docs/features/customer-portal/introduction">
-    Where customers view their own orders and download invoices and receipts.
-  </Card>
-</CardGroup>
+> **[Customer Portal](/docs/features/customer-portal/introduction)**
+>
+> Where customers view their own orders and download invoices and receipts.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

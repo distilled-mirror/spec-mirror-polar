@@ -81,10 +81,10 @@ Custom Fields are enabled on Checkout specifically on each **product**. While [c
 
 Note that you can make each field `Required` for that product.
 
-<Tip>
-  If you make a **checkbox** field **required**, customers will have to check
-  the box before submitting the checkout. Very useful for terms acceptance!
-</Tip>
+> [!TIP]
+>
+> If you make a **checkbox** field **required**, customers will have to check
+> the box before submitting the checkout. Very useful for terms acceptance!
 
 The fields are now added as part of the Checkout form for this product.
 

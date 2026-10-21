@@ -6,7 +6,7 @@
 
 > Embed our checkout directly on your site
 
-<img src="https://polar.sh/docs/assets/features/checkout/embed/demo.png" />
+![](https://polar.sh/docs/assets/features/checkout/embed/demo.png)
 
 You can either copy and paste our code snippet to get up and running in a second or use our JavaScript library for more advanced integrations. Our embedded checkout allows you to provide a seamless purchasing experience without redirecting users away from your site.
 
@@ -42,19 +42,17 @@ You can style the trigger element any way you want, as long as you keep the `dat
 
 If you have a more advanced project in JavaScript, like a React app, adding the `<script>` tag may not be an option. In this case, you can install our dedicated library.
 
-<CodeGroup>
-  ```bash npm theme={null}
-  npm install @polar-sh/checkout
-  ```
+```bash npm theme={null}
+npm install @polar-sh/checkout
+```
 
-  ```bash pnpm theme={null}
-  pnpm add @polar-sh/checkout
-  ```
+```bash pnpm theme={null}
+pnpm add @polar-sh/checkout
+```
 
-  ```bash yarn theme={null}
-  yarn add @polar-sh/checkout
-  ```
-</CodeGroup>
+```bash yarn theme={null}
+yarn add @polar-sh/checkout
+```
 
 Then, you should import the `PolarEmbedCheckout` helper class and manually call `PolarEmbedCheckout.init()`. This will add the required handlers on elements having the `data-polar-checkout` attribute.
 
@@ -83,17 +81,19 @@ const PurchaseLink = () => {
 export default PurchaseLink
 ```
 
-<Tip>
-  Instead of a Checkout Link, you can also use a [Checkout Session](/docs/features/checkout/session) URL created dynamically from the API.
-
-  For this to work, make sure to set the [`embed_origin`](/docs/api-reference/current/checkouts/create-checkout-session#body-embed-origin) parameter correctly when creating the Checkout Session. For example, if your checkout page is served on the URL `https://example.com/checkout`, you should set `embed_origin` to `https://example.com`.
-</Tip>
+> [!TIP]
+>
+> Instead of a Checkout Link, you can also use a [Checkout Session](/docs/features/checkout/session) URL created dynamically from the API.
+>
+> For this to work, make sure to set the [`embed_origin`](/docs/api-reference/current/checkouts/create-checkout-session#body-embed-origin) parameter correctly when creating the Checkout Session. For example, if your checkout page is served on the URL `https://example.com/checkout`, you should set `embed_origin` to `https://example.com`.
 
 ## Embed Hosts
 
 List the hosts allowed to embed your checkout under **Settings → Preferences → Embedding**. An embedded checkout only opens on a host you've listed, and the browser refuses to frame it anywhere else.
 
 After a payment, the checkout sends your page a message carrying a session token for your customer. The allowlist is how we know that page is yours.
+
+The same list also applies to the [Embedded Payment Method](/docs/features/checkout/embed-payment-method#embed-hosts).
 
 ### Writing a host
 
@@ -112,9 +112,9 @@ An entry without a port matches the default port only, so `example.com` does not
 
 Applications embedding checkout from their own origin, such as a browser extension, list that origin in full: `chrome-extension://abcdefghijklmnopqrstuvwxyzabcdef`.
 
-<Note>
-  Add every host in one go, staging and preview domains included — separate them with commas or spaces. The list takes effect as soon as you save it, so a host you leave out stops working straight away.
-</Note>
+> [!NOTE]
+>
+> Add every host in one go, staging and preview domains included — separate them with commas or spaces. The list takes effect as soon as you save it, so a host you leave out stops working straight away.
 
 ### Serving over HTTP
 

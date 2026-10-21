@@ -6,7 +6,7 @@
 
 > The fastest way to access Polar from your keyboard
 
-<img src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/integrations/raycast/hero.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=c0ee6608105a2797546bb31d14121345" width="1020" height="1020" data-path="assets/features/integrations/raycast/hero.png" />
+![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/integrations/raycast/hero.png?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=c0ee6608105a2797546bb31d14121345)
 
 ## Install Extension
 

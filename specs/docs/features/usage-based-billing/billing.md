@@ -56,42 +56,95 @@ Our Usage Based Billing infrastructure is built to work with Subscription produc
 
 To charge your customers for usage, you need to add a metered price to your product. You'll need to select the **Meter** and the **Pricing model**. A flat price per unit takes a single **amount per unit**; volume and graduated take a list of tiers.
 
-<Info>
-  The price is always entered as the cost per **single unit**. How it is
-  displayed to customers — for example as `$20 / 1M tokens` — is controlled by
-  the [Unit](/docs/features/usage-based-billing/meters#unit) setting on the meter.
-</Info>
+> [!NOTE]
+>
+> The price is always entered as the cost per **single unit**. How it is
+> displayed to customers — for example as `$20 / 1M tokens` — is controlled by
+> the [Unit](/docs/features/usage-based-billing/meters#unit) setting on the meter.
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/cap.light.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=b4ac7dd5bf3e6a6f1aa8ef8866bc81a3" width="1434" height="752" data-path="assets/features/usage/cap.light.png" />
-
-<img className="hidden dark:block" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/cap.dark.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=d2fb533708a2a5a4f25ffaa9f248331b" width="1444" height="748" data-path="assets/features/usage/cap.dark.png" />
+![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/cap.light.png?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=b4ac7dd5bf3e6a6f1aa8ef8866bc81a3)
 
 Optionally, you can set a **cap**. The customer will be charged the cap amount if they exceed it, regardless of the usage.
 
-### Monthly Invoicing
+### When usage is invoiced
 
-If a customer has a subscription with a monthly billing period, usage is aggregated monthly and invoiced at the end of the month with the rest of the subscription.
+By default, usage follows the subscription's billing period. On a monthly subscription, usage is aggregated over the month and invoiced at renewal with the rest of the subscription. On a yearly subscription, it's aggregated over the year and invoiced at the yearly renewal.
 
-### Yearly Invoicing
+To invoice usage more often than the subscription renews, for example monthly on a yearly plan, set a [meter cycle](#meter-cycle).
 
-If a customer has a subscription with a yearly billing period, usage is aggregated yearly and invoiced at the end of the year with the rest of the subscription.
+## Meter cycle
+
+A meter cycle lets metered usage run on its own cadence, independent of the billing interval. It's set on the product with `meter_interval` and `meter_interval_count`, or with the **Separate meter cycle** toggle in the product's pricing section.
+
+The common case is a yearly plan with monthly usage: the customer pays the base price once a year, while overage is invoiced and [credits](/docs/features/usage-based-billing/credits) are granted every month.
+
+At the end of each meter period, Polar:
+
+1. Invoices the period's usage as a separate order.
+2. Resets the customer's meters.
+3. Grants the [Credits benefit](/docs/features/benefits/credits) again, applying rollover if it's enabled.
+
+Meters are reset and credits granted even when there's no usage to invoice. If the period's usage is below the minimum chargeable amount, no payment is taken: the amount is added to the customer's balance and applied to their next order.
+
+Without a meter cycle, all of this happens once per billing period, at renewal.
+
+### Alignment with the billing interval
+
+The meter cycle must divide the billing interval evenly, so both cycles line up again at every renewal. The meter cycle starts on the same anchor day as the subscription.
+
+| Billing interval | Allowed meter cycles |
+| - | - |
+| Every *n* days | Every *m* days, where *m* divides *n* |
+| Every *n* weeks | Every *m* weeks, where *m* divides *n*, or every *m* days, where *m* divides *7n* |
+| Every *n* months | Every day, or every *m* months, where *m* divides *n* |
+| Every *n* years | Every day, or every *m* months, where *m* divides *12n*, or every *m* years, where *m* divides *n* |
+
+For example, a yearly plan accepts a meter cycle of 1, 2, 3, 4, 6 or 12 months, but not 5 months or 1 week. Weeks don't fit evenly into months, so weekly meter cycles aren't available on monthly or yearly plans.
+
+> [!WARNING]
+>
+> The meter cycle can't be changed once it's set on a product. Existing
+> subscriptions keep the meter cycle they were created with.
+
+### At renewal and other boundaries
+
+* **Renewal**: the last meter period of a billing period is invoiced in the regular renewal order, together with the base price. No separate `subscription_meter_cycle` order is created, and the meter cycle restarts from the new billing period.
+* **Trials**: the meter cycle starts when the trial converts to a paid subscription.
+* **Plan change**: usage accrued so far is invoiced right away on the previous product's prices, before the switch takes effect.
+* **Immediate cancellation**: usage up to the cancellation is invoiced right away. A cancellation at the end of the period invoices the final usage at the end of that period, as usual.
+
+### Discounts
+
+A percentage [discount](/docs/features/discounts) applies to every meter cycle order. A fixed-amount discount doesn't. It still applies to the renewal order.
+
+### Failed payments
+
+A failed meter cycle order is retried on the same schedule as [failed subscription payments](/docs/features/subscriptions/failed-payments): after 2, 7, 14 and 21 days. It never affects the subscription itself: the subscription stays `active`, keeps its benefits, and isn't revoked. If every retry fails, the order is voided.
+
+If the subscription itself becomes `past_due` because its renewal payment failed, the meter cycle is paused: no usage is invoiced, meters aren't reset and no credits are granted. Usage keeps being recorded. When the subscription recovers, the accrued usage is invoiced in one order, meters are reset and credits are granted again.
+
+### Customer emails
+
+Each meter cycle order sends the customer a **Your {product} usage invoice** email with a link to the customer portal. It's controlled by the same setting as subscription renewal emails, so disabling renewal emails disables these too.
+
+### Webhooks
+
+Each meter cycle order emits `order.created` and `order.paid` like any other order. Check `billing_reason` to tell them apart from renewals. Meter cycles don't emit `subscription.cycled`, which only fires at renewal.
 
 ### Usage Charges and Subscription Cancellation
 
 When a subscription is canceled, it generally remains active until the end of the current billing period (known as the grace period). During this grace period, all accumulated usage-based charges continue to be tracked. A final invoice will be issued at the end of that period to cover the consumed usage, even if the subscription will not be renewed. This ensures no pending usage charges are lost.
 
-<Warning>
-  If a [discount](/docs/features/discounts) is applied on the subscription, it'll be
-  applied on the **whole invoice**, including metered usage.
-</Warning>
+> [!WARNING]
+>
+> If a [discount](/docs/features/discounts) is applied on the subscription, it'll be
+> applied on the **whole invoice**, including metered usage.
 
 ## Customer Portal
 
 Customers can view their estimated charges for each meter in the Customer Portal.
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/portal.light.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=85bdb395f87e972ed50a7381ba3aad43" width="2358" height="1218" data-path="assets/features/usage/portal.light.png" />
-
-<img className="hidden dark:block" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/portal.dark.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=44f1b0e0f67aaa22b293a7dafaf3ab99" width="2364" height="1214" data-path="assets/features/usage/portal.dark.png" />
+![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/portal.light.png?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=85bdb395f87e972ed50a7381ba3aad43)
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

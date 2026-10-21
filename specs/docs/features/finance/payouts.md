@@ -84,14 +84,14 @@ A modal will open, allowing you to:
 * Add notes shown at the bottom of the invoice.
 * Customize the invoice number. By default, we generate one like `POLAR-0001`, but you can change it to your own format and sequence.
 
-<Warning>
-  Once the reverse invoice is generated, it cannot be changed. Make sure to
-  double-check the information before generating it.
-</Warning>
+> [!WARNING]
+>
+> Once the reverse invoice is generated, it cannot be changed. Make sure to
+> double-check the information before generating it.
 
 ### Sample Reverse Invoice
 
-<iframe src="https://polar-public-assets.s3.us-east-2.amazonaws.com/sample-reverse-invoice.pdf" width="100%" height="600px" />
+[https://polar-public-assets.s3.us-east-2.amazonaws.com/sample-reverse-invoice.pdf](https://polar-public-assets.s3.us-east-2.amazonaws.com/sample-reverse-invoice.pdf)
 
 ## Tax Forms
 
@@ -105,9 +105,9 @@ For a given tax year, 1099-K forms are required for users who cross a certain gr
 
 TurboTax has [this great article](https://blog.turbotax.intuit.com/self-employed/1099-misc-or-1099-k-whats-the-difference-29903/) on the difference between 1099-K, 1099-NEC & 1099-MISC.
 
-<Tip>
-  If you're self-employed and accept credit, debit, or prepaid cards, you may receive Form 1099-K for transactions processed by a third party. This includes creators, influencers, rideshare drivers, or side-giggers. If you're an online seller selling on platforms like Ebay, AirBnB, Etsy, and VRBO, you may also receive Form 1099-K.
-</Tip>
+> [!TIP]
+>
+> If you're self-employed and accept credit, debit, or prepaid cards, you may receive Form 1099-K for transactions processed by a third party. This includes creators, influencers, rideshare drivers, or side-giggers. If you're an online seller selling on platforms like Ebay, AirBnB, Etsy, and VRBO, you may also receive Form 1099-K.
 
 Stripe further clarifies 1099-K requirements for Payment Settlement Entities (PSE) in [this article](https://support.stripe.com/questions/intro-to-1099-k-tax-forms-for-platforms-and-marketplaces).
 
@@ -121,23 +121,21 @@ Polar meets all of these criteria and therefore issues 1099-K forms to eligible 
 
 ## Frequently Asked Questions
 
-<AccordionGroup>
-  <Accordion title="How long do payouts take?">
-    Payouts typically take 4-7 business days.
-  </Accordion>
+> **How long do payouts take?**
+>
+> Payouts typically take 4-7 business days.
 
-  <Accordion title="When are payouts processed after I request them?">
-    Payouts are processed in batches 24 hours after initiation.
-  </Accordion>
+> **When are payouts processed after I request them?**
+>
+> Payouts are processed in batches 24 hours after initiation.
 
-  <Accordion title="Can I use my personal bank account to receive payouts?">
-    For individual accounts, yes. For business accounts, you will need a business bank account.
-  </Accordion>
+> **Can I use my personal bank account to receive payouts?**
+>
+> For individual accounts, yes. For business accounts, you will need a business bank account.
 
-  <Accordion title="Why does my payout say 'Held for review'?">
-    You can request a payout at any time. [Account Reviews](/docs/merchant-of-record/account-reviews) are a normal part of how we operate, so if your account happens to be under review when you request one, the payout shows as "Held for review" until you are reviewed, then is paid out automatically.
-  </Accordion>
-</AccordionGroup>
+> **Why does my payout say 'Held for review'?**
+>
+> You can request a payout at any time. [Account Reviews](/docs/merchant-of-record/account-reviews) are a normal part of how we operate, so if your account happens to be under review when you request one, the payout shows as "Held for review" until you are reviewed, then is paid out automatically.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

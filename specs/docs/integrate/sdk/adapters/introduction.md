@@ -8,41 +8,37 @@
 
 Framework adapters make it dead simple to add Polar checkouts and webhooks to your stack. Pick your framework to get started.
 
-<Columns cols={2}>
-  <Card title="Next.js" icon="react" href="/docs/integrate/sdk/adapters/nextjs" horizontal />
+> **[Next.js](/docs/integrate/sdk/adapters/nextjs)**
 
-  <Card title="Nuxt" icon="vuejs" href="/docs/integrate/sdk/adapters/nuxt" horizontal />
+> **[Nuxt](/docs/integrate/sdk/adapters/nuxt)**
 
-  <Card title="TanStack Start" icon="react" href="/docs/integrate/sdk/adapters/tanstack-start" horizontal />
+> **[TanStack Start](/docs/integrate/sdk/adapters/tanstack-start)**
 
-  <Card title="Laravel" icon="php" href="/docs/integrate/sdk/adapters/laravel" horizontal />
+> **[Laravel](/docs/integrate/sdk/adapters/laravel)**
 
-  <Card title="BetterAuth" icon="shield-halved" href="/docs/integrate/sdk/adapters/better-auth" horizontal />
-</Columns>
+> **[BetterAuth](/docs/integrate/sdk/adapters/better-auth)**
 
 ## Legacy adapters
 
 These adapters are deprecated. For these frameworks, we recommend a direct integration using our [SDKs](/docs/integrate/sdk/introduction) instead.
 
-<Columns cols={2}>
-  <Card title="Astro" href="/docs/integrate/sdk/adapters/astro" horizontal />
+> **[Astro](/docs/integrate/sdk/adapters/astro)**
 
-  <Card title="Deno" href="/docs/integrate/sdk/adapters/deno" horizontal />
+> **[Deno](/docs/integrate/sdk/adapters/deno)**
 
-  <Card title="Elysia" href="/docs/integrate/sdk/adapters/elysia" horizontal />
+> **[Elysia](/docs/integrate/sdk/adapters/elysia)**
 
-  <Card title="Express" href="/docs/integrate/sdk/adapters/express" horizontal />
+> **[Express](/docs/integrate/sdk/adapters/express)**
 
-  <Card title="Fastify" href="/docs/integrate/sdk/adapters/fastify" horizontal />
+> **[Fastify](/docs/integrate/sdk/adapters/fastify)**
 
-  <Card title="Hono" href="/docs/integrate/sdk/adapters/hono" horizontal />
+> **[Hono](/docs/integrate/sdk/adapters/hono)**
 
-  <Card title="Remix" href="/docs/integrate/sdk/adapters/remix" horizontal />
+> **[Remix](/docs/integrate/sdk/adapters/remix)**
 
-  <Card title="Supabase" href="/docs/integrate/sdk/adapters/supabase" horizontal />
+> **[Supabase](/docs/integrate/sdk/adapters/supabase)**
 
-  <Card title="SvelteKit" href="/docs/integrate/sdk/adapters/sveltekit" horizontal />
-</Columns>
+> **[SvelteKit](/docs/integrate/sdk/adapters/sveltekit)**
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

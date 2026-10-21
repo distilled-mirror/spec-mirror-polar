@@ -24,13 +24,13 @@ Because the **Private note** supports Markdown, a Custom benefit is the simplest
 
 Set the **Description** to the title customers will see (e.g. *"Your onboarding link"*), put the link or instructions in **Private note**, and attach the benefit to a product. The rendered Markdown appears on the checkout success page, in the purchase confirmation email, and in the [Customer Portal](/docs/features/customer-portal).
 
-<Note>
-  Previously, we recommended using a Custom benefit without a note as a way to
-  grant access to software or SaaS features — decoupling entitlements from
-  checking directly on products. We now recommend the
-  [Feature Flag](/docs/features/benefits/feature-flags) benefit for this purpose, as
-  it's purpose-built for feature gating and supports key-value metadata.
-</Note>
+> [!NOTE]
+>
+> Previously, we recommended using a Custom benefit without a note as a way to
+> grant access to software or SaaS features — decoupling entitlements from
+> checking directly on products. We now recommend the
+> [Feature Flag](/docs/features/benefits/feature-flags) benefit for this purpose, as
+> it's purpose-built for feature gating and supports key-value metadata.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

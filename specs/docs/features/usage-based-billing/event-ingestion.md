@@ -60,11 +60,11 @@ await polar.events.ingest({
 });
 ```
 
-<Note>
-  You are always responsible for checking the balance of your customers' Usage
-  Meter. As events always are ingested, we will never prohibit any customer's
-  action based on their Usage Meter balance.
-</Note>
+> [!NOTE]
+>
+> You are always responsible for checking the balance of your customers' Usage
+> Meter. As events always are ingested, we will never prohibit any customer's
+> action based on their Usage Meter balance.
 
 ## Ingestion Strategies
 

@@ -8,9 +8,7 @@
 
 You can see your available balance for payout at any time under your `Finance` page.
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/finance/balance/overview.light.jpeg?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=603040c0ac9331aa9f71061ce20401fe" width="2700" height="1655" data-path="assets/features/finance/balance/overview.light.jpeg" />
-
-<img className="hidden dark:block" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/finance/balance/overview.dark.jpeg?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=b4ac9458eabafcf793d75e6f3ed1fba5" width="2700" height="1655" data-path="assets/features/finance/balance/overview.dark.jpeg" />
+![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/finance/balance/overview.light.jpeg?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=603040c0ac9331aa9f71061ce20401fe)
 
 Your balance is all the earnings minus:
 

@@ -10,10 +10,10 @@ Polar organizations support multiple users. You can invite teammates to collabor
 
 Team management lives under [**Settings → Members**](https://polar.sh/to/dashboard/settings/members) in your dashboard.
 
-<Note>
-  On the Scale plan you can connect your own identity provider instead of inviting people one by
-  one. See [Single Sign-On](/docs/features/sso).
-</Note>
+> [!NOTE]
+>
+> On the Scale plan you can connect your own identity provider instead of inviting people one by
+> one. See [Single Sign-On](/docs/features/sso).
 
 ## Roles
 
@@ -54,13 +54,13 @@ The invitee receives an email with a link to join your organization. If they don
 
 New members join with the **Member** role by default. To grant additional access, change their role after they've been added.
 
-<Note>
-  **Already a member?** If you invite an email that's already part of your organization, no new invite is sent — the existing membership is shown instead.
-</Note>
+> [!NOTE]
+>
+> **Already a member?** If you invite an email that's already part of your organization, no new invite is sent — the existing membership is shown instead.
 
-<Warning>
-  **Enforcing [SSO](/docs/features/sso)?** Invitations stop being a way in. The invited person becomes a member, but reaching the organization requires signing in through your identity provider. Add them there instead.
-</Warning>
+> [!WARNING]
+>
+> **Enforcing [SSO](/docs/features/sso)?** Invitations stop being a way in. The invited person becomes a member, but reaching the organization requires signing in through your identity provider. Add them there instead.
 
 ## Changing a member's role
 
@@ -73,9 +73,9 @@ Only **admins** and **owners** can change roles.
 
 The role picker shows a side-by-side permissions matrix so you can confirm what each role grants before saving.
 
-<Note>
-  **The owner's role can't be changed from this menu.** Every organization has exactly one owner at all times. Ownership can only be transferred to another member of the organization who has completed identity verification — please [contact support](/docs/support) to request an ownership transfer.
-</Note>
+> [!NOTE]
+>
+> **The owner's role can't be changed from this menu.** Every organization has exactly one owner at all times. Ownership can only be transferred to another member of the organization who has completed identity verification — please [contact support](/docs/support) to request an ownership transfer.
 
 ## Removing a member
 
@@ -88,13 +88,13 @@ Only **admins** and **owners** can remove other members.
 
 The removed member immediately loses access to the organization. They keep their Polar account and any other organizations they're a member of.
 
-<Warning>
-  **You can't remove the owner.** Every organization always has exactly one owner — to remove the current owner, ownership must first be transferred to another member who has completed identity verification. Please [contact support](/docs/support) to request an ownership transfer.
-</Warning>
+> [!WARNING]
+>
+> **You can't remove the owner.** Every organization always has exactly one owner — to remove the current owner, ownership must first be transferred to another member who has completed identity verification. Please [contact support](/docs/support) to request an ownership transfer.
 
-<Warning>
-  **Using [SSO](/docs/features/sso)?** Removing a member here doesn't keep them out. Anyone who can still authenticate against your identity provider rejoins on their next sign-in. Revoke their access in your identity provider instead.
-</Warning>
+> [!WARNING]
+>
+> **Using [SSO](/docs/features/sso)?** Removing a member here doesn't keep them out. Anyone who can still authenticate against your identity provider rejoins on their next sign-in. Revoke their access in your identity provider instead.
 
 ## Leaving an organization
 
@@ -111,24 +111,22 @@ You can't leave an organization if you are:
 
 ## Frequently asked questions
 
-<AccordionGroup>
-  <Accordion title="Do invited users need an existing Polar account?">
-    No. If the invited email doesn't have a Polar account yet, one is created automatically. The user signs in to claim it when they accept the invitation.
-  </Accordion>
+> **Do invited users need an existing Polar account?**
+>
+> No. If the invited email doesn't have a Polar account yet, one is created automatically. The user signs in to claim it when they accept the invitation.
 
-  <Accordion title="Can people join without an invitation?">
-    Yes, if your organization uses [Single Sign-On](/docs/features/sso). Anyone who authenticates through your identity provider becomes a member with the Member role — no invitation needed. Your identity provider controls who can do that.
-  </Accordion>
+> **Can people join without an invitation?**
+>
+> Yes, if your organization uses [Single Sign-On](/docs/features/sso). Anyone who authenticates through your identity provider becomes a member with the Member role — no invitation needed. Your identity provider controls who can do that.
 
-  <Accordion title="Can a user belong to more than one organization?">
-    Yes. A user can be a member of any number of organizations and may have different roles in each one. You can switch between them from the organization picker in the dashboard.
-  </Accordion>
+> **Can a user belong to more than one organization?**
+>
+> Yes. A user can be a member of any number of organizations and may have different roles in each one. You can switch between them from the organization picker in the dashboard.
 
-  <Accordion title="How do I transfer ownership of an organization?">
-    Ownership can only be transferred to another member of the organization who has completed identity verification. Every organization always has exactly one owner — the previous owner becomes an admin once the transfer completes.
-    Please [contact support](/docs/support) to request an ownership transfer.
-  </Accordion>
-</AccordionGroup>
+> **How do I transfer ownership of an organization?**
+>
+> Ownership can only be transferred to another member of the organization who has completed identity verification. Every organization always has exactly one owner — the previous owner becomes an admin once the transfer completes.
+> Please [contact support](/docs/support) to request an ownership transfer.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

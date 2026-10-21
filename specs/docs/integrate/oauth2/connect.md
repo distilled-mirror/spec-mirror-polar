@@ -18,28 +18,28 @@ https://polar.sh/oauth2/authorize?
 
 The parameters are the one described in the [OpenID Connect specification](https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest). The most important ones are:
 
-<ParamField path="response_type=code" type="string" required>
-  Indicates that you want to use the authorization code flow. Most common and
-  the only one supported by Polar.
-</ParamField>
+**response\_type=code** `string` *required*
 
-<ParamField path="client_id" type="string" required>
-  The Client ID you got when creating the OAuth 2.0 client.
-</ParamField>
+Indicates that you want to use the authorization code flow. Most common and
+the only one supported by Polar.
 
-<ParamField path="redirect_uri" type="string" required>
-  The URL where the user will be redirected after granting access to their data.
-  Make sure you declared it when creating the OAuth2 client.
-</ParamField>
+**client\_id** `string` *required*
 
-<ParamField path="scope" type="string" required>
-  A space-separated list of scopes you want to ask for. Make sure they are part
-  of the scopes you declared when creating the OAuth2 client.
-</ParamField>
+The Client ID you got when creating the OAuth 2.0 client.
+
+**redirect\_uri** `string` *required*
+
+The URL where the user will be redirected after granting access to their data.
+Make sure you declared it when creating the OAuth2 client.
+
+**scope** `string` *required*
+
+A space-separated list of scopes you want to ask for. Make sure they are part
+of the scopes you declared when creating the OAuth2 client.
 
 If you redirect the user to this URL, they'll see a page asking them to grant access to their data, corresponding to the scopes you asked for.
 
-<img src="https://mintcdn.com/polar/z84HinKP_G_UZoW1/assets/integrate/oauth2/connect.png?fit=max&auto=format&n=z84HinKP_G_UZoW1&q=85&s=5223122ad404d726bc7cec001561efff" width="2480" height="1522" data-path="assets/integrate/oauth2/connect.png" />
+![](https://mintcdn.com/polar/z84HinKP_G_UZoW1/assets/integrate/oauth2/connect.png?fit=max\&auto=format\&n=z84HinKP_G_UZoW1\&q=85\&s=5223122ad404d726bc7cec001561efff)
 
 Polar issues **user-scoped** access tokens, tied to the user granting access. On the consent screen, the user can optionally **limit the token to specific organizations**: by default it can access all of their organizations (including ones they join later), but if they select specific ones, it's restricted to those. Access always intersects with the user's current membership, so it adjusts automatically if they leave an organization. You can check which organizations a token is limited to by [introspecting it](/docs/api-reference/current/oauth2/introspect-token) — the response includes an `organizations` array (an empty array means all of them).
 

@@ -6,10 +6,10 @@
 
 > Usage based billing using ingested events
 
-<Info>
-  Usage Based Billing is a new feature. We have a lot in store and welcome
-  feedback!
-</Info>
+> [!NOTE]
+>
+> Usage Based Billing is a new feature. We have a lot in store and welcome
+> feedback!
 
 ## Overview
 
@@ -73,40 +73,30 @@ On a recurring product, the customer will be credited the amount of units specif
 
 Get up and running in 5 minutes
 
-<Steps>
-  <Step title="Create a Meter">
-    Meters consist of filters and an aggregation function.
-    The filter is used to filter the events that should be included in the meter and the aggregation function is used to compute the usage.
+**1. Create a Meter**
 
-    <img className="block dark:hidden" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/create-meter.light.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=0145ac51bc8100b038482d31612f3ea6" width="3598" height="2070" data-path="assets/features/usage/create-meter.light.png" />
+Meters consist of filters and an aggregation function.
+The filter is used to filter the events that should be included in the meter and the aggregation function is used to compute the usage.
 
-    <img className="hidden dark:block" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/create-meter.dark.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=2293c25c2e2c014abcf6c8a761568f95" width="3590" height="2066" data-path="assets/features/usage/create-meter.dark.png" />
-  </Step>
+![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/create-meter.light.png?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=0145ac51bc8100b038482d31612f3ea6)
 
-  <Step title="Add metered price to a Product">
-    To enable usage based billing for a Product, you need to add a metered price to the Product. Metered prices are only applicable to Subscription Products.
+**2. Add metered price to a Product**
 
-    <img className="block dark:hidden" src="https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/features/usage/product-meter.light.png?fit=max&auto=format&n=0Af3hN6-oIM4IHT3&q=85&s=c1a9f0493fa6b73f0d4581b19e5d757c" width="2552" height="1600" data-path="assets/features/usage/product-meter.light.png" />
+To enable usage based billing for a Product, you need to add a metered price to the Product. Metered prices are only applicable to Subscription Products.
 
-    <img className="hidden dark:block" src="https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/features/usage/product-meter.dark.png?fit=max&auto=format&n=0Af3hN6-oIM4IHT3&q=85&s=4a54e18d784e6c6312c73dd42b02c473" width="2548" height="1596" data-path="assets/features/usage/product-meter.dark.png" />
-  </Step>
+![](https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/features/usage/product-meter.light.png?fit=max\&auto=format\&n=0Af3hN6-oIM4IHT3\&q=85\&s=c1a9f0493fa6b73f0d4581b19e5d757c)
 
-  <Step title="Ingest Events">
-    Now you're ready to ingest events from your application. Sending events which match the meter's filter will increment the meter's usage for the customer.
+**3. Ingest Events**
 
-    <img className="block dark:hidden" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/ingest.light.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=6428f34bbf464c2e8248138ccbcea782" width="1572" height="1104" data-path="assets/features/usage/ingest.light.png" />
+Now you're ready to ingest events from your application. Sending events which match the meter's filter will increment the meter's usage for the customer.
 
-    <img className="hidden dark:block" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/ingest.dark.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=f8b485ff1e386a0fa79c50d428c5b958" width="1566" height="1102" data-path="assets/features/usage/ingest.dark.png" />
-  </Step>
+![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/ingest.light.png?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=6428f34bbf464c2e8248138ccbcea782)
 
-  <Step title="Customer Usage">
-    Customers can view their estimated charges for each meter in the Customer Portal.
+**4. Customer Usage**
 
-    <img className="block dark:hidden" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/portal.light.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=85bdb395f87e972ed50a7381ba3aad43" width="2358" height="1218" data-path="assets/features/usage/portal.light.png" />
+Customers can view their estimated charges for each meter in the Customer Portal.
 
-    <img className="hidden dark:block" src="https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/portal.dark.png?fit=max&auto=format&n=fnujBPxaFvfkZfB0&q=85&s=44f1b0e0f67aaa22b293a7dafaf3ab99" width="2364" height="1214" data-path="assets/features/usage/portal.dark.png" />
-  </Step>
-</Steps>
+![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/portal.light.png?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=85bdb395f87e972ed50a7381ba3aad43)
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

@@ -8,9 +8,9 @@
 
 This is the simplest way to start selling. Configure once in the dashboard, share the URL anywhere (your website, social media, email, a button in your app), and Polar handles the rest.
 
-<Tip>
-  If you need to create Checkout Sessions programmatically (e.g. with per-customer data computed by your backend), use the [Checkout API](/docs/features/checkout/session) directly instead.
-</Tip>
+> [!TIP]
+>
+> If you need to create Checkout Sessions programmatically (e.g. with per-customer data computed by your backend), use the [Checkout API](/docs/features/checkout/session) directly instead.
 
 ## How it works
 
@@ -32,9 +32,9 @@ Checkout Links are managed from the [**Checkout Links**](https://polar.sh/to/das
 
 You can select one or several products. With several products, customers can switch between them on the checkout page before paying. Products are shown in the order you list them.
 
-<Note>
-  Customers always purchase a single product per checkout. Selecting multiple products on a Checkout Link gives the customer a choice between them; it doesn't bundle them together. True multi-product checkout (multiple products in the same order) isn't supported yet.
-</Note>
+> [!NOTE]
+>
+> Customers always purchase a single product per checkout. Selecting multiple products on a Checkout Link gives the customer a choice between them; it doesn't bundle them together. True multi-product checkout (multiple products in the same order) isn't supported yet.
 
 ### Discount
 
@@ -42,9 +42,9 @@ You can preset a discount on the link. It will be **automatically applied** when
 
 If **Allow discount codes** is enabled, customers can still manually enter another discount code during checkout.
 
-<Tip>
-  Discounts without a code can only be applied through Checkout Link presets or the [Checkout API](/docs/features/checkout/session). Learn more in the [Discounts documentation](/docs/features/discounts).
-</Tip>
+> [!TIP]
+>
+> Discounts without a code can only be applied through Checkout Link presets or the [Checkout API](/docs/features/checkout/session). Learn more in the [Discounts documentation](/docs/features/discounts).
 
 ### Success URL
 
@@ -80,73 +80,73 @@ Append query parameters to a Checkout Link URL to override or extend its preset 
 
 When a link is configured with several products, point the customer directly to one of them using `product_id`. The customer can still switch products on the checkout page.
 
-<ParamField path="product_id" type="string">
-  ID of the product to preselect. Must be one of the products configured on the Checkout Link.
-</ParamField>
+**product\_id** `string`
+
+ID of the product to preselect. Must be one of the products configured on the Checkout Link.
 
 ### Prefill fields
 
-<ParamField path="customer_email" type="string">
-  Prefill the customer email.
-</ParamField>
+**customer\_email** `string`
 
-<ParamField path="customer_name" type="string">
-  Prefill the customer name.
-</ParamField>
+Prefill the customer email.
 
-<ParamField path="discount_code" type="string">
-  Prefill the discount code input. Only works with discounts that have a code set. See the [Discounts documentation](/docs/features/discounts) for details.
+**customer\_name** `string`
 
-  This is different from presetting a discount on the link. A preset discount is silently applied, whereas `discount_code` only fills the input field so the customer can see it.
-</ParamField>
+Prefill the customer name.
 
-<ParamField path="amount" type="string">
-  Prefill the amount when the product uses Pay-What-You-Want pricing.
-</ParamField>
+**discount\_code** `string`
 
-<ParamField path="locale" type="string">
-  Force the checkout page language, given as an IETF BCP 47 language tag (e.g.
-  `en`, `fr`, `pt-BR`). If omitted, the language is detected from the
-  customer's browser. Checkout localization is in beta. See
-  [Checkout Localization](/docs/features/checkout/localization) for details.
-</ParamField>
+Prefill the discount code input. Only works with discounts that have a code set. See the [Discounts documentation](/docs/features/discounts) for details.
 
-<ParamField path="custom_field_data.{slug}" type="string">
-  Prefill custom field data, where `{slug}` is the slug of the custom field.
-</ParamField>
+This is different from presetting a discount on the link. A preset discount is silently applied, whereas `discount_code` only fills the input field so the customer can see it.
 
-<ParamField path="theme" type="string">
-  Force the checkout page theme. Accepts `light` or `dark`. If omitted, the
-  theme follows the customer's system preference.
-</ParamField>
+**amount** `string`
+
+Prefill the amount when the product uses Pay-What-You-Want pricing.
+
+**locale** `string`
+
+Force the checkout page language, given as an IETF BCP 47 language tag (e.g.
+`en`, `fr`, `pt-BR`). If omitted, the language is detected from the
+customer's browser. Checkout localization is in beta. See
+[Checkout Localization](/docs/features/checkout/localization) for details.
+
+**custom\_field\_data.\{slug}** `string`
+
+Prefill custom field data, where `{slug}` is the slug of the custom field.
+
+**theme** `string`
+
+Force the checkout page theme. Accepts `light` or `dark`. If omitted, the
+theme follows the customer's system preference.
 
 ### Attribution and reference metadata
 
 These parameters are automatically attached to the generated Checkout Session [`metadata`](/docs/api-reference/current/checkouts/get-checkout-session#response-metadata).
 
-<ParamField path="reference_id" type="string">
-  Your own reference ID for the Checkout Session.
-</ParamField>
+**reference\_id** `string`
 
-<ParamField path="utm_source" type="string">
-  UTM source of the Checkout Session.
-</ParamField>
+Your own reference ID for the Checkout Session.
 
-<ParamField path="utm_medium" type="string">
-  UTM medium of the Checkout Session.
-</ParamField>
+**utm\_source** `string`
 
-<ParamField path="utm_campaign" type="string">
-  UTM campaign of the Checkout Session.
-</ParamField>
+UTM source of the Checkout Session.
 
-<ParamField path="utm_content" type="string">
-  UTM content of the Checkout Session.
-</ParamField>
+**utm\_medium** `string`
 
-<ParamField path="utm_term" type="string">
-  UTM term of the Checkout Session.
-</ParamField>
+UTM medium of the Checkout Session.
+
+**utm\_campaign** `string`
+
+UTM campaign of the Checkout Session.
+
+**utm\_content** `string`
+
+UTM content of the Checkout Session.
+
+**utm\_term** `string`
+
+UTM term of the Checkout Session.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

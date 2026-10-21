@@ -22,15 +22,15 @@ To avoid any overage charges, don't create any Metered price on your product. Th
 
 ## Issuing Credits with the Credits Benefit
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/benefits/credits/credits.light.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=95a964aa562069bd58a551e44c757459" width="1620" height="2304" data-path="assets/features/benefits/credits/credits.light.png" />
-
-<img className="hidden dark:block" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/benefits/credits/credits.dark.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=a545e217dd64f288b127ec76eb3527ef" width="1620" height="2304" data-path="assets/features/benefits/credits/credits.dark.png" />
+![](https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/benefits/credits/credits.light.png?fit=max\&auto=format\&n=Ut0vPUvE1pIdMcH2\&q=85\&s=95a964aa562069bd58a551e44c757459)
 
 The Credits benefit will credit a customer's Usage Meter balance at different points in time depending on the type of product the benefit is attached to.
 
 ### Subscription Products
 
 The customer will be credited the amount of units specified in the benefit at the beginning of every subscription cycle period — monthly or yearly.
+
+If the product has a [meter cycle](/docs/features/usage-based-billing/billing#meter-cycle), credits are granted at the start of every meter period instead. For example, a yearly plan with a monthly meter cycle grants credits every month. No credits are granted while the subscription is `past_due`.
 
 ### One-Time Products
 
@@ -42,11 +42,11 @@ In your application, you'll likely need to track the customer's balance for a gi
 
 You can also specifically query the meters balance using the [Customer Meters API](/docs/api-reference/current/customer_meters/list-customer-meters).
 
-<Warning>
-  Polar doesn't block usage if the customer exceeds their balance. You're
-  responsible for implementing the logic you need to prevent usage if they
-  exceed it.
-</Warning>
+> [!WARNING]
+>
+> Polar doesn't block usage if the customer exceeds their balance. You're
+> responsible for implementing the logic you need to prevent usage if they
+> exceed it.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

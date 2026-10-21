@@ -10,25 +10,23 @@ The official TypeScript SDK provides a fully typed client for the Polar API.
 
 ## Installation
 
-<Tabs>
-  <Tab title="npm">
-    ```bash Terminal theme={null}
-    npm install @polar-sh/sdk
-    ```
-  </Tab>
+**npm**
 
-  <Tab title="yarn">
-    ```bash Terminal theme={null}
-    yarn add @polar-sh/sdk
-    ```
-  </Tab>
+```bash Terminal theme={null}
+npm install @polar-sh/sdk
+```
 
-  <Tab title="pnpm">
-    ```bash Terminal theme={null}
-    pnpm add @polar-sh/sdk
-    ```
-  </Tab>
-</Tabs>
+**yarn**
+
+```bash Terminal theme={null}
+yarn add @polar-sh/sdk
+```
+
+**pnpm**
+
+```bash Terminal theme={null}
+pnpm add @polar-sh/sdk
+```
 
 ## Quickstart
 

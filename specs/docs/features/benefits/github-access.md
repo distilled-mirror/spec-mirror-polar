@@ -6,7 +6,7 @@
 
 > Sell premium GitHub repository access with ease
 
-<img src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/benefits/github/hero.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=12d4147b094c8f5b3d002d600757ceb0" width="2400" height="1374" data-path="assets/features/benefits/github/hero.png" />
+![](https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/benefits/github/hero.png?fit=max\&auto=format\&n=Ut0vPUvE1pIdMcH2\&q=85\&s=12d4147b094c8f5b3d002d600757ceb0)
 
 ## Sell GitHub Repository Access
 
@@ -36,11 +36,11 @@ You first need to `Connect your GitHub Account` and install a dedicated Polar Ap
 
 * Click `Connect your GitHub Account`
 
-<Info>
-  **Why do I need to connect GitHub again and install a separate app?**
-
-  This feature requires permission to manage repository collaborators. GitHub Apps does not support progressive permission scope requests. So instead of requesting this sensitive permission from all users (unnecessarily) in our core GitHub Login this feature uses a standalone app instead.
-</Info>
+> [!NOTE]
+>
+> **Why do I need to connect GitHub again and install a separate app?**
+>
+> This feature requires permission to manage repository collaborators. GitHub Apps does not support progressive permission scope requests. So instead of requesting this sensitive permission from all users (unnecessarily) in our core GitHub Login this feature uses a standalone app instead.
 
 Once you've authorized our dedicated GitHub App for this feature you'll be redirected back to Polar and the benefit form - now connected and updated.
 
@@ -48,11 +48,11 @@ Once you've authorized our dedicated GitHub App for this feature you'll be redir
 
 Select the desired repository you want to automate collaborator invites for.
 
-<Info>
-  **Why can I only connect organization repositories vs. personal ones?**
-
-  GitHub does not support granular permissions for collaborators on personal repositories - granting them all write permissions instead. Since collaborators would then be able to push changes, releases and more, we do not support personal repositories by default.Want this still? Reach out to us and we can enable it.
-</Info>
+> [!NOTE]
+>
+> **Why can I only connect organization repositories vs. personal ones?**
+>
+> GitHub does not support granular permissions for collaborators on personal repositories - granting them all write permissions instead. Since collaborators would then be able to push changes, releases and more, we do not support personal repositories by default.Want this still? Reach out to us and we can enable it.
 
 ### **Role**
 
@@ -66,15 +66,15 @@ Select the role you want to grant collaborators.
 
 Read access (read-only) is what 99.9% of cases should use and the others are highly discouraged unless you have special use cases & absolutely know the impact of these permissions. Checkout the [GitHub documentation](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization#permissions-for-each-role) for reference.
 
-<Info>
-  Anyone with read access to a repository can create a pull request [(source)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
-</Info>
+> [!NOTE]
+>
+> Anyone with read access to a repository can create a pull request [(source)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 
-<Info>
-  **Additional Costs for Paid GitHub Organizations**
-
-  GitHub treats collaborators as a seat and they will incurr charges accordingly to your billing unless you're using a free GitHub organization plan. So make sure to confirm you're on a free plan OR charge sufficiently to offset the costs you'll need to pay to GitHub.
-</Info>
+> [!NOTE]
+>
+> **Additional Costs for Paid GitHub Organizations**
+>
+> GitHub treats collaborators as a seat and they will incurr charges accordingly to your billing unless you're using a free GitHub organization plan. So make sure to confirm you're on a free plan OR charge sufficiently to offset the costs you'll need to pay to GitHub.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

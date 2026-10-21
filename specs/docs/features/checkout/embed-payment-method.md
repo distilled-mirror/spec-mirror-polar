@@ -6,7 +6,7 @@
 
 > Embed our payment method flow on your site
 
-<img src="https://polar.sh/docs/assets/features/checkout/embed-payment-method/polar-sdk-payment-method.png" />
+![](https://polar.sh/docs/assets/features/checkout/embed-payment-method/polar-sdk-payment-method.png)
 
 Let your customers securely add a payment method without leaving your site.
 
@@ -26,27 +26,33 @@ const session = await polar.customerSessions.create({
 
 The token expires after one hour and is scoped to that single customer.
 
+## Embed hosts
+
+The payment method embed only opens on a host you've allowed. It uses the same list as [Embedded Checkout](/docs/features/checkout/embed#embed-hosts): add your site under **Settings → Preferences → Embedding** before embedding it. The list applies as soon as you save it.
+
+See [Writing a host](/docs/features/checkout/embed#writing-a-host) for the accepted formats, including wildcards, ports and local development hosts.
+
+If the page isn't on the list, the browser refuses to frame the embed, so it stays blank and the browser console shows a message naming `frame-ancestors`. An invalid or expired session token has the same effect.
+
 ## Implementation
 
 Start by installing the SDK.
 
-<CodeGroup>
-  ```bash npm theme={null}
-  npm install @polar-sh/checkout
-  ```
+```bash npm theme={null}
+npm install @polar-sh/checkout
+```
 
-  ```bash pnpm theme={null}
-  pnpm add @polar-sh/checkout
-  ```
+```bash pnpm theme={null}
+pnpm add @polar-sh/checkout
+```
 
-  ```bash yarn theme={null}
-  yarn add @polar-sh/checkout
-  ```
+```bash yarn theme={null}
+yarn add @polar-sh/checkout
+```
 
-  ```bash bun theme={null}
-  bun add @polar-sh/checkout
-  ```
-</CodeGroup>
+```bash bun theme={null}
+bun add @polar-sh/checkout
+```
 
 ### Modal
 

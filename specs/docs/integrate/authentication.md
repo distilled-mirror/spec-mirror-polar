@@ -4,9 +4,9 @@
 
 # Authentication
 
-<Info>
-  All bearer tokens should be kept private and never shared or exposed in client-side code.
-</Info>
+> [!NOTE]
+>
+> All bearer tokens should be kept private and never shared or exposed in client-side code.
 
 To authenticate requests, Polar API has two mechanisms.
 

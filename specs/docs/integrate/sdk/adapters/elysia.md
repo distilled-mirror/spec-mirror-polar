@@ -6,16 +6,16 @@
 
 > Payments and Checkouts made dead simple with Elysia
 
-<Warning>
-  **`@polar-sh/elysia` is deprecated** and no longer maintained. Integrate with
-  the [TypeScript SDK](/docs/integrate/sdk/typescript) directly instead. The
-  [`polar-integration` skill](https://github.com/polarsource/agent-toolkit/tree/main/skills/polar-integration)
-  can help you migrate:
-
-  ```bash theme={null}
-  npx skills add https://github.com/polarsource/agent-toolkit --skill polar-integration
-  ```
-</Warning>
+> [!WARNING]
+>
+> **`@polar-sh/elysia` is deprecated** and no longer maintained. Integrate with
+> the [TypeScript SDK](/docs/integrate/sdk/typescript) directly instead. The
+> [`polar-integration` skill](https://github.com/polarsource/agent-toolkit/tree/main/skills/polar-integration)
+> can help you migrate:
+>
+> ```bash theme={null}
+> npx skills add https://github.com/polarsource/agent-toolkit --skill polar-integration
+> ```
 
 ## Examples
 
@@ -25,31 +25,29 @@
 
 Install the required Polar packages using the following command:
 
-<Tabs>
-  <Tab title="npm">
-    ```bash Terminal theme={null}
-    npm install zod @polar-sh/elysia
-    ```
-  </Tab>
+**npm**
 
-  <Tab title="yarn">
-    ```bash Terminal theme={null}
-    yarn add zod @polar-sh/elysia
-    ```
-  </Tab>
+```bash Terminal theme={null}
+npm install zod @polar-sh/elysia
+```
 
-  <Tab title="pnpm">
-    ```bash Terminal theme={null}
-    pnpm add zod @polar-sh/elysia
-    ```
-  </Tab>
+**yarn**
 
-  <Tab title="bun">
-    ```bash Terminal theme={null}
-    bun add zod @polar-sh/elysia
-    ```
-  </Tab>
-</Tabs>
+```bash Terminal theme={null}
+yarn add zod @polar-sh/elysia
+```
+
+**pnpm**
+
+```bash Terminal theme={null}
+pnpm add zod @polar-sh/elysia
+```
+
+**bun**
+
+```bash Terminal theme={null}
+bun add zod @polar-sh/elysia
+```
 
 ### Checkout
 

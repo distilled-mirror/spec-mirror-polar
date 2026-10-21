@@ -6,7 +6,7 @@
 
 > Sell Discord access & roles with ease
 
-<img src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/benefits/discord/hero.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=184ffa11c392303eecdec13a1c91ae5e" width="2400" height="1448" data-path="assets/features/benefits/discord/hero.png" />
+![](https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/benefits/discord/hero.png?fit=max\&auto=format\&n=Ut0vPUvE1pIdMcH2\&q=85\&s=184ffa11c392303eecdec13a1c91ae5e)
 
 Automating Discord server invites and roles for customers or subscribers is super easy and powerful with Polar.
 
@@ -16,9 +16,7 @@ Automating Discord server invites and roles for customers or subscribers is supe
 
 ## Create Discord Benefit
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/benefits/discord/create.light.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=e2045a8cbc6eb7bac1168682a29456dd" width="940" height="764" data-path="assets/features/benefits/discord/create.light.png" />
-
-<img className="hidden dark:block" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/benefits/discord/create.dark.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=c5ed8ed8263425b77fda1414c373958f" width="940" height="764" data-path="assets/features/benefits/discord/create.dark.png" />
+![](https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/benefits/discord/create.light.png?fit=max\&auto=format\&n=Ut0vPUvE1pIdMcH2\&q=85\&s=e2045a8cbc6eb7bac1168682a29456dd)
 
 Click on `Connect your Discord server`. You'll be redirected to Discord where you can grant the Polar App for your desired server.
 

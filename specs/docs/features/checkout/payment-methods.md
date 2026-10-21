@@ -22,11 +22,11 @@ You don't need to enable individual payment methods.
 | Cash App Pay | Customers in the United States, for checkouts priced in USD |
 | WeChat Pay | Customers in mainland China, Hong Kong, and Macao, for checkouts priced in USD or CNY. One-time purchases only |
 
-<Note>
-  **On Polar's hosted checkout, wallets need no setup.** They're enabled by default and appear automatically whenever the customer's device and browser support them.
-
-  Domain validation is only required for [Embedded Checkout](/docs/features/checkout/embed#enable-wallets-in-embedded-checkout), where the checkout runs on your own domain.
-</Note>
+> [!NOTE]
+>
+> **On Polar's hosted checkout, wallets need no setup.** They're enabled by default and appear automatically whenever the customer's device and browser support them.
+>
+> Domain validation is only required for [Embedded Checkout](/docs/features/checkout/embed#enable-wallets-in-embedded-checkout), where the checkout runs on your own domain.
 
 ## Local payment methods
 

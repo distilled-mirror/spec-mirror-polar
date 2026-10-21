@@ -8,9 +8,9 @@
 
 Use Polar's remote Model Context Protocol (MCP) server to give AI agents secure access to your Polar organization. Agents can look up data and take actions across your products, customers, subscriptions, orders, benefits, and more.
 
-<Info>
-  Polar MCP uses OAuth. When you connect a client, your browser opens so you can sign in and authorize access to your organization. You never need to copy an API key into your agent.
-</Info>
+> [!NOTE]
+>
+> Polar MCP uses OAuth. When you connect a client, your browser opens so you can sign in and authorize access to your organization. You never need to copy an API key into your agent.
 
 ## Connect your agent
 
@@ -18,95 +18,93 @@ Use the production server at `https://mcp.polar.sh/mcp/polar-mcp` for your live 
 
 Choose your client and add the appropriate server.
 
-<Tabs>
-  <Tab title="Cursor">
-    Add the following to `.cursor/mcp.json` in your project, or to `~/.cursor/mcp.json` to make Polar available in every project:
+**Cursor**
 
-    ```json theme={null}
-    {
-      "mcpServers": {
-        "polar": {
-          "url": "https://mcp.polar.sh/mcp/polar-mcp"
-        }
-      }
+Add the following to `.cursor/mcp.json` in your project, or to `~/.cursor/mcp.json` to make Polar available in every project:
+
+```json theme={null}
+{
+  "mcpServers": {
+    "polar": {
+      "url": "https://mcp.polar.sh/mcp/polar-mcp"
     }
-    ```
+  }
+}
+```
 
-    Open Cursor's MCP settings and connect to `polar` to complete authorization.
-  </Tab>
+Open Cursor's MCP settings and connect to `polar` to complete authorization.
 
-  <Tab title="Claude Code">
-    Run:
+**Claude Code**
 
-    ```bash theme={null}
-    claude mcp add --transport http polar https://mcp.polar.sh/mcp/polar-mcp
-    ```
+Run:
 
-    Then open `/mcp` in Claude Code and authenticate `polar` with OAuth.
-  </Tab>
+```bash theme={null}
+claude mcp add --transport http polar https://mcp.polar.sh/mcp/polar-mcp
+```
 
-  <Tab title="ChatGPT">
-    In ChatGPT, open **Settings** → **Connectors**, enable developer mode if prompted, and add a custom connector with:
+Then open `/mcp` in Claude Code and authenticate `polar` with OAuth.
 
-    * **Name:** `Polar`
-    * **MCP server URL:** `https://mcp.polar.sh/mcp/polar-mcp`
+**ChatGPT**
 
-    Save the connector, select **Connect**, and complete authorization in the browser.
-  </Tab>
+In ChatGPT, open **Settings** → **Connectors**, enable developer mode if prompted, and add a custom connector with:
 
-  <Tab title="Claude Desktop">
-    Open **Settings** → **Connectors**, select **Add custom connector**, and enter:
+* **Name:** `Polar`
+* **MCP server URL:** `https://mcp.polar.sh/mcp/polar-mcp`
 
-    * **Name:** `Polar`
-    * **MCP server URL:** `https://mcp.polar.sh/mcp/polar-mcp`
+Save the connector, select **Connect**, and complete authorization in the browser.
 
-    Save the connector, select **Connect**, and complete authorization in the browser.
-  </Tab>
+**Claude Desktop**
 
-  <Tab title="Codex">
-    Run:
+Open **Settings** → **Connectors**, select **Add custom connector**, and enter:
 
-    ```bash theme={null}
-    codex mcp add "polar" --url "https://mcp.polar.sh/mcp/polar-mcp"
-    ```
+* **Name:** `Polar`
+* **MCP server URL:** `https://mcp.polar.sh/mcp/polar-mcp`
 
-    Complete the OAuth authorization when prompted.
-  </Tab>
+Save the connector, select **Connect**, and complete authorization in the browser.
 
-  <Tab title="OpenCode">
-    Run:
+**Codex**
 
-    ```bash theme={null}
-    opencode mcp add polar --url https://mcp.polar.sh/mcp/polar-mcp
-    ```
+Run:
 
-    Complete the OAuth authorization when prompted.
-  </Tab>
+```bash theme={null}
+codex mcp add "polar" --url "https://mcp.polar.sh/mcp/polar-mcp"
+```
 
-  <Tab title="Other clients">
-    If your client accepts a remote MCP URL, add:
+Complete the OAuth authorization when prompted.
 
-    ```text theme={null}
-    https://mcp.polar.sh/mcp/polar-mcp
-    ```
+**OpenCode**
 
-    If it only supports local commands, use the `mcp-remote` bridge:
+Run:
 
-    ```json theme={null}
-    {
-      "mcpServers": {
-        "polar": {
-          "command": "npx",
-          "args": [
-            "mcp-remote",
-            "https://mcp.polar.sh/mcp/polar-mcp"
-          ]
-        }
-      }
+```bash theme={null}
+opencode mcp add polar --url https://mcp.polar.sh/mcp/polar-mcp
+```
+
+Complete the OAuth authorization when prompted.
+
+**Other clients**
+
+If your client accepts a remote MCP URL, add:
+
+```text theme={null}
+https://mcp.polar.sh/mcp/polar-mcp
+```
+
+If it only supports local commands, use the `mcp-remote` bridge:
+
+```json theme={null}
+{
+  "mcpServers": {
+    "polar": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://mcp.polar.sh/mcp/polar-mcp"
+      ]
     }
-    ```
-  </Tab>
-</Tabs>
+  }
+}
+```
 
 ## How the tools work
 
@@ -119,15 +117,13 @@ Polar exposes more than a hundred API operations. Instead of sending every opera
 | `search_docs` | Searches the Polar documentation. |
 | `read_docs_page` | Reads a Polar documentation page as Markdown. |
 
-<Steps>
-  <Step title="Search">
-    The agent calls `search` to find the operations for its task, such as "find a customer and check their active subscriptions", and their exact inputs.
-  </Step>
+**1. Search**
 
-  <Step title="Execute">
-    The agent calls `execute` with code that makes the API calls and returns the result.
-  </Step>
-</Steps>
+The agent calls `search` to find the operations for its task, such as "find a customer and check their active subscriptions", and their exact inputs.
+
+**2. Execute**
+
+The agent calls `execute` with code that makes the API calls and returns the result.
 
 Code runs in an isolated sandbox. It can only call the Polar operations listed below, with the access you granted when you authorized the client, and it cannot reach any other host.
 
@@ -137,113 +133,113 @@ For agents that should look up data but never change it, add `?readonly=true` to
 
 ## Available operations
 
-<Accordion title="Available operations (103)">
-  | Operation | Description |
-  | - | - |
-  | `organizations_list` | List organizations. |
-  | `organizations_get` | Get an organization by ID. |
-  | `subscriptions_list` | List subscriptions. |
-  | `subscriptions_get` | Get a subscription by ID. |
-  | `subscriptions_update` | Update a subscription. |
-  | `subscriptions_revoke` | Revoke a subscription, i.e cancel immediately. |
-  | `benefits_list` | List benefits. |
-  | `benefits_create` | Create a benefit, for example license keys, file downloads or Discord access. |
-  | `benefits_get` | Get a benefit by ID. |
-  | `benefits_update` | Update a benefit. |
-  | `benefits_delete` | Delete a benefit. Every grants associated with the benefit will be revoked. Users will lose access to the benefit. |
-  | `benefits_files` | List the downloadable files for a benefit with their download statistics. |
-  | `benefits_grants` | List the individual grants for a benefit. It's especially useful to check if a user has been granted a benefit. |
-  | `benefit_grants_list` | List benefit grants across all benefits accessible to the authenticated subject. |
-  | `webhooks_list_webhook_endpoints` | List webhook endpoints. |
-  | `webhooks_create_webhook_endpoint` | Create a webhook endpoint. |
-  | `webhooks_get_webhook_endpoint` | Get a webhook endpoint by ID. |
-  | `webhooks_update_webhook_endpoint` | Update a webhook endpoint. |
-  | `webhooks_delete_webhook_endpoint` | Delete a webhook endpoint. |
-  | `webhooks_reset_webhook_endpoint_secret` | Regenerate a webhook endpoint secret. |
-  | `webhooks_list_webhook_deliveries` | List webhook deliveries. Deliveries are all the attempts to deliver a webhook event to an endpoint. |
-  | `webhooks_redeliver_webhook_event` | Schedule the re-delivery of a webhook event. |
-  | `products_list` | List products. |
-  | `products_create` | Create a product. |
-  | `products_get` | Get a product by ID. |
-  | `products_update` | Update a product. |
-  | `products_delete` | Delete a product. Only products without orders, subscriptions, trials or discounts can be deleted. Products that are in use can only be archived. |
-  | `products_update_benefits` | Update benefits granted by a product. |
-  | `orders_list` | List orders. |
-  | `orders_get` | Get an order by ID. |
-  | `orders_update` | Update an order. |
-  | `orders_invoice` | Get an order's invoice data. |
-  | `orders_generate_invoice` | Trigger generation of an order's invoice. |
-  | `orders_receipt` | Get a presigned URL to download an order's receipt PDF. |
-  | `refunds_list` | List refunds. |
-  | `refunds_create` | Create a refund. |
-  | `checkouts_list` | List checkout sessions. |
-  | `checkouts_get` | Get a checkout session by ID. |
-  | `files_list` | List files. |
-  | `files_delete` | Delete a file. |
-  | `metrics_get` | Get metrics about your orders and subscriptions. Currency values are output in cents. |
-  | `metrics_limits` | Get the interval limits for the metrics endpoint. |
-  | `license_keys_list` | Get license keys connected to the given organization & filters. |
-  | `license_keys_get` | Get a license key. |
-  | `license_keys_update` | Update a license key. |
-  | `license_keys_rotate` | Rotate a license key. Generates a new key string for the same license key record. The previous key string immediately stops validating. Status, usage, limits, expiry, and activations are preserved. |
-  | `license_keys_get_activation` | Get a license key activation. |
-  | `checkout_links_list` | List checkout links. |
-  | `checkout_links_create` | Create a checkout link. |
-  | `checkout_links_get` | Get a checkout link by ID. |
-  | `checkout_links_update` | Update a checkout link. |
-  | `checkout_links_delete` | Delete a checkout link. |
-  | `custom_fields_list` | List custom fields. |
-  | `custom_fields_create` | Create a custom field. |
-  | `custom_fields_get` | Get a custom field by ID. |
-  | `custom_fields_update` | Update a custom field. |
-  | `custom_fields_delete` | Delete a custom field. |
-  | `discounts_list` | List discounts. |
-  | `discounts_create` | Create a discount. |
-  | `discounts_get` | Get a discount by ID. |
-  | `discounts_update` | Update a discount. |
-  | `discounts_delete` | Delete a discount. |
-  | `customers_list` | List customers. |
-  | `customers_create` | Create a customer. Set `external_id` to the customer's ID in your system to look it up by that ID. |
-  | `customers_get` | Get a customer by ID. |
-  | `customers_update` | Update a customer. |
-  | `customers_delete` | Delete a customer. This action cannot be undone and will immediately: - Cancel any active subscriptions for the customer - Revoke all their benefits - Clear any `external_id` Use it only in the context of deleting a user within your own service. Otherwise, use more granular API endpoints to cancel a specific subscription or revoke certain benefits. Note: The customers information will nonetheless be retained for historic orders and subscriptions. Set `anonymize=true` to also anonymize PII for GDPR compliance. |
-  | `customers_get_external` | Get a customer by external ID. |
-  | `customers_update_external` | Update a customer by external ID. |
-  | `customers_delete_external` | Delete a customer by external ID. Immediately cancels any active subscriptions and revokes any active benefits. Set `anonymize=true` to also anonymize PII for GDPR compliance. |
-  | `customers_get_state` | Get a customer state by ID. The customer state includes information about the customer's active subscriptions and benefits. It's the ideal endpoint to use when you need to get a full overview of a customer's status. |
-  | `customers_get_state_external` | Get a customer state by external ID. The customer state includes information about the customer's active subscriptions and benefits. It's the ideal endpoint to use when you need to get a full overview of a customer's status. |
-  | `customers_list_payment_methods` | Get saved payment methods of a customer. |
-  | `customers_list_payment_methods_external` | Get saved payment methods of a customer by external ID. |
-  | `customers_members_list` | List the members of a customer. |
-  | `customers_members_create` | Create a new member for a customer. Only B2B customers with the member management feature enabled can add members. The authenticated user or organization must have access to the customer's organization. |
-  | `customers_members_list_external` | List the members of a customer identified by its external ID. |
-  | `customers_members_create_external` | Create a new member for a customer identified by its external ID. |
-  | `customers_members_get` | Get a member of a customer by its ID. |
-  | `customers_members_update` | Update a member of a customer. Only name, email and role can be updated. |
-  | `customers_members_delete` | Delete a member of a customer. |
-  | `customers_members_get_external` | Get a member by external ID for a customer identified by its external ID. |
-  | `customers_members_update_external` | Update a member by external ID for a customer identified by its external ID. |
-  | `customers_members_delete_external` | Delete a member by external ID for a customer identified by its external ID. |
-  | `customer_seats_list_seats` | List seats for a subscription or order. |
-  | `customer_seats_assign_seat` | Assign a seat for a subscription or order. |
-  | `customer_seats_revoke_seat` | Revoke a customer seat. |
-  | `customer_seats_resend_invitation` | Resend an invitation for a pending customer seat. |
-  | `customer_seats_get_claim_info` | Get claim information for a customer seat invitation. |
-  | `customer_seats_claim_seat` | Claim a customer seat with an invitation token. |
-  | `events_list_names` | List event names. |
-  | `events_get` | Get an event by ID. |
-  | `event_types_list` | List event types with aggregated statistics. |
-  | `event_types_update` | Update an event type's label. |
-  | `meters_list` | List meters. |
-  | `meters_create` | Create a meter. |
-  | `meters_get` | Get a meter by ID. |
-  | `meters_update` | Update a meter. |
-  | `meters_quantities` | Get quantities of a meter over a time period. |
-  | `customer_meters_list` | List customer meters. |
-  | `customer_meters_get` | Get a customer meter by ID. |
-  | `payments_list` | List payments. |
-  | `payments_get` | Get a payment by ID. |
-</Accordion>
+> **Available operations (103)**
+>
+> | Operation | Description |
+> | - | - |
+> | `organizations_list` | List organizations. |
+> | `organizations_get` | Get an organization by ID. |
+> | `subscriptions_list` | List subscriptions. |
+> | `subscriptions_get` | Get a subscription by ID. |
+> | `subscriptions_update` | Update a subscription. |
+> | `subscriptions_revoke` | Revoke a subscription, i.e cancel immediately. |
+> | `benefits_list` | List benefits. |
+> | `benefits_create` | Create a benefit, for example license keys, file downloads or Discord access. |
+> | `benefits_get` | Get a benefit by ID. |
+> | `benefits_update` | Update a benefit. |
+> | `benefits_delete` | Delete a benefit. Every grants associated with the benefit will be revoked. Users will lose access to the benefit. |
+> | `benefits_files` | List the downloadable files for a benefit with their download statistics. |
+> | `benefits_grants` | List the individual grants for a benefit. It's especially useful to check if a user has been granted a benefit. |
+> | `benefit_grants_list` | List benefit grants across all benefits accessible to the authenticated subject. |
+> | `webhooks_list_webhook_endpoints` | List webhook endpoints. |
+> | `webhooks_create_webhook_endpoint` | Create a webhook endpoint. |
+> | `webhooks_get_webhook_endpoint` | Get a webhook endpoint by ID. |
+> | `webhooks_update_webhook_endpoint` | Update a webhook endpoint. |
+> | `webhooks_delete_webhook_endpoint` | Delete a webhook endpoint. |
+> | `webhooks_reset_webhook_endpoint_secret` | Regenerate a webhook endpoint secret. |
+> | `webhooks_list_webhook_deliveries` | List webhook deliveries. Deliveries are all the attempts to deliver a webhook event to an endpoint. |
+> | `webhooks_redeliver_webhook_event` | Schedule the re-delivery of a webhook event. |
+> | `products_list` | List products. |
+> | `products_create` | Create a product. |
+> | `products_get` | Get a product by ID. |
+> | `products_update` | Update a product. |
+> | `products_delete` | Delete a product. Only products without orders, subscriptions, trials or discounts can be deleted. Products that are in use can only be archived. |
+> | `products_update_benefits` | Update benefits granted by a product. |
+> | `orders_list` | List orders. |
+> | `orders_get` | Get an order by ID. |
+> | `orders_update` | Update an order. |
+> | `orders_invoice` | Get an order's invoice data. |
+> | `orders_generate_invoice` | Trigger generation of an order's invoice. |
+> | `orders_receipt` | Get a presigned URL to download an order's receipt PDF. |
+> | `refunds_list` | List refunds. |
+> | `refunds_create` | Create a refund. |
+> | `checkouts_list` | List checkout sessions. |
+> | `checkouts_get` | Get a checkout session by ID. |
+> | `files_list` | List files. |
+> | `files_delete` | Delete a file. |
+> | `metrics_get` | Get metrics about your orders and subscriptions. Currency values are output in cents. |
+> | `metrics_limits` | Get the interval limits for the metrics endpoint. |
+> | `license_keys_list` | Get license keys connected to the given organization & filters. |
+> | `license_keys_get` | Get a license key. |
+> | `license_keys_update` | Update a license key. |
+> | `license_keys_rotate` | Rotate a license key. Generates a new key string for the same license key record. The previous key string immediately stops validating. Status, usage, limits, expiry, and activations are preserved. |
+> | `license_keys_get_activation` | Get a license key activation. |
+> | `checkout_links_list` | List checkout links. |
+> | `checkout_links_create` | Create a checkout link. |
+> | `checkout_links_get` | Get a checkout link by ID. |
+> | `checkout_links_update` | Update a checkout link. |
+> | `checkout_links_delete` | Delete a checkout link. |
+> | `custom_fields_list` | List custom fields. |
+> | `custom_fields_create` | Create a custom field. |
+> | `custom_fields_get` | Get a custom field by ID. |
+> | `custom_fields_update` | Update a custom field. |
+> | `custom_fields_delete` | Delete a custom field. |
+> | `discounts_list` | List discounts. |
+> | `discounts_create` | Create a discount. |
+> | `discounts_get` | Get a discount by ID. |
+> | `discounts_update` | Update a discount. |
+> | `discounts_delete` | Delete a discount. |
+> | `customers_list` | List customers. |
+> | `customers_create` | Create a customer. Set `external_id` to the customer's ID in your system to look it up by that ID. |
+> | `customers_get` | Get a customer by ID. |
+> | `customers_update` | Update a customer. |
+> | `customers_delete` | Delete a customer. This action cannot be undone and will immediately: - Cancel any active subscriptions for the customer - Revoke all their benefits - Clear any `external_id` Use it only in the context of deleting a user within your own service. Otherwise, use more granular API endpoints to cancel a specific subscription or revoke certain benefits. Note: The customers information will nonetheless be retained for historic orders and subscriptions. Set `anonymize=true` to also anonymize PII for GDPR compliance. |
+> | `customers_get_external` | Get a customer by external ID. |
+> | `customers_update_external` | Update a customer by external ID. |
+> | `customers_delete_external` | Delete a customer by external ID. Immediately cancels any active subscriptions and revokes any active benefits. Set `anonymize=true` to also anonymize PII for GDPR compliance. |
+> | `customers_get_state` | Get a customer state by ID. The customer state includes information about the customer's active subscriptions and benefits. It's the ideal endpoint to use when you need to get a full overview of a customer's status. |
+> | `customers_get_state_external` | Get a customer state by external ID. The customer state includes information about the customer's active subscriptions and benefits. It's the ideal endpoint to use when you need to get a full overview of a customer's status. |
+> | `customers_list_payment_methods` | Get saved payment methods of a customer. |
+> | `customers_list_payment_methods_external` | Get saved payment methods of a customer by external ID. |
+> | `customers_members_list` | List the members of a customer. |
+> | `customers_members_create` | Create a new member for a customer. Only B2B customers with the member management feature enabled can add members. The authenticated user or organization must have access to the customer's organization. |
+> | `customers_members_list_external` | List the members of a customer identified by its external ID. |
+> | `customers_members_create_external` | Create a new member for a customer identified by its external ID. |
+> | `customers_members_get` | Get a member of a customer by its ID. |
+> | `customers_members_update` | Update a member of a customer. Only name, email and role can be updated. |
+> | `customers_members_delete` | Delete a member of a customer. |
+> | `customers_members_get_external` | Get a member by external ID for a customer identified by its external ID. |
+> | `customers_members_update_external` | Update a member by external ID for a customer identified by its external ID. |
+> | `customers_members_delete_external` | Delete a member by external ID for a customer identified by its external ID. |
+> | `customer_seats_list_seats` | List seats for a subscription or order. |
+> | `customer_seats_assign_seat` | Assign a seat for a subscription or order. |
+> | `customer_seats_revoke_seat` | Revoke a customer seat. |
+> | `customer_seats_resend_invitation` | Resend an invitation for a pending customer seat. |
+> | `customer_seats_get_claim_info` | Get claim information for a customer seat invitation. |
+> | `customer_seats_claim_seat` | Claim a customer seat with an invitation token. |
+> | `events_list_names` | List event names. |
+> | `events_get` | Get an event by ID. |
+> | `event_types_list` | List event types with aggregated statistics. |
+> | `event_types_update` | Update an event type's label. |
+> | `meters_list` | List meters. |
+> | `meters_create` | Create a meter. |
+> | `meters_get` | Get a meter by ID. |
+> | `meters_update` | Update a meter. |
+> | `meters_quantities` | Get quantities of a meter over a time period. |
+> | `customer_meters_list` | List customer meters. |
+> | `customer_meters_get` | Get a customer meter by ID. |
+> | `payments_list` | List payments. |
+> | `payments_get` | Get a payment by ID. |
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

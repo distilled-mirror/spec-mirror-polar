@@ -13,53 +13,51 @@ whenever you need one, without waiting for a real checkout or subscription.
 
 ## Receive webhooks locally
 
-<Steps>
-  <Step title="Sign in and choose an organization">
-    ```bash Terminal theme={null}
-    polar auth login --sandbox
-    ```
+**1. Sign in and choose an organization**
 
-    Pick the organization you want to receive events for. See
-    [Authentication](/docs/integrate/cli/authentication) for details.
-  </Step>
+```bash Terminal theme={null}
+polar auth login --sandbox
+```
 
-  <Step title="Start listening">
-    Point the CLI at the URL your webhook handler listens on:
+Pick the organization you want to receive events for. See
+[Authentication](/docs/integrate/cli/authentication) for details.
 
-    ```bash Terminal theme={null}
-    polar webhook listen http://localhost:3000/api/webhooks
-    ```
+**2. Start listening**
 
-    ```text theme={null}
-      ● Connected  Acme
-      Forwarding   http://localhost:3000/api/webhooks
-      Secret       6t3c8ce2247c493a3ade20uea4484d64  use this to verify signatures locally
+Point the CLI at the URL your webhook handler listens on:
 
-      Waiting for events... press Ctrl+C to stop
-    ```
-  </Step>
+```bash Terminal theme={null}
+polar webhook listen http://localhost:3000/api/webhooks
+```
 
-  <Step title="Set the webhook secret">
-    Events are signed with the secret shown in the banner, exactly like
-    production deliveries. Configure your handler with it so signature
-    verification passes:
+```text theme={null}
+  ● Connected  Acme
+  Forwarding   http://localhost:3000/api/webhooks
+  Secret       6t3c8ce2247c493a3ade20uea4484d64  use this to verify signatures locally
 
-    ```bash .env theme={null}
-    POLAR_WEBHOOK_SECRET=6t3c8ce2247c493a3ade20uea4484d64
-    ```
-  </Step>
-</Steps>
+  Waiting for events... press Ctrl+C to stop
+```
+
+**3. Set the webhook secret**
+
+Events are signed with the secret shown in the banner, exactly like
+production deliveries. Configure your handler with it so signature
+verification passes:
+
+```bash .env theme={null}
+POLAR_WEBHOOK_SECRET=6t3c8ce2247c493a3ade20uea4484d64
+```
 
 Every webhook event for the organization is now forwarded to your URL with the
 same headers and body a public endpoint would receive, and each delivery is
 logged with its status code and duration. The connection reconnects on its own
 if it drops. Press `Ctrl+C` to stop.
 
-<Note>
-  Events follow the active organization's environment. Listen with a sandbox
-  organization while developing, and switch with `polar auth org` when you need
-  production events.
-</Note>
+> [!NOTE]
+>
+> Events follow the active organization's environment. Listen with a sandbox
+> organization while developing, and switch with `polar auth org` when you need
+> production events.
 
 ## Trigger sample events
 

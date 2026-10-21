@@ -6,7 +6,7 @@
 
 > Offer digital file downloads with ease
 
-<img src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/benefits/file-downloads/hero.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=ddcefae9f5a02b807dd50dda51fa18cc" width="2396" height="1712" data-path="assets/features/benefits/file-downloads/hero.png" />
+![](https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/benefits/file-downloads/hero.png?fit=max\&auto=format\&n=Ut0vPUvE1pIdMcH2\&q=85\&s=ddcefae9f5a02b807dd50dda51fa18cc)
 
 ## Sell Digital Products
 

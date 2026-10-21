@@ -6,7 +6,7 @@
 
 > Sell license key access to your service, software or APIs with ease
 
-<img src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/benefits/license-keys/hero.jpeg?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=179f2df948e4835f6e8e160b31507c3a" width="1807" height="923" data-path="assets/features/benefits/license-keys/hero.jpeg" />
+![](https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/benefits/license-keys/hero.jpeg?fit=max\&auto=format\&n=Ut0vPUvE1pIdMcH2\&q=85\&s=179f2df948e4835f6e8e160b31507c3a)
 
 You can easily sell software license keys with Polar without having to deal with sales tax or hosting an API to validate them in real-time. License keys with Polar come with a lot of powerful features built-in.
 
@@ -36,13 +36,13 @@ How long a license key stays valid depends on how the customer got it:
 
 This means the same benefit can produce keys with an expiry date (one-time products) and keys without one (subscription products).
 
-<Note>
-  For subscription products, check the key's `status` when validating rather than `expires_at`. A revoked key fails validation.
-</Note>
+> [!NOTE]
+>
+> For subscription products, check the key's `status` when validating rather than `expires_at`. A revoked key fails validation.
 
-<Warning>
-  Polar manages `expires_at`. Whenever the benefit or the customer's grant is updated, Polar re-applies the benefit's expiration to the key, or removes it for subscription keys. A manual change to `expires_at` through the API will be overwritten.
-</Warning>
+> [!WARNING]
+>
+> Polar manages `expires_at`. Whenever the benefit or the customer's grant is updated, Polar re-applies the benefit's expiration to the key, or removes it for subscription keys. A manual change to `expires_at` through the API will be overwritten.
 
 ### Activation Limits
 
@@ -94,25 +94,25 @@ curl -X POST https://api.polar.sh/v1/customer-portal/license-keys/activate
 }'
 ```
 
-<ParamField path="key" type="string" required>
-  Replace with the users license key (from input in your app).
-</ParamField>
+**key** `string` *required*
 
-<ParamField path="organization_id" type="string" required>
-  Replace with your organization ID here found in your settings.
-</ParamField>
+Replace with the users license key (from input in your app).
 
-<ParamField path="label" type="string" required>
-  Set a label to associate with this specific activation.
-</ParamField>
+**organization\_id** `string` *required*
 
-<ParamField path="conditions" type="object">
-  JSON object with custom conditions to validate against in the future, e.g IP, mac address, major version etc.
-</ParamField>
+Replace with your organization ID here found in your settings.
 
-<ParamField path="meta" type="object">
-  JSON object with metadata to store for the users activation.
-</ParamField>
+**label** `string` *required*
+
+Set a label to associate with this specific activation.
+
+**conditions** `object`
+
+JSON object with custom conditions to validate against in the future, e.g IP, mac address, major version etc.
+
+**meta** `object`
+
+JSON object with metadata to store for the users activation.
 
 #### **Response (200 OK)**
 
@@ -161,25 +161,25 @@ curl -X POST https://api.polar.sh/v1/customer-portal/license-keys/validate
 }'
 ```
 
-<ParamField path="key" type="string" required>
-  Replace with the users license key (from input in your app).
-</ParamField>
+**key** `string` *required*
 
-<ParamField path="organization_id" type="string" required>
-  Replace with your organization ID here found in your settings.
-</ParamField>
+Replace with the users license key (from input in your app).
 
-<ParamField path="activation_id" type="string">
-  The activation ID to validate - required in case activations limit is enabled and used (above).
-</ParamField>
+**organization\_id** `string` *required*
 
-<ParamField path="conditions" type="object">
-  In case of activation instances. Same exact JSON object as upon registration of the activation.
-</ParamField>
+Replace with your organization ID here found in your settings.
 
-<ParamField path="increment_usage" type="integer">
-  In case you want to increment usage upon validation.
-</ParamField>
+**activation\_id** `string`
+
+The activation ID to validate - required in case activations limit is enabled and used (above).
+
+**conditions** `object`
+
+In case of activation instances. Same exact JSON object as upon registration of the activation.
+
+**increment\_usage** `integer`
+
+In case you want to increment usage upon validation.
 
 #### **Response (200 OK)**
 

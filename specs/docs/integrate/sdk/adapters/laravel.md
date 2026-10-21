@@ -8,9 +8,9 @@
 
 Seamlessly integrate Polar.sh subscriptions and payments into your Laravel application. This package provides an elegant way to handle subscriptions, manage recurring payments, and interact with Polar's API. With built-in support for webhooks, subscription management, and a fluent API, you can focus on building your application while we handle the complexities of subscription billing.
 
-<Note>
-  This provider is not maintained or officially supported by Polar. Use at your own discretion. If you have questions about the provider, please contact the project maintainer.
-</Note>
+> [!NOTE]
+>
+> This provider is not maintained or officially supported by Polar. Use at your own discretion. If you have questions about the provider, please contact the project maintainer.
 
 ## Installation
 
@@ -242,7 +242,8 @@ Route::get('/subscribe', function (Request $request) {
 
 This could be useful if you want to offer monthly, yearly, and lifetime plans for example.
 
-> \[!NOTE]
+> [!NOTE]
+>
 > If you are requesting the checkout a lot of times we recommend you to cache the URL returned by the `checkout` method.
 
 #### Custom Price

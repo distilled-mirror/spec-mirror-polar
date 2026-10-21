@@ -6,10 +6,10 @@
 
 > Serve checkout in your customer's preferred language
 
-<Note>
-  Checkout localization is currently in **beta**. To enable it, turn on the feature flag for your
-  organization.
-</Note>
+> [!NOTE]
+>
+> Checkout localization is currently in **beta**. To enable it, turn on the feature flag for your
+> organization.
 
 ## How it works
 

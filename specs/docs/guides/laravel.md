@@ -6,7 +6,7 @@
 
 > In this guide, we'll show you how to integrate Polar with Laravel.
 
-<img src="https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/guides/laravel/hero.jpeg?fit=max&auto=format&n=0Af3hN6-oIM4IHT3&q=85&s=7f57da3dcc77d6f8e0f8b2e760f0aeea" width="1920" height="1080" data-path="assets/guides/laravel/hero.jpeg" />
+![](https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/guides/laravel/hero.jpeg?fit=max\&auto=format\&n=0Af3hN6-oIM4IHT3\&q=85\&s=7f57da3dcc77d6f8e0f8b2e760f0aeea)
 
 Consider following this guide while using the Polar Sandbox Environment. This will allow you to test your integration without affecting your production data.
 

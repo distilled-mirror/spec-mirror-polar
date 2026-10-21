@@ -12,10 +12,10 @@ The Shared Slack Channel benefit automatically provisions a dedicated Slack chan
 * The channel is shared with the customer's own workspace — no need for them to join yours
 * Channels can be archived automatically when the benefit is revoked
 
-<Note>
-  The Shared Slack Channel benefit is currently in preview. If you're on a paid plan, you'll be able
-  to create a Shared Slack Channel benefit.
-</Note>
+> [!NOTE]
+>
+> The Shared Slack Channel benefit is currently in preview. If you're on a paid plan, you'll be able
+> to create a Shared Slack Channel benefit.
 
 ## Create Shared Slack Channel Benefit
 

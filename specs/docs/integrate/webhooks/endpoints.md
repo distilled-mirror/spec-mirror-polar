@@ -20,72 +20,62 @@ formatting. Making it a breeze to setup in-chat notifications for your team.
 
 ## Get Started
 
-<Info>
-  **Use our sandbox environment during development**
+> [!NOTE]
+>
+> **Use our sandbox environment during development**
+>
+> So you can easily test purchases, subscriptions, cancellations and refunds to
+> automatically trigger webhook events without spending a dime.
 
-  So you can easily test purchases, subscriptions, cancellations and refunds to
-  automatically trigger webhook events without spending a dime.
-</Info>
+**1. Add new endpoint**
 
-<Steps>
-  <Step title="Add new endpoint">
-    Head over to your organization settings and click on the `Add Endpoint` button to create a new webhook.
+Head over to your organization settings and click on the `Add Endpoint` button to create a new webhook.
 
-    <img className="block dark:hidden" src="https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/integrate/webhooks/create.light.png?fit=max&auto=format&n=0Af3hN6-oIM4IHT3&q=85&s=23eb5510c1dbd2f511461dfe1e262485" width="1532" height="389" data-path="assets/integrate/webhooks/create.light.png" />
+![](https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/integrate/webhooks/create.light.png?fit=max\&auto=format\&n=0Af3hN6-oIM4IHT3\&q=85\&s=23eb5510c1dbd2f511461dfe1e262485)
 
-    <img className="hidden dark:block" src="https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/integrate/webhooks/create.dark.png?fit=max&auto=format&n=0Af3hN6-oIM4IHT3&q=85&s=c86d0770b5dc4d42279d9f1da568edb8" width="1494" height="388" data-path="assets/integrate/webhooks/create.dark.png" />
-  </Step>
+**2. Specify your endpoint URL**
 
-  <Step title="Specify your endpoint URL">
-    Enter the URL to which the webhook events should be sent.
+Enter the URL to which the webhook events should be sent.
 
-    <img className="block dark:hidden" src="https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/integrate/webhooks/url.light.png?fit=max&auto=format&n=0Af3hN6-oIM4IHT3&q=85&s=7ef69a33df9105e42fd8ab618a30669d" width="1075" height="402" data-path="assets/integrate/webhooks/url.light.png" />
+![](https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/integrate/webhooks/url.light.png?fit=max\&auto=format\&n=0Af3hN6-oIM4IHT3\&q=85\&s=7ef69a33df9105e42fd8ab618a30669d)
 
-    <img className="hidden dark:block" src="https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/integrate/webhooks/url.dark.png?fit=max&auto=format&n=0Af3hN6-oIM4IHT3&q=85&s=6a4514f5bd12fcf01ab1aa1bc2b1f26a" width="1068" height="398" data-path="assets/integrate/webhooks/url.dark.png" />
-  </Step>
+**3. Choose a delivery format**
 
-  <Step title="Choose a delivery format">
-    For standard, custom integrations, leave this parameter on **Raw**. This will send a payload in JSON format.
+For standard, custom integrations, leave this parameter on **Raw**. This will send a payload in JSON format.
 
-    If you wish to send notifications to a Discord or Slack channel, you can select the corresponding format here. Polar will then adapt the payload so properly formatted messages are sent to your channel.
+If you wish to send notifications to a Discord or Slack channel, you can select the corresponding format here. Polar will then adapt the payload so properly formatted messages are sent to your channel.
 
-    <img className="block dark:hidden" src="https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/integrate/webhooks/format.light.png?fit=max&auto=format&n=0Af3hN6-oIM4IHT3&q=85&s=77c7f9e6a2f2c3bd1bede381f692908c" width="1034" height="402" data-path="assets/integrate/webhooks/format.light.png" />
+![](https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/integrate/webhooks/format.light.png?fit=max\&auto=format\&n=0Af3hN6-oIM4IHT3\&q=85\&s=77c7f9e6a2f2c3bd1bede381f692908c)
 
-    <img className="hidden dark:block" src="https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/integrate/webhooks/format.dark.png?fit=max&auto=format&n=0Af3hN6-oIM4IHT3&q=85&s=896fc481fe7c61892b034380247479ae" width="1050" height="418" data-path="assets/integrate/webhooks/format.dark.png" />
+If you paste a Discord or Slack Webhook URL, the format will be automatically selected.
 
-    If you paste a Discord or Slack Webhook URL, the format will be automatically selected.
-  </Step>
+**4. Set a secret**
 
-  <Step title="Set a secret">
-    We cryptographically sign the requests using this secret. So you can easily
-    verify them using our SDKs to ensure they are legitimate webhook payloads
-    from Polar.
+We cryptographically sign the requests using this secret. So you can easily
+verify them using our SDKs to ensure they are legitimate webhook payloads
+from Polar.
 
-    You can set your own or generate a random one.
+You can set your own or generate a random one.
 
-    <img className="block dark:hidden" src="https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/integrate/webhooks/secret.light.png?fit=max&auto=format&n=0Af3hN6-oIM4IHT3&q=85&s=e9fa8ce33d0e86d6331813f4a37ab509" width="1074" height="331" data-path="assets/integrate/webhooks/secret.light.png" />
+![](https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/integrate/webhooks/secret.light.png?fit=max\&auto=format\&n=0Af3hN6-oIM4IHT3\&q=85\&s=e9fa8ce33d0e86d6331813f4a37ab509)
 
-    <img className="hidden dark:block" src="https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/integrate/webhooks/secret.dark.png?fit=max&auto=format&n=0Af3hN6-oIM4IHT3&q=85&s=d447062a9726d8d9116aef2984a96cc2" width="1072" height="332" data-path="assets/integrate/webhooks/secret.dark.png" />
-  </Step>
+**5. Subscribe to events**
 
-  <Step title="Subscribe to events">
-    Finally, select all the events you want to be notified about and you're done 🎉
-  </Step>
-</Steps>
+Finally, select all the events you want to be notified about and you're done 🎉
 
-<Tip>
-  **Developing locally?**
-
-  The [Polar CLI](/docs/integrate/cli/webhooks) forwards your organization's webhooks to a URL on your machine, so you can test handlers without deploying them.
-
-  ```bash Terminal theme={null}
-  curl -fsSL https://polar.sh/install.sh | bash
-  polar auth login --production
-  polar webhook listen http://localhost:3000/api/webhooks
-  ```
-
-  It also sends sample events on demand with `polar webhook trigger`.
-</Tip>
+> [!TIP]
+>
+> **Developing locally?**
+>
+> The [Polar CLI](/docs/integrate/cli/webhooks) forwards your organization's webhooks to a URL on your machine, so you can test handlers without deploying them.
+>
+> ```bash Terminal theme={null}
+> curl -fsSL https://polar.sh/install.sh | bash
+> polar auth login --production
+> polar webhook listen http://localhost:3000/api/webhooks
+> ```
+>
+> It also sends sample events on demand with `polar webhook trigger`.
 
 [Now, it's time to integrate our endpoint to receive events
 →](/docs/integrate/webhooks/delivery)

@@ -8,9 +8,7 @@
 
 Discounts are a way to reduce the price of a product or subscription. They can be applied to one-time purchasable products or subscriptions.
 
-<img className="block dark:hidden" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/discounts/create.light.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=3c4044637217753344822d88e4807de7" width="2598" height="1710" data-path="assets/features/discounts/create.light.png" />
-
-<img className="hidden dark:block" src="https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/discounts/create.dark.png?fit=max&auto=format&n=Ut0vPUvE1pIdMcH2&q=85&s=42b5287244d46cabf83fce057270dafe" width="2414" height="1702" data-path="assets/features/discounts/create.dark.png" />
+![](https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/discounts/create.light.png?fit=max\&auto=format\&n=Ut0vPUvE1pIdMcH2\&q=85\&s=3c4044637217753344822d88e4807de7)
 
 ## Create a discount
 
@@ -66,7 +64,9 @@ Refunding an order frees the customer's slot, and they can use the code again (n
 
 When creating a [Checkout Link](/docs/features/checkout/links), you can preset a discount that will be automatically applied when customers land on the checkout page. This is useful for promotional campaigns or special offers where you want to guarantee the discount is applied without requiring customers to enter a code.
 
-<Info>Discounts without a code can only be auto-applied through Checkout Links or the API.</Info>
+> [!NOTE]
+>
+> Discounts without a code can only be auto-applied through Checkout Links or the API.
 
 ### Prefill via query parameter
 

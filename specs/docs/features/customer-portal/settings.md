@@ -24,11 +24,11 @@ This setting is only relevant when you offer [seat-based prices](/docs/features/
 
 Gives customers the option to change the email address associated with their customer record after purchasing. The new email must be verified through a confirmation link before the change takes effect.
 
-<Note>
-  When this is enabled, you'll probably want to listen for the
-  [`customer.updated`](/docs/api-reference/current/customer_updated) webhook and
-  sync the new email back into your own user system, so the two stay in sync.
-</Note>
+> [!NOTE]
+>
+> When this is enabled, you'll probably want to listen for the
+> [`customer.updated`](/docs/api-reference/current/customer_updated) webhook and
+> sync the new email back into your own user system, so the two stay in sync.
 
 ## Enable subscription plan changes
 

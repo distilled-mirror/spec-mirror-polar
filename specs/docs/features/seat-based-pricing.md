@@ -8,14 +8,14 @@
 
 Seat-based pricing allows you to sell products where a billing manager purchases a specific number of seats and can assign them to team members. Each seat holder gets their own access to the product benefits, making it perfect for team subscriptions, perpetual licenses, and multi-user products.
 
-<Info>
-  **Seat-based pricing is ideal for:**
-
-  * Team subscriptions where one billing manager pays for multiple users
-  * Perpetual team licenses with one-time payment
-  * Organizational licenses with per-seat pricing
-  * Products with flat, graduated, or volume-discounted seat pricing
-</Info>
+> [!NOTE]
+>
+> **Seat-based pricing is ideal for:**
+>
+> * Team subscriptions where one billing manager pays for multiple users
+> * Perpetual team licenses with one-time payment
+> * Organizational licenses with per-seat pricing
+> * Products with flat, graduated, or volume-discounted seat pricing
 
 ## Customers and members
 
@@ -47,58 +47,56 @@ Team members receive an invitation email with a claim link. Once they claim thei
 | **Adding Seats** | Modify subscription | Purchase new order |
 | **Benefits** | While subscription active | Forever after claim |
 
-<Tip>
-  Use **subscriptions** for ongoing team access. Use **one-time purchases** for perpetual team licenses.
-</Tip>
+> [!TIP]
+>
+> Use **subscriptions** for ongoing team access. Use **one-time purchases** for perpetual team licenses.
 
 ## Creating a seat-based product
 
-<Steps>
-  <Step title="Create a new product">
-    From your dashboard, [create a new product](https://polar.sh/to/dashboard/products/new).
-  </Step>
+**1. Create a new product**
 
-  <Step title="Configure basic settings">
-    Set your product name, description, and media as usual.
-  </Step>
+From your dashboard, [create a new product](https://polar.sh/to/dashboard/products/new).
 
-  <Step title="Select seat-based pricing">
-    Under **Pricing**, select:
+**2. Configure basic settings**
 
-    * **Product type**: Subscription or One-time
-    * **Billing cycle** (subscriptions only): Monthly or Yearly
-    * **Pricing type**: Seat-based
-  </Step>
+Set your product name, description, and media as usual.
 
-  <Step title="Choose a tiering model">
-    Under **Tiering model**, select how seats are priced:
+**3. Select seat-based pricing**
 
-    | Model | Description |
-    | - | - |
-    | **Fixed price per seat** | Every seat costs the same flat rate. Simple and predictable. |
-    | **Graduated** | Seats are priced per tier range independently — seats in tier 1 cost one rate, seats in tier 2 cost another. Total price is the sum across all tiers. |
-    | **Volume discounts** | The per-seat price is determined by the total seats purchased, and that rate applies to all seats. Crossing a tier threshold lowers the price for everyone. |
+Under **Pricing**, select:
 
-    **Fixed price per seat** is the default and the simplest option — just enter a single price per seat.
+* **Product type**: Subscription or One-time
+* **Billing cycle** (subscriptions only): Monthly or Yearly
+* **Pricing type**: Seat-based
 
-    For **Graduated** and **Volume discounts**, define tiers using a threshold (the seat count at which a new rate begins) and a price per seat for that range.
+**4. Choose a tiering model**
 
-    **Example** with tiers at 1–10 seats: \$10/seat and 11+ seats: \$8/seat:
+Under **Tiering model**, select how seats are priced:
 
-    * Graduated: 14 seats = 10 × \$10 + 4 × \$8 = \$132 — each range is billed at its own rate
-    * Volume discounts: 14 seats = 14 × \$8 = \$112 — all seats use the lowest matching rate
-  </Step>
+| Model | Description |
+| - | - |
+| **Fixed price per seat** | Every seat costs the same flat rate. Simple and predictable. |
+| **Graduated** | Seats are priced per tier range independently — seats in tier 1 cost one rate, seats in tier 2 cost another. Total price is the sum across all tiers. |
+| **Volume discounts** | The per-seat price is determined by the total seats purchased, and that rate applies to all seats. Crossing a tier threshold lowers the price for everyone. |
 
-  <Step title="Add benefits">
-    Configure the benefits that seat holders will receive. These are only granted when a seat is claimed, not when purchased.
-  </Step>
-</Steps>
+**Fixed price per seat** is the default and the simplest option — just enter a single price per seat.
 
-<Info>
-  When using the default Polar confirmation page (no custom `success_url`), the buyer's seat is automatically claimed during checkout, granting them immediate access to benefits. Any remaining seats can be assigned to teammates.
+For **Graduated** and **Volume discounts**, define tiers using a threshold (the seat count at which a new rate begins) and a price per seat for that range.
 
-  If you set a custom `success_url`, the buyer will need to manually assign themselves a seat through the Customer Portal or API if they also want benefits.
-</Info>
+**Example** with tiers at 1–10 seats: \$10/seat and 11+ seats: \$8/seat:
+
+* Graduated: 14 seats = 10 × \$10 + 4 × \$8 = \$132 — each range is billed at its own rate
+* Volume discounts: 14 seats = 14 × \$8 = \$112 — all seats use the lowest matching rate
+
+**5. Add benefits**
+
+Configure the benefits that seat holders will receive. These are only granted when a seat is claimed, not when purchased.
+
+> [!NOTE]
+>
+> When using the default Polar confirmation page (no custom `success_url`), the buyer's seat is automatically claimed during checkout, granting them immediate access to benefits. Any remaining seats can be assigned to teammates.
+>
+> If you set a custom `success_url`, the buyer will need to manually assign themselves a seat through the Customer Portal or API if they also want benefits.
 
 ## Managing seats
 
@@ -117,14 +115,14 @@ After purchase, the billing manager can assign and manage seats from the **Custo
 * **Revoke seats** to remove benefits and free the seat for reassignment
 * **Reduce seat count** to lower the number of seats on the subscription (triggers a prorated credit)
 
-<Warning>
-  **Revoking a seat** and **reducing the seat count** are different actions:
-
-  * **Revoking a seat** removes a specific user's access and frees that seat for reassignment. It does **not** reduce the number of seats on the subscription, and the billing manager continues to pay for the same total.
-  * **Reducing the seat count** changes the subscription quantity itself, which results in a prorated credit for the remainder of the billing period.
-
-  To stop paying for an unused seat, you must reduce the seat count — not just revoke the assignment.
-</Warning>
+> [!WARNING]
+>
+> **Revoking a seat** and **reducing the seat count** are different actions:
+>
+> * **Revoking a seat** removes a specific user's access and frees that seat for reassignment. It does **not** reduce the number of seats on the subscription, and the billing manager continues to pay for the same total.
+> * **Reducing the seat count** changes the subscription quantity itself, which results in a prorated credit for the remainder of the billing period.
+>
+> To stop paying for an unused seat, you must reduce the seat count — not just revoke the assignment.
 
 ### Proration and billing adjustments
 
@@ -133,9 +131,9 @@ When the seat count on a subscription changes mid-billing cycle, charges are pro
 * **Adding seats**: The billing manager is charged immediately for the new seats, prorated for the remainder of the current billing period. The full per-seat price applies from the next billing cycle onward.
 * **Reducing seat count**: A prorated credit is applied for the removed seats, covering the unused portion of the current billing period.
 
-<Tip>
-  Proration ensures billing managers only pay for seats during the time they are active. Encourage customers to adjust their seat count rather than leaving unused seats idle.
-</Tip>
+> [!TIP]
+>
+> Proration ensures billing managers only pay for seats during the time they are active. Encourage customers to adjust their seat count rather than leaving unused seats idle.
 
 ## Limitations
 

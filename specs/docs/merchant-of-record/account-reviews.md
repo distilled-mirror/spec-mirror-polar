@@ -10,9 +10,9 @@ We process every review as quickly as we can and resolve every single one.
 
 ### First payout review
 
-<Tip>
-  **Build first, submit second.** It's tempting to get approved before doing the integration work, but a complete setup is what makes a review fast and clean. Configure your [products and benefits](/docs/features/products), wire up your integration (checkout links, API keys, webhooks), and have a live website pointing to it. The more we can see end-to-end, the more confidently — and quickly — we can approve your account.
-</Tip>
+> [!TIP]
+>
+> **Build first, submit second.** It's tempting to get approved before doing the integration work, but a complete setup is what makes a review fast and clean. Configure your [products and benefits](/docs/features/products), wire up your integration (checkout links, API keys, webhooks), and have a live website pointing to it. The more we can see end-to-end, the more confidently — and quickly — we can approve your account.
 
 Before your first payout, you'll go through our main account review. You can submit everything yourself from [**Finance → Account**](https://polar.sh/to/dashboard/finance/account) in your Polar dashboard, in three steps:
 
@@ -30,9 +30,9 @@ You can always request a [payout](/docs/features/finance/payouts). A request mad
 
 In a continuous review, we look at two things: that your use case is still within our [Acceptable Use Policy](https://polar.sh/legal/acceptable-use-policy) and consistent with what was approved during your first review, and that your account is in good financial health — refunds, chargebacks, and risk scores across recent transactions.
 
-<Note>
-  **Chargebacks and card networks.** Credit card networks (e.g. Visa, Mastercard) consider chargebacks above 0.7% of sales excessive. Exceeding that threshold can lead to monitoring programs with extra costs, penalties, and ultimately termination from the network. We might reach out proactively to collaborate on lowering your chargeback ratio before it approaches these thresholds.
-</Note>
+> [!NOTE]
+>
+> **Chargebacks and card networks.** Credit card networks (e.g. Visa, Mastercard) consider chargebacks above 0.7% of sales excessive. Exceeding that threshold can lead to monitoring programs with extra costs, penalties, and ultimately termination from the network. We might reach out proactively to collaborate on lowering your chargeback ratio before it approaches these thresholds.
 
 ## Operational Guidelines
 
@@ -61,9 +61,9 @@ If your rate climbs toward our threshold, we'll reach out first to collaborate o
 
 We don't take any of these actions lightly and always try to resolve issues with you first.
 
-<Note>
-  We integrate with credit card networks to receive early chargeback signals before they're officially filed. Below a certain transaction value, we automatically refund the order, cancel any related subscription, and revoke the customer's benefits to reduce chargebacks proactively. If we issue a proactive refund, we'll notify you by email. Keep in mind that benefits the customer has already consumed — such as downloaded files or forked repositories — can't be taken back.
-</Note>
+> [!NOTE]
+>
+> We integrate with credit card networks to receive early chargeback signals before they're officially filed. Below a certain transaction value, we automatically refund the order, cancel any related subscription, and revoke the customer's benefits to reduce chargebacks proactively. If we issue a proactive refund, we'll notify you by email. Keep in mind that benefits the customer has already consumed — such as downloaded files or forked repositories — can't be taken back.
 
 ### Policy Violations
 
@@ -75,42 +75,40 @@ We aim to work with you on the best path forward, but for compliance and risk re
 
 ## FAQ
 
-<AccordionGroup>
-  <Accordion title="Why is my account under review again?">
-    Your account may go through multiple reviews as your business grows. We perform [continuous reviews](#continuous-reviews) at certain sales thresholds to maintain platform integrity and prevent fraud. This is a standard practice across payment platforms and is part of our ongoing risk management process.
-  </Accordion>
+> **Why is my account under review again?**
+>
+> Your account may go through multiple reviews as your business grows. We perform [continuous reviews](#continuous-reviews) at certain sales thresholds to maintain platform integrity and prevent fraud. This is a standard practice across payment platforms and is part of our ongoing risk management process.
 
-  <Accordion title="Why do you need my social media in settings?">
-    We request social media information as part of our identity verification and fraud prevention processes. This helps us:
+> **Why do you need my social media in settings?**
+>
+> We request social media information as part of our identity verification and fraud prevention processes. This helps us:
+>
+> * Verify that you're a real business or creator with an online presence
+> * Understand your products and services better
+> * Ensure compliance with our [acceptable use policies](https://polar.sh/legal/acceptable-use-policy)
+>
+> Providing accurate social media information helps speed up the review process and demonstrates the legitimacy of your business.
 
-    * Verify that you're a real business or creator with an online presence
-    * Understand your products and services better
-    * Ensure compliance with our [acceptable use policies](https://polar.sh/legal/acceptable-use-policy)
+> **Are social media settings visible publicly?**
+>
+> No, your social media settings are not publicly visible. This information is used internally for verification and compliance purposes only. We treat all merchant information with strict confidentiality and use it solely for risk assessment and account review processes.
 
-    Providing accurate social media information helps speed up the review process and demonstrates the legitimacy of your business.
-  </Accordion>
+> **Why do I need to share a video recording showing the product working?**
+>
+> To help us verify that everything is working correctly in line with our acceptable use policy, our team would ask you to share a 100% discount code by email. This is our preferred method, as it allows the team to go through the full journey themselves and confirm the automated fulfillment from an unpaid user to a paid user.
+>
+> Alternatively, you can provide a video recording that clearly shows the complete flow from an unpaid user to a paid user, including how the product is automatically accessible after purchase.
 
-  <Accordion title="Are social media settings visible publicly?">
-    No, your social media settings are not publicly visible. This information is used internally for verification and compliance purposes only. We treat all merchant information with strict confidentiality and use it solely for risk assessment and account review processes.
-  </Accordion>
-
-  <Accordion title="Why do I need to share a video recording showing the product working?">
-    To help us verify that everything is working correctly in line with our acceptable use policy, our team would ask you to share a 100% discount code by email. This is our preferred method, as it allows the team to go through the full journey themselves and confirm the automated fulfillment from an unpaid user to a paid user.
-
-    Alternatively, you can provide a video recording that clearly shows the complete flow from an unpaid user to a paid user, including how the product is automatically accessible after purchase.
-  </Accordion>
-
-  <Accordion title="How do I transfer my organization to a new admin?">
-    To transfer admin ownership of an organization:
-
-    1. Invite the new admin to the team via `Settings` > `Members` in the Polar dashboard
-    2. Ask that new admin to complete identity verification under `Finance` > `Account` after logging in via that email in the Polar dashboard
-    3. Make sure no payout is pending
-    4. Send an email from the current admin email to our support confirming the transfer to the new admin
-
-    If you need assistance with changing organization ownership or have special circumstances, please contact [support@polar.sh](mailto:support@polar.sh).
-  </Accordion>
-</AccordionGroup>
+> **How do I transfer my organization to a new admin?**
+>
+> To transfer admin ownership of an organization:
+>
+> 1. Invite the new admin to the team via `Settings` > `Members` in the Polar dashboard
+> 2. Ask that new admin to complete identity verification under `Finance` > `Account` after logging in via that email in the Polar dashboard
+> 3. Make sure no payout is pending
+> 4. Send an email from the current admin email to our support confirming the transfer to the new admin
+>
+> If you need assistance with changing organization ownership or have special circumstances, please contact [support@polar.sh](mailto:support@polar.sh).
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.
