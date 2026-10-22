@@ -543,6 +543,8 @@
 - [Delete Benefit](https://polar.sh/docs/api-reference/2027-01/benefits/delete-benefit.md): Delete a benefit.
 - [Get Customer Meter](https://polar.sh/docs/api-reference/2027-01/customer_meters/get-customer-meter.md): Get a customer meter by ID.
 - [List Customer Meters](https://polar.sh/docs/api-reference/2027-01/customer_meters/list-customer-meters.md): List customer meters.
+- [Credit Customer Meter](https://polar.sh/docs/api-reference/2027-01/customer_meters/credit-customer-meter.md): Manually grant credits on a customer meter.
+- [Reverse Customer Meter Credit](https://polar.sh/docs/api-reference/2027-01/customer_meters/reverse-customer-meter-credit.md): Reverse a manual credit, removing the units the customer hasn't used yet.
 - [Get License Key](https://polar.sh/docs/api-reference/2027-01/license_keys/get-license-key.md): Get a license key.
 - [List License Keys](https://polar.sh/docs/api-reference/2027-01/license_keys/list-license-keys.md): Get license keys connected to the given organization & filters.
 - [Update License Key](https://polar.sh/docs/api-reference/2027-01/license_keys/update-license-key.md): Update a license key.
