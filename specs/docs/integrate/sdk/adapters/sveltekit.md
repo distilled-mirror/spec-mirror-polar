@@ -9,7 +9,7 @@
 > [!WARNING]
 >
 > **`@polar-sh/sveltekit` is deprecated** and no longer maintained. Integrate with
-> the [TypeScript SDK](/docs/integrate/sdk/typescript) directly instead. The
+> the [TypeScript SDK](/docs/integrate/sdk/typescript.md) directly instead. The
 > [`polar-integration` skill](https://github.com/polarsource/agent-toolkit/tree/main/skills/polar-integration)
 > can help you migrate:
 >

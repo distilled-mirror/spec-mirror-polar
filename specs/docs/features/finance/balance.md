@@ -13,11 +13,11 @@ You can see your available balance for payout at any time under your `Finance` p
 Your balance is all the earnings minus:
 
 1. Any VAT we've captured for remittance, i.e balance is excluding VAT
-2. Our revenue share (varies by plan — see [fees](/docs/merchant-of-record/fees))
+2. Our revenue share (varies by plan — see [fees](/docs/merchant-of-record/fees.md))
 
 All historic transactions are available in chronological order along with their associated fees that have been deducted.
 
-Note: Upon [payout (withdrawal)](/docs/features/finance/payouts), Stripe incurs additional fees that will be deducted before the final payout of the balance.
+Note: Upon [payout (withdrawal)](/docs/features/finance/payouts.md), Stripe incurs additional fees that will be deducted before the final payout of the balance.
 
 ## Multiple payment currencies orders and settlement
 

@@ -14,7 +14,7 @@ You can either copy and paste our code snippet to get up and running in a second
 
 The code snippet can be used on any website or CMS that allows you to insert HTML.
 
-First, create a [Checkout Link](/docs/features/checkout/links) as described in the previous section. The code snippet can directly be copied from there by clicking on `Copy Embed Code`.
+First, create a [Checkout Link](/docs/features/checkout/links.md) as described in the previous section. The code snippet can directly be copied from there by clicking on `Copy Embed Code`.
 
 The snippet looks like this:
 
@@ -83,7 +83,7 @@ export default PurchaseLink
 
 > [!TIP]
 >
-> Instead of a Checkout Link, you can also use a [Checkout Session](/docs/features/checkout/session) URL created dynamically from the API.
+> Instead of a Checkout Link, you can also use a [Checkout Session](/docs/features/checkout/session.md) URL created dynamically from the API.
 >
 > For this to work, make sure to set the [`embed_origin`](/docs/api-reference/current/checkouts/create-checkout-session#body-embed-origin) parameter correctly when creating the Checkout Session. For example, if your checkout page is served on the URL `https://example.com/checkout`, you should set `embed_origin` to `https://example.com`.
 
@@ -93,7 +93,7 @@ List the hosts allowed to embed your checkout under **Settings → Preferences �
 
 After a payment, the checkout sends your page a message carrying a session token for your customer. The allowlist is how we know that page is yours.
 
-The same list also applies to the [Embedded Payment Method](/docs/features/checkout/embed-payment-method#embed-hosts).
+The same list also applies to the [Embedded Payment Method](/docs/features/checkout/embed-payment-method.md#embed-hosts).
 
 ### Writing a host
 
@@ -323,7 +323,7 @@ document
 
 ## Enable wallets in Embedded Checkout
 
-[Wallet payment methods](/docs/features/checkout/payment-methods#cards-and-wallets), such as Apple Pay and Google Pay, are not enabled by default when you embed checkout on your website. For security reasons, your website domain must be validated first. This applies to Embedded Checkout only — on Polar's hosted checkout, wallets work out of the box with nothing to configure.
+[Wallet payment methods](/docs/features/checkout/payment-methods.md#cards-and-wallets), such as Apple Pay and Google Pay, are not enabled by default when you embed checkout on your website. For security reasons, your website domain must be validated first. This applies to Embedded Checkout only — on Polar's hosted checkout, wallets work out of the box with nothing to configure.
 
 To enable wallet payment methods, [email us](mailto:support@polar.sh) with:
 

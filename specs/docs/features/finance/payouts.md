@@ -135,7 +135,7 @@ Polar meets all of these criteria and therefore issues 1099-K forms to eligible 
 
 > **Why does my payout say 'Held for review'?**
 >
-> You can request a payout at any time. [Account Reviews](/docs/merchant-of-record/account-reviews) are a normal part of how we operate, so if your account happens to be under review when you request one, the payout shows as "Held for review" until you are reviewed, then is paid out automatically.
+> You can request a payout at any time. [Account Reviews](/docs/merchant-of-record/account-reviews.md) are a normal part of how we operate, so if your account happens to be under review when you request one, the payout shows as "Held for review" until you are reviewed, then is paid out automatically.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

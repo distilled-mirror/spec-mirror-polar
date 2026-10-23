@@ -7,13 +7,13 @@
 Polar offers built-in benefit (entitlements) automation for common upsells within the developer &
 designer ecosystem with more to come.
 
-* [**Credits**](/docs/features/benefits/credits). A simple benefit that allows you to credit a customer's Usage Meter balance.
-* [**License Keys**](/docs/features/benefits/license-keys). Software license keys that you can customize the branding of.
-* [**Feature Flags**](/docs/features/benefits/feature-flags). Simple, API-driven feature access flags with optional metadata.
-* [**File Downloads**](/docs/features/benefits/file-downloads). Downloadable files of any kind up to 10GB each.
-* [**GitHub Repository Access**](/docs/features/benefits/github-access). Automatically invite subscribers to private GitHub repo(s).
-* [**Discord Invite**](/docs/features/benefits/discord-access). Automate invitations and granting of roles to subscribers and customers.
-* [**Shared Slack Channel**](/docs/features/benefits/slack-shared-channel). Give customers a shared Slack channel via Slack Connect.
+* [**Credits**](/docs/features/benefits/credits.md). A simple benefit that allows you to credit a customer's Usage Meter balance.
+* [**License Keys**](/docs/features/benefits/license-keys.md). Software license keys that you can customize the branding of.
+* [**Feature Flags**](/docs/features/benefits/feature-flags.md). Simple, API-driven feature access flags with optional metadata.
+* [**File Downloads**](/docs/features/benefits/file-downloads.md). Downloadable files of any kind up to 10GB each.
+* [**GitHub Repository Access**](/docs/features/benefits/github-access.md). Automatically invite subscribers to private GitHub repo(s).
+* [**Discord Invite**](/docs/features/benefits/discord-access.md). Automate invitations and granting of roles to subscribers and customers.
+* [**Shared Slack Channel**](/docs/features/benefits/slack-shared-channel.md). Give customers a shared Slack channel via Slack Connect.
 
 ## Product & Subscription Benefits
 

@@ -10,15 +10,15 @@ The Polar CLI brings your Polar organization to your terminal. Use it to receive
 webhooks on your local machine while you build, send realistic sample events to
 your handler, and switch between your sandbox and production organizations.
 
-> **[Authentication](/docs/integrate/cli/authentication)**
+> **[Authentication](/docs/integrate/cli/authentication.md)**
 >
 > Sign in to sandbox and production, and choose the organization you work on.
 
-> **[Webhooks](/docs/integrate/cli/webhooks)**
+> **[Webhooks](/docs/integrate/cli/webhooks.md)**
 >
 > Receive real webhooks locally and trigger sample events on demand.
 
-> **[Command reference](/docs/integrate/cli/reference)**
+> **[Command reference](/docs/integrate/cli/reference.md)**
 >
 > Every command, argument and flag.
 
@@ -63,8 +63,9 @@ Print a completion script for your shell and add it to your profile:
 polar --completions zsh
 ```
 
-Bash, fish and sh are supported too. Run `polar --help` or add `--help` to any
-command for inline documentation.
+Bash, fish and sh are supported too. Run `polar --help` to list every command,
+or add `--help` to a command, like `polar products --help`, to see the flags of
+every command under it at once.
 
 ## Telemetry
 

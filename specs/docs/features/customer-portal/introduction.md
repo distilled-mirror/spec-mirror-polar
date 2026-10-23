@@ -20,7 +20,7 @@ From the Customer Portal, your customers can:
 * **Access benefits** they're entitled to — license keys, file downloads, Discord access, etc.
 * **Cancel active subscriptions** on their own
 * **Update their default payment method** — the primary way for customers to recover from failed payments
-* Optionally, do more — change their email address, switch subscription plans, manage seats, pause and resume subscriptions, view metered usage, and so on — depending on which toggles you enable under [Settings](/docs/features/customer-portal/settings)
+* Optionally, do more — change their email address, switch subscription plans, manage seats, pause and resume subscriptions, view metered usage, and so on — depending on which toggles you enable under [Settings](/docs/features/customer-portal/settings.md)
 
 ## Why it matters
 
@@ -32,16 +32,16 @@ The Customer Portal isn't just a convenience feature — it's a critical piece o
 
 ## Next steps
 
-> **[Navigate customers to the portal](/docs/features/customer-portal/navigate-customers)**
+> **[Navigate customers to the portal](/docs/features/customer-portal/navigate-customers.md)**
 >
 > Use the default portal URL, generate authenticated links, or rely on the
 > emails Polar already sends.
 
-> **[Customer portal settings](/docs/features/customer-portal/settings)**
+> **[Customer portal settings](/docs/features/customer-portal/settings.md)**
 >
 > Configure what your customers can do from the portal under Settings → Customer portal.
 
-> **[Customer Portal API](/docs/api-reference/current/customer_portal/get-customer)**
+> **[Customer Portal API](/docs/api-reference/current/customer_portal/get-customer.md)**
 >
 > Build your own portal experience on top of the Customer Portal API.
 
@@ -63,7 +63,7 @@ The Customer Portal isn't just a convenience feature — it's a critical piece o
 > * **Update their payment method in a PCI-compliant way**, so they can
 >   recover from failed renewals without you having to handle card details.
 >
-> You can, however, [fine-tune what customers can do](/docs/features/customer-portal/settings)
+> You can, however, [fine-tune what customers can do](/docs/features/customer-portal/settings.md)
 > from the portal — for example, disabling subscription plan changes or email
 > edits.
 
@@ -73,7 +73,7 @@ The Customer Portal isn't just a convenience feature — it's a critical piece o
 > intentionally consistent across all Polar organizations.
 >
 > If you need a branded experience, you can build your own portal on top of
-> the [Customer Portal API](/docs/api-reference/current/customer_portal/get-customer),
+> the [Customer Portal API](/docs/api-reference/current/customer_portal/get-customer.md),
 > which covers the day-to-day actions: viewing subscriptions and orders,
 > downloading invoices and receipts, managing benefits and seats, and reading
 > meter usage.
@@ -92,7 +92,7 @@ The Customer Portal isn't just a convenience feature — it's a critical piece o
 > purchase or subscribe — Polar emails them a one-time code to confirm.
 >
 > You can also skip the email step entirely by generating a pre-authenticated
-> link from your own application. See [Navigate customers to the portal](/docs/features/customer-portal/navigate-customers)
+> link from your own application. See [Navigate customers to the portal](/docs/features/customer-portal/navigate-customers.md)
 > for details.
 
 > **Do I need to send customers a link to the portal myself?**

@@ -26,7 +26,7 @@ This URL is a good choice to link from your marketing site, your app's help menu
 
 If your customer is already signed in to your application, you can generate an authenticated link that drops them directly into the portal — no email code required.
 
-Under the hood, this calls the [Create Customer Session](/docs/api-reference/current/customer-sessions/create-customer-session) endpoint and redirects the user to the `customer_portal_url` it returns.
+Under the hood, this calls the [Create Customer Session](/docs/api-reference/current/customer-sessions/create-customer-session.md) endpoint and redirects the user to the `customer_portal_url` it returns.
 
 ```typescript theme={null}
 import { createPolar } from "@polar-sh/sdk/2026-10";

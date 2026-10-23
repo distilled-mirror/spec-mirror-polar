@@ -28,9 +28,9 @@ The token expires after one hour and is scoped to that single customer.
 
 ## Embed hosts
 
-The payment method embed only opens on a host you've allowed. It uses the same list as [Embedded Checkout](/docs/features/checkout/embed#embed-hosts): add your site under **Settings → Preferences → Embedding** before embedding it. The list applies as soon as you save it.
+The payment method embed only opens on a host you've allowed. It uses the same list as [Embedded Checkout](/docs/features/checkout/embed.md#embed-hosts): add your site under **Settings → Preferences → Embedding** before embedding it. The list applies as soon as you save it.
 
-See [Writing a host](/docs/features/checkout/embed#writing-a-host) for the accepted formats, including wildcards, ports and local development hosts.
+See [Writing a host](/docs/features/checkout/embed.md#writing-a-host) for the accepted formats, including wildcards, ports and local development hosts.
 
 If the page isn't on the list, the browser refuses to frame the embed, so it stays blank and the browser console shows a message naming `frame-ancestors`. An invalid or expired session token has the same effect.
 
@@ -174,7 +174,7 @@ const embed = await PolarEmbedPaymentMethod.create({
 });
 ```
 
-When omitted, the embed defaults to English. Unsupported locales also fall back to English. See [Localization](/docs/features/checkout/localization) for the full list of supported languages.
+When omitted, the embed defaults to English. Unsupported locales also fall back to English. See [Localization](/docs/features/checkout/localization.md) for the full list of supported languages.
 
 ## Events
 

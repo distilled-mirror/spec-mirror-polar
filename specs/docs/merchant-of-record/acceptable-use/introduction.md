@@ -18,9 +18,9 @@ It also lists what isn't supported — for example physical goods, human service
 
 ### Why do we have one?
 
-As your [Merchant of Record](/docs/merchant-of-record/introduction), Polar is the legal seller of your products. That means we're accountable to card networks, payment partners, and tax authorities for every transaction on the platform. The AUP keeps the platform compliant, protects buyers from fraud and abuse, and keeps chargeback and risk levels low so we can keep offering great rates and fast payouts to everyone.
+As your [Merchant of Record](/docs/merchant-of-record/introduction.md), Polar is the legal seller of your products. That means we're accountable to card networks, payment partners, and tax authorities for every transaction on the platform. The AUP keeps the platform compliant, protects buyers from fraud and abuse, and keeps chargeback and risk levels low so we can keep offering great rates and fast payouts to everyone.
 
-Every organization is reviewed against the AUP before its first payout and monitored continuously afterwards. Learn more in [Account Reviews](/docs/merchant-of-record/account-reviews).
+Every organization is reviewed against the AUP before its first payout and monitored continuously afterwards. Learn more in [Account Reviews](/docs/merchant-of-record/account-reviews.md).
 
 > **[Read the full Acceptable Use Policy](https://polar.sh/legal/acceptable-use-policy)**
 >

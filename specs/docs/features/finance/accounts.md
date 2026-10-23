@@ -6,7 +6,7 @@
 
 > Connect a Stripe Connect Express account to receive your earnings
 
-A **payout account** is the external account Polar uses to send you your earnings. As the [Merchant of Record](/docs/merchant-of-record/introduction), Polar collects the money from your customers, then [transfers your balance](/docs/features/finance/payouts) — minus our fees — to your payout account. From there, the funds are deposited into your bank account.
+A **payout account** is the external account Polar uses to send you your earnings. As the [Merchant of Record](/docs/merchant-of-record/introduction.md), Polar collects the money from your customers, then [transfers your balance](/docs/features/finance/payouts.md) — minus our fees — to your payout account. From there, the funds are deposited into your bank account.
 
 Polar uses [Stripe Connect Express](https://stripe.com/connect) for payout accounts.
 
@@ -51,7 +51,7 @@ Stripe Connect requires the bank account you connect to be in the **same country
 
 > **My country isn't in the list. Can I still receive payouts?**
 >
-> Polar supports the countries listed in our [supported countries for payouts](/docs/merchant-of-record/supported-countries#payouts). If yours isn't listed during onboarding, we can't currently issue payouts there.
+> Polar supports the countries listed in our [supported countries for payouts](/docs/merchant-of-record/supported-countries.md#payouts). If yours isn't listed during onboarding, we can't currently issue payouts there.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

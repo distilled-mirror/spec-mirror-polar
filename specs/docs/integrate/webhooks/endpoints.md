@@ -8,7 +8,7 @@
 
 Secrets generated on or after 8 September 2026, 00:00 UTC follow
 [Standard Webhooks](https://www.standardwebhooks.com/). Older secrets use Polar HMAC.
-See [Handle incoming webhooks](/docs/integrate/webhooks/delivery#custom-validation).
+See [Handle incoming webhooks](/docs/integrate/webhooks/delivery.md#custom-validation).
 
 Our SDKs offer:
 
@@ -67,7 +67,7 @@ Finally, select all the events you want to be notified about and you're done ðŸŽ
 >
 > **Developing locally?**
 >
-> The [Polar CLI](/docs/integrate/cli/webhooks) forwards your organization's webhooks to a URL on your machine, so you can test handlers without deploying them.
+> The [Polar CLI](/docs/integrate/cli/webhooks.md) forwards your organization's webhooks to a URL on your machine, so you can test handlers without deploying them.
 >
 > ```bash Terminal theme={null}
 > curl -fsSL https://polar.sh/install.sh | bash
@@ -78,7 +78,7 @@ Finally, select all the events you want to be notified about and you're done ðŸŽ
 > It also sends sample events on demand with `polar webhook trigger`.
 
 [Now, it's time to integrate our endpoint to receive events
-â†’](/docs/integrate/webhooks/delivery)
+â†’](/docs/integrate/webhooks/delivery.md)
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

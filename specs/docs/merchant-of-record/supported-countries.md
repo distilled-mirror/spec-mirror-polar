@@ -8,11 +8,11 @@
 
 We support payments globally except from countries with US sanctions (Cuba, Russia, Iran, North Korea, and Syria).
 
-As your Merchant of Record (MoR) we take on the [liability for international sales taxes](/docs/merchant-of-record/introduction).
+As your Merchant of Record (MoR) we take on the [liability for international sales taxes](/docs/merchant-of-record/introduction.md).
 
 ### Payouts
 
-Polar uses Stripe Connect Express to issue payouts to residents or businesses in any of the countries below. See [Payout Accounts](/docs/features/finance/accounts) for how to connect one.
+Polar uses Stripe Connect Express to issue payouts to residents or businesses in any of the countries below. See [Payout Accounts](/docs/features/finance/accounts.md) for how to connect one.
 
 > [!NOTE]
 >
@@ -147,11 +147,11 @@ Polar uses Stripe Connect Express to issue payouts to residents or businesses in
 > **Can I use Polar in countries (e.g. India) where Stripe is invite-only?**
 >
 > \[!NOTE] Stripe Connect Express is a different product than the regular Stripe payments.
-> Yes, any individual or company operating in our [supported countries](/docs/merchant-of-record/supported-countries) can receive payouts from Polar even if Stripe standalone is invite-only there.
+> Yes, any individual or company operating in our [supported countries](/docs/merchant-of-record/supported-countries.md) can receive payouts from Polar even if Stripe standalone is invite-only there.
 >
 > This is possible as Polar is the Merchant of Record, all payments from customers are made to Polar (US). [Stripe Connect Express](https://docs.stripe.com/connect/express-accounts) is then used to issue payouts, and is supported in more countries via cross-border transfer than Stripe Payments standalone.
 >
-> You might still see a warning in Stripe Connect Express that payments are invite-only, but don't worry. No direct sales are made directly to the Stripe Connect Express account. They're all made to Polar (US) as a platform and the merchant of record. We only use the transfer and payout feature of Stripe Connect Express which is available in all of our [supported countries](/docs/merchant-of-record/supported-countries).
+> You might still see a warning in Stripe Connect Express that payments are invite-only, but don't worry. No direct sales are made directly to the Stripe Connect Express account. They're all made to Polar (US) as a platform and the merchant of record. We only use the transfer and payout feature of Stripe Connect Express which is available in all of our [supported countries](/docs/merchant-of-record/supported-countries.md).
 
 > **Can I use Polar as an individual to make sales globally?**
 >

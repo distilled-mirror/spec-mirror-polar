@@ -115,7 +115,7 @@ Configuring a webhook is simple. Head over to your organization's settings page 
 
 ### Tunneling webhook events to your local development environment
 
-Encore runs your app locally with full infrastructure support. To receive webhooks during local development, you can use the [Polar CLI](/docs/integrate/cli/webhooks) to tunnel webhook events to your local environment.
+Encore runs your app locally with full infrastructure support. To receive webhooks during local development, you can use the [Polar CLI](/docs/integrate/cli/webhooks.md) to tunnel webhook events to your local environment.
 
 ```bash Terminal theme={null}
 polar webhook listen http://localhost:4000/webhooks/polar

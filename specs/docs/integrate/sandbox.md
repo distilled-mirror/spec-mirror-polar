@@ -20,7 +20,7 @@ It's a dedicated server, completely isolated from the production instance where 
 
 You can access the sandbox environment directly on [sandbox.polar.sh](https://sandbox.polar.sh/start) or by clicking on `Go to sandbox` from the organization switcher.
 
-You'll then need to create a dedicated user account and organization, the same way described in our [Quick Start guide](/docs/introduction).
+You'll then need to create a dedicated user account and organization, the same way described in our [Quick Start guide](/docs/introduction.md).
 
 ### Testing payments
 

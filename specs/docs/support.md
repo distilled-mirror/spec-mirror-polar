@@ -26,7 +26,7 @@ Please note that during periods of higher request volume, response times may occ
 
 Account reviews are typically performed within 7 days, but can take up to 14 days to complete, depending on volume, weekends, and holidays.
 
-More information on our account reviewal process can be found in our [Account Reviews documentation](https://polar.sh/docs/merchant-of-record/account-reviews)
+More information on our account reviewal process can be found in our [Account Reviews documentation](https://polar.sh/docs/merchant-of-record/account-reviews.md)
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

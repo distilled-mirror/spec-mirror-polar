@@ -67,7 +67,7 @@ When you pick a date range, Polar splits it into equal-width **intervals** — o
 
 ## Costs
 
-The Costs dashboard is powered by [Cost Insights](/docs/features/cost-insights/introduction) — you'll only see data here once you start sending events with a `_cost` annotation.
+The Costs dashboard is powered by [Cost Insights](/docs/features/cost-insights/introduction.md) — you'll only see data here once you start sending events with a `_cost` annotation.
 
 * **Costs** — Total operating costs ingested via Cost Insights in the interval. Stored at sub-cent precision so per-event costs (e.g. token-level inference costs) aren't rounded away.
 * **Cost Per User** — Cumulative costs in the selected range divided by the count of active subscribers. Returns 0 when there are no active subscribers.

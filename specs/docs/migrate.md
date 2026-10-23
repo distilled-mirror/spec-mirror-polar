@@ -12,7 +12,7 @@ customers, products, subscriptions, and payment data.
 > [!NOTE]
 >
 > Stripe migrations are rolling out gradually. If **Migrations** is not available in your
-> organization settings, [contact Polar support](/docs/support).
+> organization settings, [contact Polar support](/docs/support.md).
 
 ## Before you begin
 
@@ -60,7 +60,7 @@ The sections below walk through each stage in full.
 **Goal:** Make Polar the billing system for every new customer.
 
 Integrate the [Polar API](/docs/api-reference) and
-[webhooks](/docs/integrate/webhooks/endpoints) into your application. New checkouts
+[webhooks](/docs/integrate/webhooks/endpoints.md) into your application. New checkouts
 create their orders and subscriptions in Polar. Existing Stripe subscriptions
 continue renewing in Stripe.
 
@@ -246,7 +246,7 @@ for payments it processes.
 >
 > Unsupported pricing should not block your migration. Polar can adapt to new
 > pricing models, so if some of your prices cannot be migrated,
-> [contact Polar support](/docs/support).
+> [contact Polar support](/docs/support.md).
 >
 > Polar also rechecks subscriptions during the switch. Subscriptions due to
 > renew within 24 hours, or set to end on a date other than their period end,
@@ -649,7 +649,7 @@ End with the smallest safe implementation slice. Wait for approval before
 editing code or changing billing state.
 ```
 
-Need help planning the migration? [Contact Polar support](/docs/support).
+Need help planning the migration? [Contact Polar support](/docs/support.md).
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

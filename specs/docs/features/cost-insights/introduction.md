@@ -50,11 +50,11 @@ Cost Insights works in three simple steps:
 
 ## Documentation
 
-> **[Cost Events](/docs/features/cost-insights/cost-events)**
+> **[Cost Events](/docs/features/cost-insights/cost-events.md)**
 >
 > Learn how to track costs by adding the `_cost` property to your events metadata
 
-> **[Cost Metrics](/docs/features/analytics)**
+> **[Cost Metrics](/docs/features/analytics.md)**
 >
 > Query and analyze costs, profits, and customer lifetime value
 

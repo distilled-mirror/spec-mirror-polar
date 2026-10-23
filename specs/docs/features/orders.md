@@ -6,9 +6,9 @@
 
 > Every paid transaction on Polar is an order.
 
-An **order** is the record of a single paid transaction on Polar. Every successful checkout, subscription cycle, and subscription change generates an order — it's where the money, the tax, the invoice, and the link back to the [product](/docs/features/products) and [customer](/docs/features/customer-management) live.
+An **order** is the record of a single paid transaction on Polar. Every successful checkout, subscription cycle, and subscription change generates an order — it's where the money, the tax, the invoice, and the link back to the [product](/docs/features/products.md) and [customer](/docs/features/customer-management.md) live.
 
-If [subscriptions](/docs/features/subscriptions/introduction) are the *relationship* with a customer, orders are the *individual payments* inside that relationship.
+If [subscriptions](/docs/features/subscriptions/introduction.md) are the *relationship* with a customer, orders are the *individual payments* inside that relationship.
 
 ## When orders are created
 
@@ -17,8 +17,8 @@ Polar creates an order in all of these cases:
 * **One-time purchase** — when a customer checks out a non-recurring product.
 * **Subscription created** — the initial order generated when a customer subscribes.
 * **Subscription renewal** — every billing cycle of an active subscription.
-* **Subscription change** — when a plan or seat update is prorated with `invoice` behavior and charges the difference immediately. See [Proration](/docs/features/subscriptions/proration).
-* **Usage charge** — at the end of each meter period, for products with a [meter cycle](/docs/features/usage-based-billing/billing#meter-cycle) shorter than the billing interval.
+* **Subscription change** — when a plan or seat update is prorated with `invoice` behavior and charges the difference immediately. See [Proration](/docs/features/subscriptions/proration.md).
+* **Usage charge** — at the end of each meter period, for products with a [meter cycle](/docs/features/usage-based-billing/billing.md#meter-cycle) shorter than the billing interval.
 
 Each order carries a `billing_reason` that tells you which of these it is: `purchase`, `subscription_create`, `subscription_cycle`, `subscription_update`, or `subscription_meter_cycle`.
 
@@ -96,7 +96,7 @@ curl --request POST \
   --data '{}'
 ```
 
-On success, the order transitions to `paid`, an invoice number is assigned, any [benefits](/docs/features/benefits/introduction) attached to the product are granted, the customer is emailed their confirmation, and the [`order.paid`](/docs/api-reference/current/order_paid) webhook fires.
+On success, the order transitions to `paid`, an invoice number is assigned, any [benefits](/docs/features/benefits/introduction.md) attached to the product are granted, the customer is emailed their confirmation, and the [`order.paid`](/docs/api-reference/current/order_paid) webhook fires.
 
 If the charge fails, the API returns an error and the order is reverted to `draft` so you can fix the problem and finalize the same order again — no invoice number is consumed by a failed attempt:
 
@@ -115,7 +115,7 @@ An order moves through a small set of statuses over its lifetime:
 | `pending` | The order has been created and Polar is attempting to collect payment. |
 | `paid` | The payment succeeded. |
 | `refunded` | The order has been fully refunded. |
-| `partially_refunded` | Part of the order has been refunded. See [Refunds](/docs/features/refunds). |
+| `partially_refunded` | Part of the order has been refunded. See [Refunds](/docs/features/refunds.md). |
 | `void` | The order will not be collected (for example, it's been voided after repeated failures). |
 
 Free orders — those with a total of zero, typically from a \$0 subscription or a 100% discount — are marked `paid` immediately with no payment step.
@@ -126,19 +126,19 @@ Every order carries:
 
 * **Amounts**: subtotal, discount, tax, net, and total, with the currency it was billed in.
 * **Billing details**: customer billing name and address (editable until the invoice is generated).
-* **Tax details**: taxability reason, tax rate, and the amount collected — useful if you're operating as merchant of record on your own, or reconciling against Polar's [MoR tax handling](/docs/merchant-of-record/introduction).
+* **Tax details**: taxability reason, tax rate, and the amount collected — useful if you're operating as merchant of record on your own, or reconciling against Polar's [MoR tax handling](/docs/merchant-of-record/introduction.md).
 * **A link to the product and customer**, and to the subscription if the order came from a subscription.
 * **The invoice**, once it's been generated.
-* **[Custom field data](/docs/features/custom-fields)** captured at checkout.
+* **[Custom field data](/docs/features/custom-fields.md)** captured at checkout.
 
 ## Invoices
 
 Polar generates a PDF invoice for every paid order. You can:
 
 * **Download it** from the order detail page in the dashboard.
-* **Trigger generation** programmatically via [Generate Order Invoice](/docs/api-reference/current/orders/generate-order-invoice), then fetch the URL with [Get Order Invoice](/docs/api-reference/current/orders/get-order-invoice).
+* **Trigger generation** programmatically via [Generate Order Invoice](/docs/api-reference/current/orders/generate-order-invoice.md), then fetch the URL with [Get Order Invoice](/docs/api-reference/current/orders/get-order-invoice.md).
 
-Customers can download and edit their own invoices — adding a company name, VAT number, or billing address — from the [Customer Portal](/docs/features/customer-portal/introduction), without pulling you into a support thread.
+Customers can download and edit their own invoices — adding a company name, VAT number, or billing address — from the [Customer Portal](/docs/features/customer-portal/introduction.md), without pulling you into a support thread.
 
 > [!NOTE]
 >
@@ -157,13 +157,13 @@ Each receipt includes:
 * Any **refunds** issued against the order, with dates and amounts.
 * The same line items, taxes, totals, and linked invoice number as the order's invoice.
 
-You can **download receipts** from the order detail page in the dashboard, and customers download receipts from the [Customer Portal](/docs/features/customer-portal/introduction) — a **Download Receipt** button appears on each paid order. Programmatically, use [Get Order Receipt](/docs/api-reference/current/orders/get-order-receipt) for the merchant API or its [customer-portal counterpart](/docs/api-reference/current/customer_portal/get-order-receipt).
+You can **download receipts** from the order detail page in the dashboard, and customers download receipts from the [Customer Portal](/docs/features/customer-portal/introduction.md) — a **Download Receipt** button appears on each paid order. Programmatically, use [Get Order Receipt](/docs/api-reference/current/orders/get-order-receipt.md) for the merchant API or its [customer-portal counterpart](/docs/api-reference/current/customer_portal/get-order-receipt.md).
 
 The first request for a given order may return `202 Accepted` while the PDF renders. Retry shortly after for a presigned download URL. The Customer Portal handles this for you.
 
 ## Refunds
 
-Orders can be refunded in full or in part from the dashboard, or programmatically via the [Refunds API](/docs/api-reference/current/refunds/create-refund). Refunds are a separate resource linked to the order — see [Refunds](/docs/features/refunds) for the rules around what's refundable and how it interacts with payouts.
+Orders can be refunded in full or in part from the dashboard, or programmatically via the [Refunds API](/docs/api-reference/current/refunds/create-refund.md). Refunds are a separate resource linked to the order — see [Refunds](/docs/features/refunds.md) for the rules around what's refundable and how it interacts with payouts.
 
 ## Webhooks
 
@@ -176,19 +176,19 @@ If you're integrating orders into your own system, Polar emits an event on every
 
 ## Next steps
 
-> **[Subscriptions](/docs/features/subscriptions/introduction)**
+> **[Subscriptions](/docs/features/subscriptions/introduction.md)**
 >
 > The recurring relationship that generates most orders.
 
-> **[Refunds](/docs/features/refunds)**
+> **[Refunds](/docs/features/refunds.md)**
 >
 > How to refund an order, fully or partially.
 
-> **[Orders API](/docs/api-reference/current/orders/list-orders)**
+> **[Orders API](/docs/api-reference/current/orders/list-orders.md)**
 >
 > List and fetch orders, update billing details, and generate invoices.
 
-> **[Customer Portal](/docs/features/customer-portal/introduction)**
+> **[Customer Portal](/docs/features/customer-portal/introduction.md)**
 >
 > Where customers view their own orders and download invoices and receipts.
 

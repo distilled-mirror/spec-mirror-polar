@@ -26,7 +26,7 @@ You don't need to enable individual payment methods.
 >
 > **On Polar's hosted checkout, wallets need no setup.** They're enabled by default and appear automatically whenever the customer's device and browser support them.
 >
-> Domain validation is only required for [Embedded Checkout](/docs/features/checkout/embed#enable-wallets-in-embedded-checkout), where the checkout runs on your own domain.
+> Domain validation is only required for [Embedded Checkout](/docs/features/checkout/embed.md#enable-wallets-in-embedded-checkout), where the checkout runs on your own domain.
 
 ## Local payment methods
 

@@ -34,7 +34,7 @@ Metadata can be configured when creating or editing the benefit in the dashboard
 
 ## Integration
 
-The recommended way to check if a customer has a feature flag benefit is through the [Customer State](/docs/integrate/customer-state) API or the [`customer.state_changed`](/docs/api-reference/current/customer_state_changed) webhook.
+The recommended way to check if a customer has a feature flag benefit is through the [Customer State](/docs/integrate/customer-state.md) API or the [`customer.state_changed`](/docs/api-reference/current/customer_state_changed) webhook.
 
 The customer state object includes all granted benefits. Simply check if the customer has a benefit grant for your feature flag benefit to determine access.
 

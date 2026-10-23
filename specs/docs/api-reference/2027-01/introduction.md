@@ -19,7 +19,7 @@
 > Use an **Organization Access Token (OAT)** in the `Authorization: Bearer`
 > header
 
-> **[Auth (Customer Portal)](/docs/api-reference/2027-01/customer-sessions/create-customer-session)**
+> **[Auth (Customer Portal)](/docs/api-reference/2027-01/customer-sessions/create-customer-session.md)**
 >
 > Use a **Customer Access Token** created via `/v1/customer-sessions/`
 
@@ -67,7 +67,7 @@ customer_state = polar.customers.get_state_external("customer_external_id")
 print(customer_state)
 ```
 
-Both clients use production by default. Pass `environment="sandbox"` in Python or `environment: "sandbox"` in TypeScript to use the [sandbox environment](/docs/integrate/sandbox).
+Both clients use production by default. Pass `environment="sandbox"` in Python or `environment: "sandbox"` in TypeScript to use the [sandbox environment](/docs/integrate/sandbox.md).
 
 ## Base URLs
 
@@ -82,7 +82,7 @@ Both clients use production by default. Pass `environment="sandbox"` in Python o
 > organizations created there do not affect production. Create separate tokens
 > in each environment.
 
-Read more: [Sandbox Environment](/docs/integrate/sandbox)
+Read more: [Sandbox Environment](/docs/integrate/sandbox.md)
 
 ## Authentication
 
@@ -106,7 +106,7 @@ Authorization: Bearer polar_oat_xxxxxxxxxxxxxxxxx
 
 ### Customer Access Tokens
 
-Do **not** use OATs in the browser. For customer-facing flows, [generate a **Customer Session**](/docs/api-reference/2027-01/customer-sessions/create-customer-session) server-side, then use the returned **customer access token** with the **Customer Portal API** to let a signed-in customer view their own orders, subscriptions, and benefits.
+Do **not** use OATs in the browser. For customer-facing flows, [generate a **Customer Session**](/docs/api-reference/2027-01/customer-sessions/create-customer-session.md) server-side, then use the returned **customer access token** with the **Customer Portal API** to let a signed-in customer view their own orders, subscriptions, and benefits.
 
 ## Core API vs Customer Portal API
 
@@ -221,7 +221,7 @@ Polar API has rate limits to ensure fair usage and maintain performance. Limits 
 
 * **100 requests per minute** per organization/customer or OAuth2 Client.
 
-Unauthenticated [validation](/docs/api-reference/2027-01/customer_portal/validate-license-key), [activation](/docs/api-reference/2027-01/customer_portal/activate-license-key), and [deactivation](/docs/api-reference/2027-01/customer_portal/deactivate-license-key) endpoints are limited to **3 requests per second** in both environments.
+Unauthenticated [validation](/docs/api-reference/2027-01/customer_portal/validate-license-key.md), [activation](/docs/api-reference/2027-01/customer_portal/activate-license-key.md), and [deactivation](/docs/api-reference/2027-01/customer_portal/deactivate-license-key.md) endpoints are limited to **3 requests per second** in both environments.
 
 If you exceed the rate limit, you will receive a `429 Too Many Requests` response. The response will include a `Retry-After` header indicating how long you should wait before making another request.
 

@@ -10,29 +10,29 @@
 
 ### Checkout
 
-> **[checkout.created](/docs/api-reference/current/checkout_created)**
+> **[checkout.created](/docs/api-reference/current/checkout_created.md)**
 
-> **[checkout.updated](/docs/api-reference/current/checkout_updated)**
+> **[checkout.updated](/docs/api-reference/current/checkout_updated.md)**
 
-> **[checkout.expired](/docs/api-reference/current/checkout_expired)**
+> **[checkout.expired](/docs/api-reference/current/checkout_expired.md)**
 >
 > Fired when a checkout link has expired without being completed.
 
 ### Customers
 
-> **[customer.created](/docs/api-reference/current/customer_created)**
+> **[customer.created](/docs/api-reference/current/customer_created.md)**
 >
 > Fired when a new customer has been created.
 
-> **[customer.updated](/docs/api-reference/current/customer_updated)**
+> **[customer.updated](/docs/api-reference/current/customer_updated.md)**
 >
 > Fired when a customer has been updated.
 
-> **[customer.deleted](/docs/api-reference/current/customer_deleted)**
+> **[customer.deleted](/docs/api-reference/current/customer_deleted.md)**
 >
 > Fired when a customer has been deleted.
 
-> **[customer.state\_changed](/docs/api-reference/current/customer_state_changed)**
+> **[customer.state\_changed](/docs/api-reference/current/customer_state_changed.md)**
 >
 > Fired when a customer's state has changed. Includes active subscriptions and
 > granted benefits.
@@ -41,25 +41,25 @@
 
 In order to properly implement logic for handling subscriptions, you should look into the following events.
 
-> **[subscription.created](/docs/api-reference/current/subscription_created)**
+> **[subscription.created](/docs/api-reference/current/subscription_created.md)**
 >
 > Fired when a new subscription has been created.
 
-> **[subscription.active](/docs/api-reference/current/subscription_active)**
+> **[subscription.active](/docs/api-reference/current/subscription_active.md)**
 
-> **[subscription.uncanceled](/docs/api-reference/current/subscription_uncanceled)**
+> **[subscription.uncanceled](/docs/api-reference/current/subscription_uncanceled.md)**
 
-> **[subscription.cycled](/docs/api-reference/current/subscription_cycled)**
+> **[subscription.cycled](/docs/api-reference/current/subscription_cycled.md)**
 >
 > Fired when a subscription enters a new billing period, before the renewal order exists and whether or not the payment succeeds.
 
-> **[subscription.canceled](/docs/api-reference/current/subscription_canceled)**
+> **[subscription.canceled](/docs/api-reference/current/subscription_canceled.md)**
 
-> **[subscription.past\_due](/docs/api-reference/current/subscription_past_due)**
+> **[subscription.past\_due](/docs/api-reference/current/subscription_past_due.md)**
 >
 > Fired when a subscription payment has failed. The customer can recover by updating their payment method.
 
-> **[subscription.updated](/docs/api-reference/current/subscription_updated)**
+> **[subscription.updated](/docs/api-reference/current/subscription_updated.md)**
 >
 > Use this event if you want to handle cancellations, un-cancellations, etc. The
 > updated event is a catch-all event for `subscription.active`,
@@ -67,7 +67,7 @@ In order to properly implement logic for handling subscriptions, you should look
 > `subscription.past_due`, `subscription.revoked`, `subscription.paused`,
 > `subscription.resumed` and `subscription.migrated`.
 
-> **[order.created](/docs/api-reference/current/order_created)**
+> **[order.created](/docs/api-reference/current/order_created.md)**
 >
 > Carries a `billing_reason` field, which can be `purchase`,
 > `subscription_create`, `subscription_cycle`, `subscription_update` and
@@ -75,17 +75,17 @@ In order to properly implement logic for handling subscriptions, you should look
 > on a renewal, listen to `subscription.cycled` instead: it fires whether or not
 > the renewal payment succeeds.
 
-> **[subscription.revoked](/docs/api-reference/current/subscription_revoked)**
+> **[subscription.revoked](/docs/api-reference/current/subscription_revoked.md)**
 
-> **[subscription.paused](/docs/api-reference/current/subscription_paused)**
+> **[subscription.paused](/docs/api-reference/current/subscription_paused.md)**
 >
 > Fired when a scheduled pause takes effect at the end of the period. Billing stops and benefits are revoked until the subscription resumes.
 
-> **[subscription.resumed](/docs/api-reference/current/subscription_resumed)**
+> **[subscription.resumed](/docs/api-reference/current/subscription_resumed.md)**
 >
 > Fired when a paused subscription resumes. A new billing period starts and the customer is charged immediately.
 
-> **[subscription.migrated](/docs/api-reference/current/subscription_migrated)**
+> **[subscription.migrated](/docs/api-reference/current/subscription_migrated.md)**
 >
 > Fired when Polar takes over billing of a subscription migrated from another provider. Includes `provider` and `provider_subscription_id` so you can correlate the two. Does not send `subscription.created` or `subscription.active`.
 
@@ -189,53 +189,53 @@ Polar enqueues `subscription.updated` before `subscription.migrated`, but delive
 
 ### Orders
 
-> **[order.created](/docs/api-reference/current/order_created)**
+> **[order.created](/docs/api-reference/current/order_created.md)**
 
-> **[order.paid](/docs/api-reference/current/order_paid)**
+> **[order.paid](/docs/api-reference/current/order_paid.md)**
 
-> **[order.updated](/docs/api-reference/current/order_updated)**
+> **[order.updated](/docs/api-reference/current/order_updated.md)**
 
-> **[order.refunded](/docs/api-reference/current/order_refunded)**
+> **[order.refunded](/docs/api-reference/current/order_refunded.md)**
 
 ### Refunds
 
-> **[refund.created](/docs/api-reference/current/refund_created)**
+> **[refund.created](/docs/api-reference/current/refund_created.md)**
 
-> **[refund.updated](/docs/api-reference/current/refund_updated)**
+> **[refund.updated](/docs/api-reference/current/refund_updated.md)**
 
 ### Benefit Grants
 
-> **[benefit\_grant.created](/docs/api-reference/current/benefit_grant_created)**
+> **[benefit\_grant.created](/docs/api-reference/current/benefit_grant_created.md)**
 
-> **[benefit\_grant.updated](/docs/api-reference/current/benefit_grant_updated)**
+> **[benefit\_grant.updated](/docs/api-reference/current/benefit_grant_updated.md)**
 
-> **[benefit\_grant.revoked](/docs/api-reference/current/benefit_grant_revoked)**
+> **[benefit\_grant.revoked](/docs/api-reference/current/benefit_grant_revoked.md)**
 
 ## Organization Events
 
 ### Benefits
 
-> **[benefit.created](/docs/api-reference/current/benefit_created)**
+> **[benefit.created](/docs/api-reference/current/benefit_created.md)**
 
-> **[benefit.updated](/docs/api-reference/current/benefit_updated)**
+> **[benefit.updated](/docs/api-reference/current/benefit_updated.md)**
 
 ### Products
 
-> **[product.created](/docs/api-reference/current/product_created)**
+> **[product.created](/docs/api-reference/current/product_created.md)**
 
-> **[product.updated](/docs/api-reference/current/product_updated)**
+> **[product.updated](/docs/api-reference/current/product_updated.md)**
 
 ### Discounts
 
-> **[discount.created](/docs/api-reference/current/discount_created)**
+> **[discount.created](/docs/api-reference/current/discount_created.md)**
 
-> **[discount.updated](/docs/api-reference/current/discount_updated)**
+> **[discount.updated](/docs/api-reference/current/discount_updated.md)**
 
-> **[discount.deleted](/docs/api-reference/current/discount_deleted)**
+> **[discount.deleted](/docs/api-reference/current/discount_deleted.md)**
 
 ### Organization
 
-> **[organization.updated](/docs/api-reference/current/organization_updated)**
+> **[organization.updated](/docs/api-reference/current/organization_updated.md)**
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

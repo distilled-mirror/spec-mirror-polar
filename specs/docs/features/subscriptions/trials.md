@@ -12,9 +12,9 @@ Trials are a great way to let potential customers experience your product before
 
 You can set up a trial period through the following means:
 
-* When creating or editing a [product](/docs/features/products).
-* When creating or editing a [checkout link](/docs/features/checkout/links).
-* When creating a Checkout Session through the [API](/docs/api-reference/current/checkouts/create-checkout-session).
+* When creating or editing a [product](/docs/features/products.md).
+* When creating or editing a [checkout link](/docs/features/checkout/links.md).
+* When creating a Checkout Session through the [API](/docs/api-reference/current/checkouts/create-checkout-session.md).
 
 If you set a trial period on the Checkout Link or Checkout Session, it will **override the trial period set on the product**.
 

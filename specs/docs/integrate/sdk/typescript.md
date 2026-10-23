@@ -47,7 +47,7 @@ The import path pins your client to the `2026-10` API version.
 
 ## Sandbox environment
 
-The client uses production by default. Pass `environment: "sandbox"` to use the isolated [sandbox environment](/docs/integrate/sandbox):
+The client uses production by default. Pass `environment: "sandbox"` to use the isolated [sandbox environment](/docs/integrate/sandbox.md):
 
 ```typescript theme={null}
 const polar = createPolar({
@@ -62,10 +62,10 @@ const polar = createPolar({
 
 Implement Checkout & Webhook handlers in few lines of code.
 
-* [Better Auth](/docs/integrate/sdk/adapters/better-auth)
-* [Next.js](/docs/integrate/sdk/adapters/nextjs)
-* [Nuxt](/docs/integrate/sdk/adapters/nuxt)
-* [TanStack Start](/docs/integrate/sdk/adapters/tanstack-start)
+* [Better Auth](/docs/integrate/sdk/adapters/better-auth.md)
+* [Next.js](/docs/integrate/sdk/adapters/nextjs.md)
+* [Nuxt](/docs/integrate/sdk/adapters/nuxt.md)
+* [TanStack Start](/docs/integrate/sdk/adapters/tanstack-start.md)
 
 Adapters for other frameworks are deprecated, use the SDK directly instead.
 The [`polar-integration` skill](https://github.com/polarsource/agent-toolkit/tree/main/skills/polar-integration)

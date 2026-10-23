@@ -6,9 +6,9 @@
 
 > The quickest way to integrate billing in your application
 
-Customer State is a concept allowing you to query for the current state of a customer, including their active subscriptions and granted [benefits](/docs/features/benefits/introduction), in a single [API call](/docs/api-reference/current/customers/get-customer-state-by-external-id) or single [webhook event](/docs/api-reference/current/customer_state_changed).
+Customer State is a concept allowing you to query for the current state of a customer, including their active subscriptions and granted [benefits](/docs/features/benefits/introduction.md), in a single [API call](/docs/api-reference/current/customers/get-customer-state-by-external-id.md) or single [webhook event](/docs/api-reference/current/customer_state_changed.md).
 
-Combined with the [External ID](/docs/features/customer-management#external-id) feature, you can get up-and-running in minutes.
+Combined with the [External ID](/docs/features/customer-management.md#external-id) feature, you can get up-and-running in minutes.
 
 ## The customer state object
 
@@ -21,11 +21,11 @@ The customer state object contains:
 
 Thus, with that single object, you have all the required information to check if you should provision access to your service or not.
 
-> **[Get Customer State by External ID](/docs/api-reference/current/customers/get-customer-state-by-external-id)**
+> **[Get Customer State by External ID](/docs/api-reference/current/customers/get-customer-state-by-external-id.md)**
 >
 > One endpoint to rule them all, using your own customer ID.
 
-> **[Get Customer State](/docs/api-reference/current/customers/get-customer-state)**
+> **[Get Customer State](/docs/api-reference/current/customers/get-customer-state.md)**
 >
 > The same one, but with internal Polar customer ID.
 
@@ -39,7 +39,7 @@ To be notified of the customer state changes, you can listen to the `customer.st
 
 By subscribing to this webhook event, you keep your system up-to-date and update your customer's access accordingly.
 
-> **[customer.state\_changed](/docs/api-reference/current/customer_state_changed)**
+> **[customer.state\_changed](/docs/api-reference/current/customer_state_changed.md)**
 >
 > One webhook to rule them all.
 

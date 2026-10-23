@@ -22,7 +22,7 @@ SSO lives under [**Settings → SSO**](https://polar.sh/to/dashboard/settings/ss
 
 Anyone who signs in through your connection becomes a member of your organization. You don't invite them first — authenticating against your identity provider is what grants membership.
 
-New members join with the **Member** role. To grant more access, [change their role](/docs/features/team-management#changing-a-members-role) after their first sign-in.
+New members join with the **Member** role. To grant more access, [change their role](/docs/features/team-management.md#changing-a-members-role) after their first sign-in.
 
 Your identity provider decides who can authenticate, so it also decides who can join. Grant and revoke access to the Polar application there.
 
@@ -90,7 +90,7 @@ You can stop enforcing at any time from the same screen.
 
 > **Can I still invite members by email?**
 >
-> Yes, as long as you don't enforce SSO. [Invitations](/docs/features/team-management#inviting-a-member) work alongside it, which is useful for contractors who aren't in your identity provider.
+> Yes, as long as you don't enforce SSO. [Invitations](/docs/features/team-management.md#inviting-a-member) work alongside it, which is useful for contractors who aren't in your identity provider.
 >
 > Once you enforce SSO, invitations stop being a way in. The invited person becomes a member, but reaching your organization requires signing in through your identity provider. Add them there instead.
 

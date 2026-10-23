@@ -25,14 +25,14 @@ Polar supports several pricing models, and you pick one per product:
 * **Fixed price.** Set an amount and that's what customers pay.
 * **Pay what you want.** Customers choose the amount. You can set a minimum and a default that's pre-filled at checkout.
 * **Free.** No charge. Useful for lead magnets, free tiers, or gating benefits behind a sign-up.
-* **Metered pricing.** Charge based on usage — bill per API call, per token, per anything you can count. [Learn more about usage-based billing](/docs/features/usage-based-billing/introduction).
-* **Seat-based pricing.** Sell a number of seats with optional volume tiers, and let the buyer assign them to teammates. [Learn more about seat-based billing](/docs/features/seat-based-pricing).
+* **Metered pricing.** Charge based on usage — bill per API call, per token, per anything you can count. [Learn more about usage-based billing](/docs/features/usage-based-billing/introduction.md).
+* **Seat-based pricing.** Sell a number of seats with optional volume tiers, and let the buyer assign them to teammates. [Learn more about seat-based billing](/docs/features/seat-based-pricing.md).
 
 Metered prices stack on top of the others. You can pair one with a fixed base fee for a classic "base + usage" plan, and you can attach multiple metered prices to the same product if you want to bill on more than one dimension at once — say, per API call *and* per GB of storage.
 
-Pricing type is locked in at creation, but for fixed-price products you can change the amount at any time. Existing subscribers are **grandfathered** onto the price they signed up at, so a price change only affects new purchases. If you do want to migrate someone onto the new price, you can do it [per subscription](/docs/features/subscriptions/manage) from the dashboard or the API.
+Pricing type is locked in at creation, but for fixed-price products you can change the amount at any time. Existing subscribers are **grandfathered** onto the price they signed up at, so a price change only affects new purchases. If you do want to migrate someone onto the new price, you can do it [per subscription](/docs/features/subscriptions/manage.md) from the dashboard or the API.
 
-Whether the amount you enter includes tax or has tax added on top depends on your tax behavior setting. By default, Polar picks the convention that matches the customer's country (inclusive in most of the world, exclusive in the US, Canada, and India). You can set your own default under **Settings**. See [Tax Inclusive Pricing](/docs/features/tax-inclusive-pricing) for how the amount you set translates to what customers actually pay.
+Whether the amount you enter includes tax or has tax added on top depends on your tax behavior setting. By default, Polar picks the convention that matches the customer's country (inclusive in most of the world, exclusive in the US, Canada, and India). You can set your own default under **Settings**. See [Tax Inclusive Pricing](/docs/features/tax-inclusive-pricing.md) for how the amount you set translates to what customers actually pay.
 
 ### Multiple payment currencies
 
@@ -183,7 +183,7 @@ Polar picks the currency based on the customer's geolocation at checkout. If the
 
 For recurring products, toggle **Enable trial period** to give customers a window where they aren't charged. Pick a number and a unit (days, weeks, months, or years) and Polar handles the rest.
 
-[Learn more about trials](/docs/features/subscriptions/trials).
+[Learn more about trials](/docs/features/subscriptions/trials.md).
 
 ## Metadata
 
@@ -193,7 +193,7 @@ You can attach arbitrary key–value metadata to a product. It's not shown to cu
 
 Benefits are what your customers actually get when they buy: license keys, Discord roles, GitHub repository access, file downloads, feature flags, or a custom benefit you wire up yourself.
 
-Polar grants and revokes benefits automatically as customers purchase, renew, or cancel. [Learn more about benefits](/docs/features/benefits/introduction).
+Polar grants and revokes benefits automatically as customers purchase, renew, or cancel. [Learn more about benefits](/docs/features/benefits/introduction.md).
 
 ## Checkout Page
 
@@ -245,19 +245,19 @@ A product without an order, subscription, trial or discount can be permanently d
 >
 > Polar takes a different approach to what the industry typically calls **variants**. Each product has a single pricing model, and instead of bolting variants onto one product, you create one product per pricing model and showcase them together at checkout.
 >
-> So a "monthly" and "yearly" plan are two products, each with their own pricing and benefits, presented side-by-side via [Checkout Links](/docs/features/checkout/links) or the [Checkout Session API](/docs/features/checkout/session). It keeps the API and the data model clean, and gives you full freedom over what each option includes.
+> So a "monthly" and "yearly" plan are two products, each with their own pricing and benefits, presented side-by-side via [Checkout Links](/docs/features/checkout/links.md) or the [Checkout Session API](/docs/features/checkout/session.md). It keeps the API and the data model clean, and gives you full freedom over what each option includes.
 
 > **Can I change the price of a product after publishing it?**
 >
-> Yes, for fixed-price products. Existing subscribers are grandfathered onto their original price and only new purchases see the updated amount — but you can move individual subscribers onto the new price [per subscription](/docs/features/subscriptions/manage) if you want. Billing cycle and pricing type can't change.
+> Yes, for fixed-price products. Existing subscribers are grandfathered onto their original price and only new purchases see the updated amount — but you can move individual subscribers onto the new price [per subscription](/docs/features/subscriptions/manage.md) if you want. Billing cycle and pricing type can't change.
 
 > **Can I sell usage-based or metered products?**
 >
-> Yes. Set the price type to **Metered** and link it to a meter that tracks the events you care about. Full walkthrough in the [usage-based billing guide](/docs/features/usage-based-billing/introduction).
+> Yes. Set the price type to **Metered** and link it to a meter that tracks the events you care about. Full walkthrough in the [usage-based billing guide](/docs/features/usage-based-billing/introduction.md).
 
 > **Can I sell team or per-seat plans?**
 >
-> Yes, via [seat-based pricing](/docs/features/seat-based-pricing). The buyer purchases a number of seats and assigns them to teammates, who each get the product's benefits.
+> Yes, via [seat-based pricing](/docs/features/seat-based-pricing.md). The buyer purchases a number of seats and assigns them to teammates, who each get the product's benefits.
 
 > **Will customers see prices in their local currency?**
 >

@@ -14,7 +14,7 @@ No matter what refund policy you offer to customers, Polar makes it easy to issu
 >
 > Polar reserves the right to issue refunds within 60 days of purchase, at its own discretion, in order to prevent chargebacks. We integrate with credit card networks to receive early chargeback signals before a dispute is officially filed, and for lower-value transactions we'll automatically refund the order on your behalf to head off the chargeback — cancelling any related subscription and revoking the customer's benefits at the same time.
 >
-> This applies even if you have a "no refunds" policy: keeping chargebacks low protects your account, so Polar may still refund proactively. See [Chargeback Management](/docs/merchant-of-record/account-reviews#chargeback-management) for the wider context.
+> This applies even if you have a "no refunds" policy: keeping chargebacks low protects your account, so Polar may still refund proactively. See [Chargeback Management](/docs/merchant-of-record/account-reviews.md#chargeback-management) for the wider context.
 
 ## What's refundable
 
@@ -48,7 +48,7 @@ Select the reason for the refund — helpful for future reference.
 
 **One-time purchases.** You can revoke the customer's access to product benefits — e.g. file downloads, license keys, or Discord/GitHub invites. This is selected by default, since we default to a full refund, but it can be disabled.
 
-**Subscriptions.** You can't revoke access by refunding an order tied to a subscription — refunding the order returns the money but does not end the relationship. To end access, [cancel the subscription](/docs/features/subscriptions/manage) instead. Polar revokes the associated benefits automatically once the subscription itself is revoked.
+**Subscriptions.** You can't revoke access by refunding an order tied to a subscription — refunding the order returns the money but does not end the relationship. To end access, [cancel the subscription](/docs/features/subscriptions/manage.md) instead. Polar revokes the associated benefits automatically once the subscription itself is revoked.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

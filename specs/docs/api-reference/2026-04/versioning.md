@@ -110,8 +110,8 @@ existing webhook endpoints; upgrade them separately.
 
 ## Pinning SDKs
 
-The [Python SDK](/docs/integrate/sdk/python) and
-[TypeScript SDK](/docs/integrate/sdk/typescript) include typed clients and models for
+The [Python SDK](/docs/integrate/sdk/python.md) and
+[TypeScript SDK](/docs/integrate/sdk/typescript.md) include typed clients and models for
 each supported API version. Importing a versioned client automatically sets the
 matching `Polar-Version` header:
 

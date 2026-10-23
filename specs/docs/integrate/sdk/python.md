@@ -101,7 +101,7 @@ asyncio.run(main())
 
 ## Sandbox environment
 
-The client uses production by default. Pass `environment="sandbox"` to use the isolated [sandbox environment](/docs/integrate/sandbox):
+The client uses production by default. Pass `environment="sandbox"` to use the isolated [sandbox environment](/docs/integrate/sandbox.md):
 
 ```python theme={null}
 polar = Polar(

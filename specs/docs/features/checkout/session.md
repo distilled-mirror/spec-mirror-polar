@@ -8,7 +8,7 @@
 
 If you want to integrate more deeply the checkout process with your website or application, you can use our dedicated API.
 
-The first step is to [create a Checkout session](/docs/api-reference/current/checkouts/create-checkout-session). For this you'll need at least your **Product ID**.
+The first step is to [create a Checkout session](/docs/api-reference/current/checkouts/create-checkout-session.md). For this you'll need at least your **Product ID**.
 
 You can retrieve your Product ID from Products in your dashboard, click on "context-menu" button in front of your product and click on Copy Product ID.
 
@@ -100,7 +100,7 @@ Ad-hoc prices support all the same price types as catalog prices:
 * **Seat-based**: Pricing based on number of seats
 * **Metered**: Usage-based pricing tied to a meter
 
-For the complete schema of each price type, refer to the [Checkout API reference](/docs/api-reference/current/checkouts/create-checkout-session).
+For the complete schema of each price type, refer to the [Checkout API reference](/docs/api-reference/current/checkouts/create-checkout-session.md).
 
 ## External Customer ID
 
@@ -116,10 +116,10 @@ After a successful checkout, we'll create a Customer on Polar with the external 
 
 When you create a checkout session, Polar uses the IP address of the request to detect the customer's country. This drives features like:
 
-* **Currency auto-detection** for [products with multiple payment currencies](/docs/features/products)
+* **Currency auto-detection** for [products with multiple payment currencies](/docs/features/products.md)
 * **Pre-filling the billing country** on the checkout page, which is also used to compute taxes
 
-If you use [checkout links](/docs/features/checkout/links), this works automatically. But if you create sessions through the API from a **backend, proxy, or edge function** (e.g. your own API, a Cloudflare Worker, a Next.js route handler), Polar will see *your server's* IP — not the customer's — and the detection will be wrong.
+If you use [checkout links](/docs/features/checkout/links.md), this works automatically. But if you create sessions through the API from a **backend, proxy, or edge function** (e.g. your own API, a Cloudflare Worker, a Next.js route handler), Polar will see *your server's* IP — not the customer's — and the detection will be wrong.
 
 In that case, forward the customer's IP address as `customer_ip_address` in the request body:
 
