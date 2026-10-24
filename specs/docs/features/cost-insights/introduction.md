@@ -50,11 +50,11 @@ Cost Insights works in three simple steps:
 
 ## Documentation
 
-> **[Cost Events](/docs/features/cost-insights/cost-events.md)**
+> **[Cost Events](https://polar.sh/docs/features/cost-insights/cost-events.md)**
 >
 > Learn how to track costs by adding the `_cost` property to your events metadata
 
-> **[Cost Metrics](/docs/features/analytics.md)**
+> **[Cost Metrics](https://polar.sh/docs/features/analytics.md)**
 >
 > Query and analyze costs, profits, and customer lifetime value
 

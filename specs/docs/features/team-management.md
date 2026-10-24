@@ -13,7 +13,7 @@ Team management lives under [**Settings → Members**](https://polar.sh/to/dashb
 > [!NOTE]
 >
 > On the Scale plan you can connect your own identity provider instead of inviting people one by
-> one. See [Single Sign-On](/docs/features/sso.md).
+> one. See [Single Sign-On](https://polar.sh/docs/features/sso.md).
 
 ## Roles
 
@@ -60,7 +60,7 @@ New members join with the **Member** role by default. To grant additional access
 
 > [!WARNING]
 >
-> **Enforcing [SSO](/docs/features/sso.md)?** Invitations stop being a way in. The invited person becomes a member, but reaching the organization requires signing in through your identity provider. Add them there instead.
+> **Enforcing [SSO](https://polar.sh/docs/features/sso.md)?** Invitations stop being a way in. The invited person becomes a member, but reaching the organization requires signing in through your identity provider. Add them there instead.
 
 ## Changing a member's role
 
@@ -75,7 +75,7 @@ The role picker shows a side-by-side permissions matrix so you can confirm what 
 
 > [!NOTE]
 >
-> **The owner's role can't be changed from this menu.** Every organization has exactly one owner at all times. Ownership can only be transferred to another member of the organization who has completed identity verification — please [contact support](/docs/support.md) to request an ownership transfer.
+> **The owner's role can't be changed from this menu.** Every organization has exactly one owner at all times. Ownership can only be transferred to another member of the organization who has completed identity verification — please [contact support](https://polar.sh/docs/support.md) to request an ownership transfer.
 
 ## Removing a member
 
@@ -90,11 +90,11 @@ The removed member immediately loses access to the organization. They keep their
 
 > [!WARNING]
 >
-> **You can't remove the owner.** Every organization always has exactly one owner — to remove the current owner, ownership must first be transferred to another member who has completed identity verification. Please [contact support](/docs/support.md) to request an ownership transfer.
+> **You can't remove the owner.** Every organization always has exactly one owner — to remove the current owner, ownership must first be transferred to another member who has completed identity verification. Please [contact support](https://polar.sh/docs/support.md) to request an ownership transfer.
 
 > [!WARNING]
 >
-> **Using [SSO](/docs/features/sso.md)?** Removing a member here doesn't keep them out. Anyone who can still authenticate against your identity provider rejoins on their next sign-in. Revoke their access in your identity provider instead.
+> **Using [SSO](https://polar.sh/docs/features/sso.md)?** Removing a member here doesn't keep them out. Anyone who can still authenticate against your identity provider rejoins on their next sign-in. Revoke their access in your identity provider instead.
 
 ## Leaving an organization
 
@@ -117,7 +117,7 @@ You can't leave an organization if you are:
 
 > **Can people join without an invitation?**
 >
-> Yes, if your organization uses [Single Sign-On](/docs/features/sso.md). Anyone who authenticates through your identity provider becomes a member with the Member role — no invitation needed. Your identity provider controls who can do that.
+> Yes, if your organization uses [Single Sign-On](https://polar.sh/docs/features/sso.md). Anyone who authenticates through your identity provider becomes a member with the Member role — no invitation needed. Your identity provider controls who can do that.
 
 > **Can a user belong to more than one organization?**
 >
@@ -126,7 +126,7 @@ You can't leave an organization if you are:
 > **How do I transfer ownership of an organization?**
 >
 > Ownership can only be transferred to another member of the organization who has completed identity verification. Every organization always has exactly one owner — the previous owner becomes an admin once the transfer completes.
-> Please [contact support](/docs/support.md) to request an ownership transfer.
+> Please [contact support](https://polar.sh/docs/support.md) to request an ownership transfer.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

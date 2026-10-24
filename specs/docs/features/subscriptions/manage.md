@@ -8,13 +8,13 @@
 
 Once a subscription exists, you'll want to adjust it over time — change plans, extend trials, tweak seats, or end it. This page covers everything a merchant can do to a subscription, both from the dashboard and through the API.
 
-All of these actions are available under **Sales → Subscriptions** in the dashboard, and via the [Update Subscription](/docs/api-reference/current/subscriptions/update-subscription.md) endpoint. Customers can also perform a subset of them from the [Customer Portal](/docs/features/customer-portal/introduction.md) — which ones is controlled by your [portal settings](/docs/features/customer-portal/settings.md).
+All of these actions are available under **Sales → Subscriptions** in the dashboard, and via the [Update Subscription](https://polar.sh/docs/api-reference/current/subscriptions/update-subscription.md) endpoint. Customers can also perform a subset of them from the [Customer Portal](https://polar.sh/docs/features/customer-portal/introduction.md) — which ones is controlled by your [portal settings](https://polar.sh/docs/features/customer-portal/settings.md).
 
 ## Change the plan
 
 Switch a subscription to a different recurring product — the standard upgrade or downgrade flow.
 
-* When the change takes effect depends on the [proration behavior](/docs/features/subscriptions/proration.md): `invoice` and `prorate` apply the new product immediately, while `next_period` schedules a pending update that's only applied at the start of the next billing cycle.
+* When the change takes effect depends on the [proration behavior](https://polar.sh/docs/features/subscriptions/proration.md): `invoice` and `prorate` apply the new product immediately, while `next_period` schedules a pending update that's only applied at the start of the next billing cycle.
 * The new product must share the subscription's currency.
 * You can upgrade a non-seat subscription to a seat-based product — the billing customer is auto-promoted to a `team` customer and claims a seat — but you can't switch a seat-based subscription back to a non-seat product. Non-seat → seat changes must apply immediately, so `next_period` proration isn't allowed for that transition.
 * You can't change the plan on a subscription that's already canceled or scheduled to cancel — uncancel first.
@@ -40,11 +40,11 @@ polar.subscriptions.update(
 )
 ```
 
-Read more in [Proration](/docs/features/subscriptions/proration.md).
+Read more in [Proration](https://polar.sh/docs/features/subscriptions/proration.md).
 
 ## Change the number of seats
 
-For [seat-based subscriptions](/docs/features/seat-based-pricing.md), update how many seats the customer is paying for. Like plan changes, when the seat count actually takes effect depends on the [proration behavior](/docs/features/subscriptions/proration.md): immediate with `invoice` or `prorate`, scheduled for the next cycle with `next_period`.
+For [seat-based subscriptions](https://polar.sh/docs/features/seat-based-pricing.md), update how many seats the customer is paying for. Like plan changes, when the seat count actually takes effect depends on the [proration behavior](https://polar.sh/docs/features/subscriptions/proration.md): immediate with `invoice` or `prorate`, scheduled for the next cycle with `next_period`.
 
 ```bash cURL theme={null}
 curl --request PATCH \
@@ -56,7 +56,7 @@ curl --request PATCH \
 
 ## Apply or change a discount
 
-Attach a [discount](/docs/features/discounts.md) to an active subscription, or remove the current one by passing `null`. The change is applied to the **next** billing cycle — it doesn't retroactively re-bill the current period.
+Attach a [discount](https://polar.sh/docs/features/discounts.md) to an active subscription, or remove the current one by passing `null`. The change is applied to the **next** billing cycle — it doesn't retroactively re-bill the current period.
 
 ```bash cURL theme={null}
 curl --request PATCH \
@@ -68,7 +68,7 @@ curl --request PATCH \
 
 ## Manage the trial
 
-You can add, extend, or end a [trial](/docs/features/subscriptions/trials.md) on any subscription:
+You can add, extend, or end a [trial](https://polar.sh/docs/features/subscriptions/trials.md) on any subscription:
 
 * **Add or extend** a trial by setting `trial_end` to a future date. If the subscription is currently active, its status switches to `trialing` and the next charge is postponed to the new date.
 * **End a trial immediately** by setting `trial_end` to `"now"`. Polar will charge the first billing cycle and only change the subscription to `active` if payment succeeds. If payment fails, the subscription remains `trialing` with its original trial end.
@@ -150,7 +150,7 @@ Calling cancel (or toggling "Cancel at period end" in the dashboard) sets `cance
 * No further orders are generated after the current one.
 * You can **uncancel** at any time before the end date, which reverts the scheduled cancellation.
 
-This is the gentler option and the one customers trigger themselves from the [Customer Portal](/docs/features/customer-portal/introduction.md). It's also what satisfies the "cancel the way you signed up" requirement in jurisdictions like California's [Automatic Renewal Law](https://oag.ca.gov/consumers/auto-renewing-subscriptions).
+This is the gentler option and the one customers trigger themselves from the [Customer Portal](https://polar.sh/docs/features/customer-portal/introduction.md). It's also what satisfies the "cancel the way you signed up" requirement in jurisdictions like California's [Automatic Renewal Law](https://oag.ca.gov/consumers/auto-renewing-subscriptions).
 
 ```bash cURL theme={null}
 curl --request PATCH \
@@ -174,7 +174,7 @@ You can optionally record a **cancellation reason** and **comment** — useful f
 
 ### Revoke immediately
 
-Revoking ends the subscription **right now**: status moves to `canceled`, `ended_at` is set to the current time, and all benefits are revoked. There's no refund — if you need to issue one, do it separately from [Refunds](/docs/features/refunds.md).
+Revoking ends the subscription **right now**: status moves to `canceled`, `ended_at` is set to the current time, and all benefits are revoked. There's no refund — if you need to issue one, do it separately from [Refunds](https://polar.sh/docs/features/refunds.md).
 
 Use this when access needs to stop immediately — a terms-of-service violation, a chargeback, or an explicit customer request.
 
@@ -205,7 +205,7 @@ Uncancelling is not possible once the subscription has actually ended.
 
 ## What customers can do
 
-The [Customer Portal](/docs/features/customer-portal/introduction.md) exposes a subset of these actions to the customer, gated by your [portal settings](/docs/features/customer-portal/settings.md):
+The [Customer Portal](https://polar.sh/docs/features/customer-portal/introduction.md) exposes a subset of these actions to the customer, gated by your [portal settings](https://polar.sh/docs/features/customer-portal/settings.md):
 
 * **Cancel at period end** is always available — this is the self-service guarantee the portal provides.
 * **Update the default payment method** is always available — the primary way customers recover from a failed renewal.

@@ -8,37 +8,37 @@
 
 Framework adapters make it dead simple to add Polar checkouts and webhooks to your stack. Pick your framework to get started.
 
-> **[Next.js](/docs/integrate/sdk/adapters/nextjs.md)**
+> **[Next.js](https://polar.sh/docs/integrate/sdk/adapters/nextjs.md)**
 
-> **[Nuxt](/docs/integrate/sdk/adapters/nuxt.md)**
+> **[Nuxt](https://polar.sh/docs/integrate/sdk/adapters/nuxt.md)**
 
-> **[TanStack Start](/docs/integrate/sdk/adapters/tanstack-start.md)**
+> **[TanStack Start](https://polar.sh/docs/integrate/sdk/adapters/tanstack-start.md)**
 
-> **[Laravel](/docs/integrate/sdk/adapters/laravel.md)**
+> **[Laravel](https://polar.sh/docs/integrate/sdk/adapters/laravel.md)**
 
-> **[BetterAuth](/docs/integrate/sdk/adapters/better-auth.md)**
+> **[BetterAuth](https://polar.sh/docs/integrate/sdk/adapters/better-auth.md)**
 
 ## Legacy adapters
 
-These adapters are deprecated. For these frameworks, we recommend a direct integration using our [SDKs](/docs/integrate/sdk/introduction.md) instead.
+These adapters are deprecated. For these frameworks, we recommend a direct integration using our [SDKs](https://polar.sh/docs/integrate/sdk/introduction.md) instead.
 
-> **[Astro](/docs/integrate/sdk/adapters/astro.md)**
+> **[Astro](https://polar.sh/docs/integrate/sdk/adapters/astro.md)**
 
-> **[Deno](/docs/integrate/sdk/adapters/deno.md)**
+> **[Deno](https://polar.sh/docs/integrate/sdk/adapters/deno.md)**
 
-> **[Elysia](/docs/integrate/sdk/adapters/elysia.md)**
+> **[Elysia](https://polar.sh/docs/integrate/sdk/adapters/elysia.md)**
 
-> **[Express](/docs/integrate/sdk/adapters/express.md)**
+> **[Express](https://polar.sh/docs/integrate/sdk/adapters/express.md)**
 
-> **[Fastify](/docs/integrate/sdk/adapters/fastify.md)**
+> **[Fastify](https://polar.sh/docs/integrate/sdk/adapters/fastify.md)**
 
-> **[Hono](/docs/integrate/sdk/adapters/hono.md)**
+> **[Hono](https://polar.sh/docs/integrate/sdk/adapters/hono.md)**
 
-> **[Remix](/docs/integrate/sdk/adapters/remix.md)**
+> **[Remix](https://polar.sh/docs/integrate/sdk/adapters/remix.md)**
 
-> **[Supabase](/docs/integrate/sdk/adapters/supabase.md)**
+> **[Supabase](https://polar.sh/docs/integrate/sdk/adapters/supabase.md)**
 
-> **[SvelteKit](/docs/integrate/sdk/adapters/sveltekit.md)**
+> **[SvelteKit](https://polar.sh/docs/integrate/sdk/adapters/sveltekit.md)**
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

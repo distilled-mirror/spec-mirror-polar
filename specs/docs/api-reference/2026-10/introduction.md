@@ -14,12 +14,12 @@
 >
 > `https://sandbox-api.polar.sh/v1`
 
-> **[Auth (Organization)](/docs/integrate/oat)**
+> **[Auth (Organization)](https://polar.sh/docs/integrate/oat)**
 >
 > Use an **Organization Access Token (OAT)** in the `Authorization: Bearer`
 > header
 
-> **[Auth (Customer Portal)](/docs/api-reference/2026-10/customer-sessions/create-customer-session.md)**
+> **[Auth (Customer Portal)](https://polar.sh/docs/api-reference/2026-10/customer-sessions/create-customer-session.md)**
 >
 > Use a **Customer Access Token** created via `/v1/customer-sessions/`
 
@@ -27,7 +27,7 @@
 
 Use our new, fully typed SDKs to integrate with the Polar API from TypeScript or Python.
 
-Create an [organization access token](/docs/integrate/oat), then install the SDK and make your first request:
+Create an [organization access token](https://polar.sh/docs/integrate/oat), then install the SDK and make your first request:
 
 **TypeScript**
 
@@ -67,7 +67,7 @@ customer_state = polar.customers.get_state_external("customer_external_id")
 print(customer_state)
 ```
 
-Both clients use production by default. Pass `environment="sandbox"` in Python or `environment: "sandbox"` in TypeScript to use the [sandbox environment](/docs/integrate/sandbox.md).
+Both clients use production by default. Pass `environment="sandbox"` in Python or `environment: "sandbox"` in TypeScript to use the [sandbox environment](https://polar.sh/docs/integrate/sandbox.md).
 
 ## Base URLs
 
@@ -82,7 +82,7 @@ Both clients use production by default. Pass `environment="sandbox"` in Python o
 > organizations created there do not affect production. Create separate tokens
 > in each environment.
 
-Read more: [Sandbox Environment](/docs/integrate/sandbox.md)
+Read more: [Sandbox Environment](https://polar.sh/docs/integrate/sandbox.md)
 
 ## Authentication
 
@@ -97,7 +97,7 @@ Authorization: Bearer polar_oat_xxxxxxxxxxxxxxxxx
 > [!TIP]
 >
 > Create OATs in your organization settings. See: [Organization Access
-> Tokens](/docs/integrate/oat)
+> Tokens](https://polar.sh/docs/integrate/oat)
 
 > [!WARNING]
 >
@@ -106,7 +106,7 @@ Authorization: Bearer polar_oat_xxxxxxxxxxxxxxxxx
 
 ### Customer Access Tokens
 
-Do **not** use OATs in the browser. For customer-facing flows, [generate a **Customer Session**](/docs/api-reference/2026-10/customer-sessions/create-customer-session.md) server-side, then use the returned **customer access token** with the **Customer Portal API** to let a signed-in customer view their own orders, subscriptions, and benefits.
+Do **not** use OATs in the browser. For customer-facing flows, [generate a **Customer Session**](https://polar.sh/docs/api-reference/2026-10/customer-sessions/create-customer-session.md) server-side, then use the returned **customer access token** with the **Customer Portal API** to let a signed-in customer view their own orders, subscriptions, and benefits.
 
 ## Core API vs Customer Portal API
 
@@ -221,7 +221,7 @@ Polar API has rate limits to ensure fair usage and maintain performance. Limits 
 
 * **100 requests per minute** per organization/customer or OAuth2 Client.
 
-Unauthenticated [validation](/docs/api-reference/2026-10/customer_portal/validate-license-key.md), [activation](/docs/api-reference/2026-10/customer_portal/activate-license-key.md), and [deactivation](/docs/api-reference/2026-10/customer_portal/deactivate-license-key.md) endpoints are limited to **3 requests per second** in both environments.
+Unauthenticated [validation](https://polar.sh/docs/api-reference/2026-10/customer_portal/validate-license-key.md), [activation](https://polar.sh/docs/api-reference/2026-10/customer_portal/activate-license-key.md), and [deactivation](https://polar.sh/docs/api-reference/2026-10/customer_portal/deactivate-license-key.md) endpoints are limited to **3 requests per second** in both environments.
 
 If you exceed the rate limit, you will receive a `429 Too Many Requests` response. The response will include a `Retry-After` header indicating how long you should wait before making another request.
 

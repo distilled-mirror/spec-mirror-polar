@@ -70,15 +70,15 @@ Turn your software into a business with Polar. Sell digital products, subscripti
 
 ![](https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/introduction/checkout.light.png?fit=max\&auto=format\&n=0Af3hN6-oIM4IHT3\&q=85\&s=46584e16a18277dd02826c4cb7bd022e)
 
-> **[Checkout Links](/docs/features/checkout/links.md)**
+> **[Checkout Links](https://polar.sh/docs/features/checkout/links.md)**
 >
 > No-code solution for quick product sales. Create and share instantly.
 
-> **[Embedded Checkout](/docs/features/checkout/embed.md)**
+> **[Embedded Checkout](https://polar.sh/docs/features/checkout/embed.md)**
 >
 > Integrate seamlessly into your website with customizable branding.
 
-> **[Checkout API](/docs/api-reference)**
+> **[Checkout API](https://polar.sh/docs/api-reference)**
 >
 > Programmatically create dynamic checkout sessions for custom flows.
 
@@ -87,19 +87,19 @@ Turn your software into a business with Polar. Sell digital products, subscripti
 **Set it and forget it**: Configure once, and customers get instant access to
 their benefits automatically. No manual work required.
 
-> **[License Keys](/docs/features/benefits/license-keys.md)**
+> **[License Keys](https://polar.sh/docs/features/benefits/license-keys.md)**
 >
 > Generate and deliver software licenses automatically with custom formats
 
-> **[File Downloads](/docs/features/benefits/file-downloads.md)**
+> **[File Downloads](https://polar.sh/docs/features/benefits/file-downloads.md)**
 >
 > Secure delivery of digital assets up to 10GB with download tracking
 
-> **[GitHub Access](/docs/features/benefits/github-access.md)**
+> **[GitHub Access](https://polar.sh/docs/features/benefits/github-access.md)**
 >
 > Auto-invite customers to private repositories and manage permissions
 
-> **[Discord Access](/docs/features/benefits/discord-access.md)**
+> **[Discord Access](https://polar.sh/docs/features/benefits/discord-access.md)**
 >
 > Automatic role assignment and server invites for community access
 
@@ -125,7 +125,7 @@ Set up a digital product in minutes:
 * Set your pricing (fixed, pay-what-you-want, or free)
 * Configure automated benefits for instant delivery
 
-Learn more about [Products →](/docs/features/products.md)
+Learn more about [Products →](https://polar.sh/docs/features/products.md)
 
 **3. Choose Your Integration**
 
@@ -135,7 +135,7 @@ Pick the approach that fits your needs:
 
 Perfect for getting started quickly:
 
-* Create [Checkout Links](/docs/features/checkout/links.md) from your dashboard
+* Create [Checkout Links](https://polar.sh/docs/features/checkout/links.md) from your dashboard
 * Share via email, social media, or embed in websites
 * Start accepting payments immediately
 
@@ -143,7 +143,7 @@ Perfect for getting started quickly:
 
 Integrate into your existing website:
 
-* Add our [Embedded Checkout](/docs/features/checkout/embed.md) component
+* Add our [Embedded Checkout](https://polar.sh/docs/features/checkout/embed.md) component
 * Maintain your site's look and feel
 * Customers never leave your domain
 
@@ -151,7 +151,7 @@ Integrate into your existing website:
 
 Maximum flexibility for custom workflows:
 
-* Use our [SDKs](/docs/integrate/sdk/typescript.md) for any language
+* Use our [SDKs](https://polar.sh/docs/integrate/sdk/typescript.md) for any language
 * Build custom checkout flows and experiences
 * Integrate with your existing tech stack
 
@@ -163,23 +163,23 @@ Stay synchronized with customer events:
 * React to purchases, subscription changes, and customer events
 * Keep your database in sync automatically
 
-Read the [Webhooks guide →](/docs/integrate/webhooks/endpoints.md)
+Read the [Webhooks guide →](https://polar.sh/docs/integrate/webhooks/endpoints.md)
 
 ## Integration Options
 
 ### Framework Adapters (Recommended)
 
-> **[Browse framework adapters](/docs/integrate/sdk/adapters/introduction.md)**
+> **[Browse framework adapters](https://polar.sh/docs/integrate/sdk/adapters/introduction.md)**
 >
 > Drop-in adapters that wire Polar checkouts and webhooks into your stack, including Next.js, Nuxt, TanStack Start, Laravel, and BetterAuth.
 
 ### Native SDKs
 
-> **[JS/TS](/docs/integrate/sdk/typescript.md)**
+> **[JS/TS](https://polar.sh/docs/integrate/sdk/typescript.md)**
 >
 > For web and Node.js applications
 
-> **[Python](/docs/integrate/sdk/python.md)**
+> **[Python](https://polar.sh/docs/integrate/sdk/python.md)**
 >
 > For Django, Flask, FastAPI frameworks
 
@@ -247,7 +247,7 @@ Read the [Webhooks guide →](/docs/integrate/webhooks/endpoints.md)
 >
 > **Additional fees may apply**: Some transactions may incur additional fees
 > (e.g. international cards). Payout fees are charged by payment providers. See
-> our [detailed fees page](/docs/merchant-of-record/fees.md) for complete information.
+> our [detailed fees page](https://polar.sh/docs/merchant-of-record/fees.md) for complete information.
 
 ## Open Source & Community
 
@@ -280,13 +280,13 @@ contributors.
 >
 > Get started in under 2 minutes
 
-> **[Read the Guides](/docs/guides/nextjs.md)**
+> **[Read the Guides](https://polar.sh/docs/guides/nextjs.md)**
 >
 > **Framework-specific tutorials**
 >
 > Step-by-step integration guides
 
-> **[Explore the API](/docs/api-reference)**
+> **[Explore the API](https://polar.sh/docs/api-reference)**
 >
 > **Complete API documentation**
 >

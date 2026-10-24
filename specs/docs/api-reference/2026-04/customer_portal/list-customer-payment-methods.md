@@ -8,7 +8,7 @@
 
 > [!NOTE]
 >
-> To change the default payment method, call the [`PATCH /v1/customer-portal/customers/me`](/docs/api-reference/customer_portal/update-customer) endpoint with the desired `default_payment_method_id`.
+> To change the default payment method, call the [`PATCH /v1/customer-portal/customers/me`](https://polar.sh/docs/api-reference/customer_portal/update-customer) endpoint with the desired `default_payment_method_id`.
 
 
 ## OpenAPI

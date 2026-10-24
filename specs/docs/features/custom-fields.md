@@ -19,7 +19,7 @@ With Polar, you can easily add such fields to your checkout using **Custom Field
 
 Custom Fields are managed at an organization's level. To create them, go to [**Settings → Custom Fields**](https://polar.sh/to/dashboard/settings/custom-fields). You'll see the list of all the available fields on your organization.
 
-Click on **New Custom Field** to create a new one. You can also manage them programmatically using the [Custom Fields API](/docs/api-reference/current/custom-fields/create-custom-field.md).
+Click on **New Custom Field** to create a new one. You can also manage them programmatically using the [Custom Fields API](https://polar.sh/docs/api-reference/current/custom-fields/create-custom-field.md).
 
 ### Type
 
@@ -77,7 +77,7 @@ The label and help text support basic Markdown syntax, so you can add bold, ital
 
 ## Add Custom Field to Checkout
 
-Custom Fields are enabled on Checkout specifically on each **product**. While [creating or updating](/docs/features/products.md) a product, expand the **Checkout Page** section and select the fields you want to include under **Checkout Fields**.
+Custom Fields are enabled on Checkout specifically on each **product**. While [creating or updating](https://polar.sh/docs/features/products.md) a product, expand the **Checkout Page** section and select the fields you want to include under **Checkout Fields**.
 
 Note that you can make each field `Required` for that product.
 
@@ -88,13 +88,13 @@ Note that you can make each field `Required` for that product.
 
 The fields are now added as part of the Checkout form for this product.
 
-When [creating a Checkout Session](/docs/api-reference/current/checkouts/create-checkout-session.md) from the API, you can also prefill the fields by setting the `custom_field_data` property, keyed by the **slug** of each field.
+When [creating a Checkout Session](https://polar.sh/docs/api-reference/current/checkouts/create-checkout-session.md) from the API, you can also prefill the fields by setting the `custom_field_data` property, keyed by the **slug** of each field.
 
 ## Read data
 
 The values input by the customer are stored on the Order or Subscription resulting from the checkout. From your dashboard, open an order or subscription from the **Sales** section: the values are displayed under the **Custom Fields** section of the detail view.
 
-This data is also available from the [Orders](/docs/api-reference/current/orders/get-order.md) and [Subscriptions](/docs/api-reference/current/subscriptions/get-subscription.md) API, under the `custom_field_data` property. Each value is referenced by the **slug** of the field.
+This data is also available from the [Orders](https://polar.sh/docs/api-reference/current/orders/get-order.md) and [Subscriptions](https://polar.sh/docs/api-reference/current/subscriptions/get-subscription.md) API, under the `custom_field_data` property. Each value is referenced by the **slug** of the field.
 
 ```json theme={null}
 {

@@ -30,7 +30,7 @@ pnpm add @polar-sh/sdk
 
 ## Quickstart
 
-Create an [organization access token](/docs/integrate/oat) for server-side use, keep it out of browser bundles, store it in `POLAR_ACCESS_TOKEN`, and make your first request:
+Create an [organization access token](https://polar.sh/docs/integrate/oat) for server-side use, keep it out of browser bundles, store it in `POLAR_ACCESS_TOKEN`, and make your first request:
 
 ```typescript icon="square-js" index.js theme={null}
 import { createPolar } from "@polar-sh/sdk/2026-10";
@@ -47,7 +47,7 @@ The import path pins your client to the `2026-10` API version.
 
 ## Sandbox environment
 
-The client uses production by default. Pass `environment: "sandbox"` to use the isolated [sandbox environment](/docs/integrate/sandbox.md):
+The client uses production by default. Pass `environment: "sandbox"` to use the isolated [sandbox environment](https://polar.sh/docs/integrate/sandbox.md):
 
 ```typescript theme={null}
 const polar = createPolar({
@@ -62,10 +62,10 @@ const polar = createPolar({
 
 Implement Checkout & Webhook handlers in few lines of code.
 
-* [Better Auth](/docs/integrate/sdk/adapters/better-auth.md)
-* [Next.js](/docs/integrate/sdk/adapters/nextjs.md)
-* [Nuxt](/docs/integrate/sdk/adapters/nuxt.md)
-* [TanStack Start](/docs/integrate/sdk/adapters/tanstack-start.md)
+* [Better Auth](https://polar.sh/docs/integrate/sdk/adapters/better-auth.md)
+* [Next.js](https://polar.sh/docs/integrate/sdk/adapters/nextjs.md)
+* [Nuxt](https://polar.sh/docs/integrate/sdk/adapters/nuxt.md)
+* [TanStack Start](https://polar.sh/docs/integrate/sdk/adapters/tanstack-start.md)
 
 Adapters for other frameworks are deprecated, use the SDK directly instead.
 The [`polar-integration` skill](https://github.com/polarsource/agent-toolkit/tree/main/skills/polar-integration)

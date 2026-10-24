@@ -12,13 +12,13 @@
 >
 > Once the invoice is generated, it's permanent and cannot be modified.
 >
-> Make sure the billing details (name and address) are correct before generating the invoice. You can update them before generating the invoice by calling the [`PATCH /v1/orders/{id}`](/docs/api-reference/orders/update-order) endpoint.
+> Make sure the billing details (name and address) are correct before generating the invoice. You can update them before generating the invoice by calling the [`PATCH /v1/orders/{id}`](https://polar.sh/docs/api-reference/orders/update-order) endpoint.
 
 > [!NOTE]
 >
-> After successfully calling this endpoint, you get a `202` response, meaning the generation of the invoice has been scheduled. It usually only takes a few seconds before you can retrieve the invoice using the [`GET /v1/orders/{id}/invoice`](/docs/api-reference/orders/get-order-invoice) endpoint.
+> After successfully calling this endpoint, you get a `202` response, meaning the generation of the invoice has been scheduled. It usually only takes a few seconds before you can retrieve the invoice using the [`GET /v1/orders/{id}/invoice`](https://polar.sh/docs/api-reference/orders/get-order-invoice) endpoint.
 >
-> If you want a reliable notification when the invoice is ready, you can listen to the [`order.updated`](/docs/api-reference/orderupdated) webhook and check the [`is_invoice_generated` field](/docs/api-reference/orderupdated#schema-data-is-invoice-generated).
+> If you want a reliable notification when the invoice is ready, you can listen to the [`order.updated`](https://polar.sh/docs/api-reference/orderupdated) webhook and check the [`is_invoice_generated` field](https://polar.sh/docs/api-reference/orderupdated#schema-data-is-invoice-generated).
 
 
 ## OpenAPI

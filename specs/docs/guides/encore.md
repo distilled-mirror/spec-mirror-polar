@@ -30,7 +30,7 @@ Encore has built-in secrets management that works consistently across local deve
 
 ### Polar Access Token and Mode
 
-To authenticate with Polar, you need to create an access token and specify if it's production or sandbox mode. You can create an [organization access token from your organization settings](/docs/integrate/oat).
+To authenticate with Polar, you need to create an access token and specify if it's production or sandbox mode. You can create an [organization access token from your organization settings](https://polar.sh/docs/integrate/oat).
 
 Add it to Encore using the secrets manager:
 
@@ -115,7 +115,7 @@ Configuring a webhook is simple. Head over to your organization's settings page 
 
 ### Tunneling webhook events to your local development environment
 
-Encore runs your app locally with full infrastructure support. To receive webhooks during local development, you can use the [Polar CLI](/docs/integrate/cli/webhooks.md) to tunnel webhook events to your local environment.
+Encore runs your app locally with full infrastructure support. To receive webhooks during local development, you can use the [Polar CLI](https://polar.sh/docs/integrate/cli/webhooks.md) to tunnel webhook events to your local environment.
 
 ```bash Terminal theme={null}
 polar webhook listen http://localhost:4000/webhooks/polar
@@ -130,7 +130,7 @@ encore secret set --type local POLAR_WEBHOOK_SECRET
 ### Add Webhook Endpoint
 
 1. Point the Webhook to `your-app.com/webhooks/polar`. This must be an absolute URL which Polar can reach. If you use the Polar CLI tunnel, it will handle this for you.
-2. Select which events you want to be notified about. You can read more about the available events in the [Events section](/docs/api-reference#webhooks).
+2. Select which events you want to be notified about. You can read more about the available events in the [Events section](https://polar.sh/docs/api-reference#webhooks).
 3. Generate a secret key to sign the requests. This will allow you to verify that the requests are truly coming from Polar.
 4. Add the secret key to Encore:
 

@@ -60,7 +60,7 @@ To charge your customers for usage, you need to add a metered price to your prod
 >
 > The price is always entered as the cost per **single unit**. How it is
 > displayed to customers — for example as `$20 / 1M tokens` — is controlled by
-> the [Unit](/docs/features/usage-based-billing/meters.md#unit) setting on the meter.
+> the [Unit](https://polar.sh/docs/features/usage-based-billing/meters.md#unit) setting on the meter.
 
 ![](https://mintcdn.com/polar/fnujBPxaFvfkZfB0/assets/features/usage/cap.light.png?fit=max\&auto=format\&n=fnujBPxaFvfkZfB0\&q=85\&s=b4ac7dd5bf3e6a6f1aa8ef8866bc81a3)
 
@@ -76,13 +76,13 @@ To invoice usage more often than the subscription renews, for example monthly on
 
 A meter cycle lets metered usage run on its own cadence, independent of the billing interval. It's set on the product with `meter_interval` and `meter_interval_count`, or with the **Separate meter cycle** toggle in the product's pricing section.
 
-The common case is a yearly plan with monthly usage: the customer pays the base price once a year, while overage is invoiced and [credits](/docs/features/usage-based-billing/credits.md) are granted every month.
+The common case is a yearly plan with monthly usage: the customer pays the base price once a year, while overage is invoiced and [credits](https://polar.sh/docs/features/usage-based-billing/credits.md) are granted every month.
 
 At the end of each meter period, Polar:
 
 1. Invoices the period's usage as a separate order.
 2. Resets the customer's meters.
-3. Grants the [Credits benefit](/docs/features/benefits/credits.md) again, applying rollover if it's enabled.
+3. Grants the [Credits benefit](https://polar.sh/docs/features/benefits/credits.md) again, applying rollover if it's enabled.
 
 Meters are reset and credits granted even when there's no usage to invoice. If the period's usage is below the minimum chargeable amount, no payment is taken: the amount is added to the customer's balance and applied to their next order.
 
@@ -115,11 +115,11 @@ For example, a yearly plan accepts a meter cycle of 1, 2, 3, 4, 6 or 12 months, 
 
 ### Discounts
 
-A percentage [discount](/docs/features/discounts.md) applies to every meter cycle order. A fixed-amount discount doesn't. It still applies to the renewal order.
+A percentage [discount](https://polar.sh/docs/features/discounts.md) applies to every meter cycle order. A fixed-amount discount doesn't. It still applies to the renewal order.
 
 ### Failed payments
 
-A failed meter cycle order is retried on the same schedule as [failed subscription payments](/docs/features/subscriptions/failed-payments.md): after 2, 7, 14 and 21 days. It never affects the subscription itself: the subscription stays `active`, keeps its benefits, and isn't revoked. If every retry fails, the order is voided.
+A failed meter cycle order is retried on the same schedule as [failed subscription payments](https://polar.sh/docs/features/subscriptions/failed-payments.md): after 2, 7, 14 and 21 days. It never affects the subscription itself: the subscription stays `active`, keeps its benefits, and isn't revoked. If every retry fails, the order is voided.
 
 If the subscription itself becomes `past_due` because its renewal payment failed, the meter cycle is paused: no usage is invoiced, meters aren't reset and no credits are granted. Usage keeps being recorded. When the subscription recovers, the accrued usage is invoiced in one order, meters are reset and credits are granted again.
 
@@ -137,7 +137,7 @@ When a subscription is canceled, it generally remains active until the end of th
 
 > [!WARNING]
 >
-> If a [discount](/docs/features/discounts.md) is applied on the subscription, it'll be
+> If a [discount](https://polar.sh/docs/features/discounts.md) is applied on the subscription, it'll be
 > applied on the **whole invoice**, including metered usage.
 
 ## Customer Portal

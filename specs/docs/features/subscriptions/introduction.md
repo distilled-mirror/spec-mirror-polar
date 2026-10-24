@@ -6,18 +6,18 @@
 
 > Recurring revenue on top of your products.
 
-A **subscription** is the recurring relationship between a customer and one of your [products](/docs/features/products.md). It's created automatically whenever a customer checks out a product that has a recurring price, and it keeps generating orders on each renewal until the customer or you decide to end it.
+A **subscription** is the recurring relationship between a customer and one of your [products](https://polar.sh/docs/features/products.md). It's created automatically whenever a customer checks out a product that has a recurring price, and it keeps generating orders on each renewal until the customer or you decide to end it.
 
 ## How subscriptions work
 
-1. **A customer subscribes.** When a customer completes a [checkout](/docs/features/checkout/session.md) for a product that has a recurring price, Polar creates a `subscription` and the first [order](/docs/features/orders.md).
-2. **Polar renews it automatically.** At the end of each billing period, Polar advances the subscription to the next cycle and creates a new order, then attempts to charge the customer's default payment method. If the payment fails, the subscription moves to `past_due` and Polar runs an automated [payment recovery flow](/docs/features/subscriptions/failed-payments.md).
-3. **Benefits stay in sync.** As long as the subscription is active or trialing, the customer keeps access to all the [benefits](/docs/features/benefits/introduction.md) attached to the product. When the subscription ends, those benefits are revoked.
-4. **Customers self-serve from the portal.** The [Customer Portal](/docs/features/customer-portal/introduction.md) lets customers update their payment method, download invoices, cancel, and — if you allow it — change plans or manage seats.
+1. **A customer subscribes.** When a customer completes a [checkout](https://polar.sh/docs/features/checkout/session.md) for a product that has a recurring price, Polar creates a `subscription` and the first [order](https://polar.sh/docs/features/orders.md).
+2. **Polar renews it automatically.** At the end of each billing period, Polar advances the subscription to the next cycle and creates a new order, then attempts to charge the customer's default payment method. If the payment fails, the subscription moves to `past_due` and Polar runs an automated [payment recovery flow](https://polar.sh/docs/features/subscriptions/failed-payments.md).
+3. **Benefits stay in sync.** As long as the subscription is active or trialing, the customer keeps access to all the [benefits](https://polar.sh/docs/features/benefits/introduction.md) attached to the product. When the subscription ends, those benefits are revoked.
+4. **Customers self-serve from the portal.** The [Customer Portal](https://polar.sh/docs/features/customer-portal/introduction.md) lets customers update their payment method, download invoices, cancel, and — if you allow it — change plans or manage seats.
 
 ## Recurring pricing
 
-Subscriptions are driven entirely by the way you price the underlying product. Recurring pricing is configured when you [create a product](/docs/features/products.md#pricing):
+Subscriptions are driven entirely by the way you price the underlying product. Recurring pricing is configured when you [create a product](https://polar.sh/docs/features/products.md#pricing):
 
 * **Billing interval.** Daily, weekly, monthly or yearly.
 * **Interval count.** The number of units per cycle. Setting this to `2` with a `month` interval gives you "every 2 months".
@@ -29,7 +29,7 @@ Subscriptions are driven entirely by the way you price the underlying product. R
 > The billing interval and pricing type are fixed once a product is created. If
 > you need a different interval (for example, a yearly plan next to a monthly
 > one), create a separate product and show both at checkout. See
-> [Products → Variants](/docs/features/products.md#variants).
+> [Products → Variants](https://polar.sh/docs/features/products.md#variants).
 
 ## Renewal reminders
 
@@ -46,32 +46,32 @@ A subscription can end in one of two ways, both available to you and your custom
 * **Cancel at period end** — the subscription keeps working until `current_period_end`, then transitions to `canceled`. You can reverse this (uncancel) until the end date is reached.
 * **Revoke immediately** — the subscription moves to `canceled` right away and benefits are revoked. This is irreversible.
 
-See [Managing subscriptions](/docs/features/subscriptions/manage.md) for how to perform these actions and everything else merchants can do from the dashboard or the API.
+See [Managing subscriptions](https://polar.sh/docs/features/subscriptions/manage.md) for how to perform these actions and everything else merchants can do from the dashboard or the API.
 
 ## Creating subscriptions
 
 There are two ways a subscription can come into existence:
 
-* **Through checkout.** The default. Works for any paid recurring product. See [Checkout](/docs/features/checkout/session.md).
-* **Through the API, for free recurring products only.** You can call [Create Subscription](/docs/api-reference/current/subscriptions/create-subscription.md) to subscribe an existing customer to a free product — no order, no email, no charge. This is useful for freemium onboarding flows where you want every signup to have a subscription tied to it from day one. Paid products always go through checkout so that Polar can collect and validate the payment method.
+* **Through checkout.** The default. Works for any paid recurring product. See [Checkout](https://polar.sh/docs/features/checkout/session.md).
+* **Through the API, for free recurring products only.** You can call [Create Subscription](https://polar.sh/docs/api-reference/current/subscriptions/create-subscription.md) to subscribe an existing customer to a free product — no order, no email, no charge. This is useful for freemium onboarding flows where you want every signup to have a subscription tied to it from day one. Paid products always go through checkout so that Polar can collect and validate the payment method.
 
 ## Next steps
 
-> **[Managing subscriptions](/docs/features/subscriptions/manage.md)**
+> **[Managing subscriptions](https://polar.sh/docs/features/subscriptions/manage.md)**
 >
 > Change plans, seats, trials, billing dates, cancel or revoke — from the
 > dashboard or the API.
 
-> **[Proration](/docs/features/subscriptions/proration.md)**
+> **[Proration](https://polar.sh/docs/features/subscriptions/proration.md)**
 >
 > Control how the price difference is handled when a subscription is upgraded
 > or downgraded.
 
-> **[Recovering failed payments](/docs/features/subscriptions/failed-payments.md)**
+> **[Recovering failed payments](https://polar.sh/docs/features/subscriptions/failed-payments.md)**
 >
 > How Polar retries failed renewals and when benefits are revoked.
 
-> **[Subscriptions API](/docs/api-reference/current/subscriptions/list-subscriptions.md)**
+> **[Subscriptions API](https://polar.sh/docs/api-reference/current/subscriptions/list-subscriptions.md)**
 >
 > List, create, update, and revoke subscriptions programmatically.
 
@@ -85,7 +85,7 @@ There are two ways a subscription can come into existence:
 >
 > Polar treats one-time purchases and recurring subscriptions as the same
 > kind of object (both are "products"); the only difference is whether the
-> price is recurring. See [Products](/docs/features/products.md) for the full model.
+> price is recurring. See [Products](https://polar.sh/docs/features/products.md) for the full model.
 
 > **Can a customer have more than one active subscription?**
 >
@@ -102,9 +102,9 @@ There are two ways a subscription can come into existence:
 > advances the cycle, creates a new order with tax and any applicable
 > discount, and charges the customer's default payment method. If the
 > charge fails the subscription moves to `past_due` and Polar starts the
-> [payment recovery flow](/docs/features/subscriptions/failed-payments.md).
+> [payment recovery flow](https://polar.sh/docs/features/subscriptions/failed-payments.md).
 >
-> The first charge happens at checkout (or when the [trial](/docs/features/subscriptions/trials.md)
+> The first charge happens at checkout (or when the [trial](https://polar.sh/docs/features/subscriptions/trials.md)
 > ends, if one is configured).
 
 > **Can I change the price of an existing subscription?**
@@ -116,7 +116,7 @@ There are two ways a subscription can come into existence:
 > If you update the price on a product, the change applies only to **new**
 > subscriptions. To move an existing subscriber to different pricing,
 > either create a new product and run an [update to switch them to
-> it](/docs/features/subscriptions/manage.md#change-the-plan), or ask them to
+> it](https://polar.sh/docs/features/subscriptions/manage.md#change-the-plan), or ask them to
 > change plans themselves from the Customer Portal.
 
 > **What happens to benefits when a subscription is canceled?**
@@ -131,7 +131,7 @@ There are two ways a subscription can come into existence:
 > * If a renewal payment can't be recovered after Polar's retries, the
 >   subscription moves to `unpaid` and benefits are revoked the same way
 >   as a revoke — subject to the optional
->   [grace period](/docs/features/subscriptions/failed-payments.md#benefit-revocation-grace-period)
+>   [grace period](https://polar.sh/docs/features/subscriptions/failed-payments.md#benefit-revocation-grace-period)
 >   you can configure on your organization.
 
 

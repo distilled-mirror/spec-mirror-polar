@@ -10,7 +10,7 @@
 
 > [!NOTE]
 >
-> The invoice must be generated first before it can be retrieved. You should call the [`POST /v1/orders/{id}/invoice`](/docs/api-reference/orders/generate-order-invoice) endpoint to generate the invoice.
+> The invoice must be generated first before it can be retrieved. You should call the [`POST /v1/orders/{id}/invoice`](https://polar.sh/docs/api-reference/orders/generate-order-invoice) endpoint to generate the invoice.
 >
 > If the invoice is not generated, you will receive a `404` error.
 

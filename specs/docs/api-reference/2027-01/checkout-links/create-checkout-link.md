@@ -14,7 +14,7 @@
 >
 > Checkout Links are shareable links that generate checkout sessions when opened. They are very handy to start a purchase from your website or social media.
 >
-> However, if you want to start a checkout for one of your user **inside** your product, you should use the [Checkout Sessions API](/docs/api-reference/checkouts/create-checkout-session).
+> However, if you want to start a checkout for one of your user **inside** your product, you should use the [Checkout Sessions API](https://polar.sh/docs/api-reference/checkouts/create-checkout-session).
 
 
 ## OpenAPI

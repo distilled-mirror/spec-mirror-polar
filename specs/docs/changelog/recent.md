@@ -12,7 +12,7 @@
 
 Grant usage credits on a customer's meter from the customer page or their usage table, with a preview of the new balance and how much overage the credits cover. The customer meter page now also shows credit history per billing period, including where each credit came from, and recent manual credits can be reversed.
 
-[Read more](/docs/features/usage-based-billing/credits.md#granting-credits-manually)
+[Read more](https://polar.sh/docs/features/usage-based-billing/credits.md#granting-credits-manually)
 
 ## Bill usage on its own cycle
 
@@ -20,19 +20,19 @@ Metered usage no longer has to follow the subscription's billing interval. Turn 
 
 Customers see the upcoming usage charge in the customer portal and receive a dedicated usage invoice email for each cycle.
 
-[Read more](/docs/features/usage-based-billing/billing.md#meter-cycle)
+[Read more](https://polar.sh/docs/features/usage-based-billing/billing.md#meter-cycle)
 
 ## Unit-based pricing is generally available
 
 Sell a quantity of anything, paid up front: devices, licenses, gigabytes, servers. Name the unit, set tiered rates, optionally cap the maximum quantity, and let the buyer pick how many they want at checkout. On subscriptions, quantity changes are prorated.
 
-[Read more](/docs/features/unit-based-pricing.md)
+[Read more](https://polar.sh/docs/features/unit-based-pricing.md)
 
 ## Volume and graduated tiers on metered prices
 
 Metered prices can now use volume or graduated tiers, so the rate changes as usage grows. Define the tiers in the product form, and checkout shows customers the full rate card.
 
-[Read more](/docs/features/usage-based-billing/billing.md#metered-pricing)
+[Read more](https://polar.sh/docs/features/usage-based-billing/billing.md#metered-pricing)
 
 ## Cancellation and trial notifications
 
@@ -57,7 +57,7 @@ If you allowlist our IPs on a firewall or reverse proxy, add both now so deliver
 
 Embed host enforcement is now live for every organization. An embedded checkout only opens on a host you've listed under Settings → Preferences → Embedding, so make sure every site you embed from is on your list.
 
-[Read more](/docs/features/checkout/embed.md#embed-hosts)
+[Read more](https://polar.sh/docs/features/checkout/embed.md#embed-hosts)
 
 **2026-07-29**
 
@@ -67,7 +67,7 @@ Choose which hosts are allowed to embed your checkout, in Settings → Preferenc
 
 Organizations created from 4 August 2026 need a list before they can embed. Existing organizations carry on as before until they add their first host, and we will email you well ahead of the date this applies to everyone.
 
-[Read more](/docs/features/checkout/embed.md#embed-hosts)
+[Read more](https://polar.sh/docs/features/checkout/embed.md#embed-hosts)
 
 **2026-07-28**
 
@@ -79,7 +79,7 @@ Polar identifies a customer by customer ID, email address (ignoring plus-aliases
 
 Set it under Products → Discounts, or send `max_redemptions_per_customer` when you create or update a discount through the API.
 
-[Read more](/docs/features/discounts.md#per-customer-limits)
+[Read more](https://polar.sh/docs/features/discounts.md#per-customer-limits)
 
 **2026-07-23**
 
@@ -89,9 +89,9 @@ You can now pause a subscription instead of canceling it. Pausing schedules the 
 
 Set an optional resume date when you pause and the subscription comes back on its own. This fits seasonal plans and account "freezes", where a customer steps away and returns later.
 
-Drive it from the API through the [Update Subscription](/docs/api-reference/current/subscriptions/update-subscription.md) endpoint, or let customers pause themselves from the Customer Portal by turning on **Enable subscription pause** under Settings → Customer portal. Two new webhook events, `subscription.paused` and `subscription.resumed`, tell you when the state changes.
+Drive it from the API through the [Update Subscription](https://polar.sh/docs/api-reference/current/subscriptions/update-subscription.md) endpoint, or let customers pause themselves from the Customer Portal by turning on **Enable subscription pause** under Settings → Customer portal. Two new webhook events, `subscription.paused` and `subscription.resumed`, tell you when the state changes.
 
-[Read more](/docs/features/subscriptions/manage.md#pause-and-resume)
+[Read more](https://polar.sh/docs/features/subscriptions/manage.md#pause-and-resume)
 
 **2026-07-22**
 
@@ -101,7 +101,7 @@ Connect your organization to your own identity provider over OpenID Connect, inc
 
 Single Sign-On is included in the Scale plan. Set it up under Settings → SSO.
 
-[Read more](/docs/features/sso.md)
+[Read more](https://polar.sh/docs/features/sso.md)
 
 **2026-07-10**
 
@@ -121,7 +121,7 @@ Newly supported:
 * 🇪🇸 Bizum (EUR, one-time purchases)
 * 🇮🇳 UPI (INR, one-time purchases and recurring subscriptions)
 
-[See all supported payment methods](/docs/features/checkout/payment-methods.md)
+[See all supported payment methods](https://polar.sh/docs/features/checkout/payment-methods.md)
 
 **2026-04-22**
 
@@ -572,7 +572,7 @@ Create checkouts with dynamic pricing that override catalog prices:
 * Supports all price types (fixed, free, custom)
 * Full API and SDK support
 
-[Read more](/docs/features/checkout/session.md#ad-hoc-prices)
+[Read more](https://polar.sh/docs/features/checkout/session.md#ad-hoc-prices)
 
 ## Churn Rate
 
@@ -822,7 +822,7 @@ We've launched Cost Insights - a powerful way to track and analyze costs associa
 
 Perfect for understanding unit economics and profitability of your usage-based offerings.
 
-[Read more](/docs/features/cost-insights/introduction.md)
+[Read more](https://polar.sh/docs/features/cost-insights/introduction.md)
 
 ## Webhook Management
 
@@ -932,7 +932,7 @@ Configure the interval count when creating or updating subscription products thr
 
 We've launched a new API endpoint to create subscriptions programmatically. This enables you to set up subscriptions directly without requiring customers to go through the checkout flow.
 
-[Read more](/docs/api-reference/current/subscriptions/create-subscription.md)
+[Read more](https://polar.sh/docs/api-reference/current/subscriptions/create-subscription.md)
 
 ## Enhanced Email Confirmations
 
@@ -1057,7 +1057,7 @@ We've made several improvements to the Customer Portal to handle authentication 
 
 ## Launched Subscription Trials
 
-You can now offer [trial periods](/docs/docs/features/trials.md) for new subscriptions! This highly requested feature allows you to let customers experience your product before their first payment is due. Trials can be configured in both the dashboard and API when creating or updating subscription products.
+You can now offer [trial periods](https://polar.sh/docs/docs/features/trials.md) for new subscriptions! This highly requested feature allows you to let customers experience your product before their first payment is due. Trials can be configured in both the dashboard and API when creating or updating subscription products.
 
 ## Always display taxes line item in the checkout
 
@@ -1085,7 +1085,7 @@ License key activation now correctly checks the `expires_at` date, ensuring that
 
 ## Fix customer state for trialing subscriptions
 
-The [Customer State API](/docs/api-reference/current/customers/get-customer-state.md) now properly handles customers with `trialing` subscriptions, so your integrations and dashboards always show an accurate subscription status.
+The [Customer State API](https://polar.sh/docs/api-reference/current/customers/get-customer-state.md) now properly handles customers with `trialing` subscriptions, so your integrations and dashboards always show an accurate subscription status.
 
 **2025-09-22**
 
@@ -1133,7 +1133,7 @@ Customer emails now appear to come from your organization (e.g., "YourOrg (via P
 
 We've added the ability to update the discount on a subscription. This allows you to add, remove, or change the discount applied to a subscription at any time.
 
-This feature is both available through the [API](/docs/api-reference/current/subscriptions/update-subscription.md) and the dashboard.
+This feature is both available through the [API](https://polar.sh/docs/api-reference/current/subscriptions/update-subscription.md) and the dashboard.
 
 **2025-06-05**
 
@@ -1141,7 +1141,7 @@ This feature is both available through the [API](/docs/api-reference/current/sub
 
 We've added the ability to generate reverse invoices for payouts directly from the Payouts page. This feature allows you to easily create an invoice that details the sales made on your behalf, minus our fees.
 
-[Read more](/docs/features/finance/payouts.md#reverse-invoices)
+[Read more](https://polar.sh/docs/features/finance/payouts.md#reverse-invoices)
 
 **2025-05-22**
 
@@ -1155,7 +1155,7 @@ We've added a new "I'm purchasing as a business" checkbox to the Checkout flow. 
 
 We've added support for `reference_id` and UTM parameters (`utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`) as query parameters for Checkout Links. These parameters are automatically stored in the Checkout metadata, allowing you to track the source of your traffic and conversions more effectively.
 
-[Read more](/docs/features/checkout/links.md#store-attribution-and-reference-metadata)
+[Read more](https://polar.sh/docs/features/checkout/links.md#store-attribution-and-reference-metadata)
 
 **2025-05-15**
 
@@ -1185,11 +1185,11 @@ We're excited to announce the official launch of our [Zapier integration](https:
 
 ## Customer State
 
-Maybe one of our neatest features to date! Customer State is a concept allowing you to query for the current state of a customer, including their **active subscriptions** and **granted [benefits](/docs/features/benefits/introduction.md)**, in a single [API call](/docs/api-reference/current/customers/get-customer-state-by-external-id.md) or single [webhook event](/docs/api-reference/current/customer_state_changed.md).
+Maybe one of our neatest features to date! Customer State is a concept allowing you to query for the current state of a customer, including their **active subscriptions** and **granted [benefits](https://polar.sh/docs/features/benefits/introduction.md)**, in a single [API call](https://polar.sh/docs/api-reference/current/customers/get-customer-state-by-external-id.md) or single [webhook event](https://polar.sh/docs/api-reference/current/customer_state_changed.md).
 
-Combined with the [External ID](/docs/features/customer-management.md#external-id) feature, you can get up-and-running in minutes.
+Combined with the [External ID](https://polar.sh/docs/features/customer-management.md#external-id) feature, you can get up-and-running in minutes.
 
-[Read more](/docs/integrate/customer-state.md)
+[Read more](https://polar.sh/docs/integrate/customer-state.md)
 
 **2025-03-04**
 
@@ -1203,7 +1203,7 @@ Integrating authentication and billing for your users has never been easier.
 TypeScript that is quickly becoming a favorite amongst developers. Today, we're
 thrilled to have shipped a Polar plugin for Better Auth - in collaboration with them.
 
-Checkout our [integration guide](/docs/integrate/sdk/adapters/better-auth.md).
+Checkout our [integration guide](https://polar.sh/docs/integrate/sdk/adapters/better-auth.md).
 
 **2025-02-27**
 
@@ -1213,9 +1213,9 @@ We've added support for an `external_id` field on Customers. We believe this wil
 
 Previously, the recommended way to reconcile with your users was to use `metadata`. However, this was not always the most convenient method, especially if you needed to fetch a Customer from our API.
 
-With `external_id`, you can now fetch a Customer directly by their external ID through dedicated `GET`, `PATCH`, and `DELETE` endpoints. You don't even need to store Polar's internal ID in your system anymore! [Read more](/docs/features/customer-management.md#external-id)
+With `external_id`, you can now fetch a Customer directly by their external ID through dedicated `GET`, `PATCH`, and `DELETE` endpoints. You don't even need to store Polar's internal ID in your system anymore! [Read more](https://polar.sh/docs/features/customer-management.md#external-id)
 
-Of course, you can also directly preset `external_customer_id` when creating a Checkout Session, and it will automatically be set on the newly created Customer after a successful checkout. [Read more](/docs/features/checkout/session.md#external-customer-id)
+Of course, you can also directly preset `external_customer_id` when creating a Checkout Session, and it will automatically be set on the newly created Customer after a successful checkout. [Read more](https://polar.sh/docs/features/checkout/session.md#external-customer-id)
 
 **2025-02-19**
 
@@ -1231,7 +1231,7 @@ Thus, we introduce support for **multiple products** at checkout, allowing custo
 
 ![](https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/features/checkout/session/checkout_multiple_products.light.png?fit=max\&auto=format\&n=Ut0vPUvE1pIdMcH2\&q=85\&s=36f88ae4e5e70735484c068f3605b713)
 
-This is available right now using the [Checkout Session API](/docs/features/checkout/session.md) and [Checkout Links](/docs/features/checkout/links.md).
+This is available right now using the [Checkout Session API](https://polar.sh/docs/features/checkout/session.md) and [Checkout Links](https://polar.sh/docs/features/checkout/links.md).
 
 ### Depreciations
 
@@ -1243,7 +1243,7 @@ This is available right now using the [Checkout Session API](/docs/features/chec
 
 ### API changes
 
-* The `product_id` and `product_price_id` fields are deprecated in the [Checkout Session API](/docs/api-reference/current/checkouts/create-checkout-session.md). You should now use the `products` field to specify the products you want to include in the checkout.
+* The `product_id` and `product_price_id` fields are deprecated in the [Checkout Session API](https://polar.sh/docs/api-reference/current/checkouts/create-checkout-session.md). You should now use the `products` field to specify the products you want to include in the checkout.
 * The `type` and `recurring_interval` fields on `ProductPrice` are deprecated. `recurring_interval` is now set directly on `Product`.
 
 

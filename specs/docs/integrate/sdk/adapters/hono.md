@@ -9,7 +9,7 @@
 > [!WARNING]
 >
 > **`@polar-sh/hono` is deprecated** and no longer maintained. Integrate with
-> the [TypeScript SDK](/docs/integrate/sdk/typescript.md) directly instead — the
+> the [TypeScript SDK](https://polar.sh/docs/integrate/sdk/typescript.md) directly instead — the
 > [`polar-integration` skill](https://github.com/polarsource/agent-toolkit/tree/main/skills/polar-integration)
 > can help you migrate:
 >

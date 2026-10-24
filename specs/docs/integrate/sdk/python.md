@@ -26,7 +26,7 @@ pip install polar-sdk
 
 ## Quickstart
 
-Create an [organization access token](/docs/integrate/oat), store it in `POLAR_ACCESS_TOKEN`, and make your first request:
+Create an [organization access token](https://polar.sh/docs/integrate/oat), store it in `POLAR_ACCESS_TOKEN`, and make your first request:
 
 ```python main.py theme={null}
 import os
@@ -101,7 +101,7 @@ asyncio.run(main())
 
 ## Sandbox environment
 
-The client uses production by default. Pass `environment="sandbox"` to use the isolated [sandbox environment](/docs/integrate/sandbox.md):
+The client uses production by default. Pass `environment="sandbox"` to use the isolated [sandbox environment](https://polar.sh/docs/integrate/sandbox.md):
 
 ```python theme={null}
 polar = Polar(

@@ -13,9 +13,9 @@
 
 > [!TIP]
 >
-> You only need to use this endpoint if you have device **activations** enabled on the license key benefit. You then use this endpoint to reserve an allocation for a specific device. Store the unique activation ID from the response on the device and use it as extra validation in the [/validate](/docs/api-reference/customer_portal/validate-license-key) endpoint.
+> You only need to use this endpoint if you have device **activations** enabled on the license key benefit. You then use this endpoint to reserve an allocation for a specific device. Store the unique activation ID from the response on the device and use it as extra validation in the [/validate](https://polar.sh/docs/api-reference/customer_portal/validate-license-key) endpoint.
 >
-> Not using **activations**? Just use the [/validate](/docs/api-reference/customer_portal/validate-license-key) endpoint directly instead.
+> Not using **activations**? Just use the [/validate](https://polar.sh/docs/api-reference/customer_portal/validate-license-key) endpoint directly instead.
 
 
 ## OpenAPI

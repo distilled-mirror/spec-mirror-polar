@@ -12,13 +12,13 @@ We process every review as quickly as we can and resolve every single one.
 
 > [!TIP]
 >
-> **Build first, submit second.** It's tempting to get approved before doing the integration work, but a complete setup is what makes a review fast and clean. Configure your [products and benefits](/docs/features/products.md), wire up your integration (checkout links, API keys, webhooks), and have a live website pointing to it. The more we can see end-to-end, the more confidently — and quickly — we can approve your account.
+> **Build first, submit second.** It's tempting to get approved before doing the integration work, but a complete setup is what makes a review fast and clean. Configure your [products and benefits](https://polar.sh/docs/features/products.md), wire up your integration (checkout links, API keys, webhooks), and have a live website pointing to it. The more we can see end-to-end, the more confidently — and quickly — we can approve your account.
 
 Before your first payout, you'll go through our main account review. You can submit everything yourself from [**Finance → Account**](https://polar.sh/to/dashboard/finance/account) in your Polar dashboard, in three steps:
 
 1. **Submit for approval.** Tell us about your business, your products, and how you intend to use Polar.
 2. **Identity verification (KYC).** The organization owner verifies their identity with a passport, ID card, or driver's license along with a selfie — secure, easy, and quick through Stripe Identity.
-3. **Connect a payout account.** Set up a [payout account](/docs/features/finance/accounts.md) via Stripe Connect Express so we can transfer your earnings to you.
+3. **Connect a payout account.** Set up a [payout account](https://polar.sh/docs/features/finance/accounts.md) via Stripe Connect Express so we can transfer your earnings to you.
 
 Initial reviews can take **up to 14 days** to complete, depending on volume, weekends, and holidays. This review keeps us compliant with our [Acceptable Use Policy](https://polar.sh/legal/acceptable-use-policy) and meets our own KYC/AML requirements as a billing platform.
 
@@ -26,7 +26,7 @@ Initial reviews can take **up to 14 days** to complete, depending on volume, wee
 
 We continuously monitor all transactions across our platform to proactively prevent fraud, and we run asynchronous reviews of accounts at certain sales thresholds. Most of these reviews don't require any additional information from you.
 
-You can always request a [payout](/docs/features/finance/payouts.md). A request made while your organization is under review shows as "Held for review" until approval, then is paid out automatically. Your customers are unaffected: new purchases keep going through, and existing subscriptions renew as usual.
+You can always request a [payout](https://polar.sh/docs/features/finance/payouts.md). A request made while your organization is under review shows as "Held for review" until approval, then is paid out automatically. Your customers are unaffected: new purchases keep going through, and existing subscriptions renew as usual.
 
 In a continuous review, we look at two things: that your use case is still within our [Acceptable Use Policy](https://polar.sh/legal/acceptable-use-policy) and consistent with what was approved during your first review, and that your account is in good financial health — refunds, chargebacks, and risk scores across recent transactions.
 

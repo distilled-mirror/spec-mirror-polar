@@ -30,7 +30,7 @@ The Credits benefit will credit a customer's Usage Meter balance at different po
 
 The customer will be credited the amount of units specified in the benefit at the beginning of every subscription cycle period — monthly or yearly.
 
-If the product has a [meter cycle](/docs/features/usage-based-billing/billing.md#meter-cycle), credits are granted at the start of every meter period instead. For example, a yearly plan with a monthly meter cycle grants credits every month. No credits are granted while the subscription is `past_due`.
+If the product has a [meter cycle](https://polar.sh/docs/features/usage-based-billing/billing.md#meter-cycle), credits are granted at the start of every meter period instead. For example, a yearly plan with a monthly meter cycle grants credits every month. No credits are granted while the subscription is `past_due`.
 
 ### One-Time Products
 
@@ -50,7 +50,7 @@ Open a customer and choose **Add Credits** from the customer menu, use **Add cre
 >
 > Manual credits are available from API version `2027-01`.
 
-Use the [Credit Customer Meter](/docs/api-reference/2027-01/customer_meters/credit-customer-meter.md) endpoint, `POST /v1/customer-meters/credits`. It requires the `customers:write` scope. Identify the customer and meter either with Polar IDs (`customer_id` and `meter_id`) or with external IDs (`external_customer_id` and `external_meter_id`); the two styles can't be mixed in one request.
+Use the [Credit Customer Meter](https://polar.sh/docs/api-reference/2027-01/customer_meters/credit-customer-meter.md) endpoint, `POST /v1/customer-meters/credits`. It requires the `customers:write` scope. Identify the customer and meter either with Polar IDs (`customer_id` and `meter_id`) or with external IDs (`external_customer_id` and `external_meter_id`); the two styles can't be mixed in one request.
 
 ```json theme={null}
 {
@@ -71,7 +71,7 @@ The response is the `meter.credited` event that was recorded. The customer meter
 
 ### Reversing a manual credit
 
-A manual credit added by mistake can be reversed, either with **Reverse** on the credit in the customer meter's history, or with the [Reverse Customer Meter Credit](/docs/api-reference/2027-01/customer_meters/reverse-customer-meter-credit.md) endpoint, `POST /v1/customer-meters/credits/{id}/reverse`, where `id` is the ID of the `meter.credited` event returned when the credit was granted.
+A manual credit added by mistake can be reversed, either with **Reverse** on the credit in the customer meter's history, or with the [Reverse Customer Meter Credit](https://polar.sh/docs/api-reference/2027-01/customer_meters/reverse-customer-meter-credit.md) endpoint, `POST /v1/customer-meters/credits/{id}/reverse`, where `id` is the ID of the `meter.credited` event returned when the credit was granted.
 
 Reversal removes only the units the customer hasn't used yet; units already consumed stay consumed. Usage draws from non-rollover credits before rollover credits. A reversal is rejected when:
 
@@ -95,9 +95,9 @@ A reversal has `parent_id` set to the ID of the credit it reverses.
 
 ## Tracking customer's balance
 
-In your application, you'll likely need to track the customer's balance for a given meter. The easiest way to do this is to use the [Customer State](/docs/integrate/customer-state.md), which will give you the overview of the customer, including the balance for each of their active meters.
+In your application, you'll likely need to track the customer's balance for a given meter. The easiest way to do this is to use the [Customer State](https://polar.sh/docs/integrate/customer-state.md), which will give you the overview of the customer, including the balance for each of their active meters.
 
-You can also specifically query the meters balance using the [Customer Meters API](/docs/api-reference/current/customer_meters/list-customer-meters.md).
+You can also specifically query the meters balance using the [Customer Meters API](https://polar.sh/docs/api-reference/current/customer_meters/list-customer-meters.md).
 
 > [!WARNING]
 >

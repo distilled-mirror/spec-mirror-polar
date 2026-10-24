@@ -12,7 +12,7 @@ Events are the core of Usage Based Billing. They represent *some* usage done by 
 * A customer streamed minutes of video
 * A customer uploaded a file to your application
 
-Events are sent to Polar using the [Events Ingestion API](/docs/api-reference/current/events/ingest-events.md) and are stored in our database. An event consists of the following fields:
+Events are sent to Polar using the [Events Ingestion API](https://polar.sh/docs/api-reference/current/events/ingest-events.md) and are stored in our database. An event consists of the following fields:
 
 * A `name`, which is a string that can be used to identify the type of event. For example, `ai_usage`, `video_streamed` or `file_uploaded`.
 * A `customer_id` or `external_customer_id`, which is Polar's customer ID or your user's ID. This is used to identify the customer that triggered the event.
@@ -70,7 +70,7 @@ await polar.events.ingest({
 
 To make it easier to ingest events, we have created a set of ingestion strategies for common event sources.
 
-Learn more about our [Ingestion Strategies](/docs/features/usage-based-billing/ingestion-strategies).
+Learn more about our [Ingestion Strategies](https://polar.sh/docs/features/usage-based-billing/ingestion-strategies).
 
 ## Good to know
 

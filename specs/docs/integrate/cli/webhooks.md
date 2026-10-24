@@ -20,7 +20,7 @@ polar auth login --sandbox
 ```
 
 Pick the organization you want to receive events for. See
-[Authentication](/docs/integrate/cli/authentication.md) for details.
+[Authentication](https://polar.sh/docs/integrate/cli/authentication.md) for details.
 
 **2. Start listening**
 
@@ -105,9 +105,9 @@ polar webhook trigger checkout.created --dry-run
 
 ## Next steps
 
-* [Webhook events](/docs/integrate/webhooks/events.md) documents every event and its
+* [Webhook events](https://polar.sh/docs/integrate/webhooks/events.md) documents every event and its
   payload.
-* [Delivery](/docs/integrate/webhooks/delivery.md) explains signatures, retries and
+* [Delivery](https://polar.sh/docs/integrate/webhooks/delivery.md) explains signatures, retries and
   timeouts for production endpoints.
 
 

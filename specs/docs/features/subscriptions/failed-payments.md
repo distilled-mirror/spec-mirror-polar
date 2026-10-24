@@ -15,7 +15,7 @@ This page explains exactly what happens during that window, how to give yourself
 As soon as the first renewal charge fails:
 
 1. The subscription's status moves from `active` to `past_due`, and `past_due_at` is stamped with the time of the failure.
-2. Polar emails the customer to let them know the charge failed and links them to the [Customer Portal](/docs/features/customer-portal/introduction.md) so they can update their default payment method.
+2. Polar emails the customer to let them know the charge failed and links them to the [Customer Portal](https://polar.sh/docs/features/customer-portal/introduction.md) so they can update their default payment method.
 3. The renewal order stays open with `next_payment_attempt_at` set to the next retry time.
 
 Polar then retries the charge on a fixed schedule, starting from the time of the first failure:
@@ -49,19 +49,19 @@ The grace period is measured from `past_due_at`. While it's in effect the subscr
 > retry schedule, and it does not keep the subscription `active`. If you want
 > to treat past-due subscribers specially (for example, with a banner or
 > a reduced feature set), listen for the
-> [`subscription.updated`](/docs/api-reference/current/subscription_updated) webhook
+> [`subscription.updated`](https://polar.sh/docs/api-reference/current/subscription_updated) webhook
 > and branch on `status === "past_due"`.
 
 ## Helping customers recover
 
-The most reliable way for a customer to get back into `active` is to update their default payment method from the [Customer Portal](/docs/features/customer-portal/introduction.md). As soon as the payment method is updated, Polar retries the charge immediately rather than waiting for the next scheduled attempt.
+The most reliable way for a customer to get back into `active` is to update their default payment method from the [Customer Portal](https://polar.sh/docs/features/customer-portal/introduction.md). As soon as the payment method is updated, Polar retries the charge immediately rather than waiting for the next scheduled attempt.
 
 Things you can do from your side:
 
 * Link prominently to the Customer Portal from your own app when a customer is `past_due`.
-* [Issue a refund](/docs/features/refunds.md) on the original failed order if you want to credit the customer for the lost time while keeping the subscription.
-* [Reschedule the renewal](/docs/features/subscriptions/manage.md#reschedule-the-next-renewal) to give the customer extra time before the next attempt.
-* [Revoke the subscription](/docs/features/subscriptions/manage.md#revoke-immediately) manually if you've decided not to pursue recovery.
+* [Issue a refund](https://polar.sh/docs/features/refunds.md) on the original failed order if you want to credit the customer for the lost time while keeping the subscription.
+* [Reschedule the renewal](https://polar.sh/docs/features/subscriptions/manage.md#reschedule-the-next-renewal) to give the customer extra time before the next attempt.
+* [Revoke the subscription](https://polar.sh/docs/features/subscriptions/manage.md#revoke-immediately) manually if you've decided not to pursue recovery.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

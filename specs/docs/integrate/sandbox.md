@@ -20,7 +20,7 @@ It's a dedicated server, completely isolated from the production instance where 
 
 You can access the sandbox environment directly on [sandbox.polar.sh](https://sandbox.polar.sh/start) or by clicking on `Go to sandbox` from the organization switcher.
 
-You'll then need to create a dedicated user account and organization, the same way described in our [Quick Start guide](/docs/introduction.md).
+You'll then need to create a dedicated user account and organization, the same way described in our [Quick Start guide](https://polar.sh/docs/introduction.md).
 
 ### Testing payments
 
@@ -34,7 +34,7 @@ The easiest one to test a successful payment is to use the following card number
 
 ## API and SDK
 
-To make requests to our [API](/docs/api-reference), all you need to do is to switch the base URL from `https://api.polar.sh` to `https://sandbox-api.polar.sh`. You'll also need to create an access token in the **sandbox environment**, the access token created in the production environment can't be used in the sandbox.
+To make requests to our [API](https://polar.sh/docs/api-reference), all you need to do is to switch the base URL from `https://api.polar.sh` to `https://sandbox-api.polar.sh`. You'll also need to create an access token in the **sandbox environment**, the access token created in the production environment can't be used in the sandbox.
 
 Our official SDKs support the sandbox environment through a dedicated parameter.
 

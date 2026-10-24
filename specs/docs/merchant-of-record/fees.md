@@ -15,7 +15,7 @@ Polar offers a free Starter plan plus three optional paid plans — Pro, Growth,
 | **Starter** | Free | 5% + 50¢ | Standard Support | |
 | **Pro** | \$20 /mo | 3.8% + 40¢ | Prioritized Support | |
 | **Growth** | \$100 /mo | 3.6% + 35¢ | Prioritized Support | |
-| **Scale** | \$400 /mo | 3.4% + 30¢ | Slack + Prioritized Support | [Single Sign-On](/docs/features/sso.md) |
+| **Scale** | \$400 /mo | 3.4% + 30¢ | Slack + Prioritized Support | [Single Sign-On](https://polar.sh/docs/features/sso.md) |
 
 The paid plans replace the per-transaction Merchant of Record premium with a fixed monthly fee and a lower variable rate.
 
@@ -35,9 +35,9 @@ Below your plan's threshold, a lower tier is the better deal. Above it, the paid
 
 Paid plans also unlock early access to features that are still in preview. While in preview, each of these is available only on paid plans:
 
-* [Shared Slack Channel benefit](/docs/features/benefits/slack-shared-channel.md) — automatically give each customer a shared Slack channel via Slack Connect.
-* [`reset` proration behavior](/docs/features/subscriptions/proration#charge-full-amount-and-reset-cycle-reset) — on a plan change, charge the full new-plan price and restart the billing cycle, with no proration.
-* [Off-session charges](/docs/features/orders.md#arbitrary-charges) — charge a customer's saved payment method for an arbitrary amount, outside of a checkout or renewal.
+* [Shared Slack Channel benefit](https://polar.sh/docs/features/benefits/slack-shared-channel.md) — automatically give each customer a shared Slack channel via Slack Connect.
+* [`reset` proration behavior](https://polar.sh/docs/features/subscriptions/proration#charge-full-amount-and-reset-cycle-reset) — on a plan change, charge the full new-plan price and restart the billing cycle, with no proration.
+* [Off-session charges](https://polar.sh/docs/features/orders.md#arbitrary-charges) — charge a customer's saved payment method for an arbitrary amount, outside of a checkout or renewal.
 
 ## Early Member
 
@@ -84,7 +84,7 @@ You can issue both full or partial refunds on Polar to your customers. However, 
 
 Please note: Polar reserves the right to issue refunds at our own discretion up to 60 days after the purchase as part of our efforts to continuously and proactively reduce disputes & chargebacks which cost you \$15/dispute. We only leverage this right for this purpose and in the interest of reducing chargebacks and fees for you.
 
-[Learn more about refunds →](/docs/features/refunds.md)
+[Learn more about refunds →](https://polar.sh/docs/features/refunds.md)
 
 ## Dispute/Chargeback Fees
 
@@ -112,7 +112,7 @@ In addition, Polar offers manual withdrawals for developers. Keeping you in cont
 
 ## Volume pricing
 
-Large or fast-growing business? The published Scale plan is our cheapest public rate. If you need something custom on top of that, [reach out to us](/docs/support.md).
+Large or fast-growing business? The published Scale plan is our cheapest public rate. If you need something custom on top of that, [reach out to us](https://polar.sh/docs/support.md).
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

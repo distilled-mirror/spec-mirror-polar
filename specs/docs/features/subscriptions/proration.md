@@ -60,9 +60,9 @@ Use this when a plan change should behave like a brand-new subscription — for 
 
 ## Setting the default behavior
 
-Each organization has a default proration behavior that applies whenever you don't pass an explicit `proration_behavior` on an API call — including plan changes customers initiate from the [Customer Portal](/docs/features/customer-portal/introduction.md).
+Each organization has a default proration behavior that applies whenever you don't pass an explicit `proration_behavior` on an API call — including plan changes customers initiate from the [Customer Portal](https://polar.sh/docs/features/customer-portal/introduction.md).
 
-You can change it from **Settings → Subscriptions** in the dashboard, or via the [Update Organization](/docs/api-reference/current/organizations/update-organization.md) API.
+You can change it from **Settings → Subscriptions** in the dashboard, or via the [Update Organization](https://polar.sh/docs/api-reference/current/organizations/update-organization.md) API.
 
 ## Overriding per update
 

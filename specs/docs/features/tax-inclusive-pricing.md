@@ -58,7 +58,7 @@ This follows prevailing regional conventions: North American and Indian consumer
 
 ## Relationship with Merchant of Record
 
-As a [Merchant of Record](/docs/merchant-of-record/introduction.md), we handle the calculation, collection, and remittance of sales taxes globally on your behalf. Tax behavior only controls **how the price is presented** to your customer — it does not affect whether tax is collected or how much is owed.
+As a [Merchant of Record](https://polar.sh/docs/merchant-of-record/introduction.md), we handle the calculation, collection, and remittance of sales taxes globally on your behalf. Tax behavior only controls **how the price is presented** to your customer — it does not affect whether tax is collected or how much is owed.
 
 Regardless of the tax behavior chosen, Polar always:
 

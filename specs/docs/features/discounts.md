@@ -56,13 +56,13 @@ Polar identifies a customer by three signals, and a match on any one is enough:
 * The email address (ignoring plus-aliases: `ada+polar@example.com` matches `ada@example.com`)
 * The payment card, so a new email address on the same card still counts. Free products and 100% forever subscriptions never ask for a card, so those match on ID and email alone.
 
-Refunding an order frees the customer's slot, and they can use the code again (note: a partial refund doesn't). [Polar-issued refunds as part of chargeback prevention](/docs/features/refunds.md) also don't free the customer's slot.
+Refunding an order frees the customer's slot, and they can use the code again (note: a partial refund doesn't). [Polar-issued refunds as part of chargeback prevention](https://polar.sh/docs/features/refunds.md) also don't free the customer's slot.
 
 ## Apply a discount
 
 ### Auto-apply via Checkout Link
 
-When creating a [Checkout Link](/docs/features/checkout/links.md), you can preset a discount that will be automatically applied when customers land on the checkout page. This is useful for promotional campaigns or special offers where you want to guarantee the discount is applied without requiring customers to enter a code.
+When creating a [Checkout Link](https://polar.sh/docs/features/checkout/links.md), you can preset a discount that will be automatically applied when customers land on the checkout page. This is useful for promotional campaigns or special offers where you want to guarantee the discount is applied without requiring customers to enter a code.
 
 > [!NOTE]
 >
@@ -74,7 +74,7 @@ You can pass a `discount_code` query parameter to any Checkout Link URL to prefi
 
 ### Apply via API
 
-When creating a Checkout Session via the API, you can specify a discount to apply programmatically. See the [Checkout API documentation](/docs/features/checkout/session.md) for details.
+When creating a Checkout Session via the API, you can specify a discount to apply programmatically. See the [Checkout API documentation](https://polar.sh/docs/features/checkout/session.md) for details.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

@@ -83,7 +83,7 @@ belonged to that environment.
 ## CI and headless use
 
 On machines without a browser or keychain, authenticate with an
-[organization access token](/docs/integrate/oat) instead of a session:
+[organization access token](https://polar.sh/docs/integrate/oat) instead of a session:
 
 ```bash Terminal theme={null}
 export POLAR_ACCESS_TOKEN=polar_oat_...

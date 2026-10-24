@@ -147,7 +147,7 @@ JSON object with metadata to store for the users activation.
 ### Validate License Keys
 
 For each session of your premium app, library or API, we recommend you validate the users license key via the
-[`/v1/customer-portal/license-keys/validate`](/docs/api-reference/current/customer_portal/validate-license-key) endpoint.
+[`/v1/customer-portal/license-keys/validate`](https://polar.sh/docs/api-reference/current/customer_portal/validate-license-key) endpoint.
 
 ```bash Terminal theme={null}
 curl -X POST https://api.polar.sh/v1/customer-portal/license-keys/validate

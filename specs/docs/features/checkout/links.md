@@ -10,7 +10,7 @@ This is the simplest way to start selling. Configure once in the dashboard, shar
 
 > [!TIP]
 >
-> If you need to create Checkout Sessions programmatically (e.g. with per-customer data computed by your backend), use the [Checkout API](/docs/features/checkout/session.md) directly instead.
+> If you need to create Checkout Sessions programmatically (e.g. with per-customer data computed by your backend), use the [Checkout API](https://polar.sh/docs/features/checkout/session.md) directly instead.
 
 ## How it works
 
@@ -44,7 +44,7 @@ If **Allow discount codes** is enabled, customers can still manually enter anoth
 
 > [!TIP]
 >
-> Discounts without a code can only be applied through Checkout Link presets or the [Checkout API](/docs/features/checkout/session.md). Learn more in the [Discounts documentation](/docs/features/discounts.md).
+> Discounts without a code can only be applied through Checkout Link presets or the [Checkout API](https://polar.sh/docs/features/checkout/session.md). Learn more in the [Discounts documentation](https://polar.sh/docs/features/discounts.md).
 
 ### Success URL
 
@@ -96,7 +96,7 @@ Prefill the customer name.
 
 **discount\_code** `string`
 
-Prefill the discount code input. Only works with discounts that have a code set. See the [Discounts documentation](/docs/features/discounts.md) for details.
+Prefill the discount code input. Only works with discounts that have a code set. See the [Discounts documentation](https://polar.sh/docs/features/discounts.md) for details.
 
 This is different from presetting a discount on the link. A preset discount is silently applied, whereas `discount_code` only fills the input field so the customer can see it.
 
@@ -109,7 +109,7 @@ Prefill the amount when the product uses Pay-What-You-Want pricing.
 Force the checkout page language, given as an IETF BCP 47 language tag (e.g.
 `en`, `fr`, `pt-BR`). If omitted, the language is detected from the
 customer's browser. Checkout localization is in beta. See
-[Checkout Localization](/docs/features/checkout/localization.md) for details.
+[Checkout Localization](https://polar.sh/docs/features/checkout/localization.md) for details.
 
 **custom\_field\_data.\{slug}** `string`
 
@@ -122,7 +122,7 @@ theme follows the customer's system preference.
 
 ### Attribution and reference metadata
 
-These parameters are automatically attached to the generated Checkout Session [`metadata`](/docs/api-reference/current/checkouts/get-checkout-session#response-metadata).
+These parameters are automatically attached to the generated Checkout Session [`metadata`](https://polar.sh/docs/api-reference/current/checkouts/get-checkout-session#response-metadata).
 
 **reference\_id** `string`
 

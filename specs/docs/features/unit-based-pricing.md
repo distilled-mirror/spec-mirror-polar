@@ -96,7 +96,7 @@ Add a fixed price alongside the unit-based one for a base fee plus a per-unit ra
 
 The customer receives each benefit once, whatever quantity they buy. Buying 40 devices grants one license key, not 40.
 
-If you need one grant per unit, use [seat-based pricing](/docs/features/seat-based-pricing.md).
+If you need one grant per unit, use [seat-based pricing](https://polar.sh/docs/features/seat-based-pricing.md).
 
 ## Changing the quantity
 
@@ -115,7 +115,7 @@ The full amount applies from the next billing period onward.
 
 ## Limitations
 
-* The quantity is a whole number. Fractional quantities need [metered billing](/docs/features/usage-based-billing/introduction.md) instead.
+* The quantity is a whole number. Fractional quantities need [metered billing](https://polar.sh/docs/features/usage-based-billing/introduction.md) instead.
 * Tier rates are whole cents.
 * A product carries at most one unit-based price.
 * Unit-based cannot be combined with seat-based or pay-what-you-want pricing.

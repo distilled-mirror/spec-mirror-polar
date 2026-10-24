@@ -279,7 +279,7 @@ The access token needs the `customers:read`, `customers:write`, `members:read` a
 
 [Source code](https://github.com/polarsource/polar/blob/main/clients/adapters/better-auth/src/plugins/checkout.ts)
 
-To support [checkouts](/docs/features/checkout/links.md) in your app, you would pass the `checkout` plugin in the `use` property.
+To support [checkouts](https://polar.sh/docs/features/checkout/links.md) in your app, you would pass the `checkout` plugin in the `use` property.
 
 The checkout plugin accepts the following configuration options:
 
@@ -369,7 +369,7 @@ embed.addEventListener("success", (event) => {
 
 A plugin for Usage Based Billing that allows you to [ingest events](#1-event-ingestion) from your application and list the [authenticated user's Usage Meter](#2-customer-meters).
 
-To enable [usage based billing](/docs/features/usage-based-billing/introduction.md) in your app, you would pass the `usage` plugin in the `use` property.
+To enable [usage based billing](https://polar.sh/docs/features/usage-based-billing/introduction.md) in your app, you would pass the `usage` plugin in the `use` property.
 
 ```typescript icon="square-js" Usage Plugin Example theme={null}
 import {
@@ -498,7 +498,7 @@ To set up the Polar `webhooks` plugin on your BetterAuth server, follow the step
 
 **1. Configure Webhook Endpoints in Polar**
 
-Configure a Webhook endpoint in your Polar Organization Settings page by following [this guide](/docs/integrate/webhooks/endpoints.md). The endpoint is served at `/polar/webhooks` under your Better Auth base path, which is `/api/auth/polar/webhooks` by default.
+Configure a Webhook endpoint in your Polar Organization Settings page by following [this guide](https://polar.sh/docs/integrate/webhooks/endpoints.md). The endpoint is served at `/polar/webhooks` under your Better Auth base path, which is `/api/auth/polar/webhooks` by default.
 
 **2. Add the Webhook Secret**
 
@@ -652,7 +652,7 @@ The customer state object contains:
 
 Using the customer state object, you can determine whether to provision access for the user to your service. The user needs a Polar customer, so enable `createCustomerOnSignUp` or the request fails.
 
-Learn more about the Polar Customer State [in the Polar Docs](/docs/integrate/customer-state.md).
+Learn more about the Polar Customer State [in the Polar Docs](https://polar.sh/docs/integrate/customer-state.md).
 
 ### 3. Benefits, Orders & Subscriptions
 
