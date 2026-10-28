@@ -155,16 +155,6 @@ components:
           description: >-
             ID of the product to checkout. Must be present in the checkout's
             product list.
-        product_price_id:
-          anyOf:
-            - type: string
-              format: uuid4
-            - type: 'null'
-          title: Product Price Id
-          description: >-
-            ID of the product price to checkout. Must correspond to a price
-            present in the checkout's product list.
-          deprecated: true
         amount:
           anyOf:
             - type: integer
@@ -631,14 +621,6 @@ components:
             - type: 'null'
           title: Product Id
           description: ID of the product to checkout.
-        product_price_id:
-          anyOf:
-            - type: string
-              format: uuid4
-            - type: 'null'
-          title: Product Price Id
-          description: ID of the product price to checkout.
-          deprecated: true
         discount_id:
           anyOf:
             - type: string
@@ -796,7 +778,6 @@ components:
         product_price:
           anyOf:
             - oneOf:
-                - $ref: '#/components/schemas/LegacyRecurringProductPrice'
                 - $ref: '#/components/schemas/ProductPrice'
             - type: 'null'
           title: Product Price
@@ -807,7 +788,6 @@ components:
             - additionalProperties:
                 items:
                   oneOf:
-                    - $ref: '#/components/schemas/LegacyRecurringProductPrice'
                     - $ref: '#/components/schemas/ProductPrice'
                 type: array
                 description: List of prices for this product.
@@ -879,7 +859,6 @@ components:
         - trial_end
         - organization_id
         - product_id
-        - product_price_id
         - discount_id
         - allow_discount_codes
         - require_billing_address
@@ -2294,7 +2273,6 @@ components:
         prices:
           items:
             oneOf:
-              - $ref: '#/components/schemas/LegacyRecurringProductPrice'
               - $ref: '#/components/schemas/ProductPrice'
           type: array
           title: Prices
@@ -2334,15 +2312,6 @@ components:
         - medias
       title: CheckoutProduct
       description: Product data for a checkout session.
-    LegacyRecurringProductPrice:
-      oneOf:
-        - $ref: '#/components/schemas/LegacyRecurringProductPriceFixed'
-        - $ref: '#/components/schemas/LegacyRecurringProductPriceCustom'
-      discriminator:
-        propertyName: amount_type
-        mapping:
-          custom: '#/components/schemas/LegacyRecurringProductPriceCustom'
-          fixed: '#/components/schemas/LegacyRecurringProductPriceFixed'
     ProductPrice:
       oneOf:
         - $ref: '#/components/schemas/ProductPriceFixed'
@@ -2839,204 +2808,6 @@ components:
         - public_url
       title: ProductMediaFileRead
       description: File to be used as a product media file.
-    LegacyRecurringProductPriceFixed:
-      properties:
-        created_at:
-          type: string
-          format: date-time
-          title: Created At
-          description: Creation timestamp of the object.
-          examples:
-            - '2026-01-01T00:00:00.000000Z'
-        modified_at:
-          anyOf:
-            - type: string
-              format: date-time
-              examples:
-                - '2026-01-01T00:00:00.000000Z'
-            - type: 'null'
-          title: Modified At
-          description: Last modification timestamp of the object.
-        id:
-          type: string
-          format: uuid4
-          title: Id
-          description: The ID of the price.
-        source:
-          $ref: '#/components/schemas/ProductPriceSource'
-          description: >-
-            The source of the price . `catalog` is a predefined price, while
-            `ad_hoc` is a price created dynamically on a Checkout session.
-        amount_type:
-          type: string
-          const: fixed
-          title: Amount Type
-        price_currency:
-          type: string
-          title: Price Currency
-          description: The currency in which the customer will be charged.
-        tax_behavior:
-          anyOf:
-            - $ref: '#/components/schemas/TaxBehaviorOption'
-            - type: 'null'
-          description: >-
-            The tax behavior of the price. If null, it defaults to the
-            organization's default tax behavior.
-        is_archived:
-          type: boolean
-          title: Is Archived
-          description: Whether the price is archived and no longer available.
-        product_id:
-          type: string
-          format: uuid4
-          title: Product Id
-          description: The ID of the product owning the price.
-        type:
-          type: string
-          const: recurring
-          title: Type
-          description: The type of the price.
-        recurring_interval:
-          $ref: '#/components/schemas/RecurringInterval'
-          description: The recurring interval of the price.
-        price_amount:
-          type: integer
-          title: Price Amount
-          description: The price in cents.
-        legacy:
-          type: boolean
-          const: true
-          title: Legacy
-          readOnly: true
-      type: object
-      required:
-        - created_at
-        - modified_at
-        - id
-        - source
-        - amount_type
-        - price_currency
-        - tax_behavior
-        - is_archived
-        - product_id
-        - type
-        - recurring_interval
-        - price_amount
-        - legacy
-      title: LegacyRecurringProductPriceFixed
-      description: >-
-        A recurring price for a product, i.e. a subscription.
-
-
-        **Deprecated**: The recurring interval should be set on the product
-        itself.
-    LegacyRecurringProductPriceCustom:
-      properties:
-        created_at:
-          type: string
-          format: date-time
-          title: Created At
-          description: Creation timestamp of the object.
-          examples:
-            - '2026-01-01T00:00:00.000000Z'
-        modified_at:
-          anyOf:
-            - type: string
-              format: date-time
-              examples:
-                - '2026-01-01T00:00:00.000000Z'
-            - type: 'null'
-          title: Modified At
-          description: Last modification timestamp of the object.
-        id:
-          type: string
-          format: uuid4
-          title: Id
-          description: The ID of the price.
-        source:
-          $ref: '#/components/schemas/ProductPriceSource'
-          description: >-
-            The source of the price . `catalog` is a predefined price, while
-            `ad_hoc` is a price created dynamically on a Checkout session.
-        amount_type:
-          type: string
-          const: custom
-          title: Amount Type
-        price_currency:
-          type: string
-          title: Price Currency
-          description: The currency in which the customer will be charged.
-        tax_behavior:
-          anyOf:
-            - $ref: '#/components/schemas/TaxBehaviorOption'
-            - type: 'null'
-          description: >-
-            The tax behavior of the price. If null, it defaults to the
-            organization's default tax behavior.
-        is_archived:
-          type: boolean
-          title: Is Archived
-          description: Whether the price is archived and no longer available.
-        product_id:
-          type: string
-          format: uuid4
-          title: Product Id
-          description: The ID of the product owning the price.
-        type:
-          type: string
-          const: recurring
-          title: Type
-          description: The type of the price.
-        recurring_interval:
-          $ref: '#/components/schemas/RecurringInterval'
-          description: The recurring interval of the price.
-        minimum_amount:
-          type: integer
-          title: Minimum Amount
-          description: >-
-            The minimum amount the customer can pay. If 0, the price is 'free or
-            pay what you want'.
-        maximum_amount:
-          anyOf:
-            - type: integer
-            - type: 'null'
-          title: Maximum Amount
-          description: The maximum amount the customer can pay.
-        preset_amount:
-          anyOf:
-            - type: integer
-            - type: 'null'
-          title: Preset Amount
-          description: The initial amount shown to the customer.
-        legacy:
-          type: boolean
-          const: true
-          title: Legacy
-          readOnly: true
-      type: object
-      required:
-        - created_at
-        - modified_at
-        - id
-        - source
-        - amount_type
-        - price_currency
-        - tax_behavior
-        - is_archived
-        - product_id
-        - type
-        - recurring_interval
-        - minimum_amount
-        - maximum_amount
-        - preset_amount
-        - legacy
-      title: LegacyRecurringProductPriceCustom
-      description: >-
-        A pay-what-you-want recurring price for a product, i.e. a subscription.
-
-
-        **Deprecated**: The recurring interval should be set on the product
-        itself.
     ProductPriceFixed:
       properties:
         created_at:

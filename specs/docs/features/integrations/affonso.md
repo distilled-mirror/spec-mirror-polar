@@ -24,13 +24,12 @@ account to track and manage affiliate-driven sales for your SaaS business.
 First, you'll need to create an API token in Polar that Affonso can use to communicate with your account:
 
 1. Login to your **Polar Dashboard**
-2. Navigate to [**Settings**](https://polar.sh/to/dashboard/settings)
-3. Scroll down to the **Developers** section on the Settings page
-4. Click the **New token** button
-5. Give your token a name (e.g., "Affonso Integration")
-6. Set token expiration to **No expiration**
+2. Navigate to [**Settings → Access Tokens**](https://polar.sh/to/dashboard/settings/access-tokens)
+3. Click the **Create token** button
+4. Give your token a name (e.g., "Affonso Integration")
+5. Set token expiration to **No expiration**
    Important: If you set an expiration date, you'll need to manually update the token in Affonso when it expires. Tracking will stop working if the token expires.
-7. Enable all the following scopes:
+6. Enable all the following scopes:
    * discounts:read
    * discounts:write
    * events:read
@@ -41,8 +40,8 @@ First, you'll need to create an API token in Polar that Affonso can use to commu
    * refunds:read
    * webhooks:read
    * webhooks:write
-8. Click **Create token** and copy the generated token
-9. Provide this token to Affonso by entering it [in their integration settings](https://affonso.io/app/affiliate-program/connect)
+7. Click **Create token** and copy the generated token
+8. Provide this token to Affonso by entering it [in their integration settings](https://affonso.io/app/affiliate-program/connect)
 
 <video controls width="600">
   <source src="https://affonso-videos.s3.eu-central-1.amazonaws.com/Connect_Polar_Affonso_1.mp4" type="video/mp4" />

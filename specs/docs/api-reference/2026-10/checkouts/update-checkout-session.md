@@ -155,16 +155,6 @@ components:
           description: >-
             ID of the product to checkout. Must be present in the checkout's
             product list.
-        product_price_id:
-          anyOf:
-            - type: string
-              format: uuid4
-            - type: 'null'
-          title: Product Price Id
-          description: >-
-            ID of the product price to checkout. Must correspond to a price
-            present in the checkout's product list.
-          deprecated: true
         amount:
           anyOf:
             - type: integer
@@ -417,6 +407,16 @@ components:
             If you plan to embed the checkout session, set this to the Origin of
             the embedding page. It'll allow the Polar iframe to communicate with
             the parent page.
+        product_price_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Product Price Id
+          description: >-
+            ID of the product price to checkout. Must correspond to a price
+            present in the checkout's product list.
+          deprecated: true
       type: object
       title: CheckoutUpdate
       description: Update an existing checkout session using an access token.

@@ -29,7 +29,7 @@ formatting. Making it a breeze to setup in-chat notifications for your team.
 
 **1. Add new endpoint**
 
-Head over to your organization settings and click on the `Add Endpoint` button to create a new webhook.
+Head over to [**Settings → Webhooks**](https://polar.sh/to/dashboard/settings/webhooks) and click on the `Add Endpoint` button to create a new webhook.
 
 ![](https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/integrate/webhooks/create.light.png?fit=max\&auto=format\&n=0Af3hN6-oIM4IHT3\&q=85\&s=23eb5510c1dbd2f511461dfe1e262485)
 

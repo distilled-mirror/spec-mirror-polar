@@ -6,7 +6,7 @@
 
 Before being able to make authentication requests, you'll need an **OAuth2 Client**. It's the entity that'll identify you, as a third-party developer, between Polar and the final user.
 
-You can manage them from your [User Settings](https://polar.sh/settings#oauth)
+You can manage them from your [**Account Settings → Developer**](https://polar.sh/dashboard/account/developer)
 
 Here are the required fields:
 

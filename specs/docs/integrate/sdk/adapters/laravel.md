@@ -122,10 +122,10 @@ return [
 
 ### Access Token
 
-Configure your access token. Create a new token in the Polar Dashboard > Settings > Developers and paste it in the `.env` file.
+Configure your access token. Create a new token in the Polar Dashboard > Settings > Access Tokens and paste it in the `.env` file.
 
-* [https://sandbox.polar.sh/dashboard/ORG\_SLUG/settings](https://sandbox.polar.sh/dashboard/ORG_SLUG/settings) (Sandbox)
-* [https://polar.sh/dashboard/ORG\_SLUG/settings](https://polar.sh/dashboard/ORG_SLUG/settings) (Production)
+* [https://sandbox.polar.sh/dashboard/ORG\_SLUG/settings/access-tokens](https://sandbox.polar.sh/dashboard/ORG_SLUG/settings/access-tokens) (Sandbox)
+* [https://polar.sh/dashboard/ORG\_SLUG/settings/access-tokens](https://polar.sh/dashboard/ORG_SLUG/settings/access-tokens) (Production)
 
 ```bash Terminal theme={null}
 POLAR_ACCESS_TOKEN="<your_access_token>"

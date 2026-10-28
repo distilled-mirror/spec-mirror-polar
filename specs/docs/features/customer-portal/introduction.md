@@ -39,7 +39,7 @@ The Customer Portal isn't just a convenience feature — it's a critical piece o
 
 > **[Customer portal settings](https://polar.sh/docs/features/customer-portal/settings.md)**
 >
-> Configure what your customers can do from the portal under Settings → Customer portal.
+> Configure what your customers can do from the portal under Settings → Customer Portal.
 
 > **[Customer Portal API](https://polar.sh/docs/api-reference/current/customer_portal/get-customer.md)**
 >

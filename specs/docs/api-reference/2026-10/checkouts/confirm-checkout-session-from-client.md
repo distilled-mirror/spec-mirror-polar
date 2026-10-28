@@ -168,16 +168,6 @@ components:
           description: >-
             ID of the product to checkout. Must be present in the checkout's
             product list.
-        product_price_id:
-          anyOf:
-            - type: string
-              format: uuid4
-            - type: 'null'
-          title: Product Price Id
-          description: >-
-            ID of the product price to checkout. Must correspond to a price
-            present in the checkout's product list.
-          deprecated: true
         amount:
           anyOf:
             - type: integer
@@ -285,6 +275,16 @@ components:
           description: >-
             ID of the Stripe confirmation token. Required for fixed prices and
             custom prices.
+        product_price_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Product Price Id
+          description: >-
+            ID of the product price to checkout. Must correspond to a price
+            present in the checkout's product list.
+          deprecated: true
       type: object
       title: CheckoutConfirmStripe
       description: Confirm a checkout session using a Stripe confirmation token.

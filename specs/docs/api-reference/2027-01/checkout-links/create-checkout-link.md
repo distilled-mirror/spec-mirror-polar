@@ -68,7 +68,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CheckoutLinkCreate'
+              $ref: '#/components/schemas/CheckoutLinkCreateProducts'
       responses:
         '201':
           description: Checkout link created.
@@ -100,7 +100,7 @@ paths:
                 payment_processor='stripe',
                 allow_discount_codes=True,
                 require_billing_address=False,
-                product_price_id='00000000-0000-4000-8000-000000000000',
+                products=['00000000-0000-4000-8000-000000000000'],
             )
             print(response)
         - lang: typescript
@@ -116,17 +116,157 @@ paths:
                 "payment_processor": "stripe",
                 "allow_discount_codes": true,
                 "require_billing_address": false,
-                "product_price_id": "00000000-0000-4000-8000-000000000000"
+                "products": [
+                  "00000000-0000-4000-8000-000000000000"
+                ]
               },
             );
             console.log(response);
 components:
   schemas:
-    CheckoutLinkCreate:
-      anyOf:
-        - $ref: '#/components/schemas/CheckoutLinkCreateProductPrice'
-        - $ref: '#/components/schemas/CheckoutLinkCreateProduct'
-        - $ref: '#/components/schemas/CheckoutLinkCreateProducts'
+    CheckoutLinkCreateProducts:
+      properties:
+        metadata:
+          additionalProperties:
+            anyOf:
+              - type: string
+                maxLength: 500
+                minLength: 1
+              - type: integer
+              - type: number
+              - type: boolean
+          propertyNames:
+            maxLength: 40
+            minLength: 1
+          type: object
+          maxProperties: 50
+          title: Metadata
+          description: |-
+            Key-value object allowing you to store additional information.
+
+            The key must be a string with a maximum length of **40 characters**.
+            The value must be either:
+
+            * A string with a maximum length of **500 characters**
+            * An integer
+            * A floating-point number
+            * A boolean
+
+            You can store up to **50 key-value pairs**.
+        trial_interval:
+          anyOf:
+            - $ref: '#/components/schemas/TrialInterval'
+            - type: 'null'
+          description: The interval unit for the trial period.
+        trial_interval_count:
+          anyOf:
+            - type: integer
+              maximum: 1000
+              minimum: 1
+            - type: 'null'
+          title: Trial Interval Count
+          description: The number of interval units for the trial period.
+        payment_processor:
+          type: string
+          const: stripe
+          title: Payment Processor
+          description: Payment processor to use. Currently only Stripe is supported.
+        label:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Label
+          description: Optional label to distinguish links internally
+        allow_discount_codes:
+          type: boolean
+          title: Allow Discount Codes
+          description: >-
+            Whether to allow the customer to apply discount codes. If you apply
+            a discount through `discount_id`, it'll still be applied, but the
+            customer won't be able to change it.
+          default: true
+        require_billing_address:
+          type: boolean
+          title: Require Billing Address
+          description: >-
+            Whether to require the customer to fill their full billing address,
+            instead of just the country. Customers in the US will always be
+            required to fill their full address, regardless of this setting.
+          default: false
+        discount_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Discount Id
+          description: >-
+            ID of the discount to apply to the checkout. If the discount is not
+            applicable anymore when opening the checkout link, it'll be ignored.
+        seats:
+          anyOf:
+            - type: integer
+              maximum: 10000
+              minimum: 1
+            - type: 'null'
+          title: Seats
+          description: >-
+            Preconfigured number of seats for seat-based pricing. When set,
+            checkout sessions created from this link are locked to this number
+            of seats and the customer won't be able to change it. All products
+            on the link must use seat-based pricing and allow this number of
+            seats. If the products no longer accommodate this value when the
+            link is opened, it'll be ignored.
+        units:
+          anyOf:
+            - type: integer
+              maximum: 2147483647
+              minimum: 1
+            - type: 'null'
+          title: Units
+          description: >-
+            Preconfigured number of units for unit-based pricing. When set,
+            checkout sessions created from this link are locked to this number
+            of units and the customer won't be able to change it. All products
+            on the link must use unit-based pricing and allow this number of
+            units. If the products no longer accommodate this value when the
+            link is opened, it'll be ignored.
+        success_url:
+          anyOf:
+            - type: string
+              maxLength: 2083
+              minLength: 1
+              format: uri
+            - type: 'null'
+          title: Success Url
+          description: >-
+            URL where the customer will be redirected after a successful
+            payment.You can add the `checkout_id={CHECKOUT_ID}` query parameter
+            to retrieve the checkout session id.
+        return_url:
+          anyOf:
+            - type: string
+              maxLength: 2083
+              minLength: 1
+              format: uri
+            - type: 'null'
+          title: Return Url
+          description: >-
+            When set, a back button will be shown in the checkout to return to
+            this URL.
+        products:
+          items:
+            type: string
+            format: uuid4
+          type: array
+          minItems: 1
+          title: Products
+          description: List of products that will be available to select at checkout.
+      type: object
+      required:
+        - payment_processor
+        - products
+      title: CheckoutLinkCreateProducts
+      description: Schema to create a new checkout link.
     CheckoutLink:
       properties:
         id:
@@ -299,433 +439,6 @@ components:
           title: Detail
       type: object
       title: HTTPValidationError
-    CheckoutLinkCreateProductPrice:
-      properties:
-        metadata:
-          additionalProperties:
-            anyOf:
-              - type: string
-                maxLength: 500
-                minLength: 1
-              - type: integer
-              - type: number
-              - type: boolean
-          propertyNames:
-            maxLength: 40
-            minLength: 1
-          type: object
-          maxProperties: 50
-          title: Metadata
-          description: |-
-            Key-value object allowing you to store additional information.
-
-            The key must be a string with a maximum length of **40 characters**.
-            The value must be either:
-
-            * A string with a maximum length of **500 characters**
-            * An integer
-            * A floating-point number
-            * A boolean
-
-            You can store up to **50 key-value pairs**.
-        trial_interval:
-          anyOf:
-            - $ref: '#/components/schemas/TrialInterval'
-            - type: 'null'
-          description: The interval unit for the trial period.
-        trial_interval_count:
-          anyOf:
-            - type: integer
-              maximum: 1000
-              minimum: 1
-            - type: 'null'
-          title: Trial Interval Count
-          description: The number of interval units for the trial period.
-        payment_processor:
-          type: string
-          const: stripe
-          title: Payment Processor
-          description: Payment processor to use. Currently only Stripe is supported.
-        label:
-          anyOf:
-            - type: string
-            - type: 'null'
-          title: Label
-          description: Optional label to distinguish links internally
-        allow_discount_codes:
-          type: boolean
-          title: Allow Discount Codes
-          description: >-
-            Whether to allow the customer to apply discount codes. If you apply
-            a discount through `discount_id`, it'll still be applied, but the
-            customer won't be able to change it.
-          default: true
-        require_billing_address:
-          type: boolean
-          title: Require Billing Address
-          description: >-
-            Whether to require the customer to fill their full billing address,
-            instead of just the country. Customers in the US will always be
-            required to fill their full address, regardless of this setting.
-          default: false
-        discount_id:
-          anyOf:
-            - type: string
-              format: uuid4
-            - type: 'null'
-          title: Discount Id
-          description: >-
-            ID of the discount to apply to the checkout. If the discount is not
-            applicable anymore when opening the checkout link, it'll be ignored.
-        seats:
-          anyOf:
-            - type: integer
-              maximum: 10000
-              minimum: 1
-            - type: 'null'
-          title: Seats
-          description: >-
-            Preconfigured number of seats for seat-based pricing. When set,
-            checkout sessions created from this link are locked to this number
-            of seats and the customer won't be able to change it. All products
-            on the link must use seat-based pricing and allow this number of
-            seats. If the products no longer accommodate this value when the
-            link is opened, it'll be ignored.
-        units:
-          anyOf:
-            - type: integer
-              maximum: 2147483647
-              minimum: 1
-            - type: 'null'
-          title: Units
-          description: >-
-            Preconfigured number of units for unit-based pricing. When set,
-            checkout sessions created from this link are locked to this number
-            of units and the customer won't be able to change it. All products
-            on the link must use unit-based pricing and allow this number of
-            units. If the products no longer accommodate this value when the
-            link is opened, it'll be ignored.
-        success_url:
-          anyOf:
-            - type: string
-              maxLength: 2083
-              minLength: 1
-              format: uri
-            - type: 'null'
-          title: Success Url
-          description: >-
-            URL where the customer will be redirected after a successful
-            payment.You can add the `checkout_id={CHECKOUT_ID}` query parameter
-            to retrieve the checkout session id.
-        return_url:
-          anyOf:
-            - type: string
-              maxLength: 2083
-              minLength: 1
-              format: uri
-            - type: 'null'
-          title: Return Url
-          description: >-
-            When set, a back button will be shown in the checkout to return to
-            this URL.
-        product_price_id:
-          type: string
-          format: uuid4
-          title: Product Price Id
-      type: object
-      required:
-        - payment_processor
-        - product_price_id
-      title: CheckoutLinkCreateProductPrice
-      description: |-
-        Schema to create a new checkout link from a a single product price.
-
-        **Deprecated**: Use `CheckoutLinkCreateProducts` instead.
-    CheckoutLinkCreateProduct:
-      properties:
-        metadata:
-          additionalProperties:
-            anyOf:
-              - type: string
-                maxLength: 500
-                minLength: 1
-              - type: integer
-              - type: number
-              - type: boolean
-          propertyNames:
-            maxLength: 40
-            minLength: 1
-          type: object
-          maxProperties: 50
-          title: Metadata
-          description: |-
-            Key-value object allowing you to store additional information.
-
-            The key must be a string with a maximum length of **40 characters**.
-            The value must be either:
-
-            * A string with a maximum length of **500 characters**
-            * An integer
-            * A floating-point number
-            * A boolean
-
-            You can store up to **50 key-value pairs**.
-        trial_interval:
-          anyOf:
-            - $ref: '#/components/schemas/TrialInterval'
-            - type: 'null'
-          description: The interval unit for the trial period.
-        trial_interval_count:
-          anyOf:
-            - type: integer
-              maximum: 1000
-              minimum: 1
-            - type: 'null'
-          title: Trial Interval Count
-          description: The number of interval units for the trial period.
-        payment_processor:
-          type: string
-          const: stripe
-          title: Payment Processor
-          description: Payment processor to use. Currently only Stripe is supported.
-        label:
-          anyOf:
-            - type: string
-            - type: 'null'
-          title: Label
-          description: Optional label to distinguish links internally
-        allow_discount_codes:
-          type: boolean
-          title: Allow Discount Codes
-          description: >-
-            Whether to allow the customer to apply discount codes. If you apply
-            a discount through `discount_id`, it'll still be applied, but the
-            customer won't be able to change it.
-          default: true
-        require_billing_address:
-          type: boolean
-          title: Require Billing Address
-          description: >-
-            Whether to require the customer to fill their full billing address,
-            instead of just the country. Customers in the US will always be
-            required to fill their full address, regardless of this setting.
-          default: false
-        discount_id:
-          anyOf:
-            - type: string
-              format: uuid4
-            - type: 'null'
-          title: Discount Id
-          description: >-
-            ID of the discount to apply to the checkout. If the discount is not
-            applicable anymore when opening the checkout link, it'll be ignored.
-        seats:
-          anyOf:
-            - type: integer
-              maximum: 10000
-              minimum: 1
-            - type: 'null'
-          title: Seats
-          description: >-
-            Preconfigured number of seats for seat-based pricing. When set,
-            checkout sessions created from this link are locked to this number
-            of seats and the customer won't be able to change it. All products
-            on the link must use seat-based pricing and allow this number of
-            seats. If the products no longer accommodate this value when the
-            link is opened, it'll be ignored.
-        units:
-          anyOf:
-            - type: integer
-              maximum: 2147483647
-              minimum: 1
-            - type: 'null'
-          title: Units
-          description: >-
-            Preconfigured number of units for unit-based pricing. When set,
-            checkout sessions created from this link are locked to this number
-            of units and the customer won't be able to change it. All products
-            on the link must use unit-based pricing and allow this number of
-            units. If the products no longer accommodate this value when the
-            link is opened, it'll be ignored.
-        success_url:
-          anyOf:
-            - type: string
-              maxLength: 2083
-              minLength: 1
-              format: uri
-            - type: 'null'
-          title: Success Url
-          description: >-
-            URL where the customer will be redirected after a successful
-            payment.You can add the `checkout_id={CHECKOUT_ID}` query parameter
-            to retrieve the checkout session id.
-        return_url:
-          anyOf:
-            - type: string
-              maxLength: 2083
-              minLength: 1
-              format: uri
-            - type: 'null'
-          title: Return Url
-          description: >-
-            When set, a back button will be shown in the checkout to return to
-            this URL.
-        product_id:
-          type: string
-          format: uuid4
-          title: Product Id
-      type: object
-      required:
-        - payment_processor
-        - product_id
-      title: CheckoutLinkCreateProduct
-      description: |-
-        Schema to create a new checkout link from a a single product.
-
-        **Deprecated**: Use `CheckoutLinkCreateProducts` instead.
-    CheckoutLinkCreateProducts:
-      properties:
-        metadata:
-          additionalProperties:
-            anyOf:
-              - type: string
-                maxLength: 500
-                minLength: 1
-              - type: integer
-              - type: number
-              - type: boolean
-          propertyNames:
-            maxLength: 40
-            minLength: 1
-          type: object
-          maxProperties: 50
-          title: Metadata
-          description: |-
-            Key-value object allowing you to store additional information.
-
-            The key must be a string with a maximum length of **40 characters**.
-            The value must be either:
-
-            * A string with a maximum length of **500 characters**
-            * An integer
-            * A floating-point number
-            * A boolean
-
-            You can store up to **50 key-value pairs**.
-        trial_interval:
-          anyOf:
-            - $ref: '#/components/schemas/TrialInterval'
-            - type: 'null'
-          description: The interval unit for the trial period.
-        trial_interval_count:
-          anyOf:
-            - type: integer
-              maximum: 1000
-              minimum: 1
-            - type: 'null'
-          title: Trial Interval Count
-          description: The number of interval units for the trial period.
-        payment_processor:
-          type: string
-          const: stripe
-          title: Payment Processor
-          description: Payment processor to use. Currently only Stripe is supported.
-        label:
-          anyOf:
-            - type: string
-            - type: 'null'
-          title: Label
-          description: Optional label to distinguish links internally
-        allow_discount_codes:
-          type: boolean
-          title: Allow Discount Codes
-          description: >-
-            Whether to allow the customer to apply discount codes. If you apply
-            a discount through `discount_id`, it'll still be applied, but the
-            customer won't be able to change it.
-          default: true
-        require_billing_address:
-          type: boolean
-          title: Require Billing Address
-          description: >-
-            Whether to require the customer to fill their full billing address,
-            instead of just the country. Customers in the US will always be
-            required to fill their full address, regardless of this setting.
-          default: false
-        discount_id:
-          anyOf:
-            - type: string
-              format: uuid4
-            - type: 'null'
-          title: Discount Id
-          description: >-
-            ID of the discount to apply to the checkout. If the discount is not
-            applicable anymore when opening the checkout link, it'll be ignored.
-        seats:
-          anyOf:
-            - type: integer
-              maximum: 10000
-              minimum: 1
-            - type: 'null'
-          title: Seats
-          description: >-
-            Preconfigured number of seats for seat-based pricing. When set,
-            checkout sessions created from this link are locked to this number
-            of seats and the customer won't be able to change it. All products
-            on the link must use seat-based pricing and allow this number of
-            seats. If the products no longer accommodate this value when the
-            link is opened, it'll be ignored.
-        units:
-          anyOf:
-            - type: integer
-              maximum: 2147483647
-              minimum: 1
-            - type: 'null'
-          title: Units
-          description: >-
-            Preconfigured number of units for unit-based pricing. When set,
-            checkout sessions created from this link are locked to this number
-            of units and the customer won't be able to change it. All products
-            on the link must use unit-based pricing and allow this number of
-            units. If the products no longer accommodate this value when the
-            link is opened, it'll be ignored.
-        success_url:
-          anyOf:
-            - type: string
-              maxLength: 2083
-              minLength: 1
-              format: uri
-            - type: 'null'
-          title: Success Url
-          description: >-
-            URL where the customer will be redirected after a successful
-            payment.You can add the `checkout_id={CHECKOUT_ID}` query parameter
-            to retrieve the checkout session id.
-        return_url:
-          anyOf:
-            - type: string
-              maxLength: 2083
-              minLength: 1
-              format: uri
-            - type: 'null'
-          title: Return Url
-          description: >-
-            When set, a back button will be shown in the checkout to return to
-            this URL.
-        products:
-          items:
-            type: string
-            format: uuid4
-          type: array
-          minItems: 1
-          title: Products
-          description: List of products that will be available to select at checkout.
-      type: object
-      required:
-        - payment_processor
-        - products
-      title: CheckoutLinkCreateProducts
-      description: Schema to create a new checkout link.
     TrialInterval:
       type: string
       enum:
@@ -842,7 +555,6 @@ components:
         prices:
           items:
             oneOf:
-              - $ref: '#/components/schemas/LegacyRecurringProductPrice'
               - $ref: '#/components/schemas/ProductPrice'
           type: array
           title: Prices
@@ -1446,15 +1158,6 @@ components:
         - month
         - year
       title: RecurringInterval
-    LegacyRecurringProductPrice:
-      oneOf:
-        - $ref: '#/components/schemas/LegacyRecurringProductPriceFixed'
-        - $ref: '#/components/schemas/LegacyRecurringProductPriceCustom'
-      discriminator:
-        propertyName: amount_type
-        mapping:
-          custom: '#/components/schemas/LegacyRecurringProductPriceCustom'
-          fixed: '#/components/schemas/LegacyRecurringProductPriceFixed'
     ProductPrice:
       oneOf:
         - $ref: '#/components/schemas/ProductPriceFixed'
@@ -1604,204 +1307,6 @@ components:
         - fixed
         - percentage
       title: DiscountType
-    LegacyRecurringProductPriceFixed:
-      properties:
-        created_at:
-          type: string
-          format: date-time
-          title: Created At
-          description: Creation timestamp of the object.
-          examples:
-            - '2026-01-01T00:00:00.000000Z'
-        modified_at:
-          anyOf:
-            - type: string
-              format: date-time
-              examples:
-                - '2026-01-01T00:00:00.000000Z'
-            - type: 'null'
-          title: Modified At
-          description: Last modification timestamp of the object.
-        id:
-          type: string
-          format: uuid4
-          title: Id
-          description: The ID of the price.
-        source:
-          $ref: '#/components/schemas/ProductPriceSource'
-          description: >-
-            The source of the price . `catalog` is a predefined price, while
-            `ad_hoc` is a price created dynamically on a Checkout session.
-        amount_type:
-          type: string
-          const: fixed
-          title: Amount Type
-        price_currency:
-          type: string
-          title: Price Currency
-          description: The currency in which the customer will be charged.
-        tax_behavior:
-          anyOf:
-            - $ref: '#/components/schemas/TaxBehaviorOption'
-            - type: 'null'
-          description: >-
-            The tax behavior of the price. If null, it defaults to the
-            organization's default tax behavior.
-        is_archived:
-          type: boolean
-          title: Is Archived
-          description: Whether the price is archived and no longer available.
-        product_id:
-          type: string
-          format: uuid4
-          title: Product Id
-          description: The ID of the product owning the price.
-        type:
-          type: string
-          const: recurring
-          title: Type
-          description: The type of the price.
-        recurring_interval:
-          $ref: '#/components/schemas/RecurringInterval'
-          description: The recurring interval of the price.
-        price_amount:
-          type: integer
-          title: Price Amount
-          description: The price in cents.
-        legacy:
-          type: boolean
-          const: true
-          title: Legacy
-          readOnly: true
-      type: object
-      required:
-        - created_at
-        - modified_at
-        - id
-        - source
-        - amount_type
-        - price_currency
-        - tax_behavior
-        - is_archived
-        - product_id
-        - type
-        - recurring_interval
-        - price_amount
-        - legacy
-      title: LegacyRecurringProductPriceFixed
-      description: >-
-        A recurring price for a product, i.e. a subscription.
-
-
-        **Deprecated**: The recurring interval should be set on the product
-        itself.
-    LegacyRecurringProductPriceCustom:
-      properties:
-        created_at:
-          type: string
-          format: date-time
-          title: Created At
-          description: Creation timestamp of the object.
-          examples:
-            - '2026-01-01T00:00:00.000000Z'
-        modified_at:
-          anyOf:
-            - type: string
-              format: date-time
-              examples:
-                - '2026-01-01T00:00:00.000000Z'
-            - type: 'null'
-          title: Modified At
-          description: Last modification timestamp of the object.
-        id:
-          type: string
-          format: uuid4
-          title: Id
-          description: The ID of the price.
-        source:
-          $ref: '#/components/schemas/ProductPriceSource'
-          description: >-
-            The source of the price . `catalog` is a predefined price, while
-            `ad_hoc` is a price created dynamically on a Checkout session.
-        amount_type:
-          type: string
-          const: custom
-          title: Amount Type
-        price_currency:
-          type: string
-          title: Price Currency
-          description: The currency in which the customer will be charged.
-        tax_behavior:
-          anyOf:
-            - $ref: '#/components/schemas/TaxBehaviorOption'
-            - type: 'null'
-          description: >-
-            The tax behavior of the price. If null, it defaults to the
-            organization's default tax behavior.
-        is_archived:
-          type: boolean
-          title: Is Archived
-          description: Whether the price is archived and no longer available.
-        product_id:
-          type: string
-          format: uuid4
-          title: Product Id
-          description: The ID of the product owning the price.
-        type:
-          type: string
-          const: recurring
-          title: Type
-          description: The type of the price.
-        recurring_interval:
-          $ref: '#/components/schemas/RecurringInterval'
-          description: The recurring interval of the price.
-        minimum_amount:
-          type: integer
-          title: Minimum Amount
-          description: >-
-            The minimum amount the customer can pay. If 0, the price is 'free or
-            pay what you want'.
-        maximum_amount:
-          anyOf:
-            - type: integer
-            - type: 'null'
-          title: Maximum Amount
-          description: The maximum amount the customer can pay.
-        preset_amount:
-          anyOf:
-            - type: integer
-            - type: 'null'
-          title: Preset Amount
-          description: The initial amount shown to the customer.
-        legacy:
-          type: boolean
-          const: true
-          title: Legacy
-          readOnly: true
-      type: object
-      required:
-        - created_at
-        - modified_at
-        - id
-        - source
-        - amount_type
-        - price_currency
-        - tax_behavior
-        - is_archived
-        - product_id
-        - type
-        - recurring_interval
-        - minimum_amount
-        - maximum_amount
-        - preset_amount
-        - legacy
-      title: LegacyRecurringProductPriceCustom
-      description: >-
-        A pay-what-you-want recurring price for a product, i.e. a subscription.
-
-
-        **Deprecated**: The recurring interval should be set on the product
-        itself.
     ProductPriceFixed:
       properties:
         created_at:
