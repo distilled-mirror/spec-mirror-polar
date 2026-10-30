@@ -269,6 +269,20 @@ for payments it processes.
 > Polar usually accepts the request within one business day. Stripe then moves
 > the card data, usually within a few hours and sometimes up to 72 hours.
 
+> **Finished and inactive migrations**
+>
+> Polar deletes the Stripe API key it stored when a migration ends:
+>
+> * **Completed:** the switch finished, with every subscription moved,
+>   skipped, or failed.
+> * **Closed:** the migration had no activity for 90 days. Polar also removes
+>   the records still waiting to be imported. Skipped and failed records are
+>   kept.
+>
+> The key stays active in Stripe, so revoke it there if you no longer need
+> it. You can no longer switch subscriptions from a completed or closed
+> migration. To move subscriptions still on Stripe, start a new migration.
+
 > **Checklist for your application**
 >
 > Every integration is different. Before removing your Stripe code, confirm:

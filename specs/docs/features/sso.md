@@ -34,21 +34,27 @@ Polar only accepts an identity whose email address your provider marks as verifi
 
 ## Setting up a connection
 
-**1. Add the connection in Polar**
+You can only add a connection once you've verified a domain you own, so start there.
+
+**1. Verify your email domain**
+
+Go to [**Settings → Domains**](https://polar.sh/to/dashboard/settings/domains), enter the domain of your team's email addresses, and click **Add**. Add the TXT record shown to your DNS, then click **Verify**.
+
+**2. Add the connection in Polar**
 
 Go to [**Settings → SSO**](https://polar.sh/to/dashboard/settings/sso) and click **Add connection**. Pick **Google Workspace** or **Custom OIDC provider**.
 
-**2. Register the callback URL**
+**3. Register the callback URL**
 
 Copy the **Callback URL** shown at the top of the form and register it as a redirect URI in your identity provider.
 
-**3. Fill in the provider details**
+**4. Fill in the provider details**
 
 Enter the **Issuer URL** and **Client ID** from your provider. You can paste the discovery URL into the issuer field — Polar strips the `/.well-known/openid-configuration` suffix.
 
 For **Client secret** authentication, paste the secret. For **Private key JWT**, copy the **JWKS URL** into your provider so it can fetch Polar's public keys.
 
-**4. Enable it**
+**5. Enable it**
 
 Connections are created disabled. Once your provider is configured, click **Enable** on the connection row.
 
@@ -64,7 +70,9 @@ Polar sets `response_type`, `client_id`, `redirect_uri`, `scope`, `state`, `nonc
 
 By default, members can sign in either through SSO or through the standard methods — email code, Google, GitHub, or Apple. Enforcing SSO removes the alternatives: members reach your organization only through your identity provider.
 
-To enforce it, you need an enabled connection, and you must already be signed in through this organization's SSO. That proves the connection works before it becomes the only way in.
+To enforce it, you need an enabled connection and a verified domain, and you must already be signed in through this organization's SSO. That proves the connection works before it becomes the only way in.
+
+Once SSO is enforced, anyone who signs in with an email address on your verified domain goes straight to your identity provider. With several connections, they pick one on your organization's SSO sign-in page.
 
 > [!WARNING]
 >
