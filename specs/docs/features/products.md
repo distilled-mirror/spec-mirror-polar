@@ -46,7 +46,7 @@ Polar picks the currency based on the customer's geolocation at checkout. If the
 >
 > Forward the customer's IP as [`customer_ip_address`](https://polar.sh/docs/features/checkout/session#customer-ip-address) when creating the session.
 
-> **Supported currencies**
+> [accordion] Supported currencies
 >
 > Polar supports 130+ currencies for product pricing:
 >
@@ -241,29 +241,29 @@ A product without an order, subscription, trial or discount can be permanently d
 
 ## FAQ
 
-> **What about variants? Can I sell a monthly and a yearly version of the same product?**
+> [accordion] What about variants? Can I sell a monthly and a yearly version of the same product?
 >
 > Polar takes a different approach to what the industry typically calls **variants**. Each product has a single pricing model, and instead of bolting variants onto one product, you create one product per pricing model and showcase them together at checkout.
 >
 > So a "monthly" and "yearly" plan are two products, each with their own pricing and benefits, presented side-by-side via [Checkout Links](https://polar.sh/docs/features/checkout/links.md) or the [Checkout Session API](https://polar.sh/docs/features/checkout/session.md). It keeps the API and the data model clean, and gives you full freedom over what each option includes.
 
-> **Can I change the price of a product after publishing it?**
+> [accordion] Can I change the price of a product after publishing it?
 >
 > Yes, for fixed-price products. Existing subscribers are grandfathered onto their original price and only new purchases see the updated amount — but you can move individual subscribers onto the new price [per subscription](https://polar.sh/docs/features/subscriptions/manage.md) if you want. Billing cycle and pricing type can't change.
 
-> **Can I sell usage-based or metered products?**
+> [accordion] Can I sell usage-based or metered products?
 >
 > Yes. Set the price type to **Metered** and link it to a meter that tracks the events you care about. Full walkthrough in the [usage-based billing guide](https://polar.sh/docs/features/usage-based-billing/introduction.md).
 
-> **Can I sell team or per-seat plans?**
+> [accordion] Can I sell team or per-seat plans?
 >
 > Yes, via [seat-based pricing](https://polar.sh/docs/features/seat-based-pricing.md). The buyer purchases a number of seats and assigns them to teammates, who each get the product's benefits.
 
-> **Will customers see prices in their local currency?**
+> [accordion] Will customers see prices in their local currency?
 >
 > If you've enabled additional payment currencies on the product, yes — Polar matches the customer's geolocation to one of the enabled currencies. If there's no match, it falls back to your organization's default. See [Multiple payment currencies](#multiple-payment-currencies) above.
 
-> **Can I duplicate a product?**
+> [accordion] Can I duplicate a product?
 >
 > Yes. From the product list or the product menu, pick **Duplicate Product** to clone all the settings into a new draft you can tweak before saving.
 

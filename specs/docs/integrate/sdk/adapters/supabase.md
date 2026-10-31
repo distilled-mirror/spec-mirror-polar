@@ -25,29 +25,29 @@
 
 Install the required Polar packages using the following command:
 
-**npm**
+> [tab] npm
+>
+> ```bash Terminal theme={null}
+> npm install zod @polar-sh/supabase
+> ```
 
-```bash Terminal theme={null}
-npm install zod @polar-sh/supabase
-```
+> [tab] yarn
+>
+> ```bash Terminal theme={null}
+> yarn add zod @polar-sh/supabase
+> ```
 
-**yarn**
+> [tab] pnpm
+>
+> ```bash Terminal theme={null}
+> pnpm add zod @polar-sh/supabase
+> ```
 
-```bash Terminal theme={null}
-yarn add zod @polar-sh/supabase
-```
-
-**pnpm**
-
-```bash Terminal theme={null}
-pnpm add zod @polar-sh/supabase
-```
-
-**bun**
-
-```bash Terminal theme={null}
-bun add zod @polar-sh/supabase
-```
+> [tab] bun
+>
+> ```bash Terminal theme={null}
+> bun add zod @polar-sh/supabase
+> ```
 
 ## Checkout
 

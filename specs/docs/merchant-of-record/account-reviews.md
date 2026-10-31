@@ -75,11 +75,11 @@ We aim to work with you on the best path forward, but for compliance and risk re
 
 ## FAQ
 
-> **Why is my account under review again?**
+> [accordion] Why is my account under review again?
 >
 > Your account may go through multiple reviews as your business grows. We perform [continuous reviews](#continuous-reviews) at certain sales thresholds to maintain platform integrity and prevent fraud. This is a standard practice across payment platforms and is part of our ongoing risk management process.
 
-> **Why do you need my social media in settings?**
+> [accordion] Why do you need my social media in settings?
 >
 > We request social media information as part of our identity verification and fraud prevention processes. This helps us:
 >
@@ -89,17 +89,17 @@ We aim to work with you on the best path forward, but for compliance and risk re
 >
 > Providing accurate social media information helps speed up the review process and demonstrates the legitimacy of your business.
 
-> **Are social media settings visible publicly?**
+> [accordion] Are social media settings visible publicly?
 >
 > No, your social media settings are not publicly visible. This information is used internally for verification and compliance purposes only. We treat all merchant information with strict confidentiality and use it solely for risk assessment and account review processes.
 
-> **Why do I need to share a video recording showing the product working?**
+> [accordion] Why do I need to share a video recording showing the product working?
 >
 > To help us verify that everything is working correctly in line with our acceptable use policy, our team would ask you to share a 100% discount code by email. This is our preferred method, as it allows the team to go through the full journey themselves and confirm the automated fulfillment from an unpaid user to a paid user.
 >
 > Alternatively, you can provide a video recording that clearly shows the complete flow from an unpaid user to a paid user, including how the product is automatically accessible after purchase.
 
-> **How do I transfer my organization to a new admin?**
+> [accordion] How do I transfer my organization to a new admin?
 >
 > To transfer admin ownership of an organization:
 >

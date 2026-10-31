@@ -25,29 +25,29 @@
 
 Install the required Polar packages using the following command:
 
-**npm**
+> [tab] npm
+>
+> ```bash Terminal theme={null}
+> npm install zod @polar-sh/hono
+> ```
 
-```bash Terminal theme={null}
-npm install zod @polar-sh/hono
-```
+> [tab] yarn
+>
+> ```bash Terminal theme={null}
+> yarn add zod @polar-sh/hono
+> ```
 
-**yarn**
+> [tab] pnpm
+>
+> ```bash Terminal theme={null}
+> pnpm add zod @polar-sh/hono
+> ```
 
-```bash Terminal theme={null}
-yarn add zod @polar-sh/hono
-```
-
-**pnpm**
-
-```bash Terminal theme={null}
-pnpm add zod @polar-sh/hono
-```
-
-**bun**
-
-```bash Terminal theme={null}
-bun add zod @polar-sh/hono
-```
+> [tab] bun
+>
+> ```bash Terminal theme={null}
+> bun add zod @polar-sh/hono
+> ```
 
 ## Checkout
 

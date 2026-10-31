@@ -6,20 +6,20 @@
 
 > Official SDK quickstarts, base URLs, authentication, pagination, rate limits, and API concepts
 
-> **Production Base URL**
+> [card] Production Base URL
 >
 > `https://api.polar.sh/v1`
 
-> **Sandbox Base URL**
+> [card] Sandbox Base URL
 >
 > `https://sandbox-api.polar.sh/v1`
 
-> **[Auth (Organization)](https://polar.sh/docs/integrate/oat)**
+> [card] [Auth (Organization)](https://polar.sh/docs/integrate/oat)
 >
 > Use an **Organization Access Token (OAT)** in the `Authorization: Bearer`
 > header
 
-> **[Auth (Customer Portal)](https://polar.sh/docs/api-reference/2027-01/customer-sessions/create-customer-session.md)**
+> [card] [Auth (Customer Portal)](https://polar.sh/docs/api-reference/2027-01/customer-sessions/create-customer-session.md)
 >
 > Use a **Customer Access Token** created via `/v1/customer-sessions/`
 
@@ -29,43 +29,43 @@ Use our new, fully typed SDKs to integrate with the Polar API from TypeScript or
 
 Create an [organization access token](https://polar.sh/docs/integrate/oat), then install the SDK and make your first request:
 
-**TypeScript**
+> [tab] TypeScript
+>
+> ```bash npm theme={null}
+> npm install @polar-sh/sdk
+> ```
+>
+> ```typescript app.ts theme={null}
+> import { createPolar } from "@polar-sh/sdk/2027-01";
+>
+> const polar = createPolar({
+>   accessToken: process.env.POLAR_ACCESS_TOKEN!,
+> });
+>
+> const customerState = await polar.customers.getStateExternal("customer_external_id");
+> console.log(customerState);
+> ```
 
-```bash npm theme={null}
-npm install @polar-sh/sdk
-```
-
-```typescript app.ts theme={null}
-import { createPolar } from "@polar-sh/sdk/2027-01";
-
-const polar = createPolar({
-  accessToken: process.env.POLAR_ACCESS_TOKEN!,
-});
-
-const customerState = await polar.customers.getStateExternal("customer_external_id");
-console.log(customerState);
-```
-
-**Python**
-
-```bash uv theme={null}
-uv add polar-sdk
-```
-
-```bash pip theme={null}
-pip install polar-sdk
-```
-
-```python main.py theme={null}
-import os
-
-from polar.v2027_01 import Polar
-
-polar = Polar(os.environ["POLAR_ACCESS_TOKEN"])
-
-customer_state = polar.customers.get_state_external("customer_external_id")
-print(customer_state)
-```
+> [tab] Python
+>
+> ```bash uv theme={null}
+> uv add polar-sdk
+> ```
+>
+> ```bash pip theme={null}
+> pip install polar-sdk
+> ```
+>
+> ```python main.py theme={null}
+> import os
+>
+> from polar.v2027_01 import Polar
+>
+> polar = Polar(os.environ["POLAR_ACCESS_TOKEN"])
+>
+> customer_state = polar.customers.get_state_external("customer_external_id")
+> print(customer_state)
+> ```
 
 Both clients use production by default. Pass `environment="sandbox"` in Python or `environment: "sandbox"` in TypeScript to use the [sandbox environment](https://polar.sh/docs/integrate/sandbox.md).
 

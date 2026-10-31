@@ -18,93 +18,93 @@ Use the production server at `https://mcp.polar.sh/mcp/polar-mcp` for your live 
 
 Choose your client and add the appropriate server.
 
-**Cursor**
+> [tab] Cursor
+>
+> Add the following to `.cursor/mcp.json` in your project, or to `~/.cursor/mcp.json` to make Polar available in every project:
+>
+> ```json theme={null}
+> {
+>   "mcpServers": {
+>     "polar": {
+>       "url": "https://mcp.polar.sh/mcp/polar-mcp"
+>     }
+>   }
+> }
+> ```
+>
+> Open Cursor's MCP settings and connect to `polar` to complete authorization.
 
-Add the following to `.cursor/mcp.json` in your project, or to `~/.cursor/mcp.json` to make Polar available in every project:
+> [tab] Claude Code
+>
+> Run:
+>
+> ```bash theme={null}
+> claude mcp add --transport http polar https://mcp.polar.sh/mcp/polar-mcp
+> ```
+>
+> Then open `/mcp` in Claude Code and authenticate `polar` with OAuth.
 
-```json theme={null}
-{
-  "mcpServers": {
-    "polar": {
-      "url": "https://mcp.polar.sh/mcp/polar-mcp"
-    }
-  }
-}
-```
+> [tab] ChatGPT
+>
+> In ChatGPT, open **Settings** → **Connectors**, enable developer mode if prompted, and add a custom connector with:
+>
+> * **Name:** `Polar`
+> * **MCP server URL:** `https://mcp.polar.sh/mcp/polar-mcp`
+>
+> Save the connector, select **Connect**, and complete authorization in the browser.
 
-Open Cursor's MCP settings and connect to `polar` to complete authorization.
+> [tab] Claude Desktop
+>
+> Open **Settings** → **Connectors**, select **Add custom connector**, and enter:
+>
+> * **Name:** `Polar`
+> * **MCP server URL:** `https://mcp.polar.sh/mcp/polar-mcp`
+>
+> Save the connector, select **Connect**, and complete authorization in the browser.
 
-**Claude Code**
+> [tab] Codex
+>
+> Run:
+>
+> ```bash theme={null}
+> codex mcp add "polar" --url "https://mcp.polar.sh/mcp/polar-mcp"
+> ```
+>
+> Complete the OAuth authorization when prompted.
 
-Run:
+> [tab] OpenCode
+>
+> Run:
+>
+> ```bash theme={null}
+> opencode mcp add polar --url https://mcp.polar.sh/mcp/polar-mcp
+> ```
+>
+> Complete the OAuth authorization when prompted.
 
-```bash theme={null}
-claude mcp add --transport http polar https://mcp.polar.sh/mcp/polar-mcp
-```
-
-Then open `/mcp` in Claude Code and authenticate `polar` with OAuth.
-
-**ChatGPT**
-
-In ChatGPT, open **Settings** → **Connectors**, enable developer mode if prompted, and add a custom connector with:
-
-* **Name:** `Polar`
-* **MCP server URL:** `https://mcp.polar.sh/mcp/polar-mcp`
-
-Save the connector, select **Connect**, and complete authorization in the browser.
-
-**Claude Desktop**
-
-Open **Settings** → **Connectors**, select **Add custom connector**, and enter:
-
-* **Name:** `Polar`
-* **MCP server URL:** `https://mcp.polar.sh/mcp/polar-mcp`
-
-Save the connector, select **Connect**, and complete authorization in the browser.
-
-**Codex**
-
-Run:
-
-```bash theme={null}
-codex mcp add "polar" --url "https://mcp.polar.sh/mcp/polar-mcp"
-```
-
-Complete the OAuth authorization when prompted.
-
-**OpenCode**
-
-Run:
-
-```bash theme={null}
-opencode mcp add polar --url https://mcp.polar.sh/mcp/polar-mcp
-```
-
-Complete the OAuth authorization when prompted.
-
-**Other clients**
-
-If your client accepts a remote MCP URL, add:
-
-```text theme={null}
-https://mcp.polar.sh/mcp/polar-mcp
-```
-
-If it only supports local commands, use the `mcp-remote` bridge:
-
-```json theme={null}
-{
-  "mcpServers": {
-    "polar": {
-      "command": "npx",
-      "args": [
-        "mcp-remote",
-        "https://mcp.polar.sh/mcp/polar-mcp"
-      ]
-    }
-  }
-}
-```
+> [tab] Other clients
+>
+> If your client accepts a remote MCP URL, add:
+>
+> ```text theme={null}
+> https://mcp.polar.sh/mcp/polar-mcp
+> ```
+>
+> If it only supports local commands, use the `mcp-remote` bridge:
+>
+> ```json theme={null}
+> {
+>   "mcpServers": {
+>     "polar": {
+>       "command": "npx",
+>       "args": [
+>         "mcp-remote",
+>         "https://mcp.polar.sh/mcp/polar-mcp"
+>       ]
+>     }
+>   }
+> }
+> ```
 
 ## How the tools work
 
@@ -154,7 +154,7 @@ To opt out, add `?telemetry=false` (or `0`, `no`, `off`) to the server URL, for 
 
 ## Available operations
 
-> **Available operations (103)**
+> [accordion] Available operations (103)
 >
 > | Operation | Description |
 > | - | - |

@@ -216,6 +216,15 @@ components:
           format: uuid4
           title: Organization Id
           description: The ID of the organization owning the product.
+        catalog_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Catalog Id
+          description: >-
+            ID of the catalog that introduced this version of the product. None
+            for products not managed by declarative config.
         external_id:
           anyOf:
             - type: string
@@ -277,6 +286,7 @@ components:
         - is_recurring
         - is_archived
         - organization_id
+        - catalog_id
         - external_id
         - metadata
         - is_deletable

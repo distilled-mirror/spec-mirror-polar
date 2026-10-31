@@ -21,11 +21,11 @@ The customer state object contains:
 
 Thus, with that single object, you have all the required information to check if you should provision access to your service or not.
 
-> **[Get Customer State by External ID](https://polar.sh/docs/api-reference/current/customers/get-customer-state-by-external-id.md)**
+> [card] [Get Customer State by External ID](https://polar.sh/docs/api-reference/current/customers/get-customer-state-by-external-id.md)
 >
 > One endpoint to rule them all, using your own customer ID.
 
-> **[Get Customer State](https://polar.sh/docs/api-reference/current/customers/get-customer-state.md)**
+> [card] [Get Customer State](https://polar.sh/docs/api-reference/current/customers/get-customer-state.md)
 >
 > The same one, but with internal Polar customer ID.
 
@@ -39,7 +39,7 @@ To be notified of the customer state changes, you can listen to the `customer.st
 
 By subscribing to this webhook event, you keep your system up-to-date and update your customer's access accordingly.
 
-> **[customer.state\_changed](https://polar.sh/docs/api-reference/current/customer_state_changed.md)**
+> [card] [customer.state\_changed](https://polar.sh/docs/api-reference/current/customer_state_changed.md)
 >
 > One webhook to rule them all.
 

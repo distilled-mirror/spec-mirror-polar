@@ -32,22 +32,22 @@ The Customer Portal isn't just a convenience feature — it's a critical piece o
 
 ## Next steps
 
-> **[Navigate customers to the portal](https://polar.sh/docs/features/customer-portal/navigate-customers.md)**
+> [card] [Navigate customers to the portal](https://polar.sh/docs/features/customer-portal/navigate-customers.md)
 >
 > Use the default portal URL, generate authenticated links, or rely on the
 > emails Polar already sends.
 
-> **[Customer portal settings](https://polar.sh/docs/features/customer-portal/settings.md)**
+> [card] [Customer portal settings](https://polar.sh/docs/features/customer-portal/settings.md)
 >
 > Configure what your customers can do from the portal under Settings → Customer Portal.
 
-> **[Customer Portal API](https://polar.sh/docs/api-reference/current/customer_portal/get-customer.md)**
+> [card] [Customer Portal API](https://polar.sh/docs/api-reference/current/customer_portal/get-customer.md)
 >
 > Build your own portal experience on top of the Customer Portal API.
 
 ## FAQ
 
-> **Can I disable the Customer Portal completely?**
+> [accordion] Can I disable the Customer Portal completely?
 >
 > **No.** The Customer Portal is always available for your customers, and it
 > can't be turned off.
@@ -67,7 +67,7 @@ The Customer Portal isn't just a convenience feature — it's a critical piece o
 > from the portal — for example, disabling subscription plan changes or email
 > edits.
 
-> **Can I customize the look and feel of the Customer Portal?**
+> [accordion] Can I customize the look and feel of the Customer Portal?
 >
 > Not the hosted portal at `polar.sh/<your-org-slug>/portal` — it's
 > intentionally consistent across all Polar organizations.
@@ -86,7 +86,7 @@ The Customer Portal isn't just a convenience feature — it's a critical piece o
 > > details never touch your servers. Customers you send into a custom portal
 > > will still need the hosted one to recover from failed payments.
 
-> **How do customers sign in to the portal?**
+> [accordion] How do customers sign in to the portal?
 >
 > By default, customers authenticate with the email address they used to
 > purchase or subscribe — Polar emails them a one-time code to confirm.
@@ -95,7 +95,7 @@ The Customer Portal isn't just a convenience feature — it's a critical piece o
 > link from your own application. See [Navigate customers to the portal](https://polar.sh/docs/features/customer-portal/navigate-customers.md)
 > for details.
 
-> **Do I need to send customers a link to the portal myself?**
+> [accordion] Do I need to send customers a link to the portal myself?
 >
 > You don't have to. Polar already includes a link to the Customer Portal in
 > the transactional emails it sends — order confirmations, subscription
@@ -104,7 +104,7 @@ The Customer Portal isn't just a convenience feature — it's a critical piece o
 > You may still want to link to it from your own app for convenience, but
 > it's not required for customers to be able to reach it.
 
-> **What happens if a customer's payment method fails?**
+> [accordion] What happens if a customer's payment method fails?
 >
 > The customer receives an email from Polar letting them know, with a link to
 > the Customer Portal where they can update their default payment method.

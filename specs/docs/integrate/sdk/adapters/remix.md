@@ -25,29 +25,29 @@
 
 Install the required Polar packages using the following command:
 
-**npm**
+> [tab] npm
+>
+> ```bash Terminal theme={null}
+> npm install zod @polar-sh/remix
+> ```
 
-```bash Terminal theme={null}
-npm install zod @polar-sh/remix
-```
+> [tab] yarn
+>
+> ```bash Terminal theme={null}
+> yarn add zod @polar-sh/remix
+> ```
 
-**yarn**
+> [tab] pnpm
+>
+> ```bash Terminal theme={null}
+> pnpm add zod @polar-sh/remix
+> ```
 
-```bash Terminal theme={null}
-yarn add zod @polar-sh/remix
-```
-
-**pnpm**
-
-```bash Terminal theme={null}
-pnpm add zod @polar-sh/remix
-```
-
-**bun**
-
-```bash Terminal theme={null}
-bun add zod @polar-sh/remix
-```
+> [tab] bun
+>
+> ```bash Terminal theme={null}
+> bun add zod @polar-sh/remix
+> ```
 
 ## Checkout
 

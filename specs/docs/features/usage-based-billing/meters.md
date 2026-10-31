@@ -77,7 +77,7 @@ For example, if you want to count the number of events that match the filter, yo
 * **Maximum** — Computes the maximum value of a property.
 * **Unique** — Counts the number of unique values of a property.
 
-> **Example**
+> [accordion] Example
 >
 > Consider the following events:
 >

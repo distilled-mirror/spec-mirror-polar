@@ -10,15 +10,15 @@ The Polar CLI brings your Polar organization to your terminal. Use it to receive
 webhooks on your local machine while you build, send realistic sample events to
 your handler, and switch between your sandbox and production organizations.
 
-> **[Authentication](https://polar.sh/docs/integrate/cli/authentication.md)**
+> [card] [Authentication](https://polar.sh/docs/integrate/cli/authentication.md)
 >
 > Sign in to sandbox and production, and choose the organization you work on.
 
-> **[Webhooks](https://polar.sh/docs/integrate/cli/webhooks.md)**
+> [card] [Webhooks](https://polar.sh/docs/integrate/cli/webhooks.md)
 >
 > Receive real webhooks locally and trigger sample events on demand.
 
-> **[Command reference](https://polar.sh/docs/integrate/cli/reference.md)**
+> [card] [Command reference](https://polar.sh/docs/integrate/cli/reference.md)
 >
 > Every command, argument and flag.
 

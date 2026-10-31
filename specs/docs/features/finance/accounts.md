@@ -37,19 +37,19 @@ From [**Finance → Account → Manage payout accounts**](https://polar.sh/to/da
 
 Stripe Connect requires the bank account you connect to be in the **same country as the business** and to use that country's **local currency**. This is a Stripe (and underlying banking network) requirement that Polar cannot override.
 
-> **Can I have my company registered in Ireland but use a US bank account for payouts?**
+> [accordion] Can I have my company registered in Ireland but use a US bank account for payouts?
 >
 > No. Stripe Connect requires a bank account in the same country as the business, in the local currency. An Irish company must connect an Irish (EUR) bank account; a US company must connect a US (USD) bank account, and so on.
 
-> **Can I use Wise, Payoneer, Revolut, or another virtual account to receive payouts?**
+> [accordion] Can I use Wise, Payoneer, Revolut, or another virtual account to receive payouts?
 >
 > Only if the virtual account provides a real bank account in the same country as your registered business, in the local currency, and is accepted by Stripe. Most multi-currency or "borderless" accounts (Wise, Payoneer, Revolut, etc.) do not satisfy Stripe's verification for Connect payouts. If Stripe rejects the account during onboarding, you'll need to use a domestic bank account instead.
 
-> **My business is in country A but I live in country B. Which one do I pick?**
+> [accordion] My business is in country A but I live in country B. Which one do I pick?
 >
 > Pick the country where the business is legally registered for tax purposes. For a personal account, pick your country of residence.
 
-> **My country isn't in the list. Can I still receive payouts?**
+> [accordion] My country isn't in the list. Can I still receive payouts?
 >
 > Polar supports the countries listed in our [supported countries for payouts](https://polar.sh/docs/merchant-of-record/supported-countries.md#payouts). If yours isn't listed during onboarding, we can't currently issue payouts there.
 

@@ -15,17 +15,17 @@ sandbox and production at the same time.
 Every login targets one environment. Pass the environment as a flag, or run the
 command without one in a terminal and the CLI will ask:
 
-**Sandbox**
+> [tab] Sandbox
+>
+> ```bash Terminal theme={null}
+> polar auth login --sandbox
+> ```
 
-```bash Terminal theme={null}
-polar auth login --sandbox
-```
-
-**Production**
-
-```bash Terminal theme={null}
-polar auth login --production
-```
+> [tab] Production
+>
+> ```bash Terminal theme={null}
+> polar auth login --production
+> ```
 
 Your browser opens on Polar's authorization page. Approve the request and
 return to the terminal. If a session already exists for that environment, the

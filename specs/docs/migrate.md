@@ -230,7 +230,7 @@ for payments it processes.
 
 ## Migration details
 
-> **Subscriptions that need attention**
+> [accordion] Subscriptions that need attention
 >
 > Polar shows why a record cannot move automatically. Common examples include:
 >
@@ -259,7 +259,7 @@ for payments it processes.
 > one. Otherwise its first Polar renewal fails and the customer is asked to add
 > a card.
 
-> **Saved card transfer**
+> [accordion] Saved card transfer
 >
 > Only the owner of your Stripe account can start the account-to-account copy.
 > In Polar, download the customer mapping file and copy the provided destination
@@ -269,7 +269,7 @@ for payments it processes.
 > Polar usually accepts the request within one business day. Stripe then moves
 > the card data, usually within a few hours and sometimes up to 72 hours.
 
-> **Finished and inactive migrations**
+> [accordion] Finished and inactive migrations
 >
 > Polar deletes the Stripe API key it stored when a migration ends:
 >
@@ -283,7 +283,7 @@ for payments it processes.
 > it. You can no longer switch subscriptions from a completed or closed
 > migration. To move subscriptions still on Stripe, start a new migration.
 
-> **Checklist for your application**
+> [accordion] Checklist for your application
 >
 > Every integration is different. Before removing your Stripe code, confirm:
 >

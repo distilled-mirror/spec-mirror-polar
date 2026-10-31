@@ -88,29 +88,29 @@ You can stop enforcing at any time from the same screen.
 
 ## Frequently asked questions
 
-> **Do members need a Polar account before their first sign-in?**
+> [accordion] Do members need a Polar account before their first sign-in?
 >
 > No. Polar creates the account on their first sign-in through your connection, and adds them to your organization.
 
-> **What happens to someone who already has a Polar account?**
+> [accordion] What happens to someone who already has a Polar account?
 >
 > They keep it. Signing in through your connection adds your organization to their existing account — it doesn't create a second one, and it doesn't give your organization access to anything else they own.
 
-> **Can I still invite members by email?**
+> [accordion] Can I still invite members by email?
 >
 > Yes, as long as you don't enforce SSO. [Invitations](https://polar.sh/docs/features/team-management.md#inviting-a-member) work alongside it, which is useful for contractors who aren't in your identity provider.
 >
 > Once you enforce SSO, invitations stop being a way in. The invited person becomes a member, but reaching your organization requires signing in through your identity provider. Add them there instead.
 
-> **Can I use more than one identity provider?**
+> [accordion] Can I use more than one identity provider?
 >
 > Yes. Add a connection per provider. Each one appears as a separate button on your organization's sign-in page, so give them names.
 
-> **How do I remove someone's access?**
+> [accordion] How do I remove someone's access?
 >
 > Revoke their access to the Polar application in your identity provider. Removing them in Polar alone doesn't stop them from rejoining on their next sign-in.
 
-> **What happens if I leave the Scale plan?**
+> [accordion] What happens if I leave the Scale plan?
 >
 > SSO turns off, and enforcement is lifted with it, so your members sign in with the standard methods again. Your connections are kept — upgrading to Scale again restores them as they were. Everyone who joined through SSO stays a member.
 

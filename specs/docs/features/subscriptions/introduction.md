@@ -57,27 +57,27 @@ There are two ways a subscription can come into existence:
 
 ## Next steps
 
-> **[Managing subscriptions](https://polar.sh/docs/features/subscriptions/manage.md)**
+> [card] [Managing subscriptions](https://polar.sh/docs/features/subscriptions/manage.md)
 >
 > Change plans, seats, trials, billing dates, cancel or revoke — from the
 > dashboard or the API.
 
-> **[Proration](https://polar.sh/docs/features/subscriptions/proration.md)**
+> [card] [Proration](https://polar.sh/docs/features/subscriptions/proration.md)
 >
 > Control how the price difference is handled when a subscription is upgraded
 > or downgraded.
 
-> **[Recovering failed payments](https://polar.sh/docs/features/subscriptions/failed-payments.md)**
+> [card] [Recovering failed payments](https://polar.sh/docs/features/subscriptions/failed-payments.md)
 >
 > How Polar retries failed renewals and when benefits are revoked.
 
-> **[Subscriptions API](https://polar.sh/docs/api-reference/current/subscriptions/list-subscriptions.md)**
+> [card] [Subscriptions API](https://polar.sh/docs/api-reference/current/subscriptions/list-subscriptions.md)
 >
 > List, create, update, and revoke subscriptions programmatically.
 
 ## FAQ
 
-> **What's the difference between a subscription and a product?**
+> [accordion] What's the difference between a subscription and a product?
 >
 > A product is the thing you're selling — name, description, benefits,
 > pricing. A subscription is one specific customer's ongoing relationship
@@ -87,7 +87,7 @@ There are two ways a subscription can come into existence:
 > kind of object (both are "products"); the only difference is whether the
 > price is recurring. See [Products](https://polar.sh/docs/features/products.md) for the full model.
 
-> **Can a customer have more than one active subscription?**
+> [accordion] Can a customer have more than one active subscription?
 >
 > By default, no — a customer can only have one active subscription per
 > organization at a time. This keeps the common case simple.
@@ -96,7 +96,7 @@ There are two ways a subscription can come into existence:
 > customer, you can opt in under **Organization Settings → Subscriptions**
 > by toggling on **Allow multiple subscriptions**.
 
-> **When is a customer actually charged?**
+> [accordion] When is a customer actually charged?
 >
 > At the end of each billing cycle. When a subscription renews, Polar
 > advances the cycle, creates a new order with tax and any applicable
@@ -107,7 +107,7 @@ There are two ways a subscription can come into existence:
 > The first charge happens at checkout (or when the [trial](https://polar.sh/docs/features/subscriptions/trials.md)
 > ends, if one is configured).
 
-> **Can I change the price of an existing subscription?**
+> [accordion] Can I change the price of an existing subscription?
 >
 > Not the amount on an existing subscription directly — subscriptions lock
 > in the price they were created with so existing subscribers aren't
@@ -119,7 +119,7 @@ There are two ways a subscription can come into existence:
 > it](https://polar.sh/docs/features/subscriptions/manage.md#change-the-plan), or ask them to
 > change plans themselves from the Customer Portal.
 
-> **What happens to benefits when a subscription is canceled?**
+> [accordion] What happens to benefits when a subscription is canceled?
 >
 > Benefits are tied to the subscription's status, not to the cancellation
 > action itself:

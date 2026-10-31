@@ -16,29 +16,29 @@
 
 Install the required Polar packages using the following command:
 
-**npm**
+> [tab] npm
+>
+> ```bash Terminal theme={null}
+> npm install @polar-sh/nextjs
+> ```
 
-```bash Terminal theme={null}
-npm install @polar-sh/nextjs
-```
+> [tab] yarn
+>
+> ```bash Terminal theme={null}
+> yarn add @polar-sh/nextjs
+> ```
 
-**yarn**
+> [tab] pnpm
+>
+> ```bash Terminal theme={null}
+> pnpm add @polar-sh/nextjs
+> ```
 
-```bash Terminal theme={null}
-yarn add @polar-sh/nextjs
-```
-
-**pnpm**
-
-```bash Terminal theme={null}
-pnpm add @polar-sh/nextjs
-```
-
-**bun**
-
-```bash Terminal theme={null}
-bun add @polar-sh/nextjs
-```
+> [tab] bun
+>
+> ```bash Terminal theme={null}
+> bun add @polar-sh/nextjs
+> ```
 
 The adapter works with App Router route handlers on Next.js 15 and 16.
 

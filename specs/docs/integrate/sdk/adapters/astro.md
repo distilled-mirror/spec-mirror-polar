@@ -26,29 +26,29 @@
 
 Install the required Polar packages using the following command:
 
-**npm**
+> [tab] npm
+>
+> ```bash Terminal theme={null}
+> npm install zod @polar-sh/astro
+> ```
 
-```bash Terminal theme={null}
-npm install zod @polar-sh/astro
-```
+> [tab] yarn
+>
+> ```bash Terminal theme={null}
+> yarn add zod @polar-sh/astro
+> ```
 
-**yarn**
+> [tab] pnpm
+>
+> ```bash Terminal theme={null}
+> pnpm add zod @polar-sh/astro
+> ```
 
-```bash Terminal theme={null}
-yarn add zod @polar-sh/astro
-```
-
-**pnpm**
-
-```bash Terminal theme={null}
-pnpm add zod @polar-sh/astro
-```
-
-**bun**
-
-```bash Terminal theme={null}
-bun add zod @polar-sh/astro
-```
+> [tab] bun
+>
+> ```bash Terminal theme={null}
+> bun add zod @polar-sh/astro
+> ```
 
 ## Checkout
 

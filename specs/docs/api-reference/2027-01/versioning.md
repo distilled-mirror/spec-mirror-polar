@@ -115,17 +115,17 @@ The [Python SDK](https://polar.sh/docs/integrate/sdk/python.md) and
 each supported API version. Importing a versioned client automatically sets the
 matching `Polar-Version` header:
 
-**Python**
+> [tab] Python
+>
+> ```py theme={null}
+> from polar.v2027_01 import Polar
+> ```
 
-```py theme={null}
-from polar.v2027_01 import Polar
-```
-
-**JavaScript**
-
-```ts theme={null}
-import { createPolar } from "@polar-sh/sdk/2027-01";
-```
+> [tab] JavaScript
+>
+> ```ts theme={null}
+> import { createPolar } from "@polar-sh/sdk/2027-01";
+> ```
 
 The SDK package version and API version are separate. Updating the package can
 deliver fixes without changing your API contract; changing the version in the

@@ -12,38 +12,38 @@
 
 Turn your software into a business with Polar. Sell digital products, subscriptions, and more without the hassle of traditional payment systems.
 
-> **Beyond Payment Processing**
+> [card] Beyond Payment Processing
 >
 > Unlike Stripe that only handles transactions, we provide complete billing
 > infrastructure with tax compliance, product management, and automated access
 > & delivery.
 
-> **Merchant of Record**
+> [card] Merchant of Record
 >
 > We handle all international tax compliance, so you can sell globally without
 > worrying about VAT, GST, or sales tax regulations.
 
 ## Problems We Solve
 
-> **Tax Compliance Nightmare**
+> [accordion] Tax Compliance Nightmare
 >
 > **The Problem**: Selling digital products globally means dealing with VAT, GST, and sales tax in dozens of jurisdictions, each with different rates, rules, and filing requirements. Most developers either ignore this (risky) or avoid international sales entirely.
 >
 > **Polar's Solution**: As your Merchant of Record, we handle all international tax compliance. We calculate, collect, and remit taxes worldwide. You focus on building; we handle the paperwork.
 
-> **Complex Billing Infrastructure**
+> [accordion] Complex Billing Infrastructure
 >
 > **The Problem**: Building subscription billing, product catalogs, customer portals, and payment flows from scratch takes months of development time and ongoing maintenance.
 >
 > **Polar's Solution**: Complete billing infrastructure out-of-the-box with APIs that let you integrate in minutes. No need to build customer portals, handle subscription lifecycle, or manage failed payments.
 
-> **Manual Access & Delivery Overhead**
+> [accordion] Manual Access & Delivery Overhead
 >
 > **The Problem**: Manually sending license keys, granting repository access, or managing Discord invites for every purchase doesn't scale and creates delays for customers.
 >
 > **Polar's Solution**: Automated benefit delivery for common developer needs - license keys, file downloads, GitHub repo access, Discord roles, and more. Customers get instant access.
 
-> **High Processing Costs**
+> [accordion] High Processing Costs
 >
 > **The Problem**: Traditional MoR solutions charge 5-8% per transaction plus monthly fees, eating into your profits before you even start.
 >
@@ -53,16 +53,16 @@ Turn your software into a business with Polar. Sell digital products, subscripti
 
 ### Flexible Product Management
 
-> **One-time Purchases**
+> [card] One-time Purchases
 >
 > Sell digital products, courses, templates, or software licenses with instant
 > delivery
 
-> **Subscriptions**
+> [card] Subscriptions
 >
 > Recurring billing with automatic renewals and dunning management
 
-> **Flexible Pricing**
+> [card] Flexible Pricing
 >
 > Fixed price, pay-what-you-want, or free products with optional minimums
 
@@ -70,15 +70,15 @@ Turn your software into a business with Polar. Sell digital products, subscripti
 
 ![](https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/introduction/checkout.light.png?fit=max\&auto=format\&n=0Af3hN6-oIM4IHT3\&q=85\&s=46584e16a18277dd02826c4cb7bd022e)
 
-> **[Checkout Links](https://polar.sh/docs/features/checkout/links.md)**
+> [card] [Checkout Links](https://polar.sh/docs/features/checkout/links.md)
 >
 > No-code solution for quick product sales. Create and share instantly.
 
-> **[Embedded Checkout](https://polar.sh/docs/features/checkout/embed.md)**
+> [card] [Embedded Checkout](https://polar.sh/docs/features/checkout/embed.md)
 >
 > Integrate seamlessly into your website with customizable branding.
 
-> **[Checkout API](https://polar.sh/docs/api-reference)**
+> [card] [Checkout API](https://polar.sh/docs/api-reference)
 >
 > Programmatically create dynamic checkout sessions for custom flows.
 
@@ -87,19 +87,19 @@ Turn your software into a business with Polar. Sell digital products, subscripti
 **Set it and forget it**: Configure once, and customers get instant access to
 their benefits automatically. No manual work required.
 
-> **[License Keys](https://polar.sh/docs/features/benefits/license-keys.md)**
+> [card] [License Keys](https://polar.sh/docs/features/benefits/license-keys.md)
 >
 > Generate and deliver software licenses automatically with custom formats
 
-> **[File Downloads](https://polar.sh/docs/features/benefits/file-downloads.md)**
+> [card] [File Downloads](https://polar.sh/docs/features/benefits/file-downloads.md)
 >
 > Secure delivery of digital assets up to 10GB with download tracking
 
-> **[GitHub Access](https://polar.sh/docs/features/benefits/github-access.md)**
+> [card] [GitHub Access](https://polar.sh/docs/features/benefits/github-access.md)
 >
 > Auto-invite customers to private repositories and manage permissions
 
-> **[Discord Access](https://polar.sh/docs/features/benefits/discord-access.md)**
+> [card] [Discord Access](https://polar.sh/docs/features/benefits/discord-access.md)
 >
 > Automatic role assignment and server invites for community access
 
@@ -131,29 +131,29 @@ Learn more about [Products →](https://polar.sh/docs/features/products.md)
 
 Pick the approach that fits your needs:
 
-**No-Code (Fastest)**
+> [tab] No-Code (Fastest)
+>
+> Perfect for getting started quickly:
+>
+> * Create [Checkout Links](https://polar.sh/docs/features/checkout/links.md) from your dashboard
+> * Share via email, social media, or embed in websites
+> * Start accepting payments immediately
 
-Perfect for getting started quickly:
+> [tab] Embedded
+>
+> Integrate into your existing website:
+>
+> * Add our [Embedded Checkout](https://polar.sh/docs/features/checkout/embed.md) component
+> * Maintain your site's look and feel
+> * Customers never leave your domain
 
-* Create [Checkout Links](https://polar.sh/docs/features/checkout/links.md) from your dashboard
-* Share via email, social media, or embed in websites
-* Start accepting payments immediately
-
-**Embedded**
-
-Integrate into your existing website:
-
-* Add our [Embedded Checkout](https://polar.sh/docs/features/checkout/embed.md) component
-* Maintain your site's look and feel
-* Customers never leave your domain
-
-**Full API (Maximum Control)**
-
-Maximum flexibility for custom workflows:
-
-* Use our [SDKs](https://polar.sh/docs/integrate/sdk/typescript.md) for any language
-* Build custom checkout flows and experiences
-* Integrate with your existing tech stack
+> [tab] Full API (Maximum Control)
+>
+> Maximum flexibility for custom workflows:
+>
+> * Use our [SDKs](https://polar.sh/docs/integrate/sdk/typescript.md) for any language
+> * Build custom checkout flows and experiences
+> * Integrate with your existing tech stack
 
 **4. Set Up Webhooks**
 
@@ -169,75 +169,75 @@ Read the [Webhooks guide →](https://polar.sh/docs/integrate/webhooks/endpoints
 
 ### Framework Adapters (Recommended)
 
-> **[Browse framework adapters](https://polar.sh/docs/integrate/sdk/adapters/introduction.md)**
+> [card] [Browse framework adapters](https://polar.sh/docs/integrate/sdk/adapters/introduction.md)
 >
 > Drop-in adapters that wire Polar checkouts and webhooks into your stack, including Next.js, Nuxt, TanStack Start, Laravel, and BetterAuth.
 
 ### Native SDKs
 
-> **[JS/TS](https://polar.sh/docs/integrate/sdk/typescript.md)**
+> [card] [JS/TS](https://polar.sh/docs/integrate/sdk/typescript.md)
 >
 > For web and Node.js applications
 
-> **[Python](https://polar.sh/docs/integrate/sdk/python.md)**
+> [card] [Python](https://polar.sh/docs/integrate/sdk/python.md)
 >
 > For Django, Flask, FastAPI frameworks
 
 ## Why Choose Polar?
 
-**Individual Developers**
-
-> **Ship Faster**
+> [tab] Individual Developers
 >
-> Focus on your product, not billing infrastructure. Get to market weeks faster.
-
-> **Global Reach**
+> > [card] Ship Faster
+> >
+> > Focus on your product, not billing infrastructure. Get to market weeks faster.
 >
-> Sell worldwide without worrying about tax compliance or regional restrictions.
-
-> **Automated Delivery**
+> > [card] Global Reach
+> >
+> > Sell worldwide without worrying about tax compliance or regional restrictions.
 >
-> License keys and downloads handled automatically. No manual work required.
-
-> **Transparent Pricing**
+> > [card] Automated Delivery
+> >
+> > License keys and downloads handled automatically. No manual work required.
 >
-> Transparent, pay-as-you-earn pricing with no hidden fees.
+> > [card] Transparent Pricing
+> >
+> > Transparent, pay-as-you-earn pricing with no hidden fees.
 
-**Small Teams**
-
-> **No Engineering Overhead**
+> [tab] Small Teams
 >
-> Complete billing solution without months of custom development work.
-
-> **Scalable Pricing**
+> > [card] No Engineering Overhead
+> >
+> > Complete billing solution without months of custom development work.
 >
-> Pay only when you earn, no monthly minimums or setup fees.
-
-> **Team Collaboration**
+> > [card] Scalable Pricing
+> >
+> > Pay only when you earn, no monthly minimums or setup fees.
 >
-> Multiple team members can manage products, customers, and analytics.
-
-> **Professional Checkout**
+> > [card] Team Collaboration
+> >
+> > Multiple team members can manage products, customers, and analytics.
 >
-> Branded experience that builds customer trust and increases conversions.
+> > [card] Professional Checkout
+> >
+> > Branded experience that builds customer trust and increases conversions.
 
-**Growing Businesses**
-
-> **Enterprise Features**
+> [tab] Growing Businesses
 >
-> Advanced analytics, custom fields, bulk operations, and priority support.
-
-> **API Flexibility**
+> > [card] Enterprise Features
+> >
+> > Advanced analytics, custom fields, bulk operations, and priority support.
 >
-> Full programmatic control over products, customers, orders, and subscriptions.
-
-> **Webhook Reliability**
+> > [card] API Flexibility
+> >
+> > Full programmatic control over products, customers, orders, and subscriptions.
 >
-> Reliable real-time synchronization with your systems and database.
+> > [card] Webhook Reliability
+> >
+> > Reliable real-time synchronization with your systems and database.
 
 ## Transparent Pricing
 
-> **5% + 50¢ or lower**
+> [card] 5% + 50¢ or lower
 >
 > **Per successful transaction**
 >
@@ -254,15 +254,15 @@ Read the [Webhooks guide →](https://polar.sh/docs/integrate/webhooks/endpoints
 Polar is built in the open with full transparency and a growing community of
 contributors.
 
-> **[Open Source Codebase](https://github.com/polarsource/polar)**
+> [card] [Open Source Codebase](https://github.com/polarsource/polar)
 >
 > Apache 2.0 license with 36+ contributors and growing
 
-> **[Public Development](https://github.com/polarsource/polar/issues)**
+> [card] [Public Development](https://github.com/polarsource/polar/issues)
 >
 > Feature requests, roadmap, and issues - all developed in public
 
-> **Transparent Pricing**
+> [card] Transparent Pricing
 >
 > No hidden fees or surprise charges. What you see is what you pay.
 
@@ -274,25 +274,25 @@ contributors.
 
 ## Ready to Start?
 
-> **[Create Account](https://polar.sh/signup)**
+> [card] [Create Account](https://polar.sh/signup)
 >
 > **Free signup, no credit card required**
 >
 > Get started in under 2 minutes
 
-> **[Read the Guides](https://polar.sh/docs/guides/nextjs.md)**
+> [card] [Read the Guides](https://polar.sh/docs/guides/nextjs.md)
 >
 > **Framework-specific tutorials**
 >
 > Step-by-step integration guides
 
-> **[Explore the API](https://polar.sh/docs/api-reference)**
+> [card] [Explore the API](https://polar.sh/docs/api-reference)
 >
 > **Complete API documentation**
 >
 > Interactive examples and SDKs
 
-> **[Join Our Community](https://discord.gg/Pnhfz3UThd)**
+> [card] [Join Our Community](https://discord.gg/Pnhfz3UThd)
 >
 > **Get help from our team**
 >

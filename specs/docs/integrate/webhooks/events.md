@@ -10,29 +10,29 @@
 
 ### Checkout
 
-> **[checkout.created](https://polar.sh/docs/api-reference/current/checkout_created.md)**
+> [card] [checkout.created](https://polar.sh/docs/api-reference/current/checkout_created.md)
 
-> **[checkout.updated](https://polar.sh/docs/api-reference/current/checkout_updated.md)**
+> [card] [checkout.updated](https://polar.sh/docs/api-reference/current/checkout_updated.md)
 
-> **[checkout.expired](https://polar.sh/docs/api-reference/current/checkout_expired.md)**
+> [card] [checkout.expired](https://polar.sh/docs/api-reference/current/checkout_expired.md)
 >
 > Fired when a checkout link has expired without being completed.
 
 ### Customers
 
-> **[customer.created](https://polar.sh/docs/api-reference/current/customer_created.md)**
+> [card] [customer.created](https://polar.sh/docs/api-reference/current/customer_created.md)
 >
 > Fired when a new customer has been created.
 
-> **[customer.updated](https://polar.sh/docs/api-reference/current/customer_updated.md)**
+> [card] [customer.updated](https://polar.sh/docs/api-reference/current/customer_updated.md)
 >
 > Fired when a customer has been updated.
 
-> **[customer.deleted](https://polar.sh/docs/api-reference/current/customer_deleted.md)**
+> [card] [customer.deleted](https://polar.sh/docs/api-reference/current/customer_deleted.md)
 >
 > Fired when a customer has been deleted.
 
-> **[customer.state\_changed](https://polar.sh/docs/api-reference/current/customer_state_changed.md)**
+> [card] [customer.state\_changed](https://polar.sh/docs/api-reference/current/customer_state_changed.md)
 >
 > Fired when a customer's state has changed. Includes active subscriptions and
 > granted benefits.
@@ -41,25 +41,25 @@
 
 In order to properly implement logic for handling subscriptions, you should look into the following events.
 
-> **[subscription.created](https://polar.sh/docs/api-reference/current/subscription_created.md)**
+> [card] [subscription.created](https://polar.sh/docs/api-reference/current/subscription_created.md)
 >
 > Fired when a new subscription has been created.
 
-> **[subscription.active](https://polar.sh/docs/api-reference/current/subscription_active.md)**
+> [card] [subscription.active](https://polar.sh/docs/api-reference/current/subscription_active.md)
 
-> **[subscription.uncanceled](https://polar.sh/docs/api-reference/current/subscription_uncanceled.md)**
+> [card] [subscription.uncanceled](https://polar.sh/docs/api-reference/current/subscription_uncanceled.md)
 
-> **[subscription.cycled](https://polar.sh/docs/api-reference/current/subscription_cycled.md)**
+> [card] [subscription.cycled](https://polar.sh/docs/api-reference/current/subscription_cycled.md)
 >
 > Fired when a subscription enters a new billing period, before the renewal order exists and whether or not the payment succeeds.
 
-> **[subscription.canceled](https://polar.sh/docs/api-reference/current/subscription_canceled.md)**
+> [card] [subscription.canceled](https://polar.sh/docs/api-reference/current/subscription_canceled.md)
 
-> **[subscription.past\_due](https://polar.sh/docs/api-reference/current/subscription_past_due.md)**
+> [card] [subscription.past\_due](https://polar.sh/docs/api-reference/current/subscription_past_due.md)
 >
 > Fired when a subscription payment has failed. The customer can recover by updating their payment method.
 
-> **[subscription.updated](https://polar.sh/docs/api-reference/current/subscription_updated.md)**
+> [card] [subscription.updated](https://polar.sh/docs/api-reference/current/subscription_updated.md)
 >
 > Use this event if you want to handle cancellations, un-cancellations, etc. The
 > updated event is a catch-all event for `subscription.active`,
@@ -67,7 +67,7 @@ In order to properly implement logic for handling subscriptions, you should look
 > `subscription.past_due`, `subscription.revoked`, `subscription.paused`,
 > `subscription.resumed` and `subscription.migrated`.
 
-> **[order.created](https://polar.sh/docs/api-reference/current/order_created.md)**
+> [card] [order.created](https://polar.sh/docs/api-reference/current/order_created.md)
 >
 > Carries a `billing_reason` field, which can be `purchase`,
 > `subscription_create`, `subscription_cycle`, `subscription_update` and
@@ -75,17 +75,17 @@ In order to properly implement logic for handling subscriptions, you should look
 > on a renewal, listen to `subscription.cycled` instead: it fires whether or not
 > the renewal payment succeeds.
 
-> **[subscription.revoked](https://polar.sh/docs/api-reference/current/subscription_revoked.md)**
+> [card] [subscription.revoked](https://polar.sh/docs/api-reference/current/subscription_revoked.md)
 
-> **[subscription.paused](https://polar.sh/docs/api-reference/current/subscription_paused.md)**
+> [card] [subscription.paused](https://polar.sh/docs/api-reference/current/subscription_paused.md)
 >
 > Fired when a scheduled pause takes effect at the end of the period. Billing stops and benefits are revoked until the subscription resumes.
 
-> **[subscription.resumed](https://polar.sh/docs/api-reference/current/subscription_resumed.md)**
+> [card] [subscription.resumed](https://polar.sh/docs/api-reference/current/subscription_resumed.md)
 >
 > Fired when a paused subscription resumes. A new billing period starts and the customer is charged immediately.
 
-> **[subscription.migrated](https://polar.sh/docs/api-reference/current/subscription_migrated.md)**
+> [card] [subscription.migrated](https://polar.sh/docs/api-reference/current/subscription_migrated.md)
 >
 > Fired when Polar takes over billing of a subscription migrated from another provider. Includes `provider` and `provider_subscription_id` so you can correlate the two. Does not send `subscription.created` or `subscription.active`.
 
@@ -189,53 +189,53 @@ Polar enqueues `subscription.updated` before `subscription.migrated`, but delive
 
 ### Orders
 
-> **[order.created](https://polar.sh/docs/api-reference/current/order_created.md)**
+> [card] [order.created](https://polar.sh/docs/api-reference/current/order_created.md)
 
-> **[order.paid](https://polar.sh/docs/api-reference/current/order_paid.md)**
+> [card] [order.paid](https://polar.sh/docs/api-reference/current/order_paid.md)
 
-> **[order.updated](https://polar.sh/docs/api-reference/current/order_updated.md)**
+> [card] [order.updated](https://polar.sh/docs/api-reference/current/order_updated.md)
 
-> **[order.refunded](https://polar.sh/docs/api-reference/current/order_refunded.md)**
+> [card] [order.refunded](https://polar.sh/docs/api-reference/current/order_refunded.md)
 
 ### Refunds
 
-> **[refund.created](https://polar.sh/docs/api-reference/current/refund_created.md)**
+> [card] [refund.created](https://polar.sh/docs/api-reference/current/refund_created.md)
 
-> **[refund.updated](https://polar.sh/docs/api-reference/current/refund_updated.md)**
+> [card] [refund.updated](https://polar.sh/docs/api-reference/current/refund_updated.md)
 
 ### Benefit Grants
 
-> **[benefit\_grant.created](https://polar.sh/docs/api-reference/current/benefit_grant_created.md)**
+> [card] [benefit\_grant.created](https://polar.sh/docs/api-reference/current/benefit_grant_created.md)
 
-> **[benefit\_grant.updated](https://polar.sh/docs/api-reference/current/benefit_grant_updated.md)**
+> [card] [benefit\_grant.updated](https://polar.sh/docs/api-reference/current/benefit_grant_updated.md)
 
-> **[benefit\_grant.revoked](https://polar.sh/docs/api-reference/current/benefit_grant_revoked.md)**
+> [card] [benefit\_grant.revoked](https://polar.sh/docs/api-reference/current/benefit_grant_revoked.md)
 
 ## Organization Events
 
 ### Benefits
 
-> **[benefit.created](https://polar.sh/docs/api-reference/current/benefit_created.md)**
+> [card] [benefit.created](https://polar.sh/docs/api-reference/current/benefit_created.md)
 
-> **[benefit.updated](https://polar.sh/docs/api-reference/current/benefit_updated.md)**
+> [card] [benefit.updated](https://polar.sh/docs/api-reference/current/benefit_updated.md)
 
 ### Products
 
-> **[product.created](https://polar.sh/docs/api-reference/current/product_created.md)**
+> [card] [product.created](https://polar.sh/docs/api-reference/current/product_created.md)
 
-> **[product.updated](https://polar.sh/docs/api-reference/current/product_updated.md)**
+> [card] [product.updated](https://polar.sh/docs/api-reference/current/product_updated.md)
 
 ### Discounts
 
-> **[discount.created](https://polar.sh/docs/api-reference/current/discount_created.md)**
+> [card] [discount.created](https://polar.sh/docs/api-reference/current/discount_created.md)
 
-> **[discount.updated](https://polar.sh/docs/api-reference/current/discount_updated.md)**
+> [card] [discount.updated](https://polar.sh/docs/api-reference/current/discount_updated.md)
 
-> **[discount.deleted](https://polar.sh/docs/api-reference/current/discount_deleted.md)**
+> [card] [discount.deleted](https://polar.sh/docs/api-reference/current/discount_deleted.md)
 
 ### Organization
 
-> **[organization.updated](https://polar.sh/docs/api-reference/current/organization_updated.md)**
+> [card] [organization.updated](https://polar.sh/docs/api-reference/current/organization_updated.md)
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

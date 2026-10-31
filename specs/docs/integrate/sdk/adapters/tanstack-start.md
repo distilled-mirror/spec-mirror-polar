@@ -14,29 +14,29 @@
 
 Install the required Polar packages using the following command:
 
-**npm**
+> [tab] npm
+>
+> ```bash Terminal theme={null}
+> npm install @polar-sh/tanstack-start
+> ```
 
-```bash Terminal theme={null}
-npm install @polar-sh/tanstack-start
-```
+> [tab] yarn
+>
+> ```bash Terminal theme={null}
+> yarn add @polar-sh/tanstack-start
+> ```
 
-**yarn**
+> [tab] pnpm
+>
+> ```bash Terminal theme={null}
+> pnpm add @polar-sh/tanstack-start
+> ```
 
-```bash Terminal theme={null}
-yarn add @polar-sh/tanstack-start
-```
-
-**pnpm**
-
-```bash Terminal theme={null}
-pnpm add @polar-sh/tanstack-start
-```
-
-**bun**
-
-```bash Terminal theme={null}
-bun add @polar-sh/tanstack-start
-```
+> [tab] bun
+>
+> ```bash Terminal theme={null}
+> bun add @polar-sh/tanstack-start
+> ```
 
 ## Checkout
 

@@ -25,29 +25,29 @@
 
 Install the required Polar packages using the following command:
 
-**npm**
+> [tab] npm
+>
+> ```bash Terminal theme={null}
+> npm install zod @polar-sh/express
+> ```
 
-```bash Terminal theme={null}
-npm install zod @polar-sh/express
-```
+> [tab] yarn
+>
+> ```bash Terminal theme={null}
+> yarn add zod @polar-sh/express
+> ```
 
-**yarn**
+> [tab] pnpm
+>
+> ```bash Terminal theme={null}
+> pnpm add zod @polar-sh/express
+> ```
 
-```bash Terminal theme={null}
-yarn add zod @polar-sh/express
-```
-
-**pnpm**
-
-```bash Terminal theme={null}
-pnpm add zod @polar-sh/express
-```
-
-**bun**
-
-```bash Terminal theme={null}
-bun add zod @polar-sh/express
-```
+> [tab] bun
+>
+> ```bash Terminal theme={null}
+> bun add zod @polar-sh/express
+> ```
 
 ## Checkout
 

@@ -12,17 +12,17 @@ The official Python SDK provides fully typed synchronous and asynchronous client
 
 The SDK requires Python 3.11 or later.
 
-**uv**
+> [tab] uv
+>
+> ```bash Terminal theme={null}
+> uv add polar-sdk
+> ```
 
-```bash Terminal theme={null}
-uv add polar-sdk
-```
-
-**pip**
-
-```bash Terminal theme={null}
-pip install polar-sdk
-```
+> [tab] pip
+>
+> ```bash Terminal theme={null}
+> pip install polar-sdk
+> ```
 
 ## Quickstart
 

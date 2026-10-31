@@ -121,19 +121,19 @@ Polar meets all of these criteria and therefore issues 1099-K forms to eligible 
 
 ## Frequently Asked Questions
 
-> **How long do payouts take?**
+> [accordion] How long do payouts take?
 >
 > Payouts typically take 4-7 business days.
 
-> **When are payouts processed after I request them?**
+> [accordion] When are payouts processed after I request them?
 >
 > Payouts are processed in batches 24 hours after initiation.
 
-> **Can I use my personal bank account to receive payouts?**
+> [accordion] Can I use my personal bank account to receive payouts?
 >
 > For individual accounts, yes. For business accounts, you will need a business bank account.
 
-> **Why does my payout say 'Held for review'?**
+> [accordion] Why does my payout say 'Held for review'?
 >
 > You can request a payout at any time. [Account Reviews](https://polar.sh/docs/merchant-of-record/account-reviews.md) are a normal part of how we operate, so if your account happens to be under review when you request one, the payout shows as "Held for review" until you are reviewed, then is paid out automatically.
 

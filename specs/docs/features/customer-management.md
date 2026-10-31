@@ -20,11 +20,11 @@ Quite often, you'll have our own users management system in your application, wh
 
 We have dedicated API endpoints that work with the `external_id` field, so you don't even have to store the internal Polar ID in your system.
 
-> **[Get Customer by External ID](https://polar.sh/docs/api-reference/current/customers/get-customer-by-external-id.md)**
+> [card] [Get Customer by External ID](https://polar.sh/docs/api-reference/current/customers/get-customer-by-external-id.md)
 
-> **[Update Customer by External ID](https://polar.sh/docs/api-reference/current/customers/update-customer-by-external-id.md)**
+> [card] [Update Customer by External ID](https://polar.sh/docs/api-reference/current/customers/update-customer-by-external-id.md)
 
-> **[Delete Customer by External ID](https://polar.sh/docs/api-reference/current/customers/delete-customer-by-external-id.md)**
+> [card] [Delete Customer by External ID](https://polar.sh/docs/api-reference/current/customers/delete-customer-by-external-id.md)
 
 ## Metadata
 

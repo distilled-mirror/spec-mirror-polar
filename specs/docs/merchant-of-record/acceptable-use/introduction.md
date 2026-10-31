@@ -22,7 +22,7 @@ As your [Merchant of Record](https://polar.sh/docs/merchant-of-record/introducti
 
 Every organization is reviewed against the AUP before its first payout and monitored continuously afterwards. Learn more in [Account Reviews](https://polar.sh/docs/merchant-of-record/account-reviews.md).
 
-> **[Read the full Acceptable Use Policy](https://polar.sh/legal/acceptable-use-policy)**
+> [card] [Read the full Acceptable Use Policy](https://polar.sh/legal/acceptable-use-policy)
 >
 > The complete and binding list of acceptable, prohibited, and restricted products.
 

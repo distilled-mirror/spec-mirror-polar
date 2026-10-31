@@ -25,29 +25,29 @@
 
 Install the required Polar packages using the following command:
 
-**npm**
+> [tab] npm
+>
+> ```bash Terminal theme={null}
+> npm install zod @polar-sh/sveltekit
+> ```
 
-```bash Terminal theme={null}
-npm install zod @polar-sh/sveltekit
-```
+> [tab] yarn
+>
+> ```bash Terminal theme={null}
+> yarn add zod @polar-sh/sveltekit
+> ```
 
-**yarn**
+> [tab] pnpm
+>
+> ```bash Terminal theme={null}
+> pnpm add zod @polar-sh/sveltekit
+> ```
 
-```bash Terminal theme={null}
-yarn add zod @polar-sh/sveltekit
-```
-
-**pnpm**
-
-```bash Terminal theme={null}
-pnpm add zod @polar-sh/sveltekit
-```
-
-**bun**
-
-```bash Terminal theme={null}
-bun add zod @polar-sh/sveltekit
-```
+> [tab] bun
+>
+> ```bash Terminal theme={null}
+> bun add zod @polar-sh/sveltekit
+> ```
 
 ## Checkout
 

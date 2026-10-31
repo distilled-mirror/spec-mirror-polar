@@ -25,29 +25,29 @@
 
 Install the required Polar packages using the following command:
 
-**npm**
+> [tab] npm
+>
+> ```bash Terminal theme={null}
+> npm install zod @polar-sh/fastify
+> ```
 
-```bash Terminal theme={null}
-npm install zod @polar-sh/fastify
-```
+> [tab] yarn
+>
+> ```bash Terminal theme={null}
+> yarn add zod @polar-sh/fastify
+> ```
 
-**yarn**
+> [tab] pnpm
+>
+> ```bash Terminal theme={null}
+> pnpm add zod @polar-sh/fastify
+> ```
 
-```bash Terminal theme={null}
-yarn add zod @polar-sh/fastify
-```
-
-**pnpm**
-
-```bash Terminal theme={null}
-pnpm add zod @polar-sh/fastify
-```
-
-**bun**
-
-```bash Terminal theme={null}
-bun add zod @polar-sh/fastify
-```
+> [tab] bun
+>
+> ```bash Terminal theme={null}
+> bun add zod @polar-sh/fastify
+> ```
 
 ## Checkout
 

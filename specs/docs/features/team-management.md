@@ -111,19 +111,19 @@ You can't leave an organization if you are:
 
 ## Frequently asked questions
 
-> **Do invited users need an existing Polar account?**
+> [accordion] Do invited users need an existing Polar account?
 >
 > No. If the invited email doesn't have a Polar account yet, one is created automatically. The user signs in to claim it when they accept the invitation.
 
-> **Can people join without an invitation?**
+> [accordion] Can people join without an invitation?
 >
 > Yes, if your organization uses [Single Sign-On](https://polar.sh/docs/features/sso.md). Anyone who authenticates through your identity provider becomes a member with the Member role — no invitation needed. Your identity provider controls who can do that.
 
-> **Can a user belong to more than one organization?**
+> [accordion] Can a user belong to more than one organization?
 >
 > Yes. A user can be a member of any number of organizations and may have different roles in each one. You can switch between them from the organization picker in the dashboard.
 
-> **How do I transfer ownership of an organization?**
+> [accordion] How do I transfer ownership of an organization?
 >
 > Ownership can only be transferred to another member of the organization who has completed identity verification. Every organization always has exactly one owner — the previous owner becomes an admin once the transfer completes.
 > Please [contact support](https://polar.sh/docs/support.md) to request an ownership transfer.

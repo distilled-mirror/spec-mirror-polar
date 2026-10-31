@@ -28,29 +28,29 @@ A [Better Auth](https://github.com/better-auth/better-auth) plugin for integrati
 
 Install the required Better Auth and Polar packages using the following command:
 
-**npm**
+> [tab] npm
+>
+> ```bash Terminal theme={null}
+> npm install better-auth zod @polar-sh/better-auth @polar-sh/sdk@1.0.0
+> ```
 
-```bash Terminal theme={null}
-npm install better-auth zod @polar-sh/better-auth @polar-sh/sdk@1.0.0
-```
+> [tab] yarn
+>
+> ```bash Terminal theme={null}
+> yarn add better-auth zod @polar-sh/better-auth @polar-sh/sdk@1.0.0
+> ```
 
-**yarn**
+> [tab] pnpm
+>
+> ```bash Terminal theme={null}
+> pnpm add better-auth zod @polar-sh/better-auth @polar-sh/sdk@1.0.0
+> ```
 
-```bash Terminal theme={null}
-yarn add better-auth zod @polar-sh/better-auth @polar-sh/sdk@1.0.0
-```
-
-**pnpm**
-
-```bash Terminal theme={null}
-pnpm add better-auth zod @polar-sh/better-auth @polar-sh/sdk@1.0.0
-```
-
-**bun**
-
-```bash Terminal theme={null}
-bun add better-auth zod @polar-sh/better-auth @polar-sh/sdk@1.0.0
-```
+> [tab] bun
+>
+> ```bash Terminal theme={null}
+> bun add better-auth zod @polar-sh/better-auth @polar-sh/sdk@1.0.0
+> ```
 
 The plugin requires Better Auth 1.7 or later and Node.js 22 or later.
 

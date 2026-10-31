@@ -176,19 +176,19 @@ If you're integrating orders into your own system, Polar emits an event on every
 
 ## Next steps
 
-> **[Subscriptions](https://polar.sh/docs/features/subscriptions/introduction.md)**
+> [card] [Subscriptions](https://polar.sh/docs/features/subscriptions/introduction.md)
 >
 > The recurring relationship that generates most orders.
 
-> **[Refunds](https://polar.sh/docs/features/refunds.md)**
+> [card] [Refunds](https://polar.sh/docs/features/refunds.md)
 >
 > How to refund an order, fully or partially.
 
-> **[Orders API](https://polar.sh/docs/api-reference/current/orders/list-orders.md)**
+> [card] [Orders API](https://polar.sh/docs/api-reference/current/orders/list-orders.md)
 >
 > List and fetch orders, update billing details, and generate invoices.
 
-> **[Customer Portal](https://polar.sh/docs/features/customer-portal/introduction.md)**
+> [card] [Customer Portal](https://polar.sh/docs/features/customer-portal/introduction.md)
 >
 > Where customers view their own orders and download invoices and receipts.
 

@@ -8,11 +8,11 @@
 
 Call the Polar API with full type safety using one of our official SDKs.
 
-> **[TypeScript](https://polar.sh/docs/integrate/sdk/typescript.md)**
+> [card] [TypeScript](https://polar.sh/docs/integrate/sdk/typescript.md)
 >
 > For JavaScript runtimes — Node.js and the browser.
 
-> **[Python](https://polar.sh/docs/integrate/sdk/python.md)**
+> [card] [Python](https://polar.sh/docs/integrate/sdk/python.md)
 >
 > For Django, Flask, and FastAPI applications.
 
