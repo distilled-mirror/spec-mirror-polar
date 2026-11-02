@@ -96,11 +96,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResourceNotFound'
         '409':
-          description: Cannot enforce SSO without an enabled connection.
+          description: >-
+            Cannot enforce SSO without an enabled connection and a verified
+            domain.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SSOEnforcementRequiresConnection'
+                anyOf:
+                  - $ref: '#/components/schemas/SSOEnforcementRequiresConnection'
+                  - $ref: '#/components/schemas/SSORequiresVerifiedDomain'
+                title: Response 409 Organizations:Update
         '422':
           description: Validation Error
           content:
@@ -182,7 +187,7 @@ components:
           description: Links to social profiles.
         details:
           anyOf:
-            - $ref: '#/components/schemas/OrganizationDetails'
+            - $ref: '#/components/schemas/OrganizationDetailsInput'
             - type: 'null'
           description: >-
             Additional, private, business details Polar needs about active
@@ -1496,6 +1501,22 @@ components:
         - error
         - detail
       title: SSOEnforcementRequiresConnection
+    SSORequiresVerifiedDomain:
+      properties:
+        error:
+          type: string
+          const: SSORequiresVerifiedDomain
+          title: Error
+          examples:
+            - SSORequiresVerifiedDomain
+        detail:
+          type: string
+          title: Detail
+      type: object
+      required:
+        - error
+        - detail
+      title: SSORequiresVerifiedDomain
     HTTPValidationError:
       properties:
         detail:
@@ -1522,15 +1543,8 @@ components:
         - platform
         - url
       title: OrganizationSocialLink
-    OrganizationDetails:
+    OrganizationDetailsInput:
       properties:
-        about:
-          anyOf:
-            - type: string
-            - type: 'null'
-          title: About
-          description: Brief information about you and your business.
-          deprecated: true
         product_description:
           anyOf:
             - type: string
@@ -1549,28 +1563,6 @@ components:
           type: array
           title: Pricing Models
           description: Pricing models used by the organization.
-        intended_use:
-          anyOf:
-            - type: string
-            - type: 'null'
-          title: Intended Use
-          description: How the organization will integrate and use Polar.
-          deprecated: true
-        customer_acquisition:
-          items:
-            type: string
-          type: array
-          title: Customer Acquisition
-          description: Main customer acquisition channels.
-          deprecated: true
-        future_annual_revenue:
-          anyOf:
-            - type: integer
-              minimum: 0
-            - type: 'null'
-          title: Future Annual Revenue
-          description: Estimated revenue in the next 12 months
-          deprecated: true
         switching:
           type: boolean
           title: Switching
@@ -1588,16 +1580,8 @@ components:
             - type: 'null'
           title: Switching From
           description: Which platform the organization is migrating from.
-        previous_annual_revenue:
-          anyOf:
-            - type: integer
-              minimum: 0
-            - type: 'null'
-          title: Previous Annual Revenue
-          description: Revenue from last year if applicable.
-          deprecated: true
       type: object
-      title: OrganizationDetails
+      title: OrganizationDetailsInput
     OrganizationFeatureSettingsUpdate:
       properties:
         checkout_localization_enabled:
@@ -1966,6 +1950,13 @@ components:
           description: >-
             If this organization can migrate its billing from another provider
             (e.g. Stripe) to Polar.
+          default: false
+        staged_events_ingest_enabled:
+          type: boolean
+          title: Staged Events Ingest Enabled
+          description: >-
+            If this organization's ingested events are queued in `staged_events`
+            and moved to `events` out of band.
           default: false
         config_as_code_enabled:
           type: boolean

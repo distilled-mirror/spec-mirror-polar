@@ -1885,8 +1885,6 @@ components:
             - type: number
               exclusiveMinimum: 0
             - type: string
-              pattern: >-
-                ^(?!^[-+.]*$)[+-]?0*(?:\d{0,5}|(?=[\d.]{1,18}0*$)\d{0,5}\.\d{0,12}0*$)
           title: Unit Amount
           description: The price per unit in cents. Supports up to 12 decimal places.
         cap_amount:
@@ -2564,7 +2562,6 @@ components:
           description: The meter associated to the price.
         unit_amount:
           type: string
-          pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
           title: Unit Amount
           description: The price per unit in cents.
       type: object
@@ -4146,8 +4143,6 @@ components:
               maximum: 9223372036854776000
               minimum: 0
             - type: string
-              pattern: >-
-                ^(?!^[-+.]*$)[+-]?0*(?:\d{0,19}|(?=[\d.]{1,32}0*$)\d{0,19}\.\d{0,12}0*$)
           title: Unit Amount
       type: object
       required:
@@ -4166,7 +4161,6 @@ components:
           title: Bound
         unit_amount:
           type: string
-          pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
           title: Unit Amount
       type: object
       required:

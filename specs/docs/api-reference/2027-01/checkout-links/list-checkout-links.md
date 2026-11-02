@@ -591,18 +591,6 @@ components:
           $ref: '#/components/schemas/DiscountDuration'
         type:
           $ref: '#/components/schemas/DiscountType'
-        amount:
-          type: integer
-          title: Amount
-          deprecated: true
-          examples:
-            - 1000
-        currency:
-          type: string
-          title: Currency
-          deprecated: true
-          examples:
-            - usd
         amounts:
           additionalProperties:
             type: integer
@@ -704,8 +692,6 @@ components:
       required:
         - duration
         - type
-        - amount
-        - currency
         - amounts
         - created_at
         - modified_at
@@ -730,18 +716,6 @@ components:
           title: Duration In Months
         type:
           $ref: '#/components/schemas/DiscountType'
-        amount:
-          type: integer
-          title: Amount
-          deprecated: true
-          examples:
-            - 1000
-        currency:
-          type: string
-          title: Currency
-          deprecated: true
-          examples:
-            - usd
         amounts:
           additionalProperties:
             type: integer
@@ -844,8 +818,6 @@ components:
         - duration
         - duration_in_months
         - type
-        - amount
-        - currency
         - amounts
         - created_at
         - modified_at
@@ -1689,7 +1661,6 @@ components:
           description: The meter associated to the price.
         unit_amount:
           type: string
-          pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
           title: Unit Amount
           description: The price per unit in cents.
       type: object
@@ -2382,7 +2353,6 @@ components:
           title: Bound
         unit_amount:
           type: string
-          pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
           title: Unit Amount
       type: object
       required:

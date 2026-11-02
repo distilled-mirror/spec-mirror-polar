@@ -359,7 +359,11 @@ components:
             maxLength: 500
             minLength: 1
           - type: integer
+            maximum: 9007199254740991
+            minimum: -9007199254740991
           - type: number
+            maximum: 9007199254740991
+            minimum: -9007199254740991
           - type: boolean
       type: object
       title: EventMetadataInput
@@ -369,8 +373,6 @@ components:
           anyOf:
             - type: number
             - type: string
-              pattern: >-
-                ^(?!^[-+.]*$)[+-]?0*(?:\d{0,5}|(?=[\d.]{1,18}0*$)\d{0,5}\.\d{0,12}0*$)
           title: Amount
           description: The amount in cents.
         currency:
@@ -407,18 +409,26 @@ components:
           description: The LLM response used for the event.
         input_tokens:
           type: integer
+          maximum: 9007199254740991
+          minimum: -9007199254740991
           title: Input Tokens
           description: The number of LLM input tokens used for the event.
         cached_input_tokens:
           type: integer
+          maximum: 9007199254740991
+          minimum: -9007199254740991
           title: Cached Input Tokens
           description: The number of LLM cached tokens that were used for the event.
         output_tokens:
           type: integer
+          maximum: 9007199254740991
+          minimum: -9007199254740991
           title: Output Tokens
           description: The number of LLM output tokens used for the event.
         total_tokens:
           type: integer
+          maximum: 9007199254740991
+          minimum: -9007199254740991
           title: Total Tokens
           description: The total number of LLM tokens used for the event.
       type: object

@@ -232,21 +232,6 @@ components:
           anyOf:
             - $ref: '#/components/schemas/DiscountType'
             - type: 'null'
-        amount:
-          anyOf:
-            - type: integer
-              maximum: 999999999999
-              minimum: 0
-              description: Fixed amount to discount from the invoice total.
-            - type: 'null'
-          title: Amount
-          deprecated: true
-        currency:
-          anyOf:
-            - $ref: '#/components/schemas/PresentmentCurrency'
-              description: The currency of the fixed amount discount.
-            - type: 'null'
-          deprecated: true
         amounts:
           anyOf:
             - additionalProperties:
@@ -285,9 +270,23 @@ components:
               description: List of product IDs the discount can be applied to.
             - type: 'null'
           title: Products
+        amount:
+          anyOf:
+            - type: integer
+              maximum: 999999999999
+              minimum: 0
+              description: Fixed amount to discount from the invoice total.
+            - type: 'null'
+          title: Amount
+          deprecated: true
+        currency:
+          anyOf:
+            - $ref: '#/components/schemas/PresentmentCurrency'
+              description: The currency of the fixed amount discount.
+            - type: 'null'
+          deprecated: true
       type: object
       title: DiscountUpdate
-      description: Schema to update a discount.
     Discount:
       oneOf:
         - $ref: '#/components/schemas/DiscountFixedOnceForeverDuration'

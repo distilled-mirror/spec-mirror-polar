@@ -95,7 +95,7 @@ paths:
                 name='string',
                 type='fixed',
                 duration='once',
-                currency='usd',
+                amounts={'key': 0},
             )
             print(response)
         - lang: typescript
@@ -112,7 +112,9 @@ paths:
                 "name": "string",
                 "type": "fixed",
                 "duration": "once",
-                "currency": "usd"
+                "amounts": {
+                  "key": 0
+                }
               },
             );
             console.log(response);
@@ -280,43 +282,26 @@ components:
 
             For this to work on yearly pricing, you should multiply this by 12.
             For example, to apply the discount for 2 years, set this to 24.
-        amount:
-          anyOf:
-            - type: integer
-              maximum: 999999999999
-              minimum: 0
-              description: Fixed amount to discount from the invoice total.
-            - type: 'null'
-          title: Amount
-          deprecated: true
-        currency:
-          anyOf:
-            - $ref: '#/components/schemas/PresentmentCurrency'
-              description: The currency of the fixed amount discount.
-            - type: 'null'
-          default: usd
-          deprecated: true
         amounts:
-          anyOf:
-            - additionalProperties:
-                type: integer
-                maximum: 999999999999
-                minimum: 0
-                description: Fixed amount to discount from the invoice total.
-              propertyNames:
-                $ref: '#/components/schemas/PresentmentCurrency'
-              type: object
-              minProperties: 1
-              description: >-
-                Map of currency to fixed amount to discount from the total. This
-                allows specifying different discount amounts for different
-                currencies.
-            - type: 'null'
+          additionalProperties:
+            type: integer
+            maximum: 999999999999
+            minimum: 0
+            description: Fixed amount to discount from the invoice total.
+          propertyNames:
+            $ref: '#/components/schemas/PresentmentCurrency'
+          type: object
+          minProperties: 1
           title: Amounts
+          description: >-
+            Map of currency to fixed amount to discount from the total. This
+            allows specifying different discount amounts for different
+            currencies.
       type: object
       required:
         - name
         - duration
+        - amounts
       title: DiscountFixedCreate
       description: Schema to create a fixed amount discount.
     DiscountPercentageCreate:
@@ -480,18 +465,6 @@ components:
           $ref: '#/components/schemas/DiscountDuration'
         type:
           $ref: '#/components/schemas/DiscountType'
-        amount:
-          type: integer
-          title: Amount
-          deprecated: true
-          examples:
-            - 1000
-        currency:
-          type: string
-          title: Currency
-          deprecated: true
-          examples:
-            - usd
         amounts:
           additionalProperties:
             type: integer
@@ -598,8 +571,6 @@ components:
       required:
         - duration
         - type
-        - amount
-        - currency
         - amounts
         - created_at
         - modified_at
@@ -626,18 +597,6 @@ components:
           title: Duration In Months
         type:
           $ref: '#/components/schemas/DiscountType'
-        amount:
-          type: integer
-          title: Amount
-          deprecated: true
-          examples:
-            - 1000
-        currency:
-          type: string
-          title: Currency
-          deprecated: true
-          examples:
-            - usd
         amounts:
           additionalProperties:
             type: integer
@@ -745,8 +704,6 @@ components:
         - duration
         - duration_in_months
         - type
-        - amount
-        - currency
         - amounts
         - created_at
         - modified_at
@@ -1061,136 +1018,6 @@ components:
         - forever
         - repeating
       title: DiscountDuration
-    PresentmentCurrency:
-      type: string
-      enum:
-        - aed
-        - all
-        - amd
-        - aoa
-        - ars
-        - aud
-        - awg
-        - azn
-        - bam
-        - bbd
-        - bdt
-        - bif
-        - bmd
-        - bnd
-        - bob
-        - brl
-        - bsd
-        - bwp
-        - bzd
-        - cad
-        - cdf
-        - chf
-        - clp
-        - cny
-        - cop
-        - crc
-        - cve
-        - czk
-        - djf
-        - dkk
-        - dop
-        - dzd
-        - egp
-        - etb
-        - eur
-        - fjd
-        - fkp
-        - gbp
-        - gel
-        - gip
-        - gmd
-        - gnf
-        - gtq
-        - gyd
-        - hkd
-        - hnl
-        - htg
-        - huf
-        - idr
-        - ils
-        - inr
-        - isk
-        - jmd
-        - jpy
-        - kes
-        - kgs
-        - khr
-        - kmf
-        - krw
-        - kyd
-        - kzt
-        - lak
-        - lkr
-        - lrd
-        - lsl
-        - mad
-        - mdl
-        - mga
-        - mkd
-        - mnt
-        - mop
-        - mur
-        - mvr
-        - mwk
-        - mxn
-        - myr
-        - mzn
-        - nad
-        - ngn
-        - nio
-        - nok
-        - npr
-        - nzd
-        - pab
-        - pen
-        - pgk
-        - php
-        - pkr
-        - pln
-        - pyg
-        - qar
-        - ron
-        - rsd
-        - rwf
-        - sar
-        - sbd
-        - scr
-        - sek
-        - sgd
-        - shp
-        - sos
-        - srd
-        - szl
-        - thb
-        - tjs
-        - top
-        - try
-        - ttd
-        - twd
-        - tzs
-        - uah
-        - ugx
-        - usd
-        - uyu
-        - uzs
-        - vnd
-        - vuv
-        - wst
-        - xaf
-        - xcd
-        - xcg
-        - xof
-        - xpf
-        - yer
-        - zar
-        - zmw
-      title: PresentmentCurrency
     DiscountType:
       type: string
       enum:

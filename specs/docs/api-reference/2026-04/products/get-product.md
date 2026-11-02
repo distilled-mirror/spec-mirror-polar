@@ -1121,7 +1121,6 @@ components:
           description: The meter associated to the price.
         unit_amount:
           type: string
-          pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
           title: Unit Amount
           description: The price per unit in cents.
       type: object
@@ -2526,7 +2525,6 @@ components:
           title: Bound
         unit_amount:
           type: string
-          pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
           title: Unit Amount
       type: object
       required:

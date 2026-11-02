@@ -268,22 +268,6 @@ components:
 
             For this to work on yearly pricing, you should multiply this by 12.
             For example, to apply the discount for 2 years, set this to 24.
-        amount:
-          anyOf:
-            - type: integer
-              maximum: 999999999999
-              minimum: 0
-              description: Fixed amount to discount from the invoice total.
-            - type: 'null'
-          title: Amount
-          deprecated: true
-        currency:
-          anyOf:
-            - $ref: '#/components/schemas/PresentmentCurrency'
-              description: The currency of the fixed amount discount.
-            - type: 'null'
-          default: usd
-          deprecated: true
         amounts:
           anyOf:
             - additionalProperties:
@@ -301,12 +285,27 @@ components:
                 currencies.
             - type: 'null'
           title: Amounts
+        amount:
+          anyOf:
+            - type: integer
+              maximum: 999999999999
+              minimum: 0
+              description: Fixed amount to discount from the invoice total.
+            - type: 'null'
+          title: Amount
+          deprecated: true
+        currency:
+          anyOf:
+            - $ref: '#/components/schemas/PresentmentCurrency'
+              description: The currency of the fixed amount discount.
+            - type: 'null'
+          default: usd
+          deprecated: true
       type: object
       required:
         - name
         - duration
       title: DiscountFixedCreate
-      description: Schema to create a fixed amount discount.
     DiscountPercentageCreate:
       properties:
         metadata:

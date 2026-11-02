@@ -444,6 +444,8 @@ components:
         - service_disruption
         - satisfaction_guarantee
         - dispute_prevention
+        - tax_refund
+        - vat_reverse_charge_correction
         - other
       title: RefundReason
     RefundDispute:

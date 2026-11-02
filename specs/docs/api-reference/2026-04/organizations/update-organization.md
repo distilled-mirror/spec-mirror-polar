@@ -1524,13 +1524,6 @@ components:
       title: OrganizationSocialLink
     OrganizationDetails:
       properties:
-        about:
-          anyOf:
-            - type: string
-            - type: 'null'
-          title: About
-          description: Brief information about you and your business.
-          deprecated: true
         product_description:
           anyOf:
             - type: string
@@ -1549,6 +1542,30 @@ components:
           type: array
           title: Pricing Models
           description: Pricing models used by the organization.
+        switching:
+          type: boolean
+          title: Switching
+          description: Switching from another platform?
+          default: false
+        switching_from:
+          anyOf:
+            - type: string
+              enum:
+                - paddle
+                - lemon_squeezy
+                - gumroad
+                - stripe
+                - other
+            - type: 'null'
+          title: Switching From
+          description: Which platform the organization is migrating from.
+        about:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: About
+          description: Brief information about you and your business.
+          deprecated: true
         intended_use:
           anyOf:
             - type: string
@@ -1571,23 +1588,6 @@ components:
           title: Future Annual Revenue
           description: Estimated revenue in the next 12 months
           deprecated: true
-        switching:
-          type: boolean
-          title: Switching
-          description: Switching from another platform?
-          default: false
-        switching_from:
-          anyOf:
-            - type: string
-              enum:
-                - paddle
-                - lemon_squeezy
-                - gumroad
-                - stripe
-                - other
-            - type: 'null'
-          title: Switching From
-          description: Which platform the organization is migrating from.
         previous_annual_revenue:
           anyOf:
             - type: integer
