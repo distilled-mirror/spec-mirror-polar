@@ -20,6 +20,7 @@ Switch a subscription to a different recurring product — the standard upgrade 
 * You can't change the plan on a subscription that's already canceled or scheduled to cancel — uncancel first.
 * Plan changes on a **trialing** subscription are allowed. The trial carries over with its end recomputed from the new product's trial length (anchored to the original `trial_start`). If the new product has no trial — or its trial would already have elapsed — the trial ends immediately and a fresh billing cycle starts on the new product.
 * Custom-priced products (pay-what-you-want) aren't valid destinations for a plan change.
+* The current discount carries over to the new product, including plan changes from the [Customer Portal](https://polar.sh/docs/features/customer-portal/introduction.md) and `PATCH /v1/subscriptions/{id}` calls that omit `discount_id`. Set `discount_id` to `null` to remove it. From API version `2027-01`, a scheduled change reports that removal as `pending_update.discount_unset: true`. `discount_id: null` on that object means the current discount stays.
 
 ```bash cURL theme={null}
 curl --request PATCH \
@@ -56,7 +57,7 @@ curl --request PATCH \
 
 ## Apply or change a discount
 
-Attach a [discount](https://polar.sh/docs/features/discounts.md) to an active subscription, or remove the current one by passing `null`. The change is applied to the **next** billing cycle — it doesn't retroactively re-bill the current period.
+Attach a [discount](https://polar.sh/docs/features/discounts.md) to an active subscription, or remove the current one by setting `discount_id` to `null`. Leaving `discount_id` out keeps the current discount, including when the same request changes the product. The change is applied to the **next** billing cycle — it doesn't retroactively re-bill the current period. From API version `2027-01`, a removal scheduled with the plan change shows up as `pending_update.discount_unset: true`.
 
 ```bash cURL theme={null}
 curl --request PATCH \
