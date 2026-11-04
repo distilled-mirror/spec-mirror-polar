@@ -733,6 +733,19 @@ paths:
             title: ProductID Filter
             description: Filter by product ID.
           description: Filter by product ID.
+        - name: external_product_id
+          in: query
+          required: false
+          schema:
+            anyOf:
+              - type: string
+              - items:
+                  type: string
+                type: array
+              - type: 'null'
+            title: ExternalProductID Filter
+            description: Filter by product external ID.
+          description: Filter by product external ID.
         - name: billing_type
           in: query
           required: false

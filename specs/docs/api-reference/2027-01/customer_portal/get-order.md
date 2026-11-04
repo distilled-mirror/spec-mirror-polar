@@ -1205,14 +1205,12 @@ components:
             The timestamp when the subscription was canceled. The subscription
             might still be active if `cancel_at_period_end` is `true`.
         started_at:
-          anyOf:
-            - type: string
-              format: date-time
-              examples:
-                - '2026-01-01T00:00:00.000000Z'
-            - type: 'null'
+          type: string
+          format: date-time
           title: Started At
           description: The timestamp when the subscription started.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         ends_at:
           anyOf:
             - type: string

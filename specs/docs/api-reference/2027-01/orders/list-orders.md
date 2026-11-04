@@ -95,6 +95,19 @@ paths:
             title: ProductID Filter
             description: Filter by product ID.
           description: Filter by product ID.
+        - name: external_product_id
+          in: query
+          required: false
+          schema:
+            anyOf:
+              - type: string
+              - items:
+                  type: string
+                type: array
+              - type: 'null'
+            title: ExternalProductID Filter
+            description: Filter by product external ID.
+          description: Filter by product external ID.
         - name: product_billing_type
           in: query
           required: false
@@ -2213,14 +2226,12 @@ components:
             The timestamp when the subscription was canceled. The subscription
             might still be active if `cancel_at_period_end` is `true`.
         started_at:
-          anyOf:
-            - type: string
-              format: date-time
-              examples:
-                - '2026-01-01T00:00:00.000000Z'
-            - type: 'null'
+          type: string
+          format: date-time
           title: Started At
           description: The timestamp when the subscription started.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         ends_at:
           anyOf:
             - type: string

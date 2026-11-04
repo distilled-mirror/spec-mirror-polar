@@ -810,6 +810,7 @@ components:
         customer_billing_name:
           anyOf:
             - type: string
+              maxLength: 256
             - type: 'null'
           title: Customer Billing Name
         customer_billing_address:
@@ -1174,6 +1175,7 @@ components:
         customer_billing_name:
           anyOf:
             - type: string
+              maxLength: 256
             - type: 'null'
           title: Customer Billing Name
         customer_billing_address:

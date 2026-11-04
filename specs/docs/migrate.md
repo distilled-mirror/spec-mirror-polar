@@ -9,11 +9,6 @@
 Polar currently supports migrations from Stripe. Polar helps you safely migrate
 customers, products, subscriptions, and payment data.
 
-> [!NOTE]
->
-> Stripe migrations are rolling out gradually. If **Migrations** is not available in your
-> organization settings, [contact Polar support](https://polar.sh/docs/support.md).
-
 ## Before you begin
 
 You need an active Polar organization that is ready to sell, plus access to the

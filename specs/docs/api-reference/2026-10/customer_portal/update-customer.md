@@ -102,6 +102,7 @@ components:
         billing_name:
           anyOf:
             - type: string
+              maxLength: 256
             - type: 'null'
           title: Billing Name
         billing_address:

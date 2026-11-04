@@ -568,14 +568,12 @@ components:
             The timestamp when the subscription was canceled. The subscription
             might still be active if `cancel_at_period_end` is `true`.
         started_at:
-          anyOf:
-            - type: string
-              format: date-time
-              examples:
-                - '2026-01-01T00:00:00.000000Z'
-            - type: 'null'
+          type: string
+          format: date-time
           title: Started At
           description: The timestamp when the subscription started.
+          examples:
+            - '2026-01-01T00:00:00.000000Z'
         ends_at:
           anyOf:
             - type: string
@@ -3225,6 +3223,15 @@ components:
         visibility:
           $ref: '#/components/schemas/BenefitVisibility'
           description: The visibility of the benefit in the customer portal.
+        catalog_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Catalog Id
+          description: >-
+            ID of the catalog that introduced this version of the benefit. None
+            for benefits not managed by declarative config.
         properties:
           $ref: '#/components/schemas/BenefitCustomProperties'
         visibility_configurable:
@@ -3245,6 +3252,7 @@ components:
         - external_id
         - metadata
         - visibility
+        - catalog_id
         - properties
         - visibility_configurable
       title: BenefitCustom
@@ -3315,6 +3323,15 @@ components:
         visibility:
           $ref: '#/components/schemas/BenefitVisibility'
           description: The visibility of the benefit in the customer portal.
+        catalog_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Catalog Id
+          description: >-
+            ID of the catalog that introduced this version of the benefit. None
+            for benefits not managed by declarative config.
         properties:
           $ref: '#/components/schemas/BenefitDiscordProperties'
         visibility_configurable:
@@ -3335,6 +3352,7 @@ components:
         - external_id
         - metadata
         - visibility
+        - catalog_id
         - properties
         - visibility_configurable
       title: BenefitDiscord
@@ -3405,6 +3423,15 @@ components:
         visibility:
           $ref: '#/components/schemas/BenefitVisibility'
           description: The visibility of the benefit in the customer portal.
+        catalog_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Catalog Id
+          description: >-
+            ID of the catalog that introduced this version of the benefit. None
+            for benefits not managed by declarative config.
         properties:
           $ref: '#/components/schemas/BenefitGitHubRepositoryProperties'
         visibility_configurable:
@@ -3425,6 +3452,7 @@ components:
         - external_id
         - metadata
         - visibility
+        - catalog_id
         - properties
         - visibility_configurable
       title: BenefitGitHubRepository
@@ -3497,6 +3525,15 @@ components:
         visibility:
           $ref: '#/components/schemas/BenefitVisibility'
           description: The visibility of the benefit in the customer portal.
+        catalog_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Catalog Id
+          description: >-
+            ID of the catalog that introduced this version of the benefit. None
+            for benefits not managed by declarative config.
         properties:
           $ref: '#/components/schemas/BenefitDownloadablesProperties'
         visibility_configurable:
@@ -3517,6 +3554,7 @@ components:
         - external_id
         - metadata
         - visibility
+        - catalog_id
         - properties
         - visibility_configurable
       title: BenefitDownloadables
@@ -3583,6 +3621,15 @@ components:
         visibility:
           $ref: '#/components/schemas/BenefitVisibility'
           description: The visibility of the benefit in the customer portal.
+        catalog_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Catalog Id
+          description: >-
+            ID of the catalog that introduced this version of the benefit. None
+            for benefits not managed by declarative config.
         properties:
           $ref: '#/components/schemas/BenefitLicenseKeysProperties'
         visibility_configurable:
@@ -3603,6 +3650,7 @@ components:
         - external_id
         - metadata
         - visibility
+        - catalog_id
         - properties
         - visibility_configurable
       title: BenefitLicenseKeys
@@ -3669,6 +3717,15 @@ components:
         visibility:
           $ref: '#/components/schemas/BenefitVisibility'
           description: The visibility of the benefit in the customer portal.
+        catalog_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Catalog Id
+          description: >-
+            ID of the catalog that introduced this version of the benefit. None
+            for benefits not managed by declarative config.
         properties:
           $ref: '#/components/schemas/BenefitMeterCreditProperties'
         visibility_configurable:
@@ -3689,6 +3746,7 @@ components:
         - external_id
         - metadata
         - visibility
+        - catalog_id
         - properties
         - visibility_configurable
       title: BenefitMeterCredit
@@ -3759,6 +3817,15 @@ components:
         visibility:
           $ref: '#/components/schemas/BenefitVisibility'
           description: The visibility of the benefit in the customer portal.
+        catalog_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Catalog Id
+          description: >-
+            ID of the catalog that introduced this version of the benefit. None
+            for benefits not managed by declarative config.
         properties:
           $ref: '#/components/schemas/BenefitFeatureFlagProperties'
         visibility_configurable:
@@ -3779,6 +3846,7 @@ components:
         - external_id
         - metadata
         - visibility
+        - catalog_id
         - properties
         - visibility_configurable
       title: BenefitFeatureFlag
@@ -3850,6 +3918,15 @@ components:
         visibility:
           $ref: '#/components/schemas/BenefitVisibility'
           description: The visibility of the benefit in the customer portal.
+        catalog_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Catalog Id
+          description: >-
+            ID of the catalog that introduced this version of the benefit. None
+            for benefits not managed by declarative config.
         properties:
           $ref: '#/components/schemas/BenefitSlackSharedChannelProperties'
         visibility_configurable:
@@ -3870,6 +3947,7 @@ components:
         - external_id
         - metadata
         - visibility
+        - catalog_id
         - properties
         - visibility_configurable
       title: BenefitSlackSharedChannel

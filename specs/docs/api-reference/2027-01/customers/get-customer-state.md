@@ -1244,12 +1244,8 @@ components:
           examples:
             - null
         started_at:
-          anyOf:
-            - type: string
-              format: date-time
-              examples:
-                - '2026-01-01T00:00:00.000000Z'
-            - type: 'null'
+          type: string
+          format: date-time
           title: Started At
           description: The timestamp when the subscription started.
           examples:

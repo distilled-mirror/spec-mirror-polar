@@ -18,6 +18,14 @@ Polar supports any provider that implements OpenID Connect, including Google Wor
 
 SSO lives under [**Settings → SSO**](https://polar.sh/to/dashboard/settings/sso) in your dashboard.
 
+## Company-managed accounts
+
+When you configure SSO for a verified email domain, Polar treats accounts using that domain as company-managed. Polar trusts your identity provider to authenticate those users, including users who already have a Polar account. The email address must belong to a domain verified by your organization and be marked as verified by your provider.
+
+Administrators who control your identity provider can authenticate as those users and control their Polar accounts, including account-level email and security settings. This authority extends to the user's identity across Polar, including access they hold in other organizations, subject to those organizations' own access requirements. Enforcing SSO is not required for this trust model to apply.
+
+Use a separate account with a personal email address for work that should remain outside your company's control.
+
 ## How people become members
 
 Anyone who signs in through your connection becomes a member of your organization. You don't invite them first — authenticating against your identity provider is what grants membership.
@@ -94,7 +102,7 @@ You can stop enforcing at any time from the same screen.
 
 > [accordion] What happens to someone who already has a Polar account?
 >
-> They keep it. Signing in through your connection adds your organization to their existing account — it doesn't create a second one, and it doesn't give your organization access to anything else they own.
+> They keep it. Signing in through your connection adds your organization to their existing account instead of creating a second one. Accounts using your verified domain are company-managed: your identity provider is trusted for the whole Polar identity, including account-level settings and access to other organizations, subject to those organizations' own access requirements. Use a separate account with a personal email address for independent work.
 
 > [accordion] Can I still invite members by email?
 >
