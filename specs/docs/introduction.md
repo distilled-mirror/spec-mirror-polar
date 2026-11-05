@@ -111,11 +111,13 @@ their benefits automatically. No manual work required.
 
 ## Quick Start Guide
 
+> [!TIP]
+>
+> Working with an AI agent? Tell it to read [`https://polar.sh/auth.md`](https://polar.sh/auth.md). It can sign up on its own, set up your products and checkouts, and hand the organization over to you.
+
 **1. Create Your Account**
 
 [Sign up for Polar](https://polar.sh/signup) using GitHub, Google, or email. Create an organization to manage your products and customers.
-
-![](https://mintcdn.com/polar/Ut0vPUvE1pIdMcH2/assets/create-org.light.png?fit=max\&auto=format\&n=Ut0vPUvE1pIdMcH2\&q=85\&s=b416d158706b4ba00056ba9fbe29657c)
 
 **2. Create Your First Product**
 
@@ -167,13 +169,7 @@ Read the [Webhooks guide →](https://polar.sh/docs/integrate/webhooks/endpoints
 
 ## Integration Options
 
-### Framework Adapters (Recommended)
-
-> [card] [Browse framework adapters](https://polar.sh/docs/integrate/sdk/adapters/introduction.md)
->
-> Drop-in adapters that wire Polar checkouts and webhooks into your stack, including Next.js, Nuxt, TanStack Start, Laravel, and BetterAuth.
-
-### Native SDKs
+### Native SDKs (Recommended)
 
 > [card] [JS/TS](https://polar.sh/docs/integrate/sdk/typescript.md)
 >
@@ -182,6 +178,12 @@ Read the [Webhooks guide →](https://polar.sh/docs/integrate/webhooks/endpoints
 > [card] [Python](https://polar.sh/docs/integrate/sdk/python.md)
 >
 > For Django, Flask, FastAPI frameworks
+
+### Framework Adapters
+
+> [card] [Browse framework adapters](https://polar.sh/docs/integrate/sdk/adapters/introduction.md)
+>
+> Drop-in adapters that wire Polar checkouts and webhooks into your stack, including Next.js, Nuxt, TanStack Start, Laravel, and BetterAuth.
 
 ## Why Choose Polar?
 
