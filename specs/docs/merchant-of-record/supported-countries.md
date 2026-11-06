@@ -95,7 +95,6 @@ Polar uses Stripe Connect Express to issue payouts to residents or businesses in
 * 🇲🇩 Moldova
 * 🇲🇨 Monaco
 * 🇲🇳 Mongolia
-* 🇲🇦 Morocco
 * 🇲🇿 Mozambique
 * 🇳🇦 Namibia
 * 🇳🇱 Netherlands

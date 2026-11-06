@@ -72,6 +72,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/Benefit'
                 title: Benefit
+        '403':
+          description: Organization benefit limit reached.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotPermitted'
         '422':
           description: Validation Error
           content:
@@ -160,6 +166,22 @@ components:
           license_keys: '#/components/schemas/BenefitLicenseKeys'
           meter_credit: '#/components/schemas/BenefitMeterCredit'
           slack_shared_channel: '#/components/schemas/BenefitSlackSharedChannel'
+    NotPermitted:
+      properties:
+        error:
+          type: string
+          const: NotPermitted
+          title: Error
+          examples:
+            - NotPermitted
+        detail:
+          type: string
+          title: Detail
+      type: object
+      required:
+        - error
+        - detail
+      title: NotPermitted
     HTTPValidationError:
       properties:
         detail:

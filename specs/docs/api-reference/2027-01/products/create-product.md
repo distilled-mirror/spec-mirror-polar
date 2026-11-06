@@ -69,6 +69,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Product'
+        '403':
+          description: Organization product limit reached.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotPermitted'
         '422':
           description: Validation Error
           content:
@@ -296,6 +302,22 @@ components:
         - attached_custom_fields
       title: Product
       description: A product.
+    NotPermitted:
+      properties:
+        error:
+          type: string
+          const: NotPermitted
+          title: Error
+          examples:
+            - NotPermitted
+        detail:
+          type: string
+          title: Detail
+      type: object
+      required:
+        - error
+        - detail
+      title: NotPermitted
     HTTPValidationError:
       properties:
         detail:
