@@ -55,6 +55,38 @@ paths:
         **Scopes**: `events:read` `events:write`
       operationId: events:list
       parameters:
+        - name: organization_id
+          in: query
+          required: false
+          schema:
+            anyOf:
+              - type: string
+                format: uuid4
+                description: The organization ID.
+                examples:
+                  - 1dbfc517-0bbf-4301-9ba8-555ca42b9737
+              - type: array
+                items:
+                  type: string
+                  format: uuid4
+                  description: The organization ID.
+                  examples:
+                    - 1dbfc517-0bbf-4301-9ba8-555ca42b9737
+              - type: 'null'
+            title: OrganizationID Filter
+            description: Filter by organization ID.
+          description: Filter by organization ID.
+        - name: query
+          in: query
+          required: false
+          schema:
+            anyOf:
+              - type: string
+                minLength: 3
+              - type: 'null'
+            title: Query
+            description: Query to filter events.
+          description: Query to filter events.
         - name: filter
           in: query
           required: false
@@ -91,27 +123,6 @@ paths:
             description: Filter events before this timestamp.
             title: End Timestamp
           description: Filter events before this timestamp.
-        - name: organization_id
-          in: query
-          required: false
-          schema:
-            anyOf:
-              - type: string
-                format: uuid4
-                description: The organization ID.
-                examples:
-                  - 1dbfc517-0bbf-4301-9ba8-555ca42b9737
-              - type: array
-                items:
-                  type: string
-                  format: uuid4
-                  description: The organization ID.
-                  examples:
-                    - 1dbfc517-0bbf-4301-9ba8-555ca42b9737
-              - type: 'null'
-            title: OrganizationID Filter
-            description: Filter by organization ID.
-          description: Filter by organization ID.
         - name: customer_id
           in: query
           required: false
@@ -180,16 +191,6 @@ paths:
             title: Source Filter
             description: Filter by event source.
           description: Filter by event source.
-        - name: query
-          in: query
-          required: false
-          schema:
-            anyOf:
-              - type: string
-              - type: 'null'
-            title: Query
-            description: Query to filter events.
-          description: Query to filter events.
         - name: parent_id
           in: query
           required: false

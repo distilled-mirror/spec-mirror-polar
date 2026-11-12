@@ -138,6 +138,34 @@ paths:
             title: Exclude IDs
             description: Exclude benefits with these IDs.
           description: Exclude benefits with these IDs.
+        - name: catalog_id
+          in: query
+          required: false
+          schema:
+            anyOf:
+              - type: string
+                format: uuid4
+              - items:
+                  type: string
+                  format: uuid4
+                type: array
+              - type: 'null'
+            title: CatalogID Filter
+            description: Filter by catalog ID.
+          description: Filter by catalog ID.
+        - name: catalog_status
+          in: query
+          required: false
+          schema:
+            anyOf:
+              - $ref: '#/components/schemas/CatalogStatus'
+              - type: array
+                items:
+                  $ref: '#/components/schemas/CatalogStatus'
+              - type: 'null'
+            title: CatalogStatus Filter
+            description: Filter by catalog status.
+          description: Filter by catalog status.
         - name: query
           in: query
           required: false
@@ -266,6 +294,13 @@ components:
         - feature_flag
         - slack_shared_channel
       title: BenefitType
+    CatalogStatus:
+      type: string
+      enum:
+        - draft
+        - live
+        - archived
+      title: CatalogStatus
     BenefitSortProperty:
       type: string
       enum:
@@ -453,6 +488,10 @@ components:
           description: >-
             ID of the catalog that introduced this version of the benefit. None
             for benefits not managed by declarative config.
+        is_current:
+          type: boolean
+          title: Is Current
+          description: Whether this is the current version of the benefit.
         properties:
           $ref: '#/components/schemas/BenefitCustomProperties'
         visibility_configurable:
@@ -474,6 +513,7 @@ components:
         - metadata
         - visibility
         - catalog_id
+        - is_current
         - properties
         - visibility_configurable
       title: BenefitCustom
@@ -553,6 +593,10 @@ components:
           description: >-
             ID of the catalog that introduced this version of the benefit. None
             for benefits not managed by declarative config.
+        is_current:
+          type: boolean
+          title: Is Current
+          description: Whether this is the current version of the benefit.
         properties:
           $ref: '#/components/schemas/BenefitDiscordProperties'
         visibility_configurable:
@@ -574,6 +618,7 @@ components:
         - metadata
         - visibility
         - catalog_id
+        - is_current
         - properties
         - visibility_configurable
       title: BenefitDiscord
@@ -632,11 +677,14 @@ components:
         external_id:
           anyOf:
             - type: string
+              pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
             - type: 'null'
           title: External Id
           description: >-
             An ID from your own system to reference this resource. It must be
-            unique within the organization for this type of resource.
+            unique within the organization for this type of resource. It must
+            start with a letter or digit and contain only letters, digits, `_`,
+            `-`, `.` and `:`.
           examples:
             - ext_1337
         metadata:
@@ -653,6 +701,10 @@ components:
           description: >-
             ID of the catalog that introduced this version of the benefit. None
             for benefits not managed by declarative config.
+        is_current:
+          type: boolean
+          title: Is Current
+          description: Whether this is the current version of the benefit.
         properties:
           $ref: '#/components/schemas/BenefitGitHubRepositoryProperties'
         visibility_configurable:
@@ -674,6 +726,7 @@ components:
         - metadata
         - visibility
         - catalog_id
+        - is_current
         - properties
         - visibility_configurable
       title: BenefitGitHubRepository
@@ -755,6 +808,10 @@ components:
           description: >-
             ID of the catalog that introduced this version of the benefit. None
             for benefits not managed by declarative config.
+        is_current:
+          type: boolean
+          title: Is Current
+          description: Whether this is the current version of the benefit.
         properties:
           $ref: '#/components/schemas/BenefitDownloadablesProperties'
         visibility_configurable:
@@ -776,6 +833,7 @@ components:
         - metadata
         - visibility
         - catalog_id
+        - is_current
         - properties
         - visibility_configurable
       title: BenefitDownloadables
@@ -851,6 +909,10 @@ components:
           description: >-
             ID of the catalog that introduced this version of the benefit. None
             for benefits not managed by declarative config.
+        is_current:
+          type: boolean
+          title: Is Current
+          description: Whether this is the current version of the benefit.
         properties:
           $ref: '#/components/schemas/BenefitLicenseKeysProperties'
         visibility_configurable:
@@ -872,6 +934,7 @@ components:
         - metadata
         - visibility
         - catalog_id
+        - is_current
         - properties
         - visibility_configurable
       title: BenefitLicenseKeys
@@ -926,11 +989,14 @@ components:
         external_id:
           anyOf:
             - type: string
+              pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
             - type: 'null'
           title: External Id
           description: >-
             An ID from your own system to reference this resource. It must be
-            unique within the organization for this type of resource.
+            unique within the organization for this type of resource. It must
+            start with a letter or digit and contain only letters, digits, `_`,
+            `-`, `.` and `:`.
           examples:
             - ext_1337
         metadata:
@@ -947,6 +1013,10 @@ components:
           description: >-
             ID of the catalog that introduced this version of the benefit. None
             for benefits not managed by declarative config.
+        is_current:
+          type: boolean
+          title: Is Current
+          description: Whether this is the current version of the benefit.
         properties:
           $ref: '#/components/schemas/BenefitMeterCreditProperties'
         visibility_configurable:
@@ -968,6 +1038,7 @@ components:
         - metadata
         - visibility
         - catalog_id
+        - is_current
         - properties
         - visibility_configurable
       title: BenefitMeterCredit
@@ -1026,11 +1097,14 @@ components:
         external_id:
           anyOf:
             - type: string
+              pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
             - type: 'null'
           title: External Id
           description: >-
             An ID from your own system to reference this resource. It must be
-            unique within the organization for this type of resource.
+            unique within the organization for this type of resource. It must
+            start with a letter or digit and contain only letters, digits, `_`,
+            `-`, `.` and `:`.
           examples:
             - ext_1337
         metadata:
@@ -1047,6 +1121,10 @@ components:
           description: >-
             ID of the catalog that introduced this version of the benefit. None
             for benefits not managed by declarative config.
+        is_current:
+          type: boolean
+          title: Is Current
+          description: Whether this is the current version of the benefit.
         properties:
           $ref: '#/components/schemas/BenefitFeatureFlagProperties'
         visibility_configurable:
@@ -1068,6 +1146,7 @@ components:
         - metadata
         - visibility
         - catalog_id
+        - is_current
         - properties
         - visibility_configurable
       title: BenefitFeatureFlag
@@ -1148,6 +1227,10 @@ components:
           description: >-
             ID of the catalog that introduced this version of the benefit. None
             for benefits not managed by declarative config.
+        is_current:
+          type: boolean
+          title: Is Current
+          description: Whether this is the current version of the benefit.
         properties:
           $ref: '#/components/schemas/BenefitSlackSharedChannelProperties'
         visibility_configurable:
@@ -1169,6 +1252,7 @@ components:
         - metadata
         - visibility
         - catalog_id
+        - is_current
         - properties
         - visibility_configurable
       title: BenefitSlackSharedChannel

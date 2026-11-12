@@ -15,6 +15,7 @@ polar <subcommand> [flags]
 ## CLI commands
 
 * [`polar auth`](https://polar.sh/docs/integrate/cli/reference/auth) Manage your Polar sessions and active organization
+* [`polar agent`](https://polar.sh/docs/integrate/cli/reference/agent) Set up coding agents to build with Polar
 * [`polar webhook`](https://polar.sh/docs/integrate/cli/reference/webhook) Test webhooks against your local server
 * [`polar update`](https://polar.sh/docs/integrate/cli/reference/update) Update the CLI to the latest release
 

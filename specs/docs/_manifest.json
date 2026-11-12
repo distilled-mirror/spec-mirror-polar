@@ -589,6 +589,7 @@
     "integrate/cli/authentication",
     "integrate/cli/introduction",
     "integrate/cli/reference",
+    "integrate/cli/reference/agent",
     "integrate/cli/reference/auth",
     "integrate/cli/reference/benefit_grants",
     "integrate/cli/reference/benefits",

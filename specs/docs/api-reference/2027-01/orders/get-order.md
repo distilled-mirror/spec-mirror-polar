@@ -1274,6 +1274,10 @@ components:
           description: >-
             ID of the catalog that introduced this version of the product. None
             for products not managed by declarative config.
+        is_current:
+          type: boolean
+          title: Is Current
+          description: Whether this is the current version of the product.
       type: object
       required:
         - metadata
@@ -1293,6 +1297,7 @@ components:
         - is_archived
         - organization_id
         - catalog_id
+        - is_current
       title: OrderProduct
     DiscountFixedOnceForeverDurationBase:
       properties:

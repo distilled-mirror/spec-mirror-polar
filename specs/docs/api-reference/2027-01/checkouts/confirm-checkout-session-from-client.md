@@ -525,6 +525,12 @@ components:
               type: array
             - type: 'null'
           title: Attached Custom Fields
+        payment_method_types:
+          items:
+            type: string
+          type: array
+          title: Payment Method Types
+          description: Payment method types to offer in the payment form.
         customer_session_token:
           anyOf:
             - type: string
@@ -585,6 +591,7 @@ components:
         - discount
         - organization
         - attached_custom_fields
+        - payment_method_types
         - customer_session_token
       title: CheckoutPublicConfirmed
       description: >-
@@ -1619,6 +1626,10 @@ components:
           description: >-
             ID of the catalog that introduced this version of the product. None
             for products not managed by declarative config.
+        is_current:
+          type: boolean
+          title: Is Current
+          description: Whether this is the current version of the product.
         prices:
           items:
             oneOf:
@@ -1657,6 +1668,7 @@ components:
         - is_archived
         - organization_id
         - catalog_id
+        - is_current
         - prices
         - benefits
         - medias
