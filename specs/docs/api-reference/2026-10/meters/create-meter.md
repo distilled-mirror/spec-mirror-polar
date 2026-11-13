@@ -17,7 +17,10 @@ openapi: 3.1.0
 info:
   title: Polar API
   summary: Polar HTTP and Webhooks API
-  description: Read the docs at https://polar.sh/docs/api-reference
+  description: >-
+    Read the docs at https://polar.sh/docs/api-reference. See
+    https://polar.sh/docs/api-reference/versioning for the API versioning and
+    deprecation policy.
   version: 2026-10
 servers:
   - url: https://api.polar.sh
@@ -42,6 +45,9 @@ tags:
     description: Endpoints supported by Polar's MCP server.
   - name: cli
     description: Endpoints exposed as commands by Polar's CLI.
+externalDocs:
+  description: API versioning and deprecation policy
+  url: https://polar.sh/docs/api-reference/versioning
 paths:
   /v1/meters/:
     post:
@@ -158,6 +164,7 @@ components:
             You can store up to **50 key-value pairs**.
         name:
           type: string
+          maxLength: 128
           minLength: 3
           title: Name
           description: >-
@@ -170,6 +177,7 @@ components:
         custom_label:
           anyOf:
             - type: string
+              maxLength: 32
             - type: 'null'
           title: Custom Label
           description: >-

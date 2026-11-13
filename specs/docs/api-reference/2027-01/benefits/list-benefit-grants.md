@@ -19,7 +19,10 @@ openapi: 3.1.0
 info:
   title: Polar API
   summary: Polar HTTP and Webhooks API
-  description: Read the docs at https://polar.sh/docs/api-reference
+  description: >-
+    Read the docs at https://polar.sh/docs/api-reference. See
+    https://polar.sh/docs/api-reference/versioning for the API versioning and
+    deprecation policy.
   version: 2027-01
 servers:
   - url: https://api.polar.sh
@@ -44,6 +47,9 @@ tags:
     description: Endpoints supported by Polar's MCP server.
   - name: cli
     description: Endpoints exposed as commands by Polar's CLI.
+externalDocs:
+  description: API versioning and deprecation policy
+  url: https://polar.sh/docs/api-reference/versioning
 paths:
   /v1/benefits/{id}/grants:
     get:
@@ -237,6 +243,24 @@ components:
       title: HTTPValidationError
     BenefitGrant:
       properties:
+        manually_granted_at:
+          anyOf:
+            - type: string
+              format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
+            - type: 'null'
+          title: Manually Granted At
+          description: When the manual grant was requested, if applicable.
+        manually_revoked_at:
+          anyOf:
+            - type: string
+              format: date-time
+              examples:
+                - '2026-01-01T00:00:00.000000Z'
+            - type: 'null'
+          title: Manually Revoked At
+          description: When this grant was permanently revoked manually, if applicable.
         created_at:
           type: string
           format: date-time
@@ -347,6 +371,8 @@ components:
           title: Properties
       type: object
       required:
+        - manually_granted_at
+        - manually_revoked_at
         - created_at
         - modified_at
         - id
