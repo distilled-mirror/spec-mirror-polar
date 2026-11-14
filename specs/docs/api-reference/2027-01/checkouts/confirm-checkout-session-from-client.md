@@ -1899,7 +1899,11 @@ components:
           title: Avatar Url
           description: Avatar URL shown in checkout, customer portal, emails etc.
         proration_behavior:
-          $ref: '#/components/schemas/SubscriptionProrationBehavior'
+          anyOf:
+            - $ref: '#/components/schemas/SubscriptionProrationBehavior'
+            - type: string
+              const: auto
+          title: Proration Behavior
           description: >-
             Proration behavior applied when customer updates their subscription
             from the portal.

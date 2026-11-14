@@ -326,14 +326,11 @@ components:
         external_id:
           anyOf:
             - type: string
-              pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
             - type: 'null'
           title: External Id
           description: >-
             An ID from your own system to reference this resource. It must be
-            unique within the organization for this type of resource. It must
-            start with a letter or digit and contain only letters, digits, `_`,
-            `-`, `.` and `:`.
+            unique within the organization for this type of resource.
           examples:
             - ext_1337
         metadata:
@@ -592,14 +589,11 @@ components:
         external_id:
           anyOf:
             - type: string
-              pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
             - type: 'null'
           title: External Id
           description: >-
             An ID from your own system to reference this resource. It must be
-            unique within the organization for this type of resource. It must
-            start with a letter or digit and contain only letters, digits, `_`,
-            `-`, `.` and `:`.
+            unique within the organization for this type of resource.
           examples:
             - ext_1337
         metadata:

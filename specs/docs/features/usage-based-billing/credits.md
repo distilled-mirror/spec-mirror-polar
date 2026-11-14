@@ -4,7 +4,7 @@
 
 # Credits
 
-> Crediting customers for Usage Based Billing
+> Crediting customers for metered usage
 
 Credits is the way to pre-pay for usage in Polar. It allows you to give your customers the ability to pre-pay for usage instead of risk getting a hefty bill at the end of the month.
 

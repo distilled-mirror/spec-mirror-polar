@@ -341,6 +341,19 @@ components:
             - type: 'null'
           title: Archived At
           description: Whether the meter is archived and the time it was archived.
+        catalog_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Catalog Id
+          description: >-
+            ID of the catalog that introduced this version of the meter. None
+            for meters not managed by declarative config.
+        is_current:
+          type: boolean
+          title: Is Current
+          description: Whether this is the current version of the meter.
       type: object
       required:
         - external_id
@@ -353,6 +366,8 @@ components:
         - filter
         - aggregation
         - organization_id
+        - catalog_id
+        - is_current
       title: Meter
     HTTPValidationError:
       properties:

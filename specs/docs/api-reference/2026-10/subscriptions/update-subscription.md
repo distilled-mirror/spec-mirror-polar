@@ -683,6 +683,7 @@ components:
           anyOf:
             - $ref: '#/components/schemas/SubscriptionProrationBehavior'
             - type: 'null'
+          title: Proration Behavior
           description: >-
             Determine how to handle the proration billing. If not provided, will
             use the default organization setting.
@@ -726,6 +727,7 @@ components:
           anyOf:
             - $ref: '#/components/schemas/SubscriptionProrationBehavior'
             - type: 'null'
+          title: Proration Behavior
           description: >-
             Determine how to handle the proration billing. If not provided, will
             use the default organization setting.
@@ -746,6 +748,7 @@ components:
           anyOf:
             - $ref: '#/components/schemas/SubscriptionProrationBehavior'
             - type: 'null'
+          title: Proration Behavior
           description: >-
             Determine how to handle the proration billing. If not provided, will
             use the default organization setting.

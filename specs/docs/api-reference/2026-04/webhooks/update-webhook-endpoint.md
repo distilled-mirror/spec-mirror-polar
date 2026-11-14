@@ -161,9 +161,14 @@ components:
           description: The API version that'll be used in event payloads.
         format:
           anyOf:
-            - $ref: '#/components/schemas/WebhookFormat'
+            - type: string
+              enum:
+                - raw
+                - discord
+                - slack
               description: The format of the webhook payload.
             - type: 'null'
+          title: Format
         events:
           anyOf:
             - items:
@@ -295,13 +300,6 @@ components:
           title: Detail
       type: object
       title: HTTPValidationError
-    WebhookFormat:
-      type: string
-      enum:
-        - raw
-        - discord
-        - slack
-      title: WebhookFormat
     WebhookEventType:
       type: string
       enum:
@@ -348,6 +346,14 @@ components:
         - benefit_grant.revoked
         - organization.updated
       title: WebhookEventType
+    WebhookFormat:
+      type: string
+      enum:
+        - raw
+        - discord
+        - slack
+        - mcp
+      title: WebhookFormat
     ValidationError:
       properties:
         loc:

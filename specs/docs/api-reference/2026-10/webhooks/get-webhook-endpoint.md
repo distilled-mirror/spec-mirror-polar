@@ -245,6 +245,7 @@ components:
         - raw
         - discord
         - slack
+        - mcp
       title: WebhookFormat
     WebhookEventType:
       type: string

@@ -89,6 +89,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Unauthorized'
+        '403':
+          description: >-
+            Cannot reactivate a license key for a manually revoked benefit
+            grant.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotPermitted'
         '404':
           description: License key not found.
           content:
@@ -309,6 +317,22 @@ components:
         - error
         - detail
       title: Unauthorized
+    NotPermitted:
+      properties:
+        error:
+          type: string
+          const: NotPermitted
+          title: Error
+          examples:
+            - NotPermitted
+        detail:
+          type: string
+          title: Detail
+      type: object
+      required:
+        - error
+        - detail
+      title: NotPermitted
     ResourceNotFound:
       properties:
         error:

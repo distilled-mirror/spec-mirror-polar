@@ -30,7 +30,7 @@ Encore has built-in secrets management that works consistently across local deve
 
 ### Polar Access Token and Mode
 
-To authenticate with Polar, you need to create an access token and specify if it's production or sandbox mode. You can create an [organization access token from your organization settings](https://polar.sh/docs/integrate/oat).
+To authenticate with Polar, you need to create an access token and specify if it's production or sandbox mode. You can create an [organization access token from your organization settings](https://polar.sh/docs/integrate/oat.md).
 
 Add it to Encore using the secrets manager:
 

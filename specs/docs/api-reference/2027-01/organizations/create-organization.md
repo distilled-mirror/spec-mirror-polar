@@ -746,7 +746,11 @@ components:
           title: Avatar Url
           description: Avatar URL shown in checkout, customer portal, emails etc.
         proration_behavior:
-          $ref: '#/components/schemas/SubscriptionProrationBehavior'
+          anyOf:
+            - $ref: '#/components/schemas/SubscriptionProrationBehavior'
+            - type: string
+              const: auto
+          title: Proration Behavior
           description: >-
             Proration behavior applied when customer updates their subscription
             from the portal.
@@ -1527,12 +1531,16 @@ components:
           type: boolean
           title: Allow Multiple Subscriptions
         proration_behavior:
-          type: string
-          enum:
-            - invoice
-            - prorate
-            - next_period
-          title: PublicSubscriptionProrationBehavior
+          anyOf:
+            - type: string
+              enum:
+                - invoice
+                - prorate
+                - next_period
+              title: PublicSubscriptionProrationBehavior
+            - type: string
+              const: auto
+          title: Proration Behavior
         benefit_revocation_grace_period:
           type: integer
           title: Benefit Revocation Grace Period
@@ -1865,6 +1873,13 @@ components:
           description: >-
             If this organization can manage its configuration from a declarative
             config document.
+          default: false
+        reducer_billing_enabled:
+          type: boolean
+          title: Reducer Billing Enabled
+          description: >-
+            If this organization's metered usage is billed from the reducer
+            instead of the legacy billing entries.
           default: false
       type: object
       title: OrganizationFeatureSettings

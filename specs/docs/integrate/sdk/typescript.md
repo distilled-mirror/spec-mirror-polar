@@ -30,7 +30,7 @@ The official TypeScript SDK provides a fully typed client for the Polar API.
 
 ## Quickstart
 
-Create an [organization access token](https://polar.sh/docs/integrate/oat) for server-side use, keep it out of browser bundles, store it in `POLAR_ACCESS_TOKEN`, and make your first request:
+Create an [organization access token](https://polar.sh/docs/integrate/oat.md) for server-side use, keep it out of browser bundles, store it in `POLAR_ACCESS_TOKEN`, and make your first request:
 
 ```typescript icon="square-js" index.js theme={null}
 import { createPolar } from "@polar-sh/sdk/2026-10";

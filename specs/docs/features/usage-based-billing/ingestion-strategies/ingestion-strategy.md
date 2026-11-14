@@ -4,7 +4,7 @@
 
 # Strategy Introduction
 
-> Ingestion strategies for Usage Based Billing
+> Ingestion strategies for Metering
 
 Polar offers an ingestion framework to work with Polar's event ingestion API.
 

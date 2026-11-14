@@ -172,6 +172,15 @@ components:
             * A boolean
 
             You can store up to **50 key-value pairs**.
+        trial_payment_setup_required:
+          anyOf:
+            - type: boolean
+            - type: 'null'
+          title: Trial Payment Setup Required
+          description: >-
+            Whether customers must provide a payment method to start a trial. If
+            `false`, customers can start a trial without entering payment
+            details. If `null`, the product's setting is used.
         products:
           anyOf:
             - items:
@@ -307,6 +316,15 @@ components:
         payment_processor:
           $ref: '#/components/schemas/PaymentProcessor'
           description: Payment processor used.
+        trial_payment_setup_required:
+          anyOf:
+            - type: boolean
+            - type: 'null'
+          title: Trial Payment Setup Required
+          description: >-
+            Whether customers must provide a payment method to start a trial. If
+            `false`, customers can start a trial without entering payment
+            details. If `null`, the product's setting is used.
         client_secret:
           type: string
           title: Client Secret
@@ -416,6 +434,7 @@ components:
         - trial_interval_count
         - metadata
         - payment_processor
+        - trial_payment_setup_required
         - client_secret
         - success_url
         - return_url

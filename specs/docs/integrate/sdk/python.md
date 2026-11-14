@@ -26,7 +26,7 @@ The SDK requires Python 3.11 or later.
 
 ## Quickstart
 
-Create an [organization access token](https://polar.sh/docs/integrate/oat), store it in `POLAR_ACCESS_TOKEN`, and make your first request:
+Create an [organization access token](https://polar.sh/docs/integrate/oat.md), store it in `POLAR_ACCESS_TOKEN`, and make your first request:
 
 ```python main.py theme={null}
 import os

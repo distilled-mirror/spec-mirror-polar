@@ -4,7 +4,7 @@
 
 # Meters
 
-> Creating and managing meters for Usage Based Billing
+> Creating and managing meters
 
 Meters are there to filter and aggregate the events that are ingested. Said another way, this is how you define what usage you want to charge for, based on the events you send to Polar. For example:
 

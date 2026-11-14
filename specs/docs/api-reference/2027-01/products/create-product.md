@@ -105,6 +105,7 @@ paths:
                 external_id='ext_1337',
                 name='string',
                 prices=[{'amount_type': 'fixed', 'price_amount': 0}],
+                trial_payment_setup_required=True,
                 recurring_interval='day',
                 recurring_interval_count=1,
             )
@@ -127,6 +128,7 @@ paths:
                     "price_amount": 0
                   }
                 ],
+                "trial_payment_setup_required": true,
                 "recurring_interval": "day",
                 "recurring_interval_count": 1
               },
@@ -228,6 +230,13 @@ components:
           format: uuid4
           title: Organization Id
           description: The ID of the organization owning the product.
+        trial_payment_setup_required:
+          type: boolean
+          title: Trial Payment Setup Required
+          description: >-
+            Whether customers must provide a payment method to start a trial. If
+            `false`, customers can start a trial without entering payment
+            details.
         catalog_id:
           anyOf:
             - type: string
@@ -302,6 +311,7 @@ components:
         - is_recurring
         - is_archived
         - organization_id
+        - trial_payment_setup_required
         - catalog_id
         - is_current
         - external_id
@@ -467,6 +477,14 @@ components:
             - type: 'null'
           title: Trial Interval Count
           description: The number of interval units for the trial period.
+        trial_payment_setup_required:
+          type: boolean
+          title: Trial Payment Setup Required
+          description: >-
+            Whether customers must provide a payment method to start a trial. If
+            `false`, customers can start a trial without entering payment
+            details.
+          default: true
         recurring_interval:
           $ref: '#/components/schemas/RecurringInterval'
           description: The recurring interval of the product.
@@ -2830,14 +2848,11 @@ components:
         external_id:
           anyOf:
             - type: string
-              pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
             - type: 'null'
           title: External Id
           description: >-
             An ID from your own system to reference this resource. It must be
-            unique within the organization for this type of resource. It must
-            start with a letter or digit and contain only letters, digits, `_`,
-            `-`, `.` and `:`.
+            unique within the organization for this type of resource.
           examples:
             - ext_1337
         metadata:
@@ -3142,14 +3157,11 @@ components:
         external_id:
           anyOf:
             - type: string
-              pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
             - type: 'null'
           title: External Id
           description: >-
             An ID from your own system to reference this resource. It must be
-            unique within the organization for this type of resource. It must
-            start with a letter or digit and contain only letters, digits, `_`,
-            `-`, `.` and `:`.
+            unique within the organization for this type of resource.
           examples:
             - ext_1337
         metadata:
@@ -3250,14 +3262,11 @@ components:
         external_id:
           anyOf:
             - type: string
-              pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
             - type: 'null'
           title: External Id
           description: >-
             An ID from your own system to reference this resource. It must be
-            unique within the organization for this type of resource. It must
-            start with a letter or digit and contain only letters, digits, `_`,
-            `-`, `.` and `:`.
+            unique within the organization for this type of resource.
           examples:
             - ext_1337
         metadata:

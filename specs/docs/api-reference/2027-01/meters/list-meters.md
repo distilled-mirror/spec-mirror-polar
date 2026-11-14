@@ -97,6 +97,34 @@ paths:
             title: ExternalID Filter
             description: Filter by meter external ID.
           description: Filter by meter external ID.
+        - name: catalog_id
+          in: query
+          required: false
+          schema:
+            anyOf:
+              - type: string
+                format: uuid4
+              - items:
+                  type: string
+                  format: uuid4
+                type: array
+              - type: 'null'
+            title: CatalogID Filter
+            description: Filter by catalog ID.
+          description: Filter by catalog ID.
+        - name: catalog_status
+          in: query
+          required: false
+          schema:
+            anyOf:
+              - $ref: '#/components/schemas/CatalogStatus'
+              - type: array
+                items:
+                  $ref: '#/components/schemas/CatalogStatus'
+              - type: 'null'
+            title: CatalogStatus Filter
+            description: Filter by catalog status.
+          description: Filter by catalog status.
         - name: query
           in: query
           required: false
@@ -223,6 +251,13 @@ paths:
             }
 components:
   schemas:
+    CatalogStatus:
+      type: string
+      enum:
+        - draft
+        - live
+        - archived
+      title: CatalogStatus
     MeterSortProperty:
       type: string
       enum:
@@ -366,6 +401,19 @@ components:
             - type: 'null'
           title: Archived At
           description: Whether the meter is archived and the time it was archived.
+        catalog_id:
+          anyOf:
+            - type: string
+              format: uuid4
+            - type: 'null'
+          title: Catalog Id
+          description: >-
+            ID of the catalog that introduced this version of the meter. None
+            for meters not managed by declarative config.
+        is_current:
+          type: boolean
+          title: Is Current
+          description: Whether this is the current version of the meter.
       type: object
       required:
         - external_id
@@ -378,6 +426,8 @@ components:
         - filter
         - aggregation
         - organization_id
+        - catalog_id
+        - is_current
       title: Meter
     Pagination:
       properties:

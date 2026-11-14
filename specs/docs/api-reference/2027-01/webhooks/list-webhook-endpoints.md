@@ -84,6 +84,19 @@ paths:
             description: Filter by organization ID.
             title: Organization Id
           description: Filter by organization ID.
+        - name: format
+          in: query
+          required: false
+          schema:
+            anyOf:
+              - $ref: '#/components/schemas/WebhookFormat'
+              - type: array
+                items:
+                  $ref: '#/components/schemas/WebhookFormat'
+              - type: 'null'
+            description: Filter by webhook payload format.
+            title: Format
+          description: Filter by webhook payload format.
         - name: page
           in: query
           required: false
@@ -157,6 +170,14 @@ paths:
             }
 components:
   schemas:
+    WebhookFormat:
+      type: string
+      enum:
+        - raw
+        - discord
+        - slack
+        - mcp
+      title: WebhookFormat
     ListResource_WebhookEndpoint_:
       properties:
         items:
@@ -318,13 +339,6 @@ components:
         - msg
         - type
       title: ValidationError
-    WebhookFormat:
-      type: string
-      enum:
-        - raw
-        - discord
-        - slack
-      title: WebhookFormat
     WebhookEventType:
       type: string
       enum:

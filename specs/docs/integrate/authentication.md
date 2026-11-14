@@ -10,7 +10,7 @@
 
 To authenticate requests, Polar API has two mechanisms.
 
-1. [Organization Access Tokens (OAT)](https://polar.sh/docs/integrate/oat) - Recommended
+1. [Organization Access Tokens (OAT)](https://polar.sh/docs/integrate/oat.md) - Recommended
 2. [OAuth 2.0 Provider](https://polar.sh/docs/integrate/oauth2/introduction.md) (Partner Integrations)
 
 ## Organization Access Tokens (OAT)

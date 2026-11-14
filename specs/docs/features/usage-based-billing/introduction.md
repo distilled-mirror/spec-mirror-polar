@@ -2,20 +2,21 @@
 > Fetch the complete documentation index at: https://polar.sh/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
-# Introduction
+# Metering
 
-> Usage based billing using ingested events
-
-> [!NOTE]
->
-> Usage Based Billing is a new feature. We have a lot in store and welcome
-> feedback!
+> Track customer usage with ingested events and meters
 
 ## Overview
 
-Polar has a powerful Usage Based Billing infrastructure that allows you to charge your customers based on the usage of your application.
+Metering lets you track how your customers use your application. You ingest events from your application, and Meters aggregate those events into usage per customer.
 
-This is done by ingesting events from your application, creating Meters to represent that usage, and then adding metered prices to Products to charge for it.
+You can then use that usage to:
+
+* Charge customers for it with [metered prices](https://polar.sh/docs/features/usage-based-billing/billing.md)
+* Grant usage [credits](https://polar.sh/docs/features/usage-based-billing/credits.md) that are consumed as usage comes in
+* Show customers their usage and estimated charges in the [Customer Portal](https://polar.sh/docs/features/customer-portal/introduction.md)
+
+The same events can also carry cost data, which [Cost Insights](https://polar.sh/docs/features/cost-insights/introduction.md) uses to track what each customer costs you.
 
 ## Concepts
 
@@ -61,7 +62,7 @@ You can create and manage your meters from the dashboard. Polar is then able to 
 
 ### Metered Price
 
-A metered price is a price that is based on the usage of a meter, which is computed by filtering aggregating the events that are ingested. This is how you charge your customers for the usage of your application.
+To charge customers for their usage, add a metered price based on a meter to a Product. See [Usage-Based Pricing](https://polar.sh/docs/features/usage-based-billing/billing.md).
 
 ### Meter Credits benefit
 
@@ -82,7 +83,7 @@ The filter is used to filter the events that should be included in the meter and
 
 **2. Add metered price to a Product**
 
-To enable usage based billing for a Product, you need to add a metered price to the Product. Metered prices are only applicable to Subscription Products.
+Only needed if you want to charge for usage. Add a metered price to the Product to bill customers based on the meter. Metered prices are only applicable to Subscription Products.
 
 ![](https://mintcdn.com/polar/0Af3hN6-oIM4IHT3/assets/features/usage/product-meter.light.png?fit=max\&auto=format\&n=0Af3hN6-oIM4IHT3\&q=85\&s=c1a9f0493fa6b73f0d4581b19e5d757c)
 

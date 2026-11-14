@@ -980,6 +980,7 @@ components:
           description: Avatar URL shown in checkout, customer portal, emails etc.
         proration_behavior:
           $ref: '#/components/schemas/SubscriptionProrationBehavior'
+          title: Proration Behavior
           description: >-
             Proration behavior applied when customer updates their subscription
             from the portal.

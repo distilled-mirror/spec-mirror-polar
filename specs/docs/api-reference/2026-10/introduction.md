@@ -14,7 +14,7 @@
 >
 > `https://sandbox-api.polar.sh/v1`
 
-> [card] [Auth (Organization)](https://polar.sh/docs/integrate/oat)
+> [card] [Auth (Organization)](https://polar.sh/docs/integrate/oat.md)
 >
 > Use an **Organization Access Token (OAT)** in the `Authorization: Bearer`
 > header
@@ -27,7 +27,7 @@
 
 Use our new, fully typed SDKs to integrate with the Polar API from TypeScript or Python.
 
-Create an [organization access token](https://polar.sh/docs/integrate/oat), then install the SDK and make your first request:
+Create an [organization access token](https://polar.sh/docs/integrate/oat.md), then install the SDK and make your first request:
 
 > [tab] TypeScript
 >
@@ -97,7 +97,7 @@ Authorization: Bearer polar_oat_xxxxxxxxxxxxxxxxx
 > [!TIP]
 >
 > Create OATs in your organization settings. See: [Organization Access
-> Tokens](https://polar.sh/docs/integrate/oat)
+> Tokens](https://polar.sh/docs/integrate/oat.md)
 
 > [!WARNING]
 >

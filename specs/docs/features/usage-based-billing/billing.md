@@ -2,15 +2,17 @@
 > Fetch the complete documentation index at: https://polar.sh/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
-# Billing
+# Usage-Based Pricing
 
-> How billing works with Usage Based
+> Charge customers for their metered usage
+
+Usage-based pricing charges customers based on usage tracked by [Metering](https://polar.sh/docs/features/usage-based-billing/introduction.md). Set up your events and meters first, then add a metered price to a Product.
 
 ## Metered Pricing
 
 Metered Pricing is a pricing model where you charge your customers based on the usage of your application.
 
-There are a few different pricing models unique to Usage Based Billing:
+There are a few different usage-based pricing models:
 
 * Unit Pricing
 * Volume Pricing
@@ -50,7 +52,7 @@ Volume and graduated take the same tiers. Define one by an upper bound and a rat
 
 ## Invoicing Customers for Usage
 
-Our Usage Based Billing infrastructure is built to work with Subscription products out of the box.
+Usage-based pricing is built to work with Subscription products out of the box.
 
 ### Add a metered price to your product
 
