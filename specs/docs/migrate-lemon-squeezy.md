@@ -1,0 +1,58 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://polar.sh/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Migrate from Lemon Squeezy
+
+> What moving from Lemon Squeezy to Polar looks like today, and what we're still working on.
+
+Lemon Squeezy is [winding down payment processing on March 31, 2027](https://www.lemonsqueezy.com/blog/saying-goodbye-to-lemon-squeezy), and many of its merchants are looking at Polar as their next Merchant of Record. This page answers the questions we hear most often, so you can decide whether Polar is a good fit before you start building.
+
+## Your existing customers
+
+We're in conversation with Lemon Squeezy about taking over your active subscriptions and customers without asking anyone to enter their card details again. Our goal is to have this in place well before Lemon Squeezy stops processing payments, so you have plenty of time to move without disrupting your customers. Until that is settled, we recommend waiting before you pick a destination in Lemon Squeezy's migration form. We'll update this page as soon as we have more to share.
+
+In the meantime, you can already move new sales to Polar. Existing customers keep renewing on Lemon Squeezy while new customers check out on Polar.
+
+## License keys
+
+Many of you ship desktop apps or plugins that store a license key on the customer's device, so handing out new keys isn't an option. We're looking into a way to bring your existing Lemon Squeezy license keys over to Polar unchanged, so customers can keep using the key they already have.
+
+For new sales, Polar's [license key benefit](https://polar.sh/docs/features/benefits/license-keys.md) issues keys automatically after purchase, with optional activation limits and expiration.
+
+## What you can sell
+
+Polar is built for software and digital products: SaaS, apps, plugins, templates, courses, premium content and similar. Some categories aren't supported, such as physical goods and human services, and others need a closer look before approval. Our [Acceptable Use Policy](https://polar.sh/docs/merchant-of-record/acceptable-use/introduction.md) explains what is and isn't allowed.
+
+## PayPal
+
+Lemon Squeezy offers PayPal at checkout, and Polar doesn't yet. We know this is a gap for many of you, and it's on our radar, but we can't share a timeline. Polar does support cards, Apple Pay, Google Pay and a growing set of local payment methods. See [Payment Methods](https://polar.sh/docs/features/checkout/payment-methods.md) for what your customers can use today.
+
+Keep in mind that it's likely customers who pay with PayPal can't be exported from Lemon Squeezy, whichever provider you move to. If that's the case, they'll need to check out again on your new provider.
+
+## Supported countries
+
+You can sign up as an individual or as a registered company. Check the list of [supported countries](https://polar.sh/docs/merchant-of-record/supported-countries.md) to see whether we can pay out to your country and what you need to set up a payout account.
+
+## Fees
+
+The free Starter plan charges 5% + 50¢ per transaction. If you sell more, the Pro ($20/mo, 3.8% + 40¢), Growth ($100/mo, 3.6% + 35¢) and Scale (\$400/mo, 3.4% + 30¢) plans lower your rate in exchange for a monthly fee. You can switch plans at any time. Cards issued outside the US add 1.5%.
+
+Payouts go through Stripe with no markup from Polar: $2 per month with active payouts, 0.25% + $0.25 per payout, and between 0.25% and 1% for currency conversion depending on your country.
+
+The [pricing page](https://polar.sh/resources/pricing) has the full breakdown, including a worked example and the sales volume at which each paid plan pays off. See [Fees](https://polar.sh/docs/merchant-of-record/fees.md) for refunds, disputes and payouts in more detail.
+
+## What you can do today
+
+If you want to poke around first, you can create an account in our [sandbox environment](https://polar.sh/docs/integrate/sandbox.md). It's fully isolated from production, so you can set up products, try checkout with test cards and see what Polar can do without moving any real money.
+
+When you're ready, [sign up for Polar](https://polar.sh/signup) and go through onboarding.
+
+You don't have to recreate your catalog by hand. Connect your coding agent to Polar with the [Polar CLI](https://polar.sh/docs/integrate/cli/introduction.md) or our [MCP server](https://polar.sh/docs/integrate/mcp.md), give it access to your Lemon Squeezy store, and ask it to copy over your products, prices and settings.
+
+## Questions
+
+If your question isn't answered here, [contact our support team](https://polar.sh/docs/support.md). Please include your current Lemon Squeezy setup (products, subscriptions and license keys) so we can help you faster.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

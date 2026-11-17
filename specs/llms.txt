@@ -8,6 +8,7 @@
 
 - [Polar: Turn Your Software into a Business](https://polar.sh/docs/introduction.md): The next generation unicorns will be built by smaller teams. Polar makes that dream possible.
 - [Migrate from Stripe](https://polar.sh/docs/migrate.md): Move customers, products, subscriptions, and payment data from Stripe to Polar.
+- [Migrate from Lemon Squeezy](https://polar.sh/docs/migrate-lemon-squeezy.md): What moving from Lemon Squeezy to Polar looks like today, and what we're still working on.
 
 ### Products & Pricing
 
@@ -204,7 +205,7 @@
 - [Create an OAuth 2.0 Client](https://polar.sh/docs/integrate/oauth2/setup.md)
 - [OAuth 2.0 Connect](https://polar.sh/docs/integrate/oauth2/connect.md)
 
-- [API Reference (651 pages)](https://polar.sh/docs/_llms/api-reference.txt): 2026-04, 2026-10, 2027-01.
+- [API Reference (652 pages)](https://polar.sh/docs/_llms/api-reference.txt): 2026-04, 2026-10, 2027-01.
 
 ## Changelog
 
@@ -228,10 +229,10 @@
 
 ## Indexes
 
-- [API Reference (651 pages)](https://polar.sh/docs/_llms/api-reference.txt): 2026-04, 2026-10, 2027-01.
+- [API Reference (652 pages)](https://polar.sh/docs/_llms/api-reference.txt): 2026-04, 2026-10, 2027-01.
 - [API Reference / 2026-04 (215 pages)](https://polar.sh/docs/_llms/api-reference/2026-04.txt): General, Core API, Customer Portal API, Webhook Events, Integrations.
 - [API Reference / 2026-10 (215 pages)](https://polar.sh/docs/_llms/api-reference/2026-10.txt): General, Core API, Customer Portal API, Webhook Events, Integrations.
-- [API Reference / 2027-01 (221 pages)](https://polar.sh/docs/_llms/api-reference/2027-01.txt): General, Core API, Customer Portal API, Webhook Events, Integrations.
+- [API Reference / 2027-01 (222 pages)](https://polar.sh/docs/_llms/api-reference/2027-01.txt): General, Core API, Customer Portal API, Webhook Events, Integrations.
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

@@ -21000,6 +21000,130 @@
       }
     },
     "/v1/benefit-grants/{id}": {
+      "patch": {
+        "tags": [
+          "benefit-grants",
+          "public",
+          "mcp",
+          "cli"
+        ],
+        "summary": "Update Benefit Grant",
+        "description": "Undo a manual revocation by setting `manually_revoked_at` to `None`.\n\nThe grant keeps its original recipient and purchase, if any.\nFulfillment is asynchronous. Repeating this request is safe.\nA purchase-scoped benefit is re-granted if the purchase still provides access.\n\n**Scopes**: `benefits:write`",
+        "operationId": "benefit-grants:update",
+        "security": [
+          {
+            "oidc": [
+              "benefits:write"
+            ]
+          },
+          {
+            "pat": [
+              "benefits:write"
+            ]
+          },
+          {
+            "oat": [
+              "benefits:write"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid4",
+              "title": "Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BenefitGrantUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BenefitGrant"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotPermitted"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceNotFound"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BenefitGrantAlreadyExists"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-tool-name": "benefit_grants_update",
+        "x-tool-title": "Update Benefit Grant",
+        "x-tool-description": "Undo a manual revocation by setting `manually_revoked_at` to `None`.\n\nThe grant keeps its original recipient and purchase, if any.\nFulfillment is asynchronous. Repeating this request is safe.\nA purchase-scoped benefit is re-granted if the purchase still provides access.",
+        "x-tool-annotations": [
+          "open_world"
+        ],
+        "x-polar-allowed-subjects": [
+          "Organization",
+          "User"
+        ],
+        "x-speakeasy-group": "benefit-grants",
+        "x-speakeasy-name-override": "update",
+        "x-codeSamples": [
+          {
+            "lang": "python",
+            "source": "from polar.v2027_01 import Polar\n\npolar = Polar(\"polar_oat_xxx\")\n\nresponse = polar.benefit_grants.update(\n    '00000000-0000-4000-8000-000000000000',\n    manually_revoked_at=None,\n)\nprint(response)\n"
+          },
+          {
+            "lang": "typescript",
+            "source": "import { createPolar } from \"@polar-sh/sdk/2027-01\";\n\nconst polar = createPolar({\n  accessToken: \"polar_oat_xxx\",\n});\n\nconst response = await polar.benefitGrants.update(\n  \"00000000-0000-4000-8000-000000000000\",\n  {\n    \"manually_revoked_at\": null\n  },\n);\nconsole.log(response);\n"
+          }
+        ]
+      },
       "delete": {
         "tags": [
           "benefit-grants",
@@ -21008,7 +21132,7 @@
           "cli"
         ],
         "summary": "Revoke Benefit Grant",
-        "description": "Permanently revoke a benefit grant, including grants from purchases.\n\nRevocation is asynchronous. Once manually revoked, this grant cannot be\nreactivated by renewal or fulfillment retries. Other grants may still\nprovide access to the benefit. Repeating this request is safe.\n\n**Scopes**: `benefits:write`",
+        "description": "Manually revoke a benefit grant, including grants from purchases.\n\nRevocation is asynchronous. Once manually revoked, this grant cannot be\nreactivated by renewal or fulfillment retries. Other grants may still\nprovide access to the benefit. To undo a manual revocation, update the grant.\nRepeating this request is safe.\n\n**Scopes**: `benefits:write`",
         "operationId": "benefit-grants:revoke",
         "security": [
           {
@@ -21073,7 +21197,7 @@
         },
         "x-tool-name": "benefit_grants_revoke",
         "x-tool-title": "Revoke Benefit Grant",
-        "x-tool-description": "Permanently revoke a benefit grant, including grants from purchases.\n\nRevocation is asynchronous. Once manually revoked, this grant cannot be\nreactivated by renewal or fulfillment retries. Other grants may still\nprovide access to the benefit. Repeating this request is safe.",
+        "x-tool-description": "Manually revoke a benefit grant, including grants from purchases.\n\nRevocation is asynchronous. Once manually revoked, this grant cannot be\nreactivated by renewal or fulfillment retries. Other grants may still\nprovide access to the benefit. To undo a manual revocation, update the grant.\nRepeating this request is safe.",
         "x-tool-annotations": [
           "destructive",
           "idempotent",
@@ -33279,7 +33403,7 @@
               }
             ],
             "title": "Manually Revoked At",
-            "description": "When this grant was permanently revoked manually, if applicable."
+            "description": "When this grant was manually revoked, if applicable."
           },
           "created_at": {
             "type": "string",
@@ -33641,7 +33765,7 @@
               }
             ],
             "title": "Manually Revoked At",
-            "description": "When this grant was permanently revoked manually, if applicable."
+            "description": "When this grant was manually revoked, if applicable."
           },
           "created_at": {
             "type": "string",
@@ -33888,7 +34012,7 @@
               }
             ],
             "title": "Manually Revoked At",
-            "description": "When this grant was permanently revoked manually, if applicable."
+            "description": "When this grant was manually revoked, if applicable."
           },
           "created_at": {
             "type": "string",
@@ -34119,7 +34243,7 @@
               }
             ],
             "title": "Manually Revoked At",
-            "description": "When this grant was permanently revoked manually, if applicable."
+            "description": "When this grant was manually revoked, if applicable."
           },
           "created_at": {
             "type": "string",
@@ -34365,7 +34489,7 @@
               }
             ],
             "title": "Manually Revoked At",
-            "description": "When this grant was permanently revoked manually, if applicable."
+            "description": "When this grant was manually revoked, if applicable."
           },
           "created_at": {
             "type": "string",
@@ -34623,7 +34747,7 @@
               }
             ],
             "title": "Manually Revoked At",
-            "description": "When this grant was permanently revoked manually, if applicable."
+            "description": "When this grant was manually revoked, if applicable."
           },
           "created_at": {
             "type": "string",
@@ -34859,7 +34983,7 @@
               }
             ],
             "title": "Manually Revoked At",
-            "description": "When this grant was permanently revoked manually, if applicable."
+            "description": "When this grant was manually revoked, if applicable."
           },
           "created_at": {
             "type": "string",
@@ -35121,7 +35245,7 @@
               }
             ],
             "title": "Manually Revoked At",
-            "description": "When this grant was permanently revoked manually, if applicable."
+            "description": "When this grant was manually revoked, if applicable."
           },
           "created_at": {
             "type": "string",
@@ -35369,7 +35493,7 @@
               }
             ],
             "title": "Manually Revoked At",
-            "description": "When this grant was permanently revoked manually, if applicable."
+            "description": "When this grant was manually revoked, if applicable."
           },
           "created_at": {
             "type": "string",
@@ -35566,6 +35690,20 @@
           "-revoked_at"
         ],
         "title": "BenefitGrantSortProperty"
+      },
+      "BenefitGrantUpdate": {
+        "properties": {
+          "manually_revoked_at": {
+            "type": "null",
+            "title": "Manually Revoked At",
+            "description": "Set to None to undo a manual revocation.",
+            "examples": [
+              null
+            ]
+          }
+        },
+        "type": "object",
+        "title": "BenefitGrantUpdate"
       },
       "BenefitGrantWebhook": {
         "anyOf": [
@@ -36450,6 +36588,292 @@
           "type"
         ],
         "title": "BenefitLicenseKeysUpdate"
+      },
+      "BenefitManuallyGrantedEvent": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid4",
+            "title": "Id",
+            "description": "The ID of the object."
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp",
+            "description": "The timestamp of the event.",
+            "examples": [
+              "2026-01-01T00:00:00.000000Z"
+            ]
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid4",
+            "title": "Organization Id",
+            "description": "The ID of the organization owning the event.",
+            "examples": [
+              "1dbfc517-0bbf-4301-9ba8-555ca42b9737"
+            ]
+          },
+          "customer_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid4"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Customer Id",
+            "description": "ID of the customer in your Polar organization associated with the event."
+          },
+          "customer": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Customer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The customer associated with the event."
+          },
+          "external_customer_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "External Customer Id",
+            "description": "ID of the customer in your system associated with the event."
+          },
+          "member_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid4"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Member Id",
+            "description": "ID of the member within the customer's organization who performed the action inside B2B."
+          },
+          "external_member_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "External Member Id",
+            "description": "ID of the member in your system within the customer's organization who performed the action inside B2B."
+          },
+          "child_count": {
+            "type": "integer",
+            "title": "Child Count",
+            "description": "Number of direct child events linked to this event.",
+            "default": 0
+          },
+          "parent_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid4"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parent Id",
+            "description": "The ID of the parent event."
+          },
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "description": "Human readable label of the event type."
+          },
+          "source": {
+            "type": "string",
+            "const": "system",
+            "title": "Source",
+            "description": "The source of the event. `system` events are created by Polar. `user` events are the one you create through our ingestion API."
+          },
+          "name": {
+            "type": "string",
+            "const": "benefit.manually_granted",
+            "title": "Name",
+            "description": "The name of the event."
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/BenefitGrantMetadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "timestamp",
+          "organization_id",
+          "customer_id",
+          "customer",
+          "external_customer_id",
+          "label",
+          "source",
+          "name",
+          "metadata"
+        ],
+        "title": "BenefitManuallyGrantedEvent",
+        "description": "An event created by Polar when a benefit grant is created manually."
+      },
+      "BenefitManuallyRevokedEvent": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid4",
+            "title": "Id",
+            "description": "The ID of the object."
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp",
+            "description": "The timestamp of the event.",
+            "examples": [
+              "2026-01-01T00:00:00.000000Z"
+            ]
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid4",
+            "title": "Organization Id",
+            "description": "The ID of the organization owning the event.",
+            "examples": [
+              "1dbfc517-0bbf-4301-9ba8-555ca42b9737"
+            ]
+          },
+          "customer_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid4"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Customer Id",
+            "description": "ID of the customer in your Polar organization associated with the event."
+          },
+          "customer": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Customer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The customer associated with the event."
+          },
+          "external_customer_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "External Customer Id",
+            "description": "ID of the customer in your system associated with the event."
+          },
+          "member_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid4"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Member Id",
+            "description": "ID of the member within the customer's organization who performed the action inside B2B."
+          },
+          "external_member_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "External Member Id",
+            "description": "ID of the member in your system within the customer's organization who performed the action inside B2B."
+          },
+          "child_count": {
+            "type": "integer",
+            "title": "Child Count",
+            "description": "Number of direct child events linked to this event.",
+            "default": 0
+          },
+          "parent_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid4"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parent Id",
+            "description": "The ID of the parent event."
+          },
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "description": "Human readable label of the event type."
+          },
+          "source": {
+            "type": "string",
+            "const": "system",
+            "title": "Source",
+            "description": "The source of the event. `system` events are created by Polar. `user` events are the one you create through our ingestion API."
+          },
+          "name": {
+            "type": "string",
+            "const": "benefit.manually_revoked",
+            "title": "Name",
+            "description": "The name of the event."
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/BenefitGrantMetadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "timestamp",
+          "organization_id",
+          "customer_id",
+          "customer",
+          "external_customer_id",
+          "label",
+          "source",
+          "name",
+          "metadata"
+        ],
+        "title": "BenefitManuallyRevokedEvent",
+        "description": "An event created by Polar when a benefit grant is manually revoked."
       },
       "BenefitMeterCredit": {
         "properties": {
@@ -37937,6 +38361,149 @@
           "slack_shared_channel"
         ],
         "title": "BenefitType"
+      },
+      "BenefitUnrevokedEvent": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid4",
+            "title": "Id",
+            "description": "The ID of the object."
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp",
+            "description": "The timestamp of the event.",
+            "examples": [
+              "2026-01-01T00:00:00.000000Z"
+            ]
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid4",
+            "title": "Organization Id",
+            "description": "The ID of the organization owning the event.",
+            "examples": [
+              "1dbfc517-0bbf-4301-9ba8-555ca42b9737"
+            ]
+          },
+          "customer_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid4"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Customer Id",
+            "description": "ID of the customer in your Polar organization associated with the event."
+          },
+          "customer": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Customer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The customer associated with the event."
+          },
+          "external_customer_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "External Customer Id",
+            "description": "ID of the customer in your system associated with the event."
+          },
+          "member_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid4"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Member Id",
+            "description": "ID of the member within the customer's organization who performed the action inside B2B."
+          },
+          "external_member_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "External Member Id",
+            "description": "ID of the member in your system within the customer's organization who performed the action inside B2B."
+          },
+          "child_count": {
+            "type": "integer",
+            "title": "Child Count",
+            "description": "Number of direct child events linked to this event.",
+            "default": 0
+          },
+          "parent_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid4"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parent Id",
+            "description": "The ID of the parent event."
+          },
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "description": "Human readable label of the event type."
+          },
+          "source": {
+            "type": "string",
+            "const": "system",
+            "title": "Source",
+            "description": "The source of the event. `system` events are created by Polar. `user` events are the one you create through our ingestion API."
+          },
+          "name": {
+            "type": "string",
+            "const": "benefit.unrevoked",
+            "title": "Name",
+            "description": "The name of the event."
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/BenefitGrantMetadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "timestamp",
+          "organization_id",
+          "customer_id",
+          "customer",
+          "external_customer_id",
+          "label",
+          "source",
+          "name",
+          "metadata"
+        ],
+        "title": "BenefitUnrevokedEvent",
+        "description": "An event created by Polar when a manual revocation is cleared."
       },
       "BenefitUpdatedEvent": {
         "properties": {
@@ -46199,7 +46766,7 @@
               }
             ],
             "title": "Manually Revoked At",
-            "description": "When this grant was permanently revoked manually, if applicable."
+            "description": "When this grant was manually revoked, if applicable."
           },
           "created_at": {
             "type": "string",
@@ -46403,7 +46970,7 @@
               }
             ],
             "title": "Manually Revoked At",
-            "description": "When this grant was permanently revoked manually, if applicable."
+            "description": "When this grant was manually revoked, if applicable."
           },
           "created_at": {
             "type": "string",
@@ -46641,7 +47208,7 @@
               }
             ],
             "title": "Manually Revoked At",
-            "description": "When this grant was permanently revoked manually, if applicable."
+            "description": "When this grant was manually revoked, if applicable."
           },
           "created_at": {
             "type": "string",
@@ -46845,7 +47412,7 @@
               }
             ],
             "title": "Manually Revoked At",
-            "description": "When this grant was permanently revoked manually, if applicable."
+            "description": "When this grant was manually revoked, if applicable."
           },
           "created_at": {
             "type": "string",
@@ -47049,7 +47616,7 @@
               }
             ],
             "title": "Manually Revoked At",
-            "description": "When this grant was permanently revoked manually, if applicable."
+            "description": "When this grant was manually revoked, if applicable."
           },
           "created_at": {
             "type": "string",
@@ -47287,7 +47854,7 @@
               }
             ],
             "title": "Manually Revoked At",
-            "description": "When this grant was permanently revoked manually, if applicable."
+            "description": "When this grant was manually revoked, if applicable."
           },
           "created_at": {
             "type": "string",
@@ -47514,7 +48081,7 @@
               }
             ],
             "title": "Manually Revoked At",
-            "description": "When this grant was permanently revoked manually, if applicable."
+            "description": "When this grant was manually revoked, if applicable."
           },
           "created_at": {
             "type": "string",
@@ -47718,7 +48285,7 @@
               }
             ],
             "title": "Manually Revoked At",
-            "description": "When this grant was permanently revoked manually, if applicable."
+            "description": "When this grant was manually revoked, if applicable."
           },
           "created_at": {
             "type": "string",
@@ -80375,6 +80942,15 @@
             "$ref": "#/components/schemas/BenefitRevokedEvent"
           },
           {
+            "$ref": "#/components/schemas/BenefitManuallyGrantedEvent"
+          },
+          {
+            "$ref": "#/components/schemas/BenefitManuallyRevokedEvent"
+          },
+          {
+            "$ref": "#/components/schemas/BenefitUnrevokedEvent"
+          },
+          {
             "$ref": "#/components/schemas/SubscriptionCreatedEvent"
           },
           {
@@ -80479,7 +81055,10 @@
             "balance.refund_reversal": "#/components/schemas/BalanceRefundReversalEvent",
             "benefit.cycled": "#/components/schemas/BenefitCycledEvent",
             "benefit.granted": "#/components/schemas/BenefitGrantedEvent",
+            "benefit.manually_granted": "#/components/schemas/BenefitManuallyGrantedEvent",
+            "benefit.manually_revoked": "#/components/schemas/BenefitManuallyRevokedEvent",
             "benefit.revoked": "#/components/schemas/BenefitRevokedEvent",
+            "benefit.unrevoked": "#/components/schemas/BenefitUnrevokedEvent",
             "benefit.updated": "#/components/schemas/BenefitUpdatedEvent",
             "checkout.created": "#/components/schemas/CheckoutCreatedEvent",
             "customer.created": "#/components/schemas/CustomerCreatedEvent",

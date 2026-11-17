@@ -121,6 +121,7 @@
     "merchant-of-record/introduction",
     "merchant-of-record/supported-countries",
     "migrate",
+    "migrate-lemon-squeezy",
     "security",
     "support"
   ],
