@@ -137,7 +137,7 @@ The agent calls `search` to find the operations for its task, such as "find a cu
 
 The agent calls `execute` with code that makes the API calls and returns the result.
 
-Code runs in an isolated sandbox. It can only call the Polar operations listed below, with the access you granted when you authorized the client, and it cannot reach any other host.
+Code runs in an isolated sandbox without access to other hosts. Your agent can use `search` to discover the operations available on the connected server. Calls are limited to Polar's MCP operations and the access you granted when you authorized the client.
 
 ## Read-only mode
 
@@ -165,7 +165,7 @@ To opt out, add `?telemetry=false` (or `0`, `no`, `off`) to the server URL, for 
 
 ## Available operations
 
-> [accordion] Available operations (103)
+> [accordion] Available operations (108)
 >
 > | Operation | Description |
 > | - | - |
@@ -183,9 +183,13 @@ To opt out, add `?telemetry=false` (or `0`, `no`, `off`) to the server URL, for 
 > | `benefits_files` | List the downloadable files for a benefit with their download statistics. |
 > | `benefits_grants` | List the individual grants for a benefit. It's especially useful to check if a user has been granted a benefit. |
 > | `benefit_grants_list` | List benefit grants across all benefits accessible to the authenticated subject. |
+> | `benefit_grants_create` | Manually grant a benefit to a customer or one of their members. |
+> | `benefit_grants_update` | Undo a manual revocation of a benefit grant. |
+> | `benefit_grants_revoke` | Manually revoke a benefit grant, including one from a purchase. |
 > | `webhooks_list_webhook_endpoints` | List webhook endpoints. |
 > | `webhooks_create_webhook_endpoint` | Create a webhook endpoint. |
 > | `webhooks_get_webhook_endpoint` | Get a webhook endpoint by ID. |
+> | `webhooks_get_external_webhook_endpoint` | Get a webhook endpoint by external ID. |
 > | `webhooks_update_webhook_endpoint` | Update a webhook endpoint. |
 > | `webhooks_delete_webhook_endpoint` | Delete a webhook endpoint. |
 > | `webhooks_reset_webhook_endpoint_secret` | Regenerate a webhook endpoint secret. |
@@ -257,8 +261,6 @@ To opt out, add `?telemetry=false` (or `0`, `no`, `off`) to the server URL, for 
 > | `customer_seats_assign_seat` | Assign a seat for a subscription or order. |
 > | `customer_seats_revoke_seat` | Revoke a customer seat. |
 > | `customer_seats_resend_invitation` | Resend an invitation for a pending customer seat. |
-> | `customer_seats_get_claim_info` | Get claim information for a customer seat invitation. |
-> | `customer_seats_claim_seat` | Claim a customer seat with an invitation token. |
 > | `events_list_names` | List event names. |
 > | `events_get` | Get an event by ID. |
 > | `event_types_list` | List event types with aggregated statistics. |
@@ -266,10 +268,13 @@ To opt out, add `?telemetry=false` (or `0`, `no`, `off`) to the server URL, for 
 > | `meters_list` | List meters. |
 > | `meters_create` | Create a meter. |
 > | `meters_get` | Get a meter by ID. |
+> | `meters_get_external` | Get a meter by external ID. |
 > | `meters_update` | Update a meter. |
 > | `meters_quantities` | Get quantities of a meter over a time period. |
 > | `customer_meters_list` | List customer meters. |
 > | `customer_meters_get` | Get a customer meter by ID. |
+> | `customer_meters_credits` | Manually grant credits on a customer meter. |
+> | `customer_meters_reverse_credit` | Reverse a manual credit, removing the units the customer has yet to use. |
 > | `payments_list` | List payments. |
 > | `payments_get` | Get a payment by ID. |
 

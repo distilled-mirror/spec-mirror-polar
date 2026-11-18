@@ -142,7 +142,7 @@ polar orders update [flags] <id>
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--billing-name` | `string` | The name of the customer that should appear on the invoice. |
-| `--billing-address` | `string` | The address of the customer that should appear on the invoice. Country and state fields cannot be updated. JSON: \{"country": "AD" \| "AE" \| "AF" \| "AG" \| "AI" \| ..., ...} |
+| `--billing-address` | `string` | The address of the customer that should appear on the invoice. Address fields used for tax calculation cannot be updated. JSON: \{"country": "AD" \| "AE" \| "AF" \| "AG" \| "AI" \| ..., ...} |
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.
