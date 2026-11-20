@@ -27,6 +27,7 @@ polar refunds create [flags]
 | - | - | - |
 | `--confirm`, `-c` | `boolean` | Skip the confirmation prompt for destructive requests |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--metadata` | `string` | Key-value object allowing you to store additional information. JSON: \{"\<key>": string \| integer \| number \| boolean} |
 | `--order-id` | `string` | Required. order\_id |

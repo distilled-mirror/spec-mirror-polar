@@ -35,6 +35,7 @@ polar license_keys get [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar license\_keys get\_activation
 
@@ -56,6 +57,7 @@ polar license_keys get_activation [flags] <id> <activation_id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar license\_keys list
 
@@ -97,6 +99,7 @@ polar license_keys rotate [flags] <id>
 | - | - | - |
 | `--confirm`, `-c` | `boolean` | Skip the confirmation prompt for destructive requests |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar license\_keys update
 
@@ -118,6 +121,7 @@ polar license_keys update [flags] <id>
 | - | - | - |
 | `--confirm`, `-c` | `boolean` | Skip the confirmation prompt for destructive requests |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--status` | `choice` | status (choices: granted, revoked, disabled) |
 | `--usage` | `integer` | usage |

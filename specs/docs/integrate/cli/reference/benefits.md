@@ -58,6 +58,7 @@ polar benefits delete [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--confirm`, `-c` | `boolean` | Skip the confirmation prompt for destructive requests |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar benefits files
 
@@ -78,6 +79,7 @@ polar benefits files [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--page` | `integer` | Page number, defaults to 1. |
 | `--limit` | `integer` | Size of a page, defaults to 10. Maximum is 100. |
@@ -101,6 +103,7 @@ polar benefits get [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar benefits grants
 
@@ -121,6 +124,7 @@ polar benefits grants [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--is-granted` | `boolean` | Filter by granted status. If `true`, only granted benefits will be returned. If `false`, only revoked benefits will be returned. |
 | `--customer-id` | `string` | Filter by customer. |
@@ -172,6 +176,7 @@ polar benefits update [flags] <id>
 | - | - | - |
 | `--confirm`, `-c` | `boolean` | Skip the confirmation prompt for destructive requests |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--metadata` | `string` | Key-value object allowing you to store additional information. JSON: \{"\<key>": string \| integer \| number \| boolean} |
 | `--description` | `string` | The description of the benefit. Will be displayed on products having this benefit. |

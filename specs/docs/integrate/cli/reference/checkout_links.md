@@ -29,6 +29,7 @@ polar checkout_links create [flags]
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--metadata` | `string` | Key-value object allowing you to store additional information. JSON: \{"\<key>": string \| integer \| number \| boolean} |
 | `--trial-interval` | `choice` | The interval unit for the trial period. (choices: day, week, month, year) |
@@ -65,6 +66,7 @@ polar checkout_links delete [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--confirm`, `-c` | `boolean` | Skip the confirmation prompt for destructive requests |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar checkout\_links get
 
@@ -85,6 +87,7 @@ polar checkout_links get [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar checkout\_links list
 
@@ -125,6 +128,7 @@ polar checkout_links update [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--trial-interval` | `choice` | The interval unit for the trial period. (choices: day, week, month, year) |
 | `--trial-interval-count` | `integer` | The number of interval units for the trial period. |

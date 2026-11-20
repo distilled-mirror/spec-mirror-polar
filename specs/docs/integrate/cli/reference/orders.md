@@ -36,6 +36,7 @@ polar orders generate_invoice [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar orders get
 
@@ -56,6 +57,7 @@ polar orders get [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar orders invoice
 
@@ -76,6 +78,7 @@ polar orders invoice [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar orders list
 
@@ -121,6 +124,12 @@ polar orders receipt [flags] <id>
 | - | - | - |
 | `id` | `string` | |
 
+**Flags**
+
+| Flag | Type | Description |
+| - | - | - |
+| `--org` | `string` | Organization ID or slug for this invocation only |
+
 ## polar orders update
 
 Update an order.
@@ -140,6 +149,7 @@ polar orders update [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--billing-name` | `string` | The name of the customer that should appear on the invoice. |
 | `--billing-address` | `string` | The address of the customer that should appear on the invoice. Address fields used for tax calculation cannot be updated. JSON: \{"country": "AD" \| "AE" \| "AF" \| "AG" \| "AI" \| ..., ...} |

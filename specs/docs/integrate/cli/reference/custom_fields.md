@@ -56,6 +56,7 @@ polar custom_fields delete [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--confirm`, `-c` | `boolean` | Skip the confirmation prompt for destructive requests |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar custom\_fields get
 
@@ -76,6 +77,7 @@ polar custom_fields get [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar custom\_fields list
 
@@ -117,6 +119,7 @@ polar custom_fields update [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--metadata` | `string` | Key-value object allowing you to store additional information. JSON: \{"\<key>": string \| integer \| number \| boolean} |
 | `--name` | `string` | name |

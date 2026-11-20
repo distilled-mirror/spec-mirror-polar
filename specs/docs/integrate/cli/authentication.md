@@ -48,6 +48,13 @@ polar auth org
 Shows the same organization picker as login, so you can switch at any time.
 
 ```bash Terminal theme={null}
+polar auth org acme
+```
+
+Switches to an organization by slug or ID without the picker, for scripts and
+coding agents.
+
+```bash Terminal theme={null}
 polar auth whoami
 ```
 
@@ -61,7 +68,8 @@ Lists every organization you can access, grouped by environment, with the
 active one marked.
 
 To use a different organization for a single command without changing the
-active one, pass its ID:
+active one, pass its ID with `--org`. Every command that acts on an
+organization accepts it:
 
 ```bash Terminal theme={null}
 polar webhook listen http://localhost:3000/webhooks --org <organization-id>

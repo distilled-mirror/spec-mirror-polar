@@ -76,7 +76,27 @@ polar auth list [flags]
 Choose the active organization
 
 ```bash theme={null}
-polar auth org [flags]
+polar auth org [flags] [<organization>]
+```
+
+**Arguments**
+
+| Argument | Type | Description |
+| - | - | - |
+| `organization` | `string` | Organization ID or slug. Omit to pick from a list (optional) |
+
+**Examples**
+
+Pick the active organization from a list
+
+```bash theme={null}
+polar auth org
+```
+
+Set it by slug or ID, for scripts and agents
+
+```bash theme={null}
+polar auth org acme
 ```
 
 ## polar auth token

@@ -68,6 +68,7 @@ polar customers delete [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--confirm`, `-c` | `boolean` | Skip the confirmation prompt for destructive requests |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--anonymize` | `boolean` | If true, also anonymize the customer's personal data for GDPR compliance. This replaces email with a hashed version, hashes name and billing name (name preserved for businesses with tax\_id), clears billing address, and removes OAuth account data. |
 
@@ -90,6 +91,7 @@ polar customers delete_external [flags] <external_id>
 | Flag | Type | Description |
 | - | - | - |
 | `--confirm`, `-c` | `boolean` | Skip the confirmation prompt for destructive requests |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--anonymize` | `boolean` | If true, also anonymize the customer's personal data for GDPR compliance. |
 
@@ -112,6 +114,7 @@ polar customers get [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar customers get\_external
 
@@ -132,6 +135,7 @@ polar customers get_external [flags] <external_id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar customers get\_state
 
@@ -152,6 +156,7 @@ polar customers get_state [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar customers get\_state\_external
 
@@ -172,6 +177,7 @@ polar customers get_state_external [flags] <external_id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar customers list
 
@@ -215,6 +221,7 @@ polar customers list_payment_methods [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--page` | `integer` | Page number, defaults to 1. |
 | `--limit` | `integer` | Size of a page, defaults to 10. Maximum is 100. |
@@ -238,6 +245,7 @@ polar customers list_payment_methods_external [flags] <external_id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--page` | `integer` | Page number, defaults to 1. |
 | `--limit` | `integer` | Size of a page, defaults to 10. Maximum is 100. |
@@ -262,6 +270,7 @@ polar customers update [flags] <id>
 | - | - | - |
 | `--confirm`, `-c` | `boolean` | Skip the confirmation prompt for destructive requests |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--metadata` | `string` | Key-value object allowing you to store additional information. JSON: \{"\<key>": string \| integer \| number \| boolean} |
 | `--email` | `string` | The email address of the customer. This must be unique within the organization. |
@@ -292,6 +301,7 @@ polar customers update_external [flags] <external_id>
 | - | - | - |
 | `--confirm`, `-c` | `boolean` | Skip the confirmation prompt for destructive requests |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--metadata` | `string` | Key-value object allowing you to store additional information. JSON: \{"\<key>": string \| integer \| number \| boolean} |
 | `--email` | `string` | The email address of the customer. This must be unique within the organization. |
@@ -338,6 +348,7 @@ polar customers members create [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--email` | `string` | Required. The email address of the member. |
 | `--name` | `string` | name |
@@ -363,6 +374,7 @@ polar customers members create_external [flags] <external_id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--email` | `string` | Required. The email address of the member. |
 | `--name` | `string` | name |
@@ -389,6 +401,7 @@ polar customers members delete [flags] <id> <member_id>
 | Flag | Type | Description |
 | - | - | - |
 | `--confirm`, `-c` | `boolean` | Skip the confirmation prompt for destructive requests |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar customers members delete\_external
 
@@ -410,6 +423,7 @@ polar customers members delete_external [flags] <external_id> <member_external_i
 | Flag | Type | Description |
 | - | - | - |
 | `--confirm`, `-c` | `boolean` | Skip the confirmation prompt for destructive requests |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar customers members get
 
@@ -431,6 +445,7 @@ polar customers members get [flags] <id> <member_id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar customers members get\_external
 
@@ -452,6 +467,7 @@ polar customers members get_external [flags] <external_id> <member_external_id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 ## polar customers members list
 
@@ -472,6 +488,7 @@ polar customers members list [flags] <id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--role` | `choice` | Filter by member role. (choices: owner, billing\_manager, member) |
 | `--page` | `integer` | Page number, defaults to 1. |
@@ -497,6 +514,7 @@ polar customers members list_external [flags] <external_id>
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--role` | `choice` | Filter by member role. (choices: owner, billing\_manager, member) |
 | `--page` | `integer` | Page number, defaults to 1. |
@@ -524,6 +542,7 @@ polar customers members update [flags] <id> <member_id>
 | - | - | - |
 | `--confirm`, `-c` | `boolean` | Skip the confirmation prompt for destructive requests |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--name` | `string` | name |
 | `--email` | `string` | email |
@@ -550,6 +569,7 @@ polar customers members update_external [flags] <external_id> <member_external_i
 | - | - | - |
 | `--confirm`, `-c` | `boolean` | Skip the confirmation prompt for destructive requests |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 | `--data`, `-d` | `string` | JSON object; explicitly supplied flags override its top-level keys |
 | `--name` | `string` | name |
 | `--email` | `string` | email |

@@ -50,6 +50,7 @@ polar metrics limits [flags]
 | Flag | Type | Description |
 | - | - | - |
 | `--fields` | `string` | Only print these fields, comma-separated; use dots for nested ones, e.g. id,name,prices.price\_amount |
+| `--org` | `string` | Organization ID or slug for this invocation only |
 
 
 This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.
