@@ -119,6 +119,7 @@
 - [Supported countries](https://polar.sh/docs/merchant-of-record/supported-countries.md)
 - [Acceptable Use](https://polar.sh/docs/merchant-of-record/acceptable-use/introduction.md): What you can sell with Polar, and why we have a policy for it
 - [Account reviews](https://polar.sh/docs/merchant-of-record/account-reviews.md)
+- [Review Checklist](https://polar.sh/docs/merchant-of-record/review-checklist.md): Everything you need to complete before you can submit your account for review and start accepting payments
 
 ## Developer Resources
 

@@ -119,6 +119,7 @@
     "merchant-of-record/account-reviews",
     "merchant-of-record/fees",
     "merchant-of-record/introduction",
+    "merchant-of-record/review-checklist",
     "merchant-of-record/supported-countries",
     "migrate",
     "migrate-lemon-squeezy",
